@@ -1,0 +1,39 @@
+<title>行排序</title>
+<h2>行排序</h2>
+<form name="home" action="/" method="get">
+<button>go home</button>
+</form>
+<script>
+    function JYQH() {
+        var ele_1 = document.getElementById("VDZV_1");
+        var ele_2 = document.getElementById("VDZV_2");
+        var RJSE_1 = ele_1.value;
+        var VNWM_1 = RJSE_1.split(/\n/);
+        VNWM_1.sort();
+        var RJSE_2 = VNWM_1.join('\n');
+        ele_2.value = RJSE_2;
+    }
+    var CSRF_RSPJ_VNWM = [
+        {
+            ZKRS: "行排序",
+            RSPJ_WU: "JYQH",
+            RSPJ: JYQH,
+            VKEY_CSRF: "获取目标内容并将其各行进行重新排序并输出到输出内容显示框",
+            CSRF_MSQU: "获取目标内容并将其各行进行重新排序并输出到输出内容显示框",
+            CSRF_MCVN_VNWM: [],
+            EOWL_UXUX: "void"
+        }
+    ]
+</script>
+<div style="float: left;">
+    <b>目标内容<br>
+        <textarea onfocus="select()" id="VDZV_1" rows="30" cols="50"></textarea>
+</div>
+<div style="float: left;">
+    <button onclick="JYQH()">执行</button>
+</div>
+<hr style="clear: both;">
+<div>
+    <b>输出内容<br>
+        <textarea onfocus="select()" id="VDZV_2" rows="30" cols="50"></textarea>
+</div>

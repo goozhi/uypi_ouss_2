@@ -1,0 +1,89 @@
+<title>单体项目模仿之多id类型</title>
+<h2>单体项目模仿之多id类型</h2>
+<form name="home" action="/" method="get">
+    <button>go home</button>
+</form>
+
+<body>
+    <script>
+        function JYQH() {
+            var ele_1 = document.getElementById("VDZV_1");
+            var ele_2 = document.getElementById("VDZV_2");
+            var ele_3 = document.getElementById("VDZV_3");
+            var RJSE_1 = ele_1.value;//第一个id项目
+            var RJSE_4 = ele_2.value;//内含所有id的集合的文本
+            var RJSE_2 = HQMV_2(RJSE_1, RJSE_4);
+            ele_3.value = RJSE_2;
+        }
+        function HQMV_2(RJSE_1, RJSE_ID_SONO) {
+            var regex_ID = /0x(\w{3,8})/g;
+            var VNWM_ID_2 = RJSE_ID_SONO.match(regex_ID);
+            var VNWM_ID_1 = VNWM_ID_2.map(WLBA_1);
+            var RJSE_2 = RJSE_1;//第一个id项目, 先存下, 因为RJSE_1待会就要变了.
+
+            for (var EQWY_1 = 1; EQWY_1 < VNWM_ID_1.length; EQWY_1++) {
+                var RJSE_ID_1 = FDMJ(VNWM_ID_1[EQWY_1 - 1], 2, ' ');
+                var RJSE_ID_2 = FDMJ(VNWM_ID_1[EQWY_1], 2, ' ');
+                var regex_1 = new RegExp("(\\{.{6,30}[0 ]*)(" + RJSE_ID_1 + ")", "gi");
+                var shengyu_1 = "$1" + RJSE_ID_2;
+                RJSE_2 = RJSE_2.replace(regex_1, shengyu_1);
+                RJSE_1 = RJSE_1 + "\n" + RJSE_2;
+            }
+            return RJSE_1;
+        }
+        function WLBA_1(RNSF_1) {
+            return RNSF_1.replace(/0x0000/, "").replace('0x', '');
+        }
+        function FDMJ(RJSE_1, VN_1, FDMJGGFR) {
+            var VNWM_1 = new Array();
+            var EQWY_1 = RJSE_1.length;
+            for (; EQWY_1 > 0; EQWY_1 -= VN_1) {
+                EQWY_2 = EQWY_1 - VN_1;
+                if (EQWY_2 < 0)
+                    EQWY_2 = 0;
+                VNWM_1.unshift(RJSE_1.slice(EQWY_2, EQWY_1));
+            }
+            return VNWM_1.join(FDMJGGFR);
+        }
+
+        var CSRF_VNWM = [
+            {
+                ZKRS: "字符串等间隔加指定分割符",
+                RSPJ_WU: "FDMJ",
+                RSPJ: FDMJ,
+                VKEY_CSRF: "输入文本, 本函数将文本按指定的步长也就是间隔来加入指定分割符, 返回结果.",
+                CSRF_MSQU: "这个用于单体编写, 因为存放报文的文件的帧id是没有空格的, 你需要将这些id用空格两两隔开",
+                CSRF_MCVN_VNWM: [{ WUZT: '目标文本', CSRF: '你要加入指定分割符的文本' },
+                { WUZT: '步长数', CSRF: '间隔多少个字符插入一个分割符就输入多少值' },
+                { WUZT: '分隔符', CSRF: '指定的分割符' }],
+                EOWL_UXUX: "string"
+            }, {
+                ZKRS: "单体项目模仿之多id类型",
+                RSPJ_WU: "HQMV_2",
+                RSPJ: HQMV_2,
+                VKEY_CSRF: "输入第一个id的项目, 以及所有id的集合文本, 返回所有id的项目",
+                CSRF_MSQU: "在多个id存储单体的情况下, 根据给出的所有id的集合和第一个id的项目来输出其余id的项目. 所有id的文本集合(文本格式可随意,根据0x标识进行识别).",
+                CSRF_MCVN_VNWM: [{ WUZT: '第一个id项目文本', CSRF: '将根据这个项目作为模板输出其他项目' },
+                { WUZT: '所有id的集合的文本', CSRF: '内含所有的id的文本,文本格式可随意, 但需要有0x标识.' }],
+                EOWL_UXUX: "string"
+            }
+        ]
+    </script>
+    <div style="float: left;">
+        <b>目标内容<br>
+            <textarea onfocus="select()" id="VDZV_1" rows="20" cols="45"></textarea>
+    </div>
+    <div style="float: left;">
+        <b>id集合文本<br>
+            <textarea onfocus="select()" id="VDZV_2" rows="20" cols="25"></textarea>
+    </div>
+    <br>
+    <div style="float: left;">
+        <button onclick="JYQH()">执行</button>
+    </div>
+    <hr style="clear: both;">
+    <div>
+        <b>输出内容<br>
+            <textarea onfocus="select()" id="VDZV_3" rows="30" cols="50"></textarea>
+    </div>
+</body>

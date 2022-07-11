@@ -1,0 +1,106 @@
+<title>删重复行_根据标识符</title>
+<form name="home" action="/" method="get">
+<button>go home</button>
+</form>
+
+<body>
+    <script>
+        function JYQH() {
+            var ele_1 = document.getElementById("VDZV_1");
+            var ele_2 = document.getElementById("VDZV_2");
+            var RJSE_1 = ele_1.value;
+            var RJSE_2 = HD_LZJK(RJSE_1);
+            ele_2.value = RJSE_2;
+        }
+        function JYQH2() {
+            var ele_1 = document.getElementById("VDZV_3");
+            var ele_2 = document.getElementById("VDZV_6");
+            var ele_4 = document.getElementById("VDZV_4");
+            var ele_5 = document.getElementById("VDZV_5");
+            var RJSE_1 = ele_1.value;
+            var RJSE_2 = HD_LZJK(RJSE_1, ele_4.value, ele_5.value);
+            ele_2.value = RJSE_2;
+        }
+        function HD_LZJK(RJSE1, LDGGXBST, DSGGXBST) {//this.quChongfuHang
+            if (RJSE1 == null) {
+                console.log("AFOA_UJ.HD_LZJK:", "参数无内容");
+                return;
+            }
+            var VNWM_2 = RJSE1.split("\n");
+            var VNWM_3 = [];
+            if (LDGGXBST == null) {
+                for (suoyin1 in VNWM_2) {
+                    if (VNWM_3.indexOf(VNWM_2[suoyin1]) == -1) {
+                        VNWM_3.push(VNWM_2[suoyin1]);
+                    }
+                }
+            } else if (typeof (LDGGXBST) == "string") {
+                var regex_1 = new RegExp("(.*)(" + LDGGXBST + ".*" + DSGGXBST + ")(.*)");
+                var shengyu_1 = "$2";
+                var VNWM_4 = [];
+
+                for (suoyin1 in VNWM_2) {
+                    var RJSE_4 = VNWM_2[suoyin1].replace(regex_1, shengyu_1);
+                    if (VNWM_4.indexOf(RJSE_4) == -1) {
+                        VNWM_4.push(RJSE_4);
+                        VNWM_3.push(VNWM_2[suoyin1]);
+                    }
+                }
+
+            } else {
+                alert("VDZV DK MCVN UXUX PCOX.")
+                throw "VDZV DK MCVN UXUX PCOX."
+            }
+            RJSE1 = VNWM_3.join("\n");
+            return RJSE1;
+        }//this.quChongfuHang
+        var CSRF_RSPJ_VNWM = [
+            {
+                ZKRS: "调用删除重复行函数",
+                RSPJ_WU: "JYQH",
+                RSPJ: JYQH,
+                VKEY_CSRF: "获取目标内容并将其传入删除重复行函数并将返回值输出到输出内容显示框",
+                CSRF_MSQU: "获取目标内容并将其传入删除重复行函数并将返回值输出到输出内容显示框",
+                CSRF_MCVN_VNWM: [],
+                EOWL_UXUX: "void"
+            },
+            {
+                ZKRS: "删除重复行",
+                RSPJ_WU: "HD_LZJK",
+                RSPJ: HD_LZJK,
+                VKEY_CSRF: "删除重复行,保留唯一的行内容",
+                CSRF_MSQU: "删除重复行,保留唯一的行内容",
+                CSRF_MCVN_VNWM: [{ WUZT: "目标文本", CSRF: "将要进行删除重复行的文本内容" }],
+                EOWL_UXUX: "string"
+            }
+        ]
+    </script>
+    <center>
+        <div>
+            <h3>根据标识符之间的内容来判断重复</h3>
+        </div>
+        <hr>
+        <div>
+            目标内容<br>
+            <textarea onfocus="select()" id="VDZV_3" rows="10" cols="100"></textarea>
+        </div>
+        <div>
+            头标识(正则表达式)<br>
+            <textarea onfocus="select()" id="VDZV_4" rows="2" cols="100"></textarea>
+        </div>
+        <div>
+            尾标识(正则表达式)<br>
+            <textarea onfocus="select()" id="VDZV_5" rows="2" cols="100"></textarea>
+        </div>
+        <div>
+            <button onclick="JYQH2()">执行</button>
+        </div>
+        <div>
+            <b>输出内容</textarea><br>
+                <textarea onfocus="select()" id="VDZV_6" rows="8" cols="100"></textarea>
+        </div>
+    </center>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<title>单体数值统计</title>
+<h2>单体数值统计</h2>
+<form name="home" action="/" method="get">
+    <button>go home</button>
+</form>
+
+<body>
+    <script>
+        var daxie = "QWERTYUIOPASDFGHJKLZXCVBNM"
+        var xiaoxie = "qwertyuiopasdfghjklzxcvbnm";
+
+        var AFOA = {};
+        AFOA.B_LD_H = function (RJSE_3) {//B_LD_H
+            RJSE_3 = RJSE_3.replace(/\s/g, "");
+            var RJSE_2 = "";
+            var VNWM_1 = new Array();
+            var VN_1 = (4 - RJSE_3.length % 4) & 3;
+            while (VN_1--) {
+                RJSE_3 = "0" + RJSE_3;
+            }
+            for (var EQWY_1 = 0; EQWY_1 < RJSE_3.length; EQWY_1 += 4) {
+                var RJSE_4 = RJSE_3.slice(EQWY_1, EQWY_1 + 4);
+                VNWM_1.push(RJSE_4);
+            }
+            for (var EQWY_1 = 0; EQWY_1 < VNWM_1.length; EQWY_1++) {
+                RJSE_2 += LJEY_2(VNWM_1[EQWY_1]);
+            }
+            if (RJSE_2 == "") {
+                RJSE_2 = "0000";
+            }
+            return RJSE_2;
+            function LJEY_2(ZTFR) {
+                switch (ZTFR) {
+                    case "0000": return ("0");
+
+                    case "0001": return ("1");
+
+                    case "0010": return ("2");
+
+                    case "0011": return ("3");
+
+                    case "0100": return ("4");
+
+                    case "0101": return ("5");
+
+                    case "0110": return ("6");
+
+                    case "0111": return ("7");
+
+                    case "1000": return ("8");
+
+                    case "1001": return ("9");
+
+                    case "1010": return ("a");
+
+                    case "1011": return ("b");
+
+                    case "1100": return ("c");
+
+                    case "1101": return ("d");
+
+                    case "1110": return ("e");
+
+                    case "1111": return ("f");
+
+                }
+                return false;
+            }
+        }//B_LD_H
+        AFOA.AR_LD_AG = function (neirong1) {//DaZhuanXiaoHanshu
+            neirong1 = String(neirong1);
+            var RJSE_1 = "";
+            for (var suoyin1 = 0; suoyin1 < neirong1.length; suoyin1++) {//xunhuanChazhao
+                var suoyin2 = daxie.indexOf(neirong1[suoyin1]);
+                if (suoyin2 != -1) {//zhaoDaoLe
+                    RJSE_1 = RJSE_1 + xiaoxie[suoyin2];
+                }//zhaoDaoLe
+                else {//meiZhaodao
+                    RJSE_1 = RJSE_1 + neirong1[suoyin1];
+                }//meiZhaodao
+            }//xunhuanChazhao
+            return RJSE_1;
+        }//DaZhuanXiaoHanshu
+
+        AFOA.H_LD_B = function (RJSE_16) {
+            RJSE_16 = RJSE_16.replace(/\s/g, "");
+            var RJSE_2 = "";
+            RJSE_16 = AFOA.AR_LD_AG(RJSE_16);
+            for (var EQWY_2 = 0; EQWY_2 < RJSE_16.length; EQWY_2++) {
+                RJSE_2 += LJEY(RJSE_16[EQWY_2]);
+            }
+            if (RJSE_2 == "") {
+                RJSE_2 = "0000";
+            }
+            return RJSE_2;
+            function LJEY(ZTFR) {
+                switch (ZTFR) {
+                    case "0": return ("0000");
+
+                    case "1": return ("0001");
+
+                    case "2": return ("0010");
+
+                    case "3": return ("0011");
+
+                    case "4": return ("0100");
+
+                    case "5": return ("0101");
+
+                    case "6": return ("0110");
+
+                    case "7": return ("0111");
+
+                    case "8": return ("1000");
+
+                    case "9": return ("1001");
+
+                    case "a": return ("1010");
+
+                    case "b": return ("1011");
+
+                    case "c": return ("1100");
+
+                    case "d": return ("1101");
+
+                    case "e": return ("1110");
+
+                    case "f": return ("1111");
+
+                }
+                return false;
+            }
+        }
+
+        AFOA.jiaLing = function (shu1, zhidingWeishu) {//AFOA.
+            //适用于大量重复加零程序中，不需要逐个零添加。
+            var RJSE1 = "000000000000000000000000";
+            var RJSE2 = String(shu1);
+            var cha1 = zhidingWeishu - RJSE2.length;
+            if (cha1 > 0) {//为正数
+                RJSE2 = RJSE1.slice(0, cha1) + RJSE2;
+            }//为正数
+            return RJSE2;
+        }//AFOA.jiaLing
+
+        function JYQH() {
+            try {
+                var ele_1 = document.getElementById("VDZV_1");
+                var ele_2 = document.getElementById("VDZV_2");
+                var ele_3 = document.getElementById("VDZV_3");
+                var ele_4 = document.getElementById("VDZV_4");
+                var ele_5 = document.getElementById("VDZV_5");
+                var VNWY_1 = ele_1.value;
+                var reg1 = /\*\{08 (\w\w ){4}/g;
+                if (reg1.test(VNWY_1))
+                    VNWY_1 = VNWY_1.replace(reg1, "");
+                rr1 = /\b(\w{2} )+\w{2}/gi;
+                var VNWY_VNWM_1 = VNWY_1.match(rr1);
+                var RJSE_2 = ele_5.value;
+                var ZZZZGGKLVQ = ele_2.value;
+                var RSSC = ele_3.value;
+                var TRIG = ele_4.value;
+                var JTYP_VNWM_1 = REUYGGFIEA(VNWY_VNWM_1, RSSC, TRIG, ZZZZGGKLVQ);
+                var PHMR = 0;
+                var JTYP_VNWM_2 = []
+                JTYP_VNWM_1.forEach((RNSF_1) => {
+                    PHMR += Number(RNSF_1.VNYG_1);
+                    JTYP_VNWM_2.push(RNSF_1.ZTHI_1 + " : " + (RNSF_1.eSGGTRIG + 1));
+                })
+                alert(PHMR + "(" + JTYP_VNWM_1.length + ")");
+                ele_5.value = ele_1.value + '\n=' + PHMR + "(" + JTYP_VNWM_1.length + ")" + "\n" + JTYP_VNWM_2.join('\n');
+
+            } catch (err) {
+                alert(err)
+            }
+        }
+        var YBKC_VNWM = [];
+        function PCGM(YBKC_VNWM) {
+            this.GKQJ = false;
+            this.TRIG = 0;
+            var VN_2 = eval('0x' + YBKC_VNWM[0].ZTHI_1);
+            if (YBKC_VNWM.length > 2) {
+                VN_2 = eval('0x' + YBKC_VNWM[1].ZTHI_1) - VN_2;
+            }
+            var VN_3 = 0;
+            for (var EQWY_1 = 1; EQWY_1 < YBKC_VNWM.length; EQWY_1++) {
+                var VN_1 = eval('0x' + YBKC_VNWM[EQWY_1].ZTHI_1) - eval('0x' + YBKC_VNWM[EQWY_1 - 1].ZTHI_1);
+                if (VN_2 == VN_1) {
+                    VN_3++;
+                } else {
+                    VN_3 = 0;
+                }
+                if (VN_3 > 5) {
+                    this.GKQJ = true;
+                    this.TRIG = 1;
+                    break;
+                }
+            }
+            var VN_2 = eval('0x' + YBKC_VNWM[0].ZTHI_2);
+            if (YBKC_VNWM.length > 2) {
+                VN_2 = eval('0x' + YBKC_VNWM[1].ZTHI_2) - VN_2;
+            }
+            var VN_3 = 0;
+            for (var EQWY_1 = 1; EQWY_1 < YBKC_VNWM.length; EQWY_1++) {
+                var VN_1 = eval('0x' + YBKC_VNWM[EQWY_1].ZTHI_2) - eval('0x' + YBKC_VNWM[EQWY_1 - 1].ZTHI_2);
+                if (VN_2 == VN_1) {
+                    VN_3++;
+                } else {
+                    VN_3 = 0;
+                }
+                if (VN_3 > 5) {
+                    this.GKQJ = true;
+                    this.TRIG = 2;
+                    break;
+                }
+            }
+            this.GMVT = function (VNWM_1) {
+                if (this.TRIG == 0)
+                    return VNWM_1;
+                var VNWM_2 = VNWM_1.map((RNSF_1) => {
+                    return RNSF_1.split(/\s+/).reverse().slice(this.TRIG).reverse().join(' ');
+                })
+                return VNWM_2;
+            }
+        }
+        function REUYGGFIEA(VNWY_VNWM_1, RSSC, TRIG, ZZZZGGKLVQ) {
+            if (ZZZZGGKLVQ == null)
+                throw "REUYGGFIEA : MCVN NRAP";
+            var VNWY_VNWM_2;
+            if (RSSC != 1) {
+
+                var YHLD_VNWM_1 = VNWY_VNWM_1.map(WLBA_1);
+                var IOWR_1 = new PCGM(YBKC_VNWM);
+                if (IOWR_1.GKQJ) {
+                    VNWY_VNWM_2 = IOWR_1.GMVT(YHLD_VNWM_1);
+                } else {
+                    VNWY_VNWM_2 = YHLD_VNWM_1;
+                }
+            } else {
+                VNWY_VNWM_2 = VNWY_VNWM_1;
+            }
+            var VNWY_2 = AFOA.H_LD_B(VNWY_VNWM_2[0]);//依据帧
+            var RJSE_1_B = VNWY_2.slice(TRIG, Number(TRIG) + Number(ZZZZGGKLVQ) / 2);
+            var RJSE_2_B = eval("0x" + AFOA.B_LD_H(RJSE_1_B) + "+1").toString(2);
+            var RJSE_3_B = eval("0x" + AFOA.B_LD_H(RJSE_1_B) + "-1").toString(2);
+            RJSE_2_B = AFOA.jiaLing(RJSE_2_B, RJSE_1_B.length);
+            RJSE_3_B = AFOA.jiaLing(RJSE_3_B, RJSE_1_B.length);
+
+            var regex_EYRH = new RegExp("(?:" + RJSE_1_B + "|" + RJSE_2_B + "|" + RJSE_3_B + ").{" + (ZZZZGGKLVQ - RJSE_1_B.length) + "}", "g");
+            var PHMR_VNWM_1 = []
+            for (var EQWY_3 = 0; EQWY_3 < VNWY_VNWM_2.length; EQWY_3++) {
+                var VNWY_3 = AFOA.H_LD_B(VNWY_VNWM_2[EQWY_3]);
+
+                var CGNE_VNWY_1 = VNWY_3.slice(TRIG).match(regex_EYRH);
+                if (CGNE_VNWY_1 == null) {
+                    continue;
+                }
+
+                CGNE_VNWY_1.forEach((RNSF_1) => {
+                    var ZTHI_1 = AFOA.B_LD_H(RNSF_1);
+                    var VNYG_1 = eval("0x" + ZTHI_1);
+                    PHMR_VNWM_1.push({ VYGGTYUB: RNSF_1, ZTHI_1: ZTHI_1, VNYG_1: VNYG_1, eSGGTRIG: EQWY_3 });
+                });
+            }
+            return PHMR_VNWM_1;
+        }
+        function WLBA_1(RNSF_1) {
+            var VNWM_1 = RNSF_1.split(/\s+/);
+            YBKC_VNWM.push({ ZTHI_1: VNWM_1[0], ZTHI_2: VNWM_1[1] });
+            return VNWM_1.reverse().join(" ");
+        }
+
+    </script>
+    <div>
+        <b>目标内容<br>
+            <textarea onfocus="select()" id="VDZV_1" rows="20" cols="80"></textarea>
+    </div>
+    <div>
+        <b>单个单体范围(写不小于8的数字)<br>
+            <input onfocus="select()" id="VDZV_2" rows="1" cols="50"></input>
+    </div>
+    <div>
+        <b>解读方向(正序还是逆序, 正序为1, 逆序为0)<br>
+            <input onfocus="select()" id="VDZV_3" rows="1" cols="50"></input>
+    </div>
+    <div>
+        <b>位置(0,4,8,16, 如果逆序则从后面开始算起)<br>
+            <input onfocus="select()" id="VDZV_4" rows="1" cols="50"></input>
+    </div>
+    <div>
+        <button onclick="JYQH()">执行</button>
+    </div>
+    <div>
+        <b>输出内容<br>
+            <textarea onfocus="select()" id="VDZV_5" rows="30" cols="80"></textarea>
+    </div>
+</body>

@@ -1,0 +1,52 @@
+function VKVY_LD_TYUB_VN(RJSE1){//VKVY_LD_TYUB_VN
+	switch(RJSE1){//
+		case "P0": 
+		return 0;
+		case "P1": 
+		return 1;
+		case "P2": 
+		return 2;
+		case "P3": 
+		return 3;
+		case "C0": 
+		return 4;
+		case "C1": 
+		return 5;
+		case "C2": 
+		return 6;
+		case "C3": 
+		case "c1": 
+		return 5;
+		case "c2": 
+		return 6;
+		case "c3": 
+		return 7;
+		case "B0": 
+		return 8;
+		case "B1": 
+		return 9;
+		case "B2": 
+		return "A";
+		case "B3": 
+		return "B";
+		case "U0": 
+		return "C";
+		case "U1": 
+		return "D";
+		case "U2": 
+		return "E";
+		case "U3": 
+		return "F";
+		case "u0": 
+		return "C";
+		case "u1": 
+		return "D";
+		case "u2": 
+		return "E";
+		case "u3": 
+		return "F";
+		default : 
+		return false;
+	}//
+}//VKVY_LD_TYUB_VN
+module.exports=VKVY_LD_TYUB_VN;

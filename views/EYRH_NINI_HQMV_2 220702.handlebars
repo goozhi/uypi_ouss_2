@@ -1,0 +1,57 @@
+<title>单体项目模仿之单个id类型</title>
+<h2>单体项目模仿之单个id类型</h2>
+<form name="home" action="/" method="get">
+    <button>go home</button>
+</form>
+
+<body>
+    <script>
+        function JYQH() {
+            var ele_1 = document.getElementById("VDZV_1");
+            var ele_2 = document.getElementById("VDZV_2");
+            var ele_3 = document.getElementById("VDZV_3");
+            var RJSE_1 = ele_1.value;
+            var VN_1 = ele_2.value;
+            var RJSE_2 = RJSE_1;
+
+            for (var EQWY_1 = 0; EQWY_1 < VN_1 - 1; EQWY_1++) {
+                RJSE_2 = HQMV(RJSE_2);
+                RJSE_1 = RJSE_1 + "\n" + RJSE_2;
+            }
+            ele_3.value = RJSE_1;
+            }
+            function HQMV_2(RJSE_1, RJSE_ID_SONO) {
+                var regex_ID = /0x(\w{3,8})/g;
+                var VNWM_ID_2 = RJSE_ID_SONO.match(regex_ID);
+                var VNWM_ID_1 = VNWM_ID_2.map(WLBA_1);
+                var RJSE_2 = RJSE_1;//第一个id项目, 先存下, 因为RJSE_1待会就要变了.
+
+                for (var EQWY_1 = 1; EQWY_1 < VNWM_ID_1.length; EQWY_1++) {
+                    var RJSE_ID_1 = FDMJ(VNWM_ID_1[EQWY_1 - 1], 2, ' ');
+                    var RJSE_ID_2 = FDMJ(VNWM_ID_1[EQWY_1], 2, ' ');
+                    var regex_1 = new RegExp("(\\{.{6,30}[0 ]*)(" + RJSE_ID_1 + ")", "gi");
+                    var shengyu_1 = "$1" + RJSE_ID_2;
+                    RJSE_2 = RJSE_2.replace(regex_1, shengyu_1);
+                    RJSE_1 = RJSE_1 + "\n" + RJSE_2;
+                }
+                return RJSE_1;
+            }
+    </script>
+    <div style="float: left;">
+        <b>目标内容<br>
+            <textarea onfocus="select()" id="VDZV_1" rows="20" cols="50"></textarea>
+    </div>
+    <div style="float: left;">
+        <b>总帧数<br>
+            <textarea onfocus="select()" id="VDZV_2" rows="2" cols="10"></textarea>
+    </div>
+    <br>
+    <div style="float: left;">
+        <button onclick="JYQH()">执行</button>
+    </div>
+    <hr style="clear: both;">
+    <div style="clear: both;">
+        <b>输出内容<br>
+            <textarea onfocus="select()" id="VDZV_3" rows="30" cols="50"></textarea>
+    </div>
+</body>

@@ -1,0 +1,5 @@
+var ZSGGTRGGYJGGEYRH =require('./ZSGGTRGGYJGGEYRH');
+function WLYC_ZSGGTRGGYJGGEYRH(req,res){
+    res.render('ZSGGTRGGYJGGEYRH', {JTYP_1: ZSGGTRGGYJGGEYRH(req.body.VDZV_1)});
+}
+module.exports=WLYC_ZSGGTRGGYJGGEYRH;

@@ -1,0 +1,65 @@
+<title>单体数值统计_常规</title>
+<h2>单体数值统计_常规</h2>
+<form name="home" action="/" method="get">
+    <button>go home</button>
+</form>
+
+<body>
+    <script>
+        function JYQH() {
+            try {
+                var ele_1 = document.getElementById("VDZV_1");
+                var ele_3 = document.getElementById("VDZV_3");
+                var ele_4 = document.getElementById("VDZV_4");
+                var ele_5 = document.getElementById("VDZV_5");
+                var VNWY_1 = ele_1.value;
+                var RJSE_2 = EYRHGGREUY_2(ele_1.value, ele_4.value, ele_3.value);
+            } catch (err) {
+                alert(err)
+            }
+            alert(RJSE_2);
+            ele_5.value = ele_1.value + "\n=" + RJSE_2;
+        }
+        var YBKC_VNWM = [];
+        function EYRHGGREUY_2(RJSE_KP, RJSE_ZTHI_1, RSSC_1) {
+            RJSE_2 = RJSE_KP;
+            var r1;
+            var r2 = new RegExp("(" + RJSE_ZTHI_1 + ") (\\w{2})", "gi");
+            var s1;
+            if (RSSC_1!=1) {
+                r1 = new RegExp("(\\w{2})( )(" + RJSE_ZTHI_1 + ")", "gi");
+                s1 = "$3$2$1";
+                RJSE_2 = RJSE_2.replace(r1, s1);
+            }
+            else {
+                s1 = "$1$2";
+            }
+            var VNWM_1 = RJSE_2.match(r2);
+            tt = 0
+            for (i in VNWM_1) {
+                jj = "0x" + VNWM_1[i].replace(" ", "");
+                tt += eval(jj);
+            }
+            return tt + "(" + VNWM_1.length + ")";
+        }
+    </script>
+    <div>
+        <b>目标内容<br>
+            <textarea onfocus="select()" id="VDZV_1" rows="20" cols="80"></textarea>
+    </div>
+    <div>
+        <b>解读方向(正序还是逆序, 正序为1, 逆序为0)<br>
+            <input onfocus="select()" id="VDZV_3" rows="1" cols="50"></input>
+    </div>
+    <div>
+        <b>请输入高级字节的固定数值，如果存在多个值，请输入如(?:80|7f)格式的正则表达式<br>
+            <input onfocus="select()" id="VDZV_4" rows="1" cols="50"></input>
+    </div>
+    <div>
+        <button onclick="JYQH()">执行</button>
+    </div>
+    <div>
+        <b>输出内容<br>
+            <textarea onfocus="select()" id="VDZV_5" rows="30" cols="80"></textarea>
+    </div>
+</body>
