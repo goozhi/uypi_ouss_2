@@ -47,6 +47,7 @@ function NINI_HQTB(RJSE_KP) {
             // var IOWR_2 = RSCS_16_NINI(NINI_IOWR_1);
             // return IOWR_2;
             case '3c':
+                return RNSF_1;
                 var NINI_3C_cf_VNWM_1 = VNWM_2.slice(5, VNWM_2.length).filter(RNSF_1 => {
                     if (/:\s*d\d+/i.test(RNSF_1)) {
                         return RNSF_1;
