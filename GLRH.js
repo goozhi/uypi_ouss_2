@@ -1,3 +1,5 @@
-var VKVY_LD_TYUB_VN_ZNZK_NQUD=require('./VKVY_LD_TYUB_VN_ZNZK_NQUD');
-var RJSE1="JJJJ\nP1234\n00000"
-throw VKVY_LD_TYUB_VN_ZNZK_NQUD(RJSE1)
+var RJQT_GRBJ=require('./RJQT_GRBJ')
+YXNA_1="./views"
+YXNA_2="./ZCZC_1.JAVA"
+VKVY_1="utf8"
+throw RJQT_GRBJ(YXNA_1,YXNA_2,VKVY_1,["handlebars"]);
