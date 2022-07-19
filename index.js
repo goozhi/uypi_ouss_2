@@ -11,6 +11,10 @@ var WLYC_SIIHGGUXGGRJSEGGBRTZGGFS = require('./WLYC_SIIHGGUXGGRJSEGGBRTZGGFS');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD');
 var WLYC_sysData_ZJZJ = require('./WLYC_sysData_ZJZJ');
+var WLYC_BRTZ_FS_3f=require('./WLYC_BRTZ_FS_3f');
+var WLYC_BRTZ_FS_3f_Beiqi_ec180=require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
+var WLYC_BRTZ_FS_Beiqi_ec180=require('./WLYC_BRTZ_FS_Beiqi_ec180');
+
 var app = express();
 var config = require("./config");
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
@@ -92,8 +96,26 @@ app.get('/newsletter', function (req, res) {
 app.get('/sysData_ZJZJ', function (req, res) {
     res.render('sysData_ZJZJ');
 });
+app.get('/BRTZ_FS_3f', function (req, res) {
+    res.render('BRTZ_FS_3f');
+});
+app.get('/BRTZ_FS_3f_Beiqi_ec180', function (req, res) {
+    res.render('BRTZ_FS_3f_Beiqi_ec180');
+});
+app.get('/BRTZ_FS_Beiqi_ec180', function (req, res) {
+    res.render('BRTZ_FS_Beiqi_ec180');
+});
 app.post('/sysData_ZJZJ', function (req, res) {
     WLYC_sysData_ZJZJ(req, res);
+});
+app.post('/BRTZ_FS_3f', function (req, res) {
+    WLYC_BRTZ_FS_3f(req, res);
+});
+app.post('/BRTZ_FS_3f_Beiqi_ec180', function (req, res) {
+    WLYC_BRTZ_FS_3f_Beiqi_ec180(req, res);
+});
+app.post('/BRTZ_FS_Beiqi_ec180', function (req, res) {
+    WLYC_BRTZ_FS_Beiqi_ec180(req, res);
 });
 app.post('/ARAGGGVDGGLDRG', function (req, res) {
     res.render('ARAGGGVDGGLDRG', { JTYP_1: req.body.VDZV_1.toUpperCase(), JTYP_2: req.body.VDZV_1.toLowerCase() });

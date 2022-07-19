@@ -1,5 +1,2 @@
-var RJQT_GRBJ=require('./RJQT_GRBJ')
-YXNA_1="./views"
-YXNA_2="./ZCZC_1.JAVA"
-VKVY_1="utf8"
-throw RJQT_GRBJ(YXNA_1,YXNA_2,VKVY_1,["handlebars"]);
+var PRVD_VM_GMVT=require('./PRVD_VM_GMVT');
+throw PRVD_VM_GMVT(5,24,'MOTOROLA');

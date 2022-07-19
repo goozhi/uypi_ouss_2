@@ -19,7 +19,7 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 		}
 	}
 	if(LD_XBST==null){
-		VNWM_MSOX.push("如果这是完整的sysData文件, 则缺少头标识@SYS");
+		VNWM_MSOX.push("NRAP XBST 如果这是完整的sysData文件, 则缺少头标识@SYS");
 	}	
 	var RJSE_ACUN = RJSE_KP.replace(regex_1, "").replace(regex_2,"");
 	if(RJSE_ACUN!=""){
