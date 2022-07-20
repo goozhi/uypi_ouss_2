@@ -29,10 +29,12 @@ function RSCS_UYPJ_7f_1(NINI_MCVN_IOWR_1, VNWY_VNWM_1) {
     var sheng_6_2 = "$1"+VN_1+"$3";
     UYTZ = UYTZ.replace(reg_6, sheng_6_2);
     var sheng_2 = '0x$1';
+    if(/嚏-\w+嚏/.test(UYTZ)){
+        throw "出现负数的7f不可写成d4d5的形式否则算法错误 : "+NINIGGUYPJ;
+    }
     UYTZ = UYTZ.replace(reg_5, sheng_2).replace(/嚏/g, '');
-    
-
-    return eval(UYTZ);
+    console.log("LL"+UYTZ);
+    return eval(UYTZ);;
 
 }
 module.exports = RSCS_UYPJ_7f_1;

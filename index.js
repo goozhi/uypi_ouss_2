@@ -14,7 +14,7 @@ var WLYC_sysData_ZJZJ = require('./WLYC_sysData_ZJZJ');
 var WLYC_BRTZ_FS_3f=require('./WLYC_BRTZ_FS_3f');
 var WLYC_BRTZ_FS_3f_Beiqi_ec180=require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
 var WLYC_BRTZ_FS_Beiqi_ec180=require('./WLYC_BRTZ_FS_Beiqi_ec180');
-
+var WLYC_TYUB_LDRG=require('./WLYC_TYUB_LDRG');
 var app = express();
 var config = require("./config");
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
@@ -35,6 +35,9 @@ app.get('/HD_LZJK', function (req, res) {
 });
 app.get('/HD_LZJK_FYWYGGXBST', function (req, res) {
     res.render('HD_LZJK_FYWYGGXBST');
+});
+app.get('/TYUB_LDRG', function (req, res) {
+    res.render('TYUB_LDRG');
 });
 app.get('/DIZCGGOUSS', function (req, res) {
     res.render('DIZCGGOUSS');
@@ -107,6 +110,9 @@ app.get('/BRTZ_FS_Beiqi_ec180', function (req, res) {
 });
 app.post('/sysData_ZJZJ', function (req, res) {
     WLYC_sysData_ZJZJ(req, res);
+});
+app.post('/TYUB_LDRG', function (req, res) {
+    WLYC_TYUB_LDRG(req, res);
 });
 app.post('/BRTZ_FS_3f', function (req, res) {
     WLYC_BRTZ_FS_3f(req, res);
