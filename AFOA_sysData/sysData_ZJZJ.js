@@ -5,6 +5,9 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 	if(RJSE_KP==null){
 		throw "MCVN NRAP";
 	}
+	RJSE_KP=RJSE_KP.split(/\n/).map((RNSF_1,EQWY_1)=>{
+		return RNSF_1+"//line "+(EQWY_1+1);
+	}).join("\n");
 	var regex_1=/(?:\n|^)_S\d[\s\S]*?(?=\n_S\d|$)/g;
 	var regex_2=/@SYS/i;
 	var VNWM_sys_1 = RJSE_KP.match(regex_1);

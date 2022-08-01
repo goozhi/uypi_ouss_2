@@ -2,6 +2,7 @@ var AFOA = require("./AFOA_UJ");
 var fs1 = require('fs')
 var YJGGEYRH_3 = require("./YJGGEYRH_3");
 var HD_LZJK = require("./HD_LZJK");
+var encoding=require('encoding'); 
 ////
 function ZSGGTRGGYJGGEYRH(YXNA_1) {
 	var NVCM_0 = "";
@@ -62,7 +63,9 @@ function ZSGGTRGGYJGGEYRH(YXNA_1) {
 	NVCM_0 += NVCM_RJSE_2;
 	var YXNA_2;
 	var NVCM_1 = YXNA_1 + " :\n\n间隔相等的数据 : \n" + JTYP_VNWM_4.join('\n')+"\n\n间隔不等的数据 : \n"+JTYP_VNWM_5.join('\n')+"\n\n全部数据 : \n"+NVCM_0;
-	fs1.writeFileSync(YXNA_2 = YXNA_1.replace(/\.[^\.]+(?=$)/, "_分析报告.java"), NVCM_1);
+	var NVCM_2 = encoding.convert(NVCM_1,"GB2312","UTF8");
+		
+	fs1.writeFileSync(YXNA_2 = YXNA_1.replace(/\.[^\.]+(?=$)/, "_分析报告.java"), NVCM_2);
 	return NVCM_1;
 }
 

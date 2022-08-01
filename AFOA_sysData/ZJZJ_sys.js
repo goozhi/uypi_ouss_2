@@ -11,15 +11,15 @@ function ZJZJ_sys(RJSE_KP) {
 	var RJSE_IMFB = RJSE_KP.match(regex_IMFB);
 	var RJSE_LJEY_NINI = RJSE_KP.match(regex_LJEY_NINI);
 	if (RJSE_IMFB == null) {
-		RJSE_MSOX += "\n RA ZJZO AB IMFB FS BQEO"
+		RJSE_MSOX += "\n<RA ZJZO AB IMFB FS BQEO>"+RJSE_KP.replace(/([\S\s]{599})[\S\s]+/,"$1...")+"\n</RA ZJZO AB IMFB FS BQEO>";
 	} else {
 		RJSE_MSOX += ZJZJ_IMFB(RJSE_IMFB[0]);
 	}
 	if (RJSE_LJEY_NINI == null) {
-		RJSE_MSOX += "\n RA ZJZO AB LJEY NINI"
+		RJSE_MSOX += "\n<RA ZJZO AB LJEY NINI>\n"+RJSE_KP.replace(/([\S\s]{599})[\S\s]+/,"$1...")+"\n</RA ZJZO AB LJEY NINI>";
 	} else {
 		RJSE_MSOX += ZJZJ_LJEY_NINI(RJSE_LJEY_NINI);
 	}
-	return RJSE_MSOX;
+	return RJSE_MSOX.replace(/\n\/\/line \d+/g,"\n");
 }
 module.exports = ZJZJ_sys;
