@@ -2,11 +2,14 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
     var ZJZJ_TSJQ_InputBox = require('./ZJZJ_TSJQ_InputBox')
     var ZJZJ_TSJQ_Act = require('./ZJZJ_TSJQ_Act')
     var ZJZJ_TSJQ_Button = require('./ZJZJ_TSJQ_Button')
+    var ZJZJ_TSJQ_Init = require('./ZJZJ_TSJQ_Init')
     var ZJZJ_TSJQ_EXIT = require('./ZJZJ_TSJQ_EXIT')
     var ZJZJ_TSJQ_Input = require('./ZJZJ_TSJQ_Input')
     var ZJZJ_TSJQ_Str = require('./ZJZJ_TSJQ_Str')
     var ZJZJ_TSJQ_Lab = require('./ZJZJ_TSJQ_Lab')
+    var ZJZJ_TSJQ_Calc = require('./ZJZJ_TSJQ_Calc')
     var ZJZJ_TSJQ_PSW27 = require('./ZJZJ_TSJQ_PSW27')
+    var ZJZJ_TSJQ_Fire = require('./ZJZJ_TSJQ_Fire')
     var ZJZJ_TSJQ_Delayms = require('./ZJZJ_TSJQ_Delayms')
     var ZJZJ_TSJQ_GotoLab = require('./ZJZJ_TSJQ_GotoLab')
     var ZJZJ_TSJQ_Send = require('./ZJZJ_TSJQ_Send')
@@ -19,6 +22,7 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
     var ZJZJ_TSJQ_ClearDtc = require('./ZJZJ_TSJQ_ClearDtc')
     var ZJZJ_TSJQ_F = require('./ZJZJ_TSJQ_F')
     var ZJZJ_TSJQ_ContinueFor_BreakFor = require('./ZJZJ_TSJQ_ContinueFor_BreakFor')
+    var ZJZJ_LJEY_NINI_EYNH_LJEY = require('./ZJZJ_LJEY_NINI_EYNH_LJEY');
 
     if (ZJZJ_RJSE_VNWM == null) {
         throw new Error("MCVN NRAP");
@@ -66,10 +70,24 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_Send(element);
             });
+            return VNWM_YHLD.join("");
+
+        case "Fire":
+            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
+                return ZJZJ_TSJQ_Fire(element);
+            });
+            return VNWM_YHLD.join("");
+
+        case "Calc":
+            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
+                return ZJZJ_TSJQ_Calc(element);
+            });
+            return VNWM_YHLD.join("");
         case "Lab":
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_Lab(element);
             });
+            return VNWM_YHLD.join("");
         case "GotoLab":
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_GotoLab(element);
@@ -110,6 +128,11 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
                 return ZJZJ_TSJQ_Button(element);
             });
             return VNWM_YHLD.join("");
+        case "Init":
+            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
+                return ZJZJ_TSJQ_Init(element);
+            });
+            return VNWM_YHLD.join("");
         case "EXIT":
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_EXIT(element);
@@ -118,6 +141,11 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
         case "Delayms":
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_Delayms(element);
+            });
+            return VNWM_YHLD.join("");
+        case "LJEY":
+            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
+                return ZJZJ_LJEY_NINI_EYNH_LJEY(element);
             });
             return VNWM_YHLD.join("");
         case "ContinueFor_BreakFor":

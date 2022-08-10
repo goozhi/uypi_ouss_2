@@ -1,3 +1,5 @@
+const ZJZJ_ES = require('./ZJZJ_ES.js');
+
 function ZJZJ_cf_NINI_MCVN(MCVN_cf) {
     var reg_YXNA = /(?:\\|\/)[^\\\/]*$/;
     var ZJZJ_UYTZ = require('./ZJZJ_UYTZ.js');
@@ -13,6 +15,10 @@ function ZJZJ_cf_NINI_MCVN(MCVN_cf) {
     var NINI_AGVN_NHVN_MCVN = MCVN_cf.NINI_AGVN_NHVN_MCVN;
     var NINI_EYTR = MCVN_cf.NINI_EYTR;
     RJSE_MSOX+=ZJZJ_UYTZ(NINI_UYTZ);
+    RJSE_MSOX+=ZJZJ_ES(NINI_ES);
+    if(!/^(?:\.|\d+\.)\d+$/.test(NINI_AGVN_NHVN_MCVN)){
+        RJSE_MSOX+="[AGVN NHVN MCVN BRTZ MSOX] "+NINI_AGVN_NHVN_MCVN+" <--";
+    }
     if (RJSE_MSOX != "")
         RJSE_MSOX = "\n" + RJSE_MSOX;
     return RJSE_MSOX;

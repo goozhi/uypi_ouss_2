@@ -36,7 +36,7 @@ function ZJZJ_TSJQ_For_EYNH(RJSE_For_TSJQ_KP) {
         ///////
         RJSE_1 = RJSE_1.replace(reg_For_MCVN, "");
     }
-    RJSE_MSOX += ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "LJEY");
+    RJSE_MSOX += ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "For");
     if (RJSE_MSOX != "") {
         RJSE_MSOX = "\n" + RJSE_MSOX
     }

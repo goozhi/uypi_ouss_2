@@ -76,7 +76,7 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     VNWM_4 = AFOA.HD_LZJK_VNWM(VNWM_4, '^', '//');
     VNWM_4.sort();
     if (TRIG > VNWM_4.length - 1) {
-        throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法字节地址高于报文中相同帧的最大字节地址:' + VNWM_4[VNWM_4.length - 1];
+        throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法字节地址'+TRIG+'高于报文中相同帧的最大字节地址:' + VNWM_4[VNWM_4.length - 1];
     }
     var EQWY_0;
     try {

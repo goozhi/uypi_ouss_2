@@ -13,6 +13,7 @@ var reg_BX = function () {//reg_BX
 	this.lei_3f = "3f";
 	this.lei_cf = "cf";
 	this.lei_3c = "3c";
+	this.lei_0b = "0b";
 	this.lei_bb = "bb";
 	this.jinzhi_16 = "[0123456789ABCDEFabcdef]";
 	this.jinzhi_16_2_x = "(?:(f(\\[\\d{1,3}\\])+\\d{1,2})|(?:\\d|[a-f]|[A-F]){2})";
@@ -30,11 +31,11 @@ var reg_BX = function () {//reg_BX
 	this.qianzhui = "\\B(?:\\&|\\*)\\\".*?\\\"\\s*,\\s*";
 	this.qianzhui_2 = "\\B(?:\\&|\\*)(?:|del\\(.+:.+\\))\\\".*?\\\",\\s*";
 	this.qianzhui_3 = "^\\s*" + this.qianzhui + this.zhenID;
-	this.ku = "(?:库id|lib|id)=(?:null|\\d+)";
-	this.geshu = "(?:个数|num)=(null|d\\d)";
-	this.kaishi = "(?:开始|start)=d\\d";
-	this.bianma = "(?:编码|code)=\\d";
-	this.jiange = "(间隔|space)=\\d";
+	this.ku = "(?:搴搃d|lib|id)=(?:null|\\d+)";
+	this.geshu = "(?:涓�鏁皘num)=(null|d\\d)";
+	this.kaishi = "(?:寮€濮媩start)=d\\d";
+	this.bianma = "(?:缂栫爜|code)=\\d";
+	this.jiange = "(闂撮殧|space)=\\d";
 
 	this.dizhi = "d\\d{1,3}(?:(?:\\&.+|>>.+|<<.+)|)";
 
@@ -48,7 +49,7 @@ var reg_BX = function () {//reg_BX
 	this.bianjie_3 = "\\B\\s*(\\/\\/.*|)(\\r|)";
 	this.zhuangtai = "[^,;]+\\|[^,;]+";
 	this.jihuoZhi = this.jinzhi_16_2;
-	this.shuzu_houzhui = "(?:|" + "(?:" + fu_2 + "\\'oth:[^']{1,30}\\'|" + fu_2 + "\\'oth:[^']{1,30}\\'" + this.jinzhi_16_4_2_1 + "(?:|循环)))";
+	this.shuzu_houzhui = "(?:|" + "(?:" + fu_2 + "\\'oth:[^']{1,30}\\'|" + fu_2 + "\\'oth:[^']{1,30}\\'" + this.jinzhi_16_4_2_1 + "(?:|寰�鐜�)))";
 	this.yuansu_4_2 = "\\'" + this.jinzhi_16_4_2 + ":[^\\'\n]+\\'";
 	this.yuansu_6 = "\\'" + this.jinzhi_16_6 + ":[^\\'\n]+\\'";
 	this.yuansu_tonglei = "\\'" + this.jinzhi_16_tonglei + ":[^\\'\n]+\\'";
@@ -94,16 +95,17 @@ var reg_BX = function () {//reg_BX
 	this.jieshu = "\\s*(\\/\\/.*|)(\r|)$";
 	this.jieshuYu_1 = this.sanxing + "(\\r|)\\n" + this.sanYuan;
 	this.exit_1 = "exit(?:\\{null\\}|" + this.zhenID_lianfa + ")";
-	this.link = "link(?:" + this.zhenID_lianfa + "|null)" + "\\d+,\\d+ms";
-	this.in_1 = "in" + this.zhenID_lianfa + "(?:PS\\w+\\(\\d+\\)|)";
-	this.in_2 = this.in_1 + ".*faultSend.*(?:PSW\\(\\d+\\)|)";
-	this.in_3 = "(?:" + this.in_1 + "|" + this.in_2 + ")";
+	this.link = "link(?:" + this.zhenID_lianfa + "|\\{null\\})" + "\\d+,\\d+ms";
+	this.in_1 = "in" + this.zhenID_lianfa + "(?:PSW27\\(\\d+\\)|)";
+	this.in_2 = this.in_1 + ".*faultSend.*(?:PSW27\\(\\d+\\)|)";
+	this.in_4 = "in\{(?:NULL|null)\}";
+	this.in_3 = "(?:" + this.in_1 + "|" + this.in_4 + "|" + this.in_2 + ")";
 	this.at = "@[A-Z]*";
 	this.zhenID_2 = "(?:" + this.zhenID + "|" + this.zhenID + "/" + this.zhenID + ")";
 	this.zhenID_2_x = "(?:" + this.zhenID_x + "|" + this.zhenID_x + "/" + this.zhenID_x + ")";
 	this.zhenID_2_f = "\\{(?:" + this.jinzhi_16_2 + "|" + "f\\[\\d+\\]\\[\\d+\\])" + "(?:\\s(?:" + this.jinzhi_16_2 + "|" + "f\\[\\d+\\]\\[\\d+\\]))*\\}";
 	this.zhenID_2_f_or = this.zhenID_2_f + "(?:/" + this.zhenID_2_f + ")*";
-	this.CAN = "CAN,\\d{1,2}(位|)";
+	this.CAN="CAN,\\d{1,2}(位|)";
 	this.boteLv = "\\d{2,4}K";
 	this.boteLv_2 = "\\d{2,6}bps";
 	this.pin = "pin:\\d+\\+\\d{1,2}";
@@ -136,10 +138,10 @@ var reg_BX = function () {//reg_BX
 	this.UYUYGGFR = "(?:[\\+-\\|\\&\\*/\\#\\%]|>>|<<)";
 	this.suanshi_ziyou_2 = this.UYUYGGZTFR + "+";
 	this.Input = "\\$Input\\(10,range=" + this.shu + "-" + this.shu + "(?:\\s*,\\s*again|)(,t\\d+=val(?:" + this.suanshi_ziyou + "|))+\\)" + this.zhenID_t;
-	this.zhuangtai_2 = "(状态|state)=\\s*" + "(?:" + "null|" + this.dizhi + fu_2 + "(?:" + this.shuzu_2 + "|" + this.shuzu_5 + "|" + this.shuzu + ")" + "|[\\u4E00-\\u9FA5]+)";
+	this.zhuangtai_2 = "(鐘舵€亅state)=\\s*" + "(?:" + "null|" + this.dizhi + fu_2 + "(?:" + this.shuzu_2 + "|" + this.shuzu_5 + "|" + this.shuzu + ")" + "|[\\u4E00-\\u9FA5]+)";
 	this.Button = "\\$(?:B|b)utton\\(" + this.jinzhi_16_4_2 + "\\+-.*\\)";
 	this.Button_ZHQH = "\".*\"(?:\\+|-)" + this.jinzhi_16_4_2_1 + this.zhenID_t;
-	////记得添加到数组
+	////璁板緱娣诲姞鍒版暟缁�
 	this.hang_Button = "^\\s*" + this.Button + this.bianjie_2;
 	this.hang_Button_ZHQH = "^\\s*" + this.Button_ZHQH + this.bianjie_2;
 	this.hang_SetPeriod = "^\\s*" + this.SetPeriod + this.bianjie_2;
@@ -177,11 +179,12 @@ var reg_BX = function () {//reg_BX
 	this.hang_sanyuan = "^\\s*" + this.sanyuan + this.bianjie_1;
 	this.hang_jieshuYu = "^\\s*" + this.sanYuan + this.bianjie_1;
 	this.hang_jiakuang = "^\\s*" + this.jiaKuang + this.bianjie_1;
-	this.hang_in = "^\\s*" + this.in_3 + fu_2;
-	this.hang_link = "^\\s*" + this.link + fu_2;
+	this.hang_in = "^\\s*" + this.in_3 + fu_2+this.bianjie_1;
+	this.hang_link = "^\\s*" + this.link + fu_2+this.bianjie_1;
 	this.hang_qianzhui = "^\\s*" + this.qianzhui + this.bianjie_1;
 	this.hang_0a = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_0a + fu_2 + this.tongleiDizhi + this.bianjie;
 	this.hang_16 = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_16 + fu_2 + "(?:" + this.tongleiDizhi + "|" + this.dizhi_2_1 + ")" + this.bianjie;
+	this.hang_0b = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_0b + fu_2 + "(?:" + this.tongleiDizhi + "|" + this.dizhi_2_1 + ")" + this.bianjie;
 	this.hang_10 = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_10 + fu_2 + this.tongleiDizhi + this.bianjie;
 	this.hang_3c = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_3c + fu_2 + this.lianxuDizhi + fu_2 + this.xiaoshuWeishu + fu_2 + this.danwei_3c + fu_2 + this.shuzu_2 + this.bianjie;
 	this.hang_3c_shiyan1 = "^\\s*" + this.qianzhui + this.zhenID + fu_2 + this.lei_3c + fu_2 + this.lianxuDizhi + fu_2 + this.xiaoshuWeishu + fu_2 + this.danwei_3c + fu_2;
@@ -199,7 +202,7 @@ var reg_BX = function () {//reg_BX
 	/////
 	this.hang_VNWM_Str=[this.hang_3f, this.hang_3f_2, this.hang_3f_5, this.hang_7f, this.hang_21, this.hang_10, this.hang_16, this.hang_cf, this.hang_0a,this.hang_3c, this.hang_bb];
 	this.hang_VNWM_Ecu=[this.hang_3f, this.hang_3f_2, this.hang_3f_5, this.hang_7f, this.hang_21, this.hang_10, this.hang_16, this.hang_cf, this.hang_0a,this.hang_3c, this.hang_bb];
-	this.hang_VNWM_init=[this.diaoyong_Init, this.hang_in, this.hang_CAN, this.hang_K_BUS, this.hang_J_BUS, this.hang_CANCP, this.hang_link, this.hang_exit, this.sanyuan];
+	this.hang_VNWM_init=[this.diaoyong_Init, this.hang_in, this.hang_CAN, this.hang_K_BUS, this.hang_J_BUS, this.hang_CANCP, this.hang_link, this.hang_exit, this.hang_sanyuan];
 	this.regexShuzu1 = [this.hang_s, this.hang_3f, this.hang_3f_2, this.hang_3f_5, this.hang_7f, this.hang_21, this.hang_10, this.hang_16, this.hang_cf, this.hang_0a, this.hang_link, this.hang_in, this.hang_jiakuang, this.hang_zhuti, this.hang_jieshuYu, this.hang_sanxing, this.hang_exit, this.hang_diaoyong, this.hang_jieshi, this.hang_at, this.hang_ECU, this.hang_ECU_null, this.hang_guzhangMa, this.hang_guzhangMa_2, this.hang_zhen, this.hang_zhen_3, this.hang_CAN, this.hang_CANCP, this.hang_Send, this.hang_Send_2, this.hang_Delayms, this.hang_Display, this.hang_F, this.hang_If, this.hang_L, this.hang_InputBox, this.hang_3c, this.hang_bb, this.hang_Input, this.hang_SetPeriod, this.hang_K_BUS, this.hang_J_BUS, this.hang_qianzhui, this.hang_Send_3, this.hang_Button, this.hang_Button_ZHQH, this.hang_lab];
 	///
 

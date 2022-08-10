@@ -1,35 +1,34 @@
-function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO) {
-
+function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
+    var ZJZJ_ES = require('./ZJZJ_ES')
     var RJSE_MSOX = "";
-    const ZJZJ_ACUN = require('./ZJZJ_ACUN');
-    var reg_BX=require('./reg_BX');
-    var reg_BX_VXUX=new reg_BX();
-    var RJSE_1 = ZJZJ_BQEO;
+    var reg_BX = require('./reg_BX');
+    var reg_BX_VXUX = new reg_BX();
+    var RJSE_1 = ZJZJ_BQEO_KP.replace(/,'.*'(?:\w+|)(?:;\/\/.*|)/,";");
     var reg_ReadDtc_MCVN = /\$ReadDtc\((.*)\)(?:;|)(?:\n|)/i;
     var ReadDtc_MCVN = RJSE_1.match(reg_ReadDtc_MCVN);
     if (ReadDtc_MCVN == null) {
-        RJSE_MSOX += "\n[ReadDtc LGPH MSOX]" + ZJZJ_BQEO.replace(/\n[\S\s]*/, '');
+        RJSE_MSOX += "\n[ReadDtc LGPH MSOX]" + ZJZJ_BQEO_KP.replace(/\n[\S\s]*/, '');
     } else {
         RJSE_1 = RJSE_1.replace(reg_ReadDtc_MCVN, "");
     };
     var reg_ES = /\{[\s\S]+\}/;
-    var ES = RJSE_1.match(reg_ES);
-    if (ES == null) {
+    var IOWR_ES = RJSE_1.match(reg_ES);
+    if (IOWR_ES == null) {
         RJSE_MSOX += "[ESIH YJ AC AB]" + RJSE_1;
     } else {
-        if(! new RegExp(reg_BX_VXUX.zhenID_2).test(ES)){
-            RJSE_MSOX += "[ES DK BRTZ ACDI]" + ES;
-        }else{
-            RJSE_1 = RJSE_1.replace(reg_ES, "");
-        }
+        var VNWM_ES = IOWR_ES[0].match(/\{[^\}]+\}/g);
+        VNWM_ES.forEach(RNSF => {
+            RJSE_MSOX += ZJZJ_ES(RNSF);            
+        });
+        RJSE_1 = RJSE_1.replace(reg_ES, "");
     }
-    var reg_MCVN=/(?:.*\n|)\s*([\S\s]+?;)[\S\s]*$/;
-    var RJSE_YHLD=RJSE_1.replace(reg_MCVN,"$1");
-    var VNWM_MCVN = RJSE_YHLD.split(/\s*,\s*/);
-    if (VNWM_MCVN.length != 6) {
-        RJSE_MSOX += "[BWCR VY TSJQ MCVN NHVN ACDI]" + RJSE_1;
+    var reg_MCVN = /[^;\n]*=[^;\n]*=[^;\n]*;/;
+    var IOWR_YHLD = RJSE_1.match(reg_MCVN);
+    if(IOWR_YHLD==null){
+        RJSE_MSOX+="\n<SOPJ YJAB ReadDtc MCVN>\n"+ZJZJ_BQEO_KP+"\n</SOPJ YJAB ReadDtc MCVN>";
         return RJSE_MSOX;
     }
+    var VNWM_MCVN = IOWR_YHLD[0].split(/\s*,\s*/);
     var IOWR_VNWM_MCVN = [];
     for (var i = 0; i < VNWM_MCVN.length; i++) {
         var VNWM_YHLD = VNWM_MCVN[i].split(/\s*=\s*/);
@@ -52,7 +51,7 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO) {
             case "id":
             case "lib":
                 if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO+"<--"
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
                 }
                 break;
             case "num":
@@ -64,13 +63,13 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO) {
             case "code":
             case "编码":
                 if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO+"<--"
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
                 }
                 break;
             case "间隔":
             case "space":
                 if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO+"<--"
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
                 }
                 break;
             default:
@@ -78,7 +77,7 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO) {
         }
     }
     if (RJSE_MSOX != "") {
-        RJSE_MSOX = "\n" + RJSE_MSOX + " : " + ZJZJ_BQEO + "<--";
+        RJSE_MSOX = "\n" + RJSE_MSOX + " : " + ZJZJ_BQEO_KP + "<--";
     }
     return RJSE_MSOX;
 }

@@ -1,4 +1,3 @@
-const ZJZJ_ACUN = require('./ZJZJ_ACUN');
 
 function ZJZJ_TSJQ_Str(ZJZJ_BQEO) {
     ZJZJ_BQEO=ZJZJ_BQEO.replace(/\r/g,"").replace(/\/\/.*(?=\/\/line \d+)/g,"");
@@ -13,7 +12,7 @@ function ZJZJ_TSJQ_Str(ZJZJ_BQEO) {
         RJSE_MSOX += ZJZJ_cf_NINI(RJSE_cf_NINI);
         RJSE_1 = RJSE_1.replace(reg_cf_NINI, "");
     }
-    var reg_Str_MCVN = /\$Str\((.*)\)(?:;|)/;
+    var reg_Str_MCVN = /\$Str\((.*)\)(?:;|)/i;
     var reg_JTCO_EB = /\*\*\*/;
     var Str_MCVN = RJSE_1.match(reg_Str_MCVN);
     if (Str_MCVN == null) {
@@ -32,16 +31,16 @@ function ZJZJ_TSJQ_Str(ZJZJ_BQEO) {
     var reg_BX = require('./reg_BX');
     var reg_BX_VXUX = new reg_BX();
     var VNWM_YHLD = reg_BX_VXUX.hang_VNWM_Str;
-    var reg_NINI = /\*".{0,9999}/g;
+    var reg_NINI = /\*.{0,9999}/g;
     var NINI_VNWM = RJSE_1.match(reg_NINI);
     RJSE_1 = RJSE_1.replace(reg_NINI, '');
     if (NINI_VNWM != null) {
         RJSE_MSOX += ZJZJ_LIQH_ZV_reg_VNWM(NINI_VNWM.join("\n"), VNWM_YHLD);
     }
-    if (RJSE_1 != "") {
-        RJSE_1 = ZJZJ_ACUN(RJSE_1);
+    if (RJSE_1!="") {
+        RJSE_1 = RJSE_1.replace(/(?:\n|^)\/\/.*/g,"").replace(/^\s*$/,"");
         if (RJSE_1 != "") {
-            RJSE_MSOX += "\n<ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>" + RJSE_1 + "\n</ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>";
+            RJSE_MSOX += "\n<ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>\n" + RJSE_1 + "\n</ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>";
         }
     }
     return RJSE_MSOX;

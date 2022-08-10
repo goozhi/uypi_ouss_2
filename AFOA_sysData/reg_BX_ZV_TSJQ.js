@@ -6,47 +6,55 @@ var reg_BX_ZV_TSJQ = function () {
     this.Str = /\$Str\(.{0,99}\)[\s\S]{0,299999}?\*\*\*/ig;
     this.Ecu = /\$Ecu\(.{0,99}\)[\s\S]{0,299999}?\*\*\*/ig;
     this.SetPeriod = /\$SetPeriod\(.{0,999}\)/ig;
-    this.ClearDtc = /\$ClearDtc\(.{0,999}\)[\S\s]{0,99}?\{[^\}]{0,999}?\}(?:;|)/ig;
-    this.Send = /\$Send\(.*/ig;
-    this.PSW27 = /\$PSW27\(.*/ig;
-    this.Input = /\$Input\(.*/ig;
-    this.EXIT = /\$EXIT\(.*/ig;
-    this.Lab = /\$Lab\(.*/ig;
-    this.GotoLab = /\$GotoLab\(.*/ig;
-    this.Delayms = /\$Delayms\(.*/ig;
-    this.F = /\$F\(.*/ig;
-    this.ContinueFor_BreakFor = /\$(?:ContinueFor|BreakFor)\(.*/ig;
+    this.Send = /\$Send\b[^\$\n]*/ig;
+    this.PSW27 = /\$PSW27\b.*/ig;
+    this.Input = /\$Input\b.*/ig;
+    this.EXIT = /\$EXIT\b.*/ig;
+    this.Fire = /\$Fire\b.*/ig;
+    this.Lab = /\$Lab\b.*/ig;
+    this.GotoLab = /\$GotoLab\b.*/ig;
+    this.Delayms = /\$Delayms\b.*/ig;
+    this.F = /\$F\b.*/ig;
+    this.Calc = /\$Calc\b.*/ig;
+    this.ContinueFor_BreakFor = /\$(?:ContinueFor|BreakFor)\b.*/ig;
     
+    this.ClearDtc = /\$ClearDtc\b(?:(?!\$)[\S\s])*?(?=\$|$)/ig;
     this.ReadDtc = /\$ReadDtc\(\)(?:(?:.*\n|).*\n.*\}[^=]{0,20}=[^,]{0,999}[^=]{0,20}=[^,]{0,999}.*|.*)/ig;
     this.InputBox = /\$InputBox\(.*\n(?:"[^\"]+".*\n)+/ig;
-    this.Button = /\$Button\(.*(?:(?:\n&.*)+|)\n(?:"[^\"]+".*\n)+/ig;
-    this.Display = /\$Display(?:(?!\$)[\S\s])*?\}.*/ig;
-    this.Act = /\$Act\([\S\s]*?\n\$\$\$.*\n\*\*\*/ig;
+    this.Button = /\$Button\b(?:(?!\$)[\S\s]){0,9999}\n\s*".*".*/ig;
+    this.Display = /\$Display\b(?:(?!\$)[\S\s])*?\"\s*(?:\/\/line \d+\s*|)\}.*/ig;
+    this.Init = /\$Init\b(?:(?!\$)[\S\s])*?(?=\$|$)/ig;
+    this.Act = /\$Act\((?:(?!\$Act)[\S\s]){0,399999}?\n\*\*\*/ig;
 
+    this.LJEY = /(?:(?=\n|^)\+)\d+\[[\S\s]{0,399999}?\$\$\$/g;
 
     this.If = /\$If(?:(?!\$If)[\S\s])*?\$EndIf.*/i;
     this.For = /\$For(?:(?!\$For)[\S\s])*?\$EndFor.*/i;
 
     //以下是正则表达式检测库数组，注意元素顺序，这个影响匹配优先级。
     this.BX = [
-        { reg: this.Display, WUZT: "Display" },
-        { reg: this.SetPeriod, WUZT: "SetPeriod" },
-        { reg: this.Ecu, WUZT: "Ecu" },
-        { reg: this.ReadDtc, WUZT: "ReadDtc" },
-        { reg: this.ClearDtc, WUZT: "ClearDtc" },
+        { reg: this.LJEY, WUZT: "LJEY" },
         { reg: this.Str, WUZT: "Str" },
+        { reg: this.Ecu, WUZT: "Ecu" },
+        { reg: this.Act, WUZT: "Act" },
+        { reg: this.Button, WUZT: "Button" },
+        { reg: this.InputBox, WUZT: "InputBox" },
+        { reg: this.Display, WUZT: "Display" },
+        { reg: this.ReadDtc, WUZT: "ReadDtc" },
+        { reg: this.Init, WUZT: "Init" },
+        { reg: this.SetPeriod, WUZT: "SetPeriod" },
+        { reg: this.ClearDtc, WUZT: "ClearDtc" },
         { reg: this.Lab, WUZT: "Lab" },
         { reg: this.GotoLab, WUZT: "GotoLab" },
         { reg: this.PSW27, WUZT: "PSW27" },
         { reg: this.Input, WUZT: "Input" },
         { reg: this.F, WUZT: "F" },
+        { reg: this.Fire, WUZT: "Fire" },
+        { reg: this.Calc, WUZT: "Calc" },
         { reg: this.Delayms, WUZT: "Delayms" },
         { reg: this.Send, WUZT: "Send" },
         { reg: this.ContinueFor_BreakFor, WUZT: "ContinueFor_BreakFor" },
-        { reg: this.EXIT, WUZT: "EXIT" },
-        { reg: this.InputBox, WUZT: "InputBox" },
-        { reg: this.Button, WUZT: "Button" },
-        { reg: this.Act, WUZT: "Act" }
+        { reg: this.EXIT, WUZT: "EXIT" }
     ];
 
     this.BX_2 = [{ reg: this.If, WUZT: "If" },

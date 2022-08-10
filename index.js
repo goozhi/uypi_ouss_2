@@ -10,7 +10,9 @@ var WLYC_NINI_SIIH_DIAX = require('./WLYC_NINI_SIIH_DIAX');
 var WLYC_SIIHGGUXGGRJSEGGBRTZGGFS = require('./WLYC_SIIHGGUXGGRJSEGGBRTZGGFS');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD');
+var WLYC_VR_EBWU_BRTZ_FS = require('./WLYC_VR_EBWU_BRTZ_FS');
 var WLYC_sysData_ZJZJ = require('./WLYC_sysData_ZJZJ');
+var WLYC_VNWY_TU_NINI_BRTZ_FS = require('./WLYC_VNWY_TU_NINI_BRTZ_FS')
 var WLYC_BRTZ_FS_3f=require('./WLYC_BRTZ_FS_3f');
 var WLYC_BRTZ_FS_3f_Beiqi_ec180=require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
 var WLYC_BRTZ_FS_Beiqi_ec180=require('./WLYC_BRTZ_FS_Beiqi_ec180');
@@ -60,11 +62,17 @@ app.get('/EOSRGGJUZCGGTZGGYJGGEYRH', function (req, res) {
 app.get('/EYRH_REUY', function (req, res) {
     res.render('EYRH_REUY');
 });
+app.get('/VNWY_TU_NINI_BRTZ_FS', function (req, res) {
+    res.render('VNWY_TU_NINI_BRTZ_FS');
+});
 app.get('/EYRH_NINI_HQMV_YENH_YYHA', function (req, res) {
     res.render('EYRH_NINI_HQMV_YENH_YYHA');
 });
 app.get('/EYRH_NINI_HQMV', function (req, res) {
     res.render('EYRH_NINI_HQMV');
+});
+app.get('/VR_EBWU_BRTZ_FS', function (req, res) {
+    res.render('VR_EBWU_BRTZ_FS');
 });
 app.get('/EYRHGGHQTB', function (req, res) {
     res.render('EYRHGGHQTB');
@@ -111,8 +119,14 @@ app.get('/BRTZ_FS_Beiqi_ec180', function (req, res) {
 app.post('/sysData_ZJZJ', function (req, res) {
     WLYC_sysData_ZJZJ(req, res);
 });
+app.post('/VNWY_TU_NINI_BRTZ_FS', function (req, res) {
+    WLYC_VNWY_TU_NINI_BRTZ_FS(req, res);
+});
 app.post('/TYUB_LDRG', function (req, res) {
     WLYC_TYUB_LDRG(req, res);
+});
+app.post('/VR_EBWU_BRTZ_FS', function (req, res) {
+    WLYC_VR_EBWU_BRTZ_FS(req, res);
 });
 app.post('/BRTZ_FS_3f', function (req, res) {
     WLYC_BRTZ_FS_3f(req, res);

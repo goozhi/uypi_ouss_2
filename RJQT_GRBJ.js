@@ -8,6 +8,9 @@
 function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
     var fs = require("fs");
     var VKVY_IOWR = require("encoding");
+    if(YXNA_2==null){
+        throw new Error("MCVN NRAP")
+    }
     if (VKVY == null) {
         throw 'RJQT_GRBJ: MCVN NRAP 缺少必要的参数';
     }
@@ -17,9 +20,6 @@ function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
     UXUX_YHLD=typeof(NCRLGGWU_VNWM_1);
     if(UXUX_YHLD!="object"){
         throw new Error("MCVN UXUX MSOX , AOAO JI object: "+UXUX_YHLD+NCRLGGWU_VNWM_1)
-    }
-    if (GKQJ_1 == null) {
-        GKQJ_1 = true;
     }
     if (!fs.existsSync(YXNA_1)) {
         throw '文件夹路径' + YXNA_1 + '不存在';
@@ -38,7 +38,7 @@ function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
             var regex_houzhui = /((?:[^\/\\]))$/;
             var shengyu_1 = '$1/';
             var RJSE_KP_YHLD = VKVY_IOWR.convert(fs.readFileSync(YXNA_1.replace(regex_houzhui, shengyu_1) + VNWM_1[EQWY_1]), "utf8", VKVY).toString();
-            if (GKQJ_1) {
+            if (!Boolean(GKQJ_1)) {
                 RJSE_2 = VNWM_1[EQWY_1] + "{\n" + RJSE_KP_YHLD + "\n}";
             } else {
                 RJSE_2 = RJSE_KP_YHLD

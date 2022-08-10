@@ -7,7 +7,7 @@ var encoding=require('encoding');
 function ZSGGTRGGYJGGEYRH(YXNA_1) {
 	var NVCM_0 = "";
 	if (!fs1.existsSync(YXNA_1) || /(?:\/|\\)$/.test(YXNA_1)) {
-		throw "不存在的路径或者非文件:" + YXNA_1;
+		throw "YXNA AC ZZNQ 不存在的路径或者非文件:" + YXNA_1;
 	}
 	regex_VNWY_eS = /\b(\w{2}\s){3,7}\w{2}/;
 	KP_RJSE = fs1.readFileSync(YXNA_1).toString();
@@ -17,7 +17,7 @@ function ZSGGTRGGYJGGEYRH(YXNA_1) {
 	RJSE_VNWM_1.forEach((RNSF) => { CGNEGGBQEO_VNWM_1 = RNSF.match(regex_VNWY_eS); if (CGNEGGBQEO_VNWM_1 != null) { VNWY_VNWM_1.push(CGNEGGBQEO_VNWM_1[0]) } });
 	JTYP_VNWM_1 = [];
 	VNWY_VNWM_1 = HD_LZJK(VNWY_VNWM_1);
-	NVCM_0 = "总共非重复帧 : " + VNWY_VNWM_1.length + "\n";
+	NVCM_0 = "FT LZJK ES DK VNAW 总共非重复帧 : " + VNWY_VNWM_1.length + "\n";
 	var JTYP_VNWM_2 = [];
 	VNWY_VNWM_1.forEach(WLBA_3);
 	function WLBA_3(RNSF_1) {
@@ -36,9 +36,9 @@ function ZSGGTRGGYJGGEYRH(YXNA_1) {
 		}
 		var RSSC;
 		if (RNSF_1.RSSC)
-			RSSC = "正序";
+			RSSC = "EOGM_正序";
 		else
-			RSSC = "逆序";
+			RSSC = "ZFGM_逆序";
 		var CGNE_RJSE_VYGGTYUB_EQWY_VNWM = RNSF_1.CGNE_RJSE_VYGGTYUB_EQWY_VNWM;
 		var DOYG_1 = CGNE_RJSE_VYGGTYUB_EQWY_VNWM[1] - CGNE_RJSE_VYGGTYUB_EQWY_VNWM[0];
 		var TIQEGGSTIQ=true;

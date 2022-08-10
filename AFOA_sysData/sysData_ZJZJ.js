@@ -38,6 +38,6 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 			VNWM_MSOX.push(RJSE_YHLD);
 		}
 	})
-	return VNWM_MSOX.join("\n");
+	return VNWM_MSOX.join("\n").replace(/\n(?=\n)/g,"");
 }
 module.exports=sysData_ZJZJ;

@@ -13,7 +13,7 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
         RJSE_MSOX += ZJZJ_cf_NINI(RJSE_cf_NINI);
         RJSE_1 = RJSE_1.replace(reg_cf_NINI, "");
     }
-    var reg_Ecu_MCVN = /\$Ecu\((.*)\)(?:;|)/;
+    var reg_Ecu_MCVN = /\$Ecu\((.*)\)(?:;|)/i;
     var reg_JTCO_EB = /\*\*\*/;
     var Ecu_MCVN = RJSE_1.match(reg_Ecu_MCVN);
     if (Ecu_MCVN == null) {

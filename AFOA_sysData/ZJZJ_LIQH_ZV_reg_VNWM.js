@@ -7,7 +7,7 @@ function ZJZJ_LIQH_ZV_reg_VNWM(RJSE_KP, VNWM_reg) {
         throw "MCVN UXUX MSOX. ACJI obejct : "+UXUX_YHLD;
     }
     var RJSE_MSOX = "";
-    var VNWM_YHLD = RJSE_KP.split(/\n/);
+    var VNWM_YHLD = RJSE_KP.replace(/(?:\n|^)\/\/.*/g,"").replace(/\r/g,"").replace(/\n(?=\n|$)/g,"").split(/\n/);
     VNWM_YHLD.forEach(element => {
         var VBYT_1 = true;
         for (var EQWY_1 = 0; EQWY_1 < VNWM_reg.length; EQWY_1++) {
@@ -18,7 +18,7 @@ function ZJZJ_LIQH_ZV_reg_VNWM(RJSE_KP, VNWM_reg) {
             }
         }
         if (VBYT_1) {
-            RJSE_MSOX+="\n[ACUN EBPJ]"+element;
+            RJSE_MSOX+="\n[ZJZJ LIQH VODY DK ACUN EBPJ 不明语法] "+element;
         }
     });
     return RJSE_MSOX;
