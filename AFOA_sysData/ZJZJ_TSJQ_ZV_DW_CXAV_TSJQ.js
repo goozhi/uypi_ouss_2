@@ -42,7 +42,7 @@ function ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP, CXAV_TSJQ_WU) {
             if (CXAV_TSJQ_WU == "LJEY") {
                 CXAV_TSJQ_WU_YHRJ = "菜单"
             }
-            RJSE_MSOX += "\n<ZJZJ CXAV TSJQ ZD VODY ACUN BQEO 检查嵌套指令时发现不明内容>//" + CXAV_TSJQ_WU_YHRJ + "\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY ACUN BQEO 检查嵌套指令时发现不明内容>";
+            RJSE_MSOX += "\n<ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ AE TSJQ SDRH BRTZ MSOX>//" + CXAV_TSJQ_WU_YHRJ + "指令内部错误\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ AE TSJQ SDRH BRTZ MSOX>";
         }
     } else {
 

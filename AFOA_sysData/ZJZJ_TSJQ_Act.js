@@ -3,6 +3,7 @@
 
 function ZJZJ_TSJQ_Act(RJSE_KP){
     var RJSE_1 = RJSE_KP;
+    RJSE_1=RJSE_1.replace(/(?:\n|^)\s*\/\/.*/g,"")
     var RJSE_MSOX = "";
     var reg_NINI = /(?:\n|^)\*".*/g;
     var reg_LD_MCVN = /\$Act\b.*/;

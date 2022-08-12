@@ -37,7 +37,7 @@ function ZJZJ_TSJQ_If_EYNH(RJSE_IF_TSJQ_KP) {
             for (var i2 = 0; i2 < VNWM_3.length; i2++) {
                 var IOWR_YHLD=VNWM_3[i2].match(reg_MCVN);
                 if (IOWR_YHLD==null) {
-                    RJSE_MSOX += "\n[If TSJQ MCVN SDRH BRTZ MSOX] " + VNWM_3[i2] + " <--" + VNWM_1[i1];
+                    RJSE_MSOX += "\n[If TSJQ SIIH BQ MCVN ACUN] " + VNWM_3[i2] + " <--" + VNWM_1[i1];
                 }else{
                     var RJSE_YHLD=ZJZJ_UYTZ(IOWR_YHLD[1]);
                     if(RJSE_YHLD!=""){

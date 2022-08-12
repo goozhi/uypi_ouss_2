@@ -15,7 +15,7 @@ function ZJZJ_TSJQ_Display(RJSE_KP) {
             var IOWR_YHLD = RNSF.match(reg_NINI);
             if (IOWR_YHLD == null) {
                 RJSE_MSOX += "[Display Str NINI BRTZ MSOX]" + RNSF + "<--";
-                return "//Display NINI BRTZ MSOX";
+                return "//Display Str NINI BRTZ MSOX";
             } else {
                 return "*\"Display NINI\",\{99 99 99\}," + IOWR_YHLD[1];
             }
@@ -24,7 +24,7 @@ function ZJZJ_TSJQ_Display(RJSE_KP) {
         RJSE_MSOX = ZJZJ_TSJQ_Str(RJSE_YHLD);
         RJSE_1 = RJSE_1.replace(reg_NINI, "");
     }
-    var reg_Display_LG = /\$Display\((ENTER|EE|EXIT|ZZ|)\)\{\s*(?:\/\/line \d+\s*|)"/i;
+    var reg_Display_LG = /\$Display\((ENTER|EE|EXIT|)\)\{\s*(?:\/\/line \d+\s*|)"/i;
     var reg_Display_DS = /\"\s*(?:\/\/line \d+\s*|)\}\s*(?:;|)(?:\/\/.*|)$/;
     var IOWR_YHLD = RJSE_1.match(reg_Display_LG);
     if (IOWR_YHLD == null) {

@@ -5,4 +5,4 @@ var VNWM=[9,0,9,0];
 var VNWM2=VNWM.map(ensf=>{
     return [ensf,0]
 })
-throw VNWM2;
+throw RJSE_1.slice(0,2);

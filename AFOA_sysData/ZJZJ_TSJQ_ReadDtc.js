@@ -73,7 +73,7 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
                 }
                 break;
             default:
-                RJSE_MSOX += "[MCVN WUZT ACUN]" + IOWR_1.WUZT + "<--";
+                RJSE_MSOX += "[MCVN WU FTPJ] " + IOWR_1.WUZT + " <--";
         }
     }
     if (RJSE_MSOX != "") {
