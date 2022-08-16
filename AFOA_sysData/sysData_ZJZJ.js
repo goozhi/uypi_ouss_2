@@ -5,7 +5,7 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 	if(RJSE_KP==null){
 		throw "MCVN NRAP";
 	}
-	RJSE_KP=RJSE_KP.split(/\n/).map((RNSF_1,EQWY_1)=>{
+	RJSE_KP=RJSE_KP.replace(/\r/g,"").split(/\n/).map((RNSF_1,EQWY_1)=>{
 		return RNSF_1+"//line "+(EQWY_1+1);
 	}).join("\n");
 	var regex_1=/(?:\n|^)_S\d[\s\S]*?(?=\n_S\d|$)/g;
@@ -31,7 +31,6 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 		VNWM_MSOX.push("不明内容 ACUN BQEO{ \n"+RJSE_YHLD+"\n}");
 		}
 	}
-
 	VNWM_sys_1.forEach((RNSF_1)=>{
 		var RJSE_YHLD = ZJZJ_sys(RNSF_1);
 		if(RJSE_YHLD!=""){

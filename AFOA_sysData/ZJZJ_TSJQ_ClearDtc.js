@@ -3,12 +3,12 @@ function ZJZJ_TSJQ_ClearDtc(ZJZJ_BQEO_KP) {
     const ZJZJ_ACUN = require('./ZJZJ_ACUN');
     var ZJZJ_ES = require("./ZJZJ_ES");
     var RJSE_1 = ZJZJ_BQEO_KP;
-    var reg_ClearDtc_LD_MCVN = /\$ClearDtc\((.*)\)(?:;|)(?:\n|)/i;
-    var ClearDtc_LD_MCVN = RJSE_1.match(reg_ClearDtc_LD_MCVN);
+    var reg_ClearDtc_LG_MCVN = /\$ClearDtc\((.*)\)(?:;|)(?:\n|)/i;
+    var ClearDtc_LD_MCVN = RJSE_1.match(reg_ClearDtc_LG_MCVN);
     if (ClearDtc_LD_MCVN == null) {
         RJSE_MSOX += "\n[ClearDtc LGPH MSOX]" + ZJZJ_BQEO_KP.replace(/\n[\S\s]*/, '');
     } else {
-        RJSE_1 = RJSE_1.replace(reg_ClearDtc_LD_MCVN, "");
+        RJSE_1 = RJSE_1.replace(reg_ClearDtc_LG_MCVN, "");
     };
     var reg_ES = /\{.+\}(?:;|)(?:\s*\/\/line \d+|)/;
     var ES = RJSE_1.match(reg_ES);

@@ -3,7 +3,7 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
     var RJSE_MSOX = "";
     var reg_BX = require('./reg_BX');
     var reg_BX_VXUX = new reg_BX();
-    var RJSE_1 = ZJZJ_BQEO_KP.replace(/,'.*'(?:\w+|)(?:;\/\/.*|)/,";");
+    var RJSE_1 = ZJZJ_BQEO_KP.replace(/,'.*'(?:\w+|)(?:;\/\/.*|)/, ";");
     var reg_ReadDtc_MCVN = /\$ReadDtc\((.*)\)(?:;|)(?:\n|)/i;
     var ReadDtc_MCVN = RJSE_1.match(reg_ReadDtc_MCVN);
     if (ReadDtc_MCVN == null) {
@@ -18,14 +18,14 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
     } else {
         var VNWM_ES = IOWR_ES[0].match(/\{[^\}]+\}/g);
         VNWM_ES.forEach(RNSF => {
-            RJSE_MSOX += ZJZJ_ES(RNSF);            
+            RJSE_MSOX += ZJZJ_ES(RNSF);
         });
         RJSE_1 = RJSE_1.replace(reg_ES, "");
     }
     var reg_MCVN = /[^;\n]*=[^;\n]*=[^;\n]*;/;
     var IOWR_YHLD = RJSE_1.match(reg_MCVN);
-    if(IOWR_YHLD==null){
-        RJSE_MSOX+="\n<SOPJ YJAB ReadDtc MCVN>\n"+ZJZJ_BQEO_KP+"\n</SOPJ YJAB ReadDtc MCVN>";
+    if (IOWR_YHLD == null) {
+        RJSE_MSOX += "\n<SOPJ YJAB ReadDtc MCVN>\n" + ZJZJ_BQEO_KP + "\n</SOPJ YJAB ReadDtc MCVN>";
         return RJSE_MSOX;
     }
     var VNWM_MCVN = IOWR_YHLD[0].split(/\s*,\s*/);
@@ -44,10 +44,13 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
         var IOWR_1 = IOWR_VNWM_MCVN[FO];
         switch (IOWR_1.WUZT) {
             case "状态":
+            case "status":
+                break;
             case "state":
                 break;
             case "库":
             case "库id":
+            case "库ID":
             case "id":
             case "lib":
                 if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {

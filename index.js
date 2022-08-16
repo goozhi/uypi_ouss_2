@@ -12,11 +12,14 @@ var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL')
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD');
 var WLYC_VR_EBWU_BRTZ_FS = require('./WLYC_VR_EBWU_BRTZ_FS');
 var WLYC_sysData_ZJZJ = require('./WLYC_sysData_ZJZJ');
+var WLYC_menuData_ZJZJ = require('./WLYC_menuData_ZJZJ');
+var WLYC_dtcData_ZJZJ = require('./WLYC_dtcData_ZJZJ');
 var WLYC_VNWY_TU_NINI_BRTZ_FS = require('./WLYC_VNWY_TU_NINI_BRTZ_FS')
 var WLYC_BRTZ_FS_3f=require('./WLYC_BRTZ_FS_3f');
 var WLYC_BRTZ_FS_3f_Beiqi_ec180=require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
 var WLYC_BRTZ_FS_Beiqi_ec180=require('./WLYC_BRTZ_FS_Beiqi_ec180');
 var WLYC_TYUB_LDRG=require('./WLYC_TYUB_LDRG');
+var LEUN=require("./KPLU/LEUN.json");
 var app = express();
 var config = require("./config");
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
@@ -72,7 +75,9 @@ app.get('/EYRH_NINI_HQMV', function (req, res) {
     res.render('EYRH_NINI_HQMV');
 });
 app.get('/VR_EBWU_BRTZ_FS', function (req, res) {
-    res.render('VR_EBWU_BRTZ_FS');
+    var JTYP_2=LEUN.RJSE_VR_EBWU_LEUN_1;
+    var JTYP_3=LEUN.RJSE_VR_EBWU_LEUN_2;
+    res.render('VR_EBWU_BRTZ_FS',{JTYP_2,JTYP_3});
 });
 app.get('/EYRHGGHQTB', function (req, res) {
     res.render('EYRHGGHQTB');
@@ -107,6 +112,12 @@ app.get('/newsletter', function (req, res) {
 app.get('/sysData_ZJZJ', function (req, res) {
     res.render('sysData_ZJZJ');
 });
+app.get('/menuData_ZJZJ', function (req, res) {
+    res.render('menuData_ZJZJ');
+});
+app.get('/dtcData_ZJZJ', function (req, res) {
+    res.render('dtcData_ZJZJ');
+});
 app.get('/BRTZ_FS_3f', function (req, res) {
     res.render('BRTZ_FS_3f');
 });
@@ -118,6 +129,12 @@ app.get('/BRTZ_FS_Beiqi_ec180', function (req, res) {
 });
 app.post('/sysData_ZJZJ', function (req, res) {
     WLYC_sysData_ZJZJ(req, res);
+});
+app.post('/menuData_ZJZJ', function (req, res) {
+    WLYC_menuData_ZJZJ(req, res);
+});
+app.post('/dtcData_ZJZJ', function (req, res) {
+    WLYC_dtcData_ZJZJ(req, res);
 });
 app.post('/VNWY_TU_NINI_BRTZ_FS', function (req, res) {
     WLYC_VNWY_TU_NINI_BRTZ_FS(req, res);

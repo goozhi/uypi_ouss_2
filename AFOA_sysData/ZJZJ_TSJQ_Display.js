@@ -14,14 +14,17 @@ function ZJZJ_TSJQ_Display(RJSE_KP) {
             var reg_NINI = /@\+\{f\[\d+\]\}\s*,\s*(.*)@/;
             var IOWR_YHLD = RNSF.match(reg_NINI);
             if (IOWR_YHLD == null) {
-                RJSE_MSOX += "[Display Str NINI BRTZ MSOX]" + RNSF + "<--";
+                RJSE_MSOX += "[Display Str NINI BRTZ MSOX]" + RJSE_KP.match(new RegExp(RNSF+".*")) + "<--";
                 return "//Display Str NINI BRTZ MSOX";
             } else {
-                return "*\"Display NINI\",\{99 99 99\}," + IOWR_YHLD[1];
+                return "*\"Display 项目\",\{99 99 99\}," + IOWR_YHLD[1];
             }
         });
         var RJSE_YHLD = "$Str();\n" + VNWM_NINI_2.join('\n') + "\n***";
-        RJSE_MSOX = ZJZJ_TSJQ_Str(RJSE_YHLD);
+        var RJSE_YHLD_2 = ZJZJ_TSJQ_Str(RJSE_YHLD);
+        if(RJSE_YHLD_2!=""){
+            RJSE_MSOX+="\n<Display Str NINI MSOX>\n"+RJSE_KP+"\n"+RJSE_YHLD_2+"\n</Display Str NINI MSOX>"
+        }
         RJSE_1 = RJSE_1.replace(reg_NINI, "");
     }
     var reg_Display_LG = /\$Display\((ENTER|EE|EXIT|)\)\{\s*(?:\/\/line \d+\s*|)"/i;

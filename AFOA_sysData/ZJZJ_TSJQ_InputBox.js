@@ -21,11 +21,11 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
                 RJSE_MSOX += "[10 UXUX AOAO TSZN range MCVN]"
             }
         } else if (UXUX == "16") {
-            if (!/,len=\d+,/.test(RJSE_MCVN)) {
+            if (!/,len=\d+/.test(RJSE_MCVN)) {
                 RJSE_MSOX += "[BI UXUX AOAO TSZN len MCVN]"
             }
         } else if (UXUX == "0a") {
-            if (!/,len=\d+,/.test(RJSE_MCVN)) {
+            if (!/,len=\d+/.test(RJSE_MCVN)) {
                 RJSE_MSOX += "[BI UXUX AOAO TSZN len MCVN]"
             }
         } else {
@@ -41,13 +41,15 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
                     break;
                 case /^0a$/.test(RNSF):
                     break;
+                case /^len=\d+$/.test(RNSF):
+                    break;
                 case /^range=(?:\+|-|)\d+(?:\.\d+|)(?:\+|-|)\d+(?:\.\d+|)$/.test(RNSF):
                     break;
                 case /^again$/.test(RNSF):
                     break;
-                case /^len=\d+$/.test(RNSF):
-                    break;
                 case /^f\[\d+\]$/.test(RNSF):
+                    break;
+                case /^m\[\d+\]$/.test(RNSF):
                     break;
                 case /^f\[\d+\]\[\d+\]=.*val.*$/.test(RNSF):
                     break;
@@ -58,7 +60,7 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
         RJSE_1 = RJSE_1.replace(reg_MCVN, "")
     }
     if (RJSE_MSOX != "") {
-        RJSE_MSOX = "\n" + RJSE_MSOX + IOWR_YHLD[0];
+        RJSE_MSOX = "\n" + RJSE_MSOX + RJSE_KP.match(/.*/);
     }
     var VNWM_YHLD = RJSE_1.match(reg_BUTTON_MCVN);
     if (VNWM_YHLD == null) {
@@ -66,18 +68,18 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
     } else {
         VNWM_YHLD.forEach(RNSF => {
             if (!/^\s*"[^"\n]+"[A-Z]\w*/i.test(RNSF)) {
-                RJSE_MSOX += "[DGLD MCVN BRTZ MSOX] " + RNSF + " <--";
+                RJSE_MSOX += "\n[DGLD MCVN BRTZ MSOX] " + RNSF + " <--";
             }
-            else if (!/".*"[^"\n]*;/.test(RNSF)) {
-                RJSE_MSOX += "[DGLD MCVN NRAP FDIH AC GRBU] " + RNSF + " <--"
+            else if (!/".*"\w+;/.test(RNSF)) {
+                // RJSE_MSOX += "\n[DGLD MCVN NRAP FDIH] " + RNSF + " <--"
             }
         });
         RJSE_1 = RJSE_1.replace(reg_BUTTON_MCVN, "")
     }
-    var RJSE_YHLD=RJSE_1.replace(/\/\/line \d+(?:\n|$)/g,"")
+    var RJSE_YHLD = RJSE_1.replace(/\/\/line \d+(?:\n|$)/g, "")
     if (RJSE_YHLD != "") {
         // RJSE_1 = ZJZJ_ACUN(RJSE_1);
-        RJSE_YHLD=RJSE_YHLD.replace(/^\s+$/,"")
+        RJSE_YHLD = RJSE_YHLD.replace(/^\s+$/, "")
         if (RJSE_YHLD != "")
             RJSE_MSOX += "\n<ZJZJ InputBox ZD VODY YNDF TSJQ>\n" + RJSE_1 + "\n</ZJZJ InputBox ZD VODY YNDF TSJQ>";
     }

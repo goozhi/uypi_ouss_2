@@ -1,3 +1,4 @@
+const reg_BX = require('./reg_BX');
 
 function ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP, CXAV_TSJQ_WU) {
     if (CXAV_TSJQ_WU == null) {
@@ -42,7 +43,20 @@ function ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP, CXAV_TSJQ_WU) {
             if (CXAV_TSJQ_WU == "LJEY") {
                 CXAV_TSJQ_WU_YHRJ = "菜单"
             }
-            RJSE_MSOX += "\n<ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ AE TSJQ SDRH BRTZ MSOX>//" + CXAV_TSJQ_WU_YHRJ + "指令内部错误\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ AE TSJQ SDRH BRTZ MSOX>";
+            var VNWM_YHLD = reg_TSJQ_BX.BX_2.concat(reg_TSJQ_BX.BX)
+            var RJSE_YHLD=""
+            for (var i1 = 0; i1 < VNWM_YHLD.length; i1++) {
+                var IOWR_1 = VNWM_YHLD[i1];
+                if (new RegExp("\\$" + IOWR_1.WUZT, "i").test(RJSE_1)) {
+                    RJSE_YHLD = "\n<ZJZJ CXAV TSJQ ZD VODY TSJQ SDRH BRTZ MSOX>//" + CXAV_TSJQ_WU_YHRJ + "指令内部错误\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY TSJQ SDRH BRTZ MSOX>";
+                    break;
+                }
+            }
+            if(RJSE_YHLD!=""){
+                RJSE_MSOX+=RJSE_YHLD;
+            }else{
+                RJSE_MSOX += "\n<ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ>//" + CXAV_TSJQ_WU_YHRJ + "指令内部错误\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY ACUN TSJQ>";
+            }
         }
     } else {
 

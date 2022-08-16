@@ -26,7 +26,7 @@ function ZJZJ_LJEY_NINI_EYNH_LJEY(RJSE_LJEY_KP) {
     var reg_LJEY_JTCO_EB = /\$\$\$/;
     var RJSE_LJEY_LD = RJSE_LJEY_KP.match(reg_LJEY_LD);
     if (RJSE_LJEY_LD == null) {
-        RJSE_MSOX += "[LJEY LD BRTZ MSOX]" + RJSE_LJEY_KP.match(/.*\+\d+.*/);
+        RJSE_MSOX += "[LJEY LG BRTZ MSOX]" + RJSE_LJEY_KP.match(/.*\+\d+.*/);
     } else {
         RJSE_LJEY_LD = RJSE_LJEY_LD[0].replace(/\n/g, "")
         var LJEY_LD_Spec_MCVN = RJSE_LJEY_LD.match(/spec/i);

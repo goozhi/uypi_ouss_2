@@ -19,7 +19,6 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     }
     var NINIGGeS = NINIGGeS_MCVNGGIOWR_1.NINIGGeS;
     var TRIG = NINIGGeS_MCVNGGIOWR_1.TRIG;
-    // console.log("BNLL RSCS EYRH YF eSIH DA PL eS 当前解析同帧号第"+TRIG+"帧: "+NINIGGeS+' sort:'+MCVN_IOWR_1.sortCanData)
     var reg_1 = /ff/i;
     var NINIGGeS_VNWM_1 = NINIGGeS.replace(/[\}\{]/g, "").split(/\s+/);
     var eSGGUXUX = NINIGGeS_VNWM_1[0];
@@ -30,7 +29,7 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     var VN_2 = NINIGGeS_VNWM_1[NINIGGeS_VNWM_1.length - 1].slice(0,2);
     var GKQJ_1 = eval((TRIG+1) + ">" + "0x" + VN_2);
     if (GKQJ_1)
-        throw "ZTHI YYHA VKIH SONQ DK TRIG YSUM SYZN DK YF YENH id DK eS DK VNAW: 字节地址的编号所在的位置超出设定的同一个id的帧的数量 : " + NINIGGeS + "--" + Number(TRIG+1).toString(16) + ">" + VN_2;
+        throw "ZTHI YYHA VKIH SONQ DK TRIG YSUM SYZN DK YF YENH id DK eS DK VNAW: 字节地址的编号所在的位置超出设定的同一个id的帧的数量,请检查算法中地址编号是否写错 : " + NINIGGeS + "--" + Number(TRIG+1).toString(16) + ">" + VN_2;
 
     if (eSGGUXUX == '00') {
         eSGGID_VNWM_1 = NINIGGeS_VNWM_1.slice(3, 5);
@@ -66,17 +65,17 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     }
     var VNWM_2 = AFOA.EOWL_IOWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
     var VNWM_3 = AFOA.PZVA_SLGR_3(VNWM_2, 'VNWY')
-    var TRIG_2_1 = Number(MCVN_IOWR_1.sortCanData[0]);
-    var TRIG_2_2 = Number(MCVN_IOWR_1.sortCanData[1]);
-    var reg_1 = new RegExp("((?:\\w+(?:\\s|$)){" + TRIG_2_2 + "}).*(\\/\\/\\d+)")
-    var reg_2 = new RegExp("(?:\\w+(?:\\s|$)){" + (TRIG_2_1 - 1) + "}")
+    var sortCanData_MCVN_1 = Number(MCVN_IOWR_1.sortCanData[0]);
+    var sortCanData_MCVN_2 = Number(MCVN_IOWR_1.sortCanData[1]);
+    var reg_1 = new RegExp("((?:\\w+(?:\\s|$)){" + sortCanData_MCVN_2 + "}).*(\\/\\/\\d+)")
+    var reg_2 = new RegExp("(?:\\w+(?:\\s|$)){" + (sortCanData_MCVN_1 - 1) + "}")
     var VNWM_4 = VNWM_3.map(RNSF_1 => {
-        return RNSF_1.replace(reg_1, '$1$2').replace(reg_2, '');
+        return RNSF_1.replace(reg_2, '').replace(reg_1, '$1$2');
     })
     VNWM_4 = AFOA.HD_LZJK_VNWM(VNWM_4, '^', '//');
     VNWM_4.sort();
     if (TRIG > VNWM_4.length - 1) {
-        throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法字节地址'+TRIG+'高于报文中相同帧的最大字节地址:' + VNWM_4[VNWM_4.length - 1];
+        throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法中的字节所在帧（序号'+TRIG+'）不在报文中相同id的全部帧内(请检查sortCandata和cf项目中的帧的最后一个参数是否正确):' + VNWM_4[VNWM_4.length - 1].replace(/(.*)\/\/.*(\d+)/,"序号$2：$1已经是最后一帧了");
     }
     var EQWY_0;
     try {

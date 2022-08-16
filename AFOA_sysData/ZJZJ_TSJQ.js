@@ -4,6 +4,7 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
     var ZJZJ_TSJQ_Button = require('./ZJZJ_TSJQ_Button')
     var ZJZJ_TSJQ_Init = require('./ZJZJ_TSJQ_Init')
     var ZJZJ_TSJQ_EXIT = require('./ZJZJ_TSJQ_EXIT')
+    var ZJZJ_TSJQ_List = require('./ZJZJ_TSJQ_List')
     var ZJZJ_TSJQ_Input = require('./ZJZJ_TSJQ_Input')
     var ZJZJ_TSJQ_Str = require('./ZJZJ_TSJQ_Str')
     var ZJZJ_TSJQ_Lab = require('./ZJZJ_TSJQ_Lab')
@@ -136,6 +137,11 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
         case "EXIT":
             var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
                 return ZJZJ_TSJQ_EXIT(element);
+            });
+            return VNWM_YHLD.join("");
+        case "List":
+            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
+                return ZJZJ_TSJQ_List(element);
             });
             return VNWM_YHLD.join("");
         case "Delayms":

@@ -8,7 +8,6 @@ var reg_BX_ZV_TSJQ = function () {
     this.SetPeriod = /\$SetPeriod\(.{0,999}\)/ig;
     this.Send = /\$Send\b[^\$\n]*/ig;
     this.PSW27 = /\$PSW27\b.*/ig;
-    this.Input = /\$Input\b.*/ig;
     this.EXIT = /\$EXIT\b.*/ig;
     this.Fire = /\$Fire\b.*/ig;
     this.Lab = /\$Lab\b.*/ig;
@@ -16,17 +15,19 @@ var reg_BX_ZV_TSJQ = function () {
     this.Delayms = /\$Delayms\b.*/ig;
     this.F = /\$F\b.*/ig;
     this.Calc = /\$Calc\b.*/ig;
+    this.List = /\$List\b.*/ig;
     this.ContinueFor_BreakFor = /\$(?:ContinueFor|BreakFor)\b.*/ig;
     
     this.ClearDtc = /\$ClearDtc\b(?:(?!\$)[\S\s])*?(?=\$|$)/ig;
     this.ReadDtc = /\$ReadDtc\(\)(?:(?:.*\n|).*\n.*\}[^=]{0,20}=[^,]{0,999}[^=]{0,20}=[^,]{0,999}.*|.*)/ig;
-    this.InputBox = /\$InputBox\(.*\n(?:"[^\"]+".*\n)+/ig;
+    this.Input = /\$Input\b.*(?:\n(?:"[^\"]+".*\n)+|)/ig;
+    this.InputBox = /\$InputBox\b.*\n(?:"[^\"]+".*\n)+/ig;
     this.Button = /\$Button\b(?:(?!\$)[\S\s]){0,9999}\n\s*".*".*/ig;
     this.Display = /\$Display\b(?:(?!\$)[\S\s])*?\"\s*(?:\/\/line \d+\s*|)\}.*/ig;
     this.Init = /\$Init\b(?:(?!\$)[\S\s])*?(?=\$|$)/ig;
     this.Act = /\$Act\((?:(?!\$Act)[\S\s]){0,399999}?\n\*\*\*/ig;
 
-    this.LJEY = /(?:(?=\n|^)\+)\d+\[[\S\s]{0,399999}?\$\$\$/g;
+    this.LJEY = /(?:\n|^)\+\d+\[(?:(?!(?:\n|^)\+\d+)[\S\s]){0,399999}?\$\$\$/g;
 
     this.If = /\$If(?:(?!\$If)[\S\s])*?\$EndIf.*/i;
     this.For = /\$For(?:(?!\$For)[\S\s])*?\$EndFor.*/i;
@@ -51,6 +52,7 @@ var reg_BX_ZV_TSJQ = function () {
         { reg: this.F, WUZT: "F" },
         { reg: this.Fire, WUZT: "Fire" },
         { reg: this.Calc, WUZT: "Calc" },
+        { reg: this.List, WUZT: "List" },
         { reg: this.Delayms, WUZT: "Delayms" },
         { reg: this.Send, WUZT: "Send" },
         { reg: this.ContinueFor_BreakFor, WUZT: "ContinueFor_BreakFor" },
