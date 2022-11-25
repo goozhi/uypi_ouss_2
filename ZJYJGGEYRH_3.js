@@ -1,7 +1,10 @@
 var AFOA = require("./AFOA_UJ.js")
 // var JI_TIQEGGSTIQ = require('./JI_TIQEGGSTIQ')
-function ZJYJGGEYRH(RJSE_ZTHI_VNWM) {
-  if (RJSE_ZTHI_VNWM.length < 6) {
+function ZJYJGGEYRH(VNWM_RJSE_ZTHI_kp) {
+  var VNWM_RJSE_ZTHI = VNWM_RJSE_ZTHI_kp.map(rnsf => {
+    return rnsf
+  })
+  if (VNWM_RJSE_ZTHI.length < 6) {
     return false;
   }
 
@@ -12,7 +15,7 @@ function ZJYJGGEYRH(RJSE_ZTHI_VNWM) {
     for (var EQWY_3 = 0; EQWY_3 < 20; EQWY_3 += 4) {
       var RSSC = 2;
       while (RSSC) {
-        var RJSE_KP = AFOA.H_LD_B(RJSE_ZTHI_VNWM.join(''));
+        var RJSE_KP = AFOA.H_LD_B(VNWM_RJSE_ZTHI.join(''));
         RSSC--;
         var RJSE_1 = RJSE_KP.slice(EQWY_3, EQWY_3 + HPMI_1);
         if (!/[^0]/.test(RJSE_1)) {
@@ -27,9 +30,9 @@ function ZJYJGGEYRH(RJSE_ZTHI_VNWM) {
             EQWY_2 = RJSE_KP.indexOf(RNSF_1, EQWY_2);
             CGNE_RJSE_VYGGTYUB_EQWY_VNWM.push(EQWY_2);
           });
-          return { RSSC: RSSC, VNWY_VNWM: RJSE_ZTHI_VNWM, regex: new RegExp(RJSE_1 + "\\w{" + (RNSF_1 - HPMI_1) + "}"), TSZNGGTRVN: RNSF_1, CGNEGGLIVN: CGNE_RJSE_VYGGTYUB_VNWM.length, CGNE_RJSE_VYGGTYUB_EQWY_VNWM: CGNE_RJSE_VYGGTYUB_EQWY_VNWM };
+          return { RSSC: RSSC, VNWM_RJSE_ZTHI_kp, VNWY_VNWM: VNWM_RJSE_ZTHI, regex: new RegExp(RJSE_1 + "\\w{" + (RNSF_1 - HPMI_1) + "}"), TSZNGGTRVN: RNSF_1, CGNEGGLIVN: CGNE_RJSE_VYGGTYUB_VNWM.length, CGNE_RJSE_VYGGTYUB_EQWY_VNWM: CGNE_RJSE_VYGGTYUB_EQWY_VNWM };
         }
-        RJSE_ZTHI_VNWM.reverse();
+        VNWM_RJSE_ZTHI.reverse();
       }
     }
   }

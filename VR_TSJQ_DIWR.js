@@ -12,6 +12,7 @@ var VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS = require('./VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_
 const VR_TSJQ_BRTZ_FS_ZV_ESIH_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_ESIH_BRTZ_FS')
 const VR_TSJQ_BRTZ_FS_ZV_STST_NINI_WU_YMRG_BC_NIXB_NINI_WU = require('./VR_TSJQ_BRTZ_FS_ZV_STST_NINI_WU_YMRG_BC_NIXB_NINI_WU')
 var VR_TSJQ_BRTZ_FS_ZV_KLVQ_SHZN = require('./VR_TSJQ_BRTZ_FS_ZV_KLVQ_SHZN')
+var VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ=require('./VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ')
 var VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy = require('./VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy')
 var VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI = require('./VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI')
 var VR_TSJQ_ZV_VR_RJOK=require('./VR_TSJQ_ZV_VR_RJOK')
@@ -33,10 +34,12 @@ function VR_TSJQ_DIWR() {
         VBYT_VKRF_Peng_EBWU: false
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
-        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI,
-        csrf: "bi afoa ra bs.cqpi fr : 4 ae cell ; mcvn : 9=utf8 jukl jowy utf8 vkvy rj vt nvrj; bqeo : vdzv nvrj yxna no rjvt bi yxna tt dk bqeo, kqud di yn tyqh fdcs.",
-        klch: ``,
-        vnwm_vr_afoa_lzm_wu: ["4", "cell"],
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ,
+        csrf: "bi afoa ra bs.cqpi fr : 4 ae CELLFIND ; mcvn : 9=utf8 jukl jowy utf8 vkvy rjvt nvrj; bqeo : ah zqjp vdzv nvrj tyqh fdcs . oin nq yxna rjvt hqtz tt sr vdzv nvrj yxna no rjvt bi yxna tt dk bqeo, kqud di ynl tyqh fdcs.",
+        klch: `CELLFIND=9=utf8{{
+
+        }}`,
+        vnwm_vr_afoa_lzm_wu: ["4", "CELLFIND"],
         VBYT_VKRF_Peng_EBWU: false
     },
     {
@@ -168,7 +171,7 @@ function VR_TSJQ_DIWR() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS,
         csrf: "",
         klch: ``,
-        vnwm_vr_afoa_lzm_wu: ["97"],
+        vnwm_vr_afoa_lzm_wu: ["97","CELLSORT"],
         VBYT_VKRF_Peng_EBWU: false
     },]
     this.zjzj_lzjk_wu = function () {

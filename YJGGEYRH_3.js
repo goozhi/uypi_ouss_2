@@ -2,7 +2,7 @@
 // VNWM_3=['84','25','10','04','64','25','ff','fa'];
 var ZJYJGGEYRH_3=require('./ZJYJGGEYRH_3')
 ////////////
-J5='01 01 22 07 72 21 17 72';
+// J5='01 01 22 07 72 21 17 72';
 
 function YJGGEYRH_3(RJSE_1){
     var VNWM_3=RJSE_1.split(/\s/);
