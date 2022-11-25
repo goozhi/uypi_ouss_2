@@ -1,5 +1,5 @@
 function BRTZ_FS_3f_Beiqi_ec180(RJSE_KP){
-    var NHVN_GFVN_FS=require("./NHVN_GFVN_FS")
+    var NHVN_GFVN_FS=require("./AFOA_BX/NHVN_GFVN_FS")
     var reg_1 = /(\w+) "(.*?)"/g;
     VNWM_1=RJSE_KP.match(reg_1);
     if(VNWM_1==null){
@@ -12,6 +12,6 @@ function BRTZ_FS_3f_Beiqi_ec180(RJSE_KP){
         }
         return NHVN_GFVN_FS(Number(RJSE_YHLD).toString(16).toLowerCase())+":"+RNSF_1.replace(reg_1,"$2");
     });
-    return '\''+VNWM_2.join("','")+"','oth:未定义';";
+    return '\''+VNWM_2.join("','")+"','oth:�?定义';";
 }
 module.exports=BRTZ_FS_3f_Beiqi_ec180;

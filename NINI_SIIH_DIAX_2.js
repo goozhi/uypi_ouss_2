@@ -6,10 +6,10 @@ function NINIGGSIIHGGIOAX_2(VNWM_1){
         var regex_2=/(.*?)(\{.*)/            
         var shengyu_2="$1"
         var changdu_1 = RJSE_1.replace(regex_2,shengyu_2).length;
-        var changdu_2 = RJSE_1.replace(regex_2,shengyu_2).replace(/[^\u4E00-\u9FA5]/g,"").length;
+        var changdu_2 = RJSE_1.replace(regex_2,shengyu_2).replace(/[^\u4E00-\u9FA5Ôºå„ÄÇ‚Äî„ÄÅÔºõÔºöÔºàÔºâ]/g,"").length;
         
-        var changdu_3 = RJSE_1.replace(regex_2,shengyu_2).replace(/[^£¨°£°™°¢£ª£∫£®£©]/g,"").length;
-        VNWM_2.push(changdu_1+changdu_2+ changdu_3)
+        // var changdu_3 = RJSE_1.replace(regex_2,shengyu_2).replace(/[^Ôºå„ÄÇ‚Äî„ÄÅÔºõÔºöÔºàÔºâ]/g,"").length;
+        VNWM_2.push(changdu_1+changdu_2)
     } 
         var zuida_1 = AFOA.OKAR(VNWM_2)
         var VNWM_3= VNWM_1.map(hui_1)

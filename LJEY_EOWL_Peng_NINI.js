@@ -1,6 +1,6 @@
 function LJEY_EOWL_Peng_NINI(IOWR_MCVN) {
     var FDMJ=require('./FDMJ')
-    var NHVN_GFVN_FS=require('./NHVN_GFVN_FS')
+    var NHVN_GFVN_FS=require('./AFOA_BX/NHVN_GFVN_FS')
 
     switch (IOWR_MCVN.UXUX) {
         case "cf":

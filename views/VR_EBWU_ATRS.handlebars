@@ -1,0 +1,245 @@
+<head>
+    <title>VR语言教程</title>
+</head>
+<h2>VR语言教程</h2>
+<form name="home" action="/" method="get">
+    <button>go home</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
+    <button>VR语言之数据流项目编写示例</button>
+</form>
+<hr>
+所有的功能指令的格式均为 操作符 +“=”+ 参数 + 两对花括号 组成 如:<br>
+1=数据流&#123;&#123; &#125;&#125;
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    菜单指令：操作符为1或者menu(大小写不敏感)，参数为菜单的名字，支持主流菜单名的拼音写法(shujuliu banbenxinxi等(拼错自动矫正))<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="09" cols="150">
+        1=菜单1&#123;&#123;
+            menu=菜单2&#123;&#123;
+                //调用其他指令
+            &#125;&#125;
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    数据流指令：操作符为9或者STR(大小写不敏感)，参数为彭语言中str()的参数，如果参数为0时则自动将空的帧填上99 99 99. 有关数据流项目编写规范请参考 "VR语言之数据流项目编写示例"<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="10" cols="150">
+        STR=sortCanDataByID&#123;&#123;
+            3f项目示例{2222}33，，’00：元素‘，’oth：--‘
+            3f项目示例{2223}33，，元素1 02:元素2 元素3
+        &#125;&#125;
+        9=0&#123;&#123;
+            3f项目示例{}33，，’00：元素‘，’oth：--‘
+            3f项目示例{}33，，元素1 02:元素2 元素3
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    版本信息指令：操作符为8或者ecu(大小写不敏感)，如果参数为0时则自动将空的帧填上99 99 99. 有关版本信息项目编写规范请参考 "VR语言之数据流项目编写示例"<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        8=0&#123;&#123;
+            3f项目示例{2222}33，，’00：元素‘，’oth：--‘
+            3f项目示例{}33，，元素1 02:元素2 元素3
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    3f数组参数格式化 : 操作符为33。不指定范围参数将自动分配范围参数<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        33=&#123;&#123;
+            00：元素0
+            02-09：元素2
+            元素3
+            10
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    大括号对齐 : 操作符为77。<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        77=&#123;&#123;
+            AB{}
+            DG  {}
+            , ,{}
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    调用sysData检查助手 : 操作符为90。参数名为9表示输入内容为路径，将根据路径检查该路径对应的文件内容，不写参数默认检查输入的内容。<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        90=&#123;&#123;
+            $Str()
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+            ***
+        &#125;&#125;
+        90=9=GB2312&#123;&#123;
+            D:\WRVR\working\汉EV\ZCZC1.JAVA
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    翻译数据格式化 : 98或fix。参数：9=UTF8表示以UTF8编码读取指定路径，默认UTF8。
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        //根据默认编码读取目标路径进行检查修改
+        98=9&#123;&#123;
+            D:\Documents\WXWork\1688855185231552\Cache\File\2022-11\测试文件.TXT
+        &#125;&#125;
+        //可以直接写入目标内容进行检查修改
+        98=&#123;&#123;
+            "Str2ID(0300014300010001000000E8)，Rated voltage
+Battery production date; "
+        &#125;&#125;
+        
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    调用对比助手 : 操作符为99。<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        99=&#123;&#123;
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+        &#125;&#125;
+        //参数为32表示将以30-39的规律循环设置d4往后的值
+        99=32&#123;&#123;
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+        &#125;&#125;
+        //以下参数表示：字节d4设置为0xff 字节d5设置为0x01 输出对应值； 字节d4设置为0x80，输出对应值
+        99=[4=0xff 5=0x1][4=0x80]&#123;&#123;
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+        &#125;&#125;
+        //下面参数表示设置每条算式最高字节分别为0x10、0xff
+        99=9=0x10 0xff&#123;&#123;
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+        &#125;&#125;
+        //下面参数表示设置每条算式最高字节为开发者预设值
+        99=9&#123;&#123;
+            *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
+            *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    单体数据解析指令:97。参数格式如下: 2=1-1(表示每帧第一个字节到第一个字节为标识字节), 9=GB2312(表示将输入内容视为文件路径，按GB2312编码读取文件。如果不写此参数则将输入内容视为目标内容)。
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        97=2=1-1,9=GB2312&#123;&#123;
+            D:\Che\zhongzhi中值3\报文2\温度数据摘取.TXT
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    相似项目替换目标项目名 : 操作符为10。该功能用于执行匹配相似项目脚本后输出的文本中的替换动作<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        10=&#123;&#123;
+            左前车窗当前动作状态 相似度 : 0.824 *"左前窗当前动作状态",                {22 00 04},3f,d4,'00:默认值','01:停止','02:车窗打开','03:车窗关闭','oth:未定义';
+            左前车窗自动下降开关信号 相似度 : 0.800 *"左前自动下降开关信号",              {22 00 08},3f,d4,'00:打开','01:关闭','oth:无效数据';
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    帧id格式化 : 操作符为19。空白符和逗号作为id分隔符。“-”为连续递增标识符<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        19=&#123;&#123;
+            220101 - 22010A 220106
+            220110
+            22011A,22011C
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    指定文本中的VR指令或彭指令中含有的VR语言进行彭化 : 操作符为58。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        58=str ecu&#123;&#123;
+            +1[版本信息](Spec)
+            $Ecu();
+            *"硬件版本",                   {22 F1 A3},cf,d4*(1)+(0),.0,;// =4
+            *"硬件日期",                   {22 F1 A3}88 8年9月
+            ***
+            $$$
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    读故障码指令 : 操作符为3或rdtc。内容格式仅能如下：state=XXX frame=XXX code=XXX space=XXX start=XXX id=XXX num(number)=XXX<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        3=&#123;&#123;
+            space=4
+            code=2
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+
+    （该指令暂未支持）范围锁定 : 操作符为47。参数为line和weight。line只能是0或1, 0表示传输轴 : 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7; 1表示传输轴: 7 6 5 4 3 2 1 0 7 6 5 4 3 2 1 0 ; weight只能是0或1, 0表示前一个data权重更高; 1表示后一个data权重更高。里面的内容格式示例:d4=0-3,d5=7, ‘=’ 后面是占用位表达，这里一共5位<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="7" cols="150">
+        47=line=1,weight=1&#123;&#123;
+            d4=0-3,d5=7
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <hr>
+    避免语言混淆的方法:使用---符号占用一行对彭语言与VR语言进行分割后，编译时将只编译分隔符以下部分，分隔符以上部分将原装返回<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="9" cols="150">
+        +1[菜单1](Spec)
+        $$$
+        ---
+        1=菜单2&#123;&#123;
+            9=&#123;&#123;
+             //项目
+            &#125;&#125;
+        &#125;&#125;
+    </textarea>
+    <br>
+    <button>提交</button>
+</form>
+<hr>
+输出内容<br>
+<textarea rows="10" cols="150" onfocus="select()">{{JTYP_1}}</textarea>
+<script>
+</script>

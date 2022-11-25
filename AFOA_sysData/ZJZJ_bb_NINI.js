@@ -10,7 +10,7 @@ function ZJZJ_bb_NINI(VNWM_bb_NINI) {
         var NINI = VNWM_bb_NINI[i1];
         var reg_SDRH = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(bb)\s*,\s*(.*?);.*/i;
         if (!reg_SDRH.test(VNWM_bb_NINI[i1])) {
-            RJSE_MSOX += "\n[bb SDRH BRTZ MSOX AE NRAP FDIH]" + VNWM_bb_NINI[i1];
+            RJSE_MSOX += "\n[b b SDRH BRTZ MSOX AE NRAP FDIH]" + VNWM_bb_NINI[i1];
             continue;
         }
         var NINI_WU = NINI.replace(reg_SDRH, "$1");

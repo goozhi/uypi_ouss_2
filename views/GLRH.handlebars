@@ -1,12 +1,46 @@
-{{!-- src="GLRH.js" --}}
-<script src="GLRH.js">
+	<h2>用户登录</h2>
+    <button onclick="alert(99);var yy=window.clipboardData.getData('text/plain');alert(yy)">555</button>
+    <form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    {{JTYP_2}}
+    <hr>
+    目标内容<br>
+    <textarea name="VDZV_1" onfocus="select()" id="RNSF_1" rows="20" cols="150">
+3f项目示例{2222}33，，’00：元素‘，’oth：--‘
+7f项目示例{2222}77，128，-256，、4*256+、5。0，V
+cf项目有些单位可省略/号{223344}44，、4、5*65535/65535。0，kmh
+cf项目中文单位可自动转为通用符号{223344}44，、4、5*65535/65535。0，摄氏度
+cf项目指定小数位数参数句号可用逗号代替{2233}44、4、5*0.1，，1
+cf项目使用=号自动识别小数位数{2233}44\4\5*0.1=V
+cf项目有连续字节编号可不写cf标识{2233}、4、5》》3==
+21项目示例{2222}22，，01，是】否
+0a项目示例{2222}09，4-7,8
+0a项目示例{2222}09，4
+bb项目示例{2222}88  20+ 4 年+ 6-7h 8A -+ 9a
+bb项目非字节标识自动转为字符串{2223}88 20+ 4h 年 5h 月 6h 日 + 7h 时
+bb项目可用=号统一字节标识类型{2223}88 20+ 4a 年 5 月 6 日 + 7h 时 =h
+bb项目可用d号表示十进制类型{2223}88 20+ 4d 年 5 月 6 日 + 7h 时 =h
+通用计算类项目编写示例{2222}=5-4 0.1 -1000 kmh // 5-4表示d5d4 0.1为系数 -1000为偏移量
+通用计算类项目可用算式作为参数{2222}=(D4<<8)+D5 25.6/256 999+1
+通用计算类项目可用2个负号表示7f项目{2222}=4-5  --
+通用计算类项目简写示例{2233}=4 km
+自动求系数的计算类项目示例{2223}[4-5 65180=0xff00]-100 摄氏度
+自动求系数的计算类项目偏移值默认为0{2233}[4 0.1=1] 摄氏度
+自动求系数的计算类项目系数默认为1{2233}[4]-40 摄氏度
+自动求系数的计算类项目转7f项目示例{2233}[4]-40 摄氏度 --
+自动求系数的计算类项目系数为1时单位可写入中括号{2233}[4-6 km]-40
+如果有效字节是d4可省略不写{223344}33，，’00：’，’oth：---‘
+    </textarea>
+    <br>
+    <button type="button" onclick="ZHMS()">提交</button>
+    </form>
+    输出内容<br>
+<textarea rows="20" cols="150" onfocus="select()">{{JTYP_1}}</textarea>
 
+    <script>
+    function ZHMS() {//保存用户密码
+        var userForm = document.getElementById("form_1");
+        var RNSF_1 = document.getElementById("RNSF_1");
+        RNSF_1.value = RNSF_1.value.replace("(.*?\}).{1248,}", "$1 //too large")
+        userForm.submit();
+    }
 </script>
-<form name="RJQTGGGRBJ_form" action="/RJQT_GRBJ" method="post">
-    请在此输入文件夹路径<input type="text" name="VDZV_1">
-    请在此输入文件扩展名<input type="text" name="VDZV_2">
-    <button>提交</button>
-</form>
-<button onclick="go()">
-    ninini
-</button>

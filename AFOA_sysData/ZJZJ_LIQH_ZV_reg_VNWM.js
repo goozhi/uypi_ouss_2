@@ -20,7 +20,7 @@ function ZJZJ_LIQH_ZV_reg_VNWM(RJSE_KP, VNWM_reg) {
         if (VBYT_1) {
             if (!/^\s*$/.test(element)) {
 
-                RJSE_MSOX += "\n[ZJZJ LIQH VODY DK ACUN EBPJ] " + element;
+                RJSE_MSOX += "\n[ZJZJ LI QH VODY DK ACUN EBPJ] " + element;
             }
         }
     });

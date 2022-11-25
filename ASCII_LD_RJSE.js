@@ -15,11 +15,10 @@ function ASCII_LD_RJSE(RJSE_1,FDMJGGFR_1){
     const buf = Buffer.allocUnsafe(VNWM_1.length);
 
     for (let i = 0; i < VNWM_1.length; i++) {
-      var VN_1 = Number(VNWM_1[i]);
-      if(!/^(?:[0-9]|[A-F])+$/i.test(VN_1)){
-          throw "你输入的数中有非十六进制数的文";
+      if(!/^(?:[0-9]|[A-F])+$/i.test(VNWM_1[i])){
+          throw new Error("<MCVN FTPJ>\n"+VNWM_1[i]+"\n^^^\n"+RJSE_1+"\n</MCVN FTPJ>");
       }
-      buf[i] = eval("0x"+VN_1);
+      buf[i] = eval("0x"+VNWM_1[i]);
     }
     return buf.toString().replace(/(.)(?=.)/g,"$1"+FDMJGGFR_1);    
     

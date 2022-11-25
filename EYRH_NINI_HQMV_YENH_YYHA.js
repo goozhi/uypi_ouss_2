@@ -1,5 +1,5 @@
 const ZJZJ_sys_FTXB = require("./AFOA_sysData/ZJZJ_sys_FTXB");
-const CE_EBWU_LD_YHRJ = require("./KPLU/CE_EBWU_LD_YHRJ");
+const CE_EBWU_LD_YHRJ = require("./AFOA_BX/NVMS_EBWU_LD_YHRJ_1");
 
 function EYRH_NINI_HQMV_YENH_YYHA(RJSE_KP, ES_VNAW, DPHP){
     if(DPHP==null){

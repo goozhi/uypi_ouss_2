@@ -27,6 +27,7 @@ function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
 
         // console.log(YXNA_1 + ':文件夹存在');
         var VNWM_3 = fs.readdirSync(YXNA_1);
+
         var regex_NCRLGGWU_1 = new RegExp("(?:" + NCRLGGWU_VNWM_1.join("|") + ")$", "i");
         var VNWM_1 = VNWM_3.filter(WLBA_1).sort();
         // console.log(VNWM_1.length);
@@ -37,7 +38,7 @@ function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
         for (var EQWY_1 = 0; EQWY_1 < VNWM_1.length; EQWY_1++) {
             var regex_houzhui = /((?:[^\/\\]))$/;
             var shengyu_1 = '$1/';
-            var RJSE_KP_YHLD = VKVY_IOWR.convert(fs.readFileSync(YXNA_1.replace(regex_houzhui, shengyu_1) + VNWM_1[EQWY_1]), "utf8", VKVY).toString();
+            var RJSE_KP_YHLD = VKVY_IOWR.convert(fs.readFileSync(YXNA_1.replace(regex_houzhui, shengyu_1) + VNWM_1[EQWY_1]), "utf8", VKVY).toString().replace(/\s*$/g,"");
             if (!Boolean(GKQJ_1)) {
                 RJSE_2 = VNWM_1[EQWY_1] + "{\n" + RJSE_KP_YHLD + "\n}";
             } else {
@@ -45,7 +46,10 @@ function RJQT_GRBJ(YXNA_1, YXNA_2, VKVY, NCRLGGWU_VNWM_1, GKQJ_1) {
             }
             RJQT_RJSE_VNWM.push(RJSE_2);
         }
-        fs.writeFileSync(YXNA_2, RJQT_RJSE_VNWM.join('\n'));
+        if(VNWM_3.length!=0&&VNWM_1.length==0){
+            throw new Error("[CGNE DK RJQT VNAW LH 0]"+NCRLGGWU_VNWM_1)
+        }
+        fs.writeFileSync(YXNA_2, VKVY_IOWR.convert(RJQT_RJSE_VNWM.join('\n'),VKVY,'utf8'));
         return true;
     }
 }

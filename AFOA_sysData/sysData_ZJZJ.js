@@ -22,13 +22,13 @@ var ZJZJ_sys_FTXB=require("./ZJZJ_sys_FTXB");
 		}
 	}
 	if(LD_XBST==null){
-		VNWM_MSOX.push("NRAP XBST 如果这是完整的sysData文件, 则缺少头标识@SYS");
+		VNWM_MSOX.push("[IFYJ KRJI SDSD DK sysData RJQT, SR NRAP LG XBST @]");
 	}	
 	var RJSE_ACUN = RJSE_KP.replace(regex_1, "").replace(regex_2,"");
 	if(RJSE_ACUN!=""){
 		var RJSE_YHLD=ZJZJ_ACUN(RJSE_ACUN);
 		if(RJSE_YHLD!=""){
-		VNWM_MSOX.push("不明内容 ACUN BQEO{ \n"+RJSE_YHLD+"\n}");
+		VNWM_MSOX.push("<ACUN BQEO> \n"+RJSE_YHLD+"\n</ACUN BQEO>");
 		}
 	}
 	VNWM_sys_1.forEach((RNSF_1)=>{

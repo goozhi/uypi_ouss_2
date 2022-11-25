@@ -17,7 +17,7 @@ function ZJZJ_21_NINI_MCVN(MCVN_21) {
     RJSE_MSOX+=ZJZJ_ES(NINI_ES);
     var reg_KXUX_YJ=/^(?:0+|)[8421](?:0+|)$/;
     if(!reg_KXUX_YJ.test(NINI_KXUX_YJ)){
-        RJSE_MSOX+="[21 KXUX YJ BRTZ MSOX AE AC GRBU] "+NINI_KXUX_YJ+" <=="
+        RJSE_MSOX+="[21 KXUX YG BRTZ MSOX AE AC GRBU] "+NINI_KXUX_YJ+" <=="
     }
     var reg_CXMI = /^[^,\n]+\|[^,\n]+$/;
     if(!reg_CXMI.test(NINI_CXMI_YJ)){

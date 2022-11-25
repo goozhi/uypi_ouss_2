@@ -14,7 +14,7 @@ function ZJZJ_bb_NINI_MCVN(IOWR_KP) {
     var VNWM_MCVN = NINI_bb_ZZZZ_SLGR.split(/\s*,\s*/);
     VNWM_MCVN.forEach(RNSF => {
         if(!reg_MCVN.test(RNSF)){
-            RJSE_MSOX+="[bb MCVN FTPJ] "+RNSF+" <=="
+            RJSE_MSOX+="[b b MCVN FTPJ] "+RNSF+" <=="
         }
     });
     if (RJSE_MSOX != "")

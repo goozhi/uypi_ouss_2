@@ -6,7 +6,7 @@ function ZJZJ_sys_FTXB(RJSE_KP){
 	}
 	var RJSE_MSOX=ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP,"sysData")
 	if(RJSE_MSOX==""){
-		RJSE_MSOX="HMPC MSOX";
+		RJSE_MSOX="[HMPC MSOX]";
 	}
 	return RJSE_MSOX;
 	

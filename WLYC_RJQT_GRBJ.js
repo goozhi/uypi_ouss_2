@@ -4,7 +4,7 @@ function WLYC_RJQT_GRBJ(req,res){
     if(req.body.VDZV_4!=""){
         VNWM_YHLD=req.body.VDZV_4.split(/\n/);
     }
-    if(!/\//.test(req.body.VDZV_2)){
+    if(!/\/|\\/.test(req.body.VDZV_2)){
         YXNA_2=req.body.VDZV_1+"/GRBJ.txt"
     }else{
         YXNA_2=req.body.VDZV_2

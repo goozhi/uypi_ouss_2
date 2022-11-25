@@ -1,16 +1,60 @@
+<head>
+    <title>VR</title>
+</head>
+<script>
+    document.onkeydown = function (event) {
+        var oEvent = event ? event : (window.event ? window.event : null);
+        isKeyPressed(oEvent);
+    }
+    document.onkeyup = function (event) {
+        var oEvent = event ? event : (window.event ? window.event : null);
+        isKeyLoosen(oEvent);
+    }
 
-<head><title>VR语言格式化</title></head>
-<h2>VR语言格式化</h2>
+    function isKeyLoosen(event) {
+        //抬起按键
+        var vdzv_1 = document.getElementById('id_vdzv_1')
+        var rj_1 = vdzv_1.value
+        var trig_1 = vdzv_1.selectionStart
+        if (event.keyCode == 13) {
+            if (/\{/.test(rj_1[trig_1 - 2])&&/\}/.test(rj_1[trig_1])) {
+                vdzv_1.value = rj_1.slice(0, trig_1) + "\n" + rj_1.slice(trig_1, rj_1.length)
+                vdzv_1.setSelectionRange(trig_1, trig_1)
+            }
+        } else if (event.keyCode == 219) {
+            if (/\{/.test(rj_1[trig_1 - 1])) {
+                vdzv_1.value = rj_1.slice(0, trig_1) + "}" + rj_1.slice(trig_1, rj_1.length)
+                vdzv_1.setSelectionRange(trig_1, trig_1)
+            }
+        }
+
+    }
+
+    function isKeyPressed(event) {
+    }
+</script>
+<h2>VR</h2>
 <form name="home" action="/" method="get">
-<button>go home</button>
+    <button>go home</button>
 </form>
-<form name="VR_EBWU_BRTZ_FS" action="/VR_EBWU_BRTZ_FS" method="post">
-    {{JTYP_2}}
+{{JTYP_2}}
+
+<form name="VR_EBWU_ATRS" action="/VR_EBWU_ATRS" method="get">
+    <button>VR语言教程</button>
+</form>
+<form name="VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
+    <button>VR语言之数据流项目编写示例</button>
+</form>
+
+<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
     <hr>
     目标内容<br>
-    <textarea name="VDZV_1" onfocus="select()" rows="20" cols="150">{{JTYP_3}}</textarea>
+    <textarea name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
+        cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button>提交</button>
+    <button onclick="ZHMS()">提交</button>
 </form>
 输出内容<br>
 <textarea rows="20" cols="150" onfocus="select()">{{JTYP_1}}</textarea>
+<script>
+</script>

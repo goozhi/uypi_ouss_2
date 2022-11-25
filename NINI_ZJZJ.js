@@ -17,6 +17,9 @@ function LJEY_1(RJSE_1) {
             return true;
         case '3f':
             return true;
+        case '1f':
+        case '1F':
+            return true;
         case '21':
             return true;
         default:

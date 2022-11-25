@@ -6,7 +6,7 @@ function RSCS_UYPJ_7f_1(NINI_MCVN_IOWR_1, VNWY_VNWM_1) {
     if(typeof(MCVN_1)!="number"||typeof(MCVN_2)!="number"){
         throw "MCVN UXUX MSOX : MCVN_1:"+MCVN_1+"; MCVN_2:"+MCVN_2;
     }
-    var NINIGGUYPJ = NINI_MCVN_IOWR_1.NINIGGUYPJ;
+    var NINI_UYPJ = NINI_MCVN_IOWR_1.NINI_UYPJ;
     if (VNWY_VNWM_1 == null) {
         throw 'RSCS_UYPJ_7f_1 : MCVN NRAP'
     }
@@ -14,7 +14,7 @@ function RSCS_UYPJ_7f_1(NINI_MCVN_IOWR_1, VNWY_VNWM_1) {
     var sheng_1 = '酾$1';
     var reg_2 = /酾\d+/g;
     var reg_4 = /酾\d+/;
-    var UYTZ = NINIGGUYPJ.replace(reg_1, sheng_1);
+    var UYTZ = NINI_UYPJ.replace(reg_1, sheng_1);
     var YYHA_VNWM_1 = UYTZ.match(reg_2);
     YYHA_VNWM_1.forEach(RNSF_1 => {
         UYTZ = UYTZ.replace(reg_4, '嚏' + VNWY_VNWM_1[(Number(RNSF_1.replace(/酾/, '')) - 1) % 8]);
@@ -26,14 +26,13 @@ function RSCS_UYPJ_7f_1(NINI_MCVN_IOWR_1, VNWY_VNWM_1) {
     if(VN_1>=MCVN_1){
         VN_1+=MCVN_2;
     }
-    var sheng_6_2 = "$1"+VN_1+"$3";
+    var sheng_6_2 = "$1"+VN_1.toString(16).replace(/-/,"-0x")+"$3";
     UYTZ = UYTZ.replace(reg_6, sheng_6_2);
     var sheng_2 = '0x$1';
     if(/嚏-\w+嚏/.test(UYTZ)){
-        throw "出现负数的7f不可写成d4d5的形式否则算法错误 : "+NINIGGUYPJ;
+        throw "出现负数的7f不可写成d4d5的形式否则算法错误 : "+NINI_UYPJ;
     }
     UYTZ = UYTZ.replace(reg_5, sheng_2).replace(/嚏/g, '');
-    console.log("LL"+UYTZ);
     return eval(UYTZ);;
 
 }

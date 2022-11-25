@@ -22,7 +22,7 @@ function ZJZJ_LJEY_NINI_EYNH_LJEY(RJSE_LJEY_KP) {
         throw new Error("MCVN UXUX MSOX : ACJI string :" + UXUX_YHLD)
     }
     var RJSE_1 = RJSE_LJEY_KP;
-    var reg_LJEY_LD = /(?:\n|^)\+\d\[.*?\]\((?:Spec|Read|Clear|Str|\+)\)/i;
+    var reg_LJEY_LD = /(?:\n|^)\+\d\[.*?\]\((?:Spec|Read|Ecu|Clear|Act|Str|\+)\)/i;
     var reg_LJEY_JTCO_EB = /\$\$\$/;
     var RJSE_LJEY_LD = RJSE_LJEY_KP.match(reg_LJEY_LD);
     if (RJSE_LJEY_LD == null) {

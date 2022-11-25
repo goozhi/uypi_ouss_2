@@ -8,19 +8,21 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var ZJZJ_3c_NINI = require('./ZJZJ_3c_NINI')
     var ZJZJ_0a_NINI = require('./ZJZJ_0a_NINI')
     var ZJZJ_bb_NINI = require('./ZJZJ_bb_NINI')
+    var ZJZJ_1f_NINI = require('./ZJZJ_1f_NINI')
 
     var ZJZJ_10_NINI = require('./ZJZJ_10_NINI')
     var ZJZJ_16_NINI = require('./ZJZJ_16_NINI')
 
     var RJSE_MSOX = ""
     var RJSE_1 = ZJZJ_BQEO;
-    var reg_cf_NINI = /.*\},\s*cf\s*,.*/ig;
+    var reg_cf_NINI = /.*(?:\}|\]),\s*cf\s*,.*/ig;
     var reg_21_NINI = /.*\},\s*21\s*,.*/ig;
     var reg_7f_NINI = /.*\},\s*7f\s*,.*/ig;
     var reg_3f_NINI = /.*\},\s*3f\s*,.*/ig;
     var reg_3c_NINI = /.*\},\s*3c\s*,.*/ig;
     var reg_0a_NINI = /.*\},\s*0a\s*,.*/ig;
     var reg_bb_NINI = /.*\},\s*bb\s*,.*/ig;
+    var reg_1f_NINI = /.*\},\s*1f\s*,.*/ig;
 
     var reg_10_NINI = /.*\},\s*10\s*,.*/ig;
     var reg_16_NINI = /.*\},\s*16\s*,.*/ig;
@@ -32,6 +34,8 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var RJSE_3c_NINI = RJSE_1.match(reg_3c_NINI);
     var RJSE_0a_NINI = RJSE_1.match(reg_0a_NINI);
     var RJSE_bb_NINI = RJSE_1.match(reg_bb_NINI);
+    var RJSE_1f_NINI = RJSE_1.match(reg_1f_NINI);
+
 
     var RJSE_10_NINI = RJSE_1.match(reg_10_NINI);
     var RJSE_16_NINI = RJSE_1.match(reg_16_NINI);
@@ -66,7 +70,11 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
         RJSE_MSOX += ZJZJ_bb_NINI(RJSE_bb_NINI);
         RJSE_1 = RJSE_1.replace(reg_bb_NINI, "")
     }
-    if (RJSE_10_NINI != null) {
+    if (RJSE_1f_NINI != null) {
+        RJSE_MSOX += ZJZJ_1f_NINI(RJSE_1f_NINI);
+        RJSE_1 = RJSE_1.replace(reg_1f_NINI, "")
+    }
+        if (RJSE_10_NINI != null) {
         RJSE_MSOX += ZJZJ_10_NINI(RJSE_10_NINI);
         RJSE_1 = RJSE_1.replace(reg_10_NINI, "")
     }

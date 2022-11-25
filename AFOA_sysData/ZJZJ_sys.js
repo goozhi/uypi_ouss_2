@@ -17,7 +17,7 @@ function ZJZJ_sys(RJSE_KP) {
 		RJSE_KP=RJSE_KP.replace(reg_LG_MCVN,"")
 	}
 	var regex_IMFB = /\$Init\b(?:(?!\$)[\S\s])*?(?=\$|$)/ig;
-	var regex_LJEY_NINI = /(?:\n|^)\+\d+\[(?:(?!(?:\n|^)\+\d+|\$Act)[\S\s]){0,399999}\$\$\$.*/g;
+	var regex_LJEY_NINI = /(?:\n|^)\+\d+\[(?:(?!(?:\n|^)\+\d+|\$Act)[\S\s]){0,399999}?\$\$\$.*/g;
 	var reg_Act=/\$Act\((?:(?!\$Act|\$Ecu|\$Str)[\S\s]){0,399999}?\n\*\*\*.*/ig;
 	var VNWM_YHLD=RJSE_KP.match(reg_Act);
 	if(VNWM_YHLD!=null){

@@ -10,7 +10,7 @@ function ZJZJ_10_NINI_MCVN(IOWR_KP) {
     var NINI_UXUX = IOWR_KP.NINI_UXUX;
     var NINI_PCYC_ZTHI_SLGR = IOWR_KP.NINI_PCYC_ZTHI_SLGR;
     RJSE_MSOX += ZJZJ_ES(NINI_ES);
-    reg_MCVN = /^d\d+(?:-d\d+|)$/;
+    reg_MCVN = /^(?:d\d+(?:-d\d+|)|".")$/;
     var VNWM_MCVN = NINI_PCYC_ZTHI_SLGR.split(/\s*,\s*/);
     VNWM_MCVN.forEach(RNSF => {
         if(!reg_MCVN.test(RNSF)){

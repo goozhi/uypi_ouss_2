@@ -2,12 +2,15 @@
 
 <body>
     <script>
+
         function JYQH() {
             var ele_1 = document.getElementById("VDZV_1");
             var ele_2 = document.getElementById("VDZV_2");
             var RJSE_1 = ele_1.value;
             var RJSE_2 = HD_LZJK(RJSE_1);
             ele_2.value = RJSE_2;
+            ele_2.select()
+            document.execCommand('copy');
         }
         function JYQH2() {
             var ele_1 = document.getElementById("VDZV_3");
@@ -17,6 +20,9 @@
             var RJSE_1 = ele_1.value;
             var RJSE_2 = HD_LZJK(RJSE_1, ele_4.value, ele_5.value);
             ele_2.value = RJSE_2;
+            ele_2.select()
+            document.execCommand('copy');
+
         }
         function HD_LZJK(RJSE1, LDGGXBST, DSGGXBST) {//this.quChongfuHang
             if (RJSE1 == null) {
@@ -77,7 +83,6 @@
             <br><textarea onfocus="select()" id="VDZV_1" rows="10" cols="50"></textarea>
             <button onclick="JYQH()">执行</button>
         </div>
-
         <div style="clear:both;">输出内容
             <hr><textarea onfocus="select()" id="VDZV_2" rows="10" cols="50"></textarea>
         </div>

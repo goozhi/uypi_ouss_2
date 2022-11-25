@@ -15,7 +15,7 @@ function ZJZJ_TSJQ_ClearDtc(ZJZJ_BQEO_KP) {
     if (ES == null) {
         RJSE_MSOX += "[ESIH YJ AC AB]" + RJSE_1;
     } else {
-        RJSE_MSOX += ZJZJ_ES(ES[0]);
+        RJSE_MSOX += ZJZJ_ES(ES[0].replace(/^\s+|\s+(?=\/\/line \d+)/g,""));
         RJSE_1 = RJSE_1.replace(reg_ES, "");
     }
     if (RJSE_1 != "") {

@@ -10,7 +10,7 @@ function ZJZJ_cf_NINI(VNWM_cf_NINI) {
         var NINI = VNWM_cf_NINI[i1];
         var reg_MCVN = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
         if (!reg_MCVN.test(VNWM_cf_NINI[i1])) {
-            RJSE_MSOX += "\n[cf SDRH BRTZ MSOX]" + VNWM_cf_NINI[i1];
+            RJSE_MSOX += "\n[c f SDRH BRTZ MSOX]" + VNWM_cf_NINI[i1];
             continue;
         }
         var NINI_WU = NINI.replace(reg_MCVN, "$1");

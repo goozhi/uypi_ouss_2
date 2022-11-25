@@ -1,6 +1,6 @@
 <title>删重复行_根据标识符</title>
 <form name="home" action="/" method="get">
-<button>go home</button>
+    <button>go home</button>
 </form>
 
 <body>
@@ -20,6 +20,8 @@
             var RJSE_1 = ele_1.value;
             var RJSE_2 = HD_LZJK(RJSE_1, ele_4.value, ele_5.value);
             ele_2.value = RJSE_2;
+            ele_2.select()
+            document.execCommand('copy');
         }
         function HD_LZJK(RJSE1, LDGGXBST, DSGGXBST) {//this.quChongfuHang
             if (RJSE1 == null) {

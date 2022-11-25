@@ -23,7 +23,7 @@ function menuData_ZJZJ(RJSE_KP) {
         }
     }
     if (LD_XBST == null) {
-        VNWM_MSOX.push("[NRAP XBST 如果这是完整的menuData文件, 则缺少头标识@MENU]");
+        VNWM_MSOX.push("[IFYJ KRJI SDSD DK menuData RJQT, SR NRAP LG XBST @]");
     }
     var RJSE_ACUN = RJSE_KP.replace(reg_LJEY, "").replace(regex_2, "");
     if (RJSE_ACUN != "") {
