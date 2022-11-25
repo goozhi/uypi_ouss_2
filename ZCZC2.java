@@ -12,7 +12,7 @@ Str2ID(0300014300010001000000D9),Total number of battery pack temperature probes
 Str2ID(0300014300010001000000DA),Maximum temperature of power battery;
 Str2ID(0300014300010001000000DB),℃;
 Str2ID(0300014300010001000000DC),Minimum temperature of power battery;
-Str2ID(0300014300010001000000DD),℃;
+Str2ID(0300014300010001000000DD),℃; lgz
 Str2ID(0300014300010001000000DE),Maximum temperature number of power battery;
 Str2ID(0300014300010001000000DF),Minimum temperature number of power battery;
 Str2ID(0300014300010001000000E0),Total number of single battery in battery pack;
