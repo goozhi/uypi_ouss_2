@@ -65,7 +65,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
                 var VNWM_KLVQ_MCVN = vnwm_yhld[0].split(/-/).map(RNSF_3 => {
                     var VN_YHLD = Number(RNSF_3);
                     if (isNaN(VN_YHLD)) {
-                        throw new Error("[MCVN JI NaN]" + RNSF_3 + "<--" + RNSF)
+                        throw new Error("[MCVN JI N a N]" + RNSF_3 + "<--" + RNSF)
                     }
                     return VN_YHLD
                 })
@@ -183,7 +183,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
                 }
             }
             if (isNaN(PZVN)) {
-                throw new Error("[PZVN JI NaN]" + RJSE_KP)
+                throw new Error("[PZVN JI N a N]" + RJSE_KP)
             }
         }
     }

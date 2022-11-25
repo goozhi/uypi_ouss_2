@@ -27,7 +27,7 @@ function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
         throw new Error("MCVN NRAP");
     }
     if (isNaN(YE_aU_QHVN)) {
-        throw new Error("VNZT MCVN JI NaN")
+        throw new Error("VNZT MCVN JI N a N")
     }
     var VNWM_ZTHI_SLGR;
     if (RJSE_ZTHI_SLGR == null || RJSE_ZTHI_SLGR == "") {
@@ -44,7 +44,7 @@ function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
             VNWM_OKWK_ZTHI_SYZN_YG_SLGR = diwr_okwk_ZTHI_SYZN_YG_SLGR[1].split(/(?<!\s)\s+(?!\s)|,/).map(rnsf_3 => {
                 var vn_1 = Number(rnsf_3)
                 if (isNaN(vn_1)) {
-                    throw new Error("[MCVN JI NaN]" + rnsf_3 + "<--" + diwr_okwk_ZTHI_SYZN_YG_SLGR[1])
+                    throw new Error("[MCVN JI N a N]" + rnsf_3 + "<--" + diwr_okwk_ZTHI_SYZN_YG_SLGR[1])
                 }
                 return vn_1
             })
@@ -75,7 +75,7 @@ function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
                     zthi_vkih = Number(iowr_mcvn[1])
                     diyc_yg = Number(iowr_mcvn[2])
                     if (isNaN(diyc_yg)) {
-                        throw new Error("[MCVN JI NaN]" + iowr_mcvn[2] + "<--" + rnsf_2)
+                        throw new Error("[MCVN JI N a N]" + iowr_mcvn[2] + "<--" + rnsf_2)
                     } else {
                     }
                     iowr_vnwm_zthi_mcvn_1.push({ zthi_vkih, diyc_yg })

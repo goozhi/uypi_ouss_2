@@ -17,7 +17,7 @@ function NVRJ_RSCS_ZV_YECM_BRTZ(RJSE_KP){
             var vn_vnwm_es_vnwy=rjse_vnwm_es_vnwy.map(rnsf=>{
                 var vn_yhld=Number("0x"+rnsf);
                 if(isNaN(vn_yhld)){
-                    throw new Error("[MCVN JI NaN]"+rnsf+"<--")
+                    throw new Error("[MCVN JI N a N]"+rnsf+"<--")
                 }
                 return vn_yhld
             })

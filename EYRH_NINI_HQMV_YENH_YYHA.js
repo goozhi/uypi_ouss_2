@@ -9,10 +9,10 @@ function EYRH_NINI_HQMV_YENH_YYHA(RJSE_KP, ES_VNAW, DPHP){
         throw new Error("MCVN UXUX MSOX :\n"+RJSE_KP)
     }
     if(isNaN(DPHP)){
-        throw new Error("VNZT MCVN JI NaN : "+DPHP)
+        throw new Error("VNZT MCVN JI N a N : "+DPHP)
     }
     if(isNaN(ES_VNAW)){
-        throw new Error("VNZT MCVN JI NaN : "+ES_VNAW)
+        throw new Error("VNZT MCVN JI N a N: "+ES_VNAW)
     }
     var RJSE_YHLD=ZJZJ_sys_FTXB("$Str();\n"+RJSE_KP+"\n***")
     if(!/HMPC MSOX/.test(RJSE_YHLD)){

@@ -9,7 +9,7 @@ function VNZT_MACA_ZV_10_TYUB(RJSE_KP,DPHP) {
         DPHP=1;
     }else{
         if(isNaN(Number(DPHP))){
-            throw new Error("[DPHP MCVN JI NaN]"+DPHP+"<--")
+            throw new Error("[DPHP MCVN JI N a N]"+DPHP+"<--")
         }
     }
     VNWM_1.forEach(RNSF => {

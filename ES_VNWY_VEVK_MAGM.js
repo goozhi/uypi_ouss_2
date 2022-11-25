@@ -21,7 +21,7 @@ function ES_VNWY_VEVK_MAGM(bqeo_kp,xbst_zthi_eqwy_1,xbst_zthi_eqwy_2){
             throw new Error("[MCVN UXUX AOAO JI number]"+xbst_zthi_eqwy_2+"<--")
         }else{
             if(isNaN(xbst_zthi_eqwy_2)){
-                throw new Error("[MCVN JI NaN]"+xbst_zthi_eqwy_2+"<--")
+                throw new Error("[MCVN JI N a N]"+xbst_zthi_eqwy_2+"<--")
             }
         }
         var rssc=true;

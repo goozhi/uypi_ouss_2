@@ -22,7 +22,7 @@ function DIZC_OUSS(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
         throw new Error("MCVN NRAP");
     }
     if (isNaN(YE_aU_QHVN)) {
-        throw new Error("VNZT MCVN JI NaN")
+        throw new Error("VNZT MCVN JI N a N")
     }
     var VNWM_ZTHI_SLGR;
     if (RJSE_ZTHI_SLGR == null || RJSE_ZTHI_SLGR == "") {
