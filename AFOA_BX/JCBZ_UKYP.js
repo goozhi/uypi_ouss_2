@@ -24,7 +24,7 @@ if (diwr_yxna_zv_nodejs_AFOA_BX != null) {
             var mtime_2 = states_2.mtimeMs
             if (mtime_1 < mtime_2) {
                 fs.writeFileSync(yxna_nixb, RNSF.BQEO)
-                vnwm_hivr.push(RNSF.WUZT + "-ymce->" + yxna_nixb + "-bmlc-" + mtime_2 + " vs " + mtime_1)
+                vnwm_hivr.push(RNSF.WUZT + "-ymce->" + yxna_nixb + "-bmlc-" + states_2.mtime + " vs " + states_1.mtime)
             } else {
                 vnwm_hivr.push('-ilws->' + yxna_nixb);
             }
