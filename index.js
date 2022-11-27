@@ -40,7 +40,8 @@ app.set('port', process.env.PORT || config.port);
 app.get('/', function (req, res) {
     var YMCE_HITD=config.YMCE_HITD
     var version=config.version
-    res.render('home',{YMCE_HITD,version});
+    var author=config.piqr
+    res.render('home',{YMCE_HITD,version,author});
 });
 app.get('/GLRH', function (req, res) {
     res.render('GLRH');
