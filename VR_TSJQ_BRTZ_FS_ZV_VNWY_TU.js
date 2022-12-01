@@ -8,6 +8,7 @@ function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(IOWR_AFOA) {
     var NINI_SIIH_DIAX = require('./NINI_SIIH_DIAX')
     var VR_EBWU_BRTZ_FS_ZV_bb = require('./VR_EBWU_BRTZ_FS_ZV_bb')
     var VR_EBWU_BRTZ_FS_ZV_33 = require('./VR_EBWU_BRTZ_FS_ZV_33')
+    var VR_EBWU_BRTZ_FS_ZV_gg = require('./VR_EBWU_BRTZ_FS_ZV_gg')
     var VR_EBWU_BRTZ_FS_ZV_10 = require('./VR_EBWU_BRTZ_FS_ZV_10')
     var VR_EBWU_BRTZ_FS_ZV_09 = require('./VR_EBWU_BRTZ_FS_ZV_09')
     var VR_EBWU_BRTZ_FS_ZV_16 = require('./VR_EBWU_BRTZ_FS_ZV_16')
@@ -36,6 +37,8 @@ function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(IOWR_AFOA) {
             switch (true) {
                 case /^(?:33|3f)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_33(RNSF)
+                case /^(?:gg)$/i.test(NINI_UXUX):
+                    return VR_EBWU_BRTZ_FS_ZV_gg(RNSF)
                 case /^(?:16|H)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_16(RNSF)
                 case /^(?:09|0a|A)$/i.test(NINI_UXUX):
