@@ -11,6 +11,7 @@ function BRTZ_FS_3f(RJSE_KP) {
     var VNWM_NINI = VNWM_RNSF_SLGR.map(RNSF => {
         var VBYT_CDPC_oth = false;
         var VNWM_1 = RNSF.split(/\n/);
+        
         var RJSE_MCVN_1 = "";
         if (/^\s*\d+\s*$/.test(VNWM_1[VNWM_1.length - 1])) {
             RJSE_MCVN_1 = VNWM_1[VNWM_1.length - 1].replace(/\s+/g,"");

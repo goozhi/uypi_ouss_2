@@ -36,7 +36,7 @@ function NINI_HQTB_2(RJSE_KP, diwr_vyvy_vnwm_zthi_slgr,VNWM_OKWK_ZTHI_SYZN_YG_SL
             throw new Error("[NINI WU AC ZZNQ]" + RNSF_1+"<--");
         }
         var RJSE_YHLD_2 = RNSF_1.replace(reg_NINI_WU, "");
-        var VNWM_2 = RJSE_YHLD_2.replace(/\/\/.*/g, '').replace(/;[^\S]*$/,"").split(/\s*,\s*/);
+        var VNWM_2 = RJSE_YHLD_2.replace(/\/\/.*/g, '').replace(/;[^\S]*$/,"").replace(/('[^']+),([^']*')/g,"$1\u917e$2").split(/\s*,\s*/).join('\u568f').replace(/\u917e/g,",").split(/\u568f/);
         VNWM_2.unshift(RJSE_YHLD_1[2]);
         var NINI_IOWR_1 = { TRIG: EQWY_1, MCVN_VNWM_1: VNWM_2 }
         switch (VNWM_2[2]) {
