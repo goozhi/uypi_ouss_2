@@ -1,4 +1,5 @@
 const VR_EBWU_BRTZ_FS_ZV_22 = require('./VR_EBWU_BRTZ_FS_ZV_22')
+const VR_EBWU_BRTZ_FS_ZV_qq = require('./VR_EBWU_BRTZ_FS_ZV_qq')
 
 function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
@@ -47,6 +48,8 @@ function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(IOWR_AFOA) {
                     return VR_EBWU_BRTZ_FS_ZV_10(RNSF)
                 case /^(?:22\d+|21\d+)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_22(RNSF)
+                case /^(?:qq\d+)$/i.test(NINI_UXUX):
+                    return VR_EBWU_BRTZ_FS_ZV_qq(RNSF)
                 case /^(?:88|bb)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_bb(RNSF)
                 case /^(?:=)$/i.test(NINI_UXUX):
