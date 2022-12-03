@@ -32,7 +32,6 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     }else{
         RJSE_NINI_LLAO=RJSE_NINI_LLAO.replace(reg_ES,"{"+IOWR_ES[1].replace(/(\w\w)(?=\w)/g,"$1 ")+"}")
     }
-
     var NINI_UXUX=IOWR_MCVN[2]    
     if(!/^=$/.test(NINI_UXUX)){
         throw new Error("NINI UXUX ACUN : "+NINI_UXUX+"<--"+RJSE_KP)
@@ -43,6 +42,8 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     var PZVN = VNWM_MCVN[1]
     if(PZVN==undefined){
         PZVN=1
+    }else if(PZVN==""){
+        throw new Error("csrf-PZVN ac oan lh vv-"+RJSE_KP)
     }
     var NOKZ;
     var EYTR;
