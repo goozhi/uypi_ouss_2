@@ -18,9 +18,9 @@ function VR_TSJQ_ZV_CE_EBWU_LD_YHRJ(IOWR_AFOA) {
         RJSE_jtyp=RJSE_jtyp.replace(reg_mdcf,'\u568f')
         gkqj_mdcf_xbst=true;
     }
-
     if (VNWM_MCVN_1 == null) {
         RJSE_jtyp = CE_EBWU_LD_YHRJ(RJSE_jtyp)
+
     } else {
         VNWM_MCVN_1.forEach(RNSF => {
             switch (true) {

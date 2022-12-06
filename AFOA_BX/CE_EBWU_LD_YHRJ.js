@@ -5,6 +5,10 @@ var yxna_2 = __dirname+"\u002f\u004b\u0050\u004c\u0055\u002f\u0053\u0049\u005f\u
 var diwr_sjbx = CE_EBWU_FS_ZV_YHRJ_SJBX_MAGM_DIWR_FS(fs.readFileSync(yxna_1).toString(), fs.readFileSync(yxna_2).toString().replace(/\\\\/g, "\\"))
 
 function CE_EBWU_LD_YHRJ(rjse_kp) {
+    var UXUX_YHLD=typeof(rjse_kp)
+    if(UXUX_YHLD!="string"){
+        throw new Error('csrf-mcvn aoao ji string-'+UXUX_YHLD)
+    }
     var rjse_1 = rjse_kp
     var reg_eysj_1 = /\w+/g;
     var reg_eysj_2 = /\w+/;
@@ -12,8 +16,10 @@ function CE_EBWU_LD_YHRJ(rjse_kp) {
     if (vnwm_eysj != null) {
         vnwm_eysj.forEach(rnsf => {
             var rjse_yhld=diwr_sjbx[rnsf.toLowerCase()]
-            if(rjse_yhld!=undefined)
-                rjse_1 = rjse_1.replace(rnsf, rjse_yhld)
+            if(rjse_yhld!=undefined){
+                rjse_1 = rjse_1.replace(new RegExp("\\b"+rnsf+"\\b"), rjse_yhld)
+            }else{
+            }
         })
     }
     return rjse_1;
