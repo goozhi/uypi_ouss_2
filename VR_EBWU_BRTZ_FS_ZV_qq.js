@@ -1,3 +1,4 @@
+const uz_ms = require("./AFOA_BX/uz_ms");
 const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require("./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ");
 
 function VR_EBWU_BRTZ_FS_ZV_qq(RJSE_KP){
@@ -30,7 +31,7 @@ function VR_EBWU_BRTZ_FS_ZV_qq(RJSE_KP){
     if(IOWR_MCVN_1!=null){
         NINI_qq_MCVN=IOWR_MCVN_1[3]+","+VR_TSJQ_ZV_CE_EBWU_LD_YHRJ({VR_AFOA_MCVN:"",VR_AFOA_BQEO: IOWR_MCVN_1[2].replace(/\[|\]/g,"")}).replace(/ /g,"")+"|"+VR_TSJQ_ZV_CE_EBWU_LD_YHRJ({VR_AFOA_MCVN:"",VR_AFOA_BQEO: IOWR_MCVN_1[1].replace(/\[|\]/g,"")}).replace(/ /g,"")
     }else{
-        throw new Error("[MCVN SDRH BRTZ MSOX]"+RJSE_MCVN+"<--"+RJSE_KP)
+        uz_ms("csrf-MCVN SDRH BRTZ MSOX-"+RJSE_MCVN+"-kp-"+RJSE_KP)
     }
 
     return RJSE_NINI_LLAO + ",21," + KLVQ_MCVN + "," +NINI_qq_MCVN+";"+BMLC

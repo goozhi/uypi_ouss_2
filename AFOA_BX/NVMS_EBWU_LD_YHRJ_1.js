@@ -6,6 +6,9 @@ function NVMS_EBWU_LD_YHRJ_1(diwr_err) {
         throw new Error("[uxux aoao ji object]" + uxux_yhld + "<--")
     }
     var RJSE_1 = diwr_err.message
+    if(!/^\s*\[/.test(RJSE_1)){
+        return diwr_err
+    }
     var reg_LEUN = /\[[^\[\]]*(?:\w{4} \w{2}|\w{2} \w{4})[^\[\]]*\]|<[^\<\>]*(?:\w{4} \w{2}|\w{2} \w{4})[^\<\>]*>/g;
     var VNWM_LEUN = RJSE_1.match(reg_LEUN);
     if (VNWM_LEUN == null) {

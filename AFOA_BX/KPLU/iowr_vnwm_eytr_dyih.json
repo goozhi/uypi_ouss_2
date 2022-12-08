@@ -3,6 +3,8 @@
     { "DYIH": "du", "EYTR": "度" },
     { "DYIH": "kemeimiao", "EYTR": "g/s" },
     { "DYIH": "OUMU", "EYTR": "Ω" },
+    { "DYIH": "OHM", "EYTR": "Ω" },
+    { "DYIH": "mOHM", "EYTR": "mΩ" },
     { "DYIH": "qianou", "EYTR": "kΩ" },
     { "DYIH": "KouMU", "EYTR": "kΩ" },
     { "DYIH": "KOH", "EYTR": "kΩ" },
