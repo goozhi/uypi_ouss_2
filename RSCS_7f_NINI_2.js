@@ -42,7 +42,7 @@ function RSCS_7f_NINI_2(NINI_IOWR_1,diwr_vyvy_vnwm_zthi,VNWM_OKWK_ZTHI_SYZN_YG_S
         var IMFB_VNWM_1 = ['00', '00', '00', '00', '00', '00', '00', '00'];
         RNSF_1.forEach(rnsf_2 => {
             if(new RegExp("d"+rnsf_2.zthi_vkih+"(?!\\d)","i").test(NINI_UYPJ)){
-                IMFB_VNWM_1[(rnsf_2.zthi_vkih - 1) % 8] = rnsf_2.diyc_yg.toString(16);            
+                IMFB_VNWM_1[(rnsf_2.zthi_vkih - 1) % 8] = rnsf_2.diyc_yg.toString(16).replace(/^(.)$/,"0$1");            
             }
         });
         return {vnwm_ey_es_vnwy:IMFB_VNWM_1,zthi_wmgr:RNSF_1};

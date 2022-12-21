@@ -77,7 +77,7 @@ function RSCS_3c_NINI_2(NINI_IOWR_1, diwr_vyvy_vnwm_zthi_slgr,VNWM_OKWK_ZTHI_SYZ
         var IMFB_VNWM = ['00', '00', '00', '00', '00', '00', '00', '00'];
         RNSF_2.forEach(RNSF_3 => {
             if(new RegExp("d"+RNSF_3.zthi_vkih+"(?!\\d)","i").test(rjse_NINI_UYPJ_slgr)){
-                IMFB_VNWM[(RNSF_3.zthi_vkih - 1) % 8] = RNSF_3.diyc_yg.toString(16);
+                IMFB_VNWM[(RNSF_3.zthi_vkih - 1) % 8] = RNSF_3.diyc_yg.toString(16).replace(/^(.)$/,"0$1");            
             }
         })
         var VN_1=RSCS_UYPJ_cf_1(NINI_UYPJ_1, IMFB_VNWM);
