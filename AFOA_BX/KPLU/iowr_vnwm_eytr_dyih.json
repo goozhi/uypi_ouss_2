@@ -1,5 +1,6 @@
 [
     { "DYIH": "SHESHIDU", "EYTR": "℃" },
+    { "DYIH": "degc", "EYTR": "℃" },
     { "DYIH": "du", "EYTR": "度" },
     { "DYIH": "kemeimiao", "EYTR": "g/s" },
     { "DYIH": "OUMU", "EYTR": "Ω" },
