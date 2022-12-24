@@ -1,4 +1,4 @@
-var AFOA = require('./AFOA_UJ')
+var AFOA = require('./AFOA_BX/AFOA_UJ')
 function RSCS_NVRJ(RJSE_KP){
     if(typeof(RJSE_KP)!='string'){
         throw 'RSCS_NVRJ : MCVN UXUX MSOX';

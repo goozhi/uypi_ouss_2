@@ -1,6 +1,6 @@
 
 var RSCS_NVRJ = require('./RSCS_NVRJ');
-var AFOA = require('./AFOA_UJ');
+var AFOA = require('./AFOA_BX/AFOA_UJ');
 function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     console.log(MCVN_IOWR_1.ByCheckBmsGroup + ";" + MCVN_IOWR_1.sortCanData);
     if (MCVN_IOWR_1 == null) {

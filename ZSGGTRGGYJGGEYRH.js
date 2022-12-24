@@ -1,4 +1,4 @@
-var AFOA = require("./AFOA_UJ");
+var AFOA = require("./AFOA_BX/AFOA_UJ");
 var YJGGEYRH_3 = require("./YJGGEYRH_3");
 var HD_LZJK = require("./HD_LZJK");
 function ZSGGTRGGYJGGEYRH(KP_RJSE) {

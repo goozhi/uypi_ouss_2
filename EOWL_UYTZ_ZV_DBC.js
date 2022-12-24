@@ -1,5 +1,5 @@
 function EOWL_UYTZ_ZV_DBC(PCYC_ZTHI_VNWM, BRTZ) {
-    var AFOA = require('./AFOA_UJ');
+    var AFOA = require('./AFOA_BX/AFOA_UJ');
     if (/^MOTOROLA$/i.test(BRTZ)) {
         var PCYC_ZTHI_VKIH_VNWM = AFOA.PZVA_SLGR(PCYC_ZTHI_VNWM, "ZTHI_VKIH");
         PCYC_ZTHI_VKIH_VNWM.sort();

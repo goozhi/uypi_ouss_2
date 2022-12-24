@@ -1,4 +1,4 @@
-const { json_FS_2 } = require("./AFOA_UJ");
+const { json_FS_2 } = require("./AFOA_BX/AFOA_UJ");
 
 function SIIHGGUXGGRJSEGGBRTZGGFS_2(IOWR_1, VN_1) {
     if (VN_1 == null) {

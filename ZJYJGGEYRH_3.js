@@ -1,4 +1,4 @@
-var AFOA = require("./AFOA_UJ.js")
+var AFOA = require("./AFOA_BX/AFOA_UJ.js")
 // var JI_TIQEGGSTIQ = require('./JI_TIQEGGSTIQ')
 function ZJYJGGEYRH(VNWM_RJSE_ZTHI_kp) {
   var VNWM_RJSE_ZTHI = VNWM_RJSE_ZTHI_kp.map(rnsf => {

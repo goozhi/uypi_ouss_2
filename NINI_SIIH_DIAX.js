@@ -1,5 +1,5 @@
 function NINI_SIIH_DIAX(RJSE_1) {
-    var AFOA = require('./AFOA_UJ')
+    var AFOA = require('./AFOA_BX/AFOA_UJ')
     var NINI_SIIH_DIAX_2 = require('./NINI_SIIH_DIAX_2')
     RJSE_1=RJSE_1.replace(/\r/g,'')
     var regex_NINI = /[ \t]*([^\{\n]*?)\s*(\{.*)/g

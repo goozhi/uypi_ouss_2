@@ -1,4 +1,4 @@
-var AFOA=require('./AFOA_UJ')
+var AFOA=require('./AFOA_BX/AFOA_UJ')
 function NVCM(IOWR_VYVYGGVNWM_1){
     var VNWM_4=[];
     for(FO_1 in IOWR_VYVYGGVNWM_1){

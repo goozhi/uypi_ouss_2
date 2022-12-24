@@ -1,5 +1,5 @@
 function NINIGGSIIHGGIOAX_2(VNWM_1){
-    var AFOA = require('./AFOA_UJ')
+    var AFOA = require('./AFOA_BX/AFOA_UJ')
     var VNWM_2=new Array()
     for(EQWY_1=0;EQWY_1<VNWM_1.length;EQWY_1++){
         var RJSE_1=VNWM_1[EQWY_1].replace(/\r/,'');

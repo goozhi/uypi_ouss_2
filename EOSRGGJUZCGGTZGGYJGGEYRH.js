@@ -1,4 +1,4 @@
-var AFOA=require("./AFOA_UJ");
+var AFOA=require("./AFOA_BX/AFOA_UJ");
 var fs1=require('fs');
 // var ZHVT_eS_VDZV_3=require("./ZHVT_eS_VDZV_3");
 // var ZHVT_eS_VDZV_4=require("./ZHVT_eS_VDZV_4");
