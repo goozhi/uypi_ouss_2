@@ -1,7 +1,21 @@
-
-<title>单位代号查询</title>
+<head>
+    <title>单位代号查询</title>
+    <link rel="stylesheet" href="/css/style1.css" onload="console.log('CSS 文件已加载')">
+</head>
 <h2>单位代号查询</h2>
 <form name="home" action="/" method="get">
-<button>go home</button>
+    <button>go home</button>
 </form>
-<textarea rows="60" cols="30">{{JTYP_1}}</textarea>
+<pre id="pre1" class="code-area-3" onload="console.log(999)">{{JTYP_1}}</pre>
+<div>
+    <script>var module={};</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" onload="console.log('jquery Sdbc')"></script>
+    <script src="/hljs.js" onload="console.log('Sdbc hljs')"></script>
+    <script>
+        $(document).ready(function () {
+            // 在文档中的某个元素后面添加新的 p 元素
+            var text1 = $(pre1).text()
+            document.getElementById("pre1").innerHTML = text1.replace(/(<=>)(.*)/g,"$1<span class=\"number\">$2</span>").replace(/<=>/g,"<span class=\"keyword\"><=></span>");
+        });
+    </script>
+</div>

@@ -10,14 +10,29 @@
   /* white-space: nowrap; */
   display: inline-block;
 }
+
+.code-area-3 {
+  padding: 4px;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  min-height: 96px;
+  background: #000;
+  border: 1px solid #ccc;
+  color: #fff;
+  /* white-space: nowrap; */
+  display: inline-block;
+}
+
 .code-area-2:hover {
-  border-radius:10px;
+  border-radius: 10px;
   font-size: larger;
 }
 
 .code-area-2:active {
-  border-radius:5px;
+  border-radius: 5px;
 }
+
 .code-area-2 {
   padding: 4px;
   margin: 0 auto;
@@ -27,7 +42,7 @@
   background: #fff;
   border: 1px solid #ccc;
   color: #000;
-  /* white-space: nowrap; */
+  white-space: nowrap;
   display: inline-block;
 }
 
@@ -43,6 +58,11 @@
 .keywords {
   color: #c678dd;
 }
+
+.keyword {
+  color: rgba(224, 999, 88, 0.8);
+}
+
 .mark1 {
   background-color: #eeeff0;
   border: 1px solid #ccc;

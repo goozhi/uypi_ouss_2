@@ -141,6 +141,7 @@ app.get('/about', function (req, res) {
     res.render('about');
 });
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/afoa_bx'));
 app.use(bodyParser());
 app.get('/newsletter', function (req, res) {
     res.render('newsletter', { csrf: 'CSRF token goes here' });
