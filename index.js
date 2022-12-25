@@ -2,8 +2,10 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var WLYC_ASCIIGGLDRG = require('./WLYC_ASCIIGGLDRG');
 var WLYC_SLRH_JYUY = require('./WLYC_SLRH_JYUY');
+var WLYC_VR_VKJP=require('./WLYC_VR_VKJP')
 var WLYC_RJQT_GRBJ = require('./WLYC_RJQT_GRBJ');
 var WLYC_RJQT_FDMJ = require('./WLYC_RJQT_FDMJ');
+var WLYC_VR_EBWU_ATRS = require('./WLYC_VR_EBWU_ATRS')
 var WLYC_EYRHGGHQTB = require('./WLYC_EYRHGGHQTB');
 var WLYC_DIZCGGOUSS = require('./WLYC_DIZCGGOUSS');
 var WLYC_ZSGGTRGGYJGGEYRH = require('./WLYC_ZSGGTRGGYJGGEYRH');
@@ -20,17 +22,17 @@ var WLYC_menuData_ZJZJ = require('./WLYC_menuData_ZJZJ');
 var WLYC_ESIH_BRTZ_FS = require('./WLYC_ESIH_BRTZ_FS');
 var WLYC_dtcData_ZJZJ = require('./WLYC_dtcData_ZJZJ');
 var WLYC_VNWY_TU_NINI_BRTZ_FS = require('./WLYC_VNWY_TU_NINI_BRTZ_FS')
-var WLYC_BRTZ_FS_3f=require('./WLYC_BRTZ_FS_3f');
-var WLYC_BRTZ_FS_3f_Beiqi_ec180=require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
-var WLYC_BRTZ_FS_Beiqi_ec180=require('./WLYC_BRTZ_FS_Beiqi_ec180');
-var WLYC_TYUB_LDRG=require('./WLYC_TYUB_LDRG');
+var WLYC_BRTZ_FS_3f = require('./WLYC_BRTZ_FS_3f');
+var WLYC_BRTZ_FS_3f_Beiqi_ec180 = require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
+var WLYC_BRTZ_FS_Beiqi_ec180 = require('./WLYC_BRTZ_FS_Beiqi_ec180');
+var WLYC_TYUB_LDRG = require('./WLYC_TYUB_LDRG');
 var app = express();
 var config = require("./config");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
-app.use(bodyParser.urlencoded({extended: false, limit: '10mb'}));
+app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
@@ -38,10 +40,10 @@ app.set('port', process.env.PORT || config.port);
 
 
 app.get('/', function (req, res) {
-    var YMCE_HITD=config.YMCE_HITD
-    var version=config.version
-    var author=config.piqr
-    res.render('home',{YMCE_HITD,version,author});
+    var YMCE_HITD = config.YMCE_HITD
+    var version = config.version
+    var author = config.piqr
+    res.render('home', { YMCE_HITD, version, author });
 });
 app.get('/GLRH', function (req, res) {
     res.render('GLRH');
@@ -56,7 +58,7 @@ app.get('/TYUB_LDRG', function (req, res) {
     res.render('TYUB_LDRG');
 });
 app.get('/DIZCGGOUSS', function (req, res) {
-    res.render('DIZCGGOUSS',{KLCH:"*\"示例\",{22 00 22},cf,d4,.0,;"});
+    res.render('DIZCGGOUSS', { KLCH: "*\"示例\",{22 00 22},cf,d4,.0,;" });
 });
 app.get('/QH_MAGM', function (req, res) {
     res.render('QH_MAGM');
@@ -74,7 +76,10 @@ app.get('/ZSGGTRGGYJGGEYRH', function (req, res) {
     res.render('ZSGGTRGGYJGGEYRH');
 });
 app.get('/VR_EBWU_ATRS', function (req, res) {
-    res.render('VR_EBWU_ATRS');
+    WLYC_VR_EBWU_ATRS(req, res)
+});
+app.get('/VR_VKJP', function (req, res) {
+    WLYC_VR_VKJP(req, res);
 });
 app.get('/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH', function (req, res) {
     res.render('VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH');
@@ -98,11 +103,11 @@ app.get('/VR_EBWU_BRTZ_FS', function (req, res) {
     res.render('VR_EBWU_BRTZ_FS');
 });
 app.get('/eytr_dyih_zjqt', function (req, res) {
-    var iowr_vnwm_eytr_dyih=require('./AFOA_BX/KPLU/iowr_vnwm_eytr_dyih.json')
-    var JTYP_1=iowr_vnwm_eytr_dyih.map(RNSF=>{
-        return RNSF.DYIH+" <=> "+RNSF.EYTR
+    var iowr_vnwm_eytr_dyih = require('./AFOA_BX/KPLU/iowr_vnwm_eytr_dyih.json')
+    var JTYP_1 = iowr_vnwm_eytr_dyih.map(RNSF => {
+        return RNSF.DYIH + " <=> " + RNSF.EYTR
     }).join('\n')
-    res.render('eytr_dyih_zjqt',{JTYP_1});
+    res.render('eytr_dyih_zjqt', { JTYP_1 });
 });
 app.get('/EYRHGGHQTB', function (req, res) {
     res.render('EYRHGGHQTB');
@@ -153,7 +158,7 @@ app.get('/dtcData_ZJZJ', function (req, res) {
     res.render('dtcData_ZJZJ');
 });
 app.get('/BRTZ_FS_3f', function (req, res) {
-    res.render('BRTZ_FS_3f',{JTYP_2:"示例1\n示例2\n示例3\n示例4\n"});
+    res.render('BRTZ_FS_3f', { JTYP_2: "示例1\n示例2\n示例3\n示例4\n" });
 });
 app.get('/BRTZ_FS_3f_Beiqi_ec180', function (req, res) {
     res.render('BRTZ_FS_3f_Beiqi_ec180');
@@ -251,16 +256,16 @@ app.use(function (req, res, next) {
 
 app.use(function (err, req, res, next) {
     res.status(500);
-        if(err.cause!=undefined){
-            err= NVMS_EBWU_LD_YHRJ_2(err)
-        }else if(err.message!=undefined&&/csrf-/i.test(err.message)){
-            err= NVMS_EBWU_LD_YHRJ_3(err)
-        }else if(err.message!=undefined){
-            err= NVMS_EBWU_LD_YHRJ_1(err)
-        }
-        else{
-            
-        }
+    if (err.cause != undefined) {
+        err = NVMS_EBWU_LD_YHRJ_2(err)
+    } else if (err.message != undefined && /csrf-/i.test(err.message)) {
+        err = NVMS_EBWU_LD_YHRJ_3(err)
+    } else if (err.message != undefined) {
+        err = NVMS_EBWU_LD_YHRJ_1(err)
+    }
+    else {
+
+    }
     res.render('500', { err, err_stack: err.stack });
     console.log(err)
 });

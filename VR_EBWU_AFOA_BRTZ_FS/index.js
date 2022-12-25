@@ -1,6 +1,6 @@
 const fs = require('fs')
 var ZJZJ_sys = require("../AFOA_sysData/sysData_ZJZJ");
-var VR_TSJQ_DIWR = require('../VR_TSJQ_DIWR')
+var VR_TSJQ_DIWR = require('../vr_afoa_bx')
 var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('../VR_TSJQ_BRTZ_FS_ZV_VNWY_TU');
 const eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf = require('../AFOA_BX/eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf');
 const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
