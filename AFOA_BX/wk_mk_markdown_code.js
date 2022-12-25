@@ -1,22 +1,37 @@
-function wk_mk(rj_kp,ebwu) {
+function wk_mk_markdown_code(rj_kp, ebwu) {
     var rj_1 = rj_kp;
     var reg_lclc = /(\/\/.*)/g;
     var reg_vnzt = /\b((?:\+|-|)\d+(?:\.\d+|)|0x\w+)\b/ig
     var reg_pre = /<pre>((?:(?!<pre\b)[\s\S])*?)<\/pre>/;
-    for (; ;) {
-        var diwr_yhld = rj_1.match(reg_pre)
-        if (diwr_yhld != null) {
-            var rj_pre = diwr_yhld[0]
-            rj_pre = hljs(rj_pre, ebwu).value
-            rj_pre = rj_pre.replace(/<pre>/g, "<pre class=\"code-area\">")//.replace(/<code>/g, "<code class=mark1>").replace(reg_lclc, "<span  class=\"comment\">$1</span>").replace(reg_vnzt, "<span class=\"number\">$1</span>")
-            rj_1 = rj_1.replace(diwr_yhld[0], rj_pre)
-        } else {
-            break;
-        }
+    var vnwm_rj_code = rj_1.match(/```\w+\s*\n(?:(?!```)[\s\S])+?\n\s*```/ig)
+    if (vnwm_rj_code != null) {
+        var vnwm_hljs_code = vnwm_rj_code.map(rn1 => {
+            var hljs_code = "\n<pre class=\"code-area\">\n<code class=\"javascript\">\n" + hljs(rn1.replace(/```\w+\s*\n((?:(?!```)[\s\S])+?)\n\s*```/i, "$1"), 'javascript').value + "\n</code>\n</pre>";
+            rj_1 = rj_1.replace(rn1, hljs_code)
+            return hljs_code
+        });
     }
-    throw rj_1
+
+    // for (; ;) {
+    //     var diwr_yhld = rj_1.match(reg_pre)
+    //     if (diwr_yhld != null) {
+    //         var rj_pre = diwr_yhld[0]
+    //         var reg_code = /<code\b.*>((?:(?!<code\b)[\s\S])*?)<\/code>/;
+    //         var diwr_code = rj_pre.match(reg_code)
+    //         if (diwr_code != null) {
+    //             rj_code = diwr_code[1]
+    //             rj_code = hljs(rj_code, ebwu).value
+    //             rj_pre = rj_pre.replace(diwr_code[1], rj_code)
+    //         }
+    //         rj_pre = rj_pre.replace(/<pre>/g, "<pre class=\"code-area\">")//.replace(reg_lclc, "<span  class=\"comment\">$1</span>").replace(reg_vnzt, "<span class=\"number\">$1</span>")
+    //         rj_1 = rj_1.replace(diwr_yhld[0], rj_pre)
+    //     } else {
+    //         break;
+    //     }
+    // }
+    return rj_1//.replace(/<code>/g, "<code class=mark1>")
 }
-module.exports = wk_mk;
+module.exports = wk_mk_markdown_code;
 
 /*
 Core highlighting function. Accepts a string with the code to highlight and 
@@ -398,7 +413,7 @@ hljs.BINARY_NUMBER_MODE = {
 
 // Utility functions
 hljs.escape = function (value) {
-    return value//.replace(/&/gm, '&amp;').replace(/</gm, '&lt;');
+    return value.replace(/\$/ig, '&#36;')//.replace(/&/gm, '&amp;').replace(/</gm, '&lt;');
 }
 
 hljs.inherit = function (parent, obj) {
@@ -4523,3 +4538,4 @@ hljs.LANGUAGES.r = (function () {
         }
     };
 })();
+

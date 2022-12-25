@@ -228,7 +228,7 @@ function vr_afoa_bx() {
             ***
         }}
         90=9=GB2312{{
-            D:\WRVR\working\汉EV\ZCZC1.JAVA
+            D:/WRVR/working/汉EV/ZCZC1.JAVA
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["90", "CHECK"],
@@ -319,7 +319,7 @@ Battery production date; "
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS,
         csrf: `在报文中将所有md-id-md进行精简并排序。参数格式如下: 2=1-1(表示每帧第一个字节到第一个字节为标识字节), 9=GB2312(表示将输入内容视为文件路径，按GB2312编码读取文件。如果不写此参数则将输入内容视为目标内容)。`,
         klch: `        97=2=1-1,9=GB2312{{
-            D:\Che\zhongzhi中值3\报文2\温度数据摘取.TXT
+            D:/Che/zhongzhi中值3/报文2/温度数据摘取.TXT
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["97", "CELLSORT"],
