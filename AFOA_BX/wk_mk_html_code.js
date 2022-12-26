@@ -1,5 +1,6 @@
 function wk_mk_html_code(rj_kp, ebwu) {
     var rj_1 = rj_kp;
+    // throw rj_1
     var reg_lclc = /(\/\/.*)/g;
     var reg_vnzt = /\b((?:\+|-|)\d+(?:\.\d+|)|0x\w+)\b/ig
     var reg_pre = /<pre>((?:(?!<pre\b)[\s\S])*?)<\/pre>/;
@@ -10,7 +11,7 @@ function wk_mk_html_code(rj_kp, ebwu) {
             var reg_code = /<code\b.*>((?:(?!<code\b)[\s\S])*?)<\/code>/;
             var diwr_code = rj_pre.match(reg_code)
             if (diwr_code != null) {
-                rj_code = diwr_code[1]
+                rj_code = diwr_code[1].replace(/&#39;/g,"'")
                 rj_code = hljs(rj_code, ebwu).value
                 rj_pre = rj_pre.replace(diwr_code[1], rj_code)
             }
@@ -351,6 +352,7 @@ hljs.LANGUAGES = {};
 hljs.IDENT_RE = '[a-zA-Z][a-zA-Z0-9_]*';
 hljs.UNDERSCORE_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_]*';
 hljs.NUMBER_RE = '\\b\\d+(\\.\\d+)?';
+// hljs.C_NUMBER_RE = '='; // 0x..., 0..., decimal, float
 hljs.C_NUMBER_RE = '\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)'; // 0x..., 0..., decimal, float
 hljs.BINARY_NUMBER_RE = '\\b(0b[01]+)'; // 0b...
 hljs.RE_STARTERS_RE = '!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
@@ -396,6 +398,42 @@ hljs.C_NUMBER_MODE = {
     begin: hljs.C_NUMBER_RE,
     relevance: 0
 };
+hljs.VR_IQIH_MODE = {
+    className: 'keyword',
+    begin: '=',
+    relevance: 0
+};
+hljs.VR_MCVN_MODE = {
+    className: 'keywords',
+    begin: '\\{\\{|\\}\\}(?!\\}(?!\\}))',
+    relevance: 0
+};
+hljs.VR_3F_OTH_MODE = {
+    className: 'function',
+    begin: 'oth|\\$\\w+',
+    relevance: 0
+};
+hljs.VR_FRAME_TSJQ_MODE = {
+    className: 'frame',
+    begin: '\\{[a-fA-F\\d ]*\\}',
+    relevance: 0
+};
+hljs.VR_VNWY_NINI_TSJQ_MODE = {
+    className: 'function',
+    begin: '\\}(33|22|cf)\\b',
+    relevance: 0
+};
+hljs.VR_GXIH_MODE = {
+    className: 'frame',
+    begin: '\\*|\\+|-|\\[|\\]|\\(|\\)',
+    relevance: 0
+};
+hljs.VR_ZTHI_DYIH_MODE = {
+    className: 'number',
+    begin: '[Dd]\\d+',
+    relevance: 0
+};
+
 hljs.BINARY_NUMBER_MODE = {
     className: 'number',
     begin: hljs.BINARY_NUMBER_RE,
@@ -404,7 +442,7 @@ hljs.BINARY_NUMBER_MODE = {
 
 // Utility functions
 hljs.escape = function (value) {
-    return value.replace(/\$/ig,'&#36;')//.replace(/&/gm, '&amp;').replace(/</gm, '&lt;');
+    return value.replace(/\$/ig, '&#36;')//.replace(/&/gm, '&amp;').replace(/</gm, '&lt;');
 }
 
 hljs.inherit = function (parent, obj) {
@@ -1589,6 +1627,13 @@ hljs.LANGUAGES.javascript = {
             hljs.C_LINE_COMMENT_MODE,
             hljs.C_BLOCK_COMMENT_MODE,
             hljs.C_NUMBER_MODE,
+            hljs.VR_IQIH_MODE,
+            hljs.VR_MCVN_MODE,
+            hljs.VR_GXIH_MODE,
+            hljs.VR_ZTHI_DYIH_MODE,
+            hljs.VR_VNWY_NINI_TSJQ_MODE,
+            hljs.VR_FRAME_TSJQ_MODE,
+            hljs.VR_3F_OTH_MODE,
             { // regexp container
                 begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
                 keywords: 'return throw case',
@@ -1599,7 +1644,7 @@ hljs.LANGUAGES.javascript = {
                         className: 'regexp',
                         begin: '/', end: '/[gim]*',
                         contains: [{ begin: '\\\\/' }]
-                    }
+                    },
                 ],
                 relevance: 0
             },
@@ -1621,7 +1666,8 @@ hljs.LANGUAGES.javascript = {
                         illegal: '["\'\\(]'
                     }
                 ]
-            }
+            },
+
         ]
     }
 };

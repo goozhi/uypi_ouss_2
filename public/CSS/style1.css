@@ -67,8 +67,14 @@
   background-color: #eeeff0;
   border: 1px solid #ccc;
 }
-
+.function {
+  color: #1671bc;
+}
 .identifier {
+  color: #61aeee;
+}
+
+.variable {
   color: #61aeee;
 }
 
@@ -82,6 +88,9 @@
 }
 
 .string {
+  color: #d19a66;
+}
+.frame {
   color: #d19a66;
 }
 

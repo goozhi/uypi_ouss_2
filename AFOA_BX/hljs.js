@@ -12,8 +12,8 @@ optionaly a language name. Returns an object with the following properties:
 
 */
 
-var hljs = function(value, language_name) {
-  if(!language_name){
+var hljs = function (value, language_name) {
+  if (!language_name) {
     var result = {
       keyword_count: 0,
       relevance: 0,
@@ -118,7 +118,7 @@ var hljs = function(value, language_name) {
       var keyword_match = keywordMatch(mode, match);
       if (keyword_match) {
         keyword_count += keyword_match[1];
-        result += '<span class="'+ keyword_match[0] +'">' + match[0] + '</span>';
+        result += '<span class="' + keyword_match[0] + '">' + match[0] + '</span>';
       } else {
         result += match[0];
       }
@@ -143,7 +143,7 @@ var hljs = function(value, language_name) {
       keyword_count += result.keyword_count;
       relevance += result.relevance;
     }
-    return '<span class="' + result.language  + '">' + result.value + '</span>';
+    return '<span class="' + result.language + '">' + result.value + '</span>';
   }
 
   function processBuffer(buffer, mode) {
@@ -155,7 +155,7 @@ var hljs = function(value, language_name) {
   }
 
   function startNewMode(mode, lexem) {
-    var markup = mode.className?'<span class="' + mode.className + '">':'';
+    var markup = mode.className ? '<span class="' + mode.className + '">' : '';
     if (mode.returnBegin) {
       result += markup;
       mode.buffer = '';
@@ -186,7 +186,7 @@ var hljs = function(value, language_name) {
 
     var end_level = endOfMode(modes.length - 1, lexem);
     if (end_level) {
-      var markup = current_mode.className?'</span>':'';
+      var markup = current_mode.className ? '</span>' : '';
       if (current_mode.returnEnd) {
         result += processBuffer(current_mode.buffer + buffer, current_mode) + markup;
       } else if (current_mode.excludeEnd) {
@@ -195,7 +195,7 @@ var hljs = function(value, language_name) {
         result += processBuffer(current_mode.buffer + buffer + lexem, current_mode) + markup;
       }
       while (end_level > 1) {
-        markup = modes[modes.length - 2].className?'</span>':'';
+        markup = modes[modes.length - 2].className ? '</span>' : '';
         result += markup;
         end_level--;
         modes.length--;
@@ -212,7 +212,7 @@ var hljs = function(value, language_name) {
     if (isIllegal(lexem, current_mode))
       throw 'Illegal';
   }
-    
+
   function langRe(language, value, global) {
     return RegExp(
       value,
@@ -285,7 +285,7 @@ var hljs = function(value, language_name) {
   var relevance = 0;
   var keyword_count = 0;
   var result = '';
-  compileMode(language.defaultMode, language, true);    
+  compileMode(language.defaultMode, language, true);
   try {
     var mode_info, index = 0;
     language.defaultMode.buffer = '';
@@ -297,7 +297,7 @@ var hljs = function(value, language_name) {
         index += mode_info[1].length;
       }
     } while (!mode_info[2]);
-    if(modes.length > 2 || (modes.length == 2 && !modes[1].endsWithParent))
+    if (modes.length > 2 || (modes.length == 2 && !modes[1].endsWithParent))
       throw 'Illegal';
     return {
       language: language_name,
@@ -378,17 +378,17 @@ hljs.BINARY_NUMBER_MODE = {
 };
 
 // Utility functions
-hljs.escape = function(value) {
+hljs.escape = function (value) {
   return value.replace(/&/gm, '&amp;').replace(/</gm, '&lt;');
 }
 
-hljs.inherit = function(parent, obj) {
+hljs.inherit = function (parent, obj) {
   var result = {}
   for (var key in parent)
     result[key] = parent[key];
   if (obj)
     for (var key in obj)
-       result[key] = obj[key];
+      result[key] = obj[key];
   return result;
 }
 module.exports = hljs;
@@ -396,7 +396,7 @@ module.exports = hljs;
 Language: Python
 */
 
-hljs.LANGUAGES.python = function() {
+hljs.LANGUAGES.python = function () {
   var STRINGS = [
     {
       className: 'string',
@@ -462,8 +462,8 @@ hljs.LANGUAGES.python = function() {
       illegal: '(</|->|\\?)',
       contains: STRINGS.concat([
         hljs.HASH_COMMENT_MODE,
-        hljs.inherit(FUNC_CLASS_PROTO, {className: 'function', keywords: 'def'}),
-        hljs.inherit(FUNC_CLASS_PROTO, {className: 'class', keywords: 'class'}),
+        hljs.inherit(FUNC_CLASS_PROTO, { className: 'function', keywords: 'def' }),
+        hljs.inherit(FUNC_CLASS_PROTO, { className: 'class', keywords: 'class' }),
         hljs.C_NUMBER_MODE,
         {
           className: 'decorator',
@@ -528,7 +528,7 @@ Author: Anton Kovalyov <anton@kovalyov.net>
 Contributors: Peter Leonov <gojpeg@yandex.ru>, Vasily Polovnyov <vast@whiteants.net>, Loren Segal <lsegal@soen.ca>
 */
 
-hljs.LANGUAGES.ruby = function(){
+hljs.LANGUAGES.ruby = function () {
   var RUBY_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?';
   var RUBY_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
   var RUBY_KEYWORDS =
@@ -729,7 +729,7 @@ Language: Perl
 Author: Peter Leonov <gojpeg@yandex.ru>
 */
 
-hljs.LANGUAGES.perl = function(){
+hljs.LANGUAGES.perl = function () {
   var PERL_KEYWORDS = 'getpwent getservent quotemeta msgrcv scalar kill dbmclose undef lc ' +
     'ma syswrite tr send umask sysopen shmwrite vec qx utime local oct semctl localtime ' +
     'readpipe do return format read sprintf dbmopen pop getpgrp not getpwnam rewinddir qq' +
@@ -767,8 +767,8 @@ hljs.LANGUAGES.perl = function(){
   var METHOD = {
     begin: '->',
     contains: [
-      {begin: hljs.IDENT_RE},
-      {begin: '{', end: '}'}
+      { begin: hljs.IDENT_RE },
+      { begin: '{', end: '}' }
     ]
   };
   var COMMENT = {
@@ -901,13 +901,13 @@ Author: Victor Karamzin <Victor.Karamzin@enterra-inc.com>
 Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Ivan Sagalaev <maniac@softwaremaniacs.org>
 */
 
-hljs.LANGUAGES.php = function() {
+hljs.LANGUAGES.php = function () {
   var VARIABLE = {
     className: 'variable', begin: '\\$+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*'
   };
   var STRINGS = [
-    hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
-    hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+    hljs.inherit(hljs.APOS_STRING_MODE, { illegal: null }),
+    hljs.inherit(hljs.QUOTE_STRING_MODE, { illegal: null }),
     {
       className: 'string',
       begin: 'b"', end: '"',
@@ -944,14 +944,14 @@ hljs.LANGUAGES.php = function() {
           className: 'comment',
           begin: '/\\*', end: '\\*/',
           contains: [{
-              className: 'phpdoc',
-              begin: '\\s@[A-Za-z]+'
+            className: 'phpdoc',
+            begin: '\\s@[A-Za-z]+'
           }]
         },
         {
-            className: 'comment',
-            excludeBegin: true,
-            begin: '__halt_compiler.+?;', endsWithParent: true
+          className: 'comment',
+          excludeBegin: true,
+          begin: '__halt_compiler.+?;', endsWithParent: true
         },
         {
           className: 'string',
@@ -1012,7 +1012,7 @@ Language: Scala
 Author: Jan Berkel <jan.berkel@gmail.com>
 */
 
-hljs.LANGUAGES.scala = function() {
+hljs.LANGUAGES.scala = function () {
   var ANNOTATION = {
     className: 'annotation', begin: '@[A-Za-z]+'
   };
@@ -1077,13 +1077,13 @@ Contributors: Evgeny Stepanischev <imbolk@gmail.com>
 Description: Google go language (golang). For info about language see http://golang.org/
 */
 
-hljs.LANGUAGES.go = function(){
+hljs.LANGUAGES.go = function () {
   var GO_KEYWORDS = {
     keyword:
       'break default func interface select case map struct chan else goto package switch ' +
       'const fallthrough if range type continue for import return var go defer',
     constant:
-       'true false iota nil',
+      'true false iota nil',
     typename:
       'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +
       'uint16 uint32 uint64 int uint uintptr rune',
@@ -1122,7 +1122,7 @@ hljs.LANGUAGES.go = function(){
 Language: HTML, XML
 */
 
-hljs.LANGUAGES.xml = function(){
+hljs.LANGUAGES.xml = function () {
   var XML_IDENT_RE = '[A-Za-z0-9\\._:-]+';
   var TAG_INTERNALS = {
     endsWithParent: true,
@@ -1135,8 +1135,8 @@ hljs.LANGUAGES.xml = function(){
       {
         begin: '="', returnBegin: true, end: '"',
         contains: [{
-            className: 'value',
-            begin: '"', endsWithParent: true
+          className: 'value',
+          begin: '"', endsWithParent: true
         }]
       },
       {
@@ -1168,7 +1168,7 @@ hljs.LANGUAGES.xml = function(){
           className: 'doctype',
           begin: '<!DOCTYPE', end: '>',
           relevance: 10,
-          contains: [{begin: '\\[', end: '\\]'}]
+          contains: [{ begin: '\\[', end: '\\]' }]
         },
         {
           className: 'comment',
@@ -1189,7 +1189,7 @@ hljs.LANGUAGES.xml = function(){
           by hljs.subMode() that tests lexems outside the stream.
           */
           begin: '<style(?=\\s|>|$)', end: '>',
-          keywords: {title: 'style'},
+          keywords: { title: 'style' },
           contains: [TAG_INTERNALS],
           starts: {
             end: '</style>', returnEnd: true,
@@ -1200,7 +1200,7 @@ hljs.LANGUAGES.xml = function(){
           className: 'tag',
           // See the comment in the <style tag about the lookahead pattern
           begin: '<script(?=\\s|>|$)', end: '>',
-          keywords: {title: 'script'},
+          keywords: { title: 'script' },
           contains: [TAG_INTERNALS],
           starts: {
             end: '</script>', returnEnd: true,
@@ -1317,7 +1317,7 @@ Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
 Contributors: Ilya Baryshev <baryshev@gmail.com>
 */
 
-hljs.LANGUAGES.django = function() {
+hljs.LANGUAGES.django = function () {
 
   function allowsDjangoSyntax(mode, parent) {
     return (
@@ -1360,7 +1360,7 @@ hljs.LANGUAGES.django = function() {
       'escapejs force_escape iriencode last safe safeseq truncatechars localize unlocalize ' +
       'localtime utc timezone',
     contains: [
-      {className: 'argument', begin: '"', end: '"'}
+      { className: 'argument', begin: '"', end: '"' }
     ]
   };
 
@@ -1404,13 +1404,13 @@ hljs.LANGUAGES.django = function() {
 Language: CSS
 */
 
-hljs.LANGUAGES.css = function() {
+hljs.LANGUAGES.css = function () {
   var FUNCTION = {
     className: 'function',
     begin: hljs.IDENT_RE + '\\(', end: '\\)',
     contains: [{
-        endsWithParent: true, excludeEnd: true,
-        contains: [hljs.NUMBER_MODE, hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE]
+      endsWithParent: true, excludeEnd: true,
+      contains: [hljs.NUMBER_MODE, hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE]
     }]
   };
   return {
@@ -1444,9 +1444,9 @@ hljs.LANGUAGES.css = function() {
         {
           className: 'at_rule',
           begin: '@', end: '[{;]', // at_rule eating first "{" is a good thing
-                                   // because it doesn’t let it to be parsed as
-                                   // a rule set but instead drops parser into
-                                   // the defaultMode which is how it should be.
+          // because it doesn’t let it to be parsed as
+          // a rule set but instead drops parser into
+          // the defaultMode which is how it should be.
           excludeEnd: true,
           keywords: 'import page media charset',
           contains: [
@@ -1506,8 +1506,8 @@ Language: JSON
 Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
 */
 
-hljs.LANGUAGES.json = function(){
-  var LITERALS = {literal: 'true false null'};
+hljs.LANGUAGES.json = function () {
+  var LITERALS = { literal: 'true false null' };
   var TYPES = [
     hljs.QUOTE_STRING_MODE,
     hljs.C_NUMBER_MODE
@@ -1533,7 +1533,7 @@ hljs.LANGUAGES.json = function(){
   };
   var ARRAY = {
     begin: '\\[', end: '\\]',
-    contains: [hljs.inherit(VALUE_CONTAINER, {className: null})], // inherit is also a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents
+    contains: [hljs.inherit(VALUE_CONTAINER, { className: null })], // inherit is also a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents
     illegal: '\\S'
   };
   TYPES.splice(TYPES.length, 0, OBJECT, ARRAY);
@@ -1573,7 +1573,7 @@ hljs.LANGUAGES.javascript = {
           {
             className: 'regexp',
             begin: '/', end: '/[gim]*',
-            contains: [{begin: '\\\\/'}]
+            contains: [{ begin: '\\\\/' }]
           }
         ],
         relevance: 0
@@ -1607,7 +1607,7 @@ Contributors: Oleg Efimov <efimovov@gmail.com>
 Description: CoffeeScript is a programming language that transcompiles to JavaScript. For info about language see http://coffeescript.org/
 */
 
-hljs.LANGUAGES.coffeescript = function() {
+hljs.LANGUAGES.coffeescript = function () {
   var keywords = {
     keyword:
       // JS keywords
@@ -1706,7 +1706,7 @@ Language: ActionScript
 Author: Alexander Myadzel <myadzel@gmail.com>
 */
 
-hljs.LANGUAGES.actionscript = function() {
+hljs.LANGUAGES.actionscript = function () {
   var IDENT_RE = '[a-zA-Z_$][a-zA-Z0-9_$]*';
   var IDENT_FUNC_RETURN_TYPE_RE = '([*]|[a-zA-Z_$][a-zA-Z0-9_$]*)';
 
@@ -1715,7 +1715,7 @@ hljs.LANGUAGES.actionscript = function() {
     begin: '[.]{3}', end: IDENT_RE,
     relevance: 10
   };
-  var TITLE_MODE = {className: 'title', begin: IDENT_RE};
+  var TITLE_MODE = { className: 'title', begin: IDENT_RE };
 
   return {
     defaultMode: {
@@ -1821,7 +1821,7 @@ hljs.LANGUAGES.vbscript = {
         className: 'string',
         begin: '"', end: '"',
         illegal: '\\n',
-        contains: [{begin: '""'}],
+        contains: [{ begin: '""' }],
         relevance: 0
       },
       {
@@ -1845,7 +1845,7 @@ hljs.LANGUAGES.http = {
       {
         className: 'status',
         begin: '^HTTP/[0-9\\.]+', end: '$',
-        contains: [{className: 'number', begin: '\\b\\d{3}\\b'}]
+        contains: [{ className: 'number', begin: '\\b\\d{3}\\b' }]
       },
       {
         className: 'request',
@@ -1862,11 +1862,11 @@ hljs.LANGUAGES.http = {
         className: 'attribute',
         begin: '^\\w', end: ': ', excludeEnd: true,
         illegal: '\\n',
-        starts: {className: 'string', end: '$'}
+        starts: { className: 'string', end: '$' }
       },
       {
         begin: '\\n\\n',
-        starts: {subLanguage: '', endsWithParent: true}
+        starts: { subLanguage: '', endsWithParent: true }
       }
     ]
   }
@@ -1876,7 +1876,7 @@ Language: Lua
 Author: Andrew Fedorov <dmmdrs@mail.ru>
 */
 
-hljs.LANGUAGES.lua = function() {
+hljs.LANGUAGES.lua = function () {
   var OPENING_LONG_BRACKET = '\\[=*\\[';
   var CLOSING_LONG_BRACKET = '\\]=*\\]';
   var LONG_BRACKETS = {
@@ -1942,7 +1942,7 @@ hljs.LANGUAGES.lua = function() {
 Language: Delphi
 */
 
-hljs.LANGUAGES.delphi = function(){
+hljs.LANGUAGES.delphi = function () {
   var DELPHI_KEYWORDS = 'and safecall cdecl then string exports library not pascal set ' +
     'virtual file in array label packed end. index while const raise for to implementation ' +
     'with except overload destructor downto finally program exit unit inherited override if ' +
@@ -1957,7 +1957,7 @@ hljs.LANGUAGES.delphi = function(){
     'type until function else external with case default record while protected property ' +
     'procedure published and cdecl do threadvar file in if end virtual write far out begin ' +
     'repeat nil initialization object uses resourcestring class register xorwrite inline static';
-  var CURLY_COMMENT =  {
+  var CURLY_COMMENT = {
     className: 'comment',
     begin: '{', end: '}',
     relevance: 0
@@ -1970,7 +1970,7 @@ hljs.LANGUAGES.delphi = function(){
   var STRING = {
     className: 'string',
     begin: '\'', end: '\'',
-    contains: [{begin: '\'\''}],
+    contains: [{ begin: '\'\'' }],
     relevance: 0
   };
   var CHAR_STRING = {
@@ -2022,7 +2022,7 @@ Language: Java
 Author: Vsevolod Solovyov <vsevolod.solovyov@gmail.com>
 */
 
-hljs.LANGUAGES.java  = {
+hljs.LANGUAGES.java = {
   defaultMode: {
     keywords:
       'false synchronized int abstract float private char boolean static null if const ' +
@@ -2071,7 +2071,7 @@ Language: C++
 Contributors: Evgeny Stepanischev <imbolk@gmail.com>
 */
 
-hljs.LANGUAGES.cpp = function(){
+hljs.LANGUAGES.cpp = function () {
   var CPP_KEYWORDS = {
     keyword: 'false int float while private char catch export virtual operator sizeof ' +
       'dynamic_cast|10 typedef const_cast|10 const struct for static_cast|10 union namespace ' +
@@ -2123,7 +2123,7 @@ Author: Valerii Hiora <valerii.hiora@gmail.com>
 Contributors: Angel G. Olloqui <angelgarcia.mail@gmail.com>
 */
 
-hljs.LANGUAGES.objectivec = function(){
+hljs.LANGUAGES.objectivec = function () {
   var OBJC_KEYWORDS = {
     keyword:
       'int float while private char catch export sizeof typedef const struct for union ' +
@@ -2134,7 +2134,7 @@ hljs.LANGUAGES.objectivec = function(){
       'nonatomic interface super unichar finally dynamic IBOutlet IBAction selector strong ' +
       'weak readonly',
     literal:
-    	'false true FALSE TRUE nil YES NO NULL',
+      'false true FALSE TRUE nil YES NO NULL',
     built_in:
       'NSString NSDictionary CGRect CGPoint UIButton UILabel UITextView UIWebView MKMapView ' +
       'UISegmentedControl NSObject UITableViewDelegate UITableViewDataSource NSThread ' +
@@ -2171,16 +2171,16 @@ hljs.LANGUAGES.objectivec = function(){
           begin: '#import',
           end: '$',
           contains: [
-          {
-            className: 'title',
-            begin: '\"',
-            end: '\"'
-          },
-          {
-            className: 'title',
-            begin: '<',
-            end: '>'
-          }
+            {
+              className: 'title',
+              begin: '\"',
+              end: '\"'
+            },
+            {
+              className: 'title',
+              begin: '<',
+              end: '>'
+            }
           ]
         },
         {
@@ -2201,7 +2201,7 @@ hljs.LANGUAGES.objectivec = function(){
         },
         {
           className: 'variable',
-          begin: '\\.'+hljs.UNDERSCORE_IDENT_RE
+          begin: '\\.' + hljs.UNDERSCORE_IDENT_RE
         }
       ]
     }
@@ -2279,7 +2279,7 @@ Language: C#
 Author: Jason Diamond <jason@diamond.name>
 */
 
-hljs.LANGUAGES.cs  = {
+hljs.LANGUAGES.cs = {
   defaultMode: {
     keywords:
       // Normal keywords.
@@ -2290,7 +2290,7 @@ hljs.LANGUAGES.cs  = {
       'sealed short sizeof stackalloc static string struct switch this throw true try typeof ' +
       'uint ulong unchecked unsafe ushort using virtual volatile void while ' +
       // Contextual keywords.
-      'ascending descending from get group into join let orderby partial select set value var '+
+      'ascending descending from get group into join let orderby partial select set value var ' +
       'where yield',
     contains: [
       {
@@ -2317,7 +2317,7 @@ hljs.LANGUAGES.cs  = {
       {
         className: 'string',
         begin: '@"', end: '"',
-        contains: [{begin: '""'}]
+        contains: [{ begin: '""' }]
       },
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE,
@@ -2349,250 +2349,250 @@ Date: 2012-04-08
  *   up to the end of line is matched as special token sequence)
  */
 
-hljs.LANGUAGES.d = function() {
+hljs.LANGUAGES.d = function () {
 
-	/**
-	 * Language keywords
-	 *
-	 * @type {Object}
-	 */
-	var D_KEYWORDS = {
-		keyword:
-			'abstract alias align asm assert auto body break byte case cast catch class ' +
-			'const continue debug default delete deprecated do else enum export extern final ' +
-			'finally for foreach foreach_reverse|10 goto if immutable import in inout int ' +
-			'interface invariant is lazy macro mixin module new nothrow out override package ' +
-			'pragma private protected public pure ref return scope shared static struct ' +
-			'super switch synchronized template this throw try typedef typeid typeof union ' +
-			'unittest version void volatile while with __FILE__ __LINE__ __gshared|10 ' +
-			'__thread __traits __DATE__ __EOF__ __TIME__ __TIMESTAMP__ __VENDOR__ __VERSION__',
-		built_in:
-			'bool cdouble cent cfloat char creal dchar delegate double dstring float function ' +
-			'idouble ifloat ireal long real short string ubyte ucent uint ulong ushort wchar ' +
-			'wstring',
-		literal:
-			'false null true'
-	};
+  /**
+   * Language keywords
+   *
+   * @type {Object}
+   */
+  var D_KEYWORDS = {
+    keyword:
+      'abstract alias align asm assert auto body break byte case cast catch class ' +
+      'const continue debug default delete deprecated do else enum export extern final ' +
+      'finally for foreach foreach_reverse|10 goto if immutable import in inout int ' +
+      'interface invariant is lazy macro mixin module new nothrow out override package ' +
+      'pragma private protected public pure ref return scope shared static struct ' +
+      'super switch synchronized template this throw try typedef typeid typeof union ' +
+      'unittest version void volatile while with __FILE__ __LINE__ __gshared|10 ' +
+      '__thread __traits __DATE__ __EOF__ __TIME__ __TIMESTAMP__ __VENDOR__ __VERSION__',
+    built_in:
+      'bool cdouble cent cfloat char creal dchar delegate double dstring float function ' +
+      'idouble ifloat ireal long real short string ubyte ucent uint ulong ushort wchar ' +
+      'wstring',
+    literal:
+      'false null true'
+  };
 
-	/**
-	 * Number literal regexps
-	 *
-	 * @type {String}
-	 */
-	var decimal_integer_re = '(0|[1-9][\\d_]*)',
-		decimal_integer_nosus_re = '(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)',
-		binary_integer_re = '0[bB][01_]+',
-		hexadecimal_digits_re = '([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)',
-		hexadecimal_integer_re = '0[xX]' + hexadecimal_digits_re,
+  /**
+   * Number literal regexps
+   *
+   * @type {String}
+   */
+  var decimal_integer_re = '(0|[1-9][\\d_]*)',
+    decimal_integer_nosus_re = '(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)',
+    binary_integer_re = '0[bB][01_]+',
+    hexadecimal_digits_re = '([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)',
+    hexadecimal_integer_re = '0[xX]' + hexadecimal_digits_re,
 
-		decimal_exponent_re = '([eE][+-]?' + decimal_integer_nosus_re + ')',
-		decimal_float_re = '(' + decimal_integer_nosus_re + '(\\.\\d*|' + decimal_exponent_re + ')|' +
-								'\\d+\\.' + decimal_integer_nosus_re + decimal_integer_nosus_re + '|' +
-								'\\.' + decimal_integer_re + decimal_exponent_re + '?' +
-							')',
-		hexadecimal_float_re = '(0[xX](' +
-									hexadecimal_digits_re + '\\.' + hexadecimal_digits_re + '|'+
-									'\\.?' + hexadecimal_digits_re +
-							   ')[pP][+-]?' + decimal_integer_nosus_re + ')';
+    decimal_exponent_re = '([eE][+-]?' + decimal_integer_nosus_re + ')',
+    decimal_float_re = '(' + decimal_integer_nosus_re + '(\\.\\d*|' + decimal_exponent_re + ')|' +
+      '\\d+\\.' + decimal_integer_nosus_re + decimal_integer_nosus_re + '|' +
+      '\\.' + decimal_integer_re + decimal_exponent_re + '?' +
+      ')',
+    hexadecimal_float_re = '(0[xX](' +
+      hexadecimal_digits_re + '\\.' + hexadecimal_digits_re + '|' +
+      '\\.?' + hexadecimal_digits_re +
+      ')[pP][+-]?' + decimal_integer_nosus_re + ')';
 
-		integer_re = '(' +
-			decimal_integer_re + '|' +
-			binary_integer_re  + '|' +
-		 	hexadecimal_integer_re   +
-		')',
+  integer_re = '(' +
+    decimal_integer_re + '|' +
+    binary_integer_re + '|' +
+    hexadecimal_integer_re +
+    ')',
 
-		float_re = '(' +
-			hexadecimal_float_re + '|' +
-			decimal_float_re  +
-		')';
+    float_re = '(' +
+    hexadecimal_float_re + '|' +
+    decimal_float_re +
+    ')';
 
-	/**
-	 * Escape sequence supported in D string and character literals
-	 *
-	 * @type {String}
-	 */
-	var escape_sequence_re = '\\\\(' +
-							'[\'"\\?\\\\abfnrtv]|' +	// common escapes
-							'u[\\dA-Fa-f]{4}|' + 		// four hex digit unicode codepoint
-							'[0-7]{1,3}|' + 			// one to three octal digit ascii char code
-							'x[\\dA-Fa-f]{2}|' +		// two hex digit ascii char code
-							'U[\\dA-Fa-f]{8}' +			// eight hex digit unicode codepoint
-						  ')|' +
-						  '&[a-zA-Z\\d]{2,};';			// named character entity
+  /**
+   * Escape sequence supported in D string and character literals
+   *
+   * @type {String}
+   */
+  var escape_sequence_re = '\\\\(' +
+    '[\'"\\?\\\\abfnrtv]|' +	// common escapes
+    'u[\\dA-Fa-f]{4}|' + 		// four hex digit unicode codepoint
+    '[0-7]{1,3}|' + 			// one to three octal digit ascii char code
+    'x[\\dA-Fa-f]{2}|' +		// two hex digit ascii char code
+    'U[\\dA-Fa-f]{8}' +			// eight hex digit unicode codepoint
+    ')|' +
+    '&[a-zA-Z\\d]{2,};';			// named character entity
 
 
-	/**
-	 * D integer number literals
-	 *
-	 * @type {Object}
-	 */
-	var D_INTEGER_MODE = {
-		className: 'number',
-    	begin: '\\b' + integer_re + '(L|u|U|Lu|LU|uL|UL)?',
-    	relevance: 0
-	};
+  /**
+   * D integer number literals
+   *
+   * @type {Object}
+   */
+  var D_INTEGER_MODE = {
+    className: 'number',
+    begin: '\\b' + integer_re + '(L|u|U|Lu|LU|uL|UL)?',
+    relevance: 0
+  };
 
-	/**
-	 * [D_FLOAT_MODE description]
-	 * @type {Object}
-	 */
-	var D_FLOAT_MODE = {
-		className: 'number',
-		begin: '\\b(' +
-				float_re + '([fF]|L|i|[fF]i|Li)?|' +
-				integer_re + '(i|[fF]i|Li)' +
-			')',
-		relevance: 0
-	};
+  /**
+   * [D_FLOAT_MODE description]
+   * @type {Object}
+   */
+  var D_FLOAT_MODE = {
+    className: 'number',
+    begin: '\\b(' +
+      float_re + '([fF]|L|i|[fF]i|Li)?|' +
+      integer_re + '(i|[fF]i|Li)' +
+      ')',
+    relevance: 0
+  };
 
-	/**
-	 * D character literal
-	 *
-	 * @type {Object}
-	 */
-	var D_CHARACTER_MODE = {
-		className: 'string',
-		begin: '\'(' + escape_sequence_re + '|.)', end: '\'',
-		illegal: '.'
-	};
+  /**
+   * D character literal
+   *
+   * @type {Object}
+   */
+  var D_CHARACTER_MODE = {
+    className: 'string',
+    begin: '\'(' + escape_sequence_re + '|.)', end: '\'',
+    illegal: '.'
+  };
 
-	/**
-	 * D string escape sequence
-	 *
-	 * @type {Object}
-	 */
-	var D_ESCAPE_SEQUENCE = {
-		begin: escape_sequence_re,
-		relevance: 0
-	}
+  /**
+   * D string escape sequence
+   *
+   * @type {Object}
+   */
+  var D_ESCAPE_SEQUENCE = {
+    begin: escape_sequence_re,
+    relevance: 0
+  }
 
-	/**
-	 * D double quoted string literal
-	 *
-	 * @type {Object}
-	 */
-	var D_STRING_MODE = {
-		className: 'string',
-		begin: '"',
-		contains: [D_ESCAPE_SEQUENCE],
-		end: '"[cwd]?',
-		relevance: 0
-	};
+  /**
+   * D double quoted string literal
+   *
+   * @type {Object}
+   */
+  var D_STRING_MODE = {
+    className: 'string',
+    begin: '"',
+    contains: [D_ESCAPE_SEQUENCE],
+    end: '"[cwd]?',
+    relevance: 0
+  };
 
-	/**
-	 * D wysiwyg and delimited string literals
-	 *
-	 * @type {Object}
-	 */
-	var D_WYSIWYG_DELIMITED_STRING_MODE = {
-		className: 'string',
-		begin: '[rq]"',
-		end: '"[cwd]?',
-		relevance: 5
-	};
+  /**
+   * D wysiwyg and delimited string literals
+   *
+   * @type {Object}
+   */
+  var D_WYSIWYG_DELIMITED_STRING_MODE = {
+    className: 'string',
+    begin: '[rq]"',
+    end: '"[cwd]?',
+    relevance: 5
+  };
 
-	/**
-	 * D alternate wysiwyg string literal
-	 *
-	 * @type {Object}
-	 */
-	var D_ALTERNATE_WYSIWYG_STRING_MODE = {
-		className: 'string',
-		begin: '`',
-		end: '`[cwd]?'
-	};
+  /**
+   * D alternate wysiwyg string literal
+   *
+   * @type {Object}
+   */
+  var D_ALTERNATE_WYSIWYG_STRING_MODE = {
+    className: 'string',
+    begin: '`',
+    end: '`[cwd]?'
+  };
 
-	/**
-	 * D hexadecimal string literal
-	 *
-	 * @type {Object}
-	 */
-	var D_HEX_STRING_MODE = {
-		className: 'string',
-		begin: 'x"[\\da-fA-F\\s\\n\\r]*"[cwd]?',
-		relevance: 10
-	};
+  /**
+   * D hexadecimal string literal
+   *
+   * @type {Object}
+   */
+  var D_HEX_STRING_MODE = {
+    className: 'string',
+    begin: 'x"[\\da-fA-F\\s\\n\\r]*"[cwd]?',
+    relevance: 10
+  };
 
-	/**
-	 * D delimited string literal
-	 *
-	 * @type {Object}
-	 */
-	var D_TOKEN_STRING_MODE = {
-		className: 'string',
-		begin: 'q"\\{',
-		end: '\\}"'
-	};
+  /**
+   * D delimited string literal
+   *
+   * @type {Object}
+   */
+  var D_TOKEN_STRING_MODE = {
+    className: 'string',
+    begin: 'q"\\{',
+    end: '\\}"'
+  };
 
-	/**
-	 * Hashbang support
-	 *
-	 * @type {Object}
-	 */
-	var D_HASHBANG_MODE = {
-		className: 'shebang',
-		begin: '^#!',
-		end: '$',
-		relevance: 5
-	};
+  /**
+   * Hashbang support
+   *
+   * @type {Object}
+   */
+  var D_HASHBANG_MODE = {
+    className: 'shebang',
+    begin: '^#!',
+    end: '$',
+    relevance: 5
+  };
 
-	/**
-	 * D special token sequence
-	 *
-	 * @type {Object}
-	 */
-	var D_SPECIAL_TOKEN_SEQUENCE_MODE = {
-		className: 'preprocessor',
-		begin: '#(line)',
-		end: '$',
-		relevance: 5
-	};
+  /**
+   * D special token sequence
+   *
+   * @type {Object}
+   */
+  var D_SPECIAL_TOKEN_SEQUENCE_MODE = {
+    className: 'preprocessor',
+    begin: '#(line)',
+    end: '$',
+    relevance: 5
+  };
 
-	/**
-	 * D attributes
-	 *
-	 * @type {Object}
-	 */
-	var D_ATTRIBUTE_MODE = {
-		className: 'keyword',
-		begin: '@[a-zA-Z_][a-zA-Z_\\d]*'
-	};
+  /**
+   * D attributes
+   *
+   * @type {Object}
+   */
+  var D_ATTRIBUTE_MODE = {
+    className: 'keyword',
+    begin: '@[a-zA-Z_][a-zA-Z_\\d]*'
+  };
 
-	/**
-	 * D nesting comment
-	 *
-	 * @type {Object}
-	 */
-	var D_NESTING_COMMENT_MODE = {
-		className: 'comment',
-		begin: '\\/\\+',
-		contains: ['self'],
-		end: '\\+\\/',
-		relevance: 10
-	}
+  /**
+   * D nesting comment
+   *
+   * @type {Object}
+   */
+  var D_NESTING_COMMENT_MODE = {
+    className: 'comment',
+    begin: '\\/\\+',
+    contains: ['self'],
+    end: '\\+\\/',
+    relevance: 10
+  }
 
-	return {
-		defaultMode: {
-			lexems: hljs.UNDERSCORE_IDENT_RE,
-			keywords: D_KEYWORDS,
-			contains: [
-				hljs.C_LINE_COMMENT_MODE,
-      			hljs.C_BLOCK_COMMENT_MODE,
-      			D_NESTING_COMMENT_MODE,
-      			D_HEX_STRING_MODE,
-      			D_STRING_MODE,
-      			D_WYSIWYG_DELIMITED_STRING_MODE,
-      			D_ALTERNATE_WYSIWYG_STRING_MODE,
-      			D_TOKEN_STRING_MODE,
-      			D_FLOAT_MODE,
-      			D_INTEGER_MODE,
-      			D_CHARACTER_MODE,
-      			D_HASHBANG_MODE,
-      			D_SPECIAL_TOKEN_SEQUENCE_MODE,
-      			D_ATTRIBUTE_MODE
-			]
-		}
-	};
+  return {
+    defaultMode: {
+      lexems: hljs.UNDERSCORE_IDENT_RE,
+      keywords: D_KEYWORDS,
+      contains: [
+        hljs.C_LINE_COMMENT_MODE,
+        hljs.C_BLOCK_COMMENT_MODE,
+        D_NESTING_COMMENT_MODE,
+        D_HEX_STRING_MODE,
+        D_STRING_MODE,
+        D_WYSIWYG_DELIMITED_STRING_MODE,
+        D_ALTERNATE_WYSIWYG_STRING_MODE,
+        D_TOKEN_STRING_MODE,
+        D_FLOAT_MODE,
+        D_INTEGER_MODE,
+        D_CHARACTER_MODE,
+        D_HASHBANG_MODE,
+        D_SPECIAL_TOKEN_SEQUENCE_MODE,
+        D_ATTRIBUTE_MODE
+      ]
+    }
+  };
 }();
 /*
 Language: RenderMan RSL
@@ -2601,7 +2601,7 @@ Author: Konstantin Evdokimenko <qewerty@gmail.com>
 Contributors: Shuen-Huei Guan <drake.guan@gmail.com>
 */
 
-hljs.LANGUAGES.rsl  = {
+hljs.LANGUAGES.rsl = {
   defaultMode: {
     keywords: {
       'keyword':
@@ -2646,7 +2646,7 @@ Author: Konstantin Evdokimenko <qewerty@gmail.com>
 Contributors: Shuen-Huei Guan <drake.guan@gmail.com>
 */
 
-hljs.LANGUAGES.rib  = {
+hljs.LANGUAGES.rib = {
   defaultMode: {
     keywords:
       'ArchiveRecord AreaLightSource Atmosphere Attribute AttributeBegin AttributeEnd Basis ' +
@@ -2948,13 +2948,13 @@ hljs.LANGUAGES.sql = {
           {
             className: 'string',
             begin: '\'', end: '\'',
-            contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
+            contains: [hljs.BACKSLASH_ESCAPE, { begin: '\'\'' }],
             relevance: 0
           },
           {
             className: 'string',
             begin: '"', end: '"',
-            contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
+            contains: [hljs.BACKSLASH_ESCAPE, { begin: '""' }],
             relevance: 0
           },
           {
@@ -2978,7 +2978,7 @@ Language: Smalltalk
 Author: Vladimir Gubarkov <xonixx@gmail.com>
 */
 
-hljs.LANGUAGES.smalltalk = function() {
+hljs.LANGUAGES.smalltalk = function () {
   var VAR_IDENT_RE = '[a-z][a-zA-Z0-9_]*';
   var CHAR = {
     className: 'char',
@@ -3034,7 +3034,7 @@ Description: Generic lisp syntax
 Author: Vasily Polovnyov <vast@whiteants.net>
 */
 
-hljs.LANGUAGES.lisp = function(){
+hljs.LANGUAGES.lisp = function () {
   var LISP_IDENT_RE = '[a-zA-Z_\\-\\+\\*\\/\\<\\=\\>\\&\\#][a-zA-Z0-9_\\-\\+\\*\\/\\<\\=\\>\\&\\#]*';
   var LISP_SIMPLE_NUMBER_RE = '(\\-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s)(\\+|\\-)?\\d+)?';
   var LITERAL = {
@@ -3088,7 +3088,7 @@ hljs.LANGUAGES.lisp = function(){
   var QUOTED2 = {
     className: 'quoted',
     begin: '\\(quote ', end: '\\)',
-    keywords: {title: 'quote'},
+    keywords: { title: 'quote' },
     contains: NUMBERS.concat([STRING, VARIABLE, KEYWORD, QUOTED_LIST])
   };
   var LIST = {
@@ -3099,7 +3099,7 @@ hljs.LANGUAGES.lisp = function(){
     className: 'body',
     endsWithParent: true, excludeEnd: true
   };
-  LIST.contains = [{className: 'title', begin: LISP_IDENT_RE}, BODY];
+  LIST.contains = [{ className: 'title', begin: LISP_IDENT_RE }, BODY];
   BODY.contains = [QUOTED1, QUOTED2, LIST, LITERAL].concat(NUMBERS).concat([STRING, COMMENT, VARIABLE, KEYWORD]);
 
   return {
@@ -3157,8 +3157,8 @@ Version: 1.1
 Date: 2008-12-27
 */
 
-hljs.LANGUAGES.apache = function(){
-  var NUMBER = {className: 'number', begin: '[\\$%]\\d+'};
+hljs.LANGUAGES.apache = function () {
+  var NUMBER = { className: 'number', begin: '[\\$%]\\d+' };
   return {
     case_insensitive: true,
     defaultMode: {
@@ -3261,7 +3261,7 @@ hljs.LANGUAGES.apache = function(){
           contains: ['self', NUMBER]
         },
         NUMBER,
-        {className: 'tag', begin: '</?', end: '>'},
+        { className: 'tag', begin: '</?', end: '>' },
         hljs.QUOTE_STRING_MODE
       ]
     }
@@ -3272,7 +3272,7 @@ Language: Nginx
 Author: Peter Leonov <gojpeg@yandex.ru>
 */
 
-hljs.LANGUAGES.nginx = function() {
+hljs.LANGUAGES.nginx = function () {
   var VAR1 = {
     className: 'variable',
     begin: '\\$\\d+'
@@ -3548,7 +3548,7 @@ Language: Bash
 Author: vah <vahtenberg@gmail.com>
 */
 
-hljs.LANGUAGES.bash = function(){
+hljs.LANGUAGES.bash = function () {
   var BASH_LITERAL = 'true false';
   var VAR1 = {
     className: 'variable',
@@ -3569,7 +3569,7 @@ hljs.LANGUAGES.bash = function(){
   var APOS_STRING = {
     className: 'string',
     begin: '\'', end: '\'',
-    contains: [{begin: '\'\''}],
+    contains: [{ begin: '\'\'' }],
     relevance: 0
   };
   var TEST_CONDITION = {
@@ -3600,8 +3600,8 @@ hljs.LANGUAGES.bash = function(){
         hljs.C_NUMBER_MODE,
         QUOTE_STRING,
         APOS_STRING,
-        hljs.inherit(TEST_CONDITION, {begin: '\\[ ', end: ' \\]', relevance: 0}),
-        hljs.inherit(TEST_CONDITION, {begin: '\\[\\[ ', end: ' \\]\\]'})
+        hljs.inherit(TEST_CONDITION, { begin: '\\[ ', end: ' \\]', relevance: 0 }),
+        hljs.inherit(TEST_CONDITION, { begin: '\\[\\[ ', end: ' \\]\\]' })
       ]
     }
   };
@@ -3649,7 +3649,7 @@ Language: Axapta
 Author: Dmitri Roudakov <dmitri@roudakov.ru>
 */
 
-hljs.LANGUAGES.axapta  = {
+hljs.LANGUAGES.axapta = {
   defaultMode: {
     keywords: 'false int abstract private char interface boolean static null if for true ' +
       'while long throw finally protected extends final implements return void enum else ' +
@@ -3694,7 +3694,7 @@ Author: Yuri Ivanov <ivanov@supersoft.ru>
 Contributors: Sergey Baranov <segyrn@yandex.ru>
 */
 
-hljs.LANGUAGES['1c'] = function(){
+hljs.LANGUAGES['1c'] = function () {
   var IDENT_RE_RU = '[a-zA-Zа-яА-Я][a-zA-Z0-9_а-яА-Я]*';
   var OneS_KEYWORDS = 'возврат дата для если и или иначе иначеесли исключение конецесли ' +
     'конецпопытки конецпроцедуры конецфункции конеццикла константа не перейти перем ' +
@@ -3724,13 +3724,13 @@ hljs.LANGUAGES['1c'] = function(){
     'стрколичествострок стрполучитьстроку  стрчисловхождений сформироватьпозициюдокумента ' +
     'счетпокоду текущаядата текущеевремя типзначения типзначениястр удалитьобъекты ' +
     'установитьтана установитьтапо фиксшаблон формат цел шаблон';
-  var DQUOTE =  {className: 'dquote',  begin: '""'};
+  var DQUOTE = { className: 'dquote', begin: '""' };
   var STR_START = {
-      className: 'string',
-      begin: '"', end: '"|$',
-      contains: [DQUOTE],
-      relevance: 0
-    };
+    className: 'string',
+    begin: '"', end: '"|$',
+    contains: [DQUOTE],
+    relevance: 0
+  };
   var STR_CONT = {
     className: 'string',
     begin: '\\|', end: '"|$',
@@ -3741,7 +3741,7 @@ hljs.LANGUAGES['1c'] = function(){
     case_insensitive: true,
     defaultMode: {
       lexems: IDENT_RE_RU,
-      keywords: {keyword: OneS_KEYWORDS, built_in: OneS_BUILT_IN},
+      keywords: { keyword: OneS_KEYWORDS, built_in: OneS_BUILT_IN },
       contains: [
         hljs.C_LINE_COMMENT_MODE,
         hljs.NUMBER_MODE,
@@ -3752,7 +3752,7 @@ hljs.LANGUAGES['1c'] = function(){
           lexems: IDENT_RE_RU,
           keywords: 'процедура функция',
           contains: [
-            {className: 'title', begin: IDENT_RE_RU},
+            { className: 'title', begin: IDENT_RE_RU },
             {
               className: 'tail',
               endsWithParent: true,
@@ -3776,8 +3776,8 @@ hljs.LANGUAGES['1c'] = function(){
             hljs.C_LINE_COMMENT_MODE
           ]
         },
-        {className: 'preprocessor', begin: '#', end: '$'},
-        {className: 'date', begin: '\'\\d{2}\\.\\d{2}\\.(\\d{2}|\\d{4})\''}
+        { className: 'preprocessor', begin: '#', end: '$' },
+        { className: 'date', begin: '\'\\d{2}\\.\\d{2}\\.(\\d{2}|\\d{4})\'' }
       ]
     }
   };
@@ -3817,7 +3817,7 @@ hljs.LANGUAGES.avrasm =
     },
     contains: [
       hljs.C_BLOCK_COMMENT_MODE,
-      {className: 'comment', begin: ';',  end: '$'},
+      { className: 'comment', begin: ';', end: '$' },
       hljs.C_NUMBER_MODE, // 0x..., decimal, float
       hljs.BINARY_NUMBER_MODE, // 0b...
       {
@@ -3830,8 +3830,8 @@ hljs.LANGUAGES.avrasm =
         begin: '\'', end: '[^\\\\]\'',
         illegal: '[^\\\\][^\']'
       },
-      {className: 'label',  begin: '^[A-Za-z0-9_.$]+:'},
-      {className: 'preprocessor', begin: '#', end: '$'},
+      { className: 'label', begin: '^[A-Za-z0-9_.$]+:' },
+      { className: 'preprocessor', begin: '#', end: '$' },
       {  // директивы «.include» «.macro» и т.д.
         className: 'preprocessor',
         begin: '\\.[a-zA-Z]+'
@@ -3851,7 +3851,7 @@ Contributors: Daniel C.K. Kho <daniel.kho@gmail.com>
 Description: VHDL is a hardware description language used in electronic design automation to describe digital and mixed-signal systems.
 */
 
-hljs.LANGUAGES.vhdl = function() {
+hljs.LANGUAGES.vhdl = function () {
   return {
     case_insensitive: true,
     defaultMode: {
@@ -3951,7 +3951,7 @@ Author: Vladimir Moskva <vladmos@gmail.com>
 Website: http://fulc.ru/
 */
 
-hljs.LANGUAGES.tex = function() {
+hljs.LANGUAGES.tex = function () {
   var COMMAND1 = {
     className: 'command',
     begin: '\\\\[a-zA-Zа-яА-я]+[\\*]?',
@@ -4012,7 +4012,7 @@ Language: Haskell
 Author: Jeremy Hull <sourdrums@gmail.com>
 */
 
-hljs.LANGUAGES.haskell = function(){
+hljs.LANGUAGES.haskell = function () {
   var LABEL = {
     className: 'label',
     begin: '\\b[A-Z][\\w\']*',
@@ -4022,8 +4022,8 @@ hljs.LANGUAGES.haskell = function(){
     className: 'container',
     begin: '\\(', end: '\\)',
     contains: [
-      {className: 'label', begin: '\\b[A-Z][\\w\\(\\)\\.\']*'},
-      {className: 'title', begin: '[_a-z][\\w\']*'}
+      { className: 'label', begin: '\\b[A-Z][\\w\\(\\)\\.\']*' },
+      { className: 'title', begin: '[_a-z][\\w\']*' }
     ]
   };
 
@@ -4085,7 +4085,7 @@ Description: Erlang is a general-purpose functional language, with strict evalua
 Author: Nikolay Zakharov <nikolay.desh@gmail.com>, Dmitry Kovega <arhibot@gmail.com>
 */
 
-hljs.LANGUAGES.erlang = function(){
+hljs.LANGUAGES.erlang = function () {
   var BASIC_ATOM_RE = '[a-z\'][a-zA-Z0-9_\']*';
   var FUNCTION_NAME_RE = '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';
   var ERLANG_RESERVED = {
@@ -4168,7 +4168,7 @@ hljs.LANGUAGES.erlang = function(){
   BLOCK_STATEMENTS.contains = [
     COMMENT,
     NAMED_FUN,
-    hljs.inherit(hljs.APOS_STRING_MODE, {className: ''}),
+    hljs.inherit(hljs.APOS_STRING_MODE, { className: '' }),
     BLOCK_STATEMENTS,
     FUNCTION_CALL,
     hljs.QUOTE_STRING_MODE,
@@ -4303,7 +4303,7 @@ Language: Rust
 Author: Andrey Vlasovskikh <andrey.vlasovskikh@gmail.com>
 */
 
-hljs.LANGUAGES.rust = function() {
+hljs.LANGUAGES.rust = function () {
   var TITLE = {
     className: 'title',
     begin: hljs.UNDERSCORE_IDENT_RE
@@ -4395,23 +4395,23 @@ hljs.LANGUAGES.matlab = {
         keywords: 'function',
         contains: [
           {
-              className: 'title',
-              begin: hljs.UNDERSCORE_IDENT_RE
+            className: 'title',
+            begin: hljs.UNDERSCORE_IDENT_RE
           },
           {
-              className: 'params',
-              begin: '\\(', end: '\\)'
+            className: 'params',
+            begin: '\\(', end: '\\)'
           },
           {
-              className: 'params',
-              begin: '\\[', end: '\\]'
+            className: 'params',
+            begin: '\\[', end: '\\]'
           }
         ]
       },
       {
         className: 'string',
         begin: '\'', end: '\'',
-        contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
+        contains: [hljs.BACKSLASH_ESCAPE, { begin: '\'\'' }],
         relevance: 0
       },
       {
@@ -4427,7 +4427,7 @@ Language: R
 Author: Joe Cheng <joe@rstudio.org>
 */
 
-hljs.LANGUAGES.r = (function() {
+hljs.LANGUAGES.r = (function () {
   var IDENT_RE = '([a-zA-Z]|\\.[a-zA-Z.])[a-zA-Z0-9._]*';
 
   return {
