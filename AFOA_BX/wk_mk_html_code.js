@@ -405,12 +405,12 @@ hljs.VR_IQIH_MODE = {
 };
 hljs.VR_MCVN_MODE = {
     className: 'keywords',
-    begin: '\\{\\{|\\}\\}(?!\\}(?!\\}))',
+    begin: '\\{\\{|\\}\\}(?!\\}(?!\\}))|\\|',
     relevance: 0
 };
 hljs.VR_3F_OTH_MODE = {
     className: 'function',
-    begin: 'oth|\\$\\w+',
+    begin: 'oth|\\$\\w+|,3f,|,cf,|,7f,|,21,',
     relevance: 0
 };
 hljs.VR_FRAME_TSJQ_MODE = {

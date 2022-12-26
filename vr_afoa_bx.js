@@ -302,7 +302,7 @@ Battery production date; "
         vr_afoa_wu: "VR_RJOK",
         zkrs: "Vdum md-VR-md stgn rjok",
         csrf: `Vdum md-VR-md stgn rjok : md-nixb=AFOA_WU-md : JUKL EOWL SOPC AFOA WU , md-nixb=afoa_lzm_wu-md : jukl eowl sopc afoa lzm wu, md-nixb=sopc-md : jukl eowl sopc rjok zzuy. uxst dk hy pc md-"csrf, klch"-md
-        md-VR-md sopc rjok cd sysa sasa dk lplp xm dbkz zqjp zjhq.
+        md-VR-md sopc rjok cd sysa sasa dk lplp xm dbkz zqjp zjhq.Dbkz so aqn jyqh dgl tsjq.
         `,
         klch: `RJOK=nixb=AFOA_WU{{
     }}
