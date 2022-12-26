@@ -429,7 +429,7 @@ hljs.VR_GXIH_MODE = {
     relevance: 0
 };
 hljs.VR_ZTHI_DYIH_MODE = {
-    className: 'number',
+    className: 'gtaw_ft_diwr',
     begin: '[Dd]\\d+',
     relevance: 0
 };
