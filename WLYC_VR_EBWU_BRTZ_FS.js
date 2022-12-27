@@ -9,8 +9,12 @@ function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
         var RJSE_KP = req.body.VDZV_2.replace(/<br>/g, "\n")
     }
     var JTYP_1;
-    JTYP_1 = VR_EBWU_AFOA_BRTZ_FS(RJSE_KP)
-    res.render('VR_EBWU_BRTZ_FS', { JTYP_1, RJSE_KP });
-    exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'))
+    JTYP_1 = VR_EBWU_AFOA_BRTZ_FS(RJSE_KP,{express:{req, res}})
+    if(typeof(JTYP_1)=="string"&&/\S/.test(JTYP_1)){
+        res.render('VR_EBWU_BRTZ_FS', { JTYP_1, RJSE_KP });
+        exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'))
+    }else{
+        // res.render('VR_EBWU_BRTZ_FS', { RJSE_KP , JTYP_1:""});
+    }
 }
 module.exports = WLYC_VR_EBWU_AFOA_BRTZ_FS;

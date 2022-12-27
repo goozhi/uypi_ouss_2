@@ -4,7 +4,7 @@ const VR_AFOA_RJOK = require('./VR_AFOA_RJOK');
 const VR_EBWU_AFOA_BRTZ_FS = require('./VR_EBWU_AFOA_BRTZ_FS');
 
 function VR_RJOK_html_FS(){
-    var rj_kp = fs.readFileSync('./views/VR_VKJP.md').toString()
+    var rj_kp = fs.readFileSync('./public/md/VR_VKJP.md').toString()
     var rj_vkjp = rj_kp.replace(/([\S\s]*?\n\s*======+)[\s\S]*$/, "$1")
     var rj_1 = rj_vkjp + "\n" + VR_AFOA_RJOK(null, "sopc", 'yhrj')
     var rj_rjok_kp = rj_1

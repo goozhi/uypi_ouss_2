@@ -17,8 +17,12 @@
         var vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_1 = vdzv_1.selectionStart
+        if (event.ctrlKey && event.keyCode == 89) { 
+            document.getElementById('btn1').click()
+        }
+
         if (event.keyCode == 13) {
-            if (/\{/.test(rj_1[trig_1 - 2])&&/\}/.test(rj_1[trig_1])) {
+            if (/\{/.test(rj_1[trig_1 - 2]) && /\}/.test(rj_1[trig_1])) {
                 vdzv_1.value = rj_1.slice(0, trig_1) + "\n" + rj_1.slice(trig_1, rj_1.length)
                 vdzv_1.setSelectionRange(trig_1, trig_1)
             }
@@ -53,9 +57,10 @@
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button onclick="ZHMS()">提交</button>
+    <button id="btn1" onclick="ZHMS()">提交(Ctrl+Y)</button>
 </form>
 输出内容<br>
-<textarea class='code-area-2' rows="20" cols="150" onfocus="select()"  style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{JTYP_1}}</textarea>
+<textarea class='code-area-2' rows="20" cols="150" onfocus="select()"
+    style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{JTYP_1}}</textarea>
 <script>
 </script>

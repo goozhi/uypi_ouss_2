@@ -2,7 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var WLYC_ASCIIGGLDRG = require('./WLYC_ASCIIGGLDRG');
 var WLYC_SLRH_JYUY = require('./WLYC_SLRH_JYUY');
-var WLYC_VR_VKJP=require('./WLYC_VR_VKJP')
+var WLYC_VR_VKJP = require('./WLYC_VR_VKJP')
 var WLYC_RJQT_GRBJ = require('./WLYC_RJQT_GRBJ');
 var WLYC_RJQT_FDMJ = require('./WLYC_RJQT_FDMJ');
 var WLYC_VR_EBWU_ATRS = require('./WLYC_VR_EBWU_ATRS')
@@ -31,6 +31,7 @@ var config = require("./config");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
+const WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS = require('./WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS');
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
 app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 app.engine('handlebars', handlebars.engine);
@@ -80,6 +81,9 @@ app.get('/VR_EBWU_ATRS', function (req, res) {
 });
 app.get('/VR_VKJP', function (req, res) {
     WLYC_VR_VKJP(req, res);
+});
+app.get('/UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS', function (req, res) {
+    WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS(req, res);
 });
 app.get('/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH', function (req, res) {
     res.render('VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH');
@@ -272,6 +276,32 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(app.get('port'), function () {
-    console.log('Express started on http://localhost:' +
-        app.get('port') + '; press Ctrl-C to terminate.\nhttp://localhost:' + app.get('port'));
+    // console.log('Express started on http://localhost:' +
+    //     app.get('port') + '; press Ctrl-C to terminate.\nhttp://localhost:' + app.get('port'));
+    var yxna_url = 'http://localhost:' + app.get('port')
+    const { spawn } = require('child_process');
+    var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
+    var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""
+    const child = spawn('cmd.exe');
+    child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+    child.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
+    });
+
+    child.stderr.on('data', (data) => {
+        console.error(`stderr: ${data}`);
+    });
+
+    child.on('close', (code) => {
+        console.log(`子进程退出码：${code}`);
+    });
+
+    child.on('exit', code => {
+        console.log('child exit code: ' + code)
+    })
+    child.on('close', code => {
+        console.log('child close code: ' + code)
+    })
+    console.log('启动成功，将自动调用浏览器启动工作助手网页，如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~')
+
 });

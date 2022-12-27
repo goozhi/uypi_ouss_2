@@ -5,10 +5,10 @@ var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('../VR_TSJQ_BRTZ_FS_ZV_VNWY_TU');
 const eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf = require('../AFOA_BX/eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf');
 const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
-function VR_EBWU_AFOA_BRTZ_FS(RJSE_1) {
-    var uxux_yhld=typeof(RJSE_1)
-    if(uxux_yhld!="string"){
-        throw new Error('csrf-mcvn uxux aoao ji string-'+uxux_yhld)
+function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
+    var uxux_yhld = typeof (RJSE_1)
+    if (uxux_yhld != "string") {
+        throw new Error('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
     }
     var VBYT_VKRF_Peng_EBWU = true;
     var IOWR_VNWM_VR_AFOA = []
@@ -43,18 +43,23 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1) {
             var DIWR_AFOA = { VR_AFOA_WU, VR_AFOA_MCVN, VR_AFOA_BQEO, VN_VR_AFOA_TRIG_VKIH, RJSE_VR_AFOA_TRIG_VKIH, VNWM_VR_CXZV_AFOA_TRIG_VKIH }
             IOWR_VNWM_VR_AFOA.push(DIWR_AFOA)
             var diwr_tsjq_1 = eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf(diwr_vnwm_tsjq, "vnwm_vr_afoa_lzm_wu", VR_AFOA_WU.toUpperCase())
-            if(diwr_tsjq_1==null){
-                throw new Error('csrf-afoa wu ac zznq-'+VR_AFOA_WU)
+            if (diwr_tsjq_1 == null) {
+                throw new Error('csrf-afoa wu ac zznq-' + VR_AFOA_WU)
             }
-            DIWR_AFOA.VR_AFOA_WU=diwr_tsjq_1.vr_afoa_wu
-            DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH=DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH+"_"+DIWR_AFOA.VR_AFOA_WU
+            DIWR_AFOA.VR_AFOA_WU = diwr_tsjq_1.vr_afoa_wu
+            DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH = DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH + "_" + DIWR_AFOA.VR_AFOA_WU
             RJSE_1 = RJSE_1.replace(reg_AFOA, DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH)
             if (diwr_tsjq_1 == null) {
                 throw new Error("[VR TSJQ ACUN]" + DIWR_AFOA.VR_AFOA_WU + "<--")
             } else {
                 VBYT_VKRF_Peng_EBWU = diwr_tsjq_1.VBYT_VKRF_Peng_EBWU
             }
-            RJSE_2 = RJSE_2.replace(reg_AFOA, diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA))
+            var JTYJ_YHLD = diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA, diwr_mcvn)
+            if(typeof(JTYJ_YHLD)=="string"){
+                RJSE_2 = RJSE_2.replace(reg_AFOA, JTYJ_YHLD)
+            }else{
+                RJSE_2 = RJSE_2.replace(reg_AFOA, "")
+            }
         } else {
             break;
         }
@@ -80,7 +85,7 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1) {
     var DIWR_VNWM_VR_LJEY = IOWR_VNWM_VR_AFOA.filter(RNSF => {
         return RNSF.VR_AFOA_WU == "LJEY"
     })
-    RJSE_2=VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY,RJSE_2)
+    RJSE_2 = VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, RJSE_2)
     ///////////////
     if (VBYT_VKRF_Peng_EBWU) {
         var RJSE_MSOX = ZJZJ_sys(RJSE_2);

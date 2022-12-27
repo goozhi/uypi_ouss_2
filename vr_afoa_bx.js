@@ -1,4 +1,5 @@
 var VR_TSJQ_BRTZ_FS_ZV_LJEY = require('./VR_TSJQ_BRTZ_FS_ZV_LJEY')
+var VR_TSJQ_ZV_VNWY_TU_NINI_CGNE=require('./VR_TSJQ_ZV_VNWY_TU_NINI_CGNE')
 var VR_TSJQ_BRTZ_FS_ZV_VR_LJEY_RJQT_GMIH_YXNA_ZJYJ = require('./VR_TSJQ_BRTZ_FS_ZV_VR_LJEY_RJQT_GMIH_YXNA_ZJYJ')
 var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('./VR_TSJQ_BRTZ_FS_ZV_VNWY_TU')
 var VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN = require('./VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN')
@@ -17,6 +18,7 @@ var VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy = require('./VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy')
 var VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI = require('./VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI')
 var VR_TSJQ_ZV_VR_RJOK = require('./VR_TSJQ_ZV_VR_RJOK')
 var VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS')
+const VR_TSJQ_ZV_HD_LZJK = require('./VR_TSJQ_ZV_HD_LZJK')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -70,6 +72,19 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     },
+    {
+        vr_afoa_wu: "HD_LZJK",
+        zkrs: "HD LZJK QH",
+        csrf: `HD FG LZJK DK QH. BI AFOA AH NO FYWY LG XBST MR DS XBST FL FL HD FG XBST TYCC DK LZJK BQEO. BI TSJQ LBM uu uw ce dk lplp, fywy kr nh lplp dk zhkl vdzv mcvn om ahno nq vdum lplp nwvt fg lzjk dk jtyj lw. Fg lzjk qh dk jtyj dk nwvt ac nq md-VR-md lplp.
+        `,
+        klch: `del={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_HD_LZJK,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["DEL", "76"]
+    },
+
     {
         vr_afoa_wu: "OSSE_ZZUY",
         zkrs: "版本信息指令",
@@ -311,6 +326,18 @@ Battery production date; "
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["RJOK"]
+    },
+    {
+        vr_afoa_wu: "VNWY_TU_NINI_CGNE",
+        zkrs: "NINI CGNE",
+        csrf: `zhxm nini wu iq mcvn, bi tsjq lbm nq mcnv vnwy tu nini ae osse zzuy nini yh yj um stn cgne dk nixb nini.Bi tsjq rvdb stst uy pj tyqh zjyj stst dk nini. Bi tsjq lbm rlkl ce lplp, zf aqfc fywy zhkl vdzv stgn mcvn , kqud nwvt stn cgne dk nini. 
+        `,
+        klch: `item={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_VNWY_TU_NINI_CGNE,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["ITEM", "54"]
     },
 
     {

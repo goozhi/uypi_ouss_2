@@ -11,6 +11,8 @@
 
 * [VR传送门](http://localhost:3009/VR_EBWU_BRTZ_FS)
 
+* [工作助手使用指南](http://localhost:3009/UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS)
+
 * **格式** ：所有的功能指令的格式均为 `操作符 +“=”+ 参数 + 两对花括号` 组成 如
 
 ```js

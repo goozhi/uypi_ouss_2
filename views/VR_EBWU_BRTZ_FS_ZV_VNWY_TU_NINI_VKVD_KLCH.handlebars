@@ -12,7 +12,7 @@
 </form>
 <form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
     <hr>
-    目标内容<br>
+    <h1 id="目标内容">目标内容</h1>
     <input name="VDZV_2" hidden>
     <pre id='pre1' name="VDZV_1">
 3f项目示例{2222}33，4，00：元素0 元素1 元素2 oth：-- ;//3f项目示例
@@ -73,8 +73,22 @@ bb项目示例{2223}88 20+ 4年5月 6日7时8分=2 ;//bb项目‘=2’标识可�
             document.getElementById("pre1").innerHTML = rj_2
         });
         document.VR_EBWU_BRTZ_FS.onsubmit = function () {
-            document.VR_EBWU_BRTZ_FS.VDZV_2.value = rj_kp.replace(/\n/g,'<br>');
+            document.VR_EBWU_BRTZ_FS.VDZV_2.value = rj_kp.replace(/\n/g, '<br>');
             return true; // 提交表单
         }
     </script>
+</div>
+<div>
+    <h1 id="使用帮助">使用帮助</h1>
+    <ul>
+        <li>
+            <p>你可以直接在VR语言窗口中的目标内容输入这样的数据流项目，点击提交或者执行按钮，然后在输出窗口中可以看到转化为彭语言形式的数据流项目</p>
+        </li>
+        <li>
+            <p>如果你输入的是纯彭语言行形式的数据流项目，那么VR语言同样会将其二次编译成彭语言，然后进行格式规范化，所以你可以使用该VR语言对所有合法形式的数据流项目进行规范化。比如括号对齐、添加oth等。</p>
+        </li>
+        <li>
+            <p>谢谢浏览，请尝试一下VR语言形式的数据流项目编辑</p>
+        </li>
+    </ul>
 </div>
