@@ -1,10 +1,26 @@
 <div class="SYIG_3">
-        <mark>home</mark>
+    <mark>home</mark>
+</div>
+<div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" onload="jquery sdbc"></script>
+    <script>
+        $(document).ready(function () {
+            // your code here
+            if (confirm("开发者建议你使用“VR语言”来辅助你工作，里面包含了工作助手几乎所有的功能，需要了解一下“VR语言”吗？")) {
+                var yxna_vr = "http://localhost:3009/VR_EBWU_BRTZ_FS"
+                var yxna_vr_vkjp = "http://localhost:3009/VR_VKJP?"
+                if (window.open(yxna_vr_vkjp, '_blank')) {
+                    
+                }else{
+                    window.location.assign(yxna_vr_vkjp)
+                }
+            }
+        });
+    </script>
 </div>
 <div class="SYIG_2">
     <mark>最实用脚本</mark>
     <div class="SYIG_1">
-
         <form name="QH_MAGM" action="/QH_MAGM" method="get">
             <button>行排序</button>
         </form>
@@ -140,5 +156,6 @@
 <div>
     version : <mark>{{version}}</mark> ,
     author : <mark>{{author}}</mark>
+    <a href="https://drive.weixin.qq.com/s?k=AFkAbAfYAAkQWfpA6V" target="_blank">获取最新开发者发布的工作助手</a>
 </div>
-{{!-- <img class=" src="/img/logo.jpg"  alt="Logo"> --}}
+{{!-- <img class=" src=" /img/logo.jpg" alt="Logo"> --}}
