@@ -37,12 +37,12 @@ function ZJZJ_TSJQ_Init(RJSE_KP) {
 	}
 	var IOWR_YHLD = RJSE_1.match(reg_in)
 	if (IOWR_YHLD == null) {
-		RJSE_MSOX += "\n[in MCVN AC ZZNQ] " + RJSE_KP.match(/.*\/\/line \d+/);
+		RJSE_MSOX += "\n[i n MCVN AC ZZNQ] " + RJSE_KP.match(/.*\/\/line \d+/);
 	} else {
 		var reg_in_CXAV_TSJQ = /[a-z]+(?:\{.*?\}|\(.*\))/ig;
 		var VNWM_in_CXAV_TSJQ = IOWR_YHLD[0].match(reg_in_CXAV_TSJQ);
 		if (VNWM_in_CXAV_TSJQ == null) {
-			RJSE_MSOX += "\n[in MCVN MSOX] " + IOWR_YHLD[0] + " <--";
+			RJSE_MSOX += "\n[i n MCVN MSOX] " + IOWR_YHLD[0] + " <--";
 		} else {
 			VNWM_in_CXAV_TSJQ.forEach(RNSF => {
 				switch (true) {
