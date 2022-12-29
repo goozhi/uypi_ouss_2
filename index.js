@@ -1,4 +1,5 @@
 var express = require('express');
+var encoding = require('encoding')
 const bodyParser = require('body-parser');
 var WLYC_ASCIIGGLDRG = require('./WLYC_ASCIIGGLDRG');
 var WLYC_SLRH_JYUY = require('./WLYC_SLRH_JYUY');
@@ -275,17 +276,18 @@ app.use(function (err, req, res, next) {
     console.log(err)
 });
 
+const { spawn } = require('child_process');
 app.listen(app.get('port'), function () {
     // console.log('Express started on http://localhost:' +
     //     app.get('port') + '; press Ctrl-C to terminate.\nhttp://localhost:' + app.get('port'));
     var yxna_url = 'http://localhost:' + app.get('port')
-    const { spawn } = require('child_process');
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
     var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""
     const child = spawn('cmd.exe');
-    child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+    console.log('启动成功，将自动调用浏览器启动工作助手网页.\n如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~您可以手动打开浏览器输入以下链接' + yxna_url)
+    // child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
     child.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
+        console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
     });
 
     child.stderr.on('data', (data) => {
@@ -302,6 +304,5 @@ app.listen(app.get('port'), function () {
     child.on('close', code => {
         console.log('child close code: ' + code)
     })
-    console.log('启动成功，将自动调用浏览器启动工作助手网页，如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~')
 
 });

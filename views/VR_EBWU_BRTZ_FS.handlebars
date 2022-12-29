@@ -1,6 +1,12 @@
 <head>
     <title>VR</title>
     <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
+    <script>
+        var module = {}        
+    </script>
+    <script src="/tsjq_tem_non.js" onload="console.log('Sdbc tsjq_tem_non')"></script>
+    <script src="/DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI.js"
+        onload="console.log('Sdbc DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI')"></script>
 </head>
 <script>
     document.onkeydown = function (event) {
@@ -12,13 +18,26 @@
         isKeyLoosen(oEvent);
     }
 
-    function isKeyLoosen(event) {
-        //抬起按键
+
+    function isKeyLoosen(event) {//抬起按键
         var vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
-        var trig_1 = vdzv_1.selectionStart
-        if (event.ctrlKey && event.keyCode == 89) { 
+        var trig_kp = vdzv_1.selectionStart
+        var trig_1 = trig_kp
+        vdzv_1.onkeydown = function (event) {
+            if (event.key === 'Tab') {
+                event.preventDefault();
+                var a = tsjq_tem_non(rj_1, trig_kp)
+                Promise.all([a]).then(jtyj => {
+                    vdzv_1.value = jtyj
+                    vdzv_1.setSelectionRange(vdzv_1.value.length, vdzv_1.value.length)
+                })
+
+            }
+        };
+        if (event.ctrlKey && event.keyCode == 89) {
             document.getElementById('btn1').click()
+        } else if (event.code == "Tab") {
         }
 
         if (event.keyCode == 13) {
@@ -57,7 +76,7 @@
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1" onclick="ZHMS()">提交(Ctrl+Y)</button>
+    <button id="btn1">提交(Ctrl+Y)</button>
 </form>
 输出内容<br>
 <textarea class='code-area-2' rows="20" cols="150" onfocus="select()"

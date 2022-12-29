@@ -7,7 +7,6 @@ function NVMS_EBWU_LD_YHRJ_3(diwr_err) {
         throw new Error("[uxux aoao ji object]" + uxux_yhld + "<--")
     }
     var RJSE_1 = diwr_err.message
-
     var reg_LEUN = /csrf-(?:(?!csrf-)[\s\S])*/ig;
     var VNWM_LEUN = RJSE_1.match(reg_LEUN);
     if (VNWM_LEUN == null) {
@@ -21,7 +20,7 @@ function NVMS_EBWU_LD_YHRJ_3(diwr_err) {
                 // throw new Error('csrf-hmpc csrf xbst-'+rnsf+"kp-"+ diwr_err.message )
             } else {
                 var rj_yhld = rnsf.replace(reg_csrf, "")
-                var reg_nixb_mr_kp = /(.*)-kp-(.*)/;
+                var reg_nixb_mr_kp = /([\S\s]*)-kp-([\s\S]*)/;
                 var diwr_nixb_mr_kp = rj_yhld.match(reg_nixb_mr_kp);
                 var nixb = ""
                 var kp = ""
