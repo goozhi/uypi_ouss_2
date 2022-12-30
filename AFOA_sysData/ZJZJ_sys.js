@@ -23,7 +23,7 @@ async function ZJZJ_sys(RJSE_KP) {
 	var reg_Act = /\$Act\((?:(?!\$Act|\$Ecu|\$Str)[\S\s]){0,399999}?\n\*\*\*.*/ig;
 	var reg_Act_menu = /\n\+\d+.*\]\s*\(Act\)(?:(?!\$Act|\$Ecu|\$Str)[\S\s]){0,399999}?\n\*\*\*.*/ig;
 	var VNWM_YHLD = RJSE_KP.match(reg_Act);
-	var VNWM_ACT_MENU=RJSE_KP.match(reg_Act_menu)
+	var VNWM_ACT_MENU = RJSE_KP.match(reg_Act_menu)
 	if (VNWM_YHLD != null) {
 		RJSE_KP = RJSE_KP.replace(reg_Act, "");
 		for (var i1 = 0; i1 < VNWM_YHLD.length; i1++) {
@@ -31,7 +31,7 @@ async function ZJZJ_sys(RJSE_KP) {
 
 		}
 	}
-	
+
 	if (VNWM_ACT_MENU != null) {
 		RJSE_KP = RJSE_KP.replace(reg_Act_menu, "");
 		for (var i1 = 0; i1 < VNWM_ACT_MENU.length; i1++) {
@@ -79,8 +79,6 @@ async function ZJZJ_sys(RJSE_KP) {
 		});
 		RJSE_MSOX += await ZJZJ_LJEY_NINI(RJSE_LJEY_NINI);
 	}
-
-	// return RJSE_MSOX.replace(/\n\/\/line \d+/g,"\n");
-	return RJSE_MSOX.replace(/\n\/\/line \d+/g, "\n")
+	return RJSE_MSOX.replace(/\n\/\/line \d+/g, "\n").replace(/^\s+$/, "")
 }
 module.exports = ZJZJ_sys;

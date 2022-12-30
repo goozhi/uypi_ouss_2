@@ -1,4 +1,4 @@
-var uz_ms=require('../AFOA_BX/uz_ms')
+var uz_ms = require('../AFOA_BX/uz_ms')
 async function sysData_ZJZJ(RJSE_KP) {
 	var ZJZJ_ACUN = require("./ZJZJ_ACUN")
 	var ZJZJ_sys = require("./ZJZJ_sys");
@@ -15,11 +15,12 @@ async function sysData_ZJZJ(RJSE_KP) {
 	var LD_XBST = RJSE_KP.match(regex_2);
 	var VNWM_MSOX = [""];
 	if (VNWM_sys_1 == null) {
-		var RJSE_YHLD = await ZJZJ_sys_FTXB(RJSE_KP);
+		var RJSE_YHLD = await ZJZJ_sys_FTXB(RJSE_KP)
+		RJSE_YHLD=RJSE_YHLD.replace(/^\s+$/,"");
 		if (RJSE_YHLD != "") {
 			return RJSE_YHLD;
 		} else {
-			return "";
+			return "[hmpc msox]";
 		}
 	}
 	if (LD_XBST == null) {
@@ -34,17 +35,20 @@ async function sysData_ZJZJ(RJSE_KP) {
 	}
 	var diwr_vnwm = VNWM_sys_1.map(async (RNSF_1) => {
 		var RJSE_YHLD = await ZJZJ_sys(RNSF_1);
-		if(/objec/i.test(RJSE_YHLD)){
-			uz_ms (RNSF_1)
+		if (/objec/i.test(RJSE_YHLD)) {
+			uz_ms(RNSF_1)
 		}
 		return RJSE_YHLD
 	})
 	return new Promise((resolve, reject) => {
 		Promise.all(diwr_vnwm).then(jtyj => {
 			VNWM_MSOX.push(jtyj.join(''))
-			resolve(VNWM_MSOX.join("\n").replace(/\n(?=\n)/g, ""))
+			var rj_msox = VNWM_MSOX.join("\n").replace(/\n(?=\n)/g, "").replace(/^\s+$/, "")
+			if (rj_msox == "") {
+				rj_msox = "[hmpc msox]"
+			}
+			resolve(rj_msox)
 		})
 	})
-	// return VNWM_MSOX.join("\n").replace(/\n(?=\n)/g,"");
 }
 module.exports = sysData_ZJZJ;

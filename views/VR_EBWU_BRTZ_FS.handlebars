@@ -20,22 +20,45 @@
 
 
     function isKeyLoosen(event) {//抬起按键
+        console.log(event.keyCode)
         var vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_kp = vdzv_1.selectionStart
         var trig_1 = trig_kp
+        var rj_tsts_llcc = rj_1.slice(0, trig_kp)
+        var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
         vdzv_1.onkeydown = function (event) {
-            if (event.key === '`') {
+            if (event.key === '`' || event.keyCode == 18 || event.key === 'Alt') {
                 event.preventDefault();
                 var a = tsjq_tem_non(rj_1, trig_kp)
                 Promise.all([a]).then(jtyj => {
-                    if (!jtyj[0].gkyq_tsts_yjab) {
-                        var rj_tsts_llcc = rj_1.slice(0, trig_kp)
-                        var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
+                    if (/\w+\s*=\s*9\s*(?:=(?:\s*\w+|)|)\s*$/.test(rj_tsts_llcc)) {
+                        if (/9=\s*(\w+)\s*$/.test(rj_tsts_llcc)) {
+                            var vnwm_vkvy = ['GB2312', 'utf8']
+                            var dbkz_vdzv_vkvy = rj_tsts_llcc.replace(/[\s\S]*=\s*(\w+)\s*$/, "$1")
+                            var vnwm_vkvy_stst = vnwm_vkvy.map(rn1 => {
+                                return { stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1, dbkz_vdzv_vkvy), dbkz_vdzv_vkvy, ahdb_vkvy: rn1 }
+                            })
+                            vnwm_vkvy_stst.sort((a, b) => b.stst_mi - a.stst_mi)
+                            vdzv_1.value = rj_tsts_llcc.replace(/=\s*(\w+)\s*$/, "=") + vnwm_vkvy_stst[0].ahdb_vkvy
+                        } else if (/=\s*$/.test(rj_tsts_llcc)) {
+                            vdzv_1.value = rj_tsts_llcc + "GB2312"
+                        } else if (/9\s*$/.test(rj_tsts_llcc)) {
+                            vdzv_1.value = rj_tsts_llcc + "=GB2312"
+                        }
+                        if (!/^.*\S/.test(rj_tsts_udcc)) {
+                            vdzv_1.value += "\{\{\n\n\}\}"
+                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
+                        }
+                    } else if (/=\s*$/.test(vdzv_1.value)) {
+                        vdzv_1.value += "\{\{\n\n\}\}"
+                        vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
+                    }
+                    else if (!jtyj[0].gkyq_tsts_yjab) {
                         if (/\n$/.test(rj_tsts_llcc) && /\n\}\}/.test(rj_tsts_udcc)) {
                             vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
-                        }else if(/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
-                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length +4)
+                        } else if (/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
+                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
                         }
                     }
                     else if (/\n$/.test(jtyj[0].rj_tsts_llcc && /\n\}\}/.test(jtyj[0].rj_tsts_udcc))) {
@@ -54,7 +77,7 @@
 
             }
         };
-        if (event.ctrlKey && event.keyCode == 89) {
+        if (event.ctrlKey && event.keyCode == 77) {
             document.getElementById('btn1').click()
         } else if (event.code == "Tab") {
         }
@@ -95,7 +118,7 @@
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交(Ctrl+Y)</button>
+    <button id="btn1">提交(Ctrl+M)</button>
 </form>
 输出内容<br>
 <textarea class='code-area-2' rows="20" cols="150" onfocus="select()"

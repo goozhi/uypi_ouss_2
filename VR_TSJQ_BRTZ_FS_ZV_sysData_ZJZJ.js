@@ -1,8 +1,9 @@
 const fs=require('fs')
 const encoding=require('encoding');
+const NVMS_JTYJ_LD_html=require('./AFOA_BX/NVMS_JTYJ_LD_html');
 const sysData_ZJZJ = require("./AFOA_sysData/sysData_ZJZJ");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
-async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA,diwr_mcvn) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -39,7 +40,15 @@ async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA) {
     //     return ( ZJZJ_sys_FTXB(RJSE_zjzj_bqeo)    )
     // }
     var jtyj = NVMS_EBWU_LD_YHRJ_1(new Error(await sysData_ZJZJ(RJSE_zjzj_bqeo))).message
-    console.log('Zjzj sdbc.')
-    return jtyj
+    console.log('msox nvcm hfbc.')
+    var rj_html = await NVMS_JTYJ_LD_html(jtyj)
+    diwr_mcvn.express.res.writeHead(200,{
+        'Content-Type':'text/html;charset=utf-8'
+    });
+    
+    diwr_mcvn.express.res.write(rj_html);
+    diwr_mcvn.express.res.end();
+    console.log('html ldrg sdbc')
+    return;
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ;

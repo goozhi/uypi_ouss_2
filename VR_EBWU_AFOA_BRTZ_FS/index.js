@@ -1,14 +1,15 @@
 const fs = require('fs')
-var ZJZJ_sys = require("../AFOA_sysData/sysData_ZJZJ");
+var sysData_ZJZJ = require("../AFOA_sysData/sysData_ZJZJ");
 var VR_TSJQ_DIWR = require('../vr_afoa_bx')
 var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('../VR_TSJQ_BRTZ_FS_ZV_VNWY_TU');
 const eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf = require('../AFOA_BX/eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf');
 const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
+const uz_ms = require('../AFOA_BX/uz_ms');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
 async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     var uxux_yhld = typeof (RJSE_1)
     if (uxux_yhld != "string") {
-        throw new Error('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
+        uz_ms('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
     }
     var VBYT_VKRF_Peng_EBWU = true;
     var IOWR_VNWM_VR_AFOA = []
@@ -44,13 +45,13 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
             IOWR_VNWM_VR_AFOA.push(DIWR_AFOA)
             var diwr_tsjq_1 = eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf(diwr_vnwm_tsjq, "vnwm_vr_afoa_lzm_wu", VR_AFOA_WU.toUpperCase())
             if (diwr_tsjq_1 == null) {
-                throw new Error('csrf-afoa wu ac zznq-' + VR_AFOA_WU)
+                uz_ms('csrf-afoa wu ac zznq-' + VR_AFOA_WU)
             }
             DIWR_AFOA.VR_AFOA_WU = diwr_tsjq_1.vr_afoa_wu
             DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH = DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH + "_" + DIWR_AFOA.VR_AFOA_WU
             RJSE_1 = RJSE_1.replace(reg_AFOA, DIWR_AFOA.RJSE_VR_AFOA_TRIG_VKIH)
             if (diwr_tsjq_1 == null) {
-                throw new Error("[VR TSJQ ACUN]" + DIWR_AFOA.VR_AFOA_WU + "<--")
+                uz_ms("[VR TSJQ ACUN]" + DIWR_AFOA.VR_AFOA_WU + "<--")
             } else {
                 VBYT_VKRF_Peng_EBWU = diwr_tsjq_1.VBYT_VKRF_Peng_EBWU
             }
@@ -72,15 +73,15 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
         } else {
             RJSE_YHLD = RJSE_JTYP
         }
-        var RJSE_MSOX = await ZJZJ_sys(RJSE_YHLD)
-        if (!/HMPC MSOX/.test(RJSE_MSOX)) {
-            throw new Error("\n" + (RJSE_MSOX));
+        var RJSE_MSOX = await sysData_ZJZJ(RJSE_YHLD)
+        if (!/HMPC MSOX/i.test(RJSE_MSOX)) {
+            uz_ms([RJSE_MSOX]);
         }
         return RJSE_JTYP;
     }
     RJSE_1 = RJSE_1.replace(/[^\{\}\n]*VKIH_[^\{\}\n]*/g, "").replace(/\/\/.*/g, "")
     if (!/^\s*$/.test(RJSE_1)) {
-        throw new Error(("<PC RA STLZ DK BQEO>\n" + RJSE_1 + "\n</PC RA STLZ DK BQEO>"))
+        uz_ms(("<PC RA STLZ DK BQEO>\n" + RJSE_1 + "\n</PC RA STLZ DK BQEO>"))
     }
     var DIWR_VNWM_VR_LJEY = IOWR_VNWM_VR_AFOA.filter(RNSF => {
         return RNSF.VR_AFOA_WU == "LJEY"
@@ -88,9 +89,9 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     RJSE_2 = VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, RJSE_2)
     ///////////////
     if (VBYT_VKRF_Peng_EBWU) {
-        var RJSE_MSOX = await ZJZJ_sys(RJSE_2);
-        if (!/HMPC MSOX/.test(RJSE_MSOX)) {
-            throw new Error("\n" + (RJSE_MSOX));
+        var RJSE_MSOX = await sysData_ZJZJ(RJSE_2);
+        if (!/HMPC MSOX/i.test(RJSE_MSOX)) {
+            uz_ms("\n" + (RJSE_MSOX));
         }
     }
     return RJSE_LLDD_PHFD + RJSE_2;

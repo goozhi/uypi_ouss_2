@@ -28,7 +28,7 @@ async function ymce_sjbx() {
                 } else {
                     console.log("sjbx styf")
                 }
-            }, 2000);
+            }, 1000);
         });
     });
     request.end();

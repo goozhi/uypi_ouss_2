@@ -24,15 +24,17 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
             err = NVMS_EBWU_LD_YHRJ_1(err)
         }
         else {
-    
+
         }
         res.render('500', { err, err_stack: err.stack });
         console.log(err)
-    
+
     }
-    if (typeof (JTYP_1) == "string" && /\S/.test(JTYP_1)) {
+    if (typeof (JTYP_1) == "string") {
         res.render('VR_EBWU_BRTZ_FS', { JTYP_1, RJSE_KP });
-        exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'))
+        if(/\S/.test(JTYP_1)){
+            exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'))
+        }
     } else {
         // res.render('VR_EBWU_BRTZ_FS', { RJSE_KP , JTYP_1:""});
     }
