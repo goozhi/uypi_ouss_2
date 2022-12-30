@@ -28,6 +28,7 @@ var WLYC_BRTZ_FS_3f_Beiqi_ec180 = require('./WLYC_BRTZ_FS_3f_Beiqi_ec180');
 var WLYC_BRTZ_FS_Beiqi_ec180 = require('./WLYC_BRTZ_FS_Beiqi_ec180');
 var WLYC_TYUB_LDRG = require('./WLYC_TYUB_LDRG');
 var app = express();
+var ymce_sjbx = require('./ymce_sjbx')
 var config = require("./config");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
@@ -40,7 +41,7 @@ app.set('view engine', 'handlebars');
 
 app.set('port', process.env.PORT || config.port);
 
-
+ymce_sjbx()
 app.get('/', function (req, res) {
     var YMCE_HITD = config.YMCE_HITD
     var version = config.version
@@ -284,25 +285,25 @@ app.listen(app.get('port'), function () {
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
     var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""
     console.log('启动成功，将自动调用浏览器启动工作助手网页.\n如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~您可以手动打开浏览器输入以下链接' + yxna_url)
-    const child = spawn('cmd.exe');
-    child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
-    child.stdout.on('data', (data) => {
-        console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
-    });
+    // const child = spawn('cmd.exe');
+    // child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+    // child.stdout.on('data', (data) => {
+    //     console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
+    // });
 
-    child.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-    });
+    // child.stderr.on('data', (data) => {
+    //     console.error(`stderr: ${data}`);
+    // });
 
-    child.on('close', (code) => {
-        console.log(`子进程退出码：${code}`);
-    });
+    // child.on('close', (code) => {
+    //     console.log(`子进程退出码：${code}`);
+    // });
 
-    child.on('exit', code => {
-        console.log('child exit code: ' + code)
-    })
-    child.on('close', code => {
-        console.log('child close code: ' + code)
-    })
+    // child.on('exit', code => {
+    //     console.log('child exit code: ' + code)
+    // })
+    // child.on('close', code => {
+    //     console.log('child close code: ' + code)
+    // })
 
 });
