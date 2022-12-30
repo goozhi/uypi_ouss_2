@@ -31,7 +31,6 @@ async function VR_RJOK_html_FS() {
                 if (rn1.gkqj_zhqh_bcaf) {
                     rj_1 = rj_1.replace(rn1.rj_kp, rn1.rj_kp + '\n```\n* result\n```js\n' + rn1.dyvy_zhqh_jtyj.replace(/\$/g, '&#36;') + '\n')
                 } else {
-                    console.log(eqwy_1)
                 }
             })
             rj_1 = md_RJOK_html_fs(rj_1.replace(/&#36;/g, "\$"))

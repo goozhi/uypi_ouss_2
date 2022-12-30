@@ -40,8 +40,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 app.set('port', process.env.PORT || config.port);
-
-ymce_sjbx()
 app.get('/', function (req, res) {
     var YMCE_HITD = config.YMCE_HITD
     var version = config.version
@@ -276,6 +274,8 @@ app.use(function (err, req, res, next) {
     res.render('500', { err, err_stack: err.stack });
     console.log(err)
 });
+
+ymce_sjbx()
 
 const { spawn } = require('child_process');
 app.listen(app.get('port'), function () {
