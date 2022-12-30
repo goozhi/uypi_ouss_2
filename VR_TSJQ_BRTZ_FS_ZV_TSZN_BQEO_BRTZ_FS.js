@@ -31,7 +31,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS(IOWR_AFOA) {
                         }
                     }
                     break;
-                case /\b(?:ecu|8)\b/i.test(RNSF):
+                case /\b(?:ecu|8)\b/i.test(VNWM_MCVN_1[i1]):
                     var reg_ecu = /\$ecu\(.*\)[\s\S]*?\*\*+/ig;
                     var reg_VR_AFOA_OSSE_ZZUY = /\b(8|ecu)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
                     var vnwm_rjse_ecu = BQEO_1.match(reg_ecu);
@@ -48,7 +48,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS(IOWR_AFOA) {
                         }
                     }
                     break;
-                case /\b(?:menu|1)\b/i.test(RNSF):
+                case /\b(?:menu|1)\b/i.test(VNWM_MCVN_1[i1]):
                     var reg_menu = /\$menu\(.*\)[\s\S]*?\*\*+/ig;
                     var reg_VR_AFOA_OSSE_ZZUY = /\b(1|menu)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
                     var vnwm_rjse_menu = BQEO_1.match(reg_menu);
@@ -65,7 +65,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS(IOWR_AFOA) {
                         }
                     }
                     break;
-                case /\b(?:rdtc|3)\b/i.test(RNSF):
+                case /\b(?:rdtc|3)\b/i.test(VNWM_MCVN_1[i1]):
                     var reg_VR_AFOA_OSSE_ZZUY = /\b(3|rdtc)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
                     var vnwm_rjse_VR_AFOA_OSSE_ZZUY = BQEO_1.match(reg_VR_AFOA_OSSE_ZZUY);
                     if (vnwm_rjse_VR_AFOA_OSSE_ZZUY != null) {

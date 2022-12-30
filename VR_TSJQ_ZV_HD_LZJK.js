@@ -9,7 +9,6 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA, diwr_mcvn) {
     var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
     if (VNWM_MCVN_1 == null) {
         if (diwr_mcvn != null) {
-            diwr_mcvn.express.res.render('HD_LZJK')
         }    
         // throw new Error("MCVN NRAP")
     } else {
@@ -39,6 +38,7 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA, diwr_mcvn) {
             }
         });
     }
+    diwr_mcvn.express.res.render('HD_LZJK')
     return 
 }
 module.exports = VR_TSJQ_ZV_HD_LZJK

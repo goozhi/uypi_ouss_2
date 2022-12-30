@@ -17,7 +17,6 @@ async function WLYC_sysData_ZJZJ(req, res){
     });
     res.write(rj_html);
     res.end();
-    console.log('html ldrg sdbc')
     return;
 	// res.render('sysData_ZJZJ', {JTYP_1 : RJSE_YHLD});
 }

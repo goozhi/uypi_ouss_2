@@ -8,7 +8,6 @@ function VR_TSJQ_ZV_VNWY_TU_NINI_CGNE(DIWR_AFOA, diwr_mcvn) {
     var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
     if (VNWM_MCVN_1 == null) {
         if (diwr_mcvn != null) {
-            diwr_mcvn.express.res.render('NINI_CGNE_ZV_NINI_WU_MR_ES')
         }    
         // throw new Error("MCVN NRAP")
     } else {
@@ -38,6 +37,7 @@ function VR_TSJQ_ZV_VNWY_TU_NINI_CGNE(DIWR_AFOA, diwr_mcvn) {
             }
         });
     }
+    diwr_mcvn.express.res.render('NINI_CGNE_ZV_NINI_WU_MR_ES')
     return 
 }
 module.exports = VR_TSJQ_ZV_VNWY_TU_NINI_CGNE

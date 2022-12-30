@@ -110,6 +110,6 @@ async function ZJZJ_TSJQ_Str(ZJZJ_BQEO) {
     if (/\$(?!\$)|(?:^|\n)\*|\{.+\}/.test(RJSE_1)) {
         RJSE_MSOX += "\n<ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>" + ZJZJ_BQEO.match(/\/\/line \d+/) + " - " + ZJZJ_BQEO.match(/\/\/line \d+$/) + "\n" + RJSE_1 + "\n</ZJZJ Str TSJQ ZD VODY DK ACUN BQEO>";
     }
-    return RJSE_MSOX;
+    return RJSE_MSOX.replace(/^\s+$/,"");
 }
 module.exports = ZJZJ_TSJQ_Str;

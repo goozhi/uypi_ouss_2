@@ -34,10 +34,10 @@
                 Promise.all([a]).then(jtyj => {
                     if (/\w+\s*=\s*9\s*(?:=(?:\s*\w+|)|)\s*$/.test(rj_tsts_llcc)) {
                         if (/9=\s*(\w+)\s*$/.test(rj_tsts_llcc)) {
-                            var vnwm_vkvy = ['GB2312', 'utf8']
+                            var vnwm_vkvy = ['GB2312', 'UTF8']
                             var dbkz_vdzv_vkvy = rj_tsts_llcc.replace(/[\s\S]*=\s*(\w+)\s*$/, "$1")
                             var vnwm_vkvy_stst = vnwm_vkvy.map(rn1 => {
-                                return { stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1, dbkz_vdzv_vkvy), dbkz_vdzv_vkvy, ahdb_vkvy: rn1 }
+                                return { stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1, dbkz_vdzv_vkvy.toUpperCase()), dbkz_vdzv_vkvy, ahdb_vkvy: rn1 }
                             })
                             vnwm_vkvy_stst.sort((a, b) => b.stst_mi - a.stst_mi)
                             vdzv_1.value = rj_tsts_llcc.replace(/=\s*(\w+)\s*$/, "=") + vnwm_vkvy_stst[0].ahdb_vkvy
@@ -51,8 +51,8 @@
                             vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
                         }
                     } else if (/=\s*$/.test(vdzv_1.value)) {
-                        vdzv_1.value += "\{\{\n\n\}\}"
-                        vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
+                        vdzv_1.value += " \{\{\n\n\}\}"
+                        vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
                     }
                     else if (!jtyj[0].gkyq_tsts_yjab) {
                         if (/\n$/.test(rj_tsts_llcc) && /\n\}\}/.test(rj_tsts_udcc)) {

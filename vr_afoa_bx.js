@@ -1,5 +1,5 @@
 var VR_TSJQ_BRTZ_FS_ZV_LJEY = require('./VR_TSJQ_BRTZ_FS_ZV_LJEY')
-var VR_TSJQ_ZV_VNWY_TU_NINI_CGNE=require('./VR_TSJQ_ZV_VNWY_TU_NINI_CGNE')
+var VR_TSJQ_ZV_VNWY_TU_NINI_CGNE = require('./VR_TSJQ_ZV_VNWY_TU_NINI_CGNE')
 var VR_TSJQ_BRTZ_FS_ZV_VR_LJEY_RJQT_GMIH_YXNA_ZJYJ = require('./VR_TSJQ_BRTZ_FS_ZV_VR_LJEY_RJQT_GMIH_YXNA_ZJYJ')
 var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('./VR_TSJQ_BRTZ_FS_ZV_VNWY_TU')
 var VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN = require('./VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN')
@@ -19,6 +19,7 @@ var VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI = require('./VR_TSJQ_BRTZ_FS_ZV_data_VNWY_
 var VR_TSJQ_ZV_VR_RJOK = require('./VR_TSJQ_ZV_VR_RJOK')
 var VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS')
 const VR_TSJQ_ZV_HD_LZJK = require('./VR_TSJQ_ZV_HD_LZJK')
+const VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS = require('./VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -57,6 +58,21 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
+    {
+        vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
+        zkrs: "NVMS BQEO AH WPM FS",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS,
+        csrf: "JA sysData ae yndf rjqt zjzj msox ud dk nvcm tyqh vy lil brtz fs, hf bc html zjhq",
+        klch: `view={{
+            《描述错误的主题》
+            错误内容
+            《/描述错误的主题》
+        }}`,
+        vnwm_vr_afoa_lzm_wu: ["20", "VIEW"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object"
+    },
+
     {
         vr_afoa_wu: "RJ_BWCR_VY",
         zkrs: "读故障码指令",
