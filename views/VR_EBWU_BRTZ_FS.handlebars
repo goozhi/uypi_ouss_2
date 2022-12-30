@@ -25,12 +25,31 @@
         var trig_kp = vdzv_1.selectionStart
         var trig_1 = trig_kp
         vdzv_1.onkeydown = function (event) {
-            if (event.key === 'Tab') {
+            if (event.key === '`') {
                 event.preventDefault();
                 var a = tsjq_tem_non(rj_1, trig_kp)
                 Promise.all([a]).then(jtyj => {
-                    vdzv_1.value = jtyj
-                    vdzv_1.setSelectionRange(vdzv_1.value.length, vdzv_1.value.length)
+                    if (!jtyj[0].gkyq_tsts_yjab) {
+                        var rj_tsts_llcc = rj_1.slice(0, trig_kp)
+                        var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
+                        if (/\n$/.test(rj_tsts_llcc) && /\n\}\}/.test(rj_tsts_udcc)) {
+                            vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
+                        }else if(/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
+                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length +4)
+                        }
+                    }
+                    else if (/\n$/.test(jtyj[0].rj_tsts_llcc && /\n\}\}/.test(jtyj[0].rj_tsts_udcc))) {
+                        vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length - 6, jtyj[0].rj_tsts_llcc.length - 6)
+                    }
+                    else {
+                        if (jtyj[0].stst_mi == 1) {
+                            vdzv_1.value = jtyj[0].rj_tsts_llcc + ' = \{\{\n\n\}\}' + jtyj[0].rj_tsts_udcc
+                            vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length + 6, jtyj[0].rj_tsts_llcc.length + 6)
+                        } else {
+                            vdzv_1.value = jtyj[0].rj_tsts_llcc.replace(/\w+$/, jtyj[0].vr_afoa_lzm_wu) + jtyj[0].rj_tsts_udcc
+                            vdzv_1.setSelectionRange(vdzv_1.value.length, vdzv_1.value.length)
+                        }
+                    }
                 })
 
             }

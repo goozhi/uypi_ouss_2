@@ -1,5 +1,5 @@
 
-function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
     const VR_EBWU_AFOA_BRTZ_FS = require("./VR_EBWU_AFOA_BRTZ_FS");
     var UXUX_YHLD = typeof (IOWR_AFOA)
     if (UXUX_YHLD != "object") {
@@ -53,22 +53,22 @@ function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
         }
         jtyp_1="$ReadDtc();\n"+IOWR_RJ_BWCR_VY.vnwm_es.join(';')+"id="+IOWR_RJ_BWCR_VY.BWCR_VY_BX_VKHI+",num="+IOWR_RJ_BWCR_VY.TSKL_BWCR_VY_VN_DK_ZTHI+",start="+IOWR_RJ_BWCR_VY.BWCR_VY_UUFB_TRIG+',code='+IOWR_RJ_BWCR_VY.BWCR_VY_VT_VY_VN+',space='+IOWR_RJ_BWCR_VY.BWCR_VY_TIGE_VN+",state="+IOWR_RJ_BWCR_VY.CXMI+";"
     } else {
-        VNWM_MCVN_1.forEach(RNSF => {
+        VNWM_MCVN_1.forEach(async RNSF => {
             switch (true) {
                 case /\b(?:str|9)\b/i.test(RNSF):
                     var reg_Str = /\$Str\(.*\)[\s\S]*?\*\*+/ig;
                     var reg_VR_AFOA_VNWY_TU = /\b(9|str)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
                     var vnwm_rjse_Str = BQEO_1.match(reg_Str);
                     if (vnwm_rjse_Str != null) {
-                        vnwm_rjse_Str.forEach(RNSF => {
-                            BQEO_1 = BQEO_1.replace(RNSF, VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}")))
-                        })
+                        for(var i1=0;i1<vnwm_rjse_Str.length;i1++){
+                            BQEO_1 = BQEO_1.replace(vnwm_rjse_Str[i1], await VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}")))
+                        }
                     }
                     var vnwm_rjse_VR_AFOA_VNWY_TU = BQEO_1.match(reg_VR_AFOA_VNWY_TU);
                     if (vnwm_rjse_VR_AFOA_VNWY_TU != null) {
-                        vnwm_rjse_VR_AFOA_VNWY_TU.forEach(RNSF => {
-                            BQEO_1 = BQEO_1.replace(RNSF, VR_EBWU_AFOA_BRTZ_FS(RNSF))
-                        })
+                        for(var i1=0;i1<vnwm_rjse_VR_AFOA_VNWY_TU.length;i1++){
+                            BQEO_1 = BQEO_1.replace(RNSF, await VR_EBWU_AFOA_BRTZ_FS(RNSF))
+                        }
                     }
                     break;
                 default:

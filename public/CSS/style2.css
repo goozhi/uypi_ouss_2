@@ -26,7 +26,7 @@
 
 .code-area-2:hover {
   border-radius: 10px;
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 .code-area-2:active {

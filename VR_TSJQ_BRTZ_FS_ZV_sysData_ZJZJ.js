@@ -2,7 +2,7 @@ const fs=require('fs')
 const encoding=require('encoding');
 const sysData_ZJZJ = require("./AFOA_sysData/sysData_ZJZJ");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
-function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -38,6 +38,8 @@ function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA) {
     // }else{
     //     return ( ZJZJ_sys_FTXB(RJSE_zjzj_bqeo)    )
     // }
-    return NVMS_EBWU_LD_YHRJ_1(new Error(sysData_ZJZJ(RJSE_zjzj_bqeo))).message
+    var jtyj = NVMS_EBWU_LD_YHRJ_1(new Error(await sysData_ZJZJ(RJSE_zjzj_bqeo))).message
+    console.log('Zjzj sdbc.')
+    return jtyj
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ;

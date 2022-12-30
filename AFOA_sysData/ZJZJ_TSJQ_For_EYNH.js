@@ -36,10 +36,22 @@ function ZJZJ_TSJQ_For_EYNH(RJSE_For_TSJQ_KP) {
         ///////
         RJSE_1 = RJSE_1.replace(reg_For_MCVN, "");
     }
-    RJSE_MSOX += ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "For");
-    if (RJSE_MSOX != "") {
-        RJSE_MSOX = "\n" + RJSE_MSOX
-    }
-    return RJSE_MSOX;
+    // RJSE_MSOX += ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "For");
+    // if (RJSE_MSOX != "") {
+    //     RJSE_MSOX = "\n" + RJSE_MSOX
+    // }
+    // return RJSE_MSOX;
+    var diwr_RJSE_MSOX = ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "For");
+    return new Promise((resolve, reject) => {
+        Promise.all([diwr_RJSE_MSOX]).then(jtyj=>{
+            RJSE_MSOX+=jtyj[0]
+            if (RJSE_MSOX != "") {
+                RJSE_MSOX += "\n" + RJSE_MSOX;
+            }
+            resolve(RJSE_MSOX)
+        })
+
+    })
+
 }
 module.exports = ZJZJ_TSJQ_For_EYNH;

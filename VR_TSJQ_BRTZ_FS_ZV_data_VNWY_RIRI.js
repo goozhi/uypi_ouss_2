@@ -1,7 +1,5 @@
 
 
-var DIZC_OUSS_2=require('./DIZC_OUSS_2')
-var ZTHI_YG_VDUM=require('./ZTHI_YG_VDUM')
 var ZSGGTRGGYJGGEYRH=require('./ZSGGTRGGYJGGEYRH')
 function VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI(DIWR_AFOA) {
     var UXUX_YHLD = typeof (DIWR_AFOA)

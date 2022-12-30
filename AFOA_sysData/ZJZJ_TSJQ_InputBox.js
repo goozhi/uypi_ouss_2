@@ -22,11 +22,11 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
             }
         } else if (UXUX == "16") {
             if (!/,len=\d+/.test(RJSE_MCVN)) {
-                RJSE_MSOX += "[BI UXUX AOAO TSZN len MCVN]"
+                RJSE_MSOX += "[BI UXUX AOAO TSZN l e n MCVN]"
             }
         } else if (UXUX == "0a") {
             if (!/,len=\d+/.test(RJSE_MCVN)) {
-                RJSE_MSOX += "[BI UXUX AOAO TSZN len MCVN]"
+                RJSE_MSOX += "[BI UXUX AOAO TSZN l e n MCVN]"
             }
         } else {
             RJSE_MSOX += "[AOAO TSZN UXUX MCVN] " + RJSE_MCVN + " <--";

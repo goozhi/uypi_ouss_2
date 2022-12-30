@@ -1,8 +1,8 @@
 const VR_RJOK_html_FS = require("./VR_RJOK_html_FS");
 
 
-function WLYC_VR_VKJP(req, res) {
-    var rj_1=VR_RJOK_html_FS()
+async function WLYC_VR_VKJP(req, res) {
+    var rj_1=await VR_RJOK_html_FS()
     res.writeHead(200, {
         'Content-Type': 'text/html;charset=utf-8',
     });

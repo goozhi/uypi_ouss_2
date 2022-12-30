@@ -14,7 +14,7 @@ function NVMS_EBWU_LD_YHRJ_2(DIWR_err) {
         for (var i1 = 0; i1 < DIWR_err.cause.nixb.length; i1++) {
             rj_tssc += "^"
         }
-        DIWR_err.message = "\u300a" + DIWR_err.message + "\u300b\n" + DIWR_err.cause.nixb + "\n" + rj_tssc + "\n" + DIWR_err.cause.kp + "\n\u300a\u002f" + DIWR_err.message + "\u300b"
+        DIWR_err.message = "\u300a " + DIWR_err.message + " \u300b\n" + DIWR_err.cause.nixb + "\n" + rj_tssc + "\n" + DIWR_err.cause.kp + "\n\u300a\u002f " + DIWR_err.message + " \u300b"
         return DIWR_err
     } else if (/\n/.test(DIWR_err.cause.nixb) && !/\S/.test(DIWR_err.cause.kp)) {
         DIWR_err.message = "\u300a" + DIWR_err.message + "\u300b\n" + DIWR_err.cause.nixb + "\n\u300a\u002f" + DIWR_err.message + "\u300b"

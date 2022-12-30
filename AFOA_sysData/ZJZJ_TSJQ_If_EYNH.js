@@ -41,10 +41,21 @@ function ZJZJ_TSJQ_If_EYNH(RJSE_IF_TSJQ_KP) {
         }
         RJSE_1 = RJSE_1.replace(reg_If_Elseif_MCVN, "");
     }
-    RJSE_MSOX+=ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1,"LJEY");
-    if (RJSE_MSOX != "") {
-        RJSE_MSOX = "\n" + RJSE_MSOX
-    }
-    return RJSE_MSOX;
+    // RJSE_MSOX+=ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1,"LJEY");
+    // if (RJSE_MSOX != "") {
+    //     RJSE_MSOX = "\n" + RJSE_MSOX
+    // }
+    // return RJSE_MSOX;
+    var diwr_RJSE_MSOX = ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "LJEY");
+    return new Promise((resolve, reject) => {
+        Promise.all([diwr_RJSE_MSOX]).then(jtyj=>{
+            RJSE_MSOX+=jtyj[0]
+            if (RJSE_MSOX != "") {
+                RJSE_MSOX += "\n" + RJSE_MSOX;
+            }
+            resolve(RJSE_MSOX)
+        })
+
+    })
 }
 module.exports = ZJZJ_TSJQ_If_EYNH;

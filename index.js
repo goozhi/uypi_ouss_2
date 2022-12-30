@@ -283,9 +283,9 @@ app.listen(app.get('port'), function () {
     var yxna_url = 'http://localhost:' + app.get('port')
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
     var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""
-    const child = spawn('cmd.exe');
     console.log('启动成功，将自动调用浏览器启动工作助手网页.\n如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~您可以手动打开浏览器输入以下链接' + yxna_url)
-    // child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+    const child = spawn('cmd.exe');
+    child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
     child.stdout.on('data', (data) => {
         console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
     });

@@ -5,7 +5,7 @@ var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('../VR_TSJQ_BRTZ_FS_ZV_VNWY_TU');
 const eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf = require('../AFOA_BX/eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf');
 const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
-function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
+async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     var uxux_yhld = typeof (RJSE_1)
     if (uxux_yhld != "string") {
         throw new Error('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
@@ -21,7 +21,7 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     }
     var RJSE_1 = RJSE_1.replace(/\u0024\u0024+/g, "Peng_JTCO_ZV_TZRN");
     var RJSE_2 = RJSE_1
-    var reg_AFOA = /([^\s=\{\}]+)=([^\n\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}(?!\}))/;
+    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}(?!\}))/;
     var VBYT_2 = true;
     for (var i1 = 0; i1 < 9999; i1++) {
         var IOWR_YHLD = RJSE_1.match(reg_AFOA);
@@ -54,7 +54,7 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
             } else {
                 VBYT_VKRF_Peng_EBWU = diwr_tsjq_1.VBYT_VKRF_Peng_EBWU
             }
-            var JTYJ_YHLD = diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA, diwr_mcvn)
+            var JTYJ_YHLD = await diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA, diwr_mcvn)
             if(typeof(JTYJ_YHLD)=="string"){
                 RJSE_2 = RJSE_2.replace(reg_AFOA, JTYJ_YHLD)
             }else{
@@ -72,7 +72,7 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
         } else {
             RJSE_YHLD = RJSE_JTYP
         }
-        var RJSE_MSOX = ZJZJ_sys(RJSE_YHLD)
+        var RJSE_MSOX = await ZJZJ_sys(RJSE_YHLD)
         if (!/HMPC MSOX/.test(RJSE_MSOX)) {
             throw new Error("\n" + (RJSE_MSOX));
         }
@@ -88,7 +88,7 @@ function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     RJSE_2 = VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, RJSE_2)
     ///////////////
     if (VBYT_VKRF_Peng_EBWU) {
-        var RJSE_MSOX = ZJZJ_sys(RJSE_2);
+        var RJSE_MSOX = await ZJZJ_sys(RJSE_2);
         if (!/HMPC MSOX/.test(RJSE_MSOX)) {
             throw new Error("\n" + (RJSE_MSOX));
         }

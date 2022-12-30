@@ -1,20 +1,20 @@
 const ZJZJ_TSJQ_Str = require("./ZJZJ_TSJQ_Str");
 
-function ZJZJ_TSJQ_Button(RJSE_KP) {
+async function ZJZJ_TSJQ_Button(RJSE_KP) {
     var RJSE_MSOX = "";
     var ZJZJ_ES = require("./ZJZJ_ES");
     var RJSE_1 = RJSE_KP;
     var reg_Button_LD_MCVN = /\$Button\((.*)\)(?:;|)/i;
-    var IOWR_Button_LD_MCVN = RJSE_1.match(reg_Button_LD_MCVN);
-    if (IOWR_Button_LD_MCVN == null) {
+    var IOWR_Button_LG_MCVN = RJSE_1.match(reg_Button_LD_MCVN);
+    if (IOWR_Button_LG_MCVN == null) {
         RJSE_MSOX += "\n<Button LGPH MSOX>\n" + RJSE_KP + "\n</Button LGPH MSOX>"
     } else {
         RJSE_1 = RJSE_1.replace(reg_Button_LD_MCVN, "");
     };
-    if (!/^\s*$/.test(IOWR_Button_LD_MCVN[1])) {
+    if (!/^\s*$/.test(IOWR_Button_LG_MCVN[1])) {
         var reg_MCVN = /^\s*(?:[a-f]|\d)+\+-\s*$/i;
-        if (!reg_MCVN.test(IOWR_Button_LD_MCVN[1])) {
-            RJSE_MSOX += "[Button MCVN FTPJ] " + IOWR_Button_LD_MCVN[1] + "<--";
+        if (!reg_MCVN.test(IOWR_Button_LG_MCVN[1])) {
+            RJSE_MSOX += "[Button MCVN FTPJ] " + IOWR_Button_LG_MCVN[1] + "<--";
         } else {
             var reg_DPHP_MCVN = /(?:\+|-)(?:[a-f]|\d+)+(?=\{)/ig;
             var VNWM_DPHP_MCVN = RJSE_1.match(reg_DPHP_MCVN);
@@ -31,7 +31,7 @@ function ZJZJ_TSJQ_Button(RJSE_KP) {
     if(IOWR_YHLD!=null){
         RJSE_1=RJSE_1.replace(reg_NINI,"");
         var RJSE_YHLD="$Str();\n"+IOWR_YHLD[0].replace(/&&&/,"***").replace(/&&/,"***").replace(/((?:\n|^))&/g,"$1*")
-        RJSE_MSOX += ZJZJ_TSJQ_Str(RJSE_YHLD);
+        RJSE_MSOX += await ZJZJ_TSJQ_Str(RJSE_YHLD);
     }
     var reg_Button_MCVN = /".*".*/ig;
     var VNWM_Button_MCVN = RJSE_1.match(reg_Button_MCVN);

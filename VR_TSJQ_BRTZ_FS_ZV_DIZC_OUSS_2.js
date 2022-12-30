@@ -1,7 +1,7 @@
 
 var DIZC_OUSS_2=require('./DIZC_OUSS_2')
 var ZTHI_YG_VDUM=require('./ZTHI_YG_VDUM')
-function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -33,6 +33,6 @@ function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(IOWR_AFOA) {
         }
     });
     }
-    return DIZC_OUSS_2(BQEO_1,999,RJSE_ZTHI_SLGR)
+    return await DIZC_OUSS_2(BQEO_1,999,RJSE_ZTHI_SLGR)
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2;

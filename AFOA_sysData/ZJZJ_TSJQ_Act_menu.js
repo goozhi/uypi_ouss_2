@@ -1,7 +1,8 @@
 
+
 var ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ = require('./ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ');
 
-function ZJZJ_TSJQ_Act(RJSE_KP) {
+function ZJZJ_TSJQ_Act_menu(RJSE_KP) {
     var RJSE_1 = RJSE_KP;
     RJSE_1 = RJSE_1.replace(/(?:\n|^)\s*\/\/.*/g, "")
     var RJSE_MSOX = "";
@@ -11,7 +12,7 @@ function ZJZJ_TSJQ_Act(RJSE_KP) {
     RJSE_1 = RJSE_1.replace(reg_LD_MCVN, "");
     RJSE_1 = RJSE_1.replace(/\*\*\*/, "");
     // RJSE_MSOX+=ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1,"Act");
-    var diwr_RJSE_MSOX = ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "Act");
+    var diwr_RJSE_MSOX = ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_1, "Act_menu");
     // return RJSE_MSOX;
     return new Promise((resolve, reject) => {
         Promise.all([diwr_RJSE_MSOX]).then(jtyj=>{
@@ -25,4 +26,4 @@ function ZJZJ_TSJQ_Act(RJSE_KP) {
 
     })
 }
-module.exports = ZJZJ_TSJQ_Act;
+module.exports = ZJZJ_TSJQ_Act_menu;

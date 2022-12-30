@@ -3,9 +3,15 @@ function tsjq_tem_non(rj_kp, tsts_trig_kp) {
         throw new Error('csrf-tsts_trig_kp mcvn nrap-')
     }
     var tsts_trig = tsts_trig_kp
-    var reg_AFOA = /([^\s=\{\}]+)=([^\n\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}(?!\}))/g;
+    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}(?!\}))/g;
     var rj_1 = rj_kp
     var rj_tsts_llcc = rj_kp.slice(0, tsts_trig)
+    var rj_tsts_udcc = rj_kp.slice(tsts_trig, rj_kp.length)
+    var diwr_dbkz_tsts = rj_tsts_llcc.match(/\w+$/)
+    if (diwr_dbkz_tsts == null) {
+        return [{ gkyq_tsts_yjab: false, rj_tsts_udcc, rj_tsts_llcc }];
+    }
+    var rj_dbkz_tsts = diwr_dbkz_tsts[0]
     var dbkz_vnwm_vr_afoa = rj_1.match(reg_AFOA)
     var diwr_vnwm_tsjq = new vr_afoa_bx().diwr_vnwm_tsjq
     var vnwm_yhld = diwr_vnwm_tsjq.map(async rn1 => {
@@ -20,15 +26,15 @@ function tsjq_tem_non(rj_kp, tsts_trig_kp) {
         //     }).join('\n\n')
         // }
         var diwr_vnwm_stst_mi = rn1.vnwm_vr_afoa_lzm_wu.map(rn2 => {
-            return { rj_tsts_llcc,vr_afoa_lzm_wu: rn2, stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn2, rj_tsts_llcc.toUpperCase()) }
+            return { rj_dbkz_tsts, gkyq_tsts_yjab: true, rj_tsts_llcc, rj_tsts_udcc, vr_afoa_lzm_wu: rn2, stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn2, rj_dbkz_tsts.toUpperCase()) }
         })
         diwr_vnwm_stst_mi.sort((a, b) => b.stst_mi - a.stst_mi)
         return diwr_vnwm_stst_mi
     })
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         Promise.all(vnwm_yhld).then(jtyj => {
-            jtyj.sort((a,b) =>b[0].stst_mi-a[0].stst_mi)
-            resolve(jtyj[0][0].vr_afoa_lzm_wu)
+            jtyj.sort((a, b) => b[0].stst_mi - a[0].stst_mi)
+            resolve(jtyj[0][0])
         })
     })
 }

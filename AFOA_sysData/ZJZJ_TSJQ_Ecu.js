@@ -1,5 +1,5 @@
 
-function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
+async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     ZJZJ_BQEO = ZJZJ_BQEO.replace(/\r/g, "").replace(/\/\/.*(?=\/\/line \d+)/g, "");
     var ZJZJ_cf_NINI = require('./ZJZJ_cf_NINI')
     var ZJZJ_7f_NINI = require('./ZJZJ_7f_NINI')
@@ -41,45 +41,45 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var RJSE_16_NINI = RJSE_1.match(reg_16_NINI);
     if (RJSE_cf_NINI == null) {
     } else {
-        RJSE_MSOX += ZJZJ_cf_NINI(RJSE_cf_NINI);
+        RJSE_MSOX += await ZJZJ_cf_NINI(RJSE_cf_NINI);
         RJSE_1 = RJSE_1.replace(reg_cf_NINI, "");
     }
     if (RJSE_7f_NINI == null) {
     } else {
-        RJSE_MSOX += ZJZJ_7f_NINI(RJSE_7f_NINI);
+        RJSE_MSOX += await ZJZJ_7f_NINI(RJSE_7f_NINI);
         RJSE_1 = RJSE_1.replace(reg_7f_NINI, "");
     }
     if (RJSE_21_NINI == null) {
     } else {
-        RJSE_MSOX += ZJZJ_21_NINI(RJSE_21_NINI);
+        RJSE_MSOX += await ZJZJ_21_NINI(RJSE_21_NINI);
         RJSE_1 = RJSE_1.replace(reg_21_NINI, "");
     }
     if (RJSE_3f_NINI != null) {
-        RJSE_MSOX += ZJZJ_3f_NINI(RJSE_3f_NINI);
+        RJSE_MSOX += await ZJZJ_3f_NINI(RJSE_3f_NINI);
         RJSE_1 = RJSE_1.replace(reg_3f_NINI, "")
     }
     if (RJSE_3c_NINI != null) {
-        RJSE_MSOX += ZJZJ_3c_NINI(RJSE_3c_NINI);
+        RJSE_MSOX += await ZJZJ_3c_NINI(RJSE_3c_NINI);
         RJSE_1 = RJSE_1.replace(reg_3c_NINI, "")
     }
     if (RJSE_0a_NINI != null) {
-        RJSE_MSOX += ZJZJ_0a_NINI(RJSE_0a_NINI);
+        RJSE_MSOX += await ZJZJ_0a_NINI(RJSE_0a_NINI);
         RJSE_1 = RJSE_1.replace(reg_0a_NINI, "")
     }
     if (RJSE_bb_NINI != null) {
-        RJSE_MSOX += ZJZJ_bb_NINI(RJSE_bb_NINI);
+        RJSE_MSOX += await ZJZJ_bb_NINI(RJSE_bb_NINI);
         RJSE_1 = RJSE_1.replace(reg_bb_NINI, "")
     }
     if (RJSE_1f_NINI != null) {
-        RJSE_MSOX += ZJZJ_1f_NINI(RJSE_1f_NINI);
+        RJSE_MSOX += await ZJZJ_1f_NINI(RJSE_1f_NINI);
         RJSE_1 = RJSE_1.replace(reg_1f_NINI, "")
     }
         if (RJSE_10_NINI != null) {
-        RJSE_MSOX += ZJZJ_10_NINI(RJSE_10_NINI);
+        RJSE_MSOX += await ZJZJ_10_NINI(RJSE_10_NINI);
         RJSE_1 = RJSE_1.replace(reg_10_NINI, "")
     }
     if (RJSE_16_NINI != null) {
-        RJSE_MSOX += ZJZJ_16_NINI(RJSE_16_NINI);
+        RJSE_MSOX += await ZJZJ_16_NINI(RJSE_16_NINI);
         RJSE_1 = RJSE_1.replace(reg_16_NINI, "")
     }
     var reg_Ecu_MCVN = /\$Ecu\((.*)\)(?:;|)/i;
@@ -105,7 +105,7 @@ function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var NINI_VNWM = RJSE_1.match(reg_NINI);
     RJSE_1 = RJSE_1.replace(reg_NINI, '');
     if (NINI_VNWM != null) {
-        RJSE_MSOX += ZJZJ_LIQH_ZV_reg_VNWM(NINI_VNWM.join(""), VNWM_YHLD);
+        RJSE_MSOX += await ZJZJ_LIQH_ZV_reg_VNWM(NINI_VNWM.join(""), VNWM_YHLD);
     }
     if (/\$(?!\$)|(?:^|\n)\*|\{.+\}/.test(RJSE_1)) {
         RJSE_MSOX += "\n<ZJZJ Ecu TSJQ ZD VODY DK ACUN BQEO>" + ZJZJ_BQEO.match(/\/\/line \d+/) + " - " + ZJZJ_BQEO.match(/\/\/line \d+$/) + "\n" + RJSE_1 + "\n</ZJZJ Ecu TSJQ ZD VODY DK ACUN BQEO>";

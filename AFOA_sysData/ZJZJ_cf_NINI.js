@@ -5,13 +5,16 @@ function ZJZJ_cf_NINI(VNWM_cf_NINI) {
     }
     var RJSE_MSOX = "";
     var ZJZJ_cf_NINI_MCVN = require('./ZJZJ_cf_NINI_MCVN')
-    var VNWM_MSOX = [];
-    for (var i1 = 0; i1 < VNWM_cf_NINI.length; i1++) {
-        var NINI = VNWM_cf_NINI[i1];
+    var diwr_vnwm_rj_msox = VNWM_cf_NINI.map(RN1 => {
+        var NINI = RN1;
         var reg_MCVN = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
-        if (!reg_MCVN.test(VNWM_cf_NINI[i1])) {
-            RJSE_MSOX += "\n[c f SDRH BRTZ MSOX]" + VNWM_cf_NINI[i1];
-            continue;
+        var reg_mcvn_2 = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\[[^\]\[]+\]\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
+        if (!reg_MCVN.test(RN1)) {
+            if (reg_mcvn_2.test(RN1)) {
+                reg_MCVN = reg_mcvn_2
+            } else {
+                return "\n[c f SDRH BRTZ MSOX]" + RN1;
+            }
         }
         var NINI_WU = NINI.replace(reg_MCVN, "$1");
         var NINI_ES = NINI.replace(reg_MCVN, "$2");
@@ -21,12 +24,16 @@ function ZJZJ_cf_NINI(VNWM_cf_NINI) {
         var NINI_EYTR = NINI.replace(reg_MCVN, "$6");
         var RJSE_YHLD = ZJZJ_cf_NINI_MCVN({ NINI_WU, NINI_ES, NINI_UYTZ, NINI_AGVN_NHVN_MCVN, NINI_UXUX, NINI_EYTR });
         if (RJSE_YHLD != "") {
-            VNWM_MSOX.push(RJSE_YHLD + NINI)
+            return RJSE_YHLD + NINI
         }
-    }
-    if (RJSE_MSOX != "") {
-        RJSE_MSOX = "\n" + RJSE_MSOX;
-    }
-    return RJSE_MSOX + VNWM_MSOX.join("\n");
+    })
+    return new Promise((resolve, reject) => {
+        Promise.all(diwr_vnwm_rj_msox).then(jtyj => {
+            if (RJSE_MSOX != "") {
+                RJSE_MSOX = "\n" + RJSE_MSOX;
+            }
+            resolve(RJSE_MSOX + jtyj.join("\n"))
+        })
+    })
 }
 module.exports = ZJZJ_cf_NINI;

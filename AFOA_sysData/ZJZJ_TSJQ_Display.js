@@ -1,5 +1,5 @@
 
-function ZJZJ_TSJQ_Display(RJSE_KP) {
+async function ZJZJ_TSJQ_Display(RJSE_KP) {
     var UXUX_YHLD=typeof(RJSE_KP);
     if(UXUX_YHLD!="string"){
         throw new Error("MCVN UXUX MSOX , AOAO JI string:"+UXUX_YHLD)
@@ -21,7 +21,7 @@ function ZJZJ_TSJQ_Display(RJSE_KP) {
             }
         });
         var RJSE_YHLD = "$Str();\n" + VNWM_NINI_2.join('\n') + "\n***";
-        var RJSE_YHLD_2 = ZJZJ_TSJQ_Str(RJSE_YHLD);
+        var RJSE_YHLD_2 = await ZJZJ_TSJQ_Str(RJSE_YHLD);
         if(RJSE_YHLD_2!=""){
             RJSE_MSOX+="\n<Display Str NINI MSOX>\n"+RJSE_KP+"\n"+RJSE_YHLD_2+"\n</Display Str NINI MSOX>"
         }

@@ -1,7 +1,7 @@
 const ZJZJ_sys_FTXB = require("./AFOA_sysData/ZJZJ_sys_FTXB");
 const CE_EBWU_LD_YHRJ = require("./AFOA_BX/NVMS_EBWU_LD_YHRJ_1");
 
-function EYRH_NINI_HQMV_YENH_YYHA(RJSE_KP, ES_VNAW, DPHP){
+async function EYRH_NINI_HQMV_YENH_YYHA(RJSE_KP, ES_VNAW, DPHP){
     if(DPHP==null){
         throw new Error("MCVN NRAP")
     }
@@ -14,7 +14,7 @@ function EYRH_NINI_HQMV_YENH_YYHA(RJSE_KP, ES_VNAW, DPHP){
     if(isNaN(ES_VNAW)){
         throw new Error("VNZT MCVN JI N a N: "+ES_VNAW)
     }
-    var RJSE_YHLD=ZJZJ_sys_FTXB("$Str();\n"+RJSE_KP+"\n***")
+    var RJSE_YHLD=await ZJZJ_sys_FTXB("$Str();\n"+RJSE_KP+"\n***")
     if(!/HMPC MSOX/.test(RJSE_YHLD)){
         throw new Error(CE_EBWU_LD_YHRJ(RJSE_YHLD))
     }

@@ -1,5 +1,5 @@
 
-function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
+async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     var ZJZJ_TSJQ_Str = require('./AFOA_sysData/ZJZJ_TSJQ_Str');
     var VR_EBWU_AFOA_BRTZ_FS = require('./VR_EBWU_AFOA_BRTZ_FS')
     var NINI_HQTB_2 = require('./NINI_HQTB_2')
@@ -7,7 +7,7 @@ function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     var RJSE_KP = RJSE_1;
     var VNWM_OKWK_ZTHI_SYZN_YG_SLGR
     var diwr_vyvy_vnwm_zthi_slgr=null
-    RJSE_1 = VR_EBWU_AFOA_BRTZ_FS(RJSE_1)
+    RJSE_1 = await VR_EBWU_AFOA_BRTZ_FS(RJSE_1)
     var RJSE_YHLD;
     var VNWM_YHLD_2 = RJSE_1.split('\n')
     var RJSE_YHLD_2 = VNWM_YHLD_2.map((RNSF, EQWY_1) => {
@@ -18,7 +18,7 @@ function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     } else {
         RJSE_YHLD = "$Str()\n" + RJSE_YHLD_2 + "\n***"
     }
-    var RJSE_MSOX = (ZJZJ_TSJQ_Str(RJSE_YHLD))
+    var RJSE_MSOX = (await ZJZJ_TSJQ_Str(RJSE_YHLD))
     if (RJSE_MSOX != "") {
         throw new Error (RJSE_MSOX)
     }

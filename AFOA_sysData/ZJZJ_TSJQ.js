@@ -36,141 +36,153 @@ function ZJZJ_TSJQ(TSJQ_WU, ZJZJ_RJSE_VNWM) {
     if (UXUX_YHLD != "string") {
         throw new Error("MCVN UXUX MSOX, ACJI string : " + UXUX_YHLD)
     }
+    var diwr_VNWM_YHLD
     switch (TSJQ_WU) {
         case "Str":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Str(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Str(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Ecu":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Ecu(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Ecu(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Display":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Display(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Display(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "ReadDtc":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_ReadDtc(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_ReadDtc(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "ClearDtc":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_ClearDtc(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_ClearDtc(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "SetPeriod":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_SetPeriod(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_SetPeriod(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Send":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Send(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Send(element);
             });
-            return VNWM_YHLD.join("");
+            break;
 
         case "Fire":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Fire(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Fire(element);
             });
-            return VNWM_YHLD.join("");
+            break;
 
         case "Calc":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Calc(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Calc(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Lab":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Lab(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Lab(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "GotoLab":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_GotoLab(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_GotoLab(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "PSW27":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_PSW27(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_PSW27(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "GotoLab":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_GotoLab(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_GotoLab(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Input":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Input(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Input(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "F":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_F(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_F(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "InputBox":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_InputBox(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_InputBox(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Act":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Act(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Act(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Button":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Button(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Button(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Init":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Init(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Init(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "EXIT":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_EXIT(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_EXIT(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "List":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_List(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_List(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "Delayms":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_Delayms(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_Delayms(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "LJEY":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_LJEY_NINI_EYNH_LJEY(element);
+            DIWR_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_LJEY_NINI_EYNH_LJEY(element);
             });
-            return VNWM_YHLD.join("");
+            return new Promise((resolve, reject) => {
+                Promise.all(DIWR_VNWM_YHLD).then(jtyj => {
+                    resolve(jtyj.join(''))
+                })
+            })
         case "ContinueFor_BreakFor":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_ContinueFor_BreakFor(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_ContinueFor_BreakFor(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "If":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_If(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_If(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         case "For":
-            var VNWM_YHLD = ZJZJ_RJSE_VNWM.map(element => {
-                return ZJZJ_TSJQ_For(element);
+            diwr_VNWM_YHLD = ZJZJ_RJSE_VNWM.map(async element => {
+                return await ZJZJ_TSJQ_For(element);
             });
-            return VNWM_YHLD.join("");
+            break;
         default:
             throw new Error("ACUN MCVN : " + TSJQ_WU);
     }
+    return new Promise((resolve, reject) => {
+        Promise.all(diwr_VNWM_YHLD).then(jtyj => {
+            resolve(jtyj.join(''))
+        }).catch(err=>{
+            console.log(err)
+        })
+    })
 }
 module.exports = ZJZJ_TSJQ;
