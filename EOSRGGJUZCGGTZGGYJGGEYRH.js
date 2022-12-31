@@ -1,11 +1,6 @@
 const EOWL_IOWR_2=require('./AFOA_BX/EOWL_IOWR_2')
 const H_LD_B=require('./AFOA_BX/H_LD_B')
 const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
-const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
-const H_LD_B=require('./AFOA_BX/H_LD_B')
-const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
-const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
-const B_LD_H=require('./AFOA_BX/B_LD_H')
 const B_LD_H=require('./AFOA_BX/B_LD_H')
 const EOWL_IOWR=require('./AFOA_BX/EOWL_IOWR')
 var fs1=require('fs');

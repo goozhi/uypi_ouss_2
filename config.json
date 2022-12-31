@@ -1,6 +1,20 @@
 {
-    "port":3009,
-    "version":"9.2.4.5",
-    "YMCE_HITD":"221227",
-    "piqr":"WRVR"
+    "port": 3009,
+    "version": "9.2.4.5",
+    "YMCE_HITD": "221227",
+    "piqr": "WRVR",
+    "vnwm_wj_dk_cpu_zzuy": [
+        {
+            "model": "12th Gen Intel(R) Core(TM) i5-12500H",
+            "speed": 3110,
+            "times": {
+                "user": 7757718,
+                "nice": 0,
+                "sys": 6022656,
+                "idle": 201209000,
+                "irq": 605968
+            }
+        }
+    ],
+    "vnwm_wj_dk_kmqt_ih":["FYB5N00511180564M   _00000001"]
 }

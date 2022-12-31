@@ -34,6 +34,7 @@ const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
 const WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS = require('./WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS');
+const os = require('os');
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
 app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 app.engine('handlebars', handlebars.engine);
@@ -277,31 +278,56 @@ app.use(function (err, req, res, next) {
 
 ymce_sjbx()
 
+const child_process = require('child_process');
 const { spawn } = require('child_process');
 app.listen(app.get('port'), function () {
     var yxna_url = 'http://localhost:' + app.get('port')
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
     var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""
     console.log('启动成功，将自动调用浏览器启动工作助手网页.\n如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~您可以手动打开浏览器输入以下链接' + yxna_url)
-    // const child = spawn('cmd.exe');
-    // child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
-    // child.stdout.on('data', (data) => {
-    //     console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
-    // });
-
-    // child.stderr.on('data', (data) => {
-    //     console.error(`stderr: ${data}`);
-    // });
-
-    // child.on('close', (code) => {
-    //     console.log(`子进程退出码：${code}`);
-    // });
-
-    // child.on('exit', code => {
-    //     console.log('child exit code: ' + code)
-    // })
-    // child.on('close', code => {
-    //     console.log('child close code: ' + code)
-    // })
+    child_process.exec('wmic diskdrive get serialnumber', (error, stdout) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+        } else {
+            var vwdp_vnwm = config.vnwm_wj_dk_kmqt_ih.map(async rn1 => {
+                if (stdout.indexOf(rn1) != -1) {
+                    return true;
+                }
+            })
+            Promise.all(vwdp_vnwm).then(jtyj => {
+                for (yg1 of jtyj) {
+                    if (yg1) {
+                        return;
+                    }
+                }
+                const child = spawn('cmd.exe');
+                child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+                child.stdout.on('data', (data) => {
+                    console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
+                });
+        
+                child.stderr.on('data', (data) => {
+                    console.error(`stderr: ${data}`);
+                });
+        
+                child.on('close', (code) => {
+                    console.log(`子进程退出码：${code}`);
+                });
+        
+                child.on('exit', code => {
+                    console.log('child exit code: ' + code)
+                })
+                child.on('close', code => {
+                    console.log('child close code: ' + code)
+                })
+            }).catch(err => {
+                if (err) {
+                    console.error("* NWVT md-ID-md NKME : " + err)
+                }
+            })
+        
+        }
+        return false
+    });
 
 });
