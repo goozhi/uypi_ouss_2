@@ -1,10 +1,11 @@
-var WU_TYUB_LDRG = function (RJSE_2, caozuoFu) {//WU_TYUB_LDRGFangfa
+var ShunJinzhiZhuanhuan = function (RJSE_2, caozuoFu) {//ShunJinzhiZhuanhuanFangfa
     var yuanshiShu2 = "0123456789abcdef";
     var yuanshiShu1 = "0123456789";
     var yuanshiShu0 = yuanshiShu1;
-    var linshiPanduan1 = linshiPanduan2 = false;
     var yuanshiShu3 = "01";
     var shuzi2 = 0;
+    var linshiPanduan1 = linshiPanduan2 = false;
+
     if (caozuoFu == 0) {//shiJinzhi
         yuanshiShu0 = yuanshiShu1;
     }//shiJinzhi
@@ -50,6 +51,5 @@ var WU_TYUB_LDRG = function (RJSE_2, caozuoFu) {//WU_TYUB_LDRGFangfa
     }//shiFushu
 
     return shuzi2;
-}//WU_TYUB_LDRGFangfa
-
-module.exports = WU_TYUB_LDRG;
+}//ShunJinzhiZhuanhuanFangfa
+module.exports = ShunJinzhiZhuanhuan

@@ -1,4 +1,4 @@
-var AFOA = require("./AFOA_BX/AFOA_UJ");
+var H_LD_B= require("./AFOA_BX/H_LD_B");
 var YJGGEYRH_3 = require("./YJGGEYRH_3");
 var HD_LZJK = require("./HD_LZJK");
 function ZSGGTRGGYJGGEYRH(KP_RJSE) {
@@ -49,12 +49,12 @@ function ZSGGTRGGYJGGEYRH(KP_RJSE) {
 			}
 		}
 		if (TIQEGGSTIQ) {
-			JTYP_VNWM_4.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + AFOA.H_LD_B(RNSF_1.VNWY_VNWM.join("")));
+			JTYP_VNWM_4.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + H_LD_B(RNSF_1.VNWY_VNWM.join("")));
 		} else {
-			JTYP_VNWM_5.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + AFOA.H_LD_B(RNSF_1.VNWY_VNWM.join("")));
+			JTYP_VNWM_5.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + H_LD_B(RNSF_1.VNWY_VNWM.join("")));
 		}
 
-		JTYP_VNWM_3.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + AFOA.H_LD_B(RNSF_1.VNWY_VNWM.join("")));
+		JTYP_VNWM_3.push(RNSF_1.VNWM_RJSE_ZTHI_kp.join(" ") + ": " + RSSC + RNSF_1.TSZNGGTRVN + "位以上" + " " + RNSF_1.regex + " " + H_LD_B(RNSF_1.VNWY_VNWM.join("")));
 	}
 
 	var NVCM_RJSE_2 = JTYP_VNWM_3.join("\n");

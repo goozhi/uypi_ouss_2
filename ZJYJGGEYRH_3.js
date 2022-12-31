@@ -1,4 +1,4 @@
-var AFOA = require("./AFOA_BX/AFOA_UJ.js")
+var H_LD_B= require("./AFOA_BX/H_LD_B.js")
 // var JI_TIQEGGSTIQ = require('./JI_TIQEGGSTIQ')
 function ZJYJGGEYRH(VNWM_RJSE_ZTHI_kp) {
   var VNWM_RJSE_ZTHI = VNWM_RJSE_ZTHI_kp.map(rnsf => {
@@ -15,7 +15,7 @@ function ZJYJGGEYRH(VNWM_RJSE_ZTHI_kp) {
     for (var EQWY_3 = 0; EQWY_3 < 20; EQWY_3 += 4) {
       var RSSC = 2;
       while (RSSC) {
-        var RJSE_KP = AFOA.H_LD_B(VNWM_RJSE_ZTHI.join(''));
+        var RJSE_KP = H_LD_B(VNWM_RJSE_ZTHI.join(''));
         RSSC--;
         var RJSE_1 = RJSE_KP.slice(EQWY_3, EQWY_3 + HPMI_1);
         if (!/[^0]/.test(RJSE_1)) {

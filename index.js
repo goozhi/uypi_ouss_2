@@ -279,8 +279,6 @@ ymce_sjbx()
 
 const { spawn } = require('child_process');
 app.listen(app.get('port'), function () {
-    // console.log('Express started on http://localhost:' +
-    //     app.get('port') + '; press Ctrl-C to terminate.\nhttp://localhost:' + app.get('port'));
     var yxna_url = 'http://localhost:' + app.get('port')
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
     var yxna_exe2 = "\"C:/Users/coocaa/AppData/Local/Google/Chrome/Application/chrome.exe\""

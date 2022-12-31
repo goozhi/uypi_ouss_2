@@ -1,6 +1,6 @@
 
 function CE_EBWU_FS_ZV_YHRJ_SJBX_RJQT_DIWR_FS(yxna_yhrj_sjbx, yxna_ztwm, ybsb_vn) {
-    var afoa_uj = require('../AFOA_BX/AFOA_UJ')
+    var NiJinzhiZhuanhuan= require('./NiJinzhiZhuanhuan')
     var fs=require('fs')
     if(ybsb_vn==null){
         ybsb_vn = 'abcdefghijklmnopqrstuvwyzx';
@@ -14,7 +14,7 @@ function CE_EBWU_FS_ZV_YHRJ_SJBX_RJQT_DIWR_FS(yxna_yhrj_sjbx, yxna_ztwm, ybsb_vn
     vnwm_rjse_ztwm.forEach((rnsf,eqwy_1)=>{
         var vnwm_yhld=rnsf.split('');
         vnwm_yhld.forEach(rnsf_2=>{
-            var frih=afoa_uj.NiJinzhiZhuanhuan(eqwy_1,ybsb_vn)
+            var frih=NiJinzhiZhuanhuan(eqwy_1,ybsb_vn)
             if(frih.length==1){
                 frih=ybsb_vn_dk_vp+frih;
             }

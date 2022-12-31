@@ -1,6 +1,6 @@
 
 function CE_EBWU_FS_ZV_YHRJ_SJBX_VKEY_DIWR_FS(rjse_yhrj_sjbx, rjse_ztwm, ybsb_vn) {
-    var afoa_uj = require('./AFOA_UJ')
+    var NiJinzhiZhuanhuan= require('./NiJinzhiZhuanhuan')
     if(ybsb_vn==null){
         ybsb_vn = 'abcdefghijklmnopqrstuvwyzx';
     }
@@ -11,7 +11,7 @@ function CE_EBWU_FS_ZV_YHRJ_SJBX_VKEY_DIWR_FS(rjse_yhrj_sjbx, rjse_ztwm, ybsb_vn
     vnwm_rjse_ztwm.forEach((rnsf,eqwy_1)=>{
         var vnwm_yhld=rnsf.split('');
         vnwm_yhld.forEach(rnsf_2=>{
-            var frih=afoa_uj.NiJinzhiZhuanhuan(eqwy_1,ybsb_vn)
+            var frih=NiJinzhiZhuanhuan(eqwy_1,ybsb_vn)
             if(frih.length==1){
                 frih=ybsb_vn_dk_vp+frih;
             }

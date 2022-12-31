@@ -1,6 +1,9 @@
 
 var RSCS_NVRJ = require('./RSCS_NVRJ');
-var AFOA = require('./AFOA_BX/AFOA_UJ');
+const EOWL_IOWR=require('./AFOA_BX/EOWL_IOWR')
+const EOWL_IOWR_2=require('./AFOA_BX/EOWL_IOWR_2')
+const PZVA_SLGR_3=require('./AFOA_BX/PZVA_SLGR_3')
+const HD_LZJK_VNWM=require('./AFOA_BX/HD_LZJK_VNWM')
 function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     console.log(MCVN_IOWR_1.ByCheckBmsGroup + ";" + MCVN_IOWR_1.sortCanData);
     if (MCVN_IOWR_1 == null) {
@@ -57,14 +60,14 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     var VNWM_1 = RSCS_NVRJ(RJSE_NVRJ);
     var YHLD_RJSE_1=eSGGID_VNWM_1.join(' ').toUpperCase();
     if (MCVN_IOWR_1.sortCanData == '00') {
-        var IOWR_1 = AFOA.EOWL_IOWR(VNWM_1, 'eS_YYHA', YHLD_RJSE_1);
+        var IOWR_1 = EOWL_IOWR(VNWM_1, 'eS_YYHA', YHLD_RJSE_1);
         if (!IOWR_1) {
             throw 'eSGGCGNE : BQPH FDCS UMMS: 报文不存在的帧id : ' + YHLD_RJSE_1;
         }
         return { IOYCGGNVRJ_IOWR: IOWR_1, VNWY_VNWM_1: IOWR_1['VNWY_VNWM'], NVRJ_eSGGYYHA: IOWR_1.eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
     }
-    var VNWM_2 = AFOA.EOWL_IOWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
-    var VNWM_3 = AFOA.PZVA_SLGR_3(VNWM_2, 'VNWY')
+    var VNWM_2 = EOWL_IOWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
+    var VNWM_3 = PZVA_SLGR_3(VNWM_2, 'VNWY')
     var sortCanData_MCVN_1 = Number(MCVN_IOWR_1.sortCanData[0]);
     var sortCanData_MCVN_2 = Number(MCVN_IOWR_1.sortCanData[1]);
     var reg_1 = new RegExp("((?:\\w+(?:\\s|$)){" + sortCanData_MCVN_2 + "}).*(\\/\\/\\d+)")
@@ -72,7 +75,7 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     var VNWM_4 = VNWM_3.map(RNSF_1 => {
         return RNSF_1.replace(reg_2, '').replace(reg_1, '$1$2');
     })
-    VNWM_4 = AFOA.HD_LZJK_VNWM(VNWM_4, '^', '//');
+    VNWM_4 = HD_LZJK_VNWM(VNWM_4, '^', '//');
     VNWM_4.sort();
     if (TRIG > VNWM_4.length - 1) {
         throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法中的字节所在帧（序号'+TRIG+'）不在报文中相同id的全部帧内(请检查sortCandata和cf项目中的帧的最后一个参数是否正确):' + VNWM_4[VNWM_4.length - 1].replace(/(.*)\/\/.*(\d+)/,"序号$2：$1已经是最后一帧了");

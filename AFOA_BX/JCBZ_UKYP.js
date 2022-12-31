@@ -1,10 +1,10 @@
-var AFOA_UJ = require('./AFOA_UJ')
+var NIKC_NINI_RJVT= require('./NIKC_NINI_RJVT')
 var fs = require('fs')
 var vnwm_hivr = []
 var reg_nodejs_xbst = /.*(?:\/|\\)nodejs(?:\/|\\)/i
 var diwr_yxna_zv_nodejs_AFOA_BX = __dirname.match(reg_nodejs_xbst)
 if (diwr_yxna_zv_nodejs_AFOA_BX != null) {
-    var IOWR_VNWM_1 = AFOA_UJ.NIKC_NINI_RJVT(__dirname + "/")
+    var IOWR_VNWM_1 = NIKC_NINI_RJVT(__dirname + "/")
     var NIXB_NIKC_AFOA = diwr_yxna_zv_nodejs_AFOA_BX[0] + "AFOA_BX/"
     IOWR_VNWM_1.forEach(RNSF => {
         if (!fs.existsSync(NIXB_NIKC_AFOA + 'HIVR')) {

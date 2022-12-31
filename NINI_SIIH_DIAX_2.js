@@ -1,5 +1,5 @@
 function NINIGGSIIHGGIOAX_2(VNWM_1){
-    var AFOA = require('./AFOA_BX/AFOA_UJ')
+    const OKAR=require('./AFOA_BX/OKAR')
     var VNWM_2=new Array()
     for(EQWY_1=0;EQWY_1<VNWM_1.length;EQWY_1++){
         var RJSE_1=VNWM_1[EQWY_1].replace(/\r/,'');
@@ -11,7 +11,7 @@ function NINIGGSIIHGGIOAX_2(VNWM_1){
         // var changdu_3 = RJSE_1.replace(regex_2,shengyu_2).replace(/[^，。—、；：（）]/g,"").length;
         VNWM_2.push(changdu_1+changdu_2)
     } 
-        var zuida_1 = AFOA.OKAR(VNWM_2)
+        var zuida_1 = OKAR(VNWM_2)
         var VNWM_3= VNWM_1.map(hui_1)
         function hui_1(yuan_1, EQWY_1){
             var RJSE_3 = ''

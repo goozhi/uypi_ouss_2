@@ -1,10 +1,20 @@
-var AFOA=require("./AFOA_BX/AFOA_UJ");
+const EOWL_IOWR_2=require('./AFOA_BX/EOWL_IOWR_2')
+const H_LD_B=require('./AFOA_BX/H_LD_B')
+const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
+const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
+const H_LD_B=require('./AFOA_BX/H_LD_B')
+const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
+const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
+const B_LD_H=require('./AFOA_BX/B_LD_H')
+const B_LD_H=require('./AFOA_BX/B_LD_H')
+const EOWL_IOWR=require('./AFOA_BX/EOWL_IOWR')
 var fs1=require('fs');
 // var ZHVT_eS_VDZV_3=require("./ZHVT_eS_VDZV_3");
 // var ZHVT_eS_VDZV_4=require("./ZHVT_eS_VDZV_4");
 var ID_REUY=require("./ID_REUY");
 // var IMFB=require("./IMFB");
 var VNWM_LD_IOWRGGVNWM=require("./VNWM_LD_IOWRGGVNWM");
+const json_FS_2 = require("./AFOA_BX/json_FS_2");
 /////////////////////////////
 function EOSRGGJUZCGGTZGGYJGGEYRH(YXNA_1){
 
@@ -37,7 +47,7 @@ YXNA_2=YXNA_1.replace(/\.[^\.]*$/,"_分析报告_0.java");
 	}
 	NINI_VNWM_1=VNWM_LD_IOWRGGVNWM(VNWM1);
 	IOWR_ZZZZ={YXNA_1:YXNA_1, VNWM_1:NINI_VNWM_1};
-	RJSE_IOWR_NINI=AFOA.json_FS_2(IOWR_ZZZZ);
+	RJSE_IOWR_NINI=json_FS_2(IOWR_ZZZZ);
 	//fs1.writeFileSync(YXNA_ZZZZ, RJSE_IOWR_NINI, "utf8");
 ////
 var regex_VNWY_1=/(.{4}(?:(?:7)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:8)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:9)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:a)(?:[0-9]|[a-f]))){2}|(.{4}0C){2}|(.{4}10){2}|(.{4}0D){2}|(.{4}0E){2}|(.{4}0F){2}|(.. 07 ){2}|(.. 08 ){2}|(.{4}09){2}|(.{4}0A){2}|(.{4}0B){2}/i;//16位
@@ -105,7 +115,7 @@ function LJEY_2(RJSE2){
 function NOCC(YXNA_1){//NOCC
 	var VNWM_1 =[];
 	for(key_1 in ID_VNWM5){//xunhuanZhuijiaNINI
-		var VNWM_2= AFOA.EOWL_IOWR_2(NINI_VNWM_1, "ID", ID_VNWM5[key_1], eSGGVN_0);
+		var VNWM_2= EOWL_IOWR_2(NINI_VNWM_1, "ID", ID_VNWM5[key_1], eSGGVN_0);
 		for(key_2 in VNWM_2){
 			var IOWR_1 = VNWM_2[key_2]
 			VNWM_1.push(ID_VNWM5[key_1] + " : " +IOWR_1.VNWY);
@@ -234,18 +244,18 @@ function VDUM_VN(TRVN_1, VNWY_1, ZKRS_1){
 var regex_1=/x\||\sH/i;
 var shengyu_1="";
 var VNWY_2=VNWY_1.replace(regex_1,shengyu_1).replace(regex_VNWY_3_2,"$1").replace(/.*([23].\s[23].\s[23].).*/,"$1");
-	var VN_2 = AFOA.H_LD_B(VNWY_2).slice(0, TRVN_1);
-	var VN_1 = AFOA.ShunJinzhiZhuanhuan(VN_2, 2);
+	var VN_2 = H_LD_B(VNWY_2).slice(0, TRVN_1);
+	var VN_1 = ShunJinzhiZhuanhuan(VN_2, 2);
 	var PZVN_1=0.001;
 	if(VN_1>5000){
 		VN_2 = VN_2.slice(VN_2.length/2,VN_2.length)+VN_2.slice(0, VN_2.length/2);
-		VN_1 = AFOA.ShunJinzhiZhuanhuan(VN_2,2);
+		VN_1 = ShunJinzhiZhuanhuan(VN_2,2);
 		if(VN_1>5000){
-			VN_2 = AFOA.H_LD_B(VNWY_2).slice(TRVN_1, TRVN_1*2);
-			VN_1 = AFOA.ShunJinzhiZhuanhuan(VN_2,2);
+			VN_2 = H_LD_B(VNWY_2).slice(TRVN_1, TRVN_1*2);
+			VN_1 = ShunJinzhiZhuanhuan(VN_2,2);
 			if(VN_1>5000){
 				VN_2 = VN_2.slice(VN_2.length/2,VN_2.length)+VN_2.slice(0, VN_2.length/2);
-				VN_1 = AFOA.ShunJinzhiZhuanhuan(VN_2,2);
+				VN_1 = ShunJinzhiZhuanhuan(VN_2,2);
 			}
 		}
 	}else if(VN_1<2900){
@@ -255,15 +265,15 @@ var VNWY_2=VNWY_1.replace(regex_1,shengyu_1).replace(regex_VNWY_3_2,"$1").replac
 	var regex_wendu=/温度/;
 	switch(true){
 	case regex_dianya.test(ZKRS_1) :
-	return "(参考 : 0x"+AFOA.B_LD_H(VN_2)+"*"+PZVN_1+"=>"+(VN_1*PZVN_1).toFixed(3)+")";
+	return "(参考 : 0x"+B_LD_H(VN_2)+"*"+PZVN_1+"=>"+(VN_1*PZVN_1).toFixed(3)+")";
 	case regex_wendu.test(ZKRS_1) :
-	return "(参考 : 0x"+AFOA.B_LD_H(VN_2)+"-40=>"+(VN_1-40).toFixed(3)+")";
+	return "(参考 : 0x"+B_LD_H(VN_2)+"-40=>"+(VN_1-40).toFixed(3)+")";
 	default :
 	return "不明主题";
 	}
 }
 function REUY_NHVN(ID_1, UYVN_VNWM_1){
-		var IOWR_1 = AFOA.EOWL_IOWR(UYVN_VNWM_1, "ID", ID_1);		
+		var IOWR_1 = EOWL_IOWR(UYVN_VNWM_1, "ID", ID_1);		
 		if(IOWR_1==false){
 			var IOWR_2 = {};
 			IOWR_2.ID = ID_1;

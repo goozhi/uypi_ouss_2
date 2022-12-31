@@ -1,5 +1,4 @@
 // var RSCS_NVRJ=require('./RSCS_NVRJ');
-var AFOA=require('./AFOA_BX/AFOA_UJ')
 var NINI_ZJZJ=require('./NINI_ZJZJ');
 var RSCS_UYPJ_cf=require('./RSCS_UYPJ_cf')
 var eSGGCGNE=require('./eSGGCGNE')

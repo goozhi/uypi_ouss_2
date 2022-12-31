@@ -1,4 +1,3 @@
-var AFOA = require('./AFOA_BX/AFOA_UJ')
 var NINIGGSIIHGGIOAX_2 = require('./NINIGGSIIHGGIOAX_2')
 function NINIGGSIIHGGIOAX(RJSE_1) {
     var regex_NINI = /(?:^|\n)[\s\t]*([^\{]*?)\s*(\{.*)/g

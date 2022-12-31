@@ -1,4 +1,4 @@
-var AFOA = require('./AFOA_BX/AFOA_UJ')
+var AG_LD_AR=require('./AFOA_BX/AG_LD_AR')
 function RSCS_NVRJ(RJSE_KP){
     if(typeof(RJSE_KP)!='string'){
         throw 'RSCS_NVRJ : MCVN UXUX MSOX';
@@ -27,8 +27,8 @@ function RSCS_NVRJ(RJSE_KP){
         }
         var VNWY_VNWM=eS_ZTHI_VNWM.slice(5);
         var eS_MCVN=eSGGLLAO+' '+eS_YYHA_VNWM.slice(TRIG).join(' ')+' '+eSGGUDAO;
-        var eS_YYHA=AFOA.AG_LD_AR(eS_YYHA_VNWM.join(' '));
-        var VNWY=AFOA.AG_LD_AR(VNWY_VNWM.join(' '));
+        var eS_YYHA=AG_LD_AR(eS_YYHA_VNWM.join(' '));
+        var VNWY=AG_LD_AR(VNWY_VNWM.join(' '));
         return {eS_MCVN, eS_YYHA_VNWM, VNWY_VNWM, VNWY,eS_YYHA, eS_ZTHI_VNWM};
     })
     return VNWM_2;
