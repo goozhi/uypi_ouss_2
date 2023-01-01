@@ -1,5 +1,5 @@
 
-function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA, diwr_mcvn) {
+function VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD(DIWR_AFOA, diwr_mcvn) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -8,7 +8,7 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA, diwr_mcvn) {
     var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
     if (VNWM_MCVN_1 == null) {
         if (diwr_mcvn != null) {
-        }    
+        }
         // throw new Error("MCVN NRAP")
     } else {
 
@@ -37,6 +37,6 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA, diwr_mcvn) {
             }
         });
     }
-    return {aqn_ypfz:'HD_LZJK'}
+    return {aqn_ypfz:'VKVY_LD_TYUB_VN_ZNZK_NQUD'}
 }
-module.exports = VR_TSJQ_ZV_HD_LZJK
+module.exports = VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD

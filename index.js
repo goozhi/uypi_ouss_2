@@ -86,6 +86,9 @@ app.get('/VR_VKJP', function (req, res) {
 app.get('/UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS', function (req, res) {
     WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS(req, res);
 });
+app.get('/DBC_RJOK', function (req, res) {
+    WLYC_DBC_RJOK(req, res);
+});
 app.get('/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH', function (req, res) {
     res.render('VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH');
 });
@@ -280,6 +283,7 @@ ymce_sjbx()
 
 const child_process = require('child_process');
 const { spawn } = require('child_process');
+const WLYC_DBC_RJOK = require('./WLYC_DBC_RJOK');
 app.listen(app.get('port'), function () {
     var yxna_url = 'http://localhost:' + app.get('port')
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""

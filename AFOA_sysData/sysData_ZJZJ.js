@@ -16,7 +16,7 @@ async function sysData_ZJZJ(RJSE_KP) {
 	var VNWM_MSOX = [""];
 	if (VNWM_sys_1 == null) {
 		var RJSE_YHLD = await ZJZJ_sys_FTXB(RJSE_KP)
-		RJSE_YHLD=RJSE_YHLD.replace(/^\s+$/,"");
+		RJSE_YHLD = RJSE_YHLD.replace(/^\s+$/, "");
 		if (RJSE_YHLD != "") {
 			return RJSE_YHLD;
 		} else {

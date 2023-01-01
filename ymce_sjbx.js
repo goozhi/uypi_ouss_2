@@ -46,7 +46,7 @@ async function ymce_sjbx() {
                         var rj_ztwm = fs.readFileSync(yxna_ztwm).toString()
                         var rj_xyzd_ztwm = fs.readFileSync(yxna_xyzd_ztwm).toString()
                         var STST_MI = STST_MI_UYPJ(rj_ztwm, rj_xyzd_ztwm)
-                        if (STST_MI < 0.999) {
+                        if (STST_MI < 0.9999) {
                             fs.writeFile(yxna_ztwm, rj_xyzd_ztwm, (err) => {
                                 if (err) {
                                     console.log('csrf-rjqt vdzv nkme-' + '-kp-' + err)

@@ -16,7 +16,7 @@ async function VR_RJOK_html_FS() {
             var dyvy_1 = rn1.replace(reg_dyvy_eynh, "$1")
             var diwr_yhld = { rj_kp: dyvy_1 }
             try {
-                diwr_yhld.dyvy_zhqh_jtyj = await VR_EBWU_AFOA_BRTZ_FS(dyvy_1)
+                diwr_yhld.dyvy_zhqh_jtyj = (await VR_EBWU_AFOA_BRTZ_FS(dyvy_1)).rj_jtyj
                 diwr_yhld.gkqj_zhqh_bcaf = true;
             } catch (err) {
                 diwr_yhld.err = err

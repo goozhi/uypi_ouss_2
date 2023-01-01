@@ -37,7 +37,6 @@ function VR_TSJQ_ZV_VNWY_TU_NINI_CGNE(DIWR_AFOA, diwr_mcvn) {
             }
         });
     }
-    diwr_mcvn.express.res.render('NINI_CGNE_ZV_NINI_WU_MR_ES')
-    return 
+    return {aqn_ypfz:'NINI_CGNE_ZV_NINI_WU_MR_ES'}
 }
 module.exports = VR_TSJQ_ZV_VNWY_TU_NINI_CGNE

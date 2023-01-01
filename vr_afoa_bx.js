@@ -20,12 +20,21 @@ var VR_TSJQ_ZV_VR_RJOK = require('./VR_TSJQ_ZV_VR_RJOK')
 var VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS')
 const VR_TSJQ_ZV_HD_LZJK = require('./VR_TSJQ_ZV_HD_LZJK')
 const VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS = require('./VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS')
+const VR_TSJQ_ZV_TYUB_LDRG = require('./VR_TSJQ_ZV_TYUB_LDRG')
+const VR_TSJQ_ZV_RJQT_GRBJ = require('./VR_TSJQ_ZV_RJQT_GRBJ')
+const VR_TSJQ_ZV_RJQT_FDMJ = require('./VR_TSJQ_ZV_RJQT_FDMJ')
+const VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL = require('./VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL')
+const VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD')
+const VR_TSJQ_ZV_EYRH_HQTB = require('./VR_TSJQ_ZV_EYRH_HQTB')
+const VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180')
+const VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
         zkrs: "菜单指令",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_LJEY,
-        csrf: `菜单指令：操作符为1或者menu(大小写不敏感)，参数为菜单的名字，支持主流菜单名的拼音写法(shujuliu banbenxinxi等(拼错自动矫正))
+        csrf: `该指令帮助dbkz ngnc 彭 EBWU ljey, bi tsjq lh md-VR-md tsjq, soNO bi tsjq bqph fj oan baDB YNDF md-VR-md tsjq gq ft 彭 EBWU tsjq, pkft kf soL baDB dk md-VR-md tsjq bqph huop 彭 EBWU.
+        BI TSJQ DK 操作符为1或者menu(大小写不敏感)，参数为菜单的名字。Bi mcvn huop ye aq 主流菜单名 if vnwy tu, osse zzuy iq 的拼音写法(如shujuliu(拼错自动矫正)), uo przv kraq mcvn, md-VR-md LJEY tsjq lbm jcbz ja ynL ldrg lh diyc dk yhrj.
         `,
         klch: `
         1=菜单1{{
@@ -59,10 +68,34 @@ function vr_afoa_bx() {
         eowl_uxux: "string"
     },
     {
+        vr_afoa_wu: "DBC_BRTZ_FS_3f_BEIQI_EC180",
+        zkrs: "DBC格式化之3f_北汽EC180",
+        csrf: `Bi tsjq kfou dbkz ja 北汽EC180 的dbc rjqt yh dk 3f uxux ldlh 彭 EBWU yh dk 3f vnwm.Oin aqfc dbkz gd zhvt kraq 3f vnwy.Bi tsjq lbm ba um ce dk lplp, zf ah fywy dgl lplp dk zhkl sdbc DBC格式化之3f_北汽EC180.
+        `,
+        klch: `31={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["31",'BEIQI3F']
+    },
+    {
+        vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",
+        zkrs: "DBC格式化之北汽EC180",
+        csrf: `Bi tsjq kfou dbkz ja 北汽EC180 的dbc rjqt  ldlh 彭 EBWU .Bi tsjq lbm ba um ce dk lplp, zf ah fywy dgl lplp dk zhkl sdbc DBC格式化之北汽EC180.
+        Bi tsjq mcnv nott [dbc rjok](http://localhost:3009/dbc_rjok) tyqh brtz fs.`,
+        klch: `32={{}}`
+        , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["32",'BEIQIDBC']
+    },
+    
+    {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
         zkrs: "NVMS BQEO AH WPM FS",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS,
-        csrf: "JA sysData ae yndf rjqt zjzj msox ud dk nvcm tyqh vy lil brtz fs, hf bc html zjhq",
+        csrf: "JA sysData ae yndf rjqt zjzj msox ud dk nvcm tyqh nppr , kn bqeo ah wpm va bv pe.Bi tsjq lbm uwuu ce dk lplp.",
         klch: `view={{
             《描述错误的主题》
             错误内容
@@ -156,15 +189,28 @@ function vr_afoa_bx() {
         vr_afoa_wu: "VR_TSZN_BQEO_BRTZ_FS",
         zkrs: "指定内容向彭语言格式化",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS,
-        csrf: `指定文本中的md-VR-md指令或彭指令中含有的md-VR-md语言向彭语言格式化 : 操作符为58。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感
+        csrf: `指定文本中的md-VR-md指令或彭指令中含有的md-VR-md语言向彭语言格式化, lcyi, hvoc md-vr-md ebwu dk rslc vlub dk jheg, zf aqfc ja przv 58 tsjq dk bqeo db ye di qq wyih sin up lq, lssr ahoa lbm nvms。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感
         `,
-        klch: `        58=str ecu{{
+        klch: `        
+        //该指令的参数表示将VR的str指令、ecu指令、menu指令或者彭语言中的VR格式的数据流项目、版本信息项目向彭语言格式化
+        58=str ecu menu{{
+            \`
             +1[版本信息](Spec)
             $Ecu();
-            *"硬件版本",                   {22 F1 A3},cf,d4*(1)+(0),.0,;// =4
-            *"硬件日期",                   {22 F1 A3}88 8年9月
+            *"硬件版本",                   {22 F1 A3},cf,d4*(1)+(0),.0,;
+            *"硬件日期",                   {22 F1 A3}88 8年9月//这是VR语言格式
             ***
             $$$
+
+            1=shujuliu{{
+                9={{
+                  数据流项目{2233}=9 
+                }}
+                8={{
+                    版本信息项目{22f190}16 4-27
+                }}
+            }}
+            \`
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["58", "SELECT"],
@@ -283,9 +329,10 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_UYPI_RFRF_BRTZ_FS",
-        zkrs: "翻译数据格式化",
+        zkrs: "自动修复翻译数据的错误",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_UYPI_RFRF_BRTZ_FS,
-        csrf: `翻译数据格式化 : 98或fix。参数：9=UTF8表示以UTF8编码读取指定路径，默认UTF8。 `,
+        csrf: `检查sysData字符串翻译工具翻译成英文后的格式文本的语法格式是否正确，如果有误，自动修复错误，并且输出修复后的文件。无法自动修复的将会抛出具体错误内容让用户手动修复。
+        参数：9=UTF8表示以UTF8编码读取指定路径，默认UTF8。 `,
         klch: `        //根据默认编码读取目标路径进行检查修改
         98=9{{
             D:/Documents/WXWork/1688855185231552/Cache/File/2022-11/测试文件.TXT
@@ -317,7 +364,8 @@ Battery production date; "
         vr_afoa_wu: "ESIH_BRTZ_FS",
         zkrs: "帧md-id-md格式化",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_ESIH_BRTZ_FS,
-        csrf: `帧md-id-md格式化 : 操作符为19。Vdzv dk bqeo brtz fl oan if tt : 空白符和逗号作为md-id-md分隔符。“-”为连续递增标识符
+        csrf: `Bi tsjq kfou dbkz vkfs vdzv araw vnwy tu es ih dk uypi. Uo mc cjl vnwy tu dk es ih ji ytnc dk, sr ftcj gkgr rvdb bi tsjq. 
+        Vdzv dk bqeo brtz fl oan if tt : 空白符和逗号作为md-id-md分隔符。“-”为连续递增标识符
         `,
         klch: `        19={{
             220101 - 22010A 220106
@@ -332,7 +380,7 @@ Battery production date; "
     {
         vr_afoa_wu: "VR_RJOK",
         zkrs: "Vdum md-VR-md stgn rjok",
-        csrf: `Vdum md-VR-md stgn rjok : md-nixb=AFOA_WU-md : JUKL EOWL SOPC AFOA WU , md-nixb=afoa_lzm_wu-md : jukl eowl sopc afoa lzm wu, md-nixb=sopc-md : jukl eowl sopc rjok zzuy. uxst dk hy pc md-"csrf, klch"-md
+        csrf: `Vdum md-VR-md stgn rjok : md-nixb=AFOA_WU-md : JUKL EOWL SOPC AFOA WU , md-nixb=afoa_lzm_wu-md : jukl eowl sopc afoa lzm wu, md-nixb=sopc-md : jukl eowl sopc rjok zzuy. uxst dk hy pc md-"csrf, klch"-md iq. Bi tsjq fl lh uuvo qr rvdb.
         md-VR-md sopc rjok cd sysa sasa dk lplp xm dbkz zqjp zjhq.Dbkz so aqn jyqh dgl tsjq.
         `,
         klch: `RJOK=nixb=AFOA_WU{{
@@ -344,9 +392,70 @@ Battery production date; "
         vnwm_vr_afoa_lzm_wu: ["RJOK"]
     },
     {
+        vr_afoa_wu: "TYUB_LDRG",
+        zkrs: "TYUB LDRG",
+        csrf: `Bi tsjq ba um tyub ldrg lplp, zf ah fywy dgl lplp dk zhkl sdbc tyub ldrg.
+        `,
+        klch: `92={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_TYUB_LDRG,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["92",'CONVERT']
+    },
+    {
+        vr_afoa_wu: "RJQT_GRBJ",
+        zkrs: "RJQT GRBJ",
+        csrf: `Bi tsjq kfou dbkz di nixb nikc tt dk sopc nixb rjqt tyqh grbj, bj vdum ye nh grbj ud dk rjqt.Bi tsjq ba um RJQT GRBJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT GRBJ.
+        `,
+        klch: `87={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_RJQT_GRBJ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["87",'MERGE']
+    },
+    {
+        vr_afoa_wu: "RJQT_FDMJ",
+        zkrs: "RJQT FDMJ",
+        csrf: `Bi tsjq kfou dbkz di nixb rjqt tyqh FDMJ, bj vdum ye nh FDMJ ud dk NIKC.Bi tsjq LBM ba um RJQT FDMJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT FDMJ.
+        `,
+        klch: `86={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_RJQT_FDMJ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["86",'FILESPLIT']
+    },
+    {
+        vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQLL",
+        zkrs: "BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ LL)",
+        csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ LL) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
+        `,
+        klch: `71={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["71",'DTCFINDF']
+    },
+    {
+        vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQUD",
+        zkrs: "BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ UD)",
+        csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ UD) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
+        `,
+        klch: `72={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["72",'DTCFINDB']
+    },
+    
+    {
         vr_afoa_wu: "VNWY_TU_NINI_CGNE",
         zkrs: "NINI CGNE",
-        csrf: `zhxm nini wu iq mcvn, bi tsjq lbm nq mcnv vnwy tu nini ae osse zzuy nini yh yj um stn cgne dk nixb nini.Bi tsjq rvdb stst uy pj tyqh zjyj stst dk nini. Bi tsjq lbm rlkl ce lplp, zf aqfc fywy zhkl vdzv stgn mcvn , kqud nwvt stn cgne dk nini. 
+        csrf: `Bi tsjq kfou dbkz nq yenh sysData RJQT YH ZJYJ jcjc cofc dk vnwy tu nini.Zhxm nini wu iq mcvn, bi tsjq lbm nq mcnv vnwy tu nini ae osse zzuy nini yh yj um stn cgne dk nixb nini.Bi tsjq rvdb stst uy pj tyqh zjyj stst dk nini. Bi tsjq lbm rlkl ce lplp, zf aqfc fywy zhkl vdzv stgn mcvn , kqud nwvt stn cgne dk nini. 
         `,
         klch: `item={{}}
     `
@@ -355,7 +464,19 @@ Battery production date; "
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["ITEM", "54"]
     },
-
+    {
+        vr_afoa_wu: "EYRH_HQTB",
+        zkrs: "eyrh hqtb",
+        csrf: `Bi tsjq kfou dbkz di vkrr kk dk eyrh nini tyqh hqtb, eowl hqtb nvcm. Zf aqfc przv lr nh mcvn, fdlz ji efpc eyrh vnwy tu nini dk sysData pzre(ok kk ji eynh pzre) dk rjqt yxna, mr vo vyn rjqt. Bi tsjq lbm ba um eyrh hqtb lplp, zf ah fywy dgl lplp dk zhkl sdbc eyrh hqtb.
+        `,
+        klch: `46={{}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_EYRH_HQTB,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "object",
+        vnwm_vr_afoa_lzm_wu: ["46",'SIM']
+    },
+    
     {
         vr_afoa_wu: "EYRH_VNWY_RSCS",
         zkrs: "单体排序指令",

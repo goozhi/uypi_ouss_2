@@ -61,13 +61,13 @@ async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
                     var vnwm_rjse_Str = BQEO_1.match(reg_Str);
                     if (vnwm_rjse_Str != null) {
                         for(var i1=0;i1<vnwm_rjse_Str.length;i1++){
-                            BQEO_1 = BQEO_1.replace(vnwm_rjse_Str[i1], await VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}")))
+                            BQEO_1 = BQEO_1.replace(vnwm_rjse_Str[i1],  (await VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}"))).rj_jtyj)
                         }
                     }
                     var vnwm_rjse_VR_AFOA_VNWY_TU = BQEO_1.match(reg_VR_AFOA_VNWY_TU);
                     if (vnwm_rjse_VR_AFOA_VNWY_TU != null) {
                         for(var i1=0;i1<vnwm_rjse_VR_AFOA_VNWY_TU.length;i1++){
-                            BQEO_1 = BQEO_1.replace(RNSF, await VR_EBWU_AFOA_BRTZ_FS(RNSF))
+                            BQEO_1 = BQEO_1.replace(RNSF, (await VR_EBWU_AFOA_BRTZ_FS(RNSF)).rj_jtyj)
                         }
                     }
                     break;

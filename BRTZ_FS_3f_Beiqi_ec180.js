@@ -12,6 +12,6 @@ function BRTZ_FS_3f_Beiqi_ec180(RJSE_KP){
         }
         return NHVN_GFVN_FS(Number(RJSE_YHLD).toString(16).toLowerCase())+":"+RNSF_1.replace(reg_1,"$2");
     });
-    return '\''+VNWM_2.join("','")+"','oth:�?定义';";
+    return '\''+VNWM_2.join("','")+"','oth:\u672a\u5b9a\u4e49';";
 }
 module.exports=BRTZ_FS_3f_Beiqi_ec180;

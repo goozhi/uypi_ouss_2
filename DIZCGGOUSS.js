@@ -1,8 +1,8 @@
-function DIZC_OUSS(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
+async function DIZC_OUSS(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     var ZJZJ_TSJQ_Str = require('./AFOA_sysData/ZJZJ_TSJQ_Str');
     var VR_EBWU_AFOA_BRTZ_FS = require('./VR_EBWU_AFOA_BRTZ_FS')
     var RJSE_KP = RJSE_1;
-    RJSE_1 = VR_EBWU_AFOA_BRTZ_FS(RJSE_1)
+    RJSE_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_1)).rj_jtyj
     var RJSE_YHLD;
     var VNWM_YHLD_2 = RJSE_1.split('\n')
     var RJSE_YHLD_2 = VNWM_YHLD_2.map((RNSF, EQWY_1) => {

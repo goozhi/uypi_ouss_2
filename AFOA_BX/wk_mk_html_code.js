@@ -21,7 +21,7 @@ function wk_mk_html_code(rj_kp, ebwu) {
             break;
         }
     }
-    return rj_1.replace(/<code>/g, "<code class=mark1>")
+    return rj_1//.replace(/<code>/g, "<code class=mark1>")
 }
 module.exports = wk_mk_html_code;
 

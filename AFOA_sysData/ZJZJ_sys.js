@@ -14,7 +14,7 @@ async function ZJZJ_sys(RJSE_KP) {
 	var reg_LG_MCVN = /(?:\n|^)_.*\(\).*/i;
 	var IOWR_YHLD = RJSE_KP.match(reg_LG_MCVN)
 	if (IOWR_YHLD == null) {
-		RJSE_MSOX += "<sys LG BRTZ MSOX>\n" + RJSE_KP.split(/\n/).slice(0, 3).join("\n") + "\n</sys LG BRTZ MSOX>"
+		RJSE_MSOX += "\n<sys LG BRTZ MSOX>\n" + RJSE_KP.split(/\n/).slice(0, 3).join("\n") + "\n</sys LG BRTZ MSOX>"
 	} else {
 		RJSE_KP = RJSE_KP.replace(reg_LG_MCVN, "")
 	}

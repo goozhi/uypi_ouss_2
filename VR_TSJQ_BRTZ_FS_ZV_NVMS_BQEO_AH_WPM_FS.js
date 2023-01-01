@@ -12,13 +12,6 @@ async function VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS(IOWR_AFOA, diwr_mcvn) {
     var RJSE_nixb_bqeo = BQEO_1.replace(/Peng_JTCO_ZV_TZRN/ig, "$$$$$$")
     var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/[\w=]+/g);
     if (VNWM_MCVN_1 == null) {
-        var rj_html = await NVMS_JTYJ_LD_html(BQEO_1)
-        diwr_mcvn.express.res.writeHead(200, {
-            'Content-Type': 'text/html;charset=utf-8'
-        });
-        diwr_mcvn.express.res.write(rj_html);
-        diwr_mcvn.express.res.end();
-        return
     } else {
         VNWM_MCVN_1.forEach(RNSF => {
             switch (true) {
@@ -42,5 +35,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS(IOWR_AFOA, diwr_mcvn) {
             }
         });
     }
+    var rj_html = await NVMS_JTYJ_LD_html(BQEO_1)
+    return { aqn_voud: rj_html }
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS;

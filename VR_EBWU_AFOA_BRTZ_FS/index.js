@@ -11,6 +11,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     if (uxux_yhld != "string") {
         uz_ms('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
     }
+    var vnwm_usni = []
     var VBYT_VKRF_Peng_EBWU = true;
     var IOWR_VNWM_VR_AFOA = []
     var RJSE_KP = RJSE_1;
@@ -22,7 +23,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     }
     var RJSE_1 = RJSE_1.replace(/\u0024\u0024+/g, "Peng_JTCO_ZV_TZRN");
     var RJSE_2 = RJSE_1
-    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}(?!\}))/;
+    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{\s*((?:(?!.+=.*\{\{)[\s\n\S])*?|`[^`]*`)\s*\}\}(?!\}(?!\}))/;
     var VBYT_2 = true;
     for (var i1 = 0; i1 < 9999; i1++) {
         var IOWR_YHLD = RJSE_1.match(reg_AFOA);
@@ -56,9 +57,12 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
                 VBYT_VKRF_Peng_EBWU = diwr_tsjq_1.VBYT_VKRF_Peng_EBWU
             }
             var JTYJ_YHLD = await diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA, diwr_mcvn)
-            if(typeof(JTYJ_YHLD)=="string"){
+            if (typeof (JTYJ_YHLD) == "string") {
                 RJSE_2 = RJSE_2.replace(reg_AFOA, JTYJ_YHLD)
-            }else{
+            } else {
+                if (typeof (JTYJ_YHLD) == 'object') {
+                    vnwm_usni.push(JTYJ_YHLD)
+                }
                 RJSE_2 = RJSE_2.replace(reg_AFOA, "")
             }
         } else {
@@ -77,7 +81,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
         if (!/HMPC MSOX/i.test(RJSE_MSOX)) {
             uz_ms([RJSE_MSOX]);
         }
-        return RJSE_JTYP;
+        return { rj_jtyj: RJSE_JTYP, vnwm_usni: [] };
     }
     RJSE_1 = RJSE_1.replace(/[^\{\}\n]*VKIH_[^\{\}\n]*/g, "").replace(/\/\/.*/g, "")
     if (!/^\s*$/.test(RJSE_1)) {
@@ -94,6 +98,6 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
             uz_ms("\n" + (RJSE_MSOX));
         }
     }
-    return RJSE_LLDD_PHFD + RJSE_2;
+    return { rj_jtyj: RJSE_LLDD_PHFD + RJSE_2, vnwm_usni };
 }
 module.exports = VR_EBWU_AFOA_BRTZ_FS;

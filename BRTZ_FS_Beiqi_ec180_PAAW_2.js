@@ -7,7 +7,7 @@ function BRTZ_FS_Beiqi_ec180_PAAW_2(YXNA_1,VKVY) {
         VKVY="GB2312"
     }
     if(!fs.existsSync(YXNA_1)){
-        throw new Error("YXNA AC ZZNQ Â·¾¶²»´æÔÚ: "+YXNA_1)
+        throw new Error("csrf-YXNA AC ZZNQ-"+YXNA_1)
     }
     var RJSE_KP = encoding.convert(fs.readFileSync(YXNA_1),"utf8",VKVY).toString();
     var reg_QH_NINI_WU=/CM_ SG_.*/g;
