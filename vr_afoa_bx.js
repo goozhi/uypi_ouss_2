@@ -189,7 +189,7 @@ function vr_afoa_bx() {
         vr_afoa_wu: "VR_TSZN_BQEO_BRTZ_FS",
         zkrs: "指定内容向彭语言格式化",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS,
-        csrf: `指定文本中的md-VR-md指令或彭指令中含有的md-VR-md语言向彭语言格式化, lcyi, hvoc md-vr-md ebwu dk rslc vlub dk jheg, zf aqfc ja przv 58 tsjq dk bqeo db ye di qq wyih sin up lq, lssr ahoa lbm nvms。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感
+        csrf: `指定文本中的md-VR-md指令或彭指令中含有的md-VR-md语言向彭语言格式化, lcyi, hvoc md-vr-md ebwu dk rslc vlub dk jheg, zf aqfc ja przv 58 tsjq dk bqeo db ye di qq wyih '\`' ae yhrj dz ih '·' sin up lq, lssr ahoa lbm nvms。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感
         `,
         klch: `        
         //该指令的参数表示将VR的str指令、ecu指令、menu指令或者彭语言中的VR格式的数据流项目、版本信息项目向彭语言格式化

@@ -10,12 +10,19 @@ async function VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS(IOWR_AFOA) {
     }
     var BQEO_KP = IOWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
     var BQEO_1=BQEO_KP
-    BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1").replace(/^\s*`|`\s*$/g,"")
+    BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
+    if(/^\s*`/.test(BQEO_1)){
+        BQEO_1=BQEO_1.replace(/^\s*`|`\s*$/g,"")
+    }else if(/^\s*·/.test(BQEO_1)){
+        BQEO_1=BQEO_1.replace(/^\s*·|·\s*$/g,"")
+    }else{
+        uz_ms('csrf-bqeo aoao db qq wyih ae yhrj dz ih sin up lq-'+'-kp-'+BQEO_1)
+    }
     var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
     if (VNWM_MCVN_1 == null) {
 
     } else {
-        if(/\b1\b|\bmenu\b/i.test(JSON.stringify(VNWM_MCVN_1))&&!/menu|1/.test(VNWM_MCVN_1[VNWM_MCVN_1.length-1])){
+        if(/\b1\b|\bmenu\b/i.test(JSON.stringify(VNWM_MCVN_1))&&!/menu|1/i.test(VNWM_MCVN_1[VNWM_MCVN_1.length-1])){
             uz_ms('csrf-m e n u mcvn aoao fh nq udcc-'+VNWM_MCVN_1)
         }
         for (var i2 = 0; i2 < VNWM_MCVN_1.length; i2++) {
