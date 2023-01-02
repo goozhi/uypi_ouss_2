@@ -3,8 +3,6 @@ const Peng_TZFS = require('../Peng_TZFS')
 const WFQQ_1 = require('./WFQQ_1')
 
 function VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, rj_kp) {
-    const fs = require('fs')
-    fs.writeFileSync('./xyzd.java', JSON.stringify(DIWR_VNWM_VR_LJEY))
     var IOWR_VNWM_SL_LJEY = []
     DIWR_VNWM_VR_LJEY.map(RNSF => {
         var reg_LJEY_JTCO_FR = new RegExp("LJEY_JTCO_FR_" + RNSF.VN_VR_AFOA_TRIG_VKIH + "\\b")

@@ -5,7 +5,7 @@ function ZJZJ_cf_NINI(VNWM_cf_NINI) {
     }
     var RJSE_MSOX = "";
     var ZJZJ_cf_NINI_MCVN = require('./ZJZJ_cf_NINI_MCVN')
-    var diwr_vnwm_rj_msox = VNWM_cf_NINI.map(RN1 => {
+    var diwr_vnwm_rj_msox = VNWM_cf_NINI.map(async RN1 => {
         var NINI = RN1;
         var reg_MCVN = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
         var reg_mcvn_2 = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\[[^\]\[]+\]\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
