@@ -28,6 +28,7 @@ const VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./VR_TSJQ_ZV_VKVY_LD_TYUB_
 const VR_TSJQ_ZV_EYRH_HQTB = require('./VR_TSJQ_ZV_EYRH_HQTB')
 const VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180')
 const VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180')
+const VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA = require('./VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -77,7 +78,7 @@ function vr_afoa_bx() {
         , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["31",'BEIQI3F']
+        vnwm_vr_afoa_lzm_wu: ["31", 'BEIQI3F']
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",
@@ -88,9 +89,9 @@ function vr_afoa_bx() {
         , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["32",'BEIQIDBC']
+        vnwm_vr_afoa_lzm_wu: ["32", 'BEIQIDBC']
     },
-    
+
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
         zkrs: "NVMS BQEO AH WPM FS",
@@ -138,7 +139,7 @@ function vr_afoa_bx() {
         vr_afoa_wu: "OSSE_ZZUY",
         zkrs: "版本信息指令",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY,
-        csrf: `版本信息指令：操作符为8或者ecu(大小写不敏感)，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关版本信息项目编写规范请参考 "md-VR-md语言之数据流项目编写示例"
+        csrf: `版本信息指令：操作符为8或者ecu(大小写不敏感)，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关版本信息项目编写规范请参考 ["md-VR-md语言之数据流项目编写示例"](http://localhost:3009/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH)
         `,
         klch: `        8=0{{
             3f项目示例{2222}33，，’00：元素‘，’oth：--‘
@@ -153,7 +154,7 @@ function vr_afoa_bx() {
         vr_afoa_wu: "VNWY_TU",
         zkrs: "数据流指令",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_VNWY_TU,
-        csrf: `数据流指令：操作符为9或者STR(大小写不敏感)，参数为彭语言中str()的参数，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关数据流项目编写规范请参考 "md-VR-md语言之数据流项目编写示例"
+        csrf: `数据流指令：操作符为9或者STR(大小写不敏感)，参数为彭语言中str()的参数，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关数据流项目编写规范请参考 ["md-VR-md语言之数据流项目编写示例"](http://localhost:3009/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH)
         `,
         klch: `        STR=sortCanDataByID{{
             3f项目示例{2222}33，，’00：元素‘，’oth：--‘
@@ -231,6 +232,48 @@ function vr_afoa_bx() {
     `,
         vnwm_vr_afoa_lzm_wu: ["77", "ALIGN"],
         VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "VR_KUOE_AFOA",
+        zkrs: "KUOE AFOA",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA,
+        csrf: `Bi tsjq kfou dbkz ngnc kuoe afoa. Kf rvdb dk brtz dk ah rjm va pe. Pcgn bi tsjq dk brtz rt mcvc [md-vr-md kuoe afoa tsfz](https://localhost:3009/vr_kuoe_afoa_tsfz)。
+        `,
+        klch: `0={{
+        # VIN写入
+    *1*
+    * 打印请稍等
+    * 发送10 03
+    * 帧数组复位1到100为0
+    * 过密码23
+    
+    ## 选择框
+    ···
+    当前VIN为{22f190}09 4-20
+    ···
+    》写入 2
+    》退出 exit
+    
+    *2*
+    * 打印请输入17位VIN
+    
+    ## 输入框
+    类型为0a 长度为17 传入帧数组1
+    》确定 3
+    》退出 exit
+    
+    *3*
+    * 打印正在发送中，请稍等
+    * 发送2e f1 90 f[1][1]16
+    * 注意已发送完成，可返回查看结果
+    * 跳转到1
+    
+    *exit*
+}}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["0", "spec"],
+        VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     },
     {
@@ -401,7 +444,7 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_TYUB_LDRG,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["92",'CONVERT']
+        vnwm_vr_afoa_lzm_wu: ["92", 'CONVERT']
     },
     {
         vr_afoa_wu: "RJQT_GRBJ",
@@ -413,7 +456,7 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_RJQT_GRBJ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["87",'MERGE']
+        vnwm_vr_afoa_lzm_wu: ["87", 'MERGE']
     },
     {
         vr_afoa_wu: "RJQT_FDMJ",
@@ -425,7 +468,7 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_RJQT_FDMJ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["86",'FILESPLIT']
+        vnwm_vr_afoa_lzm_wu: ["86", 'FILESPLIT']
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQLL",
@@ -437,7 +480,7 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["71",'DTCFINDF']
+        vnwm_vr_afoa_lzm_wu: ["71", 'DTCFINDF']
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQUD",
@@ -449,9 +492,9 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["72",'DTCFINDB']
+        vnwm_vr_afoa_lzm_wu: ["72", 'DTCFINDB']
     },
-    
+
     {
         vr_afoa_wu: "VNWY_TU_NINI_CGNE",
         zkrs: "NINI CGNE",
@@ -474,9 +517,9 @@ Battery production date; "
         , vr_afoa_rh: VR_TSJQ_ZV_EYRH_HQTB,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["46",'SIM']
+        vnwm_vr_afoa_lzm_wu: ["46", 'SIM']
     },
-    
+
     {
         vr_afoa_wu: "EYRH_VNWY_RSCS",
         zkrs: "单体排序指令",
