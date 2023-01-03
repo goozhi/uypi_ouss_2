@@ -10,8 +10,10 @@
 </head>
 <script>
     document.onkeydown = function (event) {
-        var oEvent = event ? event : (window.event ? window.event : null);
-        isKeyPressed(oEvent);
+        if (event.altKey) {
+            event.preventDefault();
+        }
+        console.log(event.keyCode)
     }
     document.onkeyup = function (event) {
         var oEvent = event ? event : (window.event ? window.event : null);
@@ -20,7 +22,6 @@
 
 
     function isKeyLoosen(event) {//抬起按键
-        console.log(event.keyCode)
         var vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_kp = vdzv_1.selectionStart
@@ -29,7 +30,6 @@
         var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
         vdzv_1.onkeydown = function (event) {
             if (event.key === 'Alt') {
-                event.preventDefault();
                 var a = tsjq_tem_non(rj_1, trig_kp)
                 Promise.all([a]).then(jtyj => {
                     if (/\w+\s*=\s*9\s*(?:=(?:\s*\w+|)|)\s*$/.test(rj_tsts_llcc)) {
@@ -54,9 +54,27 @@
                         vdzv_1.value += " \{\{\n\n\}\}"
                         vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
                     }
-                    else if (!jtyj[0].gkyq_tsts_yjab) {
-                        if (/\n$/.test(rj_tsts_llcc) && /\n\}\}/.test(rj_tsts_udcc)) {
-                            vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
+                    else if (!jtyj[0].gkqj_dbkz_tsts_yjab) {
+                        if (/\{\{\s*\n$/.test(rj_tsts_llcc) && /^\s*\n\}\}/.test(rj_tsts_udcc)) {
+                            var gkqj_bnll_tsjq_bqeo_ah_lh_vv = false;
+                            var diwr_dbkz_tsjq = rj_tsts_llcc.match(/(\w+)\s*=\s*\{\{\s*$/)
+                            if (diwr_dbkz_tsjq != null) {
+                                for (yg1 of diwr_vnwm_tsjq) {
+                                    if (yg1.vnwm_vr_afoa_lzm_wu.indexOf(diwr_dbkz_tsjq[1].toUpperCase()) != -1) {
+                                        if (/\{\s*\}\}/.test(yg1.klch)) {
+                                            gkqj_bnll_tsjq_bqeo_ah_lh_vv = true;
+                                            break;
+
+                                        }
+                                    }
+
+                                }
+                            }
+                            if (gkqj_bnll_tsjq_bqeo_ah_lh_vv) {
+                                document.getElementById('btn1').click()
+                            } else {
+                                vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
+                            }
                         } else if (/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
                             vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
                         }
@@ -65,6 +83,7 @@
                         vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length - 6, jtyj[0].rj_tsts_llcc.length - 6)
                     }
                     else {
+                        document.getElementById('oakl_1').value=jtyj[0].zkrs
                         if (jtyj[0].stst_mi == 1) {
                             vdzv_1.value = jtyj[0].rj_tsts_llcc + ' = \{\{\n\n\}\}' + jtyj[0].rj_tsts_udcc
                             vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length + 6, jtyj[0].rj_tsts_llcc.length + 6)
@@ -79,7 +98,8 @@
         };
         if (event.ctrlKey && event.keyCode == 77) {
             document.getElementById('btn1').click()
-        } else if (event.code == "Tab") {
+        } else if (event.ctrlKey && event.keyCode == 73) {
+            document.getElementById('id_vdzv_1').select()
         }
 
         if (event.keyCode == 13) {
@@ -101,7 +121,7 @@
 </script>
 <h2>VR</h2>
 <form name="home" action="/" method="get">
-    <button>go home</button>
+    <button>go home</button>按Alt键进行代码补全<input id="oakl_1">
 </form>
 {{JTYP_2}}
 
@@ -118,7 +138,7 @@
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交(Ctrl+M)</button>
+    <button id="btn1">提交(Ctrl+M)</button>输入按Ctrl+i
 </form>
 输出内容<br>
 <textarea class='code-area-2' rows="20" cols="150" onfocus="select()"
