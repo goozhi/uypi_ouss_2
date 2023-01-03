@@ -238,7 +238,7 @@ function vr_afoa_bx() {
         vr_afoa_wu: "VR_KUOE_AFOA",
         zkrs: "KUOE AFOA",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA,
-        csrf: `Bi tsjq kfou dbkz ngnc kuoe afoa. Kf rvdb dk brtz dk ah rjm va pe. Pcgn bi tsjq dk brtz rt mcvc [md-vr-md kuoe afoa tsfz](https://localhost:3009/vr_kuoe_afoa_tsfz)。
+        csrf: `Bi tsjq kfou dbkz ngnc kuoe afoa. Kf rvdb dk brtz dk ah rjm va pe. Pcgn bi tsjq dk brtz rt mcvc [md-vr-md kuoe afoa tsfz](http://localhost:3009/VR_KUOE_AFOA_TSFZ_RJOK_html_FS)。
         `,
         klch: `0={{
         # VIN写入

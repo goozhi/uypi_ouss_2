@@ -1,3 +1,5 @@
+const child_process = require('child_process');
+const spawn = child_process.spawn
 var express = require('express');
 var encoding = require('encoding')
 const bodyParser = require('body-parser');
@@ -18,6 +20,8 @@ var WLYC_SIIHGGUXGGRJSEGGBRTZGGFS = require('./WLYC_SIIHGGUXGGRJSEGGBRTZGGFS');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQLL');
 var WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD = require('./WLYC_VKVY_LD_TYUB_VN_ZNZK_NQUD');
 var WLYC_VR_EBWU_BRTZ_FS = require('./WLYC_VR_EBWU_BRTZ_FS');
+const WLYC_VR_KUOE_AFOA_TSFZ_RJOK_html_FS = require('./WLYC_VR_KUOE_AFOA_TSFZ_RJOK_html_FS');
+const WLYC_DBC_RJOK = require('./WLYC_DBC_RJOK');
 var WLYC_sysData_ZJZJ = require('./WLYC_sysData_ZJZJ');
 var WLYC_menuData_ZJZJ = require('./WLYC_menuData_ZJZJ');
 var WLYC_ESIH_BRTZ_FS = require('./WLYC_ESIH_BRTZ_FS');
@@ -85,6 +89,9 @@ app.get('/VR_VKJP', function (req, res) {
 });
 app.get('/UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS', function (req, res) {
     WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS(req, res);
+});
+app.get('/VR_KUOE_AFOA_TSFZ_RJOK_html_FS', function (req, res) {
+    WLYC_VR_KUOE_AFOA_TSFZ_RJOK_html_FS(req, res);
 });
 app.get('/DBC_RJOK', function (req, res) {
     WLYC_DBC_RJOK(req, res);
@@ -281,9 +288,6 @@ app.use(function (err, req, res, next) {
 
 ymce_sjbx()
 
-const child_process = require('child_process');
-const { spawn } = require('child_process');
-const WLYC_DBC_RJOK = require('./WLYC_DBC_RJOK');
 app.listen(app.get('port'), function () {
     var yxna_url = 'http://localhost:' + app.get('port')
     var yxna_exe = "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\""
@@ -309,15 +313,15 @@ app.listen(app.get('port'), function () {
                 child.stdout.on('data', (data) => {
                     console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
                 });
-        
+
                 child.stderr.on('data', (data) => {
                     console.error(`stderr: ${data}`);
                 });
-        
+
                 child.on('close', (code) => {
                     console.log(`子进程退出码：${code}`);
                 });
-        
+
                 child.on('exit', code => {
                     console.log('child exit code: ' + code)
                 })
@@ -329,7 +333,7 @@ app.listen(app.get('port'), function () {
                     console.error("* NWVT md-ID-md NKME : " + err)
                 }
             })
-        
+
         }
         return false
     });

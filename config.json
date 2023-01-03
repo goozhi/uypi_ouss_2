@@ -1,7 +1,7 @@
 {
     "port": 3009,
-    "version": "9.2.4.5",
-    "YMCE_HITD": "221227",
+    "version": "9.2.4.6",
+    "YMCE_HITD": "230103",
     "piqr": "WRVR",
     "vnwm_wj_dk_cpu_zzuy": [
         {
@@ -16,5 +16,5 @@
             }
         }
     ],
-    "vnwm_wj_dk_kmqt_ih":["FYB5N00511180564M   _00000001"]
+    "vnwm_wj_dk_kmqt_ih":["FYB5N00511180564M   _00000001","2022040400376"]
 }
