@@ -11,6 +11,14 @@
   display: inline-block;
 }
 
+.btn_VR {
+  width: 200px;
+  color: #777;
+}
+
+.form_vr{
+  width: 100%;
+}
 .code-area-3 {
   padding: 4px;
   margin: 0 auto;
@@ -63,6 +71,7 @@
   background-color: #eeeff0;
   border: 1px solid #ccc;
 }
+
 .identifier {
   color: #61aeee;
 }
@@ -93,33 +102,39 @@
 }
 
 .keyword {
-  color :#DCDCAA
+  color: #DCDCAA
 }
+
 .gnfo_zt_const {
-  color : #358CD6
+  color: #358CD6
 }
+
 .gtaw_diwr {
-  color : #4FC1FF
+  color: #4FC1FF
 }
 
 .gtaw_ft_diwr {
-  color:#9CDCFE
-}
-.string {
-  color:#CE9178
+  color: #9CDCFE
 }
 
-.ar_siih_tb{
-  color:#1B9FF1
+.string {
+  color: #CE9178
 }
+
+.ar_siih_tb {
+  color: #1B9FF1
+}
+
 .comment {
-  color:#6A8A35
+  color: #6A8A35
 }
-.function{
-  color:#DCDCAA
+
+.function {
+  color: #DCDCAA
 }
-.ar_siih_hj{
-  color:#F1D710
+
+.ar_siih_hj {
+  color: #F1D710
 }
 
 .number {
