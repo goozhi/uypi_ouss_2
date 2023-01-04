@@ -71,6 +71,9 @@ function KUOE_AFOA(rjse_kp) {
             case /^注意/m.test(rj_afoa_kp):
                 rj_afoa_1 = rj_afoa_kp.replace(/注意(.*)/, "$Display(enter){\"$1\"};")
                 break;
+            case /^等待/m.test(rj_afoa_kp):
+                rj_afoa_1 = rj_afoa_kp.replace(/等待(.*)/, "$Delayms($1);")
+                break;
             case /^若为其他/m.test(rj_afoa_kp):
                 rj_1 = rj_1.replace(/\* +若为其他/, "$Else();")
                 break;
@@ -100,10 +103,25 @@ function KUOE_AFOA(rjse_kp) {
     $('blockquote').each(function () {
         var rj_zstv_kp_slgr = $(this).text()
         var rj_zstv_slgr = rj_zstv_kp_slgr
-        var vnwm_rj_zstv_slgr = rj_zstv_slgr.match(/.*\w+\s*$/gm)
-        vnwm_rj_zstv_slgr.forEach(rn1 => {
-            rj_1 = rj_1.replace("> " + rn1, rn1.replace(/(.*?)\s*(\w+)\s*$/gm, "\"$1\"L_$2;"))
-        })
+        var vnwm_rj_zstv_vo_es_slgr = rj_zstv_slgr.match(/.*?\w+ \w+(?: \w+)+(?=\s*$)/gm)
+        var vnwm_rj_zstv_dgld_slgr = rj_zstv_slgr.match(/.*\w+(?=\s*$)/gm)
+        if (vnwm_rj_zstv_vo_es_slgr != null) {
+            vnwm_rj_zstv_vo_es_slgr.forEach(rn1 => {
+                if (!new RegExp("> " + rn1).test(rj_1)) {
+                    uz_ms('csrf-mcvn ftpj-' + rn1 + '-kp-' + rj_1)
+                }
+                rj_1 = rj_1.replace("> " + rn1, rn1.replace(/(.*?)(\w+ \w+(?: \w+)+(?=\s*$))/gm, "\"$1\"{$2};"))
+            })
+
+        } else {
+            vnwm_rj_zstv_dgld_slgr.forEach(rn1 => {
+                if (!new RegExp("> " + rn1).test(rj_1)) {
+                    uz_ms('csrf-mcvn ftpj-' + rn1 + '-kp-' + rj_1)
+                }
+                rj_1 = rj_1.replace("> " + rn1, rn1.replace(/(.*?)\s*(\w+)\s*$/gm, "\"$1\"L_$2;"))
+            })
+
+        }
     })
 
     $('h2').each(function () {
@@ -112,6 +130,9 @@ function KUOE_AFOA(rjse_kp) {
         switch (true) {
             case /^选择框/m.test(rj_dihk_zul_kp):
                 rj_dihk_zul_1 = rj_dihk_zul_kp.replace(/选择框(.*)/, "$Button();")
+                break;
+            case /^控制框/m.test(rj_dihk_zul_kp):
+                rj_dihk_zul_1 = rj_dihk_zul_kp.replace(/控制框(.*)/, "$Button();")
                 break;
             case /^输入框/m.test(rj_dihk_zul_kp):
                 rj_dihk_zul_1 = rj_dihk_zul_kp.replace(/输入框(.*)/, "$InputBox()")
@@ -130,30 +151,28 @@ function KUOE_AFOA(rjse_kp) {
             return
         }
         var vnwm_mcvn_kp = rj_mcvn_kp.split(/ +/)
-        var vnwm_mcvn_1 = vnwm_mcvn_kp.map(rn1 => {
+        var vnwm_mcvn_1 = []
+        var vnwm_vdzv_zul_mcvn = vnwm_mcvn_kp.map(rn1 => {
             // var rj_klvq = rn1.replace(/.*为(.*)到(.*)/,"$1-$2")
             // var rj_yg = rn1.replace(/.*为(.*)/,"$1")
             switch (true) {
                 case /^类型为/m.test(rn1):
                     var rj_yg = rn1.replace(/.*为(.*)/, "$1")
+                    vnwm_mcvn_1[0] = rj_yg
                     return { rj_yg, rj_mcvn_wu: '', xbst: 'uxux' }
                 case /^长度为/m.test(rn1):
                     var rj_yg = rn1.replace(/.*为(.*)/, "$1")
+                    vnwm_mcvn_1[1] = 'len=' + rj_yg
                     return { rj_yg, rj_mcvn_wu: 'len', xbst: 'hpmi' }
                 case /^传入帧数组/m.test(rn1):
                     var rj_yg = rn1.replace(/.*传入帧数组(.*)/, "f[$1]")
+                    vnwm_mcvn_1[2] = rj_yg
                     return { rj_yg, rj_mcvn_wu: '', xbst: 'przv' }
                 default:
                     uz_ms('csrf-mcvn ftpj-' + rn1 + '-kp-' + rj_mcvn_kp)
             }
         })
-        var rj_mcvn_1 = vnwm_mcvn_1.map(rn1 => {
-            if (rn1.rj_mcvn_wu == '') {
-                return rn1.rj_yg
-            } else {
-                return rn1.rj_mcvn_wu + '=' + rn1.rj_yg
-            }
-        }).join(',')
+        var rj_mcvn_1 = vnwm_mcvn_1.join(',').replace(/,,+/g, ",")
         rj_1 = rj_1.replace("\n" + rj_mcvn_kp, rj_mcvn_1)
     })
     return rj_1.replace(/(inputBox)\(\)(.*)/ig, '$1($2)')
