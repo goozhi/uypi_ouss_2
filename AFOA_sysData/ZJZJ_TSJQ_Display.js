@@ -28,7 +28,7 @@ async function ZJZJ_TSJQ_Display(RJSE_KP) {
         RJSE_1 = RJSE_1.replace(reg_NINI, "");
     }
     var reg_Display_LG = /\$Display\((ENTER|EE|EXIT|)\)\{\s*(?:\/\/line \d+\s*|)"/i;
-    var reg_Display_DS = /\"\s*(?:\/\/line \d+\s*|)\}\s*(?:;|)(?:\/\/.*|)$/;
+    var reg_Display_DS = /\"\s*(?:\/\/line \d+\s*|)\}\s*(?:;|)\s*(?:\/\/.*|)$/;
     var IOWR_YHLD = RJSE_1.match(reg_Display_LG);
     if (IOWR_YHLD == null) {
         var XBST_QHIH = RJSE_KP.match(/.*\/\/line \d+/);
