@@ -55,7 +55,12 @@ function KUOE_AFOA(rjse_kp) {
                 rj_afoa_1 = rj_afoa_kp.replace(/打印(.*)/, "$Display(){\"$1\"};")
                 break;
             case /^发送/m.test(rj_afoa_kp):
-                rj_afoa_1 = rj_afoa_kp.replace(/发送(.*)/, "$Send(){$1};")
+                if (/回应帧/.test(rj_afoa_kp)) {
+                    rj_afoa_1 = rj_afoa_kp.replace(/发送\s*(.*?)\s*回应帧传入帧数组(.*)/i, "$Send(f[$2]){$1};")
+
+                } else {
+                    rj_afoa_1 = rj_afoa_kp.replace(/发送(.*)/, "$Send(){$1};")
+                }
                 break;
             case /^帧数组复位/m.test(rj_afoa_kp):
                 rj_afoa_1 = rj_afoa_kp.replace(/帧数组复位(.*)到(.*)为(.*)/, "$F($1,$2,$3);")
