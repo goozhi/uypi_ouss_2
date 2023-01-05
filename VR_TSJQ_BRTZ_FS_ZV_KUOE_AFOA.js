@@ -1,4 +1,4 @@
-const VR_KUOE_AFOA_Peng_fs = require('./VR_KUOE_AFOA_Peng_fs')
+const VR_KUOE_AFOA_Peng_fs = require('./vr_turs_ubub/VR_KUOE_AFOA_Peng_fs')
 
 function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
