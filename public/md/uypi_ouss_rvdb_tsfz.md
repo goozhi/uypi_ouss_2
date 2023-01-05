@@ -183,3 +183,11 @@ $Lab(L_exit)
 
 第十一步，点击提交，获取输出。一切完美。
 * ![tbnc_vnwy_tu_nini_zv_vr_brtz_fs_jtyj](/img/tbnc_vnwy_tu_nini_zv_vr_brtz_fs_jtyj.png)
+
+## 以下是友情推荐
+
+* 世界上最好用的编程软件[vscode](https://code.visualstudio.com/)
+* 国内最好的技术交流社区[CSDN](https://www.csdn.net/)
+* 国内最良心的免费教学网站[菜鸟教程](https://www.runoob.com/)
+
+## 谢谢浏览

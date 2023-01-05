@@ -1,4 +1,4 @@
-const KUOE_AFOA=require('./KUOE_AFOA')
+const VR_KUOE_AFOA_Peng_fs = require('./VR_KUOE_AFOA_Peng_fs')
 
 function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
@@ -37,6 +37,6 @@ function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(IOWR_AFOA) {
             }
         });
     }
-    return KUOE_AFOA(BQEO_1)
+    return VR_KUOE_AFOA_Peng_fs(BQEO_1)
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA;

@@ -10,7 +10,7 @@ function zjzj_brtz_zv_Str2ID(rj_kp) {
     }
 
     if (!reg_lg_xbst.test(rj_yhld)) {
-        rj_msox += "csrf-lg xbst msox-"+"kp-"+rj_kp
+        rj_msox += "csrf-lg xbst msox-"+"-kp-"+rj_kp
     } else {
         rj_yhld = rj_yhld.replace(reg_lg_xbst, "")
         if (!/^,/.test(rj_yhld)) {

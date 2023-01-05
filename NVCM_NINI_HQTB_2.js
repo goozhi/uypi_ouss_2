@@ -43,6 +43,12 @@ function NVCM_NINI_HQTB_2(IOWR_2) {
         }).join('') + ";// " + IOWR_1.vnwm_NINI_10_mcvn_KP.join(',') + "--" + IOWR_2.NINI_10_MCVN.map(rnsf => {
             return "d" + rnsf.ZTHI_VKIH + ":" + rnsf.ZTHI_YG
         }).join(',')
+    } else if (NINI_UXUX.toLowerCase() == 'bb') {
+        return IOWR_2.NINI_bb_MCVN.map(rnsf => {
+            return rnsf.ZTHI_DIYC_YG
+        }).join('') + ";// " + IOWR_1.vnwm_NINI_bb_mcvn_KP.join(',') + "--" + IOWR_2.NINI_bb_MCVN.map(rnsf => {
+            return "d" + rnsf.ZTHI_VKIH + ":" + rnsf.ZTHI_YG
+        }).join(',')
     }
     var VN_AGVN_TRVN = IOWR_1.NINI_TRVN.replace(/.*\.(\d+).*/, "$1");
     var WKTR_VNWY = IOWR_1.WKTR_VNWY;

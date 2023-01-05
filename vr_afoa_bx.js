@@ -5,7 +5,6 @@ var VR_TSJQ_BRTZ_FS_ZV_VNWY_TU = require('./VR_TSJQ_BRTZ_FS_ZV_VNWY_TU')
 var VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN = require('./VR_TSJQ_BRTZ_FS_ZV_33_VNWM_MCVN')
 var VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX = require('./VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX')
 const VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY = require('./VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY')
-const VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS = require('./VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS')
 var VR_TSJQ_BRTZ_FS_ZV_UYPI_RFRF_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_UYPI_RFRF_BRTZ_FS')
 const VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2 = require('./VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2')
 const VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ = require('./VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ')
@@ -287,16 +286,6 @@ function vr_afoa_bx() {
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["47"],
-        VBYT_VKRF_Peng_EBWU: false,
-        eowl_uxux: "object"
-    },
-    {
-        vr_afoa_wu: "DIZC_OUSS",
-        zkrs: "Bi tsjq cd id",
-        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS,
-        csrf: `Bi tsjq cd id`,
-        klch: ``,
-        vnwm_vr_afoa_lzm_wu: ["69"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object"
     },
