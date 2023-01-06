@@ -35,7 +35,7 @@ function VR_EBWU_BRTZ_FS_ZV_33(RJSE_KP){
         LLAO=LLAO.replace(reg_ES,"{"+IOWR_ES[1].replace(/(\w\w)(?=\w)/g,"$1 ")+"}")
     }
     var NINI_UXUX=IOWR_MCVN[2]
-    if(!/^(?:33|3f)$/i.test(NINI_UXUX)){
+    if(!/^(?:33|3f|s)$/i.test(NINI_UXUX)){
         throw new Error("[NINI UXUX ACUN]"+NINI_UXUX+"<--"+RJSE_KP)
     }
     var ZZZZ_KLVQ=IOWR_MCVN[3]

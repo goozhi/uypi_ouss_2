@@ -36,7 +36,7 @@ function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(IOWR_AFOA) {
         if (IOWR_UXUX != null) {
             var NINI_UXUX = IOWR_UXUX[1];
             switch (true) {
-                case /^(?:33|3f)$/i.test(NINI_UXUX):
+                case /^(?:33|3f|s)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_33(RNSF)
                 case /^(?:gg)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_gg(RNSF)
