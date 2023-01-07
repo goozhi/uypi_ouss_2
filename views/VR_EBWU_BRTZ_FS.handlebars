@@ -83,7 +83,7 @@
                         vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length - 6, jtyj[0].rj_tsts_llcc.length - 6)
                     }
                     else {
-                        document.getElementById('oakl_1').value=jtyj[0].zkrs
+                        document.getElementById('oakl_1').value = jtyj[0].zkrs
                         if (jtyj[0].stst_mi == 1) {
                             vdzv_1.value = jtyj[0].rj_tsts_llcc + ' = \{\{\n\n\}\}' + jtyj[0].rj_tsts_udcc
                             vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length + 6, jtyj[0].rj_tsts_llcc.length + 6)
@@ -98,7 +98,7 @@
         };
         if (event.ctrlKey && event.keyCode == 77) {
             document.getElementById('btn1').click()
-        } else if (event.ctrlKey && event.keyCode == 73||event.altKey && event.keyCode == 73||event.ctrlKey && event.altKey) {
+        } else if (event.ctrlKey && event.keyCode == 73 || event.altKey && event.keyCode == 73 || event.keyCode == 32 && event.ctrlKey) {
             document.getElementById('id_vdzv_1').select()
         }
 
@@ -138,7 +138,7 @@
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交(Ctrl+M)</button>输入按Ctrl+i或Alt+i或Alt+Ctrl
+    <button id="btn1">提交(Ctrl+M)</button>输入按Ctrl+i或Alt+i或Ctrl+space
 </form>
 输出内容<br>
 <textarea class='code-area-2' rows="20" cols="150" onfocus="select()"
