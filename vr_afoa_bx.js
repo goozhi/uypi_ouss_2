@@ -28,6 +28,7 @@ const VR_TSJQ_ZV_EYRH_HQTB = require('./VR_TSJQ_ZV_EYRH_HQTB')
 const VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180')
 const VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180')
 const VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA = require('./VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA')
+const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -166,6 +167,28 @@ function vr_afoa_bx() {
     `,
         vnwm_vr_afoa_lzm_wu: ["9", "STR"],
         VBYT_VKRF_Peng_EBWU: true,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "RFRF_JTYJ_NIKC",
+        zkrs: "翻译结果录入",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC,
+        csrf: `该指令帮助用户快速将翻译结果转为json文件保存。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
+        klch: `
+        96={{
+            第一行请输入：你翻译好的文件所在的目录路径，文件内每行的格式如下
+            车速;"Speed"
+            车速"Speed"
+            没有点燃;"No ignition;"
+            靠近双引号的分号将被自动去掉。所以不用担心分号问题
+    
+            第二行请输入：指定输出目录
+
+            第三行请输入：用于检查翻译内容是否符合标准的目录
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["96", "translationToJSON"],
+        VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
     {
