@@ -4,10 +4,10 @@ function YFUX_VBYT_ZV_YHRD_RJ(NIXB_ZTFR_SUM, MCNV_ZTFR_SUM, DIWR_VNWM_reg_VWUX_M
     if (DIWR_VNWM_reg_VWUX_MR_YFUX == null) {
         uz_ms('csrf-nrap aofc dk mcvn-')
     }
-    if (DIWR_VNWM_reg_VWUX_MR_YFUX[0].original == undefined || DIWR_VNWM_reg_VWUX_MR_YFUX[0].mustNot == undefined) {
+    if (DIWR_VNWM_reg_VWUX_MR_YFUX[0].original == undefined) {
         uz_ms('csrf-nrap aofc dk pzva-')
     } else {
-        if (typeof (DIWR_VNWM_reg_VWUX_MR_YFUX[0].original) != "object" || typeof (DIWR_VNWM_reg_VWUX_MR_YFUX[0].mustNot) != "object") {
+        if (typeof (DIWR_VNWM_reg_VWUX_MR_YFUX[0].original) != "object" ) {
             uz_ms('csrf-mcvn aoao ji object-' + DIWR_VNWM_reg_VWUX_MR_YFUX[0].original)
         }
     }
@@ -15,14 +15,14 @@ function YFUX_VBYT_ZV_YHRD_RJ(NIXB_ZTFR_SUM, MCNV_ZTFR_SUM, DIWR_VNWM_reg_VWUX_M
         var RNSF_1 = DIWR_VNWM_reg_VWUX_MR_YFUX[i1]
         var original = RNSF_1.original
         if (original.test(NIXB_ZTFR_SUM)) {
-            if (RNSF_1.mustNot != undefined) {
-                if (RNSF_1.mustNot.test(MCNV_ZTFR_SUM)) {
+            if (RNSF_1.mustNotHave != undefined) {
+                if (RNSF_1.mustNotHave.test(MCNV_ZTFR_SUM)) {
                     return { diwr_ncrl: RNSF_1, gkqj_wwcf: false }
                 }
 
             }
-            if (RNSF_1.mustCarry != undefined) {
-                if (!RNSF_1.mustCarry.test(MCNV_ZTFR_SUM)) {
+            if (RNSF_1.mustHave != undefined) {
+                if (!RNSF_1.mustHave.test(MCNV_ZTFR_SUM)) {
                     return { diwr_ncrl: RNSF_1, gkqj_wwcf: false }
                 }
 

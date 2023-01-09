@@ -46,7 +46,6 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
             if (rn1.aqn_ypfz != undefined) {
                 res.render(rn1.aqn_ypfz, { rj_jtyj: diwr_jtyj_1.rj_jtyj, RJSE_KP })
             } else if (rn1.aqn_voud != undefined) {
-                console.log('voud')
                 res.send(rn1.aqn_voud)
             }
         })
