@@ -18,7 +18,7 @@ function zjzj_brtz_zv_Str2ID(rj_kp) {
         } else {
 
             rj_yhld = rj_yhld.replace(/^,/, "")
-            var reg_bqeo = /[^\u4E00-\u9FA5\uff0c\uff1b\u3002\u2018\u2019\u201d\u201c;\ufffd]*/
+            var reg_bqeo = /[^\u4E00-\u9FA5\uff0c\uff1b\u3002\u201d\u201c;\ufffd]*/
             if (!reg_bqeo.test(rj_yhld)) {
                 rj_msox += "csrf-bqeo pc ftpj frih-" + rj_yhld + "-kp-" + rj_kp
             } else {
