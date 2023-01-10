@@ -14,7 +14,6 @@ async function zjzj_yhrd_diyc_gnpz(diwr_mcvn) {
             return true;
     })
     var vyvy_diwr_vnwm_reg = VNWM_1.map(rn1 => {
-
         return (require(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1))
     })
     var vnwm_yhld = new Array()
@@ -27,9 +26,6 @@ async function zjzj_yhrd_diyc_gnpz(diwr_mcvn) {
             for(fo1 in diwr_yhld.diwr_ncrl){
                 bmlc+="\n"+fo1+":"+diwr_yhld.diwr_ncrl[fo1]
             }
-            // if (diwr_yhld.diwr_ncrl.comment != undefined) {
-            //     bmlc += " 备注：" + diwr_yhld.diwr_ncrl.comment
-            // }
         }
         uz_ms('csrf-ac oan wwcf dk ztfr sum-' + diwr_mcvn.yhrj + " : " + diwr_mcvn.rdrj + bmlc)
     } else {

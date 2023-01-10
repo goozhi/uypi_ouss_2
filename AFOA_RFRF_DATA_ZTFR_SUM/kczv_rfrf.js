@@ -17,7 +17,6 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) {
     var diwr_vnwm_vdum_nini = diwr_vnwm_nini.map(async rn1 => {
         var diwr_vnwm_rfrf_bqeo_diwr
         try {
-
             diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, { YXNA_VNWM_reg_VWUX_MR_YFUX })
         } catch (err) {
             err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message

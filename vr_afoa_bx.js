@@ -29,6 +29,7 @@ const VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_
 const VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180')
 const VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA = require('./VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC')
+const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -187,10 +188,26 @@ function vr_afoa_bx() {
             第三行请输入：用于检查翻译内容是否符合标准的目录
         }}
     `,
-        vnwm_vr_afoa_lzm_wu: ["96", "translationToJSON"],
+        vnwm_vr_afoa_lzm_wu: ["96", "DBTOJSON"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
+    {
+        vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
+        zkrs: "翻译结果json录入",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV,
+        csrf: `该指令帮助用户将翻译资料--JSON文件重新检查一遍并进行合并。该功能一般用于在更新了标准库之后重新使用最新的标准再筛查的情况。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
+        klch: `
+        95={{
+            第一行请输入：JSON文件所在的目录路径
+            第二行请输入：指定输出目录
+            第三行请输入：用于检查翻译内容是否符合标准的目录
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["95", "RECHECKJSON"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },    
     {
         vr_afoa_wu: "VR_33_VNWM_MCVN",
         zkrs: "3f数组参数格式化",
