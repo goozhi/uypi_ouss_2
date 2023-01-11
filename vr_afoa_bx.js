@@ -30,6 +30,7 @@ const VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180 = require('./VR_TSJQ_ZV_DBC_BRTZ_FS_
 const VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA = require('./VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV')
+const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -193,6 +194,22 @@ function vr_afoa_bx() {
         eowl_uxux: "string"
     },
     {
+        vr_afoa_wu: "RFRF_UYPI_ZTFR_SUM",
+        zkrs: "翻译字符串",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM,
+        csrf: `该指令帮助用户根据资料库快速将ids文件中的中文翻译为英文。如果遇到无法自动翻译的中文，将创建一个文件夹，引导用户在该文件夹内自行翻译并录入资料库。rvdb bi tsjq, 你需要输入两个目录，具体请看示例`,
+        klch: `
+        //参数为9=gb2312将以gb2312编码读取ids，默认utf8
+        94=9=gb2312{{
+            第一行请输入：全部ids文件所在目录
+            第二行请输入：指定资料库目录，也就是中英对应资料库的目录
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["94", "TRANSLATE"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+    {
         vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
         zkrs: "翻译结果json录入",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV,
@@ -207,7 +224,7 @@ function vr_afoa_bx() {
         vnwm_vr_afoa_lzm_wu: ["95", "RECHECKJSON"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
-    },    
+    },
     {
         vr_afoa_wu: "VR_33_VNWM_MCVN",
         zkrs: "3f数组参数格式化",

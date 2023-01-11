@@ -21,11 +21,15 @@ function show(id){
     if (vnwm_uj == null) {
         return `<pre>${rj_kp}</pre>`
     } else {
+        var oakl_yntz = 'none'
+        if(vnwm_uj.length<3){
+            oakl_yntz = 'block'
+        }
         var vnwm_html = vnwm_uj.map(async (rn1, eqwy_1) => {
             var zkrs = rn1.match(/.*(?:】|》)/)
                 return wk_mk_html_code(`<div>
         <h4 onclick="show('a${eqwy_1}')">${zkrs}</h4>
-        <div id="a${eqwy_1}" style="display:none">
+        <div id="a${eqwy_1}" style="display:${oakl_yntz}">
         <pre><code class="language-js">${rn1}</code></pre>
         </div>
     </div>`,'javascript')
