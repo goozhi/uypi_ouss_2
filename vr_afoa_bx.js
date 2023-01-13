@@ -211,7 +211,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
-        zkrs: "翻译结果json录入",
+        zkrs: "检查资料库",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV,
         csrf: `该指令帮助用户将翻译资料--JSON文件重新检查一遍并进行合并。该功能一般用于在更新了标准库之后重新使用最新的标准再筛查的情况。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
         klch: `

@@ -3,13 +3,14 @@ async function NVMS_JTYJ_LD_html(rj_kp) {
     var rj_1 = rj_kp
     rj_html = `
     <head>
+    <title>报错内容</title>
     <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
     </head>
 <script type="text/javascript">
 function show(id){
     var obj=document.getElementById(id);
     if(obj.style.display=="none"){
-        obj.style.display="block";
+        obj.style.display="contents";
     }
     else{
         obj.style.display="none";
@@ -23,7 +24,7 @@ function show(id){
     } else {
         var oakl_yntz = 'none'
         if(vnwm_uj.length<3){
-            oakl_yntz = 'block'
+            oakl_yntz = 'contents'
         }
         var vnwm_html = vnwm_uj.map(async (rn1, eqwy_1) => {
             var zkrs = rn1.match(/.*(?:】|》)/)

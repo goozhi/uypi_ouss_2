@@ -27,7 +27,7 @@ async function zjzj_yhrd_diyc_gnpz(diwr_mcvn) {
                 bmlc+="\n"+fo1+":"+diwr_yhld.diwr_ncrl[fo1]
             }
         }
-        uz_ms('csrf-ac oan wwcf dk ztfr sum-' + diwr_mcvn.yhrj + " : " + diwr_mcvn.rdrj + bmlc)
+        uz_ms('csrf-ac oan wwcf dk ztfr sum-' + diwr_mcvn.yhrj + "\n" + diwr_mcvn.rdrj + bmlc)
     } else {
         return true;
     }

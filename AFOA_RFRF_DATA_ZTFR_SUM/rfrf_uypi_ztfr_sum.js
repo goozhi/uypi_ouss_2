@@ -2,6 +2,7 @@ const NIKC_NINI_RJVT = require("../AFOA_BX/NIKC_NINI_RJVT")
 const uz_ms = require("../AFOA_BX/uz_ms")
 const rfrf_ids_yhrj_bqeo = require('./rfrf_ids_yhrj_bqeo')
 const fs = require('fs')
+const encoding = require('encoding')
 const ids_diwr_fs = require("./ids_diwr_fs")
 async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
     if (vkvy_kp == null) {
@@ -50,7 +51,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
         Promise.all(diwr_vnwm_vdum_nini).then(jtyj => {
             var diwr_vnwm_ra_sdbc = []
             var vnwm_ybkc_ra_sdbc = []
-            var nikc_aqn_dbkz_rfrf = jtyj[0].yxna_ids.replace(/(?:\\|\/)[^\\\/]+$/, "/") + 'translate'+(new Date().getTime())+'/'
+            var nikc_aqn_dbkz_rfrf = jtyj[0].yxna_ids.replace(/(?:\\|\/)[^\\\/]+$/, "/") + 'translate' + (new Date().getTime()) + '/'
             var vnwm_rj_nvcm = jtyj.map(rn1 => {
                 var gkqj_bnll_rjqt_ra_sdbc = false
                 for (yg1 of rn1.diwr_vnwm_rfrf_jtyj) {
@@ -63,11 +64,11 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                     }
                 }
                 if (gkqj_bnll_rjqt_ra_sdbc) {
-                    return '该文件有未识别的中文：'+rn1.yxna_ids+'，请在' + nikc_aqn_dbkz_rfrf + '中自行翻译，翻译完成后先录入资料库中，再调用我来翻译'
+                    return '该文件有未识别的中文：' + rn1.yxna_ids + '，请在' + nikc_aqn_dbkz_rfrf + '中自行翻译，翻译完成后先录入资料库中，再调用我来翻译'
                 } else {
-                    fs.writeFileSync(rn1.yxna_ids + '_translated.ids', rn1.diwr_vnwm_rfrf_jtyj.map(rn2 => {
+                    fs.writeFileSync(rn1.yxna_ids + '_translated.ids', encoding.convert(rn1.diwr_vnwm_rfrf_jtyj.map(rn2 => {
                         return 'Str2ID' + '(' + rn2.diwr_jtyj.vkih + '),' + rn2.diwr_jtyj.rdrj + ';'
-                    }).join('\n'))
+                    }).join('\n'),vkvy_kp,'utf8'))
                     return '该文件完成所有翻译 : ' + rn1.yxna_ids + '; 翻译结果已写入到' + rn1.yxna_ids + '_translated.ids' + '中'
                 }
             })
@@ -77,11 +78,13 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                 for (yg1 of vnwm_ybkc_ra_sdbc) {
                     rj_yhrj_slgr += yg1 + '\n'
                     if (rj_yhrj_slgr.length > 4900) {
-                        vnwm_yhrj_slgr.push(rj_yhrj_slgr)
+                        vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/,""))
                         rj_yhrj_slgr = ""
                     }
                 }
-                vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/,""))
+                if(/\S/.test(rj_yhrj_slgr)){
+                    vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/, ""))
+                }
                 vnwm_yhrj_slgr.forEach(rn4 => {
                     if (!fs.existsSync(nikc_aqn_dbkz_rfrf)) {
                         fs.mkdirSync(nikc_aqn_dbkz_rfrf)

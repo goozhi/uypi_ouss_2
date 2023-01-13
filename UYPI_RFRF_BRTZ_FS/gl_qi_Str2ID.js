@@ -6,6 +6,7 @@ function gl_qi_Str2ID(rj_eynh_Stri2ID_kp){
     rj1=rj1.replace(/Str2ID\(\w+\)(?!,)/,"\),");
     rj1=rj1.replace(/\u2103/g,"degree C")
     rj1=rj1.replace(/\u00b0/g,"deg")
+    rj1=rj1.replace(/'s/g,"’s")
     
     rj1=rj1.replace(/\n+$/,"").replace(/\n/,"\\n");
     rj1=rj1.replace(/([^;\s])\s*$/,"$1;")
