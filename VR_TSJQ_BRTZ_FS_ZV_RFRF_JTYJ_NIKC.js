@@ -10,27 +10,26 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC(IOWR_AFOA) {
     }
     var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
-    var jtyp_1
+    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
+    var vkvy_dbkz = 'utf8'
     if (VNWM_MCVN_1 == null) {
 
     } else {
-        VNWM_MCVN_1.forEach(async RNSF => {
+        VNWM_MCVN_1.forEach(RNSF => {
             switch (true) {
-                case /\b(?:str|9)\b/i.test(RNSF):
-                    var reg_Str = /\$Str\(.*\)[\s\S]*?\*\*+/ig;
-                    var reg_VR_AFOA_VNWY_TU = /\b(9|str)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
-                    var vnwm_rjse_Str = BQEO_1.match(reg_Str);
-                    if (vnwm_rjse_Str != null) {
-                        for (var i1 = 0; i1 < vnwm_rjse_Str.length; i1++) {
-                            BQEO_1 = BQEO_1.replace(vnwm_rjse_Str[i1], (await VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}"))).rj_jtyj)
-                        }
+                case /\b9\b/i.test(RNSF):
+                    var reg_vkvy = /=(\w+)/;
+                    var diwr_vkvy_mcvn = RNSF.match(reg_vkvy)
+                    if (diwr_vkvy_mcvn != null) {
+                        vkvy_dbkz = diwr_vkvy_mcvn[1]
                     }
-                    var vnwm_rjse_VR_AFOA_VNWY_TU = BQEO_1.match(reg_VR_AFOA_VNWY_TU);
-                    if (vnwm_rjse_VR_AFOA_VNWY_TU != null) {
-                        for (var i1 = 0; i1 < vnwm_rjse_VR_AFOA_VNWY_TU.length; i1++) {
-                            BQEO_1 = BQEO_1.replace(RNSF, (await VR_EBWU_AFOA_BRTZ_FS(RNSF)).rj_jtyj)
-                        }
+                    break;
+                case /DS\b/.test(RNSF):
+                    IOWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (IOWR_DS_XBST == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    } else {
+                        DS = IOWR_DS_XBST[2]
                     }
                     break;
                 default:
@@ -54,7 +53,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC(IOWR_AFOA) {
     var rjqt_wu = "db_" + (new Date().getTime())
     var rj_nvcm
     try {
-        rj_nvcm = (await kczv_rfrf(vnwm_yxna[0], vnwm_yxna[1].replace(/[\/\\]$/, "") + "/" + rjqt_wu + '.json', vnwm_yxna[2]))
+        rj_nvcm = (await kczv_rfrf(vnwm_yxna[0], vnwm_yxna[1].replace(/[\/\\]$/, "") + "/" + rjqt_wu + '.json', vnwm_yxna[2], vkvy_dbkz))
     } catch (err) {
         if (err != undefined && /【|《/.test(err.message)) {
             var rj_msox_html = await NVMS_JTYJ_LD_html(err.message.replace(/error:\s*/ig, ""))

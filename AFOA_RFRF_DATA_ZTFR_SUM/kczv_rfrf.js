@@ -4,13 +4,13 @@ const NIKC_NINI_RJVT = require("../AFOA_BX/NIKC_NINI_RJVT")
 const fs = require('fs')
 const uz_ms = require("../AFOA_BX/uz_ms")
 const WR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require("../AFOA_BX/WR_TSJQ_ZV_CE_EBWU_LD_YHRJ")
-async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) {
-    if (YXNA_VNWM_reg_VWUX_MR_YFUX == null) {
+async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX, vkvy_dbkz) {
+    if (vkvy_dbkz == null) {
         uz_ms('csrf-mcvn nrap-')
     }
     var diwr_vnwm_nini
     try {
-        diwr_vnwm_nini = NIKC_NINI_RJVT(nikc_vdzv.replace(/(?:\\|\/|)$/, "/"), 'utf8')
+        diwr_vnwm_nini = NIKC_NINI_RJVT(nikc_vdzv.replace(/(?:\\|\/|)$/, "/"), vkvy_dbkz)
     } catch (err) {
         uz_ms(err)
     }
@@ -19,7 +19,11 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) {
         try {
             diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, { YXNA_VNWM_reg_VWUX_MR_YFUX })
         } catch (err) {
-            err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
+            if (/^【|^《/.test(err.message)) {
+                err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
+            }else{
+                
+            }
             throw err
         }
         return diwr_vnwm_rfrf_bqeo_diwr

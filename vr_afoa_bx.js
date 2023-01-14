@@ -177,7 +177,8 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC,
         csrf: `该指令帮助用户快速将翻译结果转为json文件保存。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
         klch: `
-        96={{
+        9=gb2312表示根据gb2312读取文件。
+        96=9=gb2312{{
             第一行请输入：你翻译好的文件所在的目录路径，文件内每行的格式如下
             车速;"Speed"
             车速"Speed"

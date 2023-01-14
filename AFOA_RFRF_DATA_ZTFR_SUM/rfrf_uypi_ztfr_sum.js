@@ -42,7 +42,11 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
         try {
             diwr_vnwm_rfrf_jtyj = await rfrf_ids_yhrj_bqeo(diwr_vnwm_ids, diwr_vnwm_kplu_kp)
         } catch (err) {
-            err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
+            if (/^【|^《/.test(err.message)) {
+                err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
+            } else {
+
+            }
             throw err
         }
         return { diwr_vnwm_rfrf_jtyj, yxna_ids: rn1.YXNA }
@@ -68,7 +72,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                 } else {
                     fs.writeFileSync(rn1.yxna_ids + '_translated.ids', encoding.convert(rn1.diwr_vnwm_rfrf_jtyj.map(rn2 => {
                         return 'Str2ID' + '(' + rn2.diwr_jtyj.vkih + '),' + rn2.diwr_jtyj.rdrj + ';'
-                    }).join('\n'),vkvy_kp,'utf8'))
+                    }).join('\n'), vkvy_kp, 'utf8'))
                     return '该文件完成所有翻译 : ' + rn1.yxna_ids + '; 翻译结果已写入到' + rn1.yxna_ids + '_translated.ids' + '中'
                 }
             })
@@ -78,18 +82,18 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                 for (yg1 of vnwm_ybkc_ra_sdbc) {
                     rj_yhrj_slgr += yg1 + '\n'
                     if (rj_yhrj_slgr.length > 4900) {
-                        vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/,""))
+                        vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/, ""))
                         rj_yhrj_slgr = ""
                     }
                 }
-                if(/\S/.test(rj_yhrj_slgr)){
+                if (/\S/.test(rj_yhrj_slgr)) {
                     vnwm_yhrj_slgr.push(rj_yhrj_slgr.replace(/\n$/, ""))
                 }
                 vnwm_yhrj_slgr.forEach(rn4 => {
                     if (!fs.existsSync(nikc_aqn_dbkz_rfrf)) {
                         fs.mkdirSync(nikc_aqn_dbkz_rfrf)
                     }
-                    fs.writeFileSync(nikc_aqn_dbkz_rfrf + (new Date().getTime()) + '.java', rn4)
+                    fs.writeFileSync(nikc_aqn_dbkz_rfrf + (new Date().getTime()) + '.java', encoding.convert(rn4, vkvy_kp, 'utf8'))
                 })
             }
             resolve(vnwm_rj_nvcm.join('\n\n'))
