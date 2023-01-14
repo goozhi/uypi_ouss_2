@@ -19,10 +19,10 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX, vkvy_
         try {
             diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, { YXNA_VNWM_reg_VWUX_MR_YFUX })
         } catch (err) {
-            if (/^【|^《/.test(err.message)) {
+            if (/^Error: 【|^Error: 《/.test(err.message)) {
                 err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
             }else{
-                
+
             }
             throw err
         }

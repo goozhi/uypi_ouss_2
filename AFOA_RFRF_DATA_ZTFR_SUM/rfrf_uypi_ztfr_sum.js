@@ -42,7 +42,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
         try {
             diwr_vnwm_rfrf_jtyj = await rfrf_ids_yhrj_bqeo(diwr_vnwm_ids, diwr_vnwm_kplu_kp)
         } catch (err) {
-            if (/^【|^《/.test(err.message)) {
+            if (/^Error: 【|^Error: 《/.test(err.message)) {
                 err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
             } else {
 
