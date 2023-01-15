@@ -37,7 +37,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
     var diwr_vnwm_kplu_kp = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
     var nikc_aqn_dbkz_rfrf
     var diwr_vnwm_vdum_nini = diwr_vnwm_rjqt_ids.map(async rn1 => {
-        var diwr_vnwm_ids = ids_diwr_fs(rn1.BQEO)
+        var diwr_vnwm_ids = await ids_diwr_fs(rn1.BQEO)
         var diwr_vnwm_rfrf_jtyj
         try {
             diwr_vnwm_rfrf_jtyj = await rfrf_ids_yhrj_bqeo(diwr_vnwm_ids, diwr_vnwm_kplu_kp)

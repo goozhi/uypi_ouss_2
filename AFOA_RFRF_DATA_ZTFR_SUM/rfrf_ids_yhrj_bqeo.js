@@ -4,31 +4,34 @@ async function rfrf_ids_yhrj_bqeo(diwr_vnwm_ids, diwr_vnwm_kplu_kp) {
     if (diwr_vnwm_kplu_kp == null) {
         uz_ms('csrf-mcvn nrap-')
     }
-    var vn_1 = 2
-    var vyvy_vnwm_yhld_1 = []
-    for (var i1 = 0; i1 * vn_1 < diwr_vnwm_ids.length; i1++) {
-        vyvy_vnwm_yhld_1.push(diwr_vnwm_ids.slice(i1 * vn_1, (i1 + 1) * vn_1))
-    }
-    var vyvy_diwr_vnwm_rfrf_jtyj = vyvy_vnwm_yhld_1.map(async rn1 => {
-        var vnwm_yhld_4 = rn1.map(rn2 => {
-            if (!/\S/.test(rn2.yhrj)) {
-                rn2.rdrj = ''
-                return { diwr_jtyj: rn2, gkqj_sdbc: true };
+    var diwr_vnwm_ybkc = []
+    var vnwm_yhrj = []
+    var vnwm_ra_stlz_yhrj = []
+    var vyvy_diwr_vnwm_rfrf_jtyj = diwr_vnwm_ids.map(async rn1 => {
+        var eqwy_1
+        if (!/\S/.test(rn1.yhrj)) {
+            rn1.rdrj = ''
+            return { diwr_jtyj: rn1, gkqj_sdbc: true };
+        } else if ((eqwy_1 = vnwm_yhrj.indexOf(rn1.yhrj)) != -1) {
+            rn1.rdrj = diwr_vnwm_ybkc[eqwy_1].rdrj
+            return { diwr_jtyj: rn1, gkqj_sdbc: true };
+        } else if (vnwm_ra_stlz_yhrj.indexOf(rn1.yhrj) != -1) {
+            return { diwr_jtyj: rn1, gkqj_sdbc: false }
+        }
+        for (yg1 of diwr_vnwm_kplu_kp) {
+            if (yg1.yhrj == rn1.yhrj) {
+                rn1.rdrj = yg1.rdrj
+                vnwm_yhrj.push(rn1.yhrj)
+                diwr_vnwm_ybkc.push(rn1)
+                return { diwr_jtyj: rn1, gkqj_sdbc: true };
             }
-            for (yg1 of diwr_vnwm_kplu_kp) {
-                if (yg1.yhrj == rn2.yhrj) {
-                    rn2.rdrj = yg1.rdrj
-                    return { diwr_jtyj: rn2, gkqj_sdbc: true };
-                }
-            }
-            return { diwr_jtyj: rn2, gkqj_sdbc: false }
-
-        })
-        return vnwm_yhld_4
+        }
+        vnwm_ra_stlz_yhrj.push(rn1.yhrj)
+        return { diwr_jtyj: rn1, gkqj_sdbc: false }
     })
     return new Promise((resolve, reject) => {
         Promise.all(vyvy_diwr_vnwm_rfrf_jtyj).then(jtyj => {
-            resolve([].concat.apply([], jtyj))
+            resolve(jtyj)
         }).catch(err => {
             reject(err)
         })
