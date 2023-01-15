@@ -1,5 +1,6 @@
 const uz_ms = require("../AFOA_BX/uz_ms");
 const zjzj_yhrd_diyc_gnpz = require("./zjzj_yhrd_diyc_gnpz");
+const fs = require('fs')
 
 async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
     var bqeo_1 = bqeo_kp.replace(/;\s*"/g, "\"");
@@ -9,6 +10,19 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
     if (vnwm_yhrd_diyc == null) {
         uz_ms('csrf-ra oan cgne ab xaap yenh rfrf bqeo-' + bqeo_1)
     } else {
+        if (!fs.existsSync(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX)) {
+            throw new Error('csrf- nikc ac zznq-' + diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX)
+        }    
+        var VNWM_KP = fs.readdirSync(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX);
+        var VNWM_1 = VNWM_KP.filter(rn1 => {
+            if (/\.js$/i.test(rn1))
+                return true;
+        })
+        var vyvy_diwr_vnwm_reg = VNWM_1.map(rn1 => {
+            return (require(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1))
+        })
+        var vnwm_yhld = new Array()
+        var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
         var diwr_vnwm_yhrd_diyc = vnwm_yhrd_diyc.map(async rn1 => {
             var diwr_yhrd_diyc_eynh = rn1.match(reg_yhrd_diyc_eynh)
             if (diwr_yhrd_diyc_eynh == null) {
@@ -18,7 +32,7 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
                 var rdrj = diwr_yhrd_diyc_eynh[2]
 
                 try {
-                    await zjzj_yhrd_diyc_gnpz({ yhrj, rdrj, YXNA_VNWM_reg_VWUX_MR_YFUX: diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX })
+                    await zjzj_yhrd_diyc_gnpz({ yhrj, rdrj, DIWR_VNWM_reg_VWUX_MR_YFUX })
                 } catch (err) {
                     uz_ms(err)
                 }
