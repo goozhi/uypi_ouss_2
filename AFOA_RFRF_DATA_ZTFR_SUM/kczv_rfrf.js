@@ -15,6 +15,9 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX, vkvy_
         uz_ms(err)
     }
     var diwr_vnwm_vdum_nini = diwr_vnwm_nini.map(async rn1 => {
+        if(/\ufffd/.test(rn1.BQEO)){
+            uz_ms('csrf-zjzo ab acun frih rt zjzj vkvy jils eopc-'+rn1.YXNA)
+        }
         var diwr_vnwm_rfrf_bqeo_diwr
         try {
             diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, { YXNA_VNWM_reg_VWUX_MR_YFUX })

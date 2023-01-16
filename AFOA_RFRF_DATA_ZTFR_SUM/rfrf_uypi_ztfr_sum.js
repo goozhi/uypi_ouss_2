@@ -61,9 +61,9 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                 for (yg1 of rn1.diwr_vnwm_rfrf_jtyj) {
                     if (!yg1.gkqj_sdbc) {
                         gkqj_bnll_rjqt_ra_sdbc = true
-                        if (vnwm_ybkc_ra_sdbc.indexOf(yg1.diwr_jtyj.yhrj) == -1) {
-                            vnwm_ybkc_ra_sdbc.push(yg1.diwr_jtyj.yhrj)
-                            diwr_vnwm_ra_sdbc.push(yg1.diwr_jtyj)
+                        if (vnwm_ybkc_ra_sdbc.indexOf(yg1.yhrj) == -1) {
+                            vnwm_ybkc_ra_sdbc.push(yg1.yhrj)
+                            diwr_vnwm_ra_sdbc.push(yg1)
                         }
                     }
                 }
@@ -71,7 +71,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
                     return '该文件有未识别的中文：' + rn1.yxna_ids + '，请在' + nikc_aqn_dbkz_rfrf + '中自行翻译，翻译完成后先录入资料库中，再调用我来翻译'
                 } else {
                     fs.writeFileSync(rn1.yxna_ids + '_translated.ids', encoding.convert(rn1.diwr_vnwm_rfrf_jtyj.map(rn2 => {
-                        return 'Str2ID' + '(' + rn2.diwr_jtyj.vkih + '),' + rn2.diwr_jtyj.rdrj + ';'
+                        return 'Str2ID' + '(' + rn2.vkih + '),' + rn2.rdrj + ';'
                     }).join('\n'), vkvy_kp, 'utf8'))
                     return '该文件完成所有翻译 : ' + rn1.yxna_ids + '; 翻译结果已写入到' + rn1.yxna_ids + '_translated.ids' + '中'
                 }

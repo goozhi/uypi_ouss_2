@@ -295,7 +295,7 @@ app.listen(app.get('port'), function () {
     console.log('启动成功，将自动调用浏览器启动工作助手网页.\n如果无法自动调用浏览器，请与开发者联系，这一定是开发者疏忽忘记解开注释了~~您可以手动打开浏览器输入以下链接' + yxna_url)
     child_process.exec('wmic diskdrive get serialnumber', (error, stdout) => {
         if (error) {
-            console.error(`exec error: ${error}`);
+            console.error(`exec msox: ${error}`);
         } else {
             var vwdp_vnwm = config.vnwm_wj_dk_kmqt_ih.map(async rn1 => {
                 if (stdout.indexOf(rn1) != -1) {
