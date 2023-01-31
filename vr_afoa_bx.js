@@ -31,6 +31,7 @@ const VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA = require('./VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM')
+const VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -191,6 +192,31 @@ function vr_afoa_bx() {
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["96", "DBTOJSON"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "RFRF_BX_GZBU",
+        zkrs: "搜索中英对应库",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU,
+        csrf: `该指令帮助用户管理中英对应库。该指令具体功能请查看示例`,
+        klch: `
+        //参数等于search表示启用关键词搜索模式来获取每个对象内原文或者译文中与指定的关键词相匹配的内容。关键词之间用空白符隔开
+        60=search{{
+            第一行请输入：中英对应库路径
+            第二行请输入：关键词1 关键词2 ...
+        }}
+        //参数等于reg表示启用正则表达式搜索模式来获取每个对象内原文或者译文中与指定的正则表达式相匹配的内容。
+        60=reg{{
+            第一行请输入：中英对应库路径
+            第二行请输入：正则表达式
+        }}
+        //参数等于sentences或者stns表示获取所有含有句子的对象。
+        60=stns{{
+            第一行请输入：中英对应库路径
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["60", "TRANSM"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
