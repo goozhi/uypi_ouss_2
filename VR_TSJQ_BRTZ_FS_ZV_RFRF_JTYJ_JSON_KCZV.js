@@ -15,28 +15,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV(IOWR_AFOA) {
     if (VNWM_MCVN_1 == null) {
 
     } else {
-        VNWM_MCVN_1.forEach(async RNSF => {
-            switch (true) {
-                case /\b(?:str|9)\b/i.test(RNSF):
-                    var reg_Str = /\$Str\(.*\)[\s\S]*?\*\*+/ig;
-                    var reg_VR_AFOA_VNWY_TU = /\b(9|str)=([^\{\}]*)\{\{((?:(?!.+=.*\{\{)[\s\n\S])*?)\}\}(?!\}[^\}])/ig;
-                    var vnwm_rjse_Str = BQEO_1.match(reg_Str);
-                    if (vnwm_rjse_Str != null) {
-                        for (var i1 = 0; i1 < vnwm_rjse_Str.length; i1++) {
-                            BQEO_1 = BQEO_1.replace(vnwm_rjse_Str[i1], (await VR_EBWU_AFOA_BRTZ_FS(RNSF.replace(/\$str\((.*)\)(?:;|)/i, "9=$1{{").replace(/\*\*+/, "}}"))).rj_jtyj)
-                        }
-                    }
-                    var vnwm_rjse_VR_AFOA_VNWY_TU = BQEO_1.match(reg_VR_AFOA_VNWY_TU);
-                    if (vnwm_rjse_VR_AFOA_VNWY_TU != null) {
-                        for (var i1 = 0; i1 < vnwm_rjse_VR_AFOA_VNWY_TU.length; i1++) {
-                            BQEO_1 = BQEO_1.replace(RNSF, (await VR_EBWU_AFOA_BRTZ_FS(RNSF)).rj_jtyj)
-                        }
-                    }
-                    break;
-                default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + AFOA_UJ.VR_AFOA_MCVN)
-            }
-        });
+
     }
     var vnwm_yxna = BQEO_1.split(/\n/)
     vnwm_yxna.forEach(rn1 => {
