@@ -54,7 +54,7 @@ function ZJZJ_3f_VNWM_MCVN(RJSE_KP) {
             RJSE_MSOX += "[SZAS MCVN AC GRBU]" + IOWR_SZAS_MCVN[1] + "<--"
         }
         if (!VBYT_oth) {
-            RJSE_MSOX += "[SZAS MCVN AOAO OKNE oth RVDB LSSR SOBI]" + IOWR_SZAS_MCVN[1] + "<--"
+            RJSE_MSOX += "[SZAS MCVN AOAO OKNE oth RVDB LSSR SZAS SOYC]" + IOWR_SZAS_MCVN[1] + "<--"
         }
     }
     return RJSE_MSOX;
