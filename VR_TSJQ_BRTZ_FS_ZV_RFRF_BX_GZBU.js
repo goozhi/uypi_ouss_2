@@ -4,6 +4,7 @@ const uz_ms = require("./AFOA_BX/uz_ms");
 const kczv_rfrf = require("./AFOA_RFRF_DATA_ZTFR_SUM/kczv_rfrf");
 const reg_dreq = require("./bx_gzbu_zv_rfrf_bx/reg_dreq");
 const eowl_xjvx_uxux_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_xjvx_uxux_diwr");
+const eowl_ac_grbr_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_ac_grbr_diwr");
 
 async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
     var UXUX_YHLD = typeof (IOWR_AFOA)
@@ -49,30 +50,57 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
 
     var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
     var diwr_vnwm_jtco
+    var vwdp_diwr_vnwm_1
     if (VNWM_MCVN_1 == null) {
         uz_ms('csrf-zf aoao vdzv mcvn-')
     } else {
-        VNWM_MCVN_1.forEach(RNSF => {
+        vwdp_diwr_vnwm_1 = VNWM_MCVN_1.map(async RNSF => {
             switch (true) {
                 case /\bsearch\b/i.test(RNSF):
                     var vnwm_gnfo_sj = vnwm_afoa_bqeo[1].split(/\s+/);
                     diwr_vnwm_jtco = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_vnwm_bx)
-                    break;
+                    return diwr_vnwm_jtco
                 case /\breg\b/i.test(RNSF):
                     var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1])
                     diwr_vnwm_jtco = reg_dreq(reg_dbkz, diwr_vnwm_bx)
-                    break;
+                    return diwr_vnwm_jtco
                 case /\b(?:sentences|stns)\b/i.test(RNSF):
-                    
                     diwr_vnwm_jtco = eowl_xjvx_uxux_diwr(diwr_vnwm_bx)
-                    break;
+                    return diwr_vnwm_jtco
+                case /\b(?:test)\b/i.test(RNSF):
+                    var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
+                    if (!fs.existsSync(YXNA_VNWM_reg_VWUX_MR_YFUX)) {
+                        throw new Error('csrf- nikc ac zznq-' + YXNA_VNWM_reg_VWUX_MR_YFUX)
+                    }
+                    var VNWM_reg_VWUX_MR_YFUX_KP = fs.readdirSync(YXNA_VNWM_reg_VWUX_MR_YFUX);
+                    var vnwm_yhld = VNWM_reg_VWUX_MR_YFUX_KP.filter(rn1 => {
+                        if (/\.js$/i.test(rn1))
+                            return true;
+                    })
+                    var vyvy_diwr_vnwm_reg = vnwm_yhld.map(rn1 => {
+                        return (require(YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1))
+                    })
+                    var vnwm_yhld = new Array()
+                    var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
+                    diwr_vnwm_jtco = await eowl_ac_grbr_diwr(diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
+                    return diwr_vnwm_jtco
                 default:
                     throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }
-    return diwr_vnwm_jtco.map(rn1=>{
-        return rn1.yhrj+'\n'+rn1.rdrj
-    }).join('\n\n')
+    return new Promise((resolve, reject) => {
+        Promise.all(vwdp_diwr_vnwm_1).then(jtyj => {
+            resolve(jtyj[0].map(rn1 => {
+                if (rn1.err == undefined) {
+                    return rn1.yhrj + '\n' + rn1.rdrj
+                } else {
+                    return rn1.err.message.replace(/Error: /,"")
+                }
+            }).join('\n\n'))
+        }).catch(err => {
+            reject(err)
+        })
+    })
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU

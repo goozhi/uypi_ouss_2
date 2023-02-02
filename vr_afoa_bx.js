@@ -197,7 +197,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_BX_GZBU",
-        zkrs: "搜索中英对应库",
+        zkrs: "管理中英对应库",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU,
         csrf: `该指令帮助用户管理中英对应库。该指令具体功能请查看示例`,
         klch: `
@@ -214,6 +214,11 @@ function vr_afoa_bx() {
         //参数等于sentences或者stns表示获取所有含有句子的对象。
         60=stns{{
             第一行请输入：中英对应库路径
+        }}
+        //参数等于test表示使用指定的标准库对中英对应库进行不合格对象的筛查。并返回所有不合格对象的相关信息
+        60=test{{
+            第一行请输入：中英对应库路径
+            第二行请输入：标准库路径
         }}
     `,
         vnwm_vr_afoa_lzm_wu: ["60", "TRANSM"],
