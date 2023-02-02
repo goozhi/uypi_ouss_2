@@ -82,6 +82,10 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
                     })
                     var vnwm_yhld = new Array()
                     var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
+                    if (DIWR_VNWM_reg_VWUX_MR_YFUX.length == 0) {
+                        uz_ms('csrf-Bi nikc tt hmpc J S rjqt-' + nikc_bx)
+                    }
+    
                     diwr_vnwm_jtco = await eowl_ac_grbr_diwr(diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
                     return diwr_vnwm_jtco
                 default:
