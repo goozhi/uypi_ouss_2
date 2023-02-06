@@ -32,6 +32,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTY
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU')
+const VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY = require('./VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -484,6 +485,21 @@ Battery production date; "
             , "FINDMENU"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object"
+    },
+    {
+        vr_afoa_wu: "ZHQH_JS_DYVY",
+        zkrs: "执行js代码",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY,
+        csrf: "Bi tsjq kfou dbkz zhqh dbkz vdzv dk md-js-md dyvy.",
+        klch: `js={{
+            var a=9
+            a++
+            return a
+        }}`,
+        vnwm_vr_afoa_lzm_wu: ["999"
+            , "JS","JAVASCRIPT"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
     },
     {
         vr_afoa_wu: "ESIH_BRTZ_FS",
