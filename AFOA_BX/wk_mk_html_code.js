@@ -15,7 +15,7 @@ function wk_mk_html_code(rj_kp, ebwu) {
                 rj_code = hljs(rj_code, ebwu).value
                 rj_pre = rj_pre.replace(diwr_code[1], rj_code)
             }
-            rj_pre = rj_pre.replace(/<pre>/g, "<pre class=\"code-area\">")//.replace(reg_lclc, "<span  class=\"comment\">$1</span>").replace(reg_vnzt, "<span class=\"number\">$1</span>")
+            rj_pre = rj_pre.replace(/<pre>/g, "<pre class=\"code-area\">").replace(/<!/g,"&lt;!")//.replace(reg_lclc, "<span  class=\"comment\">$1</span>").replace(reg_vnzt, "<span class=\"number\">$1</span>")
             rj_1 = rj_1.replace(diwr_yhld[0], rj_pre)
         } else {
             break;
