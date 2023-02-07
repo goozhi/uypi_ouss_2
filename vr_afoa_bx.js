@@ -33,6 +33,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV = require('./VR_TSJQ_BRTZ_FS_ZV_RFR
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM')
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU')
 const VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY = require('./VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY')
+const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require('./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -497,7 +498,7 @@ Battery production date; "
             return a
         }}`,
         vnwm_vr_afoa_lzm_wu: ["999"
-            , "JS","JAVASCRIPT"],
+            , "JS", "JAVASCRIPT"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
@@ -604,6 +605,17 @@ Battery production date; "
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["ITEM", "54"]
+    },
+    {
+        vr_afoa_wu: "CE_EBWU_LD_YHRJ",
+        zkrs: "UUVO QR TSJQ",
+        csrf: `该指令仅开发者使用，用于WRVR语言解析。`,
+        klch: `yhrj={{uuvo qr}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_CE_EBWU_LD_YHRJ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["YHRJ"]
     },
     {
         vr_afoa_wu: "EYRH_HQTB",
