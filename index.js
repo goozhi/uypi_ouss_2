@@ -39,6 +39,7 @@ const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
 const WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS = require('./WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS');
 const os = require('os');
+const WLYC_VR_MD_RJOK_html_FS = require('./WLYC_VR_md_RJOK_html_FS');
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
 app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 app.engine('handlebars', handlebars.engine);
@@ -86,6 +87,22 @@ app.get('/VR_EBWU_ATRS', function (req, res) {
 });
 app.get('/VR_VKJP', function (req, res) {
     WLYC_VR_VKJP(req, res);
+});
+app.get('/uypi_ouss_zvow_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/uypi_ouss_zvow.md");
+});
+app.get('/ywzb_kfou_zv_vscode_rvdb_tsfz_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vscode_rvdb_tsfz.md");
+});
+
+app.get('/ywzb_kfou_zv_nwvt_vo_vy_es_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_nwvt_vo_vy_es.md");
+});
+app.get('/ywzb_kfou_zv_vr_vnwy_tu_ngnc_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vr_vnwy_tu_ngnc.md");
+});
+app.get('/riri_cl_rvdb_wtjn_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/riri_cl_rvdb_wtjn.md");
 });
 app.get('/UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS', function (req, res) {
     WLYC_UYPI_OUSS_RVDB_TSFZ_RJOK_html_FS(req, res);
