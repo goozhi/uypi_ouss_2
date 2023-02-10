@@ -328,26 +328,36 @@ app.listen(app.get('port'), function () {
                         return;
                     }
                 }
-                const child = spawn('cmd.exe');
-                child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
-                child.stdout.on('data', (data) => {
-                    console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
-                });
-
-                child.stderr.on('data', (data) => {
-                    console.error(`stderr: ${data}`);
-                });
-
-                child.on('close', (code) => {
-                    console.log(`子进程退出码：${code}`);
-                });
-
-                child.on('exit', code => {
-                    console.log('child exit code: ' + code)
+                child_process.exec(yxna_exe + ' ' + yxna_url, (error, stdout)=>{
+                    if (error) {
+                        console.error(`exec drbz riri cl msox: ${error}`);
+                    }
                 })
-                child.on('close', code => {
-                    console.log('child close code: ' + code)
-                })
+                var child
+                try {
+                    // child = spawn('cmd.exe');
+                    // child.stdin.write(yxna_exe + ' ' + yxna_url + '\n');
+                    // child.stdout.on('data', (data) => {
+                        // console.log(`stdout: ` + encoding.convert(data, 'utf8', 'GB2312').toString());
+                    // });
+// 
+                    // child.stderr.on('data', (data) => {
+                        // console.error(`stderr: ${data}`);
+                    // });
+// 
+                    // child.on('close', (code) => {
+                        // console.log(`子进程退出码：${code}`);
+                    // });
+// 
+                    // child.on('exit', code => {
+                        // console.log('child exit code: ' + code)
+                    // })
+                    // child.on('close', code => {
+                        // console.log('child close code: ' + code)
+                    // })
+                } catch (err) {
+
+                }
             }).catch(err => {
                 if (err) {
                     console.error("* NWVT md-ID-md NKME : " + err)
