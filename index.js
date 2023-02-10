@@ -94,6 +94,9 @@ app.get('/uypi_ouss_zvow_rjok_ld_html', function (req, res) {
 app.get('/ywzb_kfou_zv_vscode_rvdb_tsfz_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vscode_rvdb_tsfz.md");
 });
+app.get('/ywzb_kfou_zv_rfrf_uypi_wtjn_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_rfrf_uypi_wtjn.md");
+});
 
 app.get('/ywzb_kfou_zv_nwvt_vo_vy_es_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_nwvt_vo_vy_es.md");
