@@ -8,6 +8,7 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var ZJZJ_3c_NINI = require('./ZJZJ_3c_NINI')
     var ZJZJ_0a_NINI = require('./ZJZJ_0a_NINI')
     var ZJZJ_bb_NINI = require('./ZJZJ_bb_NINI')
+    var ZJZJ_0b_NINI = require('./ZJZJ_0b_NINI')
     var ZJZJ_1f_NINI = require('./ZJZJ_1f_NINI')
 
     var ZJZJ_10_NINI = require('./ZJZJ_10_NINI')
@@ -21,6 +22,7 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var reg_3f_NINI = /.*\},\s*3f\s*,.*/ig;
     var reg_3c_NINI = /.*\},\s*3c\s*,.*/ig;
     var reg_0a_NINI = /.*\},\s*0a\s*,.*/ig;
+    var reg_0b_NINI = /.*\},\s*0b\s*,.*/ig;
     var reg_bb_NINI = /.*\},\s*bb\s*,.*/ig;
     var reg_1f_NINI = /.*\},\s*1f\s*,.*/ig;
 
@@ -33,6 +35,7 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     var RJSE_3f_NINI = RJSE_1.match(reg_3f_NINI);
     var RJSE_3c_NINI = RJSE_1.match(reg_3c_NINI);
     var RJSE_0a_NINI = RJSE_1.match(reg_0a_NINI);
+    var RJSE_0b_NINI = RJSE_1.match(reg_0b_NINI);
     var RJSE_bb_NINI = RJSE_1.match(reg_bb_NINI);
     var RJSE_1f_NINI = RJSE_1.match(reg_1f_NINI);
 
@@ -66,6 +69,10 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
         RJSE_MSOX += await ZJZJ_0a_NINI(RJSE_0a_NINI);
         RJSE_1 = RJSE_1.replace(reg_0a_NINI, "")
     }
+    if (RJSE_0b_NINI != null) {
+        RJSE_MSOX += await ZJZJ_0b_NINI(RJSE_0b_NINI);
+        RJSE_1 = RJSE_1.replace(reg_0b_NINI, "")
+    }
     if (RJSE_bb_NINI != null) {
         RJSE_MSOX += await ZJZJ_bb_NINI(RJSE_bb_NINI);
         RJSE_1 = RJSE_1.replace(reg_bb_NINI, "")
@@ -74,7 +81,7 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
         RJSE_MSOX += await ZJZJ_1f_NINI(RJSE_1f_NINI);
         RJSE_1 = RJSE_1.replace(reg_1f_NINI, "")
     }
-        if (RJSE_10_NINI != null) {
+    if (RJSE_10_NINI != null) {
         RJSE_MSOX += await ZJZJ_10_NINI(RJSE_10_NINI);
         RJSE_1 = RJSE_1.replace(reg_10_NINI, "")
     }
@@ -110,6 +117,6 @@ async function ZJZJ_TSJQ_Ecu(ZJZJ_BQEO) {
     if (/\$(?!\$)|(?:^|\n)\*|\{.+\}/.test(RJSE_1)) {
         RJSE_MSOX += "\n<ZJZJ Ecu TSJQ ZD VODY DK ACUN BQEO>" + ZJZJ_BQEO.match(/\/\/line \d+/) + " - " + ZJZJ_BQEO.match(/\/\/line \d+$/) + "\n" + RJSE_1 + "\n</ZJZJ Ecu TSJQ ZD VODY DK ACUN BQEO>";
     }
-    return RJSE_MSOX;
+    return RJSE_MSOX.replace(/^\s+$/,"");
 }
 module.exports = ZJZJ_TSJQ_Ecu;

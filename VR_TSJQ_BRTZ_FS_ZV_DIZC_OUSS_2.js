@@ -14,13 +14,13 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(IOWR_AFOA) {
         RJSE_ZTHI_SLGR="[4=01][4=0x10] [4=0xff]"
     }
     if (VNWM_MCVN_1 == null) {
-        if(/^\s*32\s*$/.test(RJSE_ZTHI_SLGR)){
+        if(/^\s*(?:32|asc)\s*$/i.test(RJSE_ZTHI_SLGR)){
             RJSE_ZTHI_SLGR="["+ZTHI_YG_VDUM("32").map(RNSF=>{
                 return RNSF.ZTHI_VKIH+"="+RNSF.DIYC_YG
             }).join(' ')+"]"
-        }else if(/^\s*9\s*=.*$/.test(RJSE_ZTHI_SLGR)){
+        }else if(/^\s*(?:9|max)\s*=.*$/i.test(RJSE_ZTHI_SLGR)){
             RJSE_ZTHI_SLGR="okwk_zthi"+RJSE_ZTHI_SLGR.replace(/9/,"")
-        }else if (/^\s*9\s*$/.test(RJSE_ZTHI_SLGR)) {
+        }else if (/^\s*(?:9|max)\s*$/i.test(RJSE_ZTHI_SLGR)) {
             RJSE_ZTHI_SLGR = "okwk_zthi=1 0X10 0XFF"
         }
     }else{
