@@ -37,11 +37,11 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
         return;
     }
     if (/\S/.test(diwr_jtyj_1.rj_jtyj)) {
-        exec('clip',(err,stdout)=>{
-            if (err) {
-                console.error(`exec msox: ${err}`);
-            }
-        }).stdin.end(encoding.convert(diwr_jtyj_1.rj_jtyj, 'gbk', 'utf8'))
+        // exec('clip',(err,stdout)=>{
+        //     if (err) {
+        //         console.error(`exec msox: ${err}`);
+        //     }
+        // }).stdin.end(encoding.convert(diwr_jtyj_1.rj_jtyj, 'gbk', 'utf8'))
     }
     if (diwr_jtyj_1.vnwm_usni.length == 0) {
         res.render('VR_EBWU_BRTZ_FS', { rj_jtyj: diwr_jtyj_1.rj_jtyj, RJSE_KP });

@@ -134,14 +134,20 @@
 
 <form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
     <hr>
-    目标内容<br>
+    目标内容(输入按Ctrl+i或Alt+i或Ctrl+space)<br>
     <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交(Ctrl+M)</button>输入按Ctrl+i或Alt+i或Ctrl+space
+    <button id="btn1">提交(Ctrl+M)</button>
 </form>
-输出内容<br>
-<textarea class='code-area-2' rows="20" cols="150" onfocus="select()"
+
+输出内容-----------------<button onclick="jkub_jtyj()">复制结果</button><br>
+<textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150" onfocus="select()"
     style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{rj_jtyj}}</textarea>
 <script>
+    function jkub_jtyj() {
+        var ele_1 = document.getElementById("vdum_bqeo");
+        ele_1.select()
+        document.execCommand('copy');
+    }
 </script>
