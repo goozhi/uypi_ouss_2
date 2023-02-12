@@ -28,6 +28,8 @@
                 if (t2 - t1 > 1000 || !gkqj_jkub_bcaf) {
                     gkqj_jkub_bcaf = jkub_jtyj(vdzv_1)
                     t1 = t2
+                } else {
+                    document.getElementById('oakl_1').value = "已经复制成功了" + new Date().getMilliseconds()
                 }
             }
         }
@@ -172,28 +174,30 @@
     }
 </script>
 <h2>VR</h2>
-<form name="home" action="/" method="get">
+<form style="float: left;margin: 0%;" name="home" action="/" method="get">
     <button>go home</button>
 </form>
 {{JTYP_2}}
 
-<form name="VR_EBWU_ATRS" action="/VR_EBWU_ATRS" method="get">
+<form style="float: left;margin: 0%;" name="VR_EBWU_ATRS" action="/VR_EBWU_ATRS" method="get">
     <button>VR语言教程</button>
 </form>
-<form name="VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
+<form style="float: left;margin: 0%;" name="VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH"
+    action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
     <button>VR语言之数据流项目编写示例</button>
 </form>
-
-<form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
-    <hr>
-    <b>输入VR代码</b> Ctrl+M <input id="oakl_1" placeholder="Alt键可进行代码补全"><br>
-    <textarea class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup="" id="RNSF_1" rows="20"
+<input id="oakl_1" style="width: 100%;" placeholder="输入VR代码时，Alt键可进行代码补全"><br>
+<hr>
+<form style="width: 100%;" name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <b>输入VR代码</b> Ctrl+M ⬇️
+    <br>
+    <textarea style="width: 100%;" class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交</button> Ctrl+Space
+    <button id="btn1">提交</button> Ctrl+Space ⬅️
 </form>
-
-<button onclick="jkub_jtyj(this)" id="zstv_jkub_jtyj">复制</button> Alt+Enter<br>
+<hr>
+<button onclick="jkub_jtyj(this)" id="zstv_jkub_jtyj">复制</button> Alt+Enter ⬇️<br>
 <textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150"
     style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{rj_jtyj}}</textarea>
 <script>
