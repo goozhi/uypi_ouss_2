@@ -9,99 +9,45 @@
         onload="console.log('Sdbc DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI')"></script>
 </head>
 <script>
+    var t1 = new Date().getTime()
+    var t2 = t1
+    var vdzv_1
+    var gkqj_jkub_bcaf
+    var gkqj_pc_mcvn_hm_siih
+    var gkqj_pc_mcvn_pc_siih
+    var gkqj_znzo_mcvn_bqeo
     document.onkeydown = function (event) {
         if (event.altKey) {
             event.preventDefault();
+            console.log(event.keyCode)
+            vdzv_1 = document.getElementById('id_vdzv_1')
+            if (document.activeElement === vdzv_1) {
+                fo_Alt_vdzv(event);
+            } else {
+                var t2 = new Date().getTime()
+                if (t2 - t1 > 1000 || !gkqj_jkub_bcaf) {
+                    gkqj_jkub_bcaf = jkub_jtyj(vdzv_1)
+                    t1 = t2
+                }
+            }
         }
-        console.log(event.keyCode)
+        else if (event.ctrlKey && event.keyCode == 77) {
+            document.getElementById('id_vdzv_1').select()
+        }
+        console.log("keyCode: " + event.keyCode)
     }
     document.onkeyup = function (event) {
-        var oEvent = event ? event : (window.event ? window.event : null);
-        isKeyLoosen(oEvent);
-    }
-
-
-    function isKeyLoosen(event) {//抬起按键
-        var vdzv_1 = document.getElementById('id_vdzv_1')
+        var event_1 = event ? event : (window.event ? window.event : null);
+        if (event.keyCode == 32 && event.ctrlKey) {
+            document.getElementById('btn1').click()
+            return
+        }
+        vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_kp = vdzv_1.selectionStart
         var trig_1 = trig_kp
         var rj_tsts_llcc = rj_1.slice(0, trig_kp)
         var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
-        vdzv_1.onkeydown = function (event) {
-            if (event.key === 'Alt') {
-                var a = tsjq_tem_non(rj_1, trig_kp)
-                Promise.all([a]).then(jtyj => {
-                    if (/\w+\s*=\s*9\s*(?:=(?:\s*\w+|)|)\s*$/.test(rj_tsts_llcc)) {
-                        if (/9=\s*(\w+)\s*$/.test(rj_tsts_llcc)) {
-                            var vnwm_vkvy = ['GB2312', 'UTF8']
-                            var dbkz_vdzv_vkvy = rj_tsts_llcc.replace(/[\s\S]*=\s*(\w+)\s*$/, "$1")
-                            var vnwm_vkvy_stst = vnwm_vkvy.map(rn1 => {
-                                return { stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1, dbkz_vdzv_vkvy.toUpperCase()), dbkz_vdzv_vkvy, ahdb_vkvy: rn1 }
-                            })
-                            vnwm_vkvy_stst.sort((a, b) => b.stst_mi - a.stst_mi)
-                            vdzv_1.value = rj_tsts_llcc.replace(/=\s*(\w+)\s*$/, "=") + vnwm_vkvy_stst[0].ahdb_vkvy
-                        } else if (/=\s*$/.test(rj_tsts_llcc)) {
-                            vdzv_1.value = rj_tsts_llcc + "GB2312"
-                        } else if (/9\s*$/.test(rj_tsts_llcc)) {
-                            vdzv_1.value = rj_tsts_llcc + "=GB2312"
-                        }
-                        if (!/^.*\S/.test(rj_tsts_udcc)) {
-                            vdzv_1.value += "\{\{\n\n\}\}"
-                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
-                        }
-                    } else if (/=\s*$/.test(vdzv_1.value)) {
-                        vdzv_1.value += " \{\{\n\n\}\}"
-                        vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
-                    }
-                    else if (!jtyj[0].gkqj_dbkz_tsts_yjab) {
-                        if (/\{\{\s*\n$/.test(rj_tsts_llcc) && /^\s*\n\}\}/.test(rj_tsts_udcc)) {
-                            var gkqj_bnll_tsjq_bqeo_ah_lh_vv = false;
-                            var diwr_dbkz_tsjq = rj_tsts_llcc.match(/(\w+)\s*=\s*\{\{\s*$/)
-                            if (diwr_dbkz_tsjq != null) {
-                                for (yg1 of diwr_vnwm_tsjq) {
-                                    if (yg1.vnwm_vr_afoa_lzm_wu.indexOf(diwr_dbkz_tsjq[1].toUpperCase()) != -1) {
-                                        if (/\{\s*\}\}/.test(yg1.klch)) {
-                                            gkqj_bnll_tsjq_bqeo_ah_lh_vv = true;
-                                            break;
-
-                                        }
-                                    }
-
-                                }
-                            }
-                            if (gkqj_bnll_tsjq_bqeo_ah_lh_vv) {
-                                document.getElementById('btn1').click()
-                            } else {
-                                vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
-                            }
-                        } else if (/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
-                            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
-                        }
-                    }
-                    else if (/\n$/.test(jtyj[0].rj_tsts_llcc && /\n\}\}/.test(jtyj[0].rj_tsts_udcc))) {
-                        vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length - 6, jtyj[0].rj_tsts_llcc.length - 6)
-                    }
-                    else {
-                        document.getElementById('oakl_1').value = jtyj[0].zkrs
-                        if (jtyj[0].stst_mi == 1) {
-                            vdzv_1.value = jtyj[0].rj_tsts_llcc + ' = \{\{\n\n\}\}' + jtyj[0].rj_tsts_udcc
-                            vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length + 6, jtyj[0].rj_tsts_llcc.length + 6)
-                        } else {
-                            vdzv_1.value = jtyj[0].rj_tsts_llcc.replace(/\w+$/, jtyj[0].vr_afoa_lzm_wu) + jtyj[0].rj_tsts_udcc
-                            vdzv_1.setSelectionRange(vdzv_1.value.length, vdzv_1.value.length)
-                        }
-                    }
-                })
-
-            }
-        };
-        if (event.ctrlKey && event.keyCode == 77) {
-            document.getElementById('btn1').click()
-        } else if (event.ctrlKey && event.keyCode == 73 || event.altKey && event.keyCode == 73 || event.keyCode == 32 && event.ctrlKey) {
-            document.getElementById('id_vdzv_1').select()
-        }
-
         if (event.keyCode == 13) {
             if (/\{/.test(rj_1[trig_1 - 2]) && /\}/.test(rj_1[trig_1])) {
                 vdzv_1.value = rj_1.slice(0, trig_1) + "\n" + rj_1.slice(trig_1, rj_1.length)
@@ -114,6 +60,112 @@
             }
         }
 
+
+    }
+
+    function fo_Alt_vdzv(event) {
+        vdzv_1 = document.getElementById('id_vdzv_1')
+        var rj_1 = vdzv_1.value
+        var trig_kp = vdzv_1.selectionStart
+        var trig_1 = trig_kp
+        var rj_tsts_llcc = rj_1.slice(0, trig_kp)
+        var rj_tsts_udcc = rj_1.slice(trig_kp, rj_1.length)
+        if (/^\s*=/.test(rj_tsts_udcc)) {
+            return
+        } else if (/=\s*[a-z'_0-9\u4E00-\u9FA5]+\s*$/i.test(rj_tsts_llcc)) {
+            if (!/^.*\{\{/.test(rj_tsts_udcc)) {
+                gkqj_pc_mcvn_hm_siih = true;
+            } else {
+                gkqj_pc_mcvn_pc_siih = true;
+            }
+        } else if (/=\s*[a-z'_0-9\u4E00-\u9FA5]+\s*=\s*$/i.test(rj_tsts_llcc)) {
+            gkqj_znzo_mcvn_bqeo = true;
+        }
+        else {
+            console.log(rj_tsts_llcc)
+        }
+        if (gkqj_pc_mcvn_hm_siih) {
+            vdzv_1.value = rj_tsts_llcc + " \{\{\n\n\}\}" + rj_tsts_udcc
+            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
+            gkqj_pc_mcvn_hm_siih = false
+            return
+        } else if (gkqj_pc_mcvn_pc_siih) {
+            vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
+            gkqj_pc_mcvn_pc_siih = false
+            return
+        } else if (gkqj_znzo_mcvn_bqeo) {
+            if (/\w+\s*=\s*9\s*(?:=(?:\s*\w+|)|)\s*$/.test(rj_tsts_llcc)) {
+                console.log('znzo...')
+                if (/9=\s*(\w+)\s*$/.test(rj_tsts_llcc)) {
+                    var vnwm_vkvy = ['GB2312', 'UTF8']
+                    var dbkz_vdzv_vkvy = rj_tsts_llcc.replace(/[\s\S]*=\s*(\w+)\s*$/, "$1")
+                    var vnwm_vkvy_stst = vnwm_vkvy.map(rn1 => {
+                        return { stst_mi: DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1, dbkz_vdzv_vkvy.toUpperCase()), dbkz_vdzv_vkvy, ahdb_vkvy: rn1 }
+                    })
+                    vnwm_vkvy_stst.sort((a, b) => b.stst_mi - a.stst_mi)
+                    vdzv_1.value = rj_tsts_llcc.replace(/=\s*(\w+)\s*$/, "=") + vnwm_vkvy_stst[0].ahdb_vkvy
+                } else if (/=\s*$/.test(rj_tsts_llcc)) {
+                    vdzv_1.value = rj_tsts_llcc + "GB2312"
+                } else if (/9\s*$/.test(rj_tsts_llcc)) {
+                    vdzv_1.value = rj_tsts_llcc + "=GB2312"
+                }
+                if (!/^.*\S/.test(rj_tsts_udcc)) {
+                    vdzv_1.value += "\{\{\n\n\}\}"
+                    vdzv_1.setSelectionRange(rj_tsts_llcc.length + 3, rj_tsts_llcc.length + 3)
+                }
+            } else {
+
+            }
+            gkqj_znzo_mcvn_bqeo = false
+            return
+        } else {
+
+        }
+        var a = tsjq_tem_non(rj_1, trig_kp)
+        Promise.all([a]).then(jtyj => {
+            if (/=\s*$/.test(vdzv_1.value)) {
+                vdzv_1.value += " \{\{\n\n\}\}"
+                vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
+            }
+            else if (!jtyj[0].gkqj_dbkz_tsts_yjab) {
+                if (/\{\{\s*\n$/.test(rj_tsts_llcc) && /^\s*\n\}\}/.test(rj_tsts_udcc)) {
+                    var gkqj_bnll_tsjq_bqeo_ah_lh_vv = false;
+                    var diwr_dbkz_tsjq = rj_tsts_llcc.match(/(\w+)\s*=\s*\{\{\s*$/)
+                    if (diwr_dbkz_tsjq != null) {
+                        for (yg1 of diwr_vnwm_tsjq) {
+                            if (yg1.vnwm_vr_afoa_lzm_wu.indexOf(diwr_dbkz_tsjq[1].toUpperCase()) != -1) {
+                                if (/\{\s*\}\}/.test(yg1.klch)) {
+                                    gkqj_bnll_tsjq_bqeo_ah_lh_vv = true;
+                                    break;
+
+                                }
+                            }
+
+                        }
+                    }
+                    if (gkqj_bnll_tsjq_bqeo_ah_lh_vv) {
+                        document.getElementById('btn1').click()
+                    } else {
+                        vdzv_1.setSelectionRange(rj_tsts_llcc.length - 4, rj_tsts_llcc.length - 4)
+                    }
+                } else if (/=$/.test(rj_tsts_llcc) && /^\s\{\{/.test(rj_tsts_udcc)) {
+                    vdzv_1.setSelectionRange(rj_tsts_llcc.length + 4, rj_tsts_llcc.length + 4)
+                }
+            }
+            else if (/\n$/.test(jtyj[0].rj_tsts_llcc && /\n\}\}/.test(jtyj[0].rj_tsts_udcc))) {
+                vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length - 6, jtyj[0].rj_tsts_llcc.length - 6)
+            }
+            else {
+                document.getElementById('oakl_1').value = jtyj[0].zkrs
+                if (jtyj[0].stst_mi == 1) {
+                    vdzv_1.value = jtyj[0].rj_tsts_llcc + ' = \{\{\n\n\}\}' + jtyj[0].rj_tsts_udcc
+                    vdzv_1.setSelectionRange(jtyj[0].rj_tsts_llcc.length + 6, jtyj[0].rj_tsts_llcc.length + 6)
+                } else {
+                    vdzv_1.value = jtyj[0].rj_tsts_llcc.replace(/\w+$/, jtyj[0].vr_afoa_lzm_wu) + jtyj[0].rj_tsts_udcc
+                    vdzv_1.setSelectionRange(vdzv_1.value.length, vdzv_1.value.length)
+                }
+            }
+        })
     }
 
     function isKeyPressed(event) {
@@ -121,7 +173,7 @@
 </script>
 <h2>VR</h2>
 <form name="home" action="/" method="get">
-    <button>go home</button>按Alt键进行代码补全<input id="oakl_1">
+    <button>go home</button>
 </form>
 {{JTYP_2}}
 
@@ -134,20 +186,30 @@
 
 <form name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
     <hr>
-    目标内容(输入按Ctrl+i或Alt+i或Ctrl+space)<br>
-    <textarea class='code-area-2' name="VDZV_1" id="id_vdzv_1" onfocus="select()" onkeyup="" id="RNSF_1" rows="20"
+    <b>输入VR代码</b> Ctrl+M <input id="oakl_1" placeholder="Alt键可进行代码补全"><br>
+    <textarea class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup="" id="RNSF_1" rows="20"
         cols="150">{{RJSE_KP}}</textarea>
     <br>
-    <button id="btn1">提交(Ctrl+M)</button>
+    <button id="btn1">提交</button> Ctrl+Space
 </form>
 
-输出内容-----------------<button onclick="jkub_jtyj()">复制结果</button><br>
-<textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150" onfocus="select()"
+<button onclick="jkub_jtyj(this)" id="zstv_jkub_jtyj">复制</button> Alt+Enter<br>
+<textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150"
     style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{rj_jtyj}}</textarea>
 <script>
-    function jkub_jtyj() {
+    function jkub_jtyj(ubqt) {
         var ele_1 = document.getElementById("vdum_bqeo");
+        var zstv_jkub_jtyj = document.getElementById("zstv_jkub_jtyj");
         ele_1.select()
-        document.execCommand('copy');
+        var gkqj_jkub_bcaf = document.execCommand('copy');
+        console.log(gkqj_jkub_bcaf)
+        if (!gkqj_jkub_bcaf) {
+            document.getElementById('oakl_1').value = "复制失败" + new Date().getTime().toString().replace(/.*(\w{4})/, "$1")
+            zstv_jkub_jtyj.focus()
+            return gkqj_jkub_bcaf
+        }
+        zstv_jkub_jtyj.focus()
+        document.getElementById('oakl_1').value = "复制成功" + new Date().getTime().toString().replace(/.*(\w{4})/, "$1")
+        return gkqj_jkub_bcaf
     }
 </script>
