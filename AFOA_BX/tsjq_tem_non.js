@@ -41,7 +41,7 @@ function tsjq_tem_non(rj_kp, tsts_trig_kp) {
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
-        zkrs: "菜单指令",
+        zkrs:"菜单指令",
          
         csrf: `该指令帮助dbkz ngnc 彭 EBWU ljey, bi tsjq lh md-VR-md tsjq, soNO bi tsjq bqph fj oan baDB YNDF md-VR-md tsjq gq ft 彭 EBWU tsjq, pkft kf soL baDB dk md-VR-md tsjq bqph huop 彭 EBWU.
         BI TSJQ DK 操作符为1或者menu(大小写不敏感)，参数为菜单的名字。Bi mcvn huop ye aq 主流菜单名 if vnwy tu, osse zzuy iq 的拼音写法(如shujuliu(拼错自动矫正)), uo przv kraq mcvn, md-VR-md LJEY tsjq lbm jcbz ja ynL ldrg lh diyc dk yhrj.
@@ -57,17 +57,17 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
-        vr_afoa_wu: "DATA_VNWY_RIRI",
-        zkrs: "未 支持",
+        vr_afoa_wu: "NEIG_EXYM_CLN",
+        zkrs:"配置服务器",
          
-        csrf: "bi afoa ra bs.. riri Peng data VNWY, AH DREQ mr ZHVT TSZN VNWY",
-        klch: ``,
-        vnwm_vr_afoa_lzm_wu: ["2", "DATA"],
+        csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
+        klch: `config={{}}`,
+        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
         VBYT_VKRF_Peng_EBWU: false,
-        eowl_uxux: "object"
+        eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
-        zkrs: "电池 单体 查找",
+        zkrs:"电池单体查找",
          
         csrf: "mcvn : 9=utf8 jukl jowy utf8 vkvy rjvt nvrj; bqeo : ah zqjp vdzv nvrj tyqh fdcs . oin nq yxna rjvt hqtz tt sr vdzv nvrj yxna no rjvt bi yxna tt dk bqeo, kqud di ynl tyqh fdcs.",
         klch: `CELLFIND=9=utf8{{
@@ -79,7 +79,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_3f_BEIQI_EC180",
-        zkrs: "DBC格式化之3f_北汽EC180",
+        zkrs:"DBC格式化之3f_北汽EC180",
         csrf: `Bi tsjq kfou dbkz ja 北汽EC180 的dbc rjqt yh dk 3f uxux ldlh 彭 EBWU yh dk 3f vnwm.Oin aqfc dbkz gd zhvt kraq 3f vnwy.Bi tsjq lbm ba um ce dk lplp, zf ah fywy dgl lplp dk zhkl sdbc DBC格式化之3f_北汽EC180.
         `,
         klch: `31={{}}
@@ -91,7 +91,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",
-        zkrs: "DBC格式化之北汽EC180",
+        zkrs:"DBC格式化之北汽EC180",
         csrf: `Bi tsjq kfou dbkz ja 北汽EC180 的dbc rjqt  ldlh 彭 EBWU .Bi tsjq lbm ba um ce dk lplp, zf ah fywy dgl lplp dk zhkl sdbc DBC格式化之北汽EC180.
         Bi tsjq mcnv nott [dbc rjok](http://localhost:3009/dbc_rjok) tyqh brtz fs.`,
         klch: `32={{}}`
@@ -103,7 +103,7 @@ function vr_afoa_bx() {
 
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
-        zkrs: "报错 内容 可 视 化",
+        zkrs:"报错内容可视化",
          
         csrf: "JA sysData ae yndf rjqt zjzj msox ud dk nvcm tyqh nppr , kn bqeo ah wpm va bv pe.Bi tsjq lbm uwuu ce dk lplp.",
         klch: `view={{
@@ -118,7 +118,7 @@ function vr_afoa_bx() {
 
     {
         vr_afoa_wu: "RJ_BWCR_VY",
-        zkrs: "读故障码指令",
+        zkrs:"读故障码指令",
          
         csrf: `读故障码指令 : 操作符为3或rdtc。内容格式仅能如下: md-state=XXX frame=XXX code=XXX space=XXX start=XXX id=XXX num(number)=XXX-md
         `,
@@ -133,7 +133,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "HD_LZJK",
-        zkrs: "删 重复 行",
+        zkrs:"删重复行",
         csrf: `HD FG LZJK DK QH. BI AFOA AH NO FYWY LG XBST MR DS XBST FL FL HD FG XBST TYCC DK LZJK BQEO. BI TSJQ LBM uu uw ce dk lplp, fywy kr nh lplp dk zhkl vdzv mcvn om ahno nq vdum lplp nwvt fg lzjk dk jtyj lw. Fg lzjk qh dk jtyj dk nwvt ac nq md-VR-md lplp.
         `,
         klch: `del={{}}
@@ -146,7 +146,7 @@ function vr_afoa_bx() {
 
     {
         vr_afoa_wu: "OSSE_ZZUY",
-        zkrs: "版本信息指令",
+        zkrs:"版本信息指令",
          
         csrf: `版本信息指令：操作符为8或者ecu(大小写不敏感)，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关版本信息项目编写规范请参考 ["md-VR-md语言之数据流项目编写示例"](http://localhost:3009/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH)
         `,
@@ -161,7 +161,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VNWY_TU",
-        zkrs: "数据流指令",
+        zkrs:"数据流指令",
          
         csrf: `数据流指令：操作符为9或者STR(大小写不敏感)，参数为彭语言中str()的参数，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关数据流项目编写规范请参考 ["md-VR-md语言之数据流项目编写示例"](http://localhost:3009/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH)
         `,
@@ -180,7 +180,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_JTYJ_NIKC",
-        zkrs: "翻译结果录入",
+        zkrs:"翻译结果录入",
          
         csrf: `该指令帮助用户快速将翻译结果转为json文件保存。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
         klch: `
@@ -203,7 +203,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_BX_GZBU",
-        zkrs: "管理中英对应库",
+        zkrs:"管理中英对应库",
          
         csrf: `该指令帮助用户管理中英对应库。该指令具体功能请查看示例`,
         klch: `
@@ -233,7 +233,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_UYPI_ZTFR_SUM",
-        zkrs: "翻译字符串",
+        zkrs:"翻译字符串",
          
         csrf: `该指令帮助用户根据资料库快速将ids文件中的中文翻译为英文。如果遇到无法自动翻译的中文，将创建一个文件夹，引导用户在该文件夹内自行翻译并录入资料库。rvdb bi tsjq, 你需要输入两个目录，具体请看示例`,
         klch: `
@@ -249,7 +249,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
-        zkrs: "检查资料库",
+        zkrs:"检查资料库",
          
         csrf: `该指令帮助用户将翻译资料--JSON文件重新检查一遍并进行合并。该功能一般用于在更新了标准库之后重新使用最新的标准再筛查的情况。rvdb bi tsjq, 你需要输入三个目录，具体请看示例`,
         klch: `
@@ -265,7 +265,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_33_VNWM_MCVN",
-        zkrs: "3f数组参数格式化",
+        zkrs:"3f数组参数格式化",
          
         csrf: `3f数组参数格式化 : 操作符为33。不指定范围参数将自动分配范围参数
         `,
@@ -282,7 +282,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_TSZN_BQEO_BRTZ_FS",
-        zkrs: "指定内容向彭语言格式化",
+        zkrs:"指定内容向彭语言格式化",
          
         csrf: `指定文本中的md-VR-md指令或彭指令中含有的md-VR-md语言向彭语言格式化, lcyi, hvoc md-vr-md ebwu dk rslc vlub dk jheg, zf aqfc ja przv 58 tsjq dk bqeo db ye di qq wyih '\`' ae yhrj dz ih '·' sin up lq, lssr ahoa lbm nvms。参数可填str 或9、ecu或8 、rdtc或3、menu或1，多个参数用逗号或空格隔开，参数大小写不敏感
         `,
@@ -314,7 +314,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_SIIH_DIAX",
-        zkrs: "大括号对齐",
+        zkrs:"大括号对齐",
          
         csrf: `大括号对齐 : 操作符为77。
         `,
@@ -330,7 +330,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_KUOE_AFOA",
-        zkrs: "特殊 功能",
+        zkrs:"特殊功能",
          
         csrf: `Bi tsjq kfou dbkz ngnc kuoe afoa. Kf rvdb dk brtz dk ah rjm va pe. Pcgn bi tsjq dk brtz rt mcvc [md-vr-md kuoe afoa tsfz](http://localhost:3009/VR_KUOE_AFOA_TSFZ_RJOK_html_FS)。
         `,
@@ -376,7 +376,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_PRVD_VM_KLVQ_SHZN",
-        zkrs: "（该指令暂未支持）传输轴范围锁定",
+        zkrs:"（该指令暂未支持）传输轴范围锁定",
          
         csrf: `（该指令暂未支持）传输轴范围锁定 : 操作符为47。参数为line和weight。line只能是0或1, 0表示传输轴 :md- 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7-md; 1表示传输轴: md-7 6 5 4 3 2 1 0 7 6 5 4 3 2 1 0 -md; weight只能是0或1, 0表示前一个data权重更高; 1表示后一个data权重更高。里面的内容格式示例:d4=0-3,d5=7, ‘=’ 后面是占用位表达，这里一共5位.(注意：sopc zthi bqph dk tr dk osn lz efcm ji zp rz ab sb hv wk ab xn dk. Ss prvd vm dk prvd rstz sogn.)
         `,
@@ -390,7 +390,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "DIZC_OUSS_2",
-        zkrs: "调用对比助手",
+        zkrs:"调用对比助手",
          
         csrf: `调用对比助手 : 操作符为99。
         `,
@@ -425,7 +425,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "sysData_ZJZJ",
-        zkrs: "调用sysData检查助手",
+        zkrs:"调用sysData检查助手",
          
         csrf: `调用sysData检查助手 : 操作符为90。参数名为9表示输入内容为路径，将根据路径检查该路径对应的文件内容，不写参数默认检查输入的内容。
         `,
@@ -445,7 +445,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_STST_NINI_WU_YMRG_BC_NIXB_NINI_WU",
-        zkrs: "相似项目替换目标项目名",
+        zkrs:"相似项目替换目标项目名",
          
         csrf: `相似项目替换目标项目名 : 操作符为10。该功能用于执行匹配相似项目脚本后输出的文本中的替换动作
         `,
@@ -460,7 +460,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_UYPI_RFRF_BRTZ_FS",
-        zkrs: "自动修复翻译数据的错误",
+        zkrs:"自动修复翻译数据的错误",
          
         csrf: `检查sysData字符串翻译工具翻译成英文后的格式文本的语法格式是否正确，如果有误，自动修复错误，并且输出修复后的文件。无法自动修复的将会抛出具体错误内容让用户手动修复。
         参数：9=UTF8表示以UTF8编码读取指定路径，默认UTF8。 `,
@@ -482,7 +482,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VR_LJEY_RJQT_GMIH_YXNA_ZJYJ",
-        zkrs: "未 支持",
+        zkrs:"未支持",
          
         csrf: "bi afoa ra bs.. fywy pzre gmih nq menuData yh yj um ljey tyzv yxna",
         klch: ``,
@@ -493,7 +493,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "ZHQH_JS_DYVY",
-        zkrs: "执行js代码",
+        zkrs:"执行js代码",
          
         csrf: "Bi tsjq kfou dbkz zhqh dbkz vdzv dk md-js-md dyvy.",
         klch: `js={{
@@ -508,7 +508,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "ESIH_BRTZ_FS",
-        zkrs: "帧id格式化",
+        zkrs:"帧id格式化",
          
         csrf: `Bi tsjq kfou dbkz vkfs vdzv araw vnwy tu es ih dk uypi. Uo mc cjl vnwy tu dk es ih ji ytnc dk, sr ftcj gkgr rvdb bi tsjq. 
         Vdzv dk bqeo brtz fl oan if tt : 空白符和逗号作为md-id-md分隔符。“-”为连续递增标识符
@@ -525,7 +525,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VR_RJOK",
-        zkrs: "输出 VR 相关 文档",
+        zkrs:"输出VR相关文档",
         csrf: `Vdum md-VR-md stgn rjok : md-nixb=AFOA_WU-md : JUKL EOWL SOPC AFOA WU , md-nixb=afoa_lzm_wu-md : jukl eowl sopc afoa lzm wu, md-nixb=sopc-md : jukl eowl sopc rjok zzuy. uxst dk hy pc md-"csrf, klch"-md iq. Bi tsjq fl lh uuvo qr rvdb.
         md-VR-md sopc rjok cd sysa sasa dk lplp xm dbkz zqjp zjhq.Dbkz so aqn jyqh dgl tsjq.
         `,
@@ -539,7 +539,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "TYUB_LDRG",
-        zkrs: "进制 转换",
+        zkrs:"进制转换",
         csrf: `Bi tsjq ba um tyub ldrg lplp, zf ah fywy dgl lplp dk zhkl sdbc tyub ldrg.
         `,
         klch: `92={{}}
@@ -551,7 +551,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "RJQT_GRBJ",
-        zkrs: "文件 合并",
+        zkrs:"文件合并",
         csrf: `Bi tsjq kfou dbkz di nixb nikc tt dk sopc nixb rjqt tyqh grbj, bj vdum ye nh grbj ud dk rjqt.Bi tsjq ba um RJQT GRBJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT GRBJ.
         `,
         klch: `87={{}}
@@ -563,7 +563,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "RJQT_FDMJ",
-        zkrs: "文件 分割",
+        zkrs:"文件分割",
         csrf: `Bi tsjq kfou dbkz di nixb rjqt tyqh FDMJ, bj vdum ye nh FDMJ ud dk NIKC.Bi tsjq LBM ba um RJQT FDMJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT FDMJ.
         `,
         klch: `86={{}}
@@ -575,7 +575,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQLL",
-        zkrs: "故障 码 编码 转 16 进制 数 (定义 在 前)",
+        zkrs:"故障码编码转16进制数(定义在前)",
         csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ LL) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
         `,
         klch: `71={{}}
@@ -587,7 +587,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQUD",
-        zkrs: "故障 码 编码 转 16 进制 数 (定义 在 后)",
+        zkrs:"故障码编码转16进制数(定义在后)",
         csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ UD) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
         `,
         klch: `72={{}}
@@ -600,7 +600,7 @@ Battery production date; "
 
     {
         vr_afoa_wu: "VNWY_TU_NINI_CGNE",
-        zkrs: "项目 匹配",
+        zkrs:"项目匹配",
         csrf: `Bi tsjq kfou dbkz nq yenh sysData RJQT YH ZJYJ jcjc cofc dk vnwy tu nini.Zhxm nini wu iq mcvn, bi tsjq lbm nq mcnv vnwy tu nini ae osse zzuy nini yh yj um stn cgne dk nixb nini.Bi tsjq rvdb stst uy pj tyqh zjyj stst dk nini. Bi tsjq lbm rlkl ce lplp, zf aqfc fywy zhkl vdzv stgn mcvn , kqud nwvt stn cgne dk nini. 
         `,
         klch: `item={{}}
@@ -612,7 +612,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "CE_EBWU_LD_YHRJ",
-        zkrs: "开发 者 指令",
+        zkrs:"开发者指令",
         csrf: `该指令仅开发者使用，用于WRVR语言解析。`,
         klch: `yhrj={{uuvo qr}}
     `
@@ -623,7 +623,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "EYRH_HQTB",
-        zkrs: "单体 模拟",
+        zkrs:"单体模拟",
         csrf: `Bi tsjq kfou dbkz di vkrr kk dk eyrh nini tyqh hqtb, eowl hqtb nvcm. Zf aqfc przv lr nh mcvn, fdlz ji efpc eyrh vnwy tu nini dk sysData pzre(ok kk ji eynh pzre) dk rjqt yxna, mr vo vyn rjqt. Bi tsjq lbm ba um eyrh hqtb lplp, zf ah fywy dgl lplp dk zhkl sdbc eyrh hqtb.
         `,
         klch: `46={{}}
@@ -636,7 +636,7 @@ Battery production date; "
 
     {
         vr_afoa_wu: "EYRH_VNWY_RSCS",
-        zkrs: "单体排序指令",
+        zkrs:"单体排序指令",
          
         csrf: `在报文中将所有md-id-md进行精简并排序。参数格式如下: 2=1-1(表示每帧第一个字节到第一个字节为标识字节), 9=GB2312(表示将输入内容视为文件路径，按GB2312编码读取文件。如果不写此参数则将输入内容视为目标内容)。`,
         klch: `        97=2=1-1,9=GB2312{{

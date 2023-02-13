@@ -19,10 +19,13 @@
     document.onkeydown = function (event) {
         if (event.altKey) {
             event.preventDefault();
+        }
+        else if (event.key === "Tab") {
+            event.preventDefault();
             console.log(event.keyCode)
             vdzv_1 = document.getElementById('id_vdzv_1')
             if (document.activeElement === vdzv_1) {
-                fo_Alt_vdzv(event);
+                fo_Tab_vdzv(event);
             } else {
                 var t2 = new Date().getTime()
                 if (t2 - t1 > 1000 || !gkqj_jkub_bcaf) {
@@ -33,9 +36,6 @@
                 }
             }
         }
-        else if (event.ctrlKey && event.keyCode == 77) {
-            document.getElementById('id_vdzv_1').select()
-        }
         console.log("keyCode: " + event.keyCode)
     }
     document.onkeyup = function (event) {
@@ -43,7 +43,11 @@
         if (event.keyCode == 32 && event.ctrlKey) {
             document.getElementById('btn1').click()
             return
+        } else if (event.altKey && event.keyCode == 80) {
+            document.getElementById('id_vdzv_1').select()
+            return
         }
+
         vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_kp = vdzv_1.selectionStart
@@ -65,7 +69,7 @@
 
     }
 
-    function fo_Alt_vdzv(event) {
+    function fo_Tab_vdzv(event) {
         vdzv_1 = document.getElementById('id_vdzv_1')
         var rj_1 = vdzv_1.value
         var trig_kp = vdzv_1.selectionStart
@@ -186,18 +190,18 @@
     action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
     <button>VR语言之数据流项目编写示例</button>
 </form>
-<input id="oakl_1" style="width: 100%;" placeholder="输入VR代码时，Alt键可进行代码补全"><br>
+<input id="oakl_1" style="width: 100%;" placeholder="输入VR代码时，Tab键可进行代码补全"><br>
 <hr>
 <form style="width: 100%;" name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
-    <b>输入VR代码</b> Ctrl+M ⬇️
+    <b>输入VR代码</b> Alt+P ⬇️
     <br>
-    <textarea style="width: 100%;" class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup="" id="RNSF_1" rows="20"
-        cols="150">{{RJSE_KP}}</textarea>
+    <textarea style="width: 100%;" class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup=""
+        id="RNSF_1" rows="20" cols="150">{{RJSE_KP}}</textarea>
     <br>
     <button id="btn1">提交</button> Ctrl+Space ⬅️
 </form>
 <hr>
-<button onclick="jkub_jtyj(this)" id="zstv_jkub_jtyj">复制</button> Alt+Enter ⬇️<br>
+<button onclick="jkub_jtyj(this)" id="zstv_jkub_jtyj">复制</button> Tab ⬇️<br>
 <textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150"
     style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{rj_jtyj}}</textarea>
 <script>
