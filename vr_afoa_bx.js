@@ -489,7 +489,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "ZHQH_JS_DYVY",
-        zkrs: "执行js代码",
+        zkrs: "执行md-js-md代码",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY,
         csrf: "Bi tsjq kfou dbkz zhqh dbkz vdzv dk md-js-md dyvy.",
         klch: `js={{
