@@ -2,6 +2,7 @@ const fs = require('fs');
 const md_RJOK_html_fs = require('./AFOA_BX/md_RJOK_html_FS');
 const VR_AFOA_RJOK = require('./VR_AFOA_RJOK');
 const VR_EBWU_AFOA_BRTZ_FS = require('./VR_EBWU_AFOA_BRTZ_FS');
+const config = require('./config.json')
 async function VR_RJOK_html_FS() {
     var diwr_vnwm_klch_dyvy=[]
     var rj_kp = fs.readFileSync('./public/md/VR_VKJP.md').toString()
@@ -16,7 +17,7 @@ async function VR_RJOK_html_FS() {
             var dyvy_1 = rn1.replace(reg_dyvy_eynh, "$1")
             var diwr_yhld = { rj_kp: dyvy_1 }
             try {
-                diwr_yhld.dyvy_zhqh_jtyj = (await VR_EBWU_AFOA_BRTZ_FS(dyvy_1)).rj_jtyj
+                diwr_yhld.dyvy_zhqh_jtyj = (await VR_EBWU_AFOA_BRTZ_FS(dyvy_1,{diwr_neig:config})).rj_jtyj
                 diwr_yhld.gkqj_zhqh_bcaf = true;
             } catch (err) {
                 diwr_yhld.err = err

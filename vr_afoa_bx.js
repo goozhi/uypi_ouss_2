@@ -33,7 +33,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU')
 const VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY = require('./VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY')
 const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require('./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ')
-const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL')
+const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -53,10 +53,10 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
-        vr_afoa_wu: "NEIG_EXYM_CL",
-        zkrs: "NEIG_EXYM_CL",
-        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL,
-        csrf: "Bi afoa kfou dbkz mr piqr neig exym cl. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jhqh jtco, jcbz drbz riri cl. Dbkz aqfc jhqh config tsjq ud, jh vdum zzuy tyqh ymgt bj jd jhqh ye li ly pc mod AE md-qi-md mcvn dk config tsjq.",
+        vr_afoa_wu: "NEIG_EXYM_CLN",
+        zkrs: "NEIG EXYM CLN",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN,
+        csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
         klch: `config={{}}`,
         vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
         VBYT_VKRF_Peng_EBWU: false,

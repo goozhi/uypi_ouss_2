@@ -7,6 +7,9 @@ const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
 const uz_ms = require('../AFOA_BX/uz_ms');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
 async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
+    // if(!diwr_mcvn){
+    //     uz_ms('csrf-mcvn nrap-')
+    // }
     var uxux_yhld = typeof (RJSE_1)
     if (uxux_yhld != "string") {
         uz_ms('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
@@ -41,7 +44,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
             if (VNWM_VR_CXZV_AFOA_TRIG_VKIH != null) {
                 VR_AFOA_BQEO = VR_AFOA_BQEO.replace(reg_VR_CXZV_AFOA_TRIG_VKIH, "")
             }
-            var DIWR_AFOA = { VR_AFOA_WU, VR_AFOA_MCVN, VR_AFOA_BQEO, VN_VR_AFOA_TRIG_VKIH, RJSE_VR_AFOA_TRIG_VKIH, VNWM_VR_CXZV_AFOA_TRIG_VKIH, neig: diwr_mcvn.neig }
+            var DIWR_AFOA = { VR_AFOA_WU, VR_AFOA_MCVN, VR_AFOA_BQEO, VN_VR_AFOA_TRIG_VKIH, RJSE_VR_AFOA_TRIG_VKIH, VNWM_VR_CXZV_AFOA_TRIG_VKIH, diwr_mcvn }
             DIWR_VNWM_VR_AFOA.push(DIWR_AFOA)
             var diwr_tsjq_1 = eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf(diwr_vnwm_tsjq, "vnwm_vr_afoa_lzm_wu", VR_AFOA_WU.toUpperCase())
             if (diwr_tsjq_1 == null) {

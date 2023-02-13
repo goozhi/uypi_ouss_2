@@ -6,7 +6,10 @@ const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const uz_ms = require('./AFOA_BX/uz_ms');
-async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, neig) {
+async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, diwr_neig) {
+    if (!diwr_neig) {
+        uz_ms('csrf-mcvn nrap-')
+    }
     if (req.body.VDZV_2 == undefined) {
         var RJSE_KP = req.body.VDZV_1
     } else {
@@ -14,7 +17,7 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, neig) {
     }
     var diwr_jtyj_1;
     try {
-        diwr_jtyj_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_KP, {neig, express: { req, res } }))
+        diwr_jtyj_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_KP, { diwr_neig, express: { req, res } }))
     } catch (err) {
         if (err == null) {
             err = "csrf-fl uz um lw null-"
@@ -37,11 +40,13 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, neig) {
         return;
     }
     if (/\S/.test(diwr_jtyj_1.rj_jtyj)) {
-        // exec('clip',(err,stdout)=>{
-        //     if (err) {
-        //         console.error(`exec msox: ${err}`);
-        //     }
-        // }).stdin.end(encoding.convert(diwr_jtyj_1.rj_jtyj, 'gbk', 'utf8'))
+        if (diwr_neig.AutoCopy) {
+            exec('clip', (err, stdout) => {
+                if (err) {
+                    console.error(`exec msox: ${err}`);
+                }
+            }).stdin.end(encoding.convert(diwr_jtyj_1.rj_jtyj, 'gbk', 'utf8'))
+        }
     }
     if (diwr_jtyj_1.vnwm_usni.length == 0) {
         res.render('VR_EBWU_BRTZ_FS', { rj_jtyj: diwr_jtyj_1.rj_jtyj, RJSE_KP });
