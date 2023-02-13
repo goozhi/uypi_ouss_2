@@ -23,12 +23,12 @@ function ZJZJ_3f_VNWM_MCVN(RJSE_KP) {
                     return RJSE_MSOX;
                 }
             } else {
-                var IOWR_RNSF = (RJSE_2 + ZTFR_1).match(reg_RNSF);
-                if (IOWR_RNSF == null) {
+                var DIWR_RNSF = (RJSE_2 + ZTFR_1).match(reg_RNSF);
+                if (DIWR_RNSF == null) {
                     RJSE_MSOX += "[RNSF SDRH BRTZ MSOX] " + RJSE_2.replace(/',(?!,)/, "") + ZTFR_1 + "<--";
                 } else {
-                    var KLVQ = IOWR_RNSF[1];
-                    var BQEO = IOWR_RNSF[2];
+                    var KLVQ = DIWR_RNSF[1];
+                    var BQEO = DIWR_RNSF[2];
                     VNWM_RNSF.push({ KLVQ, BQEO });
                 }
                 RJSE_2 = "";
@@ -48,13 +48,13 @@ function ZJZJ_3f_VNWM_MCVN(RJSE_KP) {
         }
     })
     var reg_SZAS_MCVN = /^'((?:[A-F]|\d)+)/i;
-    var IOWR_SZAS_MCVN = RJSE_2.match(reg_SZAS_MCVN);
-    if (IOWR_SZAS_MCVN != null) {
-        if (!/^(?:0+|)[8421](?:0+|)$/.test(IOWR_SZAS_MCVN[1])) {
-            RJSE_MSOX += "[SZAS MCVN AC GRBU]" + IOWR_SZAS_MCVN[1] + "<--"
+    var DIWR_SZAS_MCVN = RJSE_2.match(reg_SZAS_MCVN);
+    if (DIWR_SZAS_MCVN != null) {
+        if (!/^(?:0+|)[8421](?:0+|)$/.test(DIWR_SZAS_MCVN[1])) {
+            RJSE_MSOX += "[SZAS MCVN AC GRBU]" + DIWR_SZAS_MCVN[1] + "<--"
         }
         if (!VBYT_oth) {
-            RJSE_MSOX += "[SZAS MCVN AOAO OKNE oth RVDB LSSR SZAS SOYC]" + IOWR_SZAS_MCVN[1] + "<--"
+            RJSE_MSOX += "[SZAS MCVN AOAO OKNE oth RVDB LSSR SZAS SOYC]" + DIWR_SZAS_MCVN[1] + "<--"
         }
     }
     return RJSE_MSOX;

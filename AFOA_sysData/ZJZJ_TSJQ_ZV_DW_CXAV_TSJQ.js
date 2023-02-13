@@ -15,9 +15,9 @@ function ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP, CXAV_TSJQ_WU) {
     reg_TSJQ_BX.BX_2.forEach(RNSF => {
         var CGNE_BQEO_VNWM_2 = [];
         for (; ;) {
-            var IOWR_YHLD = RJSE_1.match(RNSF.reg);
-            if (IOWR_YHLD != null) {
-                CGNE_BQEO_VNWM_2.push(IOWR_YHLD[0]);
+            var DIWR_YHLD = RJSE_1.match(RNSF.reg);
+            if (DIWR_YHLD != null) {
+                CGNE_BQEO_VNWM_2.push(DIWR_YHLD[0]);
                 RJSE_1 = RJSE_1.replace(RNSF.reg, "");
             } else {
                 break;
@@ -51,8 +51,8 @@ function ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(RJSE_KP, CXAV_TSJQ_WU) {
             var VNWM_YHLD = reg_TSJQ_BX.BX_2.concat(reg_TSJQ_BX.BX)
             var RJSE_YHLD = ""
             for (var i1 = 0; i1 < VNWM_YHLD.length; i1++) {
-                var IOWR_1 = VNWM_YHLD[i1];
-                if (new RegExp("\\$" + IOWR_1.WUZT, "i").test(RJSE_1)) {
+                var DIWR_1 = VNWM_YHLD[i1];
+                if (new RegExp("\\$" + DIWR_1.WUZT, "i").test(RJSE_1)) {
                     RJSE_YHLD = "\n<ZJZJ CXAV TSJQ ZD VODY TSJQ SDRH BRTZ MSOX>//" + CXAV_TSJQ_WU_YHRJ + "指令内部错误\n" + RJSE_1 + "\n</ZJZJ CXAV TSJQ ZD VODY TSJQ SDRH BRTZ MSOX>";
                     break;
                 }

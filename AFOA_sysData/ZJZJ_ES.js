@@ -6,12 +6,12 @@ function ZJZJ_ES(RJSE_ES_KP) {
         throw new Error("MCVN UXUX MSOX, AOAO JI string:" + UXUX_YHLD);
     }
     reg_ES = /^\{(.*)\}(?:;|)(?:\/\/.*|)/;
-    var IOWR_ZTIH = RJSE_1.match(reg_ES);
+    var DIWR_ZTIH = RJSE_1.match(reg_ES);
 
-    if (IOWR_ZTIH == null) {
+    if (DIWR_ZTIH == null) {
         RJSE_MSOX += "[ES DK SDRH BRTZ MSOX] " + RJSE_1 + " <--";
     } else {
-        var RJSE_ZTIH = IOWR_ZTIH[1];
+        var RJSE_ZTIH = DIWR_ZTIH[1];
         var VNWM_ZTIH = RJSE_ZTIH.split(/\s/);
         var reg_ZTIH = /^(?:[0-9]|[A-F]){2}$/i;
         var reg_f_VNWM = /^f\[\d+\]\[\d+\](?:\d+|)$/;
@@ -31,8 +31,8 @@ function ZJZJ_ES(RJSE_ES_KP) {
     }
     if (RJSE_1 != "") {
         reg_MCVN = /^\[.*\](?=\s*$)/;
-        var IOWR_MCVN = RJSE_1.match(reg_MCVN);
-        if (IOWR_MCVN == null) {
+        var DIWR_MCVN = RJSE_1.match(reg_MCVN);
+        if (DIWR_MCVN == null) {
             RJSE_MSOX += "[ZJZJ ES ZD VODY ACUN BQEO] " + RJSE_1 + "<=="
         } else {
         }

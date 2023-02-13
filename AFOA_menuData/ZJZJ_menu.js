@@ -6,15 +6,15 @@ function ZJZJ_menu(RJSE_KP, RJSE_KP_KP) {
     var RJSE_1 = RJSE_KP;
     var reg_LG = /(?:\n|^)_[A-Z]\w*\(\)\[.*\]/i;
     var reg_DS = /\*\*.*/;
-    var IOWR_YHLD = RJSE_1.match(reg_DS);
-    if (IOWR_YHLD == null) {
+    var DIWR_YHLD = RJSE_1.match(reg_DS);
+    if (DIWR_YHLD == null) {
         RJSE_MSOX += "\n<menu NRAP JTCO FR>\n" + RJSE_KP + "\n</menu NRAP JTCO FR>"
     } else {
         RJSE_1 = RJSE_1.replace(reg_DS, "")
     }
-    var IOWR_YHLD = RJSE_1.match(reg_LG);
+    var DIWR_YHLD = RJSE_1.match(reg_LG);
 
-    if (IOWR_YHLD != null) {
+    if (DIWR_YHLD != null) {
         RJSE_1 = RJSE_1.replace(reg_LG, "");
     } else {
         RJSE_MSOX += "\n<menu LG MCVN ACUN>\n" + RJSE_KP + "\n</menu LG MCVN ACUN>"
@@ -25,11 +25,11 @@ function ZJZJ_menu(RJSE_KP, RJSE_KP_KP) {
         RJSE_1 = RJSE_1.replace(reg_NINI, "");
         VNWM_YHLD.forEach(RNSF => {
             var reg_NINI_MCVN = /(?:\n|^)\*"[^\n"]*"\s*,\s*(\w+)\s*;/
-            var IOWR_YHLD = RNSF.match(reg_NINI_MCVN)
-            if (IOWR_YHLD == null) {
+            var DIWR_YHLD = RNSF.match(reg_NINI_MCVN)
+            if (DIWR_YHLD == null) {
                 RJSE_MSOX += "\n[NINI BRTZ MSOX] " + RNSF.replace(/\n/, "");
             } else {
-                var MCVN = IOWR_YHLD[1];
+                var MCVN = DIWR_YHLD[1];
                 if (!/^\d+$/.test(MCVN)) {
                     var reg_YHLD = new RegExp("(?:\\n|^)_" + MCVN + "\\b");
                     if (!reg_YHLD.test(RJSE_KP_KP)) {

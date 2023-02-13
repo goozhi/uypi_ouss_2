@@ -35,11 +35,11 @@ function ZJZJ_TSJQ_If(RJSE_IF_TSJQ_KP) {
         for (var i1 = 0; i1 < VNWM_2.length; i1++) {
             var VNWM_3 = VNWM_2[i1];
             for (var i2 = 0; i2 < VNWM_3.length; i2++) {
-                var IOWR_YHLD=VNWM_3[i2].match(reg_MCVN);
-                if (IOWR_YHLD==null) {
+                var DIWR_YHLD=VNWM_3[i2].match(reg_MCVN);
+                if (DIWR_YHLD==null) {
                     RJSE_MSOX += "\n[If TSJQ SIIH BQ MCVN FTPJ] " + VNWM_3[i2] + " <--" + VNWM_1[i1];
                 }else{
-                    var RJSE_YHLD=ZJZJ_UYTZ(IOWR_YHLD[1]);
+                    var RJSE_YHLD=ZJZJ_UYTZ(DIWR_YHLD[1]);
                     if(RJSE_YHLD!=""){
                         RJSE_MSOX+=RJSE_YHLD+"<--"+VNWM_1[i1];
                     }

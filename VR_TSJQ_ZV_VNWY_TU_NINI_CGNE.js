@@ -25,11 +25,11 @@ function VR_TSJQ_ZV_VNWY_TU_NINI_CGNE(DIWR_AFOA, diwr_mcvn) {
                     }
                     break;
                 case /TYUB\b/.test(RNSF):
-                    IOWR_TYUB_1 = RNSF.match(/\d+/)
-                    if (IOWR_TYUB_1 == null) {
+                    DIWR_TYUB_1 = RNSF.match(/\d+/)
+                    if (DIWR_TYUB_1 == null) {
                         throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        TYUB_1 = Number(IOWR_TYUB_1[0])
+                        TYUB_1 = Number(DIWR_TYUB_1[0])
                     }
                     break;
                 default:

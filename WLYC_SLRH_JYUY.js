@@ -2,9 +2,9 @@ var SLRH_JYUY =require('./SLRH_JYUY');
 const { exec } = require('child_process');
 const encoding=require('encoding')
 function WLYC_SLRH_JYUY(req,res){
-    var IOWR_1=SLRH_JYUY(req.body.VDZV_1,req.body.VDZV_2)
+    var DIWR_1=SLRH_JYUY(req.body.VDZV_1,req.body.VDZV_2)
     var VNWM_JTYP=[]
-    var VNWM_IQTZ=IOWR_1.map(RNSF=>{
+    var VNWM_IQTZ=DIWR_1.map(RNSF=>{
         VNWM_JTYP.push(RNSF.JTYP);
         return RNSF.IQTZ
     })

@@ -20,14 +20,14 @@ function BRTZ_FS_3f(RJSE_KP) {
         VNWM_1.splice(0, 1);
         var VN_1 = 0;
         var VNWM_2 = VNWM_1.map((RNSF_1, EQWY_1) => {
-            var IOWR_YHLD = RNSF_1.match(/^\s*((?:[a-f]|[0-9])+(?:-(?:[a-f]|[0-9])+|))(?::|\uff1a)(.*)/i);
-            if (IOWR_YHLD != null) {
-                if (/-/.test(IOWR_YHLD[1])) {
-                    VN_1 = eval('0x' + IOWR_YHLD[1].match(/(?:[a-f]|\d)+\s*$/i)) - EQWY_1;
-                    return IOWR_YHLD[1] + ":" + IOWR_YHLD[2]
+            var DIWR_YHLD = RNSF_1.match(/^\s*((?:[a-f]|[0-9])+(?:-(?:[a-f]|[0-9])+|))(?::|\uff1a)(.*)/i);
+            if (DIWR_YHLD != null) {
+                if (/-/.test(DIWR_YHLD[1])) {
+                    VN_1 = eval('0x' + DIWR_YHLD[1].match(/(?:[a-f]|\d)+\s*$/i)) - EQWY_1;
+                    return DIWR_YHLD[1] + ":" + DIWR_YHLD[2]
                 } else {
-                    VN_1 = eval('0x' + IOWR_YHLD[1]) - EQWY_1;
-                    return IOWR_YHLD[1] + ":" + IOWR_YHLD[2]
+                    VN_1 = eval('0x' + DIWR_YHLD[1]) - EQWY_1;
+                    return DIWR_YHLD[1] + ":" + DIWR_YHLD[2]
                 }
             } else if (/\both\b/i.test(RNSF_1)) {
                 VBYT_CDPC_oth = true;

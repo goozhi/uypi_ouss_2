@@ -44,16 +44,16 @@ function BRTZ_FS_Beiqi_ec180(QH_NINI_WU,QH_DIYC_YG,QH_TRIG_KLVQ){
         return "PZRE: "+RNSF
     })
     var BMLC="//"+YF_NINI_PZRE_VNWM_2.join(' ');
-    var IOWR_MCVN={NINI_WU,ID,UXUX,YF_NINI_PZRE_VNWM,BNLL_PZRE,BMLC};
+    var DIWR_MCVN={NINI_WU,ID,UXUX,YF_NINI_PZRE_VNWM,BNLL_PZRE,BMLC};
 
-    if(IOWR_MCVN.UXUX=='cf'){
-        IOWR_MCVN.ZTHI_YYHA=BRTZ_FS_ZTHI_YYHA({TRIG,KLVQ,PZVN,NOKZ},"cf");
-        IOWR_MCVN.EYTR=QH_TRIG_KLVQ.replace(/^.*"(.*)".*/,"$1");
-        IOWR_MCVN.TSZN_AGVN_TRVN=PZVN.length-PZVN.replace(/\.\d+/,".").length;
-    }else if(IOWR_MCVN.UXUX=='3f'){
-        IOWR_MCVN.ZTHI_YYHA=BRTZ_FS_ZTHI_YYHA({TRIG,KLVQ,PZVN,NOKZ},"3f");
-        IOWR_MCVN.VNWM_3f=QH_DIYC_YG.match(/'.*'/);
+    if(DIWR_MCVN.UXUX=='cf'){
+        DIWR_MCVN.ZTHI_YYHA=BRTZ_FS_ZTHI_YYHA({TRIG,KLVQ,PZVN,NOKZ},"cf");
+        DIWR_MCVN.EYTR=QH_TRIG_KLVQ.replace(/^.*"(.*)".*/,"$1");
+        DIWR_MCVN.TSZN_AGVN_TRVN=PZVN.length-PZVN.replace(/\.\d+/,".").length;
+    }else if(DIWR_MCVN.UXUX=='3f'){
+        DIWR_MCVN.ZTHI_YYHA=BRTZ_FS_ZTHI_YYHA({TRIG,KLVQ,PZVN,NOKZ},"3f");
+        DIWR_MCVN.VNWM_3f=QH_DIYC_YG.match(/'.*'/);
     }
-    return LJEY_EOWL_Peng_NINI(IOWR_MCVN);
+    return LJEY_EOWL_Peng_NINI(DIWR_MCVN);
 }
 module.exports=BRTZ_FS_Beiqi_ec180;

@@ -14,7 +14,6 @@ const VR_TSJQ_BRTZ_FS_ZV_STST_NINI_WU_YMRG_BC_NIXB_NINI_WU = require('./VR_TSJQ_
 var VR_TSJQ_BRTZ_FS_ZV_KLVQ_SHZN = require('./VR_TSJQ_BRTZ_FS_ZV_KLVQ_SHZN')
 var VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ = require('./VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ')
 var VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy = require('./VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy')
-var VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI = require('./VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI')
 var VR_TSJQ_ZV_VR_RJOK = require('./VR_TSJQ_ZV_VR_RJOK')
 var VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS = require('./VR_TSJQ_BRTZ_FS_ZV_TSZN_BQEO_BRTZ_FS')
 const VR_TSJQ_ZV_HD_LZJK = require('./VR_TSJQ_ZV_HD_LZJK')
@@ -34,6 +33,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF
 const VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU')
 const VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY = require('./VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY')
 const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require('./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ')
+const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -53,14 +53,14 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
-        vr_afoa_wu: "DATA_VNWY_RIRI",
-        zkrs: "RA HUOP",
-        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_data_VNWY_RIRI,
-        csrf: "bi afoa ra bs.. riri Peng data VNWY, AH DREQ mr ZHVT TSZN VNWY",
-        klch: ``,
-        vnwm_vr_afoa_lzm_wu: ["2", "DATA"],
+        vr_afoa_wu: "NEIG_EXYM_CL",
+        zkrs: "NEIG_EXYM_CL",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CL,
+        csrf: "Bi afoa kfou dbkz mr piqr neig exym cl. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jhqh jtco, jcbz drbz riri cl. Dbkz aqfc jhqh config tsjq ud, jh vdum zzuy tyqh ymgt bj jd jhqh ye li ly pc mod AE md-qi-md mcvn dk config tsjq.",
+        klch: `config={{}}`,
+        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
         VBYT_VKRF_Peng_EBWU: false,
-        eowl_uxux: "object"
+        eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
         zkrs: "figb eyrh zjyj",

@@ -1,16 +1,16 @@
 
-async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(DIWR_AFOA) {
     const VR_EBWU_AFOA_BRTZ_FS = require("./VR_EBWU_AFOA_BRTZ_FS");
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
     var jtyp_1
     if (VNWM_MCVN_1 == null) {
-        var IOWR_RJ_BWCR_VY={BWCR_VY_BX_VKHI:"null",CXMI:"null",TSKL_BWCR_VY_VN_DK_ZTHI:"null",BWCR_VY_UUFB_TRIG:"d4",BWCR_VY_TIGE_VN:"4",BWCR_VY_VT_VY_VN:"3",vnwm_es:[]}
+        var DIWR_RJ_BWCR_VY={BWCR_VY_BX_VKHI:"null",CXMI:"null",TSKL_BWCR_VY_VN_DK_ZTHI:"null",BWCR_VY_UUFB_TRIG:"d4",BWCR_VY_TIGE_VN:"4",BWCR_VY_VT_VY_VN:"3",vnwm_es:[]}
         var reg_mcvn_zv_bwcr_vy_lzvd=/[^=\n]+=[^=\n]+/ig;
         var vnwm_mcvn_zv_bwcr_vy_lzvd=BQEO_1.match(reg_mcvn_zv_bwcr_vy_lzvd)
         if(vnwm_mcvn_zv_bwcr_vy_lzvd!=null){
@@ -19,39 +19,39 @@ async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
                 var mcvn_bqeo=RNSF.replace(/.*?=\s*/,"")
                 switch(true){
                     case /\bstate\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.CXMI=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.CXMI=mcvn_bqeo
                     break;
                     case /\bid\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.BWCR_VY_BX_VKHI=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.BWCR_VY_BX_VKHI=mcvn_bqeo
                     break;
                     case /\bstart\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.BWCR_VY_UUFB_TRIG=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.BWCR_VY_UUFB_TRIG=mcvn_bqeo
                     break;
                     case /\bframe\b/i.test(mcvn_wu):
                         var esih=mcvn_bqeo
                         if(!/\}/i.test(esih)){
                             esih="\{"+esih+"\}"
                         }
-                        IOWR_RJ_BWCR_VY.vnwm_es.push(esih)
+                        DIWR_RJ_BWCR_VY.vnwm_es.push(esih)
                     break;
                     case /\bspace\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.BWCR_VY_TIGE_VN=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.BWCR_VY_TIGE_VN=mcvn_bqeo
                     break;
                     case /\bcode\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.BWCR_VY_VT_VY_VN=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.BWCR_VY_VT_VY_VN=mcvn_bqeo
                     break;
                     case /\b(num|number)\b/i.test(mcvn_wu):
-                        IOWR_RJ_BWCR_VY.TSKL_BWCR_VY_VN_DK_ZTHI=mcvn_bqeo
+                        DIWR_RJ_BWCR_VY.TSKL_BWCR_VY_VN_DK_ZTHI=mcvn_bqeo
                     break;
                     default:
                         throw new Error("[mcvn wu ftpj]"+mcvn_wu+"<--")
                 }
             })
         }
-        if(IOWR_RJ_BWCR_VY.vnwm_es.length==0){
-            IOWR_RJ_BWCR_VY.vnwm_es.push("{19 02 09}")
+        if(DIWR_RJ_BWCR_VY.vnwm_es.length==0){
+            DIWR_RJ_BWCR_VY.vnwm_es.push("{19 02 09}")
         }
-        jtyp_1="$ReadDtc();\n"+IOWR_RJ_BWCR_VY.vnwm_es.join(';')+"id="+IOWR_RJ_BWCR_VY.BWCR_VY_BX_VKHI+",num="+IOWR_RJ_BWCR_VY.TSKL_BWCR_VY_VN_DK_ZTHI+",start="+IOWR_RJ_BWCR_VY.BWCR_VY_UUFB_TRIG+',code='+IOWR_RJ_BWCR_VY.BWCR_VY_VT_VY_VN+',space='+IOWR_RJ_BWCR_VY.BWCR_VY_TIGE_VN+",state="+IOWR_RJ_BWCR_VY.CXMI+";"
+        jtyp_1="$ReadDtc();\n"+DIWR_RJ_BWCR_VY.vnwm_es.join(';')+"id="+DIWR_RJ_BWCR_VY.BWCR_VY_BX_VKHI+",num="+DIWR_RJ_BWCR_VY.TSKL_BWCR_VY_VN_DK_ZTHI+",start="+DIWR_RJ_BWCR_VY.BWCR_VY_UUFB_TRIG+',code='+DIWR_RJ_BWCR_VY.BWCR_VY_VT_VY_VN+',space='+DIWR_RJ_BWCR_VY.BWCR_VY_TIGE_VN+",state="+DIWR_RJ_BWCR_VY.CXMI+";"
     } else {
         VNWM_MCVN_1.forEach(async RNSF => {
             switch (true) {
@@ -72,7 +72,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_rj_bwcr_vy(IOWR_AFOA) {
                     }
                     break;
                 default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

@@ -327,7 +327,7 @@ this.regexShuzu1=[this.hang_s,this.hang_3f,this.hang_3f_2,this.hang_3f_5,this.ha
 		return qianzhui_jiancha(wenben2, RJSE_65, RJSE_66);
 	}//this.lei_cf_jiancha
 	function qianzhui_jiancha(RJSE_NINI_1, RJSE_PCMS, RJSE_SOMS){
-		if(new RegExp(IOWR_RegExp1.qianzhui_3).test(RJSE_NINI_1)){
+		if(new RegExp(DIWR_RegExp1.qianzhui_3).test(RJSE_NINI_1)){
 			return RJSE_SOMS;
 		}else{
 			return RJSE_PCMS;
@@ -753,7 +753,7 @@ exports.Luoji=function(shuzu10){//Luoji
 		}
 		return null;
 	}//this.lei_3c_luoji
-	function IOWR_cf(RJSE_1){
+	function DIWR_cf(RJSE_1){
 		RJSE_1=RJSE_1.replace(/\".*,.*\"/,"");
 		this.UYTZ;
 		this.TRVN_MCVN;
@@ -765,12 +765,12 @@ exports.Luoji=function(shuzu10){//Luoji
 		}
 	}
 	this.lei_cf_luoji=function(RJSE_1){//this.lei_cf_luojilgz 220305
-		var IOWR_1 = new IOWR_cf(RJSE_1);
-		if(IOWR_1.UYTZ==null)
+		var DIWR_1 = new DIWR_cf(RJSE_1);
+		if(DIWR_1.UYTZ==null)
 			return "[cf参数个数不等于6个(有可能项目名使用了英文逗号)]";
-		var RJSE_1 = AGVN_ZJZJ(IOWR_1.UYTZ, IOWR_1.TRVN_MCVN);
-		RJSE_1+=UYTZ_ZJZJ_2(IOWR_1.UYTZ);
-		RJSE_1+=UYTZ_ZJZJ.ZJZJ(IOWR_1.UYTZ);
+		var RJSE_1 = AGVN_ZJZJ(DIWR_1.UYTZ, DIWR_1.TRVN_MCVN);
+		RJSE_1+=UYTZ_ZJZJ_2(DIWR_1.UYTZ);
+		RJSE_1+=UYTZ_ZJZJ.ZJZJ(DIWR_1.UYTZ);
 		if(RJSE_1=="")
 			return null;
 		else

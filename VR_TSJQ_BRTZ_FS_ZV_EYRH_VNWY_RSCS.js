@@ -1,14 +1,14 @@
 
 const EYRH_VNWY_RSCS = require("./EYRH_VNWY_RSCS");
 
-function VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS(IOWR_AFOA) {
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+function VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS(DIWR_AFOA) {
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
     var EY_ES_VNAW
     var CSRF_XBST_ZTHI
     var RJQT_MCVN
@@ -18,31 +18,31 @@ function VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS(IOWR_AFOA) {
         VNWM_MCVN_1.forEach(RNSF => {
             switch (true) {
                 case /\b(EY_ES_VNAW|1)(?=\s*=)/i.test(RNSF):
-                    IOWR_EY_ES_VNAW = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_EY_ES_VNAW == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    DIWR_EY_ES_VNAW = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_EY_ES_VNAW == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        EY_ES_VNAW = IOWR_EY_ES_VNAW[2]
+                        EY_ES_VNAW = DIWR_EY_ES_VNAW[2]
                     }
                     break;
                 case /\b(CSRF_XBST_ZTHI|2)(?=\s*=)/i.test(RNSF):
-                    IOWR_CSRF_XBST_ZTHI = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_CSRF_XBST_ZTHI == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    DIWR_CSRF_XBST_ZTHI = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_CSRF_XBST_ZTHI == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        CSRF_XBST_ZTHI = IOWR_CSRF_XBST_ZTHI[2]
+                        CSRF_XBST_ZTHI = DIWR_CSRF_XBST_ZTHI[2]
                     }
                     break;
                 case /\b(RJQT_MCVN|9)(?=\s*=)/i.test(RNSF):
-                    IOWR_RJQT_MCVN = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_RJQT_MCVN == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    DIWR_RJQT_MCVN = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_RJQT_MCVN == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        RJQT_MCVN = IOWR_RJQT_MCVN[2]
+                        RJQT_MCVN = DIWR_RJQT_MCVN[2]
                     }
                     break;
                 default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

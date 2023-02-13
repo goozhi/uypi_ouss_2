@@ -6,7 +6,7 @@ const NVMS_EBWU_LD_YHRJ_2 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_2');
 const NVMS_EBWU_LD_YHRJ_3 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_3');
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
 const uz_ms = require('./AFOA_BX/uz_ms');
-async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
+async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, neig) {
     if (req.body.VDZV_2 == undefined) {
         var RJSE_KP = req.body.VDZV_1
     } else {
@@ -14,7 +14,7 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res) {
     }
     var diwr_jtyj_1;
     try {
-        diwr_jtyj_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_KP, { express: { req, res } }))
+        diwr_jtyj_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_KP, {neig, express: { req, res } }))
     } catch (err) {
         if (err == null) {
             err = "csrf-fl uz um lw null-"

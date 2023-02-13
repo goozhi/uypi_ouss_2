@@ -101,6 +101,8 @@ $Lab(L_exit)
 * [VSCODE使用指南](http://localhost:3009/ywzb_kfou_zv_vscode_rvdb_tsfz_rjok_ld_html)
 
 * [翻译工作技巧](http://localhost:3009/ywzb_kfou_zv_rfrf_uypi_wtjn_rjok_ld_html)
+
+* [使用助手手机版](http://localhost:3009/ywzb_kfou_zv_rvdb_ouss_ssvl_os_rjok_ld_html)
 ## 以下是友情推荐
 
 * 世界上最好用的编程软件[vscode](https://code.visualstudio.com/)

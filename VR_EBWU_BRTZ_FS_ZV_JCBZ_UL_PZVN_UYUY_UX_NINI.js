@@ -18,49 +18,49 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var RJSE_1 = RJSE_KP.replace(/\/\/.*/, "")
     var NINI_UXUX_2;
     var PC_FRIH_SDVN_PH_HPMI;
-    var IOWR_CQPI_FR
+    var DIWR_CQPI_FR
     if (/--+(?!\d)/.test(RJSE_1)) {
         NINI_UXUX_2 = "3c"
         var reg_YHLD = /--+(?!\d)/
-        IOWR_CQPI_FR = RJSE_1.match(reg_YHLD);
-        if (IOWR_CQPI_FR != null) {
+        DIWR_CQPI_FR = RJSE_1.match(reg_YHLD);
+        if (DIWR_CQPI_FR != null) {
             RJSE_1 = RJSE_1.replace(reg_YHLD, "")
             GKQJ_PC_FRIH=true;
         }
     } else {
         NINI_UXUX_2 = 'cf'
     }
-    var IOWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)([^\w\s])(?:\s*(?:，|,)\s*|\s*)(.*)/i)
-    if (IOWR_MCVN == null) {
+    var DIWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)([^\w\s])(?:\s*(?:，|,)\s*|\s*)(.*)/i)
+    if (DIWR_MCVN == null) {
         throw new Error("SOPJ CGNE NINI MCVN:" + RJSE_KP)
     }
-    var RJSE_NINI_LLAO = IOWR_MCVN[1]
-    var NINI_UXUX = IOWR_MCVN[2].replace(/【/, "[")
+    var RJSE_NINI_LLAO = DIWR_MCVN[1]
+    var NINI_UXUX = DIWR_MCVN[2].replace(/【/, "[")
     if (!/^\[$/.test(NINI_UXUX)) {
         throw new Error("NINI UXUX ACUN : " + NINI_UXUX + "<--" + RJSE_KP)
     }
-    var RJSE_MCVN = IOWR_MCVN[3].replace(/【/g, "[").replace(/】/g, "]");
-    var IOWR_YHLD = RJSE_MCVN.replace(/(?:\s+|\s*;\s*|\s*；\s*)$/, "").match(/([^\[\]]*)\](.*)/)
-    if (IOWR_YHLD == null) {
+    var RJSE_MCVN = DIWR_MCVN[3].replace(/【/g, "[").replace(/】/g, "]");
+    var DIWR_YHLD = RJSE_MCVN.replace(/(?:\s+|\s*;\s*|\s*；\s*)$/, "").match(/([^\[\]]*)\](.*)/)
+    if (DIWR_YHLD == null) {
         throw new Error("MCVN BRTZ MSOX:" + RJSE_MCVN + "<--" + RJSE_KP)
     }
-    var UYUY_MCVN = IOWR_YHLD[1];
+    var UYUY_MCVN = DIWR_YHLD[1];
     var RJSE_NOKZ_MR_EYTR;
     var reg_PCYC_KLVQ_MCVN = /\[\s*((?:\+|-|)\d+(?:\.\d+|))\s*-\s*((?:\+|-|)\d+(?:\.\d+|))(.*)\]/;
-    var IOWR_PCYC_KLVQ_MCVN = IOWR_YHLD[2].match(reg_PCYC_KLVQ_MCVN)
-    if (IOWR_PCYC_KLVQ_MCVN != null) {
-        RJSE_NOKZ_MR_EYTR = IOWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN,"")
-        AWZN_KLVQ_VN_1 = Number(IOWR_PCYC_KLVQ_MCVN[1])
-        AWZN_KLVQ_VN_2 = Number(IOWR_PCYC_KLVQ_MCVN[2])
+    var DIWR_PCYC_KLVQ_MCVN = DIWR_YHLD[2].match(reg_PCYC_KLVQ_MCVN)
+    if (DIWR_PCYC_KLVQ_MCVN != null) {
+        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN,"")
+        AWZN_KLVQ_VN_1 = Number(DIWR_PCYC_KLVQ_MCVN[1])
+        AWZN_KLVQ_VN_2 = Number(DIWR_PCYC_KLVQ_MCVN[2])
         NINI_UXUX_2="3c"
         GKQJ_AWZN_KLVQ = true;
-        var YNDF_KLVQ_MCVN = IOWR_PCYC_KLVQ_MCVN[3]
+        var YNDF_KLVQ_MCVN = DIWR_PCYC_KLVQ_MCVN[3]
         if (!/^\s*$/.test(YNDF_KLVQ_MCVN)) {
             var VNWM_YNDF_KLVQ_MCVN = YNDF_KLVQ_MCVN.split(/(?<=[^\s])\s+(?=[^\s])/)
             VNWM_YNDF_KLVQ_MCVN.forEach(RNSF => {
                 var vnwm_yhld = RNSF.split(/:/)
                 if (vnwm_yhld.length != 2) {
-                    throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_YHLD[2])
+                    throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_YHLD[2])
                 }
                 var VNWM_KLVQ_MCVN = vnwm_yhld[0].split(/-/).map(RNSF_3 => {
                     var VN_YHLD = Number(RNSF_3);
@@ -74,7 +74,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
             })
         }
     } else {
-        RJSE_NOKZ_MR_EYTR = IOWR_YHLD[2]
+        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2]
     }
     var VNWM_NOKZ_MR_EYTR_MCVN = RJSE_NOKZ_MR_EYTR.replace(/^\s+/, "").split(/\s*(?:,|，)\s*|\s+/);
     var NOKZ;
@@ -161,9 +161,9 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
             if (/^\s*0\s*$/.test(VNWM_PZVN_JUZC_2[1])) {
                 throw new Error("[PKVN ACOA JI 0]" + PZVN_JUZC_2 + "<--" + RJSE_KP)
             }
-            var IOWR_YHLD = UL_NOKZ(Number(VNWM_PZVN_JUZC_1[1]), Number(VNWM_PZVN_JUZC_1[0]), Number(VNWM_PZVN_JUZC_2[1]), Number(VNWM_PZVN_JUZC_2[0]))
-            PZVN = IOWR_YHLD.PZVN
-            NOKZ = IOWR_YHLD.NOKZ
+            var DIWR_YHLD = UL_NOKZ(Number(VNWM_PZVN_JUZC_1[1]), Number(VNWM_PZVN_JUZC_1[0]), Number(VNWM_PZVN_JUZC_2[1]), Number(VNWM_PZVN_JUZC_2[0]))
+            PZVN = DIWR_YHLD.PZVN
+            NOKZ = DIWR_YHLD.NOKZ
         } else {
 
             try {
@@ -188,9 +188,9 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         }
     }
     var reg_ARVN = /\d\.(\d+)/;
-    var IOWR_YHLD = PZVN.toString().match(reg_ARVN)
+    var DIWR_YHLD = PZVN.toString().match(reg_ARVN)
     var AGVN_TRVN
-    if (IOWR_YHLD == null) {
+    if (DIWR_YHLD == null) {
         AGVN_TRVN = 0
     } else {
         AGVN_TRVN = PZVN.toString().replace(reg_ARVN, "$1").length;

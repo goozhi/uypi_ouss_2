@@ -6,12 +6,12 @@ const reg_dreq = require("./bx_gzbu_zv_rfrf_bx/reg_dreq");
 const eowl_xjvx_uxux_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_xjvx_uxux_diwr");
 const eowl_ac_grbr_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_ac_grbr_diwr");
 
-async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
     var vnwm_afoa_bqeo = BQEO_1.split(/\n/)
     var nikc_bx = vnwm_afoa_bqeo[0]
@@ -48,7 +48,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
         uz_ms('csrf-rt vdzv nikc-')
     }
 
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
     var diwr_vnwm_jtco
     var vwdp_diwr_vnwm_1
     if (VNWM_MCVN_1 == null) {
@@ -89,7 +89,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(IOWR_AFOA) {
                     diwr_vnwm_jtco = await eowl_ac_grbr_diwr(diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
                     return diwr_vnwm_jtco
                 default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

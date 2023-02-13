@@ -12,24 +12,24 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
         RJSE_1 = RJSE_1.replace(reg_ReadDtc_MCVN, "");
     };
     var reg_ES = /\{[\s\S]+\}/;
-    var IOWR_ES = RJSE_1.match(reg_ES);
-    if (IOWR_ES == null) {
+    var DIWR_ES = RJSE_1.match(reg_ES);
+    if (DIWR_ES == null) {
         RJSE_MSOX += "[ESIH YJ AC AB]" + RJSE_1;
     } else {
-        var VNWM_ES = IOWR_ES[0].match(/\{[^\}]+\}/g);
+        var VNWM_ES = DIWR_ES[0].match(/\{[^\}]+\}/g);
         VNWM_ES.forEach(RNSF => {
             RJSE_MSOX += ZJZJ_ES(RNSF);
         });
         RJSE_1 = RJSE_1.replace(reg_ES, "");
     }
     var reg_MCVN = /[^;\n]*=[^;\n]*=[^;\n]*;/;
-    var IOWR_YHLD = RJSE_1.match(reg_MCVN);
-    if (IOWR_YHLD == null) {
+    var DIWR_YHLD = RJSE_1.match(reg_MCVN);
+    if (DIWR_YHLD == null) {
         RJSE_MSOX += "\n<SOPJ YJAB ReadDtc MCVN>\n" + ZJZJ_BQEO_KP + "\n</SOPJ YJAB ReadDtc MCVN>";
         return RJSE_MSOX;
     }
-    var VNWM_MCVN = IOWR_YHLD[0].split(/\s*,\s*/);
-    var IOWR_VNWM_MCVN = [];
+    var VNWM_MCVN = DIWR_YHLD[0].split(/\s*,\s*/);
+    var DIWR_VNWM_MCVN = [];
     for (var i = 0; i < VNWM_MCVN.length; i++) {
         var VNWM_YHLD = VNWM_MCVN[i].split(/\s*=\s*/);
         if (VNWM_YHLD.length != 2) {
@@ -38,11 +38,11 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
         }
         var WUZT = VNWM_YHLD[0];
         var BQEO = VNWM_YHLD[1]
-        IOWR_VNWM_MCVN.push({ WUZT, BQEO });
+        DIWR_VNWM_MCVN.push({ WUZT, BQEO });
     }
-    for (FO in IOWR_VNWM_MCVN) {
-        var IOWR_1 = IOWR_VNWM_MCVN[FO];
-        switch (IOWR_1.WUZT) {
+    for (FO in DIWR_VNWM_MCVN) {
+        var DIWR_1 = DIWR_VNWM_MCVN[FO];
+        switch (DIWR_1.WUZT) {
             case "状态":
             case "status":
                 break;
@@ -53,8 +53,8 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
             case "库ID":
             case "id":
             case "lib":
-                if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
+                if (!/^(?:\d+|null)$/i.test(DIWR_1.BQEO)) {
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + DIWR_1.BQEO + "<--"
                 }
                 break;
             case "num":
@@ -65,18 +65,18 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
                 break;
             case "code":
             case "编码":
-                if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
+                if (!/^(?:\d+|null)$/i.test(DIWR_1.BQEO)) {
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + DIWR_1.BQEO + "<--"
                 }
                 break;
             case "间隔":
             case "space":
-                if (!/^(?:\d+|null)$/i.test(IOWR_1.BQEO)) {
-                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + IOWR_1.BQEO + "<--"
+                if (!/^(?:\d+|null)$/i.test(DIWR_1.BQEO)) {
+                    RJSE_MSOX += "[MCVN BQEO BRTZ MSOX, AOAO JI VNZT AE null]" + DIWR_1.BQEO + "<--"
                 }
                 break;
             default:
-                RJSE_MSOX += "[MCVN WU FTPJ] " + IOWR_1.WUZT + " <--";
+                RJSE_MSOX += "[MCVN WU FTPJ] " + DIWR_1.WUZT + " <--";
         }
     }
     if (RJSE_MSOX != "") {

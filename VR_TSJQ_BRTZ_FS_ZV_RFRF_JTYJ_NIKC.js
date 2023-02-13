@@ -2,15 +2,15 @@ const kczv_rfrf = require("./AFOA_RFRF_DATA_ZTFR_SUM/kczv_rfrf");
 const fs = require('fs');
 const uz_ms = require("./AFOA_BX/uz_ms");
 const NVMS_JTYJ_LD_html = require('./AFOA_BX/NVMS_JTYJ_LD_html')
-async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC(DIWR_AFOA) {
     const VR_EBWU_AFOA_BRTZ_FS = require("./VR_EBWU_AFOA_BRTZ_FS");
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
     var vkvy_dbkz = 'utf8'
     if (VNWM_MCVN_1 == null) {
 
@@ -25,15 +25,15 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_NIKC(IOWR_AFOA) {
                     }
                     break;
                 case /DS\b/.test(RNSF):
-                    IOWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_DS_XBST == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    DIWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_DS_XBST == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        DS = IOWR_DS_XBST[2]
+                        DS = DIWR_DS_XBST[2]
                     }
                     break;
                 default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

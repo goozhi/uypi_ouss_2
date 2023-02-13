@@ -23,9 +23,9 @@ function RJQT_FDMJ(YXNA_RJQT_KP, NIKC_1, VKVY, NCRL_WU, RJSE_VDUM_RJQT_WU_SLGR, 
     if (reg_EYNH == null) {
         throw 'RJQT_FDMJ: MCVN NRAP';
     }else{
-        var IOWR_QIFT_FR=reg_EYNH.match(/\/([ig])/);
-        if(IOWR_QIFT_FR!=null){
-            RJSE_QIFT_FR=IOWR_QIFT_FR[1]
+        var DIWR_QIFT_FR=reg_EYNH.match(/\/([ig])/);
+        if(DIWR_QIFT_FR!=null){
+            RJSE_QIFT_FR=DIWR_QIFT_FR[1]
         }
         reg_EYNH=new RegExp(reg_EYNH.replace(/^\s*\/|\/[ig]*\s*$/g,""),RJSE_QIFT_FR)
     }

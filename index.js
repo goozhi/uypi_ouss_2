@@ -91,6 +91,9 @@ app.get('/VR_VKJP', function (req, res) {
 app.get('/uypi_ouss_zvow_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/uypi_ouss_zvow.md");
 });
+app.get('/ywzb_kfou_zv_rvdb_ouss_ssvl_os_rjok_ld_html', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_rvdb_ouss_ssvl_os.md");
+});
 app.get('/ywzb_kfou_zv_vscode_rvdb_tsfz_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vscode_rvdb_tsfz.md");
 });
@@ -225,7 +228,7 @@ app.post('/ESIH_BRTZ_FS', function (req, res) {
     WLYC_ESIH_BRTZ_FS(req, res);
 });
 app.post('/VR_EBWU_BRTZ_FS', function (req, res) {
-    WLYC_VR_EBWU_BRTZ_FS(req, res);
+    WLYC_VR_EBWU_BRTZ_FS(req, res, config);
 });
 app.post('/BRTZ_FS_3f', function (req, res) {
     WLYC_BRTZ_FS_3f(req, res);

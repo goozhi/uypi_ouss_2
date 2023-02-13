@@ -1,15 +1,15 @@
 const CE_EBWU_LD_YHRJ = require("../AFOA_BX/CE_EBWU_LD_YHRJ");
-function WR_TSJQ_ZV_CE_EBWU_LD_YHRJ(IOWR_AFOA) {
+function WR_TSJQ_ZV_CE_EBWU_LD_YHRJ(DIWR_AFOA) {
     var gkqj_mdcf_xbst=false
     var reg_mdcf=/md-(?:(?!md-|-md)[\s\S])*(?:-md|\bmd(?!\w|-))/ig;
     var reg_mdcf_eynh=/md-((?:(?!md-|-md)[\s\S])*)(?:-md|\bmd(?!\w|-))/i;
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.WR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
+    var BQEO_1 = DIWR_AFOA.WR_AFOA_BQEO.replace(/^\s+|\s+$/g, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.WR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.WR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
     var nixb
     var DS
     var RJSE_jtyp = BQEO_1
@@ -49,11 +49,11 @@ function WR_TSJQ_ZV_CE_EBWU_LD_YHRJ(IOWR_AFOA) {
                     }
                     break;
                 case /DS\b/.test(RNSF):
-                    IOWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_DS_XBST == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.WR_AFOA_MCVN)
+                    DIWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_DS_XBST == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.WR_AFOA_MCVN)
                     } else {
-                        DS = IOWR_DS_XBST[2]
+                        DS = DIWR_DS_XBST[2]
                     }
                     break;
                 default:

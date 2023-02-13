@@ -12,8 +12,8 @@ function ZHVT_STYF_RNSF_2(beiTiquShuzu){//ZHVT_STYF_RNSF_2
 	 	var regex1=new RegExp("lgz5"+RJSE2+"(?=lgz5)","g");
 	 	VNWM2=RJSE1.match(regex1);
 	 	
-	 	var IOWR_1={yuansu : RJSE2, geshu : VNWM2.length};
-	 	VNWM1.push(IOWR_1);
+	 	var DIWR_1={yuansu : RJSE2, geshu : VNWM2.length};
+	 	VNWM1.push(DIWR_1);
 	 	}//
 	 }//xunhuanZhaoXiangtongYuansuXinxi
 	 return VNWM1;

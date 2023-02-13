@@ -10,7 +10,7 @@ var NIKC_NINI_RJVT = function (NIKC_1, encoding_2) {//NIKC_NINI_RJVT
         throw new Error('csrf- nikc ac zznq-' + NIKC_1)
     }
     var VNWM_1 = fs.readdirSync(NIKC_1);
-    var IOWR_VNWM_1 = [];
+    var DIWR_VNWM_1 = [];
 
     for (var EQWY_1 = 0; EQWY_1 < VNWM_1.length; EQWY_1++) {
         var yxna_yhld = NIKC_1 + VNWM_1[EQWY_1]
@@ -26,8 +26,8 @@ var NIKC_NINI_RJVT = function (NIKC_1, encoding_2) {//NIKC_NINI_RJVT
                 //   console.log('目标路径不是文件夹');
             }
 
-            var IOWR_2 = { WUZT: VNWM_1[EQWY_1], YXNA: yxna_yhld, vkvy: encoding_1, BQEO: RJVT(yxna_yhld, encoding_1) };
-            IOWR_VNWM_1.push(IOWR_2);
+            var DIWR_2 = { WUZT: VNWM_1[EQWY_1], YXNA: yxna_yhld, vkvy: encoding_1, BQEO: RJVT(yxna_yhld, encoding_1) };
+            DIWR_VNWM_1.push(DIWR_2);
         } catch (err) {
             err.message = "csrf-" + yxna_yhld + "-" + err.message
             throw err
@@ -35,7 +35,7 @@ var NIKC_NINI_RJVT = function (NIKC_1, encoding_2) {//NIKC_NINI_RJVT
         }
 
     }
-    return (IOWR_VNWM_1);
+    return (DIWR_VNWM_1);
 }//NIKC_NINI_RJVT
 
 module.exports=NIKC_NINI_RJVT

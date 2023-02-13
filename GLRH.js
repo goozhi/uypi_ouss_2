@@ -8,8 +8,8 @@ var fs = require('fs')
 // var str1 = "(33f"
 // var TT
 // var VBYT_KLVQ=require('./AFOA_BX/VBYT_KLVQ')
-// var IOWR_VNWM_1=[{VNWM:[3,4]},{VNWM:[5,66]},{VNWM:[5,99]}]
-// var EQWY=VBYT_KLVQ(IOWR_VNWM_1,"VNWM",99)
+// var DIWR_VNWM_1=[{VNWM:[3,4]},{VNWM:[5,66]},{VNWM:[5,99]}]
+// var EQWY=VBYT_KLVQ(DIWR_VNWM_1,"VNWM",99)
 // const VNZT_YTNC_FS = require('./AFOA_BX/VNZT_YTNC_FS');
 // UYTZ="d5&0X10"
 // JTYP="0X10"

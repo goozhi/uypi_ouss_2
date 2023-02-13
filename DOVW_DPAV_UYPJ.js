@@ -26,8 +26,8 @@ function DOVW_DPAV_UYPJ(str1, str2) {
         }
     }
     var similarity = 1 - dif[len1][len2] / Math.max(str1.length, str2.length);
-    var IOWR_YHLD = { str1, str2, DOVW_DPAV: dif[len1][len2], STST_MI: similarity };
-    return IOWR_YHLD;
+    var DIWR_YHLD = { str1, str2, DOVW_DPAV: dif[len1][len2], STST_MI: similarity };
+    return DIWR_YHLD;
 }
 
 //得到最小值  

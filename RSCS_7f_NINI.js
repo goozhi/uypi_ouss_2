@@ -1,11 +1,11 @@
 var NINI_ZJZJ = require('./NINI_ZJZJ')
 var RSCS_UYPJ_7f = require('./RSCS_UYPJ_7f')
 
-function RSCS_7f_NINI(NINI_IOWR_1,VN_VNWM) {
-    if (typeof (NINI_IOWR_1) != 'object') {
-        throw 'RSCS_7f_NINI : MCVN UXUX MSOX : ' + typeof (NINI_IOWR_1);
+function RSCS_7f_NINI(NINI_DIWR_1,VN_VNWM) {
+    if (typeof (NINI_DIWR_1) != 'object') {
+        throw 'RSCS_7f_NINI : MCVN UXUX MSOX : ' + typeof (NINI_DIWR_1);
     }
-    var NINI_MCVN_VNWM_1 = NINI_IOWR_1.MCVN_VNWM_1;
+    var NINI_MCVN_VNWM_1 = NINI_DIWR_1.MCVN_VNWM_1;
     var NINI_WU = NINI_MCVN_VNWM_1[0];
     var NINI_eS = NINI_MCVN_VNWM_1[1];
     var NINI_UXUX = NINI_MCVN_VNWM_1[2];
@@ -15,7 +15,7 @@ function RSCS_7f_NINI(NINI_IOWR_1,VN_VNWM) {
     var NINI_TRVN = NINI_MCVN_VNWM_1[6];
     var NINI_EYTR = NINI_MCVN_VNWM_1[7];
     var WKTR_VNWY = NINI_UYPJ.match(/d\d+/i);
-    var NINI_MCVN_IOWR_1 = { WKTR_VNWY, NINI_WU, NINI_eS, MCVN_1, MCVN_2, NINI_UXUX, NINI_UYPJ, NINI_TRVN, NINI_EYTR };
+    var NINI_MCVN_DIWR_1 = { WKTR_VNWY, NINI_WU, NINI_eS, MCVN_1, MCVN_2, NINI_UXUX, NINI_UYPJ, NINI_TRVN, NINI_EYTR };
     if (WKTR_VNWY == null) {
         throw "UYPJ TY HMPC YYHA VKIH :" + NINI_UYPJ;
     } else {
@@ -41,13 +41,13 @@ function RSCS_7f_NINI(NINI_IOWR_1,VN_VNWM) {
         IMFB_VNWM_1[(WKTR_VNWY - 1) % 8] = RNSF_1;
         return IMFB_VNWM_1;
     })
-    var eS_IOWR_1 = { NINI_eS, eS_VNWM_1 };
-    var NINI_YJ_VNWM_1 = eS_IOWR_1.eS_VNWM_1.map((RNSF_1, EQWY_1) => {
-        var YJ = RSCS_UYPJ_7f(NINI_MCVN_IOWR_1, RNSF_1);
+    var eS_DIWR_1 = { NINI_eS, eS_VNWM_1 };
+    var NINI_YJ_VNWM_1 = eS_DIWR_1.eS_VNWM_1.map((RNSF_1, EQWY_1) => {
+        var YJ = RSCS_UYPJ_7f(NINI_MCVN_DIWR_1, RNSF_1);
         return { WKTR_ZTHI: VN_VNWM[EQWY_1], UYTZ_IOYC_YJ: YJ }
     })
-    return { NINI_YJ_VNWM_1, NINI_MCVN_IOWR_1 };
-    // var NINI_EYNH_IOWR={IOYC_NVRJ_IOWR,NINI_WU, NINI_eS, NINI_UXUX, NINI_UYPJ, NINI_TRVN, NINI_EYTR, NINI_YJ, VNWY_VNWM_1, NVRJ_eS_YYHA, YF_eSIH_DA_PL_eS};
-    // return NINI_EYNH_IOWR;
+    return { NINI_YJ_VNWM_1, NINI_MCVN_DIWR_1 };
+    // var NINI_EYNH_DIWR={IOYC_NVRJ_DIWR,NINI_WU, NINI_eS, NINI_UXUX, NINI_UYPJ, NINI_TRVN, NINI_EYTR, NINI_YJ, VNWY_VNWM_1, NVRJ_eS_YYHA, YF_eSIH_DA_PL_eS};
+    // return NINI_EYNH_DIWR;
 }
 module.exports = RSCS_7f_NINI;

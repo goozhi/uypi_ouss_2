@@ -1,19 +1,19 @@
-function ZJZJ_3c_NINI_MCVN(IOWR_KP){
+function ZJZJ_3c_NINI_MCVN(DIWR_KP){
     const ZJZJ_ES = require('./ZJZJ_ES.js');
     var ZJZJ_UYTZ = require('./ZJZJ_UYTZ.js');
     var ZJZJ_3c_VNWM_MCVN = require('./ZJZJ_3c_VNWM_MCVN.js');
     var RJSE_MSOX = "";
-    var UXUX_YHLD = typeof (IOWR_KP);
+    var UXUX_YHLD = typeof (DIWR_KP);
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX, AOAO JI object : " + UXUX_YHLD)
     }
-    var NINI_WU = IOWR_KP.NINI_WU;
-    var NINI_ES = IOWR_KP.NINI_ES;
-    var NINI_AGVN_NHVN_MCVN=IOWR_KP.NINI_AGVN_NHVN_MCVN
-    var NINI_UXUX = IOWR_KP.NINI_UXUX;
-    var NINI_EYTR=IOWR_KP.NINI_EYTR;
-    var NINI_UYTZ = IOWR_KP.NINI_UYTZ;
-    var NINI_VNWM_MCVN=IOWR_KP.NINI_VNWM_MCVN;
+    var NINI_WU = DIWR_KP.NINI_WU;
+    var NINI_ES = DIWR_KP.NINI_ES;
+    var NINI_AGVN_NHVN_MCVN=DIWR_KP.NINI_AGVN_NHVN_MCVN
+    var NINI_UXUX = DIWR_KP.NINI_UXUX;
+    var NINI_EYTR=DIWR_KP.NINI_EYTR;
+    var NINI_UYTZ = DIWR_KP.NINI_UYTZ;
+    var NINI_VNWM_MCVN=DIWR_KP.NINI_VNWM_MCVN;
     if(!/^\s*(?:\d+|)\.\d\s*$/.test(NINI_AGVN_NHVN_MCVN)){
         RJSE_MSOX+="[AGVN NHVN MCVN FTPJ]"+NINI_AGVN_NHVN_MCVN+"<--"    
     }

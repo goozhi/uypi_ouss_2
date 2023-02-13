@@ -2,14 +2,14 @@ const rfrf_uypi_ztfr_sum = require("./AFOA_RFRF_DATA_ZTFR_SUM/rfrf_uypi_ztfr_sum
 const fs = require('fs');
 const uz_ms = require("./AFOA_BX/uz_ms");
 const NVMS_JTYJ_LD_html = require('./AFOA_BX/NVMS_JTYJ_LD_html')
-async function VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM(IOWR_AFOA) {
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+async function VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM(DIWR_AFOA) {
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/\w+(?:=\w+|)/g);
     var jtyp_1
     var vkvy_dbkz = 'utf8'
     if (VNWM_MCVN_1 == null) {
@@ -25,15 +25,15 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_UYPI_ZTFR_SUM(IOWR_AFOA) {
                     }
                     break;
                 case /DS\b/.test(RNSF):
-                    IOWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
-                    if (IOWR_DS_XBST == null) {
-                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    DIWR_DS_XBST = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    if (DIWR_DS_XBST == null) {
+                        throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
-                        DS = IOWR_DS_XBST[2]
+                        DS = DIWR_DS_XBST[2]
                     }
                     break;
                 default:
-                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

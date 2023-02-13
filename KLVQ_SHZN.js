@@ -1,4 +1,4 @@
-function KLVQ_SHZN(IOWR_VNWM, line, weight) {
+function KLVQ_SHZN(DIWR_VNWM, line, weight) {
     if (typeof (weight) != "number") {
         throw new Error("[MCVN UXUX AOAO JI number]" + weight + "<--")
     } else {

@@ -23,9 +23,9 @@ function NINI_CGNE_ZV_NINI_WU_MR_ES(RJSE_MCNV_NINI, RJSE_NIXB_NINI, CQPI_FR) {
     VNWM_MCNV_Str_TSJQ.reverse();
     var VNWM_YBKC_1 = [];
     var VNWM_YBKC_2 = [];
-    var IOWR_VNWM_MCNV_NINI = []
+    var DIWR_VNWM_MCNV_NINI = []
     var VNWM_VDUM_NINI = [];
-    var IOWR_VNWM_ZV_NINI_DIZC_NVCM = []
+    var DIWR_VNWM_ZV_NINI_DIZC_NVCM = []
     for (var i1 = 0; i1 < VNWM_MCNV_Str_TSJQ.length; i1++) {
         var VNWM_MCNV_NINI = VNWM_MCNV_Str_TSJQ[i1].match(reg_Str_NINI);
         if (VNWM_MCNV_NINI == null) {
@@ -42,7 +42,7 @@ function NINI_CGNE_ZV_NINI_WU_MR_ES(RJSE_MCNV_NINI, RJSE_NIXB_NINI, CQPI_FR) {
                 var NINI_ES = NINI_MCVN[2];
                 var NINI_UXUX = NINI_MCVN[3];
                 var NINI_UYPJ = NINI_MCVN[4];
-                IOWR_VNWM_MCNV_NINI.push({ MCNV_NINI_KP, NINI_WU, NINI_ES, NINI_UXUX, NINI_UYPJ, EQWY_ZV_VNWM_MCNV_NINI: EQWY_1 })
+                DIWR_VNWM_MCNV_NINI.push({ MCNV_NINI_KP, NINI_WU, NINI_ES, NINI_UXUX, NINI_UYPJ, EQWY_ZV_VNWM_MCNV_NINI: EQWY_1 })
             }
         })
 
@@ -50,54 +50,54 @@ function NINI_CGNE_ZV_NINI_WU_MR_ES(RJSE_MCNV_NINI, RJSE_NIXB_NINI, CQPI_FR) {
     VNWM_NIXB_NINI.forEach((RNSF, EQWY_2) => {
         VNWM_VDUM_NINI.push(RNSF)
         var reg_ES = /\{(.*?)\}/
-        var IOWR_ES = RNSF.match(reg_ES);
-        if (IOWR_ES !== null) {
+        var DIWR_ES = RNSF.match(reg_ES);
+        if (DIWR_ES !== null) {
             var NIXB_NINI_WU = RNSF.replace(reg_ES, "")
-            for (var EQWY_1 = 0; EQWY_1 < IOWR_VNWM_MCNV_NINI.length; EQWY_1++) {
-                var NIXB_NINI_ES = IOWR_ES[1].replace(/(\w{2})(?=\w{2})/g, "$1 ");
-                var ES_STST_MI = STST_MI_UYPJ(IOWR_VNWM_MCNV_NINI[EQWY_1].NINI_ES.replace(/[\}\{]/g, "").toLowerCase(), NIXB_NINI_ES.toLowerCase());
+            for (var EQWY_1 = 0; EQWY_1 < DIWR_VNWM_MCNV_NINI.length; EQWY_1++) {
+                var NIXB_NINI_ES = DIWR_ES[1].replace(/(\w{2})(?=\w{2})/g, "$1 ");
+                var ES_STST_MI = STST_MI_UYPJ(DIWR_VNWM_MCNV_NINI[EQWY_1].NINI_ES.replace(/[\}\{]/g, "").toLowerCase(), NIXB_NINI_ES.toLowerCase());
                 if (ES_STST_MI < 0.72) {
                 } else {
-                    var STST_MI = STST_MI_UYPJ(IOWR_VNWM_MCNV_NINI[EQWY_1].NINI_WU.replace(/\s/g, "").toLowerCase(), NIXB_NINI_WU.replace(/\s/g, "").toLowerCase());
+                    var STST_MI = STST_MI_UYPJ(DIWR_VNWM_MCNV_NINI[EQWY_1].NINI_WU.replace(/\s/g, "").toLowerCase(), NIXB_NINI_WU.replace(/\s/g, "").toLowerCase());
                     if (STST_MI < 0.55) {
                     } else if (STST_MI == 1) {
-                        VNWM_VDUM_NINI[EQWY_2] = IOWR_VNWM_MCNV_NINI[EQWY_1].MCNV_NINI_KP;
+                        VNWM_VDUM_NINI[EQWY_2] = DIWR_VNWM_MCNV_NINI[EQWY_1].MCNV_NINI_KP;
                         VNWM_YBKC_2.push(EQWY_2);
                         VNWM_YBKC_1.push(EQWY_1);
                         return;
                     }
                     else {
-                        IOWR_VNWM_ZV_NINI_DIZC_NVCM.push({ STST_MI, NIXB_NINI_WU: NIXB_NINI_WU, IOWR_MCNV_NINI: IOWR_VNWM_MCNV_NINI[EQWY_1], EQWY_ZV_IOWR_VNWM_MCNV_NINI: EQWY_1, EQWY_ZV_VNWM_NIXB_NINI: EQWY_2 });
+                        DIWR_VNWM_ZV_NINI_DIZC_NVCM.push({ STST_MI, NIXB_NINI_WU: NIXB_NINI_WU, DIWR_MCNV_NINI: DIWR_VNWM_MCNV_NINI[EQWY_1], EQWY_ZV_DIWR_VNWM_MCNV_NINI: EQWY_1, EQWY_ZV_VNWM_NIXB_NINI: EQWY_2 });
                     }
                 }
             }
 
         } else {
-            for (var EQWY_1 = 0; EQWY_1 < IOWR_VNWM_MCNV_NINI.length; EQWY_1++) {
-                var STST_MI = STST_MI_UYPJ(IOWR_VNWM_MCNV_NINI[EQWY_1].NINI_WU.replace(/\s/g, "").toLowerCase(), RNSF.replace(/\s/g, "").toLowerCase());
+            for (var EQWY_1 = 0; EQWY_1 < DIWR_VNWM_MCNV_NINI.length; EQWY_1++) {
+                var STST_MI = STST_MI_UYPJ(DIWR_VNWM_MCNV_NINI[EQWY_1].NINI_WU.replace(/\s/g, "").toLowerCase(), RNSF.replace(/\s/g, "").toLowerCase());
                 if (STST_MI < 0.55) {
                 } else if (STST_MI == 1) {
-                    VNWM_VDUM_NINI[EQWY_2] = IOWR_VNWM_MCNV_NINI[EQWY_1].MCNV_NINI_KP;
+                    VNWM_VDUM_NINI[EQWY_2] = DIWR_VNWM_MCNV_NINI[EQWY_1].MCNV_NINI_KP;
                     VNWM_YBKC_2.push(EQWY_2);
                     VNWM_YBKC_1.push(EQWY_1);
                     return;
                 }
                 else {
-                    IOWR_VNWM_ZV_NINI_DIZC_NVCM.push({ STST_MI, NIXB_NINI_WU: RNSF, IOWR_MCNV_NINI: IOWR_VNWM_MCNV_NINI[EQWY_1], EQWY_ZV_IOWR_VNWM_MCNV_NINI: EQWY_1, EQWY_ZV_VNWM_NIXB_NINI: EQWY_2 });
+                    DIWR_VNWM_ZV_NINI_DIZC_NVCM.push({ STST_MI, NIXB_NINI_WU: RNSF, DIWR_MCNV_NINI: DIWR_VNWM_MCNV_NINI[EQWY_1], EQWY_ZV_DIWR_VNWM_MCNV_NINI: EQWY_1, EQWY_ZV_VNWM_NIXB_NINI: EQWY_2 });
                 }
             }
 
         }
     })
-    IOWR_VNWM_ZV_NINI_DIZC_NVCM.sort((a, b) => b.STST_MI - a.STST_MI);
-    IOWR_VNWM_ZV_NINI_DIZC_NVCM.forEach((RNSF) => {
-        var EQWY_YHLD_1 = RNSF.EQWY_ZV_IOWR_VNWM_MCNV_NINI;
+    DIWR_VNWM_ZV_NINI_DIZC_NVCM.sort((a, b) => b.STST_MI - a.STST_MI);
+    DIWR_VNWM_ZV_NINI_DIZC_NVCM.forEach((RNSF) => {
+        var EQWY_YHLD_1 = RNSF.EQWY_ZV_DIWR_VNWM_MCNV_NINI;
         var EQWY_YHLD_2 = RNSF.EQWY_ZV_VNWM_NIXB_NINI;
         if (VNWM_YBKC_2.indexOf(EQWY_YHLD_2) == -1 && VNWM_YBKC_1.indexOf(EQWY_YHLD_1) == -1) {
-            if(YFUX_VBYT_ZV_NINI_WU(RNSF.NIXB_NINI_WU,RNSF.IOWR_MCNV_NINI.NINI_WU)){
+            if(YFUX_VBYT_ZV_NINI_WU(RNSF.NIXB_NINI_WU,RNSF.DIWR_MCNV_NINI.NINI_WU)){
                 VNWM_YBKC_1.push(EQWY_YHLD_1);
                 VNWM_YBKC_2.push(EQWY_YHLD_2);
-                VNWM_VDUM_NINI[RNSF.EQWY_ZV_VNWM_NIXB_NINI] = RNSF.NIXB_NINI_WU.replace(/\s+$/, "") + " 相似度 : " + RNSF.STST_MI.toFixed(3) + " " + RNSF.IOWR_MCNV_NINI.MCNV_NINI_KP;    
+                VNWM_VDUM_NINI[RNSF.EQWY_ZV_VNWM_NIXB_NINI] = RNSF.NIXB_NINI_WU.replace(/\s+$/, "") + " 相似度 : " + RNSF.STST_MI.toFixed(3) + " " + RNSF.DIWR_MCNV_NINI.MCNV_NINI_KP;    
             }
             return;
         }

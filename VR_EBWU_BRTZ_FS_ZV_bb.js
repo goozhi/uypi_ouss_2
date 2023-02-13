@@ -10,17 +10,17 @@ function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
     }else{
         BMLC = ""
     }
-    var IOWR_MCVN = RJSE_1.match(/(.*\}\s*)(?:,\s*|)([^,\s]+)(?:\s*,\s*|\s+)(.*)/i)
-    if (IOWR_MCVN == null) {
+    var DIWR_MCVN = RJSE_1.match(/(.*\}\s*)(?:,\s*|)([^,\s]+)(?:\s*,\s*|\s+)(.*)/i)
+    if (DIWR_MCVN == null) {
         throw new Error("SOPJ CGNE NINI MCVN:" + RJSE_KP)
     }
-    var RJSE_NINI_LLAO = IOWR_MCVN[1]
-    var RJSE_MCVN = IOWR_MCVN[3]
-    var IOWR_REYE_XBST = RJSE_MCVN.match(/=(\w+)\s*$/)
+    var RJSE_NINI_LLAO = DIWR_MCVN[1]
+    var RJSE_MCVN = DIWR_MCVN[3]
+    var DIWR_REYE_XBST = RJSE_MCVN.match(/=(\w+)\s*$/)
     var RJSE_REYE_XBST = ""
     var VBYT_1=true;
-    if (IOWR_REYE_XBST != null){
-        RJSE_REYE_XBST = IOWR_REYE_XBST[1].toLowerCase()
+    if (DIWR_REYE_XBST != null){
+        RJSE_REYE_XBST = DIWR_REYE_XBST[1].toLowerCase()
         RJSE_MCVN=RJSE_MCVN.replace(/=(\w+)\s*$/,"")
         if(RJSE_REYE_XBST=="2"){
             RJSE_REYE_XBST=""

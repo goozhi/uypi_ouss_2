@@ -1,16 +1,16 @@
 const NVMS_JTYJ_LD_html = require("./AFOA_BX/NVMS_JTYJ_LD_html");
 
-async function VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS(IOWR_AFOA, diwr_mcvn) {
+async function VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS(DIWR_AFOA, diwr_mcvn) {
     var YXNA_1
     var gkyq_yxna_zznq
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "");
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "");
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
     var RJSE_nixb_bqeo = BQEO_1.replace(/Peng_JTCO_ZV_TZRN/ig, "$$$$$$")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/[\w=]+/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[\w=]+/g);
     if (VNWM_MCVN_1 == null) {
     } else {
         VNWM_MCVN_1.forEach(RNSF => {
@@ -31,7 +31,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS(IOWR_AFOA, diwr_mcvn) {
                     gkyq_yxna_zznq = true;
                     break;
                 default:
-                    throw new Error("[ACUN MCVN]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

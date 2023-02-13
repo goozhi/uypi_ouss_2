@@ -15,23 +15,23 @@ function VR_EBWU_BRTZ_FS_ZV_gg(RJSE_KP) {
         BMLC = ""
     }
     RJSE_1 = RJSE_1.replace(/(?:;|\uff1b)\s*$/, "")
-    var IOWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)(\w+)(?:\s*(?:\uff0c|,)\s*|\s*)([^,\uff0c ]*)(?:\s*(?:\uff0c|,)\s*|\s*)(.*)/i)
-    if (IOWR_MCVN == null) {
+    var DIWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)(\w+)(?:\s*(?:\uff0c|,)\s*|\s*)([^,\uff0c ]*)(?:\s*(?:\uff0c|,)\s*|\s*)(.*)/i)
+    if (DIWR_MCVN == null) {
         throw new Error("[SOPJ CGNE NINI MCVN]" + RJSE_KP)
     }
-    var LLAO = IOWR_MCVN[1]
+    var LLAO = DIWR_MCVN[1]
     var reg_ES = /\{(.*)\}/
-    var IOWR_ES = LLAO.match(reg_ES);
-    if (IOWR_ES == null) {
+    var DIWR_ES = LLAO.match(reg_ES);
+    if (DIWR_ES == null) {
         throw new Error("[NRAP ES MCVN]" + LLAO + "<--" + RJSE_KP)
     } else {
-        LLAO = LLAO.replace(reg_ES, "{" + IOWR_ES[1].replace(/(\w\w)(?=\w)/g, "$1 ") + "}")
+        LLAO = LLAO.replace(reg_ES, "{" + DIWR_ES[1].replace(/(\w\w)(?=\w)/g, "$1 ") + "}")
     }
-    var NINI_UXUX = IOWR_MCVN[2]
+    var NINI_UXUX = DIWR_MCVN[2]
     if (!/^(?:gg)$/i.test(NINI_UXUX)) {
         throw new Error("[NINI UXUX ACUN]" + NINI_UXUX + "<--" + RJSE_KP)
     }
-    var ZZZZ_KLVQ = IOWR_MCVN[3]
+    var ZZZZ_KLVQ = DIWR_MCVN[3]
     try {
         eval(ZZZZ_KLVQ.replace(/d\d+/ig, "1"))
     } catch {
@@ -42,7 +42,7 @@ function VR_EBWU_BRTZ_FS_ZV_gg(RJSE_KP) {
     } else if (/^\d+$/.test(ZZZZ_KLVQ)) {
         ZZZZ_KLVQ = "d" + ZZZZ_KLVQ
     }
-    var RJSE_YHLD = IOWR_MCVN[4].replace(/\s+$/, "")
+    var RJSE_YHLD = DIWR_MCVN[4].replace(/\s+$/, "")
     var VNWM_3f_MCVN_ZV_VNWM = RJSE_YHLD.match(/\[[^\[\]]+\]/g)
     if(VNWM_3f_MCVN_ZV_VNWM==null){
         throw new Error('csrf-mcvn sopj yj ab-'+RJSE_KP)

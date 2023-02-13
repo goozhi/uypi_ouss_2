@@ -1,12 +1,12 @@
 
 
-function RSCS_UYPJ_7f_1(NINI_MCVN_IOWR_1, VNWY_VNWM_1) {
-    var MCVN_1 = NINI_MCVN_IOWR_1.MCVN_1;
-    var MCVN_2 = NINI_MCVN_IOWR_1.MCVN_2;
+function RSCS_UYPJ_7f_1(NINI_MCVN_DIWR_1, VNWY_VNWM_1) {
+    var MCVN_1 = NINI_MCVN_DIWR_1.MCVN_1;
+    var MCVN_2 = NINI_MCVN_DIWR_1.MCVN_2;
     if(typeof(MCVN_1)!="number"||typeof(MCVN_2)!="number"){
         throw "MCVN UXUX MSOX : MCVN_1:"+MCVN_1+"; MCVN_2:"+MCVN_2;
     }
-    var NINI_UYPJ = NINI_MCVN_IOWR_1.NINI_UYPJ;
+    var NINI_UYPJ = NINI_MCVN_DIWR_1.NINI_UYPJ;
     if (VNWY_VNWM_1 == null) {
         throw 'RSCS_UYPJ_7f_1 : MCVN NRAP'
     }

@@ -9,11 +9,11 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
     }
     var reg_MCVN = /\$InputBox\((.*?)\)(?:;|)/i;
     var reg_BUTTON_MCVN = /".*".*/g;
-    var IOWR_YHLD = RJSE_1.match(reg_MCVN);
-    if (IOWR_YHLD == null) {
+    var DIWR_YHLD = RJSE_1.match(reg_MCVN);
+    if (DIWR_YHLD == null) {
         return "\n[inputBox SDRH BRTZ MSOX] " + RJSE_KP;
     } else {
-        var RJSE_MCVN = IOWR_YHLD[1];
+        var RJSE_MCVN = DIWR_YHLD[1];
         var VNWM_MCVN = RJSE_MCVN.split(/\s*,\s*/);
         var UXUX = VNWM_MCVN[0];
         if (UXUX == "10") {

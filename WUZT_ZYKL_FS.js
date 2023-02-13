@@ -20,16 +20,16 @@ function WUZT_ZYKL_FS(RJSE_1) {
     if (!VBYT_1) {
         var VNWM_STST_RJSE = []
         for (var i1 = 0; i1 < VNWM_EYTR.length; i1++) {
-            var IOWR_YHLD = DOVW_DPAV_UYPJ(VNWM_EYTR[i1].DYIH.toLowerCase(), RJSE_1.toLowerCase())
-            if (IOWR_YHLD.STST_MI > 0.74) {
-                var IOWR_1 = { IOWR_EYTR: VNWM_EYTR[i1], NIXB_RJSE: RJSE_1, STST_MI:IOWR_YHLD.STST_MI,DOVW_DPAV: IOWR_YHLD.DOVW_DPAV }
-                VNWM_STST_RJSE.push(IOWR_1)
+            var DIWR_YHLD = DOVW_DPAV_UYPJ(VNWM_EYTR[i1].DYIH.toLowerCase(), RJSE_1.toLowerCase())
+            if (DIWR_YHLD.STST_MI > 0.74) {
+                var DIWR_1 = { DIWR_EYTR: VNWM_EYTR[i1], NIXB_RJSE: RJSE_1, STST_MI:DIWR_YHLD.STST_MI,DOVW_DPAV: DIWR_YHLD.DOVW_DPAV }
+                VNWM_STST_RJSE.push(DIWR_1)
             }
 
         }
         if (VNWM_STST_RJSE.length > 0) {
             VNWM_STST_RJSE.sort((a, b) => b.DOVW_DPAV - a.DOVW_DPAV)
-            RJSE_1 = VNWM_STST_RJSE[0].IOWR_EYTR.EYTR;
+            RJSE_1 = VNWM_STST_RJSE[0].DIWR_EYTR.EYTR;
         }
     }
 

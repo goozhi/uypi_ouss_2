@@ -1,20 +1,2 @@
-{
-    "port": 3009,
-    "version": "9.2.4.7",
-    "YMCE_HITD": "230103",
-    "piqr": "WRVR",
-    "vnwm_wj_dk_cpu_zzuy": [
-        {
-            "model": "12th Gen Intel(R) Core(TM) i5-12500H",
-            "speed": 3110,
-            "times": {
-                "user": 7757718,
-                "nice": 0,
-                "sys": 6022656,
-                "idle": 201209000,
-                "irq": 605968
-            }
-        }
-    ],
-    "vnwm_wj_dk_kmqt_ih":["FYB5N00511180564M   _00000001","2022040400376"]
-}
+
+{"AutoStartBro":true,"AutoCopy":true,"port":3009,"version":"9.2.4.8","YMCE_HITD":"230213","piqr":"WRVR","vnwm_wj_dk_cpu_zzuy":[{"model":"12th Gen Intel(R) Core(TM) i5-12500H","speed":3110,"times":{"user":7757718,"nice":0,"sys":6022656,"idle":201209000,"irq":605968}}],"vnwm_wj_dk_kmqt_ih":["FYB5N00511180564M   _00000001","2022040400376"]}

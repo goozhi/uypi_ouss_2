@@ -73,8 +73,8 @@ function YFUX_VBYT_ZV_NINI_WU(NIXB_WUZT, MCNV_WUZT) {
             if (VNWM_reg_SJ_KP[i3].test(NIXB_WUZT)) {
                 var VNWM_reg_VWUX_SJ = RNSF_1.VNWM_reg_VWUX_SJ;
                 for (var i2 = 0; i2 < VNWM_reg_VWUX_SJ.length; i2++) {
-                    var IOWR_RJSE = MCNV_WUZT.match(VNWM_reg_VWUX_SJ[i2][0])
-                    if (IOWR_RJSE != null) {
+                    var DIWR_RJSE = MCNV_WUZT.match(VNWM_reg_VWUX_SJ[i2][0])
+                    if (DIWR_RJSE != null) {
                         var VBYT_1 = false;
                         var VBYT_2 = false
                         for (var i4 = 0; i4 < VNWM_reg_SJ_KP.length; i4++) {

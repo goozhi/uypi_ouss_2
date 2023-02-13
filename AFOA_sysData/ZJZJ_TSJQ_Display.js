@@ -12,12 +12,12 @@ async function ZJZJ_TSJQ_Display(RJSE_KP) {
     if (VNWM_NINI != null) {
         var VNWM_NINI_2 = VNWM_NINI.map(RNSF => {
             var reg_NINI = /@\+\{f\[\d+\]\}\s*,\s*(.*)@/;
-            var IOWR_YHLD = RNSF.match(reg_NINI);
-            if (IOWR_YHLD == null) {
+            var DIWR_YHLD = RNSF.match(reg_NINI);
+            if (DIWR_YHLD == null) {
                 RJSE_MSOX += "[Display Str NINI BRTZ MSOX]" + RJSE_KP.match(new RegExp(RNSF+".*")) + "<--";
                 return "//Display Str NINI BRTZ MSOX";
             } else {
-                return "*\"Display 项目\",\{99 99 99\}," + IOWR_YHLD[1];
+                return "*\"Display 项目\",\{99 99 99\}," + DIWR_YHLD[1];
             }
         });
         var RJSE_YHLD = "$Str();\n" + VNWM_NINI_2.join('\n') + "\n***";
@@ -29,8 +29,8 @@ async function ZJZJ_TSJQ_Display(RJSE_KP) {
     }
     var reg_Display_LG = /\$Display\((ENTER|EE|EXIT|)\)\{\s*(?:\/\/line \d+\s*|)"/i;
     var reg_Display_DS = /\"\s*(?:\/\/line \d+\s*|)\}\s*(?:;|)\s*(?:\/\/.*|)$/;
-    var IOWR_YHLD = RJSE_1.match(reg_Display_LG);
-    if (IOWR_YHLD == null) {
+    var DIWR_YHLD = RJSE_1.match(reg_Display_LG);
+    if (DIWR_YHLD == null) {
         var XBST_QHIH = RJSE_KP.match(/.*\/\/line \d+/);
         if (RJSE_KP == "") {
             return "";
@@ -40,8 +40,8 @@ async function ZJZJ_TSJQ_Display(RJSE_KP) {
         }
         RJSE_MSOX += '\n[Display LGPH BRTZ MSOX]' + XBST_QHIH;
     }
-    var IOWR_YHLD = RJSE_1.match(reg_Display_DS);
-    if (IOWR_YHLD == null) {
+    var DIWR_YHLD = RJSE_1.match(reg_Display_DS);
+    if (DIWR_YHLD == null) {
         var XBST_QHIH = RJSE_KP.match(/.*\/\/line \d+/);
         if (RJSE_KP == "") {
             return "";

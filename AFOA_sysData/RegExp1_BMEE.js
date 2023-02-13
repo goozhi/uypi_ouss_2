@@ -267,7 +267,7 @@ this.regexShuzu1=[this.hang_s,this.hang_3f,this.hang_3f_2,this.hang_3f_5,this.ha
 		return qianzhui_jiancha(wenben2, RJSE_65, RJSE_66);
 	}//this.lei_cf_jiancha
 	function qianzhui_jiancha(RJSE_NINI_1, RJSE_PCMS, RJSE_SOMS){
-		if(new RegExp(IOWR_RegExp1.qianzhui_3).test(RJSE_NINI_1)){
+		if(new RegExp(DIWR_RegExp1.qianzhui_3).test(RJSE_NINI_1)){
 			return RJSE_SOMS;
 		}else{
 			return RJSE_PCMS;

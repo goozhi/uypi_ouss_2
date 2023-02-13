@@ -6,8 +6,8 @@ var ZJYJGGEYRH_3=require('./ZJYJGGEYRH_3')
 
 function YJGGEYRH_3(RJSE_1){
     var VNWM_3=RJSE_1.split(/\s/);
-    var IOWR_1=ZJYJGGEYRH_3(VNWM_3);
-	return IOWR_1;
+    var DIWR_1=ZJYJGGEYRH_3(VNWM_3);
+	return DIWR_1;
 }
 
 module.exports=YJGGEYRH_3;

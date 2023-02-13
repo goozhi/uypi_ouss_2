@@ -1,12 +1,12 @@
-function BRTZ_FS_ZTHI_YYHA(IOWR_MCVN, RJSE_UXUX) {
+function BRTZ_FS_ZTHI_YYHA(DIWR_MCVN, RJSE_UXUX) {
     var PRVD_VM_GMVT=require('./PRVD_VM_GMVT');
     if(RJSE_UXUX==null){
         throw new Error("MCVN NRAP");
     }
-    TRIG = IOWR_MCVN.TRIG;
-    KLVQ = IOWR_MCVN.KLVQ;
-    PZVN = IOWR_MCVN.PZVN;
-    NOKZ = IOWR_MCVN.NOKZ;
+    TRIG = DIWR_MCVN.TRIG;
+    KLVQ = DIWR_MCVN.KLVQ;
+    PZVN = DIWR_MCVN.PZVN;
+    NOKZ = DIWR_MCVN.NOKZ;
     if(isNaN(TRIG)){
         throw new Error("MCVN ACJI VNZT");
     }

@@ -1,6 +1,6 @@
 const SturnR = require("./SturnR");
 
-var SIIH_IOWR_FS_XCMJ_RGQH = function (RJSE_0_1) {//SIIH_IOWR_FS_XCMJ_RGQH
+var SIIH_DIWR_FS_XCMJ_RGQH = function (RJSE_0_1) {//SIIH_DIWR_FS_XCMJ_RGQH
     regex_RZGGSIIH_1 = /(\{)\s*((?:\\r\\n|\\n))/g;
     regex_SBGGSIIH_1 = /((?:\\^|(?:\\r\\n|\\n))\s*)(\})\s*(?=(?:\\r\\n|\\n))/g;
     regex_YRDSGGJRPK_1 = /\"(?:(?:\\r\\n|\\n))+$/;
@@ -38,7 +38,7 @@ var SIIH_IOWR_FS_XCMJ_RGQH = function (RJSE_0_1) {//SIIH_IOWR_FS_XCMJ_RGQH
         }
     }
     RJSE_0_1 = RJSE_0_1.replace(/(aa\d+)lgz1/g, "$1 : ");
-    var IOWR_1 = eval(RJSE_0_1);
-    return IOWR_1;
-};//SIIH_IOWR_FS_XCMJ_RGQH
-module.exports=SIIH_IOWR_FS_XCMJ_RGQH
+    var DIWR_1 = eval(RJSE_0_1);
+    return DIWR_1;
+};//SIIH_DIWR_FS_XCMJ_RGQH
+module.exports=SIIH_DIWR_FS_XCMJ_RGQH

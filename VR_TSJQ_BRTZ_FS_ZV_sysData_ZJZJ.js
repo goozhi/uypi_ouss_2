@@ -3,15 +3,15 @@ const encoding = require('encoding');
 const NVMS_JTYJ_LD_html = require('./AFOA_BX/NVMS_JTYJ_LD_html');
 const sysData_ZJZJ = require("./AFOA_sysData/sysData_ZJZJ");
 const NVMS_EBWU_LD_YHRJ_1 = require('./AFOA_BX/NVMS_EBWU_LD_YHRJ_1');
-async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA, diwr_mcvn) {
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(DIWR_AFOA, diwr_mcvn) {
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "");
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^\s+|\s+$/g, "");
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
     var RJSE_zjzj_bqeo = BQEO_1.replace(/Peng_JTCO_ZV_TZRN/ig, "$$$$$$")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/[^,]+=[^,]+/g);
     if (VNWM_MCVN_1 == null) {
     } else {
         VNWM_MCVN_1.forEach(RNSF => {
@@ -30,7 +30,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_sysData_ZJZJ(IOWR_AFOA, diwr_mcvn) {
                     RJSE_zjzj_bqeo = encoding.convert(fs.readFileSync(BQEO_1), "utf8", VKVY).toString()
                     break;
                 default:
-                    throw new Error("[ACUN MCVN]" + RNSF + "<--" + IOWR_AFOA.VR_AFOA_MCVN)
+                    throw new Error("[ACUN MCVN]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }
         });
     }

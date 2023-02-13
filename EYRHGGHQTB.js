@@ -13,12 +13,12 @@ function EYRHGGHQMV(YXNA_1, YXNA_2) {
     }
     var RJSE_KP = fs1.readFileSync(YXNA_1).toString();
     var RJSE_NVRJ = fs1.readFileSync(YXNA_2).toString();
-    IOWR_1 = new EYRHGGNINI_IOWRGGFS(RJSE_KP, RJSE_NVRJ);
-    var SOPC_NINI_IOWR_VNWM_2 = IOWR_1.RSCS_NINI();
-    var JTYP_VNWM_1 = NVCM(SOPC_NINI_IOWR_VNWM_2);
+    DIWR_1 = new EYRHGGNINI_DIWRGGFS(RJSE_KP, RJSE_NVRJ);
+    var SOPC_NINI_DIWR_VNWM_2 = DIWR_1.RSCS_NINI();
+    var JTYP_VNWM_1 = NVCM(SOPC_NINI_DIWR_VNWM_2);
     return JTYP_VNWM_1.join('\n');
 
-    function EYRHGGNINI_IOWRGGFS(RJSE_KP, RJSE_NVRJ) {
+    function EYRHGGNINI_DIWRGGFS(RJSE_KP, RJSE_NVRJ) {
         this.RJSE_MCVN;
         this.init;
         this.NINI;
@@ -28,10 +28,10 @@ function EYRHGGHQMV(YXNA_1, YXNA_2) {
         this.RSCS_NINI;
 
         if (RJSE_NVRJ == null)
-            throw 'EYRHGGNINI_IOWRGGFS : NRAP MCVN'
+            throw 'EYRHGGNINI_DIWRGGFS : NRAP MCVN'
         RJSE_KP = RJSE_KP.replace(new RegExp("��ѹ", "g"), "电压").replace(new RegExp("�¶�", "g"), "温度").replace(/��/g, "℃");
         if (typeof (RJSE_KP) != "string")
-            throw 'EYRHGGNINI_IOWRGGFS : MCVN UXUX MSOX'
+            throw 'EYRHGGNINI_DIWRGGFS : MCVN UXUX MSOX'
         var reg_init = /\$Init[\s\S]*?\$\$\$/i;
         var reg_LJEY_YE_LI = /(?:\n|^)\+1[\S\s]+?(?=(?:(?:\n|^)\+1|$))/ig;
         var init = RJSE_KP.match(reg_init);
@@ -58,10 +58,10 @@ function EYRHGGHQMV(YXNA_1, YXNA_2) {
             this.sys = sys.toString();
 
         this.RSCS_init = function () {
-            //var IOWR_1 = RSCS_init(this.init);
+            //var DIWR_1 = RSCS_init(this.init);
         }
         this.RSCS_NINI = function () {
-            var SOPC_NINI_IOWR_VNWM_1 = [];
+            var SOPC_NINI_DIWR_VNWM_1 = [];
             var reg_NINI = /\$Str.*(?:\r|)\n\*(?:del[^\"]+|)\"[\s\S]*?\*\*\*/g;
 
             this.LJEY_YE_LI.forEach(RNSF_2 => {
@@ -88,14 +88,14 @@ function EYRHGGHQMV(YXNA_1, YXNA_2) {
                         this.RJSE_MCVN = RJSE_MCVN.toString();
 
                     this.RSCS_MCVN_1 = RSCS_MCVN_1(this.RJSE_MCVN);
-                    var NINI_IOWR_VNWM_1 = RSCS_NINI(RNSF_1.replace(/^.*\$Str.*/,""), RJSE_NVRJ, this.RSCS_MCVN_1);
-                    SOPC_NINI_IOWR_VNWM_1.push(NINI_IOWR_VNWM_1);
+                    var NINI_DIWR_VNWM_1 = RSCS_NINI(RNSF_1.replace(/^.*\$Str.*/,""), RJSE_NVRJ, this.RSCS_MCVN_1);
+                    SOPC_NINI_DIWR_VNWM_1.push(NINI_DIWR_VNWM_1);
                 })
 
             })
 
 
-            return SOPC_NINI_IOWR_VNWM_1;
+            return SOPC_NINI_DIWR_VNWM_1;
         }
 
     }

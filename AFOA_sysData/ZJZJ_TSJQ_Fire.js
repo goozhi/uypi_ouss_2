@@ -6,11 +6,11 @@ function ZJZJ_TSJQ_Fire(RJSE_KP){
         throw new Error("MCVN UXUX MSOX, AOAO JI string:"+UXUX_YHLD)
     }
     var reg_ES = /^\$Fire\((?:f\[\d+\]|)\)(\{[^\}]*\})(?:;.*|\/\/[^\n;]*)$/i;
-    var IOWR_YHLD = RJSE_KP.match(reg_ES);
-    if(IOWR_YHLD==null){
+    var DIWR_YHLD = RJSE_KP.match(reg_ES);
+    if(DIWR_YHLD==null){
         RJSE_MSOX+="[Fire SDRH BRTZ MSOX]"
     }else{
-        RJSE_MSOX+=ZJZJ_ES(IOWR_YHLD[1]);
+        RJSE_MSOX+=ZJZJ_ES(DIWR_YHLD[1]);
     }
     if(RJSE_MSOX!=""){
         RJSE_MSOX="\n"+RJSE_MSOX+RJSE_KP;

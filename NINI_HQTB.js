@@ -38,50 +38,50 @@ function NINI_HQTB(RJSE_KP, ZTHI_VNWM) {
         var RJSE_YHLD_2 = RNSF_1.replace(reg_NINI_WU, "");
         var VNWM_2 = RJSE_YHLD_2.replace(/\/\/.*/g, '').replace(/;[^\S]*$/,"").split(/\s*,\s*/);
         VNWM_2.unshift(RJSE_YHLD_1[2]);
-        var NINI_IOWR_1 = { TRIG: EQWY_1, MCVN_VNWM_1: VNWM_2 }
+        var NINI_DIWR_1 = { TRIG: EQWY_1, MCVN_VNWM_1: VNWM_2 }
         switch (VNWM_2[2]) {
             case 'cf':
-                var IOWR_2 = RSCS_cf_NINI(NINI_IOWR_1, ZTHI_VNWM);
-                return RNSF_1.replace(/(cf),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_cf_NINI(NINI_DIWR_1, ZTHI_VNWM);
+                return RNSF_1.replace(/(cf),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '7f':
-                var IOWR_2 = RSCS_7f_NINI(NINI_IOWR_1, ZTHI_VNWM);
-                // throw JSON.stringify(IOWR_2)
-                return RNSF_1.replace(/(7f),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_7f_NINI(NINI_DIWR_1, ZTHI_VNWM);
+                // throw JSON.stringify(DIWR_2)
+                return RNSF_1.replace(/(7f),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '16':
-                var IOWR_2 = RSCS_16_NINI(NINI_IOWR_1, ZTHI_VNWM_2);
-                // throw JSON.stringify(IOWR_2)
-                return RNSF_1.replace(/(16),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_16_NINI(NINI_DIWR_1, ZTHI_VNWM_2);
+                // throw JSON.stringify(DIWR_2)
+                return RNSF_1.replace(/(16),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '0a':
-                var IOWR_2 = RSCS_0a_NINI(NINI_IOWR_1, ZTHI_VNWM_2);
-                // throw JSON.stringify(IOWR_2)
-                return RNSF_1.replace(/(0a),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_0a_NINI(NINI_DIWR_1, ZTHI_VNWM_2);
+                // throw JSON.stringify(DIWR_2)
+                return RNSF_1.replace(/(0a),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '10':
-                var IOWR_2 = RSCS_10_NINI(NINI_IOWR_1, ZTHI_VNWM_2);
-                // throw JSON.stringify(IOWR_2)
-                return RNSF_1.replace(/(10),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_10_NINI(NINI_DIWR_1, ZTHI_VNWM_2);
+                // throw JSON.stringify(DIWR_2)
+                return RNSF_1.replace(/(10),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '21':
                 return RNSF_1;
-            // var IOWR_2 = RSCS_16_NINI(NINI_IOWR_1);
-            // return IOWR_2;
+            // var DIWR_2 = RSCS_16_NINI(NINI_DIWR_1);
+            // return DIWR_2;
             case '0a':
                 return RNSF_1;
             case 'bb':
                 return RNSF_1;
             case '10':
                 return RNSF_1;
-            // var IOWR_2 = RSCS_16_NINI(NINI_IOWR_1);
-            // return IOWR_2;
+            // var DIWR_2 = RSCS_16_NINI(NINI_DIWR_1);
+            // return DIWR_2;
             case '3c':
                 if (ZTHI_VNWM == null)
                     ZTHI_VNWM = ["02", "80", "FF"]
-                var IOWR_2 = RSCS_3c_NINI_2(NINI_IOWR_1, ZTHI_VNWM);
-                return RNSF_1.replace(/(3c),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_3c_NINI_2(NINI_DIWR_1, ZTHI_VNWM);
+                return RNSF_1.replace(/(3c),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             case '3f':
-                if (!/[\&><\+-]/.test(NINI_IOWR_1.MCVN_VNWM_1[3])) {
+                if (!/[\&><\+-]/.test(NINI_DIWR_1.MCVN_VNWM_1[3])) {
                     return RNSF_1;
                 }
-                var IOWR_2 = RSCS_3f_NINI(NINI_IOWR_1);
-                return RNSF_1.replace(/(3f\s*,[^,]*),.*/i, "$1," + NVCM_NINI_HQTB(IOWR_2)) + BMLC_1;
+                var DIWR_2 = RSCS_3f_NINI(NINI_DIWR_1);
+                return RNSF_1.replace(/(3f\s*,[^,]*),.*/i, "$1," + NVCM_NINI_HQTB(DIWR_2)) + BMLC_1;
             default:
                 try {
                     NINI_ZJZJ(VNWM_2);

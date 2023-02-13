@@ -2,15 +2,15 @@ const kczv_json_rfrf = require("./AFOA_RFRF_DATA_ZTFR_SUM/kczv_json_rfrf");
 const fs = require('fs');
 const uz_ms = require("./AFOA_BX/uz_ms");
 const NVMS_JTYJ_LD_html = require('./AFOA_BX/NVMS_JTYJ_LD_html')
-async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV(IOWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_RFRF_JTYJ_JSON_KCZV(DIWR_AFOA) {
     const VR_EBWU_AFOA_BRTZ_FS = require("./VR_EBWU_AFOA_BRTZ_FS");
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
-    var BQEO_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
+    var BQEO_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/^[^\S\n]+|[^\S\n]+$/gm, "")
     BQEO_1 = BQEO_1.replace(/(\n|^)[^\S\n]+/g, "$1").replace(/[^\S\n]+(\n|$)/g, "$1")
-    var VNWM_MCVN_1 = IOWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
+    var VNWM_MCVN_1 = DIWR_AFOA.VR_AFOA_MCVN.match(/\w+/g);
     var jtyp_1
     if (VNWM_MCVN_1 == null) {
 

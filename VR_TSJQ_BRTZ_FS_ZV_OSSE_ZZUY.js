@@ -1,8 +1,8 @@
 const VR_EBWU_BRTZ_FS_ZV_22 = require('./VR_EBWU_BRTZ_FS_ZV_22')
 const VR_EBWU_BRTZ_FS_ZV_qq = require('./VR_EBWU_BRTZ_FS_ZV_qq')
 
-function VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY(IOWR_AFOA) {
-    var UXUX_YHLD = typeof (IOWR_AFOA)
+function VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY(DIWR_AFOA) {
+    var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
     }
@@ -15,12 +15,12 @@ function VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY(IOWR_AFOA) {
     var VR_EBWU_BRTZ_FS_ZV_16 = require('./VR_EBWU_BRTZ_FS_ZV_16')
     var VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI = require('./VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI')
     var VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI = require('./VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI')
-    var RJSE_1 = IOWR_AFOA.VR_AFOA_BQEO.replace(/\r/g, "").replace(/((?:\n|^))\s+/g, "$1").replace(/\n(?=\n|$)/g, "");
-    IOWR_AFOA.Peng_AFOA_MCVN = "";
-    if (String(IOWR_AFOA.VR_AFOA_MCVN) == "0") {
+    var RJSE_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/\r/g, "").replace(/((?:\n|^))\s+/g, "$1").replace(/\n(?=\n|$)/g, "");
+    DIWR_AFOA.Peng_AFOA_MCVN = "";
+    if (String(DIWR_AFOA.VR_AFOA_MCVN) == "0") {
         RJSE_1 = RJSE_1.replace(/\{\}/g, "{999999}");
     } else {
-        IOWR_AFOA.Peng_AFOA_MCVN = IOWR_AFOA.VR_AFOA_MCVN
+        DIWR_AFOA.Peng_AFOA_MCVN = DIWR_AFOA.VR_AFOA_MCVN
     }
     //WDGD WDBU
     //DYIH LDRG
@@ -32,9 +32,9 @@ function VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY(IOWR_AFOA) {
         VNWM_NINI_KP[0] = VNWM_NINI_KP[0].replace(/\{\}/, "{999999}")
     }
     var VNWM_NINI_2 = VNWM_NINI_KP.map(RNSF => {
-        var IOWR_UXUX = RNSF.match(/\}\s*(?:,\s*|)((?:\w+|[^\s\w]))/);
-        if (IOWR_UXUX != null) {
-            var NINI_UXUX = IOWR_UXUX[1];
+        var DIWR_UXUX = RNSF.match(/\}\s*(?:,\s*|)((?:\w+|[^\s\w]))/);
+        if (DIWR_UXUX != null) {
+            var NINI_UXUX = DIWR_UXUX[1];
             switch (true) {
                 case /^(?:33|3f)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_33(RNSF)
@@ -116,9 +116,9 @@ function VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY(IOWR_AFOA) {
     var sheng_1 = "$1*\"$2\",$3"
     RJSE_1 = RJSE_1.replace(reg_LLAO, sheng_1);
     RJSE_1 = NINI_SIIH_DIAX(RJSE_1);
-    if (IOWR_AFOA.VR_AFOA_MCVN == null) {
+    if (DIWR_AFOA.VR_AFOA_MCVN == null) {
         return RJSE_1
     }
-    return "$Ecu(" + IOWR_AFOA.Peng_AFOA_MCVN + ");\n" + RJSE_1 + "\n***";
+    return "$Ecu(" + DIWR_AFOA.Peng_AFOA_MCVN + ");\n" + RJSE_1 + "\n***";
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_OSSE_ZZUY

@@ -1,27 +1,27 @@
 
 var RSCS_NVRJ = require('./RSCS_NVRJ');
-const EOWL_IOWR=require('./AFOA_BX/EOWL_IOWR')
-const EOWL_IOWR_2=require('./AFOA_BX/EOWL_IOWR_2')
+const EOWL_DIWR=require('./AFOA_BX/EOWL_DIWR')
+const EOWL_DIWR_2=require('./AFOA_BX/EOWL_DIWR_2')
 const PZVA_SLGR_3=require('./AFOA_BX/PZVA_SLGR_3')
 const HD_LZJK_VNWM=require('./AFOA_BX/HD_LZJK_VNWM')
-function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
-    console.log(MCVN_IOWR_1.ByCheckBmsGroup + ";" + MCVN_IOWR_1.sortCanData);
-    if (MCVN_IOWR_1 == null) {
+function eSGGCGNE(NINIGGeS_MCVNGGDIWR_1, RJSE_NVRJ, MCVN_DIWR_1) {
+    console.log(MCVN_DIWR_1.ByCheckBmsGroup + ";" + MCVN_DIWR_1.sortCanData);
+    if (MCVN_DIWR_1 == null) {
         throw 'eSGGCGNE : MCVN NRAP'
     }
-    if (MCVN_IOWR_1.ByCheckBmsGroup) {
-        var YHLD_MCVN_1 = NINIGGeS_MCVNGGIOWR_1.NINIGGeS.match(/\[sortCanData\s*=\s*\d+\]/i);
+    if (MCVN_DIWR_1.ByCheckBmsGroup) {
+        var YHLD_MCVN_1 = NINIGGeS_MCVNGGDIWR_1.NINIGGeS.match(/\[sortCanData\s*=\s*\d+\]/i);
         if (YHLD_MCVN_1 != null) {
-            MCVN_IOWR_1.sortCanData = YHLD_MCVN_1[0].replace(/.*=(\d+).*/, '$1');
-            if (MCVN_IOWR_1.sortCanData.length != 2) {
-                throw 'sortCanda BRTZ MSOX sortCanData格式错误:' + MCVN_IOWR_1.sortCanData;
+            MCVN_DIWR_1.sortCanData = YHLD_MCVN_1[0].replace(/.*=(\d+).*/, '$1');
+            if (MCVN_DIWR_1.sortCanData.length != 2) {
+                throw 'sortCanda BRTZ MSOX sortCanData格式错误:' + MCVN_DIWR_1.sortCanData;
             }
         } else {
-            MCVN_IOWR_1.sortCanData = "00";
+            MCVN_DIWR_1.sortCanData = "00";
         }
     }
-    var NINIGGeS = NINIGGeS_MCVNGGIOWR_1.NINIGGeS;
-    var TRIG = NINIGGeS_MCVNGGIOWR_1.TRIG;
+    var NINIGGeS = NINIGGeS_MCVNGGDIWR_1.NINIGGeS;
+    var TRIG = NINIGGeS_MCVNGGDIWR_1.TRIG;
     var reg_1 = /ff/i;
     var NINIGGeS_VNWM_1 = NINIGGeS.replace(/[\}\{]/g, "").split(/\s+/);
     var eSGGUXUX = NINIGGeS_VNWM_1[0];
@@ -59,17 +59,17 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     }
     var VNWM_1 = RSCS_NVRJ(RJSE_NVRJ);
     var YHLD_RJSE_1=eSGGID_VNWM_1.join(' ').toUpperCase();
-    if (MCVN_IOWR_1.sortCanData == '00') {
-        var IOWR_1 = EOWL_IOWR(VNWM_1, 'eS_YYHA', YHLD_RJSE_1);
-        if (!IOWR_1) {
+    if (MCVN_DIWR_1.sortCanData == '00') {
+        var DIWR_1 = EOWL_DIWR(VNWM_1, 'eS_YYHA', YHLD_RJSE_1);
+        if (!DIWR_1) {
             throw 'eSGGCGNE : BQPH FDCS UMMS: 报文不存在的帧id : ' + YHLD_RJSE_1;
         }
-        return { IOYCGGNVRJ_IOWR: IOWR_1, VNWY_VNWM_1: IOWR_1['VNWY_VNWM'], NVRJ_eSGGYYHA: IOWR_1.eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
+        return { IOYCGGNVRJ_DIWR: DIWR_1, VNWY_VNWM_1: DIWR_1['VNWY_VNWM'], NVRJ_eSGGYYHA: DIWR_1.eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
     }
-    var VNWM_2 = EOWL_IOWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
+    var VNWM_2 = EOWL_DIWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
     var VNWM_3 = PZVA_SLGR_3(VNWM_2, 'VNWY')
-    var sortCanData_MCVN_1 = Number(MCVN_IOWR_1.sortCanData[0]);
-    var sortCanData_MCVN_2 = Number(MCVN_IOWR_1.sortCanData[1]);
+    var sortCanData_MCVN_1 = Number(MCVN_DIWR_1.sortCanData[0]);
+    var sortCanData_MCVN_2 = Number(MCVN_DIWR_1.sortCanData[1]);
     var reg_1 = new RegExp("((?:\\w+(?:\\s|$)){" + sortCanData_MCVN_2 + "}).*(\\/\\/\\d+)")
     var reg_2 = new RegExp("(?:\\w+(?:\\s|$)){" + (sortCanData_MCVN_1 - 1) + "}")
     var VNWM_4 = VNWM_3.map(RNSF_1 => {
@@ -84,9 +84,9 @@ function eSGGCGNE(NINIGGeS_MCVNGGIOWR_1, RJSE_NVRJ, MCVN_IOWR_1) {
     try {
         EQWY_0 = Number(VNWM_4[TRIG].replace(/.*\/\//, ''));
     } catch (err) {
-        throw 'eSGGCGNE : ACUN MCVN : ' + JSON.stringify(NINIGGeS_MCVNGGIOWR_1);
+        throw 'eSGGCGNE : ACUN MCVN : ' + JSON.stringify(NINIGGeS_MCVNGGDIWR_1);
     }
     var VNWM_5 = VNWM_2[EQWY_0]['VNWY_VNWM'];
-    return { IOYCGGNVRJ_IOWR: VNWM_2[EQWY_0], VNWY_VNWM_1: VNWM_5, NVRJ_eSGGYYHA: VNWM_2[EQWY_0].eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
+    return { IOYCGGNVRJ_DIWR: VNWM_2[EQWY_0], VNWY_VNWM_1: VNWM_5, NVRJ_eSGGYYHA: VNWM_2[EQWY_0].eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
 }
 module.exports = eSGGCGNE;

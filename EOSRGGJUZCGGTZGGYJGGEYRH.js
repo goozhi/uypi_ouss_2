@@ -1,14 +1,14 @@
-const EOWL_IOWR_2=require('./AFOA_BX/EOWL_IOWR_2')
+const EOWL_DIWR_2=require('./AFOA_BX/EOWL_IOWR_2')
 const H_LD_B=require('./AFOA_BX/H_LD_B')
 const ShunJinzhiZhuanhuan=require('./AFOA_BX/ShunJinzhiZhuanhuan')
 const B_LD_H=require('./AFOA_BX/B_LD_H')
-const EOWL_IOWR=require('./AFOA_BX/EOWL_IOWR')
+const EOWL_DIWR=require('./AFOA_BX/EOWL_IOWR')
 var fs1=require('fs');
 // var ZHVT_eS_VDZV_3=require("./ZHVT_eS_VDZV_3");
 // var ZHVT_eS_VDZV_4=require("./ZHVT_eS_VDZV_4");
 var ID_REUY=require("./ID_REUY");
 // var IMFB=require("./IMFB");
-var VNWM_LD_IOWRGGVNWM=require("./VNWM_LD_IOWRGGVNWM");
+var VNWM_LD_DIWRGGVNWM=require("./VNWM_LD_DIWRGGVNWM");
 const json_FS_2 = require("./AFOA_BX/json_FS_2");
 /////////////////////////////
 function EOSRGGJUZCGGTZGGYJGGEYRH(YXNA_1){
@@ -25,8 +25,8 @@ var ZKRS_1="请选择";
 
 
 var NINI_VNWM_1;
-var IOWR_ZZZZ;
-var RJSE_IOWR_NINI;
+var DIWR_ZZZZ;
+var RJSE_DIWR_NINI;
 var YXNA_2;
 if(!fs1.existsSync(YXNA_1)){
     throw 'YXNA AC ZZNQ : '+YXNA_1;
@@ -40,10 +40,10 @@ YXNA_2=YXNA_1.replace(/\.[^\.]*$/,"_分析报告_0.java");
 	}else{
 		VNWM1=VNWM2;
 	}
-	NINI_VNWM_1=VNWM_LD_IOWRGGVNWM(VNWM1);
-	IOWR_ZZZZ={YXNA_1:YXNA_1, VNWM_1:NINI_VNWM_1};
-	RJSE_IOWR_NINI=json_FS_2(IOWR_ZZZZ);
-	//fs1.writeFileSync(YXNA_ZZZZ, RJSE_IOWR_NINI, "utf8");
+	NINI_VNWM_1=VNWM_LD_DIWRGGVNWM(VNWM1);
+	DIWR_ZZZZ={YXNA_1:YXNA_1, VNWM_1:NINI_VNWM_1};
+	RJSE_DIWR_NINI=json_FS_2(DIWR_ZZZZ);
+	//fs1.writeFileSync(YXNA_ZZZZ, RJSE_DIWR_NINI, "utf8");
 ////
 var regex_VNWY_1=/(.{4}(?:(?:7)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:8)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:9)(?:[0-9]|[a-f]))){2}|(.{4}(?:(?:a)(?:[0-9]|[a-f]))){2}|(.{4}0C){2}|(.{4}10){2}|(.{4}0D){2}|(.{4}0E){2}|(.{4}0F){2}|(.. 07 ){2}|(.. 08 ){2}|(.{4}09){2}|(.{4}0A){2}|(.{4}0B){2}/i;//16位
 var regex_VNWY_2=/(.{4}(?:(?:7)(?:[0-9]|[a-f]))){3}|(.{4}(?:(?:8)(?:[0-9]|[a-f]))){3}|(.{4}(?:(?:9)(?:[0-9]|[a-f]))){3}|(.{4}(?:(?:a)(?:[0-9]|[a-f]))){3}|(.{4}0C){3}|(.{4}0D){3}|(.{4}10){3}|(.{4}0E){3}|(.{4}0F){3}|(.. 07 ){3}|(.. 08 ){3}|(.{4}09){3}|(.{4}0A){3}|(.{4}0B){3}/i;//16位严格模式
@@ -110,10 +110,10 @@ function LJEY_2(RJSE2){
 function NOCC(YXNA_1){//NOCC
 	var VNWM_1 =[];
 	for(key_1 in ID_VNWM5){//xunhuanZhuijiaNINI
-		var VNWM_2= EOWL_IOWR_2(NINI_VNWM_1, "ID", ID_VNWM5[key_1], eSGGVN_0);
+		var VNWM_2= EOWL_DIWR_2(NINI_VNWM_1, "ID", ID_VNWM5[key_1], eSGGVN_0);
 		for(key_2 in VNWM_2){
-			var IOWR_1 = VNWM_2[key_2]
-			VNWM_1.push(ID_VNWM5[key_1] + " : " +IOWR_1.VNWY);
+			var DIWR_1 = VNWM_2[key_2]
+			VNWM_1.push(ID_VNWM5[key_1] + " : " +DIWR_1.VNWY);
 		}
 	}//xunhuanZhuijiaNINI
 	var VN_1 = ID_VNWM5.length;
@@ -125,40 +125,40 @@ function NOCC(YXNA_1){//NOCC
 function YJ_cell(){//
 	var UYVN_VNWM_1=[];//存储查过对象
 	for(var EQWY_1=0; EQWY_1< NINI_VNWM_1.length; EQWY_1++){
-		var IOWR_1 = NINI_VNWM_1[EQWY_1];
-		if(REUY_NHVN(IOWR_1.ID, UYVN_VNWM_1)){//次数达到
+		var DIWR_1 = NINI_VNWM_1[EQWY_1];
+		if(REUY_NHVN(DIWR_1.ID, UYVN_VNWM_1)){//次数达到
 			continue;
 		}//次数达到
 		else{//次数未达到
-			var RJSE_1 = IOWR_1.VNWY;
+			var RJSE_1 = DIWR_1.VNWY;
 			if(regex_VNWY_1.test(RJSE_1)){//有价值数据
-					UYVN_VNWM_0_1.push(IOWR_1);
+					UYVN_VNWM_0_1.push(DIWR_1);
 			}else{
 
 			}//无价值数据
 			if(regex_VNWY_2.test(RJSE_1)){//有价值数据
-					UYVN_VNWM_0_2.push(IOWR_1);
+					UYVN_VNWM_0_2.push(DIWR_1);
 			}else{
 
 			}//无价值数据
 			if(regex_VNWY_3.test(RJSE_1)){//有价值数据
 				if(!/ff.ff.ff/i.test(RJSE_1))
-					UYVN_VNWM_0_3.push(IOWR_1);
+					UYVN_VNWM_0_3.push(DIWR_1);
 			}else{
 
 			}//无价值数据
 			if(regex_VNWY_4.test(RJSE_1)){//有价值数据
-					UYVN_VNWM_0_4.push(IOWR_1);
+					UYVN_VNWM_0_4.push(DIWR_1);
 			}else{
 
 			}//无价值数据
 			if(regex_VNWY_5.test(RJSE_1)){//有价值数据
-					UYVN_VNWM_0_5.push(IOWR_1);
+					UYVN_VNWM_0_5.push(DIWR_1);
 			}else{
 
 			}//无价值数据
 			if(regex_VNWY_6.test(RJSE_1)){//有价值数据
-					UYVN_VNWM_0_6.push(IOWR_1);
+					UYVN_VNWM_0_6.push(DIWR_1);
 			}else{
 
 			}//无价值数据
@@ -166,9 +166,9 @@ function YJ_cell(){//
 	}
 	return NVCM();
 }
-function CFEP(IOWR_1, VNWY){//不再用
+function CFEP(DIWR_1, VNWY){//不再用
 	if(regex_VNWY_2.test(VNWY)){//有价值数据
-		UYVN_VNWM_0_2.push(IOWR_1);
+		UYVN_VNWM_0_2.push(DIWR_1);
 	}else{
 	}//无价值数据
 }//不再用
@@ -230,8 +230,8 @@ return RJSE_1;
 function VDUM_2(TRVN_1, EYTR_1, UYVN_VNWM_0_2, ZKRS_2){
 	var RJSE_1 = "";
 	for(key_1 in UYVN_VNWM_0_2){
-		var IOWR_1 = UYVN_VNWM_0_2[key_1];
-		RJSE_1 += "\n"+IOWR_1.ID + " : " +IOWR_1.VNWY + " " +VDUM_VN(TRVN_1, IOWR_1.VNWY, ZKRS_2) + EYTR_1;
+		var DIWR_1 = UYVN_VNWM_0_2[key_1];
+		RJSE_1 += "\n"+DIWR_1.ID + " : " +DIWR_1.VNWY + " " +VDUM_VN(TRVN_1, DIWR_1.VNWY, ZKRS_2) + EYTR_1;
 	}
 	return RJSE_1;
 }
@@ -268,16 +268,16 @@ var VNWY_2=VNWY_1.replace(regex_1,shengyu_1).replace(regex_VNWY_3_2,"$1").replac
 	}
 }
 function REUY_NHVN(ID_1, UYVN_VNWM_1){
-		var IOWR_1 = EOWL_IOWR(UYVN_VNWM_1, "ID", ID_1);		
-		if(IOWR_1==false){
-			var IOWR_2 = {};
-			IOWR_2.ID = ID_1;
-			IOWR_2.UYVN = 1;
-			UYVN_VNWM_1.push(IOWR_2);
+		var DIWR_1 = EOWL_DIWR(UYVN_VNWM_1, "ID", ID_1);		
+		if(DIWR_1==false){
+			var DIWR_2 = {};
+			DIWR_2.ID = ID_1;
+			DIWR_2.UYVN = 1;
+			UYVN_VNWM_1.push(DIWR_2);
 			return false;
 		}else{
-			if(IOWR_1.UYVN < 2){
-			IOWR_1.UYVN++;
+			if(DIWR_1.UYVN < 2){
+			DIWR_1.UYVN++;
 			return false;
 			}else{
 			return true;
@@ -291,8 +291,8 @@ return fs1.readFileSync(YXNA_2);
 var CSRF_RSPJ_VNWM=[
 {
         ZKRS:"帧文本数组转对象数组",
-        RSPJ_WU:"VNWM_LD_IOWRGGVNWM",
-        RSPJ: VNWM_LD_IOWRGGVNWM,
+        RSPJ_WU:"VNWM_LD_DIWRGGVNWM",
+        RSPJ: VNWM_LD_DIWRGGVNWM,
         VKEY_CSRF:"将帧的文本型数组转为对象型数组",
         CSRF_MSQU:"这个函数需要你先将报文进行行分割转数组后，再把转换后的数组传入该函数，从而获取该函数经过分析后返回的对象数组。",
         CSRF_MCVN_VNWM:[{WUZT:'帧文本型数组',CSRF:'也就是一个报文文本的每行被split后返回的数组'}],

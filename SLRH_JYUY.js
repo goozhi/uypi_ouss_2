@@ -6,7 +6,7 @@ function SLRH_JYUY(RJSE_KP,TYUB) {
     var RJSE_1 = RJSE_KP.replace(/\r/g,"")
     var VNWM_UYTZ = RJSE_1.split(/\n/)
     var VNWM_JTYP_2=[]
-    var IOWR_VNWM_JTYP = VNWM_UYTZ.map(RNSF => {
+    var DIWR_VNWM_JTYP = VNWM_UYTZ.map(RNSF => {
         try {
             var JTYP_YHLD=eval(RNSF)
             if(TYUB==1){
@@ -24,6 +24,6 @@ function SLRH_JYUY(RJSE_KP,TYUB) {
             return {IQTZ:RNSF + "// MSOX",JTYP:RNSF + "// MSOX"}
         }
     })
-    return IOWR_VNWM_JTYP
+    return DIWR_VNWM_JTYP
 }
 module.exports = SLRH_JYUY;

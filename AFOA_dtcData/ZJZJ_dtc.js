@@ -31,11 +31,11 @@ function ZJZJ_dtc(RJSE_KP) {
 	if (VNWM_NINI != null) {
 		RJSE_1 = RJSE_1.replace(reg_NINI, "");
 		VNWM_NINI.forEach(RNSF => {
-			var IOWR_YHLD = RNSF.match(/(?:\n|^)(\w+) \[.*\].*;/);
-			if (IOWR_YHLD==null) {
+			var DIWR_YHLD = RNSF.match(/(?:\n|^)(\w+) \[.*\].*;/);
+			if (DIWR_YHLD==null) {
 				RJSE_MSOX += "\n[NINI BRTZ MSOX] " + RNSF.replace(/\n/,"") + " <=="
 			}else{
-				var VN_16 = IOWR_YHLD[1];
+				var VN_16 = DIWR_YHLD[1];
 				if(!/^(?:[A-F]|\d)+$/i.test(VN_16)){
 					RJSE_MSOX+="\n[NINI MCVN FTPJ] "+VN_16+" <=="+RNSF.replace(/\n/,"");
 				}
