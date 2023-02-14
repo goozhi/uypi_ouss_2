@@ -1,6 +1,7 @@
-var H_LD_B= require("./AFOA_BX/H_LD_B");
+var H_LD_B = require("./AFOA_BX/H_LD_B");
 var YJGGEYRH_3 = require("./YJGGEYRH_3");
 var HD_LZJK = require("./HD_LZJK");
+const uz_ms = require("./AFOA_BX/uz_ms");
 function ZSGGTRGGYJGGEYRH(KP_RJSE) {
 	var uxux_yhld = typeof (KP_RJSE)
 	if (uxux_yhld != "string") {
@@ -16,6 +17,9 @@ function ZSGGTRGGYJGGEYRH(KP_RJSE) {
 	});
 	JTYP_VNWM_1 = [];
 	VNWY_VNWM_1 = HD_LZJK(VNWY_VNWM_1);
+	if (VNWY_VNWM_1.length == 0) {
+		uz_ms('csrf-rjqt brtz ft cjzy-' + KP_RJSE.slice(0, 600))
+	}
 	NVCM_0 = "总共非重复帧 : " + VNWY_VNWM_1.length + "\n";
 	var JTYP_VNWM_2 = [];
 	VNWY_VNWM_1.forEach(WLBA_3);
