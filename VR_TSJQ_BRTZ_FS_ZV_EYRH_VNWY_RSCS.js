@@ -34,7 +34,7 @@ function VR_TSJQ_BRTZ_FS_ZV_EYRH_VNWY_RSCS(DIWR_AFOA) {
                     }
                     break;
                 case /\b(RJQT_MCVN|9)(?=\s*=)/i.test(RNSF):
-                    DIWR_RJQT_MCVN = RNSF.match(/(.*)\s*=\s*(.*)/)
+                    DIWR_RJQT_MCVN = RNSF.match(/(.*)\s*=\s*([\S]*)/)
                     if (DIWR_RJQT_MCVN == null) {
                         throw new Error("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                     } else {
