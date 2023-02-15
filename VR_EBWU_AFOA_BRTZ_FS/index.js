@@ -26,7 +26,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     }
     var RJSE_1 = RJSE_1.replace(/\u0024\u0024+/g, "Peng_JTCO_ZV_TZRN");
     var RJSE_2 = RJSE_1
-    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{\s*((?:(?!.+=.*\{\{|[`\u00b7])[\s\n\S])*?|`[^`]*`|\u00b7[^\u00b7]*\u00b7)\s*\}\}(?!\}(?!\}))/;
+    var reg_AFOA = /([^\s=\{\}]+)\s*=\s*([^\n\{\}]*)\{\{\s*((?:`[^`]*`|\u00b7[^\u00b7]*\u00b7|(?!.+=.*\{\{)[\s\n\S])*?)\s*\}\}(?!\}(?!\}))/;
     var VBYT_2 = true;
     for (var i1 = 0; i1 < 9999; i1++) {
         var DIWR_YHLD = RJSE_1.match(reg_AFOA);
