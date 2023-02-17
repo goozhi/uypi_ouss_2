@@ -19,6 +19,7 @@ function vr_mcvn_rscs(rjse_kp, diwr_neig_mcvn) {
                 diwr_vr_mcvn[rn1.mcvn_wu] = ''
             }
         });
+        diwr_vr_mcvn.diwr_vnwm_mcvn=diwr_vnwm_mcvn_1
         return diwr_vr_mcvn
     }
 
