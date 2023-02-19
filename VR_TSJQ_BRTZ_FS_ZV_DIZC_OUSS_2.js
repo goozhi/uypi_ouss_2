@@ -1,13 +1,16 @@
 
 const uz_ms = require('./AFOA_BX/uz_ms');
+const msqu_rjse_fs = require('./afoa_msqu/msqu_rjse_fs');
+const msqu_rjse_rscs = require('./afoa_msqu/msqu_rjse_rscs');
 var DIZC_OUSS_2 = require('./DIZC_OUSS_2');
 const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
 const vr_mcvn_rscs = require('./vr_mcvn_rscs/index.js');
 var ZTHI_YG_VDUM = require('./ZTHI_YG_VDUM')
-async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA) {
+const vyvy_vnwm_usni_1 = [['根据开发者设置的默认值设置每个项目的最高字节的值', '自定义每个项目的最高字节的值', '自定义任意字节的值', "使用30-39模式"]]
+async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
-        throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
+        uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
     }
     var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO)
     var diwr_vr_mcvn = vr_mcvn_rscs(DIWR_AFOA.VR_AFOA_MCVN, {
@@ -26,7 +29,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA) {
                     case /^\[\d+=\w+(?: \d+=\w+)*\]$/.test(RNSF):
                         break;
                     default:
-                        throw new Error("[ACUN MCVN]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
+                        uz_ms("csrf-ACUN MCVN-" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
                 }
             });
             RJSE_ZTHI_SLGR = DIWR_AFOA.VR_AFOA_MCVN;
@@ -34,55 +37,74 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA) {
     } else if (Object.keys(diwr_vr_mcvn) == 0) {
         RJSE_ZTHI_SLGR = "[4=01][4=0x10] [4=0xff]"
     } else {
-        var vnwm_usni_1 = ['根据开发者设置的默认值设置每个项目的最高字节的值', '设置d4为开发者设置的默认值', '你自己设置最高字节的值']
-        if (diwr_vr_mcvn.help) {
+        if (diwr_vr_mcvn.hasOwnProperty("help")) {
             if (!diwr_vr_mcvn.msqu_zkrs) {
                 var zkrs = "你将进行数据流项目对比，请选择以下功能进行数据流对比。"
-                var rj_2 = msqu_rjse_fs({ uxux: "ussk", zkrs: zkrs, vnwm_usni: vnwm_usni_1 })
-                var gmih_vnwm_msqu = vnwm_msqu.length;
-                vnwm_msqu.push(diwr_zzzz_msqu)
-                return '99=msqu_zkrs=ussk_dizc_rstz,gmih_vnwm_msqu=' + gmih_vnwm_msqu + '{{\n' + rj_2 + "\n}}"
+                var diwr_zzzz_msqu_yhld = { uxux: "ussk", zkrs: zkrs, vyvy_vnwm_usni: vyvy_vnwm_usni_1 }
+                msqu_rjse_fs(diwr_zzzz_msqu_yhld)
+                var eqwy_vnwm_msqu = diwr_mcvn.vnwm_msqu.length;
+                diwr_mcvn.vnwm_msqu.push(diwr_zzzz_msqu_yhld)
+                diwr_vr_mcvn.msqu_zkrs = "ussk_dizc_rstz"
+                diwr_vr_mcvn.eqwy_vnwm_msqu = eqwy_vnwm_msqu
+                var rj_diwr_vr_mcvn = Object.entries(diwr_vr_mcvn).map(rn1 => { return rn1[1] ? rn1.join('=') : rn1[0] }).join(',')
+                return { rjse_msqu: '99=' + rj_diwr_vr_mcvn + '{{\n' + diwr_zzzz_msqu_yhld.msqu_rjse + "\n}}", gkqj_tmtm_ybkc: false }
             }
             else if (diwr_vr_mcvn.msqu_zkrs) {
+                var diwr_zzzz_msqu_yhld = diwr_mcvn.vnwm_msqu[Number(diwr_vr_mcvn.eqwy_vnwm_msqu)]
+                if (diwr_mcvn.vnwm_msqu.length === 0) {
+                    uz_ms('csrf-msqu vwcj-')
+                }
                 if (diwr_vr_mcvn.msqu_zkrs === "ussk_dizc_rstz") {
-                    var vn_dbkz_ussk = msqu_rjse_rscs({ uxux: "ussk", rscs_bqeo: BQEO_1 })
-                    if (vnwm_msqu[diwr_vr_mcvn.gmih_vnwm_msqu].vr_bqeo) {
-                        BQEO_1 = vnwm_msqu[diwr_vr_mcvn.gmih_vnwm_msqu].vr_bqeo
-                    } else {
-                        diwr_vr_mcvn.msqu_zkrs = "vdzv_vr_bqeo"
-                        for(fo1 in diwr_vr_mcvn){
-                            vnwm_yhld.push(fo1+"="+diwr_vr_mcvn[fo1])
-                        }//lgz
-                        var rj_diwr_vr_mcvn = vnwm_yhld.join(',')
-                        var rj_yhld = msqu_rjse_fs({ uxux: "vdzv", zkrs: "请输入数据流项目，比如以下示例", hint: "示例项目{220204}=9" })
-                        return "99=" + rj_diwr_vr_mcvn + "{{\n" + rj_yhld + "\n}}"
-                    }
-                    switch (vnwm_usni_1[vn_dbkz_ussk]) {
+                    diwr_zzzz_msqu_yhld.rscs_bqeo = BQEO_1
+                    msqu_rjse_rscs(diwr_zzzz_msqu_yhld)
+                    var vn_dbkz_vdzv = diwr_zzzz_msqu_yhld.vnwm_dbkz_ussk[0][0]
+                    switch (vyvy_vnwm_usni_1[0][vn_dbkz_vdzv]) {
                         case "根据开发者设置的默认值设置每个项目的最高字节的值":
                             diwr_vr_mcvn.okwk_zthi = ""
                             break;
-                        case "设置d4为开发者设置的默认值":
-                            RJSE_ZTHI_SLGR = "[4=01][4=0x10] [4=0xff]"
-                            break;
-                        case "你自己设置最高字节的值":
-                            return
+                        case "自定义每个项目的最高字节的值":
+                            diwr_vr_mcvn.msqu_zkrs = "jc_znzk_okih_ztih_dk_yg"
+                            return;
+                        case "自定义任意字节的值":
+                            diwr_zzzz_msqu_yhld.uxux = "vdzv"
+                            diwr_zzzz_msqu_yhld.zkrs = "请自定义字节的值，如以下参数表示将d4设为0x10、d5设为0x20作为一组数据；将d4设为0xff作为一组数据"
+                            diwr_zzzz_msqu_yhld.hint = "[4=0x10 5=0x20][4=0xff]"
+                            msqu_rjse_fs(diwr_zzzz_msqu_yhld)
+                            diwr_vr_mcvn.msqu_zkrs = "jc_znzk_ymyi_ztih_dk_yg"
+                            var rj_diwr_vr_mcvn = Object.entries(diwr_vr_mcvn).map(rn1 => { return rn1[1] ? rn1.join('=') : rn1[0] }).join(',')
+                            return { rjse_msqu: "99=" + rj_diwr_vr_mcvn + "{{\n" + diwr_zzzz_msqu_yhld.msqu_rjse + "\n}}", gkqj_tmtm_ybkc: false }
                         case "使用30-39模式":
                             diwr_vr_mcvn.asc = ""
-                            return
+                            break;
                         default:
-                            uz_ms('csrf-usni acun-')
+                            uz_ms('csrf-usni acun-' + vyvy_vnwm_usni_1[0][vn_dbkz_vdzv])
+                    }
+                    if (diwr_zzzz_msqu_yhld.vr_bqeo) {
+                        BQEO_1 = diwr_zzzz_msqu_yhld.vr_bqeo
+                    } else {
+                        diwr_vr_mcvn.msqu_zkrs = "vdzv_vr_bqeo"
+                        var rj_diwr_vr_mcvn = Object.entries(diwr_vr_mcvn).map(rn1 => { return rn1[1] ? rn1.join('=') : rn1[0] }).join(',')
+                        diwr_zzzz_msqu_yhld.uxux = "vdzv"
+                        diwr_zzzz_msqu_yhld.zkrs = "请输入数据流项目，比如以下示例"
+                        diwr_zzzz_msqu_yhld.hint = "示例项目{220204}=9\n示例项目{220204}3f 4 a b c"
+                        msqu_rjse_fs(diwr_zzzz_msqu_yhld)
+                        return { rjse_msqu: "99=" + rj_diwr_vr_mcvn + "{{\n" + diwr_zzzz_msqu_yhld.msqu_rjse + "\n}}", gkqj_tmtm_ybkc: false }
                     }
                 } else if (diwr_vr_mcvn.msqu_zkrs === "vdzv_vr_bqeo") {
-                    BQEO_1 = msqu_rjse_rscs(BQEO_1)
+                    diwr_zzzz_msqu_yhld.rscs_bqeo = BQEO_1
+                    msqu_rjse_rscs(diwr_zzzz_msqu_yhld)
+                    BQEO_1 = diwr_zzzz_msqu_yhld.vnwm_dbkz_vdzv[0]
+                } else if (diwr_vr_mcvn.msqu_zkrs === "jc_znzk_ymyi_ztih_dk_yg") {
+                    uz_ms('csrf-rsgm nsm wdfs yc ja zkrs ss atvn oqzn yeup, kqud ah fywy zkrs badb atvn. Ik omji zkrs dgld.-')
                 }
             }
         }
-        if (diwr_vr_mcvn.asc) {
+        if (diwr_vr_mcvn.asc != undefined) {
             RJSE_ZTHI_SLGR = "[" + ZTHI_YG_VDUM("32").map(RNSF => {
                 return RNSF.ZTHI_VKIH + "=" + RNSF.DIYC_YG
             }).join(' ') + "]"
 
-        } else if (diwr_vr_mcvn.okwk_zthi) {
+        } else if (diwr_vr_mcvn.okwk_zthi != undefined) {
             if (diwr_vr_mcvn.okwk_zthi == "") {
                 RJSE_ZTHI_SLGR = "okwk_zthi=1 0X10 0XFF"
             } else {

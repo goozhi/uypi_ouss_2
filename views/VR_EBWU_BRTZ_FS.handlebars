@@ -44,7 +44,7 @@
             document.getElementById('btn1').click()
             return
         } else if (event.altKey && event.keyCode == 80) {
-            document.getElementById('id_vdzv_1').select()
+            document.getElementById('id_vdzv_1').focus()
             return
         }
 
@@ -177,7 +177,6 @@
     function isKeyPressed(event) {
     }
 </script>
-<h2>VR</h2>
 <form style="float: left;margin: 0%;" name="home" action="/" method="get">
     <button>go home</button>
 </form>
@@ -190,12 +189,11 @@
     action="/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH" method="get">
     <button>VR语言之数据流项目编写示例</button>
 </form>
-<input id="oakl_1" style="width: 100%;" placeholder="输入VR代码时，Tab键可进行代码补全"><br>
-<hr>
-<form style="width: 100%;" name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
-    <b>输入VR代码</b> Alt+P ⬇️
+
+<form style="width: 100%;clear:both" name="VR_EBWU_BRTZ_FS" id="form_1" action="/VR_EBWU_BRTZ_FS" method="post">
+    <b>输入VR代码</b> Alt+P ⬇️<input id="oakl_1" style="width:50%;border:0;" placeholder="输入VR代码时，Tab键可进行代码补全">
     <br>
-    <textarea style="width: 100%;" class='code-area-2' name="VDZV_1" onfocus="select()" id="id_vdzv_1" onkeyup=""
+    <textarea style="width: 100%;" class='code-area-2' name="VDZV_1" onfocus="tkxb_basd(this)" id="id_vdzv_1" onkeyup=""
         id="RNSF_1" rows="20" cols="150">{{RJSE_KP}}</textarea>
     <br>
     <button id="btn1">提交</button> Ctrl+Space ⬅️
@@ -205,6 +203,12 @@
 <textarea id='vdum_bqeo' class='code-area-2' rows="20" cols="150"
     style="resize: none;width: 100%;overflow: auto;word-break: break-all;">{{rj_jtyj}}</textarea>
 <script>
+    function tkxb_basd(ubqt) {
+        var eqwy_siih = ubqt.value.search(/\S\s*\}\}\s*$/)
+        if (eqwy_siih != -1) {
+            ubqt.setSelectionRange(eqwy_siih+1, eqwy_siih+1)
+        }
+    }
     function jkub_jtyj(ubqt) {
         var ele_1 = document.getElementById("vdum_bqeo");
         var zstv_jkub_jtyj = document.getElementById("zstv_jkub_jtyj");

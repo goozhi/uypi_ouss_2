@@ -17,6 +17,7 @@ function vr_mcvn_rscs_zv_yecm_mcvn(rjse_kp, diwr_neig_mcvn) {
         var diwr_mcvn = { rj_kp: rn1 }
         if (diwr_yhld == null) {
             diwr_mcvn.mcvn_wu = lzm_wu_ld_yowr_wu(rn1, diwr_vnwm_mcvn_wu_oqzn)
+            diwr_mcvn.mcvn_bqeo = ""
             return diwr_mcvn
         } else {
             diwr_mcvn.mcvn_wu = lzm_wu_ld_yowr_wu(diwr_yhld[1], diwr_vnwm_mcvn_wu_oqzn)

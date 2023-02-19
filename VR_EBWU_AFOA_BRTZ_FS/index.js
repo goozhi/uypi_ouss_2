@@ -6,10 +6,14 @@ const eowl_diwr_zv_fywy_vnwm_ux_pzva_dk_rnsf = require('../AFOA_BX/eowl_diwr_zv_
 const VR_LJEY_TSJQ_LD_Peng = require('./VR_LJEY_TSJQ_LD_Peng');
 const uz_ms = require('../AFOA_BX/uz_ms');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
+const vnwm_msqu = []
 async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     // if(!diwr_mcvn){
     //     uz_ms('csrf-mcvn nrap-')
     // }
+    if(diwr_mcvn){
+        diwr_mcvn.vnwm_msqu = vnwm_msqu
+    }
     var uxux_yhld = typeof (RJSE_1)
     if (uxux_yhld != "string") {
         uz_ms('csrf-mcvn uxux aoao ji string-' + uxux_yhld)
@@ -81,7 +85,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
         }
         var RJSE_MSOX = await sysData_ZJZJ(RJSE_YHLD)
         if (!/HMPC MSOX/i.test(RJSE_MSOX)) {
-            uz_ms([RJSE_MSOX]);
+            uz_ms(RJSE_MSOX);
         }
         return { rj_jtyj: RJSE_JTYP, vnwm_usni: [] };
     }
