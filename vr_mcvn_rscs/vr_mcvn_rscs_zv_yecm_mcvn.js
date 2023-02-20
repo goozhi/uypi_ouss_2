@@ -11,9 +11,9 @@ function vr_mcvn_rscs_zv_yecm_mcvn(rjse_kp, diwr_neig_mcvn) {
             diwr_vnwm_mcvn_wu_oqzn = diwr_neig_mcvn.diwr_vnwm_mcvn_wu_oqzn
         }
     }
-    var vnwm_mcvn_1 = rj_1.match(/\w+(?:=[\w ]+|)/g);
+    var vnwm_mcvn_1 = rj_1.match(/\w+\s*(?:=(?:\s*(?:\w+|(?:\[[^\]]*\])+))|)/g);
     var diwr_vnwm_mcvn_1 = vnwm_mcvn_1.map(rn1 => {
-        diwr_yhld = rn1.match(/(.*)\s*=\s*(.*)/)
+        diwr_yhld = rn1.match(/(.*?)\s*=\s*(.*)/)
         var diwr_mcvn = { rj_kp: rn1 }
         if (diwr_yhld == null) {
             diwr_mcvn.mcvn_wu = lzm_wu_ld_yowr_wu(rn1, diwr_vnwm_mcvn_wu_oqzn)

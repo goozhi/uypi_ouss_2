@@ -108,7 +108,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
             if (diwr_vr_mcvn.okwk_zthi == "") {
                 RJSE_ZTHI_SLGR = "okwk_zthi=1 0X10 0XFF"
             } else {
-                RJSE_ZTHI_SLGR = "okwk_zthi=" + diwr_vr_mcvn.okwk_zthi
+                RJSE_ZTHI_SLGR = "okwk_zthi=" + diwr_vr_mcvn.okwk_zthi.replace(/[\]\[]/g,"")
             }
         }
 
