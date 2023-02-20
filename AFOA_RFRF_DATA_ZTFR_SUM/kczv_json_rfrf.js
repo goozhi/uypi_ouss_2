@@ -26,7 +26,7 @@ async function kczv_json_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) 
     var diwr_vnwm_kplu_kp = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
     if (!fs.existsSync(YXNA_VNWM_reg_VWUX_MR_YFUX)) {
         throw new Error('csrf- nikc ac zznq-' + YXNA_VNWM_reg_VWUX_MR_YFUX)
-    }    
+    }
     var VNWM_KP = fs.readdirSync(YXNA_VNWM_reg_VWUX_MR_YFUX);
     var VNWM_1 = VNWM_KP.filter(rn1 => {
         if (/\.js$/i.test(rn1))
@@ -49,30 +49,21 @@ async function kczv_json_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) 
 
     return new Promise((resolve, reject) => {
         Promise.all(diwr_vnwm_zjzj_zbhm).then(jtyj => {
-            var vnwm_yhrj = []
             var diwr_vnwm_vdum = []
             var diwr_vnwm_id = []
-        
+
             jtyj.forEach(rn1 => {
                 if (rn1.gkqj_wwcf) {
-                    var eqwy_2 = vnwm_yhrj.indexOf(rn1.diwr_yhrd.yhrj)
-                    if (eqwy_2 == -1) {
-                        vnwm_yhrj.push(rn1.diwr_yhrd.yhrj)
-                        delete rn1.diwr_yhrd.json_yxna_kp
-                        delete rn1.diwr_yhrd.gkqj_wwcf
-                        diwr_vnwm_vdum.push(rn1.diwr_yhrd)
-                    } else {
-                        // if (diwr_vnwm_vdum[eqwy_2].rdrj != rn1.diwr_yhrd.rdrj) {
-                        //     uz_ms('csrf-yhrj styf oin rdrj ac styf-' + rn1.diwr_yhrd.yhrj + '\n' + diwr_vnwm_vdum[eqwy_2].rdrj + '(' + diwr_vnwm_vdum[eqwy_2].json_yxna_kp + ')\n' + rn1.diwr_yhrd.rdrj + '(' + rn1.diwr_yhrd.json_yxna_kp + ')')
-                        // }
-                    }
-                }else{
+                    delete rn1.diwr_yhrd.json_yxna_kp
+                    delete rn1.diwr_yhrd.gkqj_wwcf
+                    diwr_vnwm_vdum.push(rn1.diwr_yhrd)
+                } else {
                     diwr_vnwm_id.push(rn1.diwr_yhrd)
                 }
             })
             fs.writeFileSync(yxna_vdum, JSON.stringify(diwr_vnwm_vdum))
-            fs.writeFileSync(yxna_vdum+'_丢弃的对象.json.bak', JSON.stringify(diwr_vnwm_id))
-            resolve(WR_TSJQ_ZV_CE_EBWU_LD_YHRJ({ WR_AFOA_BQEO: 'yexf pc '+jtyj.length+' nh diwr, cd ja '+diwr_vnwm_vdum.length+` nh vdum ab yxna md-${yxna_vdum}-md`, WR_AFOA_MCVN: '' }))
+            fs.writeFileSync(yxna_vdum + '_丢弃的对象.json.bak', JSON.stringify(diwr_vnwm_id))
+            resolve(WR_TSJQ_ZV_CE_EBWU_LD_YHRJ({ WR_AFOA_BQEO: 'yexf pc ' + jtyj.length + ' nh diwr, cd ja ' + diwr_vnwm_vdum.length + ` nh vdum ab yxna md-${yxna_vdum}-md`, WR_AFOA_MCVN: '' }))
         }).catch(err => {
             reject(err)
         })

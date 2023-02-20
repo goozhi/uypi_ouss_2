@@ -35,6 +35,7 @@ const VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY = require('./VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DY
 const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require('./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ')
 const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN')
 const VR_TSJQ_BRTZ_FS_ZV_LCLC = require('./VR_TSJQ_BRTZ_FS_ZV_LCLC')
+const VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY = require('./VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -60,6 +61,15 @@ function vr_afoa_bx() {
         csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
         klch: `config={{}}`,
         vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "NWVT_TSJQ_ZZUY",
+        zkrs: "获取帮助",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY,
+        csrf: "该指令帮助用户了解其他VR指令，指令内容输入其他指令的操作符即可",
+        klch: `HELP={{60}}`,
+        vnwm_vr_afoa_lzm_wu: ["56", "HELP"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -215,23 +225,42 @@ function vr_afoa_bx() {
         klch: `
         //参数等于search表示启用关键词搜索模式来获取每个对象内原文或者译文中与指定的关键词相匹配的内容。关键词之间用空白符隔开
         60=search{{
-            第一行请输入：中英对应库路径
+            第一行请输入：中英对应库目录
             第二行请输入：关键词1 关键词2 ...
         }}
         //参数等于reg表示启用正则表达式搜索模式来获取每个对象内原文或者译文中与指定的正则表达式相匹配的内容。
         60=reg{{
-            第一行请输入：中英对应库路径
+            第一行请输入：中英对应库目录
             第二行请输入：正则表达式
         }}
         //参数等于sentences或者stns表示获取所有含有句子的对象。
         60=stns{{
-            第一行请输入：中英对应库路径
+            第一行请输入：中英对应库目录
         }}
         //参数等于test表示使用指定的标准库对中英对应库进行不合格对象的筛查。并返回所有不合格对象的相关信息
         60=test{{
-            第一行请输入：中英对应库路径
-            第二行请输入：标准库路径
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
         }}
+        //参数等于num或createnumber表示给所有没有编号的对象赋予编号，并更新中英对应库
+        60=num{{
+            第一行请输入：中英对应库目录
+        }}
+        //参数等于delete表示根据编号删除对应对象，并更新中英对应库
+        60=delete{{
+            第一行请输入：中英对应库目录
+            第二行请输入：对象编号 如1676876232394，多个编号之间用空格隔开
+        }}
+        //参数等于pass表示根据标准库对中英对应库重筛，并更新中英对应库
+        60=pass{{
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
+        }}
+        //参数等于uniq或unique表示删除原文重复的对象，保持对象唯一性，并更新中英对应库
+        60=uniq{{
+            第一行请输入：中英对应库目录
+        }}
+
     `,
         vnwm_vr_afoa_lzm_wu: ["60", "TRANSM"],
         VBYT_VKRF_Peng_EBWU: false,

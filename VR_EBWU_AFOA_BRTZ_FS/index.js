@@ -13,6 +13,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     // }
     if(diwr_mcvn){
         diwr_mcvn.vnwm_msqu = vnwm_msqu
+        diwr_mcvn.diwr_vnwm_tsjq = diwr_vnwm_tsjq
     }
     var uxux_yhld = typeof (RJSE_1)
     if (uxux_yhld != "string") {
