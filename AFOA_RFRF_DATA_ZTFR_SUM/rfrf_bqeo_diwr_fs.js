@@ -3,6 +3,7 @@ const zjzj_yhrd_diyc_gnpz = require("./zjzj_yhrd_diyc_gnpz");
 const fs = require('fs')
 
 async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
+    var vkih = new Date().getTime()
     var bqeo_1 = bqeo_kp.replace(/;\s*"/g, "\"");
     var reg_yhrd_diyc_slgr = /[^"]+"[^"]+"/gm;
     var reg_yhrd_diyc_eynh = /\s*([^"]+)"([^"]+)"/m;
@@ -36,7 +37,8 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
                 } catch (err) {
                     uz_ms(err)
                 }
-                return { yhrj, rdrj }
+                vkih++
+                return { yhrj, rdrj , vkih}
             }
         })
         return new Promise((resolve, reject) => {

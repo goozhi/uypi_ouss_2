@@ -6,6 +6,7 @@ const reg_dreq = require("./bx_gzbu_zv_rfrf_bx/reg_dreq");
 const eowl_xjvx_uxux_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_xjvx_uxux_diwr");
 const eowl_ac_grbr_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_ac_grbr_diwr");
 const kczv_json_rfrf = require("./AFOA_RFRF_DATA_ZTFR_SUM/kczv_json_rfrf");
+const NVMS_JTYJ_LD_html = require("./AFOA_BX/NVMS_JTYJ_LD_html");
 
 async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
@@ -120,12 +121,33 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                     return diwr_vnwm_jtyj
                 case /\b(?:pass)\b/i.test(RNSF):
                     var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
-                    var rj_nvcm=await kczv_json_rfrf(nikc_bx, nikc_bx + "/db_" + (new Date().getTime()) + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX)
+                    var rj_nvcm = await kczv_json_rfrf(nikc_bx, nikc_bx + "/db_" + (new Date().getTime()) + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX)
                     VNWM_JSON_RJQT_WU.forEach(rn1 => {
                         fs.renameSync(nikc_bx + '/' + rn1, nikc_bx + '/' + rn1 + '.bak')
                     })
 
-                    diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrf: '' }]
+                    diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrj: ' ' }]
+                    return diwr_vnwm_jtyj
+                case /\b(?:add)\b/i.test(RNSF):
+                    var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
+                    var kczv_bqeo = vnwm_afoa_bqeo.slice(2, vnwm_afoa_bqeo.length).join('\n')
+                    var nikc_xyzd = nikc_bx + "/tmp_" + (new Date().getTime())
+                    var rjqt_wu = "db_" + (new Date().getTime())
+                    fs.mkdirSync(nikc_xyzd)
+                    fs.writeFileSync(nikc_xyzd + '/' + rjqt_wu + '.txt', kczv_bqeo)
+                    var rj_nvcm
+                    try {
+                        rj_nvcm = (await kczv_rfrf(nikc_xyzd, nikc_bx + "/" + rjqt_wu + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX, 'utf8'))
+                    } catch (err) {
+                        if (err != undefined && /【|《/.test(err.message)) {
+                            var rj_msox_html = await NVMS_JTYJ_LD_html(err.message.replace(/error:\s*/ig, ""))
+                            return { aqn_voud: rj_msox_html }
+                        } else {
+                            uz_ms(err)
+                        }
+                    }
+
+                    diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrj: ' ' }]
                     return diwr_vnwm_jtyj
                 case /\b(?:test)\b/i.test(RNSF):
                     var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
@@ -155,6 +177,9 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     }
     return new Promise((resolve, reject) => {
         Promise.all(vwdp_diwr_vnwm_1).then(jtyj => {
+            if(!jtyj[0].map){
+                resolve(jtyj[0])
+            }
             resolve(jtyj[0].map(rn1 => {
                 var vkih_2 = ""
                 if (rn1.vkih) {
