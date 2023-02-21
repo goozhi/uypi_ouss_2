@@ -62,9 +62,17 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     } else {
         vwdp_diwr_vnwm_1 = VNWM_MCVN_1.map(async RNSF => {
             switch (true) {
-                case /\bsearch\b/i.test(RNSF):
+                case /\blength|len\b/i.test(RNSF):
+                    return [{ rdrj: diwr_vnwm_bx.length, yhrj: '对象数量' }]
+                case /\keywords|keys\b/i.test(RNSF):
                     var vnwm_gnfo_sj = vnwm_afoa_bqeo[1].split(/\s+/);
                     diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_vnwm_bx)
+                    return diwr_vnwm_jtyj.slice(0, 10000)
+                case /\bfind\b/i.test(RNSF):
+                    var rj_gnfo_sj = vnwm_afoa_bqeo[1]
+                    diwr_vnwm_jtyj = diwr_vnwm_bx.filter(rn1=>{
+                        return (rn1.yhrj+rn1.rdrj).indexOf(rj_gnfo_sj)!=-1?true:false
+                    })
                     return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\breg\b/i.test(RNSF):
                     var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1])
@@ -143,8 +151,12 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                         if (diwr_vnwm_bx[i1].vkih == vkih) {
                             diwr_vnwm_yhrd_diyc = await rfrf_bqeo_diwr_fs(rj_yhrd, { YXNA_VNWM_reg_VWUX_MR_YFUX })
                             diwr_vnwm_yhrd_diyc[0].vkih = vkih
-                            diwr_vnwm_bx[i1].yhrj=vnwm_afoa_bqeo[3]
-                            diwr_vnwm_bx[i1].rdrj=vnwm_afoa_bqeo[4]
+                            if (!diwr_vnwm_bx[i1].vnwm_tmtm) {
+                                diwr_vnwm_bx[i1].vnwm_tmtm = []
+                            }
+                            diwr_vnwm_bx[i1].vnwm_tmtm.push({ yhrj: diwr_vnwm_bx[i1].yhrj, rdrj: diwr_vnwm_bx[i1].rdrj })
+                            diwr_vnwm_bx[i1].yhrj = vnwm_afoa_bqeo[3]
+                            diwr_vnwm_bx[i1].rdrj = vnwm_afoa_bqeo[4]
                             eqwy_qoqi_diwr = i1
                             fs.writeFileSync(nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_bx))
                             VNWM_JSON_RJQT_WU.forEach(rn1 => {
@@ -153,10 +165,10 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                             break;
                         }
                     }
-                    if(!diwr_vnwm_yhrd_diyc){
-                        uz_ms('csrf-vkih ac zznq-'+vkih)
+                    if (!diwr_vnwm_yhrd_diyc) {
+                        uz_ms('csrf-vkih ac zznq-' + vkih)
                     }
-                    diwr_vnwm_jtyj = [{ yhrj: JSON.stringify(diwr_vnwm_bx[eqwy_qoqi_diwr]), rdrj: ' ' }]
+                    diwr_vnwm_jtyj = [{ yhrj: JSON.stringify(diwr_vnwm_bx[eqwy_qoqi_diwr]).replace(/("\w+":)/g,'\n$1'), rdrj: ' ' }]
                     return diwr_vnwm_jtyj
                 case /\b(?:add)\b/i.test(RNSF):
                     var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
@@ -212,11 +224,15 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
             }
             resolve(jtyj[0].map(rn1 => {
                 var vkih_2 = ""
+                var tmtm_1 = ''
                 if (rn1.vkih) {
                     vkih_2 = rn1.vkih + '\n'
                 }
+                if (rn1.vnwm_tmtm) {
+                    tmtm_1 = '\n该对象被修改过，前面的版本为：' + JSON.stringify(rn1.vnwm_tmtm)
+                }
                 if (rn1.err == undefined) {
-                    return vkih_2 + rn1.yhrj + '\n' + rn1.rdrj
+                    return vkih_2 + rn1.yhrj + '\n' + rn1.rdrj + tmtm_1
                 } else {
                     return rn1.err.message.replace(/Error: /, "")
                 }
