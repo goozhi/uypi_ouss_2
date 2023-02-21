@@ -63,11 +63,11 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                 case /\bsearch\b/i.test(RNSF):
                     var vnwm_gnfo_sj = vnwm_afoa_bqeo[1].split(/\s+/);
                     diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_vnwm_bx)
-                    return diwr_vnwm_jtyj
+                    return diwr_vnwm_jtyj.slice(0,10000)
                 case /\breg\b/i.test(RNSF):
                     var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1])
                     diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_vnwm_bx)
-                    return diwr_vnwm_jtyj
+                    return diwr_vnwm_jtyj.slice(0,10000)
                 case /\b(?:sentences|stns)\b/i.test(RNSF):
                     diwr_vnwm_jtyj = eowl_xjvx_uxux_diwr(diwr_vnwm_bx)
                     return diwr_vnwm_jtyj
