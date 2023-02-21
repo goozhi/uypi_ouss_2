@@ -7,6 +7,8 @@ const eowl_xjvx_uxux_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_xjvx_uxux_diwr");
 const eowl_ac_grbr_diwr = require("./bx_gzbu_zv_rfrf_bx/eowl_ac_grbr_diwr");
 const kczv_json_rfrf = require("./AFOA_RFRF_DATA_ZTFR_SUM/kczv_json_rfrf");
 const NVMS_JTYJ_LD_html = require("./AFOA_BX/NVMS_JTYJ_LD_html");
+const rfrf_bqeo_diwr_fs = require("./AFOA_RFRF_DATA_ZTFR_SUM/rfrf_bqeo_diwr_fs");
+const DREQ_DIWR = require("./AFOA_BX/DREQ_DIWR");
 
 async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
@@ -63,11 +65,11 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                 case /\bsearch\b/i.test(RNSF):
                     var vnwm_gnfo_sj = vnwm_afoa_bqeo[1].split(/\s+/);
                     diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_vnwm_bx)
-                    return diwr_vnwm_jtyj.slice(0,10000)
+                    return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\breg\b/i.test(RNSF):
                     var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1])
                     diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_vnwm_bx)
-                    return diwr_vnwm_jtyj.slice(0,10000)
+                    return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\b(?:sentences|stns)\b/i.test(RNSF):
                     diwr_vnwm_jtyj = eowl_xjvx_uxux_diwr(diwr_vnwm_bx)
                     return diwr_vnwm_jtyj
@@ -128,6 +130,34 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
 
                     diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrj: ' ' }]
                     return diwr_vnwm_jtyj
+                case /\b(?:modify)\b/i.test(RNSF):
+                    var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
+                    var vkih = Number(vnwm_afoa_bqeo[2])
+                    if (isNaN(vkih)) {
+                        uz_ms('csrf-vkih brtz msox-' + vnwm_afoa_bqeo[2])
+                    }
+                    var rj_yhrd = vnwm_afoa_bqeo[3] + "\"" + vnwm_afoa_bqeo[4] + "\""
+                    var diwr_vnwm_yhrd_diyc
+                    var eqwy_qoqi_diwr
+                    for (var i1 = 0; i1 < diwr_vnwm_bx.length; i1++) {
+                        if (diwr_vnwm_bx[i1].vkih == vkih) {
+                            diwr_vnwm_yhrd_diyc = await rfrf_bqeo_diwr_fs(rj_yhrd, { YXNA_VNWM_reg_VWUX_MR_YFUX })
+                            diwr_vnwm_yhrd_diyc[0].vkih = vkih
+                            diwr_vnwm_bx[i1].yhrj=vnwm_afoa_bqeo[3]
+                            diwr_vnwm_bx[i1].rdrj=vnwm_afoa_bqeo[4]
+                            eqwy_qoqi_diwr = i1
+                            fs.writeFileSync(nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_bx))
+                            VNWM_JSON_RJQT_WU.forEach(rn1 => {
+                                fs.renameSync(nikc_bx + '/' + rn1, nikc_bx + '/' + rn1 + '.bak')
+                            })
+                            break;
+                        }
+                    }
+                    if(!diwr_vnwm_yhrd_diyc){
+                        uz_ms('csrf-vkih ac zznq-'+vkih)
+                    }
+                    diwr_vnwm_jtyj = [{ yhrj: JSON.stringify(diwr_vnwm_bx[eqwy_qoqi_diwr]), rdrj: ' ' }]
+                    return diwr_vnwm_jtyj
                 case /\b(?:add)\b/i.test(RNSF):
                     var YXNA_VNWM_reg_VWUX_MR_YFUX = vnwm_afoa_bqeo[1]
                     var kczv_bqeo = vnwm_afoa_bqeo.slice(2, vnwm_afoa_bqeo.length).join('\n')
@@ -177,7 +207,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     }
     return new Promise((resolve, reject) => {
         Promise.all(vwdp_diwr_vnwm_1).then(jtyj => {
-            if(!jtyj[0].map){
+            if (!jtyj[0].map) {
                 resolve(jtyj[0])
             }
             resolve(jtyj[0].map(rn1 => {
