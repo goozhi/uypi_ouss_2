@@ -62,9 +62,9 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     } else {
         vwdp_diwr_vnwm_1 = VNWM_MCVN_1.map(async RNSF => {
             switch (true) {
-                case /\blength|len\b/i.test(RNSF):
+                case /\b(?:length|len)\b/i.test(RNSF):
                     return [{ rdrj: diwr_vnwm_bx.length, yhrj: '对象数量' }]
-                case /\keywords|keys\b/i.test(RNSF):
+                case /\b(?:keywords|keys)\b/i.test(RNSF):
                     var vnwm_gnfo_sj = vnwm_afoa_bqeo[1].split(/\s+/);
                     diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_vnwm_bx)
                     if (diwr_vnwm_jtyj.length == diwr_vnwm_bx.length) {
@@ -78,7 +78,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                     })
                     return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\breg\b/i.test(RNSF):
-                    var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1])
+                    var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1],"i")
                     diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_vnwm_bx)
                     return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\b(?:sentences|stns)\b/i.test(RNSF):

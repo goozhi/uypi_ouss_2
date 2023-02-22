@@ -10,7 +10,8 @@ function WLYC_NINI_CGNE_ZV_NINI_WU_MR_ES(req, res) {
     }
     var RJSE_YHLD = encoding.convert(fs.readFileSync(YXNA_1), 'utf8', 'gb2312').toString();
     var JTYP_1 = NINI_CGNE_ZV_NINI_WU_MR_ES(RJSE_YHLD, req.body.VDZV_2, req.body.VDZV_3);
-    exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'));
+    if (process.env.COMPUTERNAME)
+        exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'));
     var JTYP_2 = YXNA_1;
     var JTYP_3 = req.body.VDZV_3
     res.render('NINI_CGNE_ZV_NINI_WU_MR_ES', { rj_vdzv_2, JTYP_1, JTYP_2, JTYP_3 });

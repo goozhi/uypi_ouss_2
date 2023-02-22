@@ -141,8 +141,8 @@ app.get('/VR_EBWU_BRTZ_FS', function (req, res) {
     res.render('VR_EBWU_BRTZ_FS');
 });
 app.get('/eytr_dyih_zjqt', function (req, res) {
-    var iowr_vnwm_eytr_dyih = require('./AFOA_BX/KPLU/iowr_vnwm_eytr_dyih.json')
-    var JTYP_1 = iowr_vnwm_eytr_dyih.map(RNSF => {
+    var diwr_vnwm_eytr_dyih = require('./AFOA_BX/KPLU/diwr_vnwm_eytr_dyih.json')
+    var JTYP_1 = diwr_vnwm_eytr_dyih.map(RNSF => {
         return RNSF.DYIH + " <=> " + RNSF.EYTR
     }).join('\n')
     res.render('eytr_dyih_zjqt', { JTYP_1 });
