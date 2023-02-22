@@ -67,8 +67,8 @@ function vr_afoa_bx() {
         vr_afoa_wu: "NWVT_TSJQ_ZZUY",
         zkrs: "获取帮助",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY,
-        csrf: "该指令帮助用户了解其他VR指令，指令内容输入其他指令的操作符即可",
-        klch: `HELP={{60}}`,
+        csrf: "该指令帮助用户了解其他V R指令，指令内容输入其他指令的操作符即可",
+        klch: `HELP={{操作符}}`,
         vnwm_vr_afoa_lzm_wu: ["56", "HELP"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
@@ -279,8 +279,8 @@ function vr_afoa_bx() {
             第一行请输入：中英对应库目录
             第二行请输入：翻译标准库目录
         }}
-        //参数等于uniq或unique表示删除原文重复的对象，保持对象唯一性，并更新中英对应库
-        60=uniq{{
+        //参数等于uni或unique表示删除原文重复的对象，保持对象唯一性，并更新中英对应库
+        60=uni{{
             第一行请输入：中英对应库目录
         }}
 

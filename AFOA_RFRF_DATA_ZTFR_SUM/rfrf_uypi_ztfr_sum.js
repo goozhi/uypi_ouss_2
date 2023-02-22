@@ -1,6 +1,6 @@
 const NIKC_NINI_RJVT = require("../AFOA_BX/NIKC_NINI_RJVT")
 const uz_ms = require("../AFOA_BX/uz_ms")
-const rfrf_ids_yhrj_bqeo = require('./rfrf_ids_yhrj_bqeo')
+const rfrf_ids_yhrj_bqeo_2 = require('./rfrf_ids_yhrj_bqeo_2')
 const fs = require('fs')
 const encoding = require('encoding')
 const ids_diwr_fs = require("./ids_diwr_fs")
@@ -40,7 +40,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
         var diwr_vnwm_ids = await ids_diwr_fs(rn1.BQEO)
         var diwr_vnwm_rfrf_jtyj
         try {
-            diwr_vnwm_rfrf_jtyj = await rfrf_ids_yhrj_bqeo(diwr_vnwm_ids, diwr_vnwm_kplu_kp)
+            diwr_vnwm_rfrf_jtyj = await rfrf_ids_yhrj_bqeo_2(diwr_vnwm_ids, diwr_vnwm_kplu_kp)
         } catch (err) {
             if (/^Error: 【|^Error: 《/.test(err.message)) {
                 err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
