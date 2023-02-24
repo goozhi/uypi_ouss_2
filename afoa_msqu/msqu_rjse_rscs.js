@@ -16,7 +16,7 @@ function msqu_rjse_rscs(diwr_neig_mcvn){
             ussk_uxux_rscs(diwr_neig_mcvn)
             break;
         default:
-            uz_ms('csrf-mcvn uxux acun-'+diwr_neig_mcvn.uxux)
+            uz_ms('csrf-mcvn uxux acun-'+diwr_neig_mcvn.uxux+'-kp-'+diwr_neig_mcvn.msqu_zkrs)
     }
     return true
 }

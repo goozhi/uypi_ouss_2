@@ -1,15 +1,20 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
 
-function vdzv_rjse_fs(diwr_neig_mcvn){
-    var hint = '\n'
-    if(diwr_neig_mcvn.hint){
-        hint+=diwr_neig_mcvn.hint
+function vdzv_rjse_fs(diwr_neig_mcvn) {
+    if(!diwr_neig_mcvn){
+        uz_ms('csrf-nrap mcvn-')
     }
-    if(diwr_neig_mcvn.zkrs){
-        diwr_neig_mcvn.msqu_rjse='zkrs-'+diwr_neig_mcvn.zkrs.replace(/\n+$/,"")+'-vdzv-'+hint
-    }else{
-        uz_ms('csrf-zf aoao vdzv zkrs-')
+    if (typeof (diwr_neig_mcvn.diwr_vnwm_zkrs) != "object") {
+        uz_ms('csrf-mcvn aoao ji object-')
     }
+    diwr_neig_mcvn.msqu_rjse = diwr_neig_mcvn.diwr_vnwm_zkrs.map(rn1 => {
+        var hint = '\n'
+        if (rn1.hint) {
+            hint += rn1.hint
+        }
+        var msqu_rjse = 'zkrs-' + rn1.zkrs.replace(/\n+$/, "") + '-vdzv-' + hint
+        return msqu_rjse
+    }).join('\n')
     return true
 }
-module.exports=vdzv_rjse_fs
+module.exports = vdzv_rjse_fs
