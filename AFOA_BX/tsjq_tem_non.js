@@ -62,7 +62,25 @@ function vr_afoa_bx() {
          
         csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
         klch: `config={{}}`,
-        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
+        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG", "NEIG"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "NWVT_TSJQ_ZZUY",
+        zkrs:"获取帮助",
+         
+        csrf: "该指令帮助用户了解其他V R指令，指令内容输入其他指令的操作符即可",
+        klch: `HELP={{操作符}}`,
+        vnwm_vr_afoa_lzm_wu: ["56", "HELP"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "LCLC",
+        zkrs:"注释",
+         
+        csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
+        klch: `lclc={{This is a comment.}}`,
+        vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "comment", "cmmt"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -88,6 +106,18 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["31", 'BEIQI3F']
+    },
+    {
+        vr_afoa_wu: "BOBI",
+        zkrs:"呼叫波比",
+        csrf: `该功能将帮助用户呼叫意志连接程序波比来解答用户问题.
+        `,
+        klch: `BOBI={{你是谁}}
+    `
+        ,  
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["BOBI", '888']
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",
@@ -207,25 +237,67 @@ function vr_afoa_bx() {
          
         csrf: `该指令帮助用户管理中英对应库。该指令具体功能请查看示例`,
         klch: `
-        //参数等于search表示启用关键词搜索模式来获取每个对象内原文或者译文中与指定的关键词相匹配的内容。关键词之间用空白符隔开
-        60=search{{
-            第一行请输入：中英对应库路径
+        //参数等于keys或keywords表示启用关键词搜索模式来获取每个对象内原文或者译文中与指定的关键词相匹配的内容。关键词之间用空白符隔开
+        60=keys{{
+            第一行请输入：中英对应库目录
             第二行请输入：关键词1 关键词2 ...
+        }}
+        //参数等于find表示启用普通模式来获取每个对象内原文或者译文中与指定的搜索内容相匹配的内容。
+        60=find{{
+            第一行请输入：中英对应库目录
+            第二行请输入：查找的内容
+        }}
+        //参数等于length或len表示返回库里面所有对象的数量
+        60=length{{
+            第一行请输入：中英对应库目录
         }}
         //参数等于reg表示启用正则表达式搜索模式来获取每个对象内原文或者译文中与指定的正则表达式相匹配的内容。
         60=reg{{
-            第一行请输入：中英对应库路径
+            第一行请输入：中英对应库目录
             第二行请输入：正则表达式
         }}
         //参数等于sentences或者stns表示获取所有含有句子的对象。
         60=stns{{
-            第一行请输入：中英对应库路径
+            第一行请输入：中英对应库目录
         }}
         //参数等于test表示使用指定的标准库对中英对应库进行不合格对象的筛查。并返回所有不合格对象的相关信息
         60=test{{
-            第一行请输入：中英对应库路径
-            第二行请输入：标准库路径
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
         }}
+        //参数等于num或createnumber表示给所有没有编号的对象赋予编号，并更新中英对应库
+        60=num{{
+            第一行请输入：中英对应库目录
+        }}
+        //参数等于delete表示根据编号删除对应对象，并更新中英对应库
+        60=delete{{
+            第一行请输入：中英对应库目录
+            第二行请输入：对象编号 如1676876232394，多个编号之间用空格隔开
+        }}
+        //参数等于add表示添加对象，并更新中英对应库
+        60=add{{
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
+            第三行开始请输入：新增对象的原文和译文内容（如‘完成"completed"’），多个对象用换行符隔开
+        }}
+        //参数等于modify表示修改对象，并更新中英对应库
+        60=modify{{
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
+            第三行请输入：目标对象的编号
+            第四行请输入: 新的原文
+            第五行请输入：新的译文
+        }}
+        //参数等于pass表示根据标准库对中英对应库重筛，并更新中英对应库
+        60=pass{{
+            第一行请输入：中英对应库目录
+            第二行请输入：翻译标准库目录
+        }}
+        //参数等于uni或unique表示删除原文重复的对象，保持对象唯一性，并更新中英对应库
+        60=uni{{
+            第一行请输入：中英对应库目录
+        }}
+
     `,
         vnwm_vr_afoa_lzm_wu: ["60", "TRANSM"],
         VBYT_VKRF_Peng_EBWU: false,
@@ -409,7 +481,7 @@ function vr_afoa_bx() {
             *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
         }}
         //下面参数表示设置每条算式最高字节分别为0x10、0xff，输出对应值（输出对应值仅对计算类型项目有效）。参数9可以用max代替。
-        99=9=0x10 0xff{{
+        99=9=[0x10 0xff]{{
             *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
             *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
         }}

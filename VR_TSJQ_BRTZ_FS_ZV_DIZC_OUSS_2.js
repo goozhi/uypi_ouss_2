@@ -5,7 +5,6 @@ const diwr_sopc_zkrs = require('./msqu_dizc_ouss/diwr_sopc_zkrs');
 const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
 const vr_mcvn_rscs = require('./vr_mcvn_rscs/index.js');
 var ZTHI_YG_VDUM = require('./ZTHI_YG_VDUM')
-const vyvy_vnwm_usni_1 = [['根据开发者设置的默认值设置每个项目的最高字节的值', '自定义每个项目的最高字节的值', '自定义任意字节的值', "使用30-39模式"]]
 async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {

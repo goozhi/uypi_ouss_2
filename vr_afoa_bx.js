@@ -36,6 +36,7 @@ const VR_TSJQ_ZV_CE_EBWU_LD_YHRJ = require('./VR_TSJQ_ZV_CE_EBWU_LD_YHRJ')
 const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN')
 const VR_TSJQ_BRTZ_FS_ZV_LCLC = require('./VR_TSJQ_BRTZ_FS_ZV_LCLC')
 const VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY = require('./VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY')
+const VR_TSJQ_ZV_BOBI = require('./VR_TSJQ_ZV_BOBI')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -60,7 +61,7 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN,
         csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
         klch: `config={{}}`,
-        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG","NEIG"],
+        vnwm_vr_afoa_lzm_wu: ["2", "CONFIG", "NEIG"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -78,7 +79,7 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_LCLC,
         csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
         klch: `lclc={{This is a comment.}}`,
-        vnwm_vr_afoa_lzm_wu: ["5", "LCLC","comment","cmmt"],
+        vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "comment", "cmmt"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -104,6 +105,18 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["31", 'BEIQI3F']
+    },
+    {
+        vr_afoa_wu: "BOBI",
+        zkrs: "呼叫波比",
+        csrf: `该功能将帮助用户呼叫意志连接程序波比来解答用户问题.
+        `,
+        klch: `BOBI={{你是谁}}
+    `
+        , vr_afoa_rh: VR_TSJQ_ZV_BOBI,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["BOBI", '888']
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",
