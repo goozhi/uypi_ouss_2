@@ -228,7 +228,23 @@ app.post('/ESIH_BRTZ_FS', function (req, res) {
     WLYC_ESIH_BRTZ_FS(req, res);
 });
 app.post('/VR_EBWU_BRTZ_FS', function (req, res) {
-    WLYC_VR_EBWU_BRTZ_FS(req, res, config);
+    var a1 = (WLYC_VR_EBWU_BRTZ_FS(req, res, config))
+    Promise.all([a1]).then(jtyj => {
+    }).catch(err => {
+        res.status(500);
+        if (err.cause != undefined) {
+            err = NVMS_EBWU_LD_YHRJ_2(err)
+        } else if (err.message != undefined && /csrf-/i.test(err.message)) {
+            err = NVMS_EBWU_LD_YHRJ_3(err)
+        } else if (err.message != undefined) {
+            err = NVMS_EBWU_LD_YHRJ_1(err)
+        }
+        else {
+
+        }
+        res.render('500', { err, err_stack: err.stack });
+        console.log(err)
+    })
 });
 app.post('/BRTZ_FS_3f', function (req, res) {
     WLYC_BRTZ_FS_3f(req, res);

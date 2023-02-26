@@ -1,6 +1,9 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
 
 function vdzv_uxux_rscs(diwr_neig_mcvn){
+    if(!diwr_neig_mcvn.rscs_bqeo){
+        uz_ms('csrf-mcvn nrap-')
+    }
     var vnwm_jtyj = diwr_neig_mcvn.rscs_bqeo.match(/-vdzv-(?:(?!-vdzv-|zkrs-)[\s\S])*/ig)
     if(vnwm_jtyj==null){
         uz_ms('csrf-sopj vdzv bqeo-'+diwr_neig_mcvn.rscs_bqeo)

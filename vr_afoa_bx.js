@@ -116,7 +116,7 @@ function vr_afoa_bx() {
         , vr_afoa_rh: VR_TSJQ_ZV_BOBI,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
-        vnwm_vr_afoa_lzm_wu: ["BOBI", '888']
+        vnwm_vr_afoa_lzm_wu: ["BOBI", '888', '波比']
     },
     {
         vr_afoa_wu: "DBC_BRTZ_FS_ZV_BEIQI_EC180",

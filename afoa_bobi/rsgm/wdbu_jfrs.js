@@ -19,19 +19,34 @@ async function wdbu_jfrs(diwr_neig_mcvn) {
         diwr_kplu_eynh.gkqj_di_mb = true;
         return diwr_kplu_eynh
     } else {
-        var vwdp_vnwm_1 = diwr_vnwm_kplu_bobi.map(async rn1 => {
-            rn1.stst_mi = DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1.rj_jfrs_kp, diwr_neig_mcvn.rj_jfrs_kp)
-            rn1.diwr_bnll_jfrs = diwr_neig_mcvn
-            return rn1
+        var diwr_vnwm_reg_hqtz = diwr_vnwm_kplu_bobi.filter(rn1 => {
+            return rn1.gkyq_reg_hqtz
         })
-        return new Promise((resolve, reject) => {
-            Promise.all(vwdp_vnwm_1).then(jtyj => {
-                jtyj.sort((a, b) => b.stst_mi - a.stst_mi)
-                resolve({ csrf: 'stst', diwr_vnwm_stst: jtyj })
-            }).catch((err) => {
-                reject(err)
+        var vnwm_yhld = diwr_vnwm_reg_hqtz.filter(rn1 => {
+            return (new RegExp(rn1.rj_jfrs_kp,"i").test(rj_jfrs_1))
+        })
+        if (vnwm_yhld.length != 0) {
+            if (vnwm_yhld.length > 1) {
+                uz_ms('csrf-pc mh nh cgne ni-'+JSON.stringify(vnwm_yhld))
+            } else {
+                vnwm_yhld[0].gkqj_di_mb = true
+                return vnwm_yhld[0]
+            }
+        } else {
+            var vwdp_vnwm_1 = diwr_vnwm_kplu_bobi.map(async rn1 => {
+                rn1.stst_mi = DOVW_DPAV_UYPJ_ZV_EOWL_STST_MI(rn1.rj_jfrs_kp, diwr_neig_mcvn.rj_jfrs_kp)
+                return rn1
             })
-        })
+            return new Promise((resolve, reject) => {
+                Promise.all(vwdp_vnwm_1).then(jtyj => {
+                    jtyj.sort((a, b) => b.stst_mi - a.stst_mi)
+                    resolve({ csrf: 'stst', diwr_vnwm_stst: jtyj })
+                }).catch((err) => {
+                    reject(err)
+                })
+            })
+
+        }
     }
 }
 module.exports = wdbu_jfrs
