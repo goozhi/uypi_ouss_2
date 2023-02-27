@@ -13,7 +13,14 @@ function vr_mcvn_rscs(rjse_kp, diwr_neig_mcvn) {
     } else {
         var diwr_vnwm_mcvn_1 = vr_mcvn_rscs_zv_yecm_mcvn(rjse_1, diwr_neig_mcvn)
         diwr_vnwm_mcvn_1.forEach(rn1 => {
+            if (rn1.mcvn_bqeo === 'false') {
+                diwr_vr_mcvn[rn1.mcvn_wu] = false
+            } else if (rn1.mcvn_bqeo === 'true') {
+                diwr_vr_mcvn[rn1.mcvn_wu] = true
+            } else {
                 diwr_vr_mcvn[rn1.mcvn_wu] = rn1.mcvn_bqeo
+
+            }
         });
         return diwr_vr_mcvn
     }

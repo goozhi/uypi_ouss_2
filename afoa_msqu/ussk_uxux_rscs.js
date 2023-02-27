@@ -12,8 +12,12 @@ function ussk_uxux_rscs(diwr_neig_mcvn) {
             var vnwm_vn_ussk = rn1.match(/\d+/g)
             if(!vnwm_vn_ussk){
                 uz_ms('csrf-sopj cgne eqwy-'+rn1)
+            }else{
+                return vnwm_vn_ussk.map(rn1=>{
+                    return Number(rn1)
+                })
             }
-            return vnwm_vn_ussk
+            //  vnwm_vn_ussk
         })
     }
     return true

@@ -8,7 +8,7 @@ const uz_ms = require('../AFOA_BX/uz_ms');
 var diwr_vnwm_tsjq = new VR_TSJQ_DIWR().diwr_vnwm_tsjq
 const vnwm_msqu = []
 async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
-    if(diwr_mcvn){
+    if (diwr_mcvn) {
         diwr_mcvn.vnwm_msqu = vnwm_msqu
         diwr_mcvn.diwr_vnwm_tsjq = diwr_vnwm_tsjq
     }
@@ -20,9 +20,9 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     var VBYT_VKRF_Peng_EBWU = true;
     var DIWR_VNWM_VR_AFOA = []
     var RJSE_KP = RJSE_1;
-    var reg_bobi = /^\s*(?:bobi\b|波比)(?!.*=.*\{\{)/i
-    if(reg_bobi.test(RJSE_1)){
-        RJSE_1 = 'bobi={{'+RJSE_1.replace(reg_bobi,'')+'\n}}'
+    var reg_bobi = /^\s*(?:bobi\b|波比)(?!.*=.*\{\{)|(?:bobi|波比)\s*$/i
+    if (reg_bobi.test(RJSE_1)) {
+        RJSE_1 = 'bobi={{' + RJSE_1.replace(reg_bobi, '') + '\n}}'
     }
     var VNWM_YHLD = RJSE_KP.split(/\n[^\S\n]*---\s*\n/);
     var RJSE_LLDD_PHFD = ""
@@ -98,7 +98,9 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     var DIWR_VNWM_VR_LJEY = DIWR_VNWM_VR_AFOA.filter(RNSF => {
         return RNSF.VR_AFOA_WU == "LJEY"
     })
-    RJSE_2 = VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, RJSE_2)
+    if (VBYT_VKRF_Peng_EBWU) {
+        RJSE_2 = VR_LJEY_TSJQ_LD_Peng(DIWR_VNWM_VR_LJEY, RJSE_2)
+    }
     ///////////////
     if (VBYT_VKRF_Peng_EBWU) {
         var RJSE_MSOX = await sysData_ZJZJ(RJSE_2);
