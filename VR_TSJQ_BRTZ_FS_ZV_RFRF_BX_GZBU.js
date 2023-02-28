@@ -78,7 +78,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                     })
                     return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\breg\b/i.test(RNSF):
-                    var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1],"i")
+                    var reg_dbkz = new RegExp(vnwm_afoa_bqeo[1], "i")
                     diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_vnwm_bx)
                     return diwr_vnwm_jtyj.slice(0, 10000)
                 case /\b(?:sentences|stns)\b/i.test(RNSF):
@@ -257,7 +257,11 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                     }
 
                     diwr_vnwm_jtyj = await eowl_ac_grbr_diwr(diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
-                    return diwr_vnwm_jtyj
+                    if (diwr_vnwm_jtyj.length === 0) {
+                        return [{ yhrj: "没有不合格对象", rdrj: '' }]
+                    } else {
+                        return diwr_vnwm_jtyj
+                    }
                 default:
                     throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
             }

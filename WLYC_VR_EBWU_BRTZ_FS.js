@@ -58,8 +58,11 @@ async function WLYC_VR_EBWU_AFOA_BRTZ_FS(req, res, diwr_neig) {
                 res.send(rn1.aqn_voud)
             } else if (rn1.rj_msqu != undefined) {
                 res.render('VR_EBWU_BRTZ_FS', { rj_jtyj: rn1.gkqj_tmtm_ybkc?RJSE_KP:'', RJSE_KP: rn1.rj_msqu })
-            } else {
-                uz_ms('csrf-mcvn acun-')
+            } else if(rn1.aqn_lz_znsc){
+                res.redirect(303, rn1.aqn_lz_znsc);
+            }
+            else {
+                res.render('500', {err:'返回参数不明'+JSON.stringify(diwr_jtyj_1)})
             }
         })
     }

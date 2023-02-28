@@ -58,7 +58,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                 }
             } else if (jtyj.wldg_uxux === 'afoa') {
                 var atvn_yhld = eval(jtyj.rj_afoa)
-                var rj_wldg = String(atvn_yhld(BQEO_1))
+                var rj_wldg = atvn_yhld(BQEO_1, diwr_vnwm_kplu_bobi)
                 if (jtyj.wldg_hqtz === 'rj_msqu') {
                     return { rj_msqu: rj_wldg }
                 } else if (jtyj.wldg_hqtz === 'rj_jtyj') {
@@ -76,6 +76,11 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             } else {
                 var diwr_vnwm_stst_1 = jtyj.diwr_vnwm_stst.slice(0, 3)
                 if (diwr_vnwm_stst_1.map(rn1 => { return rn1.wldg_uxux }).indexOf('afoa') == -1) {
+                    if (diwr_vnwm_stst_1[0].wldg_uxux != 'ztfr_sum') {
+                        uz_ms('csrf-wldg uxux acun-' + diwr_vnwm_stst_1[0].wldg_uxux)
+                    } else if (!diwr_vnwm_stst_1[0].rj_wldg) {
+                        uz_ms('csrf-nrap rj_wldg pzva-' + diwr_vnwm_stst_1[0].rj_wldg)
+                    }
                     if (diwr_vnwm_stst_1[0].wldg_hqtz === 'rj_msqu') {
                         return { rj_msqu: diwr_vnwm_stst_1[0].rj_wldg }
                     } else if (diwr_vnwm_stst_1[0].wldg_hqtz === 'rj_jtyj') {
@@ -111,12 +116,12 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请输入回答' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.adding = "string"
-            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{\n' + diwr_msqu.msqu_rjse + "\n}}" }
+            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         } else if (diwr_vr_mcvn.ukyp === "function") {
-            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请输入自定义的js函数，如下所示，你设定的问题将作为你设定的函数的形式参数传递给你设定的函数。', hint: '(question, arrayGlobal)=>{\nreturn question\n}' }] }
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请输入自定义的js函数，如下所示，你设定的问题将作为你设定的函数的形式参数传递给你设定的函数。', hint: '(question)=>{\nreturn question\n}' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.adding = "function"
-            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{\n' + diwr_msqu.msqu_rjse + "\n}}" }
+            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         }
         else {
             uz_ms('csrf-mcvn msox-' + JSON.stringify(diwr_vr_mcvn))
@@ -135,7 +140,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             return JSON.stringify(diwr_bobi[rn1])
         }).join('\n\n')
     }
-    else if (diwr_vr_mcvn.hasOwnProperty('qoqi')) {
+    else if (diwr_vr_mcvn.qoqi === '' || diwr_vr_mcvn.qoqi === 'answers') {
         var zkrs_1 = '请修改'
         var vnwm_vkih = BQEO_1.match(/\d+/g)
         if (!vnwm_vkih) {
@@ -165,9 +170,42 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
         msqu_rjse_fs(diwr_msqu)
         var diwr_msqu_vr_mcvn = {}
-        diwr_msqu_vr_mcvn.modifying = ''
-        return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{\n' + diwr_msqu.msqu_rjse + '\n}}' }
-    } else if (diwr_vr_mcvn.hasOwnProperty('qoqi_yh')) {
+        diwr_msqu_vr_mcvn.modifying = 'answers'
+        return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
+    } else if (diwr_vr_mcvn.qoqi === 'questions') {
+        var zkrs_1 = '请修改问题'
+        var vnwm_vkih = BQEO_1.match(/\d+/g)
+        if (!vnwm_vkih) {
+            uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
+        }
+        var diwr_bobi = {}
+        diwr_vnwm_kplu_bobi.forEach(rn1 => {
+            diwr_bobi[rn1.vkih] = rn1
+        })
+        var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
+            diwr_yhld = diwr_bobi[rn1]
+            if (!diwr_yhld) {
+                uz_ms('csrf-vkih ac zznq-' + rn1)
+            } else {
+                var bqeo_3 = ''
+                if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
+                    bqeo_3 = diwr_yhld.rj_jfrs_kp
+                } else if (diwr_yhld.wldg_uxux === 'afoa') {
+                    bqeo_3 = diwr_yhld.rj_jfrs_kp
+                } else {
+                    uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
+                }
+                var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
+                return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
+            }
+        })
+        var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
+        msqu_rjse_fs(diwr_msqu)
+        var diwr_msqu_vr_mcvn = {}
+        diwr_msqu_vr_mcvn.modifying = 'questions'
+        diwr_msqu_vr_mcvn.reg = diwr_vr_mcvn.reg
+        return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
+    } else if (diwr_vr_mcvn.qoqi_yh === '' || diwr_vr_mcvn.qoqi_yh === 'answers') {
         var diwr_bobi = {}
         diwr_vnwm_kplu_bobi.forEach(rn1 => {
             diwr_bobi[rn1.vkih] = rn1
@@ -199,6 +237,39 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         })
         ymce(diwr_vnwm_kplu_bobi)
         return '完成更改'
+    } else if (diwr_vr_mcvn.qoqi_yh === 'questions') {
+        var diwr_bobi = {}
+        diwr_vnwm_kplu_bobi.forEach(rn1 => {
+            diwr_bobi[rn1.vkih] = rn1
+        })
+        var diwr_msqu = { uxux: 'vdzv' }
+        diwr_msqu.rscs_bqeo = BQEO_1
+        msqu_rjse_rscs(diwr_msqu)
+        diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
+            var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
+            var diwr_qoqi = rn1.match(reg_qoqi)
+            if (!diwr_qoqi) {
+                uz_ms('csrf-cgne um ms-' + rn1)
+            } else {
+                var vkih = Number(diwr_qoqi[1])
+                var bqeo = diwr_qoqi[2]
+                var diwr_eynh = diwr_bobi[vkih]
+                if (!diwr_eynh) {
+                    uz_ms('csrf-vkih ac zznq-' + vkih)
+                } else {
+                    if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
+                        diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                    } else if (diwr_eynh.wldg_uxux === 'afoa') {
+                        diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                    } else {
+                        uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
+                    }
+                    diwr_eynh.gkyq_reg_hqtz = Boolean(diwr_vr_mcvn.reg)
+                }
+            }
+        })
+        ymce(diwr_vnwm_kplu_bobi)
+        return '完成更改'
     } else if (diwr_vr_mcvn.hasOwnProperty('ukyp_yh')) {
         var diwr_yhld = {}
         diwr_yhld.wldg_hqtz = 'rj_jtyj'
@@ -224,7 +295,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         } else if (diwr_vr_mcvn.ukyp_yh === 'function') {
             diwr_yhld.wldg_uxux = 'afoa'
 
-            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: '请输入问题，如下所示', hint: '我问你一个问题' }, { zkrs: '请输入自定义的js函数，如下所示', hint: '(question, arrayGlobal)=>{\nreturn question\n}' }], rscs_bqeo: BQEO_1 }
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: '请输入问题，如下所示', hint: '我问你一个问题' }, { zkrs: '请输入自定义的js函数，如下所示', hint: '(question)=>{\nreturn question\n}' }], rscs_bqeo: BQEO_1 }
             msqu_rjse_rscs(diwr_msqu)
             diwr_yhld.rj_jfrs_kp = diwr_msqu.vnwm_dbkz_vdzv[0]
             if (!/\S/.test(diwr_yhld.rj_jfrs_kp)) {
@@ -274,7 +345,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         var rj_afoa = ussk_dk_diwr.rj_afoa
         if (rj_afoa) {
             var atvn_yhld = eval(rj_afoa)
-            return String(atvn_yhld(diwr_msqu.rj_jfrs_kp))
+            return atvn_yhld(diwr_msqu.rj_jfrs_kp, diwr_vnwm_kplu_bobi)
         } else {
             return ussk_dk_diwr.rj_wldg
         }
@@ -310,6 +381,21 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         VNWM_JSON_RJQT_WU.forEach(rn1 => {
             fs.renameSync(nikc_kplu + '/' + rn1, nikc_kplu + '/' + rn1 + '.bak')
         })
+        var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
+            if (/\.JSON\.bak$/i.test(rn1))
+                return true
+        })
+        vnwm_bmee_dk_rjqt.sort()
+        if (vnwm_bmee_dk_rjqt.length > 40) {
+            vnwm_bmee_dk_rjqt.slice(0, 5).forEach(rn1 => {
+                fs.unlink(nikc_kplu + '/' + rn1, (err) => {
+                    if (err) {
+                        throw (err)
+                    }
+                })
+
+            })
+        }
     }
 }
 module.exports = VR_TSJQ_ZV_BOBI;
