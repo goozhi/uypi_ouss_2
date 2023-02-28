@@ -26,7 +26,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     diwr_vnwm_kplu_bobi.forEach(rn1 => {
         diwr_bobi_fo_lh_rj_jfrs_kp[rn1.rj_jfrs_kp] = rn1
     })
-    diwr_vnwm_kplu_bobi = Object.entries(diwr_bobi_fo_lh_rj_jfrs_kp).map(rn1=>rn1[1])
+    diwr_vnwm_kplu_bobi = Object.entries(diwr_bobi_fo_lh_rj_jfrs_kp).map(rn1 => rn1[1])
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
@@ -42,6 +42,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             { reg_lzm_wu: /^(?:delete)$/i, yowr_wu: "hd" },
             { reg_lzm_wu: /^(?:reg)$/i, yowr_wu: "reg" },
             { reg_lzm_wu: /^(?:get)$/i, yowr_wu: "nwvt" },
+            { reg_lzm_wu: /^(?:find)$/i, yowr_wu: "zjyj_zv_giww_hqtz" },
             { reg_lzm_wu: /^(?:add)$/i, yowr_wu: "ukyp" }
         ]
     })
@@ -131,6 +132,30 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         else {
             uz_ms('csrf-mcvn msox-' + JSON.stringify(diwr_vr_mcvn))
         }
+    } else if (diwr_vr_mcvn.hasOwnProperty('zjyj_zv_giww_hqtz')) {
+
+        if (diwr_vr_mcvn.zjyj_zv_giww_hqtz === '' || diwr_vr_mcvn.zjyj_zv_giww_hqtz === 'questions') {
+            var vnwm_zjyj_jtyj = diwr_vnwm_kplu_bobi.filter(rn1 => {
+                if (rn1.rj_jfrs_kp.indexOf(BQEO_1) != -1) {
+                    return true
+                }
+            })
+            if (vnwm_zjyj_jtyj.length === 0) {
+                return '没有匹配项'
+            } else {
+                return vnwm_zjyj_jtyj.map(rn1 => {
+                    return Object.entries(rn1).map(rn1 => {
+                        if (/\b(?:rj_jfrs_kp|rj_lclc|rj_wldg|vkih)\b/i.test(rn1[0])) {
+                            return rn1[1]
+                        } else {
+                            return false
+                        }
+                    }).filter(rn1 => rn1).join('\n')
+                }).join('\n\n')
+            }
+        } else {
+            uz_ms('csrf-acun mcvn -' + diwr_vr_mcvn.zjyj_zv_giww_hqtz)
+        }
     } else if (diwr_vr_mcvn.hasOwnProperty('nwvt')) {
         var diwr_bobi = {}
         diwr_vnwm_kplu_bobi.forEach(rn1 => {
@@ -144,139 +169,227 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         return vnwm_vkih.map(rn1 => {
             return JSON.stringify(diwr_bobi[rn1])
         }).join('\n\n')
+    } else if (diwr_vr_mcvn.hasOwnProperty('qoqi')) {
+        if (diwr_vr_mcvn.qoqi === '' || diwr_vr_mcvn.qoqi === 'answers') {
+            var zkrs_1 = '请修改'
+            var vnwm_vkih = BQEO_1.match(/\d+/g)
+            if (!vnwm_vkih) {
+                uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
+            }
+            var diwr_bobi = {}
+            diwr_vnwm_kplu_bobi.forEach(rn1 => {
+                diwr_bobi[rn1.vkih] = rn1
+            })
+            var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
+                diwr_yhld = diwr_bobi[rn1]
+                if (!diwr_yhld) {
+                    uz_ms('csrf-vkih ac zznq-' + rn1)
+                } else {
+                    var bqeo_3 = ''
+                    if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
+                        bqeo_3 = diwr_yhld.rj_wldg
+                    } else if (diwr_yhld.wldg_uxux === 'afoa') {
+                        bqeo_3 = diwr_yhld.rj_afoa
+                    } else {
+                        uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
+                    }
+                    var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
+                    return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
+                }
+            })
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
+            msqu_rjse_fs(diwr_msqu)
+            var diwr_msqu_vr_mcvn = {}
+            diwr_msqu_vr_mcvn.modifying = 'answers'
+            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
+        } else if (diwr_vr_mcvn.qoqi === 'questions') {
+            var zkrs_1 = '请修改问题'
+            var vnwm_vkih = BQEO_1.match(/\d+/g)
+            if (!vnwm_vkih) {
+                uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
+            }
+            var diwr_bobi = {}
+            diwr_vnwm_kplu_bobi.forEach(rn1 => {
+                diwr_bobi[rn1.vkih] = rn1
+            })
+            var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
+                diwr_yhld = diwr_bobi[rn1]
+                if (!diwr_yhld) {
+                    uz_ms('csrf-vkih ac zznq-' + rn1)
+                } else {
+                    var bqeo_3 = ''
+                    if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
+                        bqeo_3 = diwr_yhld.rj_jfrs_kp
+                    } else if (diwr_yhld.wldg_uxux === 'afoa') {
+                        bqeo_3 = diwr_yhld.rj_jfrs_kp
+                    } else {
+                        uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
+                    }
+                    var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
+                    return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
+                }
+            })
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
+            msqu_rjse_fs(diwr_msqu)
+            var diwr_msqu_vr_mcvn = {}
+            diwr_msqu_vr_mcvn.modifying = 'questions'
+            diwr_msqu_vr_mcvn.reg = diwr_vr_mcvn.reg
+            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
+        } else if (diwr_vr_mcvn.qoqi === 'comments') {
+            var zkrs_1 = '请修改评论或注释'
+            var vnwm_vkih = BQEO_1.match(/\d+/g)
+            if (!vnwm_vkih) {
+                uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
+            }
+            var diwr_bobi = {}
+            diwr_vnwm_kplu_bobi.forEach(rn1 => {
+                diwr_bobi[rn1.vkih] = rn1
+            })
+            var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
+                diwr_yhld = diwr_bobi[rn1]
+                if (!diwr_yhld) {
+                    uz_ms('csrf-vkih ac zznq-' + rn1)
+                } else {
+                    var bqeo_3 = ''
+                    if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
+                        bqeo_3 = diwr_yhld.rj_lclc
+                    } else if (diwr_yhld.wldg_uxux === 'afoa') {
+                        bqeo_3 = diwr_yhld.rj_lclc
+                    } else {
+                        uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
+                    }
+                    var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
+                    return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
+                }
+            })
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
+            msqu_rjse_fs(diwr_msqu)
+            var diwr_msqu_vr_mcvn = {}
+            diwr_msqu_vr_mcvn.modifying = 'comments'
+            return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
+        } else {
+            uz_ms('csrf-mcvn acun-' + diwr_vr_mcvn.qoqi)
+        }
+    } else if (diwr_vr_mcvn.hasOwnProperty('qoqi_yh')) {
+        var diwr_bobi = {}
+        var qoqi_pzva
+        diwr_vnwm_kplu_bobi.forEach(rn1 => {
+            diwr_bobi[rn1.vkih] = rn1
+        })
+        var diwr_msqu = { uxux: 'vdzv' }
+        diwr_msqu.rscs_bqeo = BQEO_1
+        msqu_rjse_rscs(diwr_msqu)
+        if (diwr_vr_mcvn.qoqi_yh === '' || diwr_vr_mcvn.qoqi_yh === 'answers') {
+
+
+            diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
+                var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
+                var diwr_qoqi = rn1.match(reg_qoqi)
+                if (!diwr_qoqi) {
+                    uz_ms('csrf-cgne um ms-' + rn1)
+                } else {
+                    var vkih = Number(diwr_qoqi[1])
+                    var bqeo = diwr_qoqi[2]
+                    var diwr_eynh = diwr_bobi[vkih]
+                    if (!diwr_eynh) {
+                        uz_ms('csrf-vkih ac zznq-' + vkih)
+                    } else {
+                        if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
+                            diwr_eynh.rj_wldg = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_wldg'
+                        } else if (diwr_eynh.wldg_uxux === 'afoa') {
+                            diwr_eynh.rj_afoa = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_afoa'
+                        } else {
+                            uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
+                        }
+                        diwr_eynh.qoqi_zdti = new Date().getTime()
+                        if (!diwr_eynh.vnwm_qoqi_mf) {
+                            diwr_eynh.vnwm_qoqi_mf = []
+                        }
+                        var dbkz_wu = process.env.USERNAME
+                        diwr_eynh.vnwm_qoqi_mf.push({ qoqi_pzva, dbkz_wu, qoqi_zdti: diwr_eynh.qoqi_zdti })
+                    }
+                }
+            })
+            ymce(diwr_vnwm_kplu_bobi)
+            return '完成更改'
+        } else if (diwr_vr_mcvn.qoqi_yh === 'questions') {
+
+
+            diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
+                var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
+                var diwr_qoqi = rn1.match(reg_qoqi)
+                if (!diwr_qoqi) {
+                    uz_ms('csrf-cgne um ms-' + rn1)
+                } else {
+                    var vkih = Number(diwr_qoqi[1])
+                    var bqeo = diwr_qoqi[2]
+                    var diwr_eynh = diwr_bobi[vkih]
+                    if (!diwr_eynh) {
+                        uz_ms('csrf-vkih ac zznq-' + vkih)
+                    } else {
+                        if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
+                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_jfrs_kp'
+                        } else if (diwr_eynh.wldg_uxux === 'afoa') {
+                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_jfrs_kp'
+                        } else {
+                            uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
+                        }
+                        diwr_eynh.qoqi_zdti = new Date().getTime()
+                        if (!diwr_eynh.vnwm_qoqi_mf) {
+                            diwr_eynh.vnwm_qoqi_mf = []
+                        }
+                        var dbkz_wu = process.env.USERNAME
+                        diwr_eynh.vnwm_qoqi_mf.push({ qoqi_pzva, dbkz_wu, qoqi_zdti: diwr_eynh.qoqi_zdti })
+                        if (diwr_vr_mcvn.hasOwnProperty('reg')) {
+                            diwr_eynh.gkyq_reg_hqtz = Boolean(diwr_vr_mcvn.reg)
+                        }
+                    }
+                }
+            })
+            ymce(diwr_vnwm_kplu_bobi)
+            return '完成更改'
+        } else if (diwr_vr_mcvn.qoqi_yh === 'comments') {
+
+
+            diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
+                var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
+                var diwr_qoqi = rn1.match(reg_qoqi)
+                if (!diwr_qoqi) {
+                    uz_ms('csrf-cgne um ms-' + rn1)
+                } else {
+                    var vkih = Number(diwr_qoqi[1])
+                    var bqeo = diwr_qoqi[2]
+                    var diwr_eynh = diwr_bobi[vkih]
+                    if (!diwr_eynh) {
+                        uz_ms('csrf-vkih ac zznq-' + vkih)
+                    } else {
+                        if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
+                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_lclc'
+                        } else if (diwr_eynh.wldg_uxux === 'afoa') {
+                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "")
+                            qoqi_pzva = 'rj_lclc'
+                        } else {
+                            uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
+                        }
+                        diwr_eynh.qoqi_zdti = new Date().getTime()
+                        if (!diwr_eynh.vnwm_qoqi_mf) {
+                            diwr_eynh.vnwm_qoqi_mf = []
+                        }
+                        var dbkz_wu = process.env.USERNAME
+                        diwr_eynh.vnwm_qoqi_mf.push({ qoqi_pzva, dbkz_wu, qoqi_zdti: diwr_eynh.qoqi_zdti })
+                    }
+                }
+            })
+            ymce(diwr_vnwm_kplu_bobi)
+            return '完成更改'
+        }
     }
-    else if (diwr_vr_mcvn.qoqi === '' || diwr_vr_mcvn.qoqi === 'answers') {
-        var zkrs_1 = '请修改'
-        var vnwm_vkih = BQEO_1.match(/\d+/g)
-        if (!vnwm_vkih) {
-            uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
-        }
-        var diwr_bobi = {}
-        diwr_vnwm_kplu_bobi.forEach(rn1 => {
-            diwr_bobi[rn1.vkih] = rn1
-        })
-        var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
-            diwr_yhld = diwr_bobi[rn1]
-            if (!diwr_yhld) {
-                uz_ms('csrf-vkih ac zznq-' + rn1)
-            } else {
-                var bqeo_3 = ''
-                if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
-                    bqeo_3 = diwr_yhld.rj_wldg
-                } else if (diwr_yhld.wldg_uxux === 'afoa') {
-                    bqeo_3 = diwr_yhld.rj_afoa
-                } else {
-                    uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
-                }
-                var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
-                return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
-            }
-        })
-        var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
-        msqu_rjse_fs(diwr_msqu)
-        var diwr_msqu_vr_mcvn = {}
-        diwr_msqu_vr_mcvn.modifying = 'answers'
-        return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
-    } else if (diwr_vr_mcvn.qoqi === 'questions') {
-        var zkrs_1 = '请修改问题'
-        var vnwm_vkih = BQEO_1.match(/\d+/g)
-        if (!vnwm_vkih) {
-            uz_ms('csrf-rt vdzv vkih-' + BQEO_1)
-        }
-        var diwr_bobi = {}
-        diwr_vnwm_kplu_bobi.forEach(rn1 => {
-            diwr_bobi[rn1.vkih] = rn1
-        })
-        var diwr_vnwm_zkrs = vnwm_vkih.map(rn1 => {
-            diwr_yhld = diwr_bobi[rn1]
-            if (!diwr_yhld) {
-                uz_ms('csrf-vkih ac zznq-' + rn1)
-            } else {
-                var bqeo_3 = ''
-                if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
-                    bqeo_3 = diwr_yhld.rj_jfrs_kp
-                } else if (diwr_yhld.wldg_uxux === 'afoa') {
-                    bqeo_3 = diwr_yhld.rj_jfrs_kp
-                } else {
-                    uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
-                }
-                var rj_jtyj = 'qoqi--vkih-' + rn1 + '-bqeo-\n' + bqeo_3
-                return { zkrs: zkrs_1 + ': ' + diwr_yhld.rj_jfrs_kp, hint: rj_jtyj }
-            }
-        })
-        var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs }
-        msqu_rjse_fs(diwr_msqu)
-        var diwr_msqu_vr_mcvn = {}
-        diwr_msqu_vr_mcvn.modifying = 'questions'
-        diwr_msqu_vr_mcvn.reg = diwr_vr_mcvn.reg
-        return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + '\n·}}' }
-    } else if (diwr_vr_mcvn.qoqi_yh === '' || diwr_vr_mcvn.qoqi_yh === 'answers') {
-        var diwr_bobi = {}
-        diwr_vnwm_kplu_bobi.forEach(rn1 => {
-            diwr_bobi[rn1.vkih] = rn1
-        })
-        var diwr_msqu = { uxux: 'vdzv' }
-        diwr_msqu.rscs_bqeo = BQEO_1
-        msqu_rjse_rscs(diwr_msqu)
-        diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
-            var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
-            var diwr_qoqi = rn1.match(reg_qoqi)
-            if (!diwr_qoqi) {
-                uz_ms('csrf-cgne um ms-' + rn1)
-            } else {
-                var vkih = Number(diwr_qoqi[1])
-                var bqeo = diwr_qoqi[2]
-                var diwr_eynh = diwr_bobi[vkih]
-                if (!diwr_eynh) {
-                    uz_ms('csrf-vkih ac zznq-' + vkih)
-                } else {
-                    if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
-                        diwr_eynh.rj_wldg = bqeo.replace(/^\s+|\s+$/g, "")
-                    } else if (diwr_eynh.wldg_uxux === 'afoa') {
-                        diwr_eynh.rj_afoa = bqeo.replace(/^\s+|\s+$/g, "")
-                    } else {
-                        uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
-                    }
-                    diwr_eynh.qoqi_zdti=new Date().getTime()
-                }
-            }
-        })
-        ymce(diwr_vnwm_kplu_bobi)
-        return '完成更改'
-    } else if (diwr_vr_mcvn.qoqi_yh === 'questions') {
-        var diwr_bobi = {}
-        diwr_vnwm_kplu_bobi.forEach(rn1 => {
-            diwr_bobi[rn1.vkih] = rn1
-        })
-        var diwr_msqu = { uxux: 'vdzv' }
-        diwr_msqu.rscs_bqeo = BQEO_1
-        msqu_rjse_rscs(diwr_msqu)
-        diwr_msqu.vnwm_dbkz_vdzv.forEach(rn1 => {
-            var reg_qoqi = /qoqi-.*-vkih-([\S\s]*)-bqeo-([\s\S]*)/i
-            var diwr_qoqi = rn1.match(reg_qoqi)
-            if (!diwr_qoqi) {
-                uz_ms('csrf-cgne um ms-' + rn1)
-            } else {
-                var vkih = Number(diwr_qoqi[1])
-                var bqeo = diwr_qoqi[2]
-                var diwr_eynh = diwr_bobi[vkih]
-                if (!diwr_eynh) {
-                    uz_ms('csrf-vkih ac zznq-' + vkih)
-                } else {
-                    if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
-                        diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
-                    } else if (diwr_eynh.wldg_uxux === 'afoa') {
-                        diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
-                    } else {
-                        uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
-                    }
-                    diwr_eynh.gkyq_reg_hqtz = Boolean(diwr_vr_mcvn.reg)
-                }
-            }
-        })
-        ymce(diwr_vnwm_kplu_bobi)
-        return '完成更改'
-    } else if (diwr_vr_mcvn.hasOwnProperty('ukyp_yh')) {
+    else if (diwr_vr_mcvn.hasOwnProperty('ukyp_yh')) {
         var diwr_yhld = {}
         diwr_yhld.wldg_hqtz = 'rj_jtyj'
         diwr_yhld.dbkz_wu = process.env.USERNAME
@@ -326,6 +439,8 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         return JSON.stringify(diwr_yhld)
     } else if (diwr_vr_mcvn.caum === '' || diwr_vr_mcvn.caum === 'questions') {
         return diwr_vnwm_kplu_bobi.map(rn1 => rn1.vkih + '\n' + rn1.rj_jfrs_kp).join('\n\n')
+    } else if (diwr_vr_mcvn.caum === '' || diwr_vr_mcvn.caum === 'comments') {
+        return diwr_vnwm_kplu_bobi.map(rn1 => rn1.vkih + '\n' + rn1.rj_lclc).join('\n\n')
     } else if (diwr_vr_mcvn.caum === 'answers') {
         return diwr_vnwm_kplu_bobi.map(rn1 => {
             if (rn1.rj_afoa) {
