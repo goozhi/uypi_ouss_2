@@ -206,7 +206,11 @@
     function tkxb_basd(ubqt) {
         var eqwy_siih = ubqt.value.search(/\S\s*\}\}\s*$/)
         if (eqwy_siih != -1) {
-            ubqt.setSelectionRange(eqwy_siih+1, eqwy_siih+1)
+            if (/\n·\}\}\s*$/.test(ubqt.value)) {
+                ubqt.setSelectionRange(eqwy_siih-1, eqwy_siih-1)
+            } else {
+                ubqt.setSelectionRange(eqwy_siih + 1, eqwy_siih + 1)
+            }
         }
     }
     function jkub_jtyj(ubqt) {

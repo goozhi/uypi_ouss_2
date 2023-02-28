@@ -14,6 +14,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     diwr_vnwm_kplu_bobi = [
         { rj_jfrs_kp: 'hello', wldg_uxux: 'ztfr_sum', vkih: '1677307242290', dbkz_wu: 'ravc', rj_wldg: "hello" }
     ]
+    var diwr_bobi_fo_lh_rj_jfrs_kp = {}
     var nikc_kplu = __dirname + '/afoa_bobi/kplu'
     if (!fs.existsSync(nikc_kplu)) {
         fs.mkdirSync(nikc_kplu)
@@ -21,7 +22,11 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     } else {
         diwr_vnwm_kplu_bobi = kplu_ld_vnwm(nikc_kplu, 'json')
     }
-
+    diwr_vnwm_kplu_bobi.sort((a, b) => a.qoqi_zdti - b.qoqi_zdti)
+    diwr_vnwm_kplu_bobi.forEach(rn1 => {
+        diwr_bobi_fo_lh_rj_jfrs_kp[rn1.rj_jfrs_kp] = rn1
+    })
+    diwr_vnwm_kplu_bobi = Object.entries(diwr_bobi_fo_lh_rj_jfrs_kp).map(rn1=>rn1[1])
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
@@ -232,6 +237,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                     } else {
                         uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
                     }
+                    diwr_eynh.qoqi_zdti=new Date().getTime()
                 }
             }
         })
@@ -275,6 +281,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         diwr_yhld.wldg_hqtz = 'rj_jtyj'
         diwr_yhld.dbkz_wu = process.env.USERNAME
         diwr_yhld.vkih = new Date().getTime()
+        diwr_yhld.qoqi_zdti = diwr_yhld.vkih
 
         if (diwr_vr_mcvn.reg) {
             diwr_yhld.gkyq_reg_hqtz = true
