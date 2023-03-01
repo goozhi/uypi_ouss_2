@@ -37,6 +37,8 @@ const VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN = require('./VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM
 const VR_TSJQ_BRTZ_FS_ZV_LCLC = require('./VR_TSJQ_BRTZ_FS_ZV_LCLC')
 const VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY = require('./VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY')
 const VR_TSJQ_ZV_BOBI = require('./VR_TSJQ_ZV_BOBI')
+const VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC')
+const VR_TSJQ_BRTZ_FS_ZV_BS_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_BS_NIKC')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -79,7 +81,7 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_LCLC,
         csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
         klch: `lclc={{This is a comment.}}`,
-        vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "comment", "cmmt"],
+        vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "COMMENT", "CMMT"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -318,6 +320,41 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
+    {
+        vr_afoa_wu: "RJVT_NIKC",
+        zkrs: "列出文件夹内容",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC,
+        csrf: `该指令帮助用户列出指定目录内的文件夹和文件，请看示例`,
+        klch: `
+        readdir={{
+            D:/test
+        }}
+        `,
+        vnwm_vr_afoa_lzm_wu: ["12", "READDIR"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "BS_NIKC",
+        zkrs: "批量创建文件夹",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_BS_NIKC,
+        csrf: `该指令帮助用户在指定目录内批量创建文件夹，请看示例`,
+        klch: `
+        mkdirs={{
+            comment={{'第一行写父目录的路径'}}
+            D:/test
+            comment={{'第二行写需要创建目录'}}
+            目录1
+            目录2
+            目录3
+            目录2
+        }}
+        `,
+        vnwm_vr_afoa_lzm_wu: ["13", "MKDIRS"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+    
     {
         vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
         zkrs: "检查资料库",
