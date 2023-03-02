@@ -8,7 +8,8 @@ const kplu_ld_vnwm = require('./AFOA_BX/kplu_ld_vnwm');
 const fs = require('fs');
 const vr_mcvn_ld_rjse = require('./afoa_msqu/vr_mcvn_ld_rjse');
 const child_process = require('child_process')
-const encoding = require('encoding')
+const encoding = require('encoding');
+const rjqt_tum_jkub = require('./AFOA_BX/rjqt_tum_jkub');
 async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     if (!diwr_mcvn.vnwm_msqu) {
         uz_ms('csrf-mcvn nrap-')
@@ -66,7 +67,11 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                 }
             } else if (jtyj.wldg_uxux === 'afoa') {
                 var atvn_yhld = eval(jtyj.rj_afoa)
-                var rj_wldg = await atvn_yhld(BQEO_1, diwr_vnwm_kplu_bobi)
+                try{
+                    var rj_wldg = await atvn_yhld(BQEO_1, diwr_vnwm_kplu_bobi)
+                }catch(err){
+                    throw err
+                }
                 if (jtyj.wldg_hqtz === 'rj_msqu') {
                     return { rj_msqu: rj_wldg }
                 } else if (jtyj.wldg_hqtz === 'rj_jtyj') {
@@ -471,7 +476,11 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         var rj_afoa = ussk_dk_diwr.rj_afoa
         if (rj_afoa) {
             var atvn_yhld = eval(rj_afoa)
-            return await atvn_yhld(diwr_msqu.rj_jfrs_kp, diwr_vnwm_kplu_bobi)
+            try{
+                return await atvn_yhld(diwr_msqu.rj_jfrs_kp, diwr_vnwm_kplu_bobi)
+            }catch(err){
+                throw err
+            }
         } else {
             return ussk_dk_diwr.vkih+': '+ussk_dk_diwr.rj_wldg
         }

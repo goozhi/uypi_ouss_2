@@ -10,7 +10,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
     if (UXUX_YHLD != "object") {
         uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
     }
-    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO)
+    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO).replace(/^\/\/.*/gm,"该项目已被注释掉{999998}33 4 请忽略该项目")
     var diwr_vr_mcvn = vr_mcvn_rscs(DIWR_AFOA.VR_AFOA_MCVN, {
         diwr_vnwm_mcvn_wu_oqzn: [{ reg_lzm_wu: /^(?:9|max)$/i, yowr_wu: "okwk_zthi" }
             , { reg_lzm_wu: /^(?:32|asc)$/i, yowr_wu: "asc" }, { reg_lzm_wu: /^(?:help)$/i, yowr_wu: "help" }]

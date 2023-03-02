@@ -4,7 +4,7 @@ async function ids_diwr_fs(rj_kp) {
     if (/\ufffd/.test(rj_kp)) {
         uz_ms('csrf-umvo acun frih, rt zjzj rjqt vkvy jils eopc-' + rj_kp.slice(0, 1000))
     }
-    var rj_1 = rj_kp
+    var rj_1 = rj_kp.replace(/\/\/.*/g,"")
     var reg_brtz_1 = /Str2ID\(\w+\)[\s\S]*?(?=Str2ID|$)/g;
     var reg_str2 = /^Str2ID\((\w+)\),\s*(.*?)\s*;\s*$/;
     var vnwm_str2 = rj_1.match(reg_brtz_1)
