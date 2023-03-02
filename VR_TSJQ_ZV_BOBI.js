@@ -60,7 +60,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                 if (jtyj.wldg_hqtz === 'rj_msqu') {
                     return { rj_msqu: jtyj.rj_wldg }
                 } else if (jtyj.wldg_hqtz === 'rj_jtyj') {
-                    return jtyj.rj_wldg
+                    return jtyj.vkih+': '+jtyj.rj_wldg
                 } else {
                     uz_ms('csrf-wldg hqtz acun-' + jtyj.wldg_hqtz)
                 }
@@ -92,7 +92,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                     if (diwr_vnwm_stst_1[0].wldg_hqtz === 'rj_msqu') {
                         return { rj_msqu: diwr_vnwm_stst_1[0].rj_wldg }
                     } else if (diwr_vnwm_stst_1[0].wldg_hqtz === 'rj_jtyj') {
-                        return diwr_vnwm_stst_1[0].rj_wldg
+                        return diwr_vnwm_stst_1[0].vkih+': '+diwr_vnwm_stst_1[0].rj_wldg
                     } else {
                         uz_ms('csrf-wldg hqtz acun-' + diwr_vnwm_stst_1[0].wldg_hqtz)
                     }
@@ -254,9 +254,11 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                 } else {
                     var bqeo_3 = ''
                     if (diwr_yhld.wldg_uxux === 'ztfr_sum') {
-                        bqeo_3 = diwr_yhld.rj_lclc
+                        if (diwr_yhld.rj_lclc)
+                            bqeo_3 = diwr_yhld.rj_lclc
                     } else if (diwr_yhld.wldg_uxux === 'afoa') {
-                        bqeo_3 = diwr_yhld.rj_lclc
+                        if (diwr_yhld.rj_lclc)
+                            bqeo_3 = diwr_yhld.rj_lclc
                     } else {
                         uz_ms('csrf-acun uxux-' + diwr_yhld.wldg_uxux)
                     }
@@ -471,7 +473,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             var atvn_yhld = eval(rj_afoa)
             return await atvn_yhld(diwr_msqu.rj_jfrs_kp, diwr_vnwm_kplu_bobi)
         } else {
-            return ussk_dk_diwr.rj_wldg
+            return ussk_dk_diwr.vkih+': '+ussk_dk_diwr.rj_wldg
         }
     } else if (diwr_vr_mcvn.hasOwnProperty('hd')) {
         var vnwm_vn_hd = BQEO_1.split(/\s+/)
