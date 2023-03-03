@@ -59,7 +59,7 @@ function vr_afoa_bx() {
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "NEIG_EXYM_CLN",
-        zkrs: "NEIG EXYM CLN",
+        zkrs: "配置服务器",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN,
         csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
         klch: `config={{}}`,
@@ -77,7 +77,7 @@ function vr_afoa_bx() {
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "LCLC",
-        zkrs: "LCLC",
+        zkrs: "注释",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_LCLC,
         csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
         klch: `lclc={{This is a comment.}}`,
@@ -86,7 +86,7 @@ function vr_afoa_bx() {
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
-        zkrs: "figb eyrh zjyj",
+        zkrs: "电池单体查找",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_FIGB_EYRH_ZJYJ,
         csrf: "mcvn : 9=utf8 jukl jowy utf8 vkvy rjvt nvrj; bqeo : ah zqjp vdzv nvrj tyqh fdcs . oin nq yxna rjvt hqtz tt sr vdzv nvrj yxna no rjvt bi yxna tt dk bqeo, kqud di ynl tyqh fdcs.",
         klch: `CELLFIND=9=utf8{{
@@ -103,7 +103,8 @@ function vr_afoa_bx() {
         `,
         klch: `31={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_3f_BEIQI_EC180,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["31", 'BEIQI3F']
@@ -115,7 +116,8 @@ function vr_afoa_bx() {
         `,
         klch: `BOBI={{你是谁}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_BOBI,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_BOBI,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["BOBI", '888', '波比']
@@ -126,7 +128,8 @@ function vr_afoa_bx() {
         csrf: `Bi tsjq kfou dbkz ja 北汽EC180 的dbc rjqt  ldlh 彭 EBWU .Bi tsjq lbm ba um ce dk lplp, zf ah fywy dgl lplp dk zhkl sdbc DBC格式化之北汽EC180.
         Bi tsjq mcnv nott [dbc rjok](http://localhost:3009/dbc_rjok) tyqh brtz fs.`,
         klch: `32={{}}`
-        , vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_DBC_BRTZ_FS_ZV_BEIQI_EC180,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["32", 'BEIQIDBC']
@@ -134,7 +137,7 @@ function vr_afoa_bx() {
 
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
-        zkrs: "NVMS BQEO AH WPM FS",
+        zkrs: "报错内容可视化",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NVMS_BQEO_AH_WPM_FS,
         csrf: "JA sysData ae yndf rjqt zjzj msox ud dk nvcm tyqh nppr , kn bqeo ah wpm va bv pe.Bi tsjq lbm uwuu ce dk lplp.",
         klch: `view={{
@@ -164,12 +167,13 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "HD_LZJK",
-        zkrs: "HD LZJK QH",
+        zkrs: "删重复行",
         csrf: `HD FG LZJK DK QH. BI AFOA AH NO FYWY LG XBST MR DS XBST FL FL HD FG XBST TYCC DK LZJK BQEO. BI TSJQ LBM uu uw ce dk lplp, fywy kr nh lplp dk zhkl vdzv mcvn om ahno nq vdum lplp nwvt fg lzjk dk jtyj lw. Fg lzjk qh dk jtyj dk nwvt ac nq md-VR-md lplp.
         `,
         klch: `del={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_HD_LZJK,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_HD_LZJK,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["DEL", "76"]
@@ -354,7 +358,7 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
-    
+
     {
         vr_afoa_wu: "RFRF_JTYJ_JSON_KCZV",
         zkrs: "检查资料库",
@@ -438,7 +442,7 @@ function vr_afoa_bx() {
     },
     {
         vr_afoa_wu: "VR_KUOE_AFOA",
-        zkrs: "KUOE AFOA",
+        zkrs: "特殊功能",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA,
         csrf: `Bi tsjq kfou dbkz ngnc kuoe afoa. Kf rvdb dk brtz dk ah rjm va pe. Pcgn bi tsjq dk brtz rt mcvc [md-vr-md kuoe afoa tsfz](http://localhost:3009/VR_KUOE_AFOA_TSFZ_RJOK_html_FS)。
         `,
@@ -590,7 +594,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VR_LJEY_RJQT_GMIH_YXNA_ZJYJ",
-        zkrs: "RA HUOP",
+        zkrs: "未支持",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_VR_LJEY_RJQT_GMIH_YXNA_ZJYJ,
         csrf: "bi afoa ra bs.. fywy pzre gmih nq menuData yh yj um ljey tyzv yxna",
         klch: ``,
@@ -601,7 +605,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "ZHQH_JS_DYVY",
-        zkrs: "执行md-js-md代码",
+        zkrs: "执行js代码",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_ZHQH_JS_DYVY,
         csrf: "Bi tsjq kfou dbkz zhqh dbkz vdzv dk md-js-md dyvy.",
         klch: `js={{
@@ -616,7 +620,7 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "ESIH_BRTZ_FS",
-        zkrs: "帧md-id-md格式化",
+        zkrs: "帧id格式化",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_ESIH_BRTZ_FS,
         csrf: `Bi tsjq kfou dbkz vkfs vdzv araw vnwy tu es ih dk uypi. Uo mc cjl vnwy tu dk es ih ji ytnc dk, sr ftcj gkgr rvdb bi tsjq. 
         Vdzv dk bqeo brtz fl oan if tt : 空白符和逗号作为md-id-md分隔符。“-”为连续递增标识符
@@ -633,74 +637,80 @@ Battery production date; "
     },
     {
         vr_afoa_wu: "VR_RJOK",
-        zkrs: "Vdum md-VR-md stgn rjok",
+        zkrs: "输出VR相关文档",
         csrf: `Vdum md-VR-md stgn rjok : md-nixb=AFOA_WU-md : JUKL EOWL SOPC AFOA WU , md-nixb=afoa_lzm_wu-md : jukl eowl sopc afoa lzm wu, md-nixb=sopc-md : jukl eowl sopc rjok zzuy. uxst dk hy pc md-"csrf, klch"-md iq. Bi tsjq fl lh uuvo qr rvdb.
         md-VR-md sopc rjok cd sysa sasa dk lplp xm dbkz zqjp zjhq.Dbkz so aqn jyqh dgl tsjq.
         `,
         klch: `RJOK=nixb=AFOA_WU{{
     }}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_VR_RJOK,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_VR_RJOK,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["RJOK"]
     },
     {
         vr_afoa_wu: "TYUB_LDRG",
-        zkrs: "TYUB LDRG",
+        zkrs: "进制转换",
         csrf: `Bi tsjq ba um tyub ldrg lplp, zf ah fywy dgl lplp dk zhkl sdbc tyub ldrg.
         `,
         klch: `92={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_TYUB_LDRG,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_TYUB_LDRG,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["92", 'CONVERT']
     },
     {
         vr_afoa_wu: "RJQT_GRBJ",
-        zkrs: "RJQT GRBJ",
+        zkrs: "文件合并",
         csrf: `Bi tsjq kfou dbkz di nixb nikc tt dk sopc nixb rjqt tyqh grbj, bj vdum ye nh grbj ud dk rjqt.Bi tsjq ba um RJQT GRBJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT GRBJ.
         `,
         klch: `87={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_RJQT_GRBJ,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_RJQT_GRBJ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["87", 'MERGE']
     },
     {
         vr_afoa_wu: "RJQT_FDMJ",
-        zkrs: "RJQT FDMJ",
+        zkrs: "文件分割",
         csrf: `Bi tsjq kfou dbkz di nixb rjqt tyqh FDMJ, bj vdum ye nh FDMJ ud dk NIKC.Bi tsjq LBM ba um RJQT FDMJ lplp, zf ah fywy dgl lplp dk zhkl sdbc RJQT FDMJ.
         `,
         klch: `86={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_RJQT_FDMJ,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_RJQT_FDMJ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["86", 'FILESPLIT']
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQLL",
-        zkrs: "BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ LL)",
+        zkrs: "故障码编码转16进制数(定义在前)",
         csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ LL) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
         `,
         klch: `71={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQLL,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["71", 'DTCFINDF']
     },
     {
         vr_afoa_wu: "VKVY_LD_TYUB_VN_ZNZK_NQUD",
-        zkrs: "BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ UD)",
+        zkrs: "故障码编码转16进制数(定义在后)",
         csrf: `Bi tsjq kfou dbkz nq di bwcr vyn jhyw bj ld lh rjzt ud yj um bwcr vyn bj ldlh dtcData brtz.Bi tsjq lbm ba um BWCR VYn VKVY LD 16 TYUB VN (ZNZK NQ UD) lplp, zf ah fywy dgl lplp dk zhkl sdbc BWCR VYn VKVY LD 16 TYUB VN.
         `,
         klch: `72={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_VKVY_LD_TYUB_VN_ZNZK_NQUD,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["72", 'DTCFINDB']
@@ -708,35 +718,38 @@ Battery production date; "
 
     {
         vr_afoa_wu: "VNWY_TU_NINI_CGNE",
-        zkrs: "NINI CGNE",
+        zkrs: "项目匹配",
         csrf: `Bi tsjq kfou dbkz nq yenh sysData RJQT YH ZJYJ jcjc cofc dk vnwy tu nini.Zhxm nini wu iq mcvn, bi tsjq lbm nq mcnv vnwy tu nini ae osse zzuy nini yh yj um stn cgne dk nixb nini.Bi tsjq rvdb stst uy pj tyqh zjyj stst dk nini. Bi tsjq lbm rlkl ce lplp, zf aqfc fywy zhkl vdzv stgn mcvn , kqud nwvt stn cgne dk nini. 
         `,
         klch: `item={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_VNWY_TU_NINI_CGNE,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_VNWY_TU_NINI_CGNE,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["ITEM", "54"]
     },
     {
         vr_afoa_wu: "CE_EBWU_LD_YHRJ",
-        zkrs: "UUVO QR TSJQ",
+        zkrs: "开发者指令",
         csrf: `该指令仅开发者使用，用于WRVR语言解析。`,
         klch: `yhrj={{uuvo qr}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_CE_EBWU_LD_YHRJ,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_CE_EBWU_LD_YHRJ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["YHRJ"]
     },
     {
         vr_afoa_wu: "EYRH_HQTB",
-        zkrs: "eyrh hqtb",
+        zkrs: "单体模拟",
         csrf: `Bi tsjq kfou dbkz di vkrr kk dk eyrh nini tyqh hqtb, eowl hqtb nvcm. Zf aqfc przv lr nh mcvn, fdlz ji efpc eyrh vnwy tu nini dk sysData pzre(ok kk ji eynh pzre) dk rjqt yxna, mr vo vyn rjqt. Bi tsjq lbm ba um eyrh hqtb lplp, zf ah fywy dgl lplp dk zhkl sdbc eyrh hqtb.
         `,
         klch: `46={{}}
     `
-        , vr_afoa_rh: VR_TSJQ_ZV_EYRH_HQTB,
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_EYRH_HQTB,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["46", 'SIM']

@@ -33,7 +33,7 @@ function VR_TSJQ_ZV_VR_RJOK(DIWR_AFOA){
                 throw new Error("[ACUN MCVN WU]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN)
         }
     });
-    var rj3 = VR_AFOA_RJOK(BQEO_1, diwr_nixb, 'YHRJ')
+    var rj3 = VR_AFOA_RJOK(BQEO_1, diwr_nixb, {ebwu:'YHRJ', vnwm_rfrf_pzva:['csrf']})
     return rj3
 
 }
