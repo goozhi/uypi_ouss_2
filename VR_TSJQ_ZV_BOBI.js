@@ -184,12 +184,12 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             diwr_msqu_vr_mcvn.reg = true
         }
         if (diwr_vr_mcvn.ukyp === "" || diwr_vr_mcvn.ukyp === "string") {
-            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请自定义问题范畴，如‘普通对话’' }, { zkrs: '请输入回答' }] }
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请输入回答' }, { zkrs: '请自定义问题范畴，如‘普通对话’' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.adding = "string"
             return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         } else if (diwr_vr_mcvn.ukyp === "function") {
-            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请自定义问题范畴，如‘普通对话’' }, { zkrs: '请输入自定义的js函数，如下所示，你设定的问题将作为你设定的函数的形式参数传递给你设定的函数。', hint: '(question)=>{\nreturn question\n}' }] }
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请输入自定义的js函数，如下所示，你设定的问题将作为你设定的函数的形式参数传递给你设定的函数。', hint: '(question)=>{\nreturn question\n}' }, { zkrs: '请自定义问题范畴，如‘普通对话’' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.adding = "function"
             return { rj_msqu: 'bobi=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
@@ -218,7 +218,30 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                     }).filter(rn1 => rn1).join('\n')
                 }).join('\n\n')
             }
-        } else {
+        } else if (diwr_vr_mcvn.zjyj_zv_giww_hqtz === 'answers') {
+            var vnwm_zjyj_jtyj = diwr_vnwm_kplu_bobi.filter(rn1 => {
+                if (rn1.rj_wldg) {
+                    if (rn1.rj_wldg.indexOf(BQEO_1) != -1) {
+                        return true
+                    }
+                }
+            })
+            if (vnwm_zjyj_jtyj.length === 0) {
+                return '没有匹配项'
+            } else {
+                return vnwm_zjyj_jtyj.map(rn1 => {
+                    return Object.entries(rn1).map(rn1 => {
+                        if (/\b(?:rj_jfrs_kp|rj_lclc|rj_wldg|vkih)\b/i.test(rn1[0])) {
+                            return rn1[1]
+                        } else {
+                            return false
+                        }
+                    }).filter(rn1 => rn1).join('\n')
+                }).join('\n\n\n')
+            }
+
+        }
+        else {
             uz_ms('csrf-acun mcvn -' + diwr_vr_mcvn.zjyj_zv_giww_hqtz)
         }
     } else if (diwr_vr_mcvn.hasOwnProperty('nwvt')) {
@@ -471,8 +494,8 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
 
         var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
         msqu_rjse_rscs(diwr_msqu)
-        if (vnwm_dbkz_vdzv.length < 3) {
-            uz_ms('csrf-nrap mcvn-' + vnwm_dbkz_vdzv.join(','))
+        if (diwr_msqu.vnwm_dbkz_vdzv.length < 3) {
+            uz_ms('csrf-nrap mcvn-' + diwr_msqu.vnwm_dbkz_vdzv.join(','))
         } else {
             diwr_msqu.jfrs_klbf = diwr_msqu.vnwm_dbkz_vdzv[3]
         }
@@ -508,7 +531,15 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.caum === '' || diwr_vr_mcvn.caum === 'questions') {
         return diwr_vnwm_kplu_bobi.map(rn1 => rn1.vkih + '\n' + rn1.rj_jfrs_kp).join('\n\n')
     } else if (diwr_vr_mcvn.caum === 'comments') {
-        return diwr_vnwm_kplu_bobi.map(rn1 => rn1.vkih + '\n' + rn1.rj_lclc).join('\n\n')
+        return diwr_vnwm_kplu_bobi.filter(rn1 => rn1.rj_lclc).map(rn1 => {
+            return Object.entries(rn1).map(rn2 => {
+                if (/^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i.test(rn2[0])) {
+                    return rn2[1]
+                } else {
+                    return false
+                }
+            }).filter(rn1 => rn1).join('\n')
+        }).join('\n\n')
     } else if (diwr_vr_mcvn.caum === 'field') {
         return diwr_vnwm_kplu_bobi.filter(rn1 => rn1.jfrs_klbf == BQEO_1).map(rn1 => {
             return Object.entries(rn1).map(rn2 => {
