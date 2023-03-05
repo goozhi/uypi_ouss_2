@@ -65,11 +65,13 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
                 VBYT_VKRF_Peng_EBWU = diwr_tsjq_1.VBYT_VKRF_Peng_EBWU
             }
             var JTYJ_YHLD = await diwr_tsjq_1.vr_afoa_rh(DIWR_AFOA, diwr_mcvn)
-            if (typeof (JTYJ_YHLD) == "string") {
+            if (/string|number/.test(typeof (JTYJ_YHLD))) {
                 RJSE_2 = RJSE_2.replace(reg_AFOA, JTYJ_YHLD)
             } else {
                 if (typeof (JTYJ_YHLD) == 'object') {
                     vnwm_usni.push(JTYJ_YHLD)
+                } else {
+                    uz_ms('csrf-eowl uxux ftpj-')
                 }
                 RJSE_2 = RJSE_2.replace(reg_AFOA, "")
             }
