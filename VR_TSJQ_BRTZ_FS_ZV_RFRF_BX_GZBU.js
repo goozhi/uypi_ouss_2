@@ -248,7 +248,14 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                             return true;
                     })
                     var vyvy_diwr_vnwm_reg = vnwm_yhld.map(rn1 => {
-                        return (require(YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1))
+                        var yxna_yhld = YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1
+                        try{
+                            delete (require.cache[require.resolve(yxna_yhld)]);
+                        }catch(err){
+            
+                        }
+                        return (require(yxna_yhld))
+            
                     })
                     var vnwm_yhld = new Array()
                     var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);

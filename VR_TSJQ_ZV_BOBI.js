@@ -370,10 +370,10 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                         uz_ms('csrf-vkih ac zznq-' + vkih)
                     } else {
                         if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
-                            diwr_eynh.rj_wldg = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_wldg = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_wldg'
                         } else if (diwr_eynh.wldg_uxux === 'afoa') {
-                            diwr_eynh.rj_afoa = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_afoa = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_afoa'
                         } else {
                             uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
@@ -405,10 +405,10 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                         uz_ms('csrf-vkih ac zznq-' + vkih)
                     } else {
                         if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
-                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_jfrs_kp'
                         } else if (diwr_eynh.wldg_uxux === 'afoa') {
-                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_jfrs_kp = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_jfrs_kp'
                         } else {
                             uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
@@ -443,10 +443,10 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
                         uz_ms('csrf-vkih ac zznq-' + vkih)
                     } else {
                         if (diwr_eynh.wldg_uxux === 'ztfr_sum') {
-                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_lclc'
                         } else if (diwr_eynh.wldg_uxux === 'afoa') {
-                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "")
+                            diwr_eynh.rj_lclc = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
                             qoqi_pzva = 'rj_lclc'
                         } else {
                             uz_ms('csrf-uxux acun-' + JSON.stringify(diwr_eynh))
