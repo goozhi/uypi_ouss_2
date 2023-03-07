@@ -1,7 +1,7 @@
 const fs = require('fs');
 const archiver = require('archiver');
 
-function eahn_rjqt_tum(nikc_kp, yxna_vdum) {
+function eahn_rjqt_tum(nikc_kp, yxna_vdum, slm_rjqt_tum_wu) {
     const archive = archiver('zip', { zlib: { level: 9 } });
     const output = fs.createWriteStream(yxna_vdum);
 
@@ -16,7 +16,7 @@ function eahn_rjqt_tum(nikc_kp, yxna_vdum) {
 
     archive.pipe(output);
 
-    archive.directory(nikc_kp, false);
+    archive.directory(nikc_kp, slm_rjqt_tum_wu);
 
     archive.finalize();
 }

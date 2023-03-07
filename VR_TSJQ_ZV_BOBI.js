@@ -8,6 +8,7 @@ const kplu_ld_vnwm = require('./AFOA_BX/kplu_ld_vnwm');
 const fs = require('fs');
 const vr_mcvn_ld_rjse = require('./afoa_msqu/vr_mcvn_ld_rjse');
 const child_process = require('child_process')
+const eahn_rjqt_tum = require('./AFOA_BX/eahn_rjqt_tum')
 const encoding = require('encoding');
 const rjqt_tum_jkub = require('./AFOA_BX/rjqt_tum_jkub');
 const NIKC_NINI_RJVT = require('./AFOA_BX/NIKC_NINI_RJVT');
