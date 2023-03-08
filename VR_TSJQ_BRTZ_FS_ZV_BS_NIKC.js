@@ -8,7 +8,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_BS_NIKC(DIWR_AFOA, diwr_mcvn) {
     if (UXUX_YHLD != "object") {
         uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
     }
-    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO, { gkqj_brtz_fs: true })
+    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO)
     var diwr_vr_mcvn = vr_mcvn_rscs(DIWR_AFOA.VR_AFOA_MCVN, {
         diwr_vnwm_mcvn_wu_oqzn: [{ reg_lzm_wu: /^(?:name)$/i, yowr_wu: "rjqt_wuzt" }
         ]

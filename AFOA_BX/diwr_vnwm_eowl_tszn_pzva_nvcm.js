@@ -1,3 +1,4 @@
+const diwr_neig_zjzj = require("./diwr_neig_zjzj")
 const uz_ms = require("./uz_ms")
 
 function diwr_vnwm_eowl_tszn_pzva_nvcm(diwr_neig_kp) {
