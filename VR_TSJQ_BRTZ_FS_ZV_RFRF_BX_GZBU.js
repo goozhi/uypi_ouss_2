@@ -4,7 +4,10 @@ const bx_gzbu_tsjq = require('./bx_gzbu_zv_rfrf_bx/bx_gzbu_tsjq');
 const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
 const vr_mcvn_rscs = require('./vr_mcvn_rscs/index.js');
 
-async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA, diwr_neig_kp) {
+    if (!diwr_neig_kp || !diwr_neig_kp.vnwm_msqu) {
+        uz_ms('csrf-nrap mcvn-')
+    }
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -68,7 +71,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
     if (diwr_vr_mcvn == null) {
         uz_ms('csrf-zf aoao vdzv mcvn-')
     } else {
-        var vwdp_jtyj = await bx_gzbu_tsjq({ vnwm_afoa_bqeo, diwr_vnwm_bx, nikc_bx, vnwm_json_rjqt_wu, diwr_vr_mcvn })
+        var vwdp_jtyj = await bx_gzbu_tsjq({ vnwm_msqu:diwr_neig_kp.vnwm_msqu , vnwm_afoa_bqeo, diwr_vnwm_bx, nikc_bx, vnwm_json_rjqt_wu, diwr_vr_mcvn })
     }
     return new Promise((resolve, reject) => {
         Promise.all([vwdp_jtyj]).then(jtyj => {
@@ -87,7 +90,11 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA) {
                 if (rn1.err == undefined) {
                     return vkih_2 + rn1.yhrj + '\n' + rn1.rdrj + tmtm_1
                 } else {
-                    return rn1.err.message.replace(/Error: /, "")
+                    if(rn1.err.message){
+                        return rn1.err.message.replace(/Error: /, "")
+                    }else{
+                        return rn1.err
+                    }
                 }
             }).join('\n\n'))
         }).catch(err => {

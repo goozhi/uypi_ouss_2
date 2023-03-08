@@ -8,8 +8,10 @@ const rfrf_bqeo_diwr_fs = require("../AFOA_RFRF_DATA_ZTFR_SUM/rfrf_bqeo_diwr_fs"
 const DREQ_DIWR = require("../AFOA_BX/DREQ_DIWR");
 const gnfo_sj_dreq = require("../bx_gzbu_zv_rfrf_bx/gnfo_sj_dreq");
 const diwr_neig_zjzj = require("../AFOA_BX/diwr_neig_zjzj");
-const fs = require('fs')
-async function bx_gzbu_tsjq(diwr_neig) {
+const fs = require('fs');
+const uz_ms = require("../AFOA_BX/uz_ms");
+const qoqi_rfrj = require("./qoqi_rfrj");
+async function bx_gzbu_tsjq(diwr_neig_kp) {
     var diwr_vnwm_jtyj
     var vnwm_fo_1 = [
         'diwr_vr_mcvn'
@@ -17,64 +19,65 @@ async function bx_gzbu_tsjq(diwr_neig) {
         , 'vnwm_json_rjqt_wu'
         , 'diwr_vnwm_bx'
         , 'vnwm_afoa_bqeo'
+        , 'vnwm_msqu'
     ]
-    diwr_neig_zjzj(diwr_neig, vnwm_fo_1)
-    if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('eowl_vnwm_hpmi')) {
-        return [{ rdrj: diwr_neig.diwr_vnwm_bx.length, yhrj: '对象数量' }]
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_gnfo_zr')) {
-        var vnwm_gnfo_sj = diwr_neig.vnwm_afoa_bqeo[1].split(/\s+/);
-        diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_neig.diwr_vnwm_bx)
-        if (diwr_vnwm_jtyj.length == diwr_neig.diwr_vnwm_bx.length) {
+    diwr_neig_zjzj(diwr_neig_kp, vnwm_fo_1)
+    if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('eowl_vnwm_hpmi')) {
+        return [{ rdrj: diwr_neig_kp.diwr_vnwm_bx.length, yhrj: '对象数量' }]
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_gnfo_zr')) {
+        var vnwm_gnfo_sj = diwr_neig_kp.vnwm_afoa_bqeo[1].split(/\s+/);
+        diwr_vnwm_jtyj = gnfo_sj_dreq(vnwm_gnfo_sj, diwr_neig_kp.diwr_vnwm_bx)
+        if (diwr_vnwm_jtyj.length == diwr_neig_kp.diwr_vnwm_bx.length) {
             return '无匹配项'
         }
         return diwr_vnwm_jtyj.slice(0, 10000)
 
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_giww_hqtz')) {
-        var rj_gnfo_sj = diwr_neig.vnwm_afoa_bqeo[1]
-        diwr_vnwm_jtyj = diwr_neig.diwr_vnwm_bx.filter(rn1 => {
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_giww_hqtz')) {
+        var rj_gnfo_sj = diwr_neig_kp.vnwm_afoa_bqeo[1]
+        diwr_vnwm_jtyj = diwr_neig_kp.diwr_vnwm_bx.filter(rn1 => {
             return (rn1.yhrj + rn1.rdrj).indexOf(rj_gnfo_sj) != -1 ? true : false
         })
         return diwr_vnwm_jtyj.slice(0, 10000)
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_reg')) {
-        var reg_dbkz = new RegExp(diwr_neig.vnwm_afoa_bqeo[1], "i")
-        diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_neig.diwr_vnwm_bx)
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_reg')) {
+        var reg_dbkz = new RegExp(diwr_neig_kp.vnwm_afoa_bqeo[1], "i")
+        diwr_vnwm_jtyj = reg_dreq(reg_dbkz, diwr_neig_kp.diwr_vnwm_bx)
         return diwr_vnwm_jtyj.slice(0, 10000)
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_xjvx')) {
-        diwr_vnwm_jtyj = eowl_xjvx_uxux_diwr(diwr_neig.diwr_vnwm_bx)
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('zjyj_zv_xjvx')) {
+        diwr_vnwm_jtyj = eowl_xjvx_uxux_diwr(diwr_neig_kp.diwr_vnwm_bx)
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('ngnc_vkih')) {
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('ngnc_vkih')) {
         var vkih_1 = new Date().getTime()
-        diwr_neig.diwr_vnwm_bx.forEach(rn1 => {
+        diwr_neig_kp.diwr_vnwm_bx.forEach(rn1 => {
             if (!rn1.vkih) {
                 rn1.vkih = vkih_1
             }
             vkih_1++
         })
-        fs.writeFileSync(diwr_neig.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_neig.diwr_vnwm_bx))
-        diwr_neig.vnwm_json_rjqt_wu.forEach(rn1 => {
-            fs.renameSync(diwr_neig.nikc_bx + '/' + rn1, diwr_neig.nikc_bx + '/' + rn1 + '.bak')
+        fs.writeFileSync(diwr_neig_kp.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_neig_kp.diwr_vnwm_bx))
+        diwr_neig_kp.vnwm_json_rjqt_wu.forEach(rn1 => {
+            fs.renameSync(diwr_neig_kp.nikc_bx + '/' + rn1, diwr_neig_kp.nikc_bx + '/' + rn1 + '.bak')
         })
-        diwr_vnwm_jtyj = [{ yhrj: '对象个数', rdrj: diwr_neig.diwr_vnwm_bx.length }]
+        diwr_vnwm_jtyj = [{ yhrj: '对象个数', rdrj: diwr_neig_kp.diwr_vnwm_bx.length }]
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('hd_lzjk')) {
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('hd_lzjk')) {
         diwr_uni = {}
-        diwr_neig.diwr_vnwm_bx.forEach(rn1 => {
+        diwr_neig_kp.diwr_vnwm_bx.forEach(rn1 => {
             diwr_uni[rn1.yhrj] = rn1
         })
         var diwr_vnwm_eeye_vdum = Object.entries(diwr_uni).map(rn1 => {
             return rn1[1]
         })
-        fs.writeFileSync(diwr_neig.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_eeye_vdum))
-        diwr_neig.vnwm_json_rjqt_wu.forEach(rn1 => {
-            fs.renameSync(diwr_neig.nikc_bx + '/' + rn1, diwr_neig.nikc_bx + '/' + rn1 + '.bak')
+        fs.writeFileSync(diwr_neig_kp.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_eeye_vdum))
+        diwr_neig_kp.vnwm_json_rjqt_wu.forEach(rn1 => {
+            fs.renameSync(diwr_neig_kp.nikc_bx + '/' + rn1, diwr_neig_kp.nikc_bx + '/' + rn1 + '.bak')
         })
         diwr_vnwm_jtyj = [{ yhrj: '对象个数', rdrj: diwr_vnwm_eeye_vdum.length }]
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('hd_diwr')) {
-        var vnwm_vkih_hd_diwr = diwr_neig.vnwm_afoa_bqeo[1].replace(/^\s*|\s*$/, "").split(/\s+/)
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('hd_diwr')) {
+        var vnwm_vkih_hd_diwr = diwr_neig_kp.vnwm_afoa_bqeo[1].replace(/^\s*|\s*$/, "").split(/\s+/)
         var reg_vkih_hd = new RegExp("^(?:" + vnwm_vkih_hd_diwr.join('|') + ")$")
         diwr_vnwm_jtyj = []
-        var diwr_vnwm_ws = diwr_neig.diwr_vnwm_bx.filter(rn1 => {
+        var diwr_vnwm_ws = diwr_neig_kp.diwr_vnwm_bx.filter(rn1 => {
             if (!reg_vkih_hd.test(rn1.vkih)) {
                 return true;
             } else {
@@ -82,30 +85,37 @@ async function bx_gzbu_tsjq(diwr_neig) {
                 return false
             }
         })
-        fs.writeFileSync(diwr_neig.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_ws))
-        diwr_neig.vnwm_json_rjqt_wu.forEach(rn1 => {
-            fs.renameSync(diwr_neig.nikc_bx + '/' + rn1, diwr_neig.nikc_bx + '/' + rn1 + '.bak')
+        fs.writeFileSync(diwr_neig_kp.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_ws))
+        diwr_neig_kp.vnwm_json_rjqt_wu.forEach(rn1 => {
+            fs.renameSync(diwr_neig_kp.nikc_bx + '/' + rn1, diwr_neig_kp.nikc_bx + '/' + rn1 + '.bak')
         })
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('npus_grbr_diwr')) {
-        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig.vnwm_afoa_bqeo[1]
-        var rj_nvcm = await kczv_json_rfrf(diwr_neig.nikc_bx, diwr_neig.nikc_bx + "/db_" + (new Date().getTime()) + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX)
-        diwr_neig.vnwm_json_rjqt_wu.forEach(rn1 => {
-            fs.renameSync(diwr_neig.nikc_bx + '/' + rn1, diwr_neig.nikc_bx + '/' + rn1 + '.bak')
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('npus_grbr_diwr')) {
+        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig_kp.vnwm_afoa_bqeo[1]
+        var rj_nvcm = await kczv_json_rfrf(diwr_neig_kp.nikc_bx, diwr_neig_kp.nikc_bx + "/db_" + (new Date().getTime()) + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX)
+        diwr_neig_kp.vnwm_json_rjqt_wu.forEach(rn1 => {
+            fs.renameSync(diwr_neig_kp.nikc_bx + '/' + rn1, diwr_neig_kp.nikc_bx + '/' + rn1 + '.bak')
         })
 
         diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrj: ' ' }]
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('qoqi')) {
-        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig.vnwm_afoa_bqeo[1]
-        var vkih = Number(diwr_neig.vnwm_afoa_bqeo[2])
-        if (isNaN(vkih)) {
-            uz_ms('csrf-vkih brtz msox-' + diwr_neig.vnwm_afoa_bqeo[2])
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('qoqi')) {
+        if (diwr_neig_kp.diwr_vr_mcvn.qoqi === 'originals') {
+            uz_ms('csrf-ns bs-')
+        } else if (diwr_neig_kp.diwr_vr_mcvn.qoqi === "" || diwr_neig_kp.diwr_vr_mcvn.qoqi === 'translations') {
+            return qoqi_rfrj(diwr_neig_kp)
+        } else {
+            uz_ms('csrf-mcvn ftpj-' + diwr_neig_kp.diwr_vr_mcvn.qoqi)
         }
-        var rj_yhrd = diwr_neig.vnwm_afoa_bqeo[3] + "\"" + diwr_neig.vnwm_afoa_bqeo[4] + "\""
+        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig_kp.vnwm_afoa_bqeo[1]
+        var vkih = Number(diwr_neig_kp.vnwm_afoa_bqeo[2])
+        if (isNaN(vkih)) {
+            uz_ms('csrf-vkih brtz msox-' + diwr_neig_kp.vnwm_afoa_bqeo[2])
+        }
+        var rj_yhrd = diwr_neig_kp.vnwm_afoa_bqeo[3] + "\"" + diwr_neig_kp.vnwm_afoa_bqeo[4] + "\""
         await rfrf_bqeo_diwr_fs(rj_yhrd, { YXNA_VNWM_reg_VWUX_MR_YFUX })
         var diwr_yhld_bx = {}
-        diwr_neig.diwr_vnwm_bx.forEach(rn1 => {
+        diwr_neig_kp.diwr_vnwm_bx.forEach(rn1 => {
             diwr_yhld_bx[rn1.vkih] = rn1
         })
         var diwr_eynh = diwr_yhld_bx[vkih]
@@ -116,27 +126,27 @@ async function bx_gzbu_tsjq(diwr_neig) {
             diwr_eynh.vnwm_tmtm = []
         }
         diwr_eynh.vnwm_tmtm.push({ yhrj: diwr_eynh.yhrj, rdrj: diwr_eynh.rdrj })
-        diwr_eynh.yhrj = diwr_neig.vnwm_afoa_bqeo[3]
-        diwr_eynh.rdrj = diwr_neig.vnwm_afoa_bqeo[4]
-        diwr_neig.diwr_vnwm_bx = Object.entries(diwr_yhld_bx).map(rn1 => rn1[1])
-        fs.writeFileSync(diwr_neig.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_neig.diwr_vnwm_bx))
-        diwr_neig.vnwm_json_rjqt_wu.forEach(rn1 => {
-            fs.renameSync(diwr_neig.nikc_bx + '/' + rn1, diwr_neig.nikc_bx + '/' + rn1 + '.bak')
+        diwr_eynh.yhrj = diwr_neig_kp.vnwm_afoa_bqeo[3]
+        diwr_eynh.rdrj = diwr_neig_kp.vnwm_afoa_bqeo[4]
+        diwr_neig_kp.diwr_vnwm_bx = Object.entries(diwr_yhld_bx).map(rn1 => rn1[1])
+        fs.writeFileSync(diwr_neig_kp.nikc_bx + "/db_" + (new Date().getTime()) + '.json', JSON.stringify(diwr_neig_kp.diwr_vnwm_bx))
+        diwr_neig_kp.vnwm_json_rjqt_wu.forEach(rn1 => {
+            fs.renameSync(diwr_neig_kp.nikc_bx + '/' + rn1, diwr_neig_kp.nikc_bx + '/' + rn1 + '.bak')
         })
         diwr_vnwm_jtyj = [{ yhrj: JSON.stringify(diwr_eynh).replace(/("\w+":)/g, '\n$1'), rdrj: ' ' }]
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('qoqi_yh')) {
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('qoqi_yh')) {
 
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('ukyp_diwr')) {
-        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig.vnwm_afoa_bqeo[1]
-        var kczv_bqeo = diwr_neig.vnwm_afoa_bqeo.slice(2, diwr_neig.vnwm_afoa_bqeo.length).join('\n')
-        var nikc_xyzd = diwr_neig.nikc_bx + "/tmp_" + (new Date().getTime())
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('ukyp_diwr')) {
+        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig_kp.vnwm_afoa_bqeo[1]
+        var kczv_bqeo = diwr_neig_kp.vnwm_afoa_bqeo.slice(2, diwr_neig_kp.vnwm_afoa_bqeo.length).join('\n')
+        var nikc_xyzd = diwr_neig_kp.nikc_bx + "/tmp_" + (new Date().getTime())
         var rjqt_wu = "db_" + (new Date().getTime())
         fs.mkdirSync(nikc_xyzd)
         fs.writeFileSync(nikc_xyzd + '/' + rjqt_wu + '.txt', kczv_bqeo)
         var rj_nvcm
         try {
-            rj_nvcm = (await kczv_rfrf(nikc_xyzd, diwr_neig.nikc_bx + "/" + rjqt_wu + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX, 'utf8'))
+            rj_nvcm = (await kczv_rfrf(nikc_xyzd, diwr_neig_kp.nikc_bx + "/" + rjqt_wu + '.json', YXNA_VNWM_reg_VWUX_MR_YFUX, 'utf8'))
         } catch (err) {
             if (err != undefined && /【|《/.test(err.message)) {
                 var rj_msox_html = await NVMS_JTYJ_LD_html(err.message.replace(/error:\s*/ig, ""))
@@ -148,8 +158,8 @@ async function bx_gzbu_tsjq(diwr_neig) {
 
         diwr_vnwm_jtyj = [{ yhrj: rj_nvcm, rdrj: ' ' }]
         return diwr_vnwm_jtyj
-    } else if (diwr_neig.diwr_vr_mcvn.hasOwnProperty('zogl_xbpa_bx')) {
-        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig.vnwm_afoa_bqeo[1]
+    } else if (diwr_neig_kp.diwr_vr_mcvn.hasOwnProperty('zogl_xbpa_bx')) {
+        var YXNA_VNWM_reg_VWUX_MR_YFUX = diwr_neig_kp.vnwm_afoa_bqeo[1]
         if (!fs.existsSync(YXNA_VNWM_reg_VWUX_MR_YFUX)) {
             throw new Error('csrf- nikc ac zznq-' + YXNA_VNWM_reg_VWUX_MR_YFUX)
         }
@@ -171,17 +181,17 @@ async function bx_gzbu_tsjq(diwr_neig) {
         var vnwm_yhld = new Array()
         var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
         if (DIWR_VNWM_reg_VWUX_MR_YFUX.length == 0) {
-            uz_ms('csrf-Bi nikc tt hmpc J S rjqt-' + diwr_neig.nikc_bx)
+            uz_ms('csrf-Bi nikc tt hmpc J S rjqt-' + diwr_neig_kp.nikc_bx)
         }
 
-        diwr_vnwm_jtyj = await eowl_ac_grbr_diwr(diwr_neig.diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
+        diwr_vnwm_jtyj = await eowl_ac_grbr_diwr(diwr_neig_kp.diwr_vnwm_bx, DIWR_VNWM_reg_VWUX_MR_YFUX)
         if (diwr_vnwm_jtyj.length === 0) {
             return [{ yhrj: "没有不合格对象", rdrj: '' }]
         } else {
             return diwr_vnwm_jtyj
         }
     } else {
-        uz_ms('csrf-mcvn acun-' + Object.keys(diwr_neig.diwr_vr_mcvn))
+        uz_ms('csrf-mcvn acun-' + Object.keys(diwr_neig_kp.diwr_vr_mcvn))
     }
 }
 module.exports = bx_gzbu_tsjq

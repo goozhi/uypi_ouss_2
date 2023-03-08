@@ -13,7 +13,11 @@ async function zjzj_yhrd_diyc_gnpz(diwr_mcvn) {
                 bmlc+="\n"+fo1+":"+diwr_yhld.diwr_ncrl[fo1]
             }
         }
-        uz_ms('csrf-ac oan wwcf dk ztfr sum-' + diwr_mcvn.yhrj + "\n" + diwr_mcvn.rdrj + bmlc)
+        var vkih = ''
+        if(diwr_mcvn.vkih){
+            vkih = diwr_mcvn.vkih+'\n'
+        }
+        uz_ms('csrf-ac oan wwcf dk ztfr sum-' + vkih + diwr_mcvn.yhrj + "\n" + diwr_mcvn.rdrj + bmlc)
     } else {
         return true;
     }
