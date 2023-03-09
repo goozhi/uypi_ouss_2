@@ -17,7 +17,13 @@ async function zjzj_yhrd_diyc_gnpz(diwr_mcvn) {
         if(diwr_mcvn.vkih){
             vkih = diwr_mcvn.vkih+'\n'
         }
-        uz_ms('csrf-ac oan wwcf dk ztfr sum-' + vkih + diwr_mcvn.yhrj + "\n" + diwr_mcvn.rdrj + bmlc)
+        return new Promise((resolve,reject)=>{
+            try{
+                uz_ms('csrf-ac oan wwcf dk ztfr sum-' + vkih + diwr_mcvn.yhrj + "\n" + diwr_mcvn.rdrj + bmlc)
+            }catch(err){
+                reject(err)                
+            }
+        })
     } else {
         return true;
     }

@@ -27,6 +27,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA, diwr_neig_kp) {
             { reg_lzm_wu: /^(?:add)$/i, yowr_wu: "ukyp_diwr" },
             { reg_lzm_wu: /^(?:uni|unique)$/i, yowr_wu: "hd_lzjk" },
             { reg_lzm_wu: /^(?:del|delete)$/i, yowr_wu: "hd_diwr" },
+            { reg_lzm_wu: /^(?:get)$/i, yowr_wu: "nwvt" },
             { reg_lzm_wu: /^(?:keys|keywords)$/i, yowr_wu: "zjyj_zv_gnfo_zr" }
         ]
     })
@@ -71,7 +72,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA, diwr_neig_kp) {
     if (diwr_vr_mcvn == null) {
         uz_ms('csrf-zf aoao vdzv mcvn-')
     } else {
-        var vwdp_jtyj = await bx_gzbu_tsjq({ vnwm_msqu:diwr_neig_kp.vnwm_msqu , vnwm_afoa_bqeo, diwr_vnwm_bx, nikc_bx, vnwm_json_rjqt_wu, diwr_vr_mcvn })
+        var vwdp_jtyj = bx_gzbu_tsjq({ vnwm_msqu: diwr_neig_kp.vnwm_msqu, vnwm_afoa_bqeo, diwr_vnwm_bx, nikc_bx, vnwm_json_rjqt_wu, diwr_vr_mcvn })
     }
     return new Promise((resolve, reject) => {
         Promise.all([vwdp_jtyj]).then(jtyj => {
@@ -87,12 +88,12 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA, diwr_neig_kp) {
                 if (rn1.vnwm_tmtm) {
                     tmtm_1 = '\n该对象被修改过，前面的版本为：' + JSON.stringify(rn1.vnwm_tmtm)
                 }
-                if (rn1.err == undefined) {
+                if (rn1.err == undefined || Object.keys(rn1.err).length === 0) {
                     return vkih_2 + rn1.yhrj + '\n' + rn1.rdrj + tmtm_1
                 } else {
-                    if(rn1.err.message){
+                    if (rn1.err.message) {
                         return rn1.err.message.replace(/Error: /, "")
-                    }else{
+                    } else {
                         return rn1.err
                     }
                 }
