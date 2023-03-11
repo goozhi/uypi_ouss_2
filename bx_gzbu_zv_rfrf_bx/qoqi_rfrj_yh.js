@@ -51,12 +51,12 @@ async function qoqi_rfrj_yh(diwr_neig_kp) {
                 } catch (err) {
                     diwr_neig_kp.reject(err)
                 }
-                diwr_eynh.rdrj = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
-                diwr_eynh.vnwm_qoqi_mf.push({ qoqi_pzva, dbkz_wu, qoqi_zdti: diwr_eynh.qoqi_zdti })
                 if (!diwr_eynh.vnwm_tmtm) {
                     diwr_eynh.vnwm_tmtm = []
                 }
                 diwr_eynh.vnwm_tmtm.push({ yhrj: diwr_eynh.yhrj, rdrj: diwr_eynh.rdrj })
+                diwr_eynh.rdrj = bqeo.replace(/^\s+|\s+$/g, "").replace(/Peng_JTCO_ZV_TZRN/g, "$$$$$$")
+                diwr_eynh.vnwm_qoqi_mf.push({ qoqi_pzva, dbkz_wu, qoqi_zdti: diwr_eynh.qoqi_zdti })
             }
         }
     })
