@@ -8,8 +8,8 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var reg_XBST_1 = /^\d+(?:-\d+|)$/
     var reg_XBST_2 = /[\\、d](?=\d+)/ig
     var GKQJ_AWZN_KLVQ = false
-    var DIWR_VNWM_3C_DIYC_YG_MCVN=[]
-    var GKQJ_PC_FRIH=false
+    var DIWR_VNWM_3C_DIYC_YG_MCVN = []
+    var GKQJ_PC_FRIH = false
     var AWZN_KLVQ_VN_1
     var AWZN_KLVQ_VN_2
     if (UXUX_YHLD != "string") {
@@ -25,7 +25,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         DIWR_CQPI_FR = RJSE_1.match(reg_YHLD);
         if (DIWR_CQPI_FR != null) {
             RJSE_1 = RJSE_1.replace(reg_YHLD, "")
-            GKQJ_PC_FRIH=true;
+            GKQJ_PC_FRIH = true;
         }
     } else {
         NINI_UXUX_2 = 'cf'
@@ -49,10 +49,10 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var reg_PCYC_KLVQ_MCVN = /\[\s*((?:\+|-|)\d+(?:\.\d+|))\s*-\s*((?:\+|-|)\d+(?:\.\d+|))(.*)\]/;
     var DIWR_PCYC_KLVQ_MCVN = DIWR_YHLD[2].match(reg_PCYC_KLVQ_MCVN)
     if (DIWR_PCYC_KLVQ_MCVN != null) {
-        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN,"")
+        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN, "")
         AWZN_KLVQ_VN_1 = Number(DIWR_PCYC_KLVQ_MCVN[1])
         AWZN_KLVQ_VN_2 = Number(DIWR_PCYC_KLVQ_MCVN[2])
-        NINI_UXUX_2="3c"
+        NINI_UXUX_2 = "3c"
         GKQJ_AWZN_KLVQ = true;
         var YNDF_KLVQ_MCVN = DIWR_PCYC_KLVQ_MCVN[3]
         if (!/^\s*$/.test(YNDF_KLVQ_MCVN)) {
@@ -69,7 +69,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
                     }
                     return VN_YHLD
                 })
-                var BQEO = "*"+vnwm_yhld[1]
+                var BQEO = "*" + vnwm_yhld[1]
                 DIWR_VNWM_3C_DIYC_YG_MCVN.push({ BQEO, VNWM_KLVQ_MCVN })
             })
         }
@@ -207,27 +207,26 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         VNWM_ZTHI_VDUM_1.reverse()
         return RJSE_NINI_LLAO + ",7f,128,-256," + VNWM_ZTHI_VDUM_1.join('+') + "+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
     } else if (/3c/i.test(NINI_UXUX_2)) {
-        if(GKQJ_PC_FRIH&&GKQJ_AWZN_KLVQ){
-            if(AWZN_KLVQ_VN_1<0&&AWZN_KLVQ_VN_2>=0){
-                DIWR_VNWM_3C_DIYC_YG_MCVN.push({VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ),0XFF],BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
-                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [0,EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
-                
-            }else if(AWZN_KLVQ_VN_1<0&&AWZN_KLVQ_VN_2<0){
-                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ),EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ)], BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
+        if (GKQJ_PC_FRIH && GKQJ_AWZN_KLVQ) {
+            if (AWZN_KLVQ_VN_1 < 0 && AWZN_KLVQ_VN_2 >= 0) {
+                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ), PC_FRIH_SDVN_PH_HPMI - 1], BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
+                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [0, EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
+            } else if (AWZN_KLVQ_VN_1 < 0 && AWZN_KLVQ_VN_2 < 0) {
+                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ), EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ)], BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
             }
-            else{
-                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ),EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2,PC_FRIH_SDVN_PH_HPMI,PZVN,NOKZ)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
+            else {
+                DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ), EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
             }
-        }else if(GKQJ_PC_FRIH&&!GKQJ_AWZN_KLVQ){
+        } else if (GKQJ_PC_FRIH && !GKQJ_AWZN_KLVQ) {
             DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: VNWM_PCYC_KLVQ_MCVN_ZV_EOVN, BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
-            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: VNWM_PCYC_KLVQ_MCVN_ZV_YLVN, BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })    
-        }else if(!GKQJ_PC_FRIH&&GKQJ_AWZN_KLVQ){
-            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [Math.floor(AWZN_KLVQ_VN_1),Math.floor(AWZN_KLVQ_VN_2)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
-            PH_KLVQ_MCVN_uytz = PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" 
-        }else{
+            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: VNWM_PCYC_KLVQ_MCVN_ZV_YLVN, BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
+        } else if (!GKQJ_PC_FRIH && GKQJ_AWZN_KLVQ) {
+            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [Math.floor(AWZN_KLVQ_VN_1), Math.floor(AWZN_KLVQ_VN_2)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
+            PH_KLVQ_MCVN_uytz = PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")"
+        } else {
             throw new Error('[RAVC MSOX GKQJ_PC_FRIH GKQJ_AWZN_KLVQ LH false]')
         }
-    
+
         return RJSE_NINI_LLAO + ",3c," + PH_KLVQ_MCVN_uytz + ",." + AGVN_TRVN + ",\"" + EYTR + "\"," + DIWR_VNWM_3C_DIYC_YG_MCVN.map(rnsf => {
             return "'" + rnsf.VNWM_KLVQ_MCVN.map(rnsf_4 => {
                 return rnsf_4.toString(16)

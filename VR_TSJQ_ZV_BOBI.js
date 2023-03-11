@@ -175,6 +175,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
             }
         })
         ymce(diwr_vnwm_kplu_bobi)
+        return '完成录入'
     }
     else if (diwr_vr_mcvn.hasOwnProperty('ukyp')) {
         var zkrs_1 = '请输入问题'
@@ -519,7 +520,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.caum === 'comments') {
         return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.rj_lclc), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
     } else if (diwr_vr_mcvn.caum === 'field') {
-        return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.jfrs_klbf), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
+        return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.jfrs_klbf===BQEO_1), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
     } else if (diwr_vr_mcvn.caum === 'answers') {
         return diwr_vnwm_kplu_bobi.map(rn1 => {
             if (rn1.rj_afoa) {

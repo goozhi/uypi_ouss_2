@@ -22,6 +22,9 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
     if (diwr_vnwm_rjqt_ids.length == 0) {
         uz_ms('csrf-Bi nikc tt hmpc ids rjqt-' + nikc_ids)
     }
+    if (!fs.existsSync(nikc_rfrf_kplu)){
+        uz_ms('csrf-nikc ac zznq-'+nikc_rfrf_kplu)
+    }
     var VNWM_KP = fs.readdirSync(nikc_rfrf_kplu);
     var VNWM_1 = VNWM_KP.filter(rn1 => {
         if (/\.json$/i.test(rn1))

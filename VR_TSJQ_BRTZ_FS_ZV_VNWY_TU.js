@@ -15,7 +15,7 @@ function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
     var VR_EBWU_BRTZ_FS_ZV_16 = require('./VR_EBWU_BRTZ_FS_ZV_16')
     var VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI = require('./VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI')
     var VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI = require('./VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI')
-    var RJSE_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/\r/g, "").replace(/((?:\n|^))\s+/g, "$1").replace(/\n(?=\n|$)/g, "");
+    var RJSE_1 = DIWR_AFOA.VR_AFOA_BQEO.replace(/\r/g, "").replace(/^\s*\/\/.*/gm,'').replace(/((?:\n|^))\s+/g, "$1").replace(/\n(?=\n|$)/g, "");
     DIWR_AFOA.Peng_AFOA_MCVN = "";
     if (String(DIWR_AFOA.VR_AFOA_MCVN) == "0") {
         RJSE_1 = RJSE_1.replace(/\{\}/g, "{999999}");
