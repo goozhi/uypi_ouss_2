@@ -1,6 +1,6 @@
 const VR_KUOE_AFOA_Peng_fs = require('./vr_turs_ubub/VR_KUOE_AFOA_Peng_fs')
 
-function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(DIWR_AFOA) {
+async function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(DIWR_AFOA) {
     var UXUX_YHLD = typeof (DIWR_AFOA)
     if (UXUX_YHLD != "object") {
         throw new Error("MCVN UXUX MSOX , AOAO JI object:" + UXUX_YHLD)
@@ -37,6 +37,6 @@ function VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA(DIWR_AFOA) {
             }
         });
     }
-    return VR_KUOE_AFOA_Peng_fs(BQEO_1)
+    return await VR_KUOE_AFOA_Peng_fs(BQEO_1)
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_KUOE_AFOA;

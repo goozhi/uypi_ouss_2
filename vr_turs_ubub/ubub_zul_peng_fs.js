@@ -2,7 +2,7 @@ const uz_ms = require("../AFOA_BX/uz_ms")
 const dzvv_peng_fs = require("./dzvv_peng_fs")
 const vnwy_tu_peng_fs = require("./vnwy_tu_peng_fs")
 
-function ubub_zul_peng_fs(diwr_match) {
+async function ubub_zul_peng_fs(diwr_match) {
     if (typeof (diwr_match) != 'object') {
         uz_ms('csrf-mcvn uxux aoao ji object-' + diwr_match)
     } else if (diwr_match == null) {
@@ -26,7 +26,7 @@ function ubub_zul_peng_fs(diwr_match) {
             var diwr_dbkz_tsjq = rj_html_1.match(yg1.reg)
             if (diwr_dbkz_tsjq != null) {
                 rj_html_1 = rj_html_1.replace(yg1.reg, "")
-                vnwm_vwdp_1.push(yg1.atvn(diwr_dbkz_tsjq))
+                vnwm_vwdp_1.push(await yg1.atvn(diwr_dbkz_tsjq))
                 gkqj_cgne_ab = true;
                 break;
             }

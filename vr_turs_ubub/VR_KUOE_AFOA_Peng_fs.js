@@ -6,7 +6,7 @@ const vbyt_uj_peng_fs = require('./vbyt_uj_peng_fs')
 const ussk_zul_peng_fs = require('./ussk_zul_peng_fs')
 const ubub_zul_peng_fs = require('./ubub_zul_peng_fs')
 const dgld_xbiw_peng_fs = require('./dgld_xbiw_peng_fs')
-function VR_KUOE_AFOA_Peng_fs(rjse_kp) {
+async function VR_KUOE_AFOA_Peng_fs(rjse_kp) {
     var rj_1 = rjse_kp.replace(/^\s*···/gm, '```').replace(/^》/gm, '> ')
     rj_html_kp = marked.marked(rj_1)
     rj_html_1 = rj_html_kp.replace(/<ul>|<\/ul>/ig,"")
@@ -48,7 +48,7 @@ function VR_KUOE_AFOA_Peng_fs(rjse_kp) {
             var diwr_dbkz_tsjq = rj_html_1.match(yg1.reg)
             if (diwr_dbkz_tsjq != null) {
                 rj_html_1 = rj_html_1.replace(yg1.reg, "")
-                vnwm_vwdp_1.push(yg1.atvn(diwr_dbkz_tsjq))
+                vnwm_vwdp_1.push(await yg1.atvn(diwr_dbkz_tsjq))
                 gkqj_cgne_ab = true;
                 break;
             }

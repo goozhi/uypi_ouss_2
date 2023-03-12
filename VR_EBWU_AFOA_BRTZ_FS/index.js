@@ -80,7 +80,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
         }
     }
     if (VBYT_2) {
-        var RJSE_JTYP = VR_TSJQ_BRTZ_FS_ZV_VNWY_TU({ VR_AFOA_MCVN: null, VR_AFOA_BQEO: RJSE_KP })
+        var RJSE_JTYP = await VR_TSJQ_BRTZ_FS_ZV_VNWY_TU({ VR_AFOA_MCVN: null, VR_AFOA_BQEO: RJSE_KP })
         var RJSE_YHLD;
         if (!/\u0024STR\(/i.test(RJSE_JTYP)) {
             RJSE_YHLD = "\u0024Str()\n" + RJSE_JTYP + "\n***"

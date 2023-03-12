@@ -15,7 +15,15 @@ function VR_EBWU_BRTZ_FS_ZV_10(RJSE_KP){
     if (DIWR_MCVN == null) {
         throw new Error("[SOPJ CGNE NINI MCVN]" + RJSE_KP)
     }
-    var RJSE_NINI_LLAO=DIWR_MCVN[1]
+    var LLAO=DIWR_MCVN[1]
+    var reg_ES=/\{(.*)\}/
+    var DIWR_ES=LLAO.match(reg_ES);
+    if(DIWR_ES==null){
+        throw new Error("[NRAP ES MCVN]"+LLAO+"<--"+RJSE_KP)
+    }else{
+        LLAO=LLAO.replace(reg_ES,"{"+DIWR_ES[1].replace(/(\w\w)(?=\w)/g,"$1 ")+"}")
+    }
+
     var NINI_UXUX=DIWR_MCVN[2]
     if(!/^(?:10|d)$/i.test(NINI_UXUX)){
         throw new Error("[NINI UXUX ACUN]"+NINI_UXUX+"<--"+RJSE_KP)
@@ -43,6 +51,6 @@ function VR_EBWU_BRTZ_FS_ZV_10(RJSE_KP){
             return "\"" + RNSF + "\""
         }
     })
-    return RJSE_NINI_LLAO + ",10," + VNWM_ZYKL_MCVN.join(",")+";"+BMLC
+    return LLAO + ",10," + VNWM_ZYKL_MCVN.join(",")+";"+BMLC
 }
 module.exports=VR_EBWU_BRTZ_FS_ZV_10

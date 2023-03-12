@@ -16,7 +16,7 @@ function ZJZJ_3f_NINI(VNWM_3f_NINI) {
         var NINI_UXUX = NINI.replace(reg_MCVN, "$3");
         var NINI_UYTZ = NINI.replace(reg_MCVN, "$4");
         var NINI_VNWM_MCVN = NINI.replace(reg_MCVN, "$5");
-        var RJSE_YHLD = ZJZJ_3f_NINI_MCVN({ NINI_WU, NINI_ES, NINI_UYTZ, NINI_VNWM_MCVN, NINI_UXUX });
+        var RJSE_YHLD = await ZJZJ_3f_NINI_MCVN({ NINI_WU, NINI_ES, NINI_UYTZ, NINI_VNWM_MCVN, NINI_UXUX });
         if (RJSE_YHLD != "") {
             return RJSE_YHLD + NINI
         }
