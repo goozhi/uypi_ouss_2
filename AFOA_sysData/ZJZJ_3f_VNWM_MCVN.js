@@ -13,8 +13,20 @@ function ZJZJ_3f_VNWM_MCVN(RJSE_KP) {
     var VNWM_RNSF = [];
     var RJSE_2 = "','";
     var reg_RNSF = /','(.*?):(.*)'/;
-    var reg_szas_dk_mcvn = /[a-f\d]+\s*$/i
-    var RJSE_3 = RJSE_1.replace(reg_szas_dk_mcvn)
+    var reg_szas_dk_mcvn = /([\w\u4E00-\u9FA5]+)\s*$/i
+    var DIWR_SZAS_MCVN = RJSE_1.match(reg_szas_dk_mcvn)
+    var RJSE_3
+    if(!DIWR_SZAS_MCVN){
+        RJSE_3 = RJSE_1
+    }else{
+        if (!/^(?:0+|)[8421](?:0+|)(?:[ \u4E00-\u9FA5]+|)$/.test(DIWR_SZAS_MCVN[1])) {
+            RJSE_MSOX += "[SZAS MCVN AC GRBU]" + DIWR_SZAS_MCVN[1] + "<--"
+        }
+        if (!/\both\b/.test(RJSE_1)) {
+            RJSE_MSOX += "[SZAS MCVN AOAO OKNE oth RVDB LSSR SZAS SOYC]" + DIWR_SZAS_MCVN[1] + "<--"
+        }
+        RJSE_3 = RJSE_1.replace(reg_szas_dk_mcvn,"")
+    }
     var vnwm_3f_rnsf
     try {
         vnwm_3f_rnsf = eval("[" + RJSE_3 + ']')
