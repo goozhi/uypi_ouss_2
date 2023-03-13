@@ -13,6 +13,34 @@ function ZJZJ_3f_VNWM_MCVN(RJSE_KP) {
     var VNWM_RNSF = [];
     var RJSE_2 = "','";
     var reg_RNSF = /','(.*?):(.*)'/;
+    var reg_szas_dk_mcvn = /[a-f\d]+\s*$/i
+    var RJSE_3 = RJSE_1.replace(reg_szas_dk_mcvn)
+    var vnwm_3f_rnsf
+    try {
+        vnwm_3f_rnsf = eval("[" + RJSE_3 + ']')
+        var reg_3f_RNSF = /(.*?):(.*)/;
+        vnwm_3f_rnsf.forEach(rn1 => {
+            var DIWR_RNSF = rn1.match(reg_3f_RNSF)
+            if (!DIWR_RNSF) {
+                RJSE_MSOX += "[3 f RNSF BRTZ MSOX]" + rn1 + "<--"
+                return
+            }
+            var KLVQ = DIWR_RNSF[1];
+            var BQEO = DIWR_RNSF[2];
+            if (reg_TYUB_16.test(KLVQ) || reg_KLVQ.test(KLVQ)) {
+
+            }
+            else if (/oth/i.test(KLVQ)) {
+                VBYT_oth = true;
+            } else {
+                RJSE_MSOX += '[KLVQ MCVN FTPJ] ' + KLVQ + ":" + BQEO + " <--"
+            }
+        })
+        return RJSE_MSOX
+    } catch (err) {
+        RJSE_MSOX += '[3 f VNWM MCVN BRTZ MSOX] ' + RJSE_3 + '<--'
+        return RJSE_MSOX
+    }
     for (i1 = 1; i1 < RJSE_1.length; i1++) {
         var ZTFR_1 = RJSE_1[i1];
         if (ZTFR_1 == "'") {
