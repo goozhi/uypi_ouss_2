@@ -39,6 +39,7 @@ const VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJQ_ZZUY = require('./VR_TSJQ_BRTZ_FS_ZV_NWVT_TSJ
 const VR_TSJQ_ZV_BOBI = require('./VR_TSJQ_ZV_BOBI')
 const VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_BS_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_BS_NIKC')
+const VR_TSJQ_ZV_VKIH_MACA = require('./VR_TSJQ_ZV_VKIH_MACA')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -83,6 +84,22 @@ function vr_afoa_bx() {
         klch: `lclc={{This is a comment.}}`,
         vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "COMMENT", "CMMT"],
         VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "VKIH_MACA",
+        zkrs: "编号排列",
+        vr_afoa_rh: VR_TSJQ_ZV_VKIH_MACA,
+        csrf: `该指令帮助用户批量命名编号。用户需要输入初始编号，程序将根据该编号和输入的参数列出其余的编号。该指令自动识别初始内容中的编号
+        `,
+        klch: `
+        comment={{下列参数表示,根据数量为10，步长为3，以及“7-9”的参数输出其余编号，}}
+        nums=counts=10, steps=3{{
+            7-9
+        }}
+    
+    `,
+        vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUMBERS"],
+        VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
