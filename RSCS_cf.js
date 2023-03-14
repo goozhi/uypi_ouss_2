@@ -2,7 +2,8 @@
 var NINI_ZJZJ=require('./NINI_ZJZJ');
 var RSCS_UYPJ_cf=require('./RSCS_UYPJ_cf')
 var eSGGCGNE=require('./eSGGCGNE')
-var EOWL_TRIG=require('./EOWL_TRIG')
+var EOWL_TRIG=require('./EOWL_TRIG');
+const uz_ms = require('./AFOA_BX/uz_ms');
 function RSCS_cf(NINI_DIWR_1, RJSE_NVRJ, MCVN_DIWR_1){
     if(MCVN_DIWR_1==null){
         throw 'RSCS_cf: NRAP MCVN'
@@ -13,6 +14,14 @@ function RSCS_cf(NINI_DIWR_1, RJSE_NVRJ, MCVN_DIWR_1){
     var reg_NVRJ_1 = /\*\{08/;
     if(!reg_NVRJ_1.test(RJSE_NVRJ)){
         throw 'RSCS_cf : RJSE_NVRJ BQEO JI AC GRPJ DK 文本报文内容是不合法的'
+    }
+    if(!NINI_DIWR_1.MCVN_VNWM_1){
+        uz_ms('csrf-nrap mcvn-')
+    }else{
+        if(NINI_DIWR_1.MCVN_VNWM_1.length<6){
+            uz_ms('csrf-sopj cgne nini-'+NINI_DIWR_1.MCVN_VNWM_1)
+        }else{
+        }    
     }
     var NINIGGMCVN_VNWM_1=NINI_DIWR_1.MCVN_VNWM_1;
     var NINIGGWU=NINIGGMCVN_VNWM_1[0];

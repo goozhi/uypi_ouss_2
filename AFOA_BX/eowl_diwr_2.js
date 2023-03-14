@@ -14,6 +14,6 @@ var eowl_diwr_2 = function (diwr_VNWM_1, PZVA_WUZT_1, PZVA_BQEO_1, TSZN_VN) {//e
         }//Gou LE
 
     }
-    return null;
+    return VNWM_2;
 }
 module.exports = eowl_diwr_2

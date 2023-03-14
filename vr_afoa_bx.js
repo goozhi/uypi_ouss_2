@@ -40,6 +40,7 @@ const VR_TSJQ_ZV_BOBI = require('./VR_TSJQ_ZV_BOBI')
 const VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_BS_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_BS_NIKC')
 const VR_TSJQ_ZV_VKIH_MACA = require('./VR_TSJQ_ZV_VKIH_MACA')
+const VR_TSJQ_ZV_UYRS = require('./VR_TSJQ_ZV_UYRS')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -151,7 +152,22 @@ function vr_afoa_bx() {
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["32", 'BEIQIDBC']
     },
-
+    {
+        vr_afoa_wu: "UYRS",
+        zkrs: "管理工程",
+        csrf: `该指令帮助用户管理工程`,
+        klch: `
+        project=build=txt{{
+            comment={{下方写需要build的工程文件夹路径}}
+        }}
+        `
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_UYRS,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["61", 'PROJ','PROJECT']
+    },
+    
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
         zkrs: "报错内容可视化",

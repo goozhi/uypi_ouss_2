@@ -3,7 +3,8 @@ var RSCS_NVRJ = require('./RSCS_NVRJ');
 const EOWL_DIWR=require('./AFOA_BX/EOWL_DIWR')
 const EOWL_DIWR_2=require('./AFOA_BX/EOWL_DIWR_2')
 const PZVA_SLGR_3=require('./AFOA_BX/PZVA_SLGR_3')
-const HD_LZJK_VNWM=require('./AFOA_BX/HD_LZJK_VNWM')
+const HD_LZJK_VNWM=require('./AFOA_BX/HD_LZJK_VNWM');
+const uz_ms = require('./AFOA_BX/uz_ms');
 function eSGGCGNE(NINIGGeS_MCVNGGDIWR_1, RJSE_NVRJ, MCVN_DIWR_1) {
     console.log(MCVN_DIWR_1.ByCheckBmsGroup + ";" + MCVN_DIWR_1.sortCanData);
     if (MCVN_DIWR_1 == null) {
@@ -33,7 +34,6 @@ function eSGGCGNE(NINIGGeS_MCVNGGDIWR_1, RJSE_NVRJ, MCVN_DIWR_1) {
     var GKQJ_1 = eval((TRIG+1) + ">" + "0x" + VN_2);
     if (GKQJ_1)
         throw "ZTHI YYHA VKIH SONQ DK TRIG YSUM SYZN DK YF YENH id DK eS DK VNAW: 字节地址的编号所在的位置超出设定的同一个id的帧的数量,请检查算法中地址编号是否写错 : " + NINIGGeS + "--" + Number(TRIG+1).toString(16) + ">" + VN_2;
-
     if (eSGGUXUX == '00') {
         eSGGID_VNWM_1 = NINIGGeS_VNWM_1.slice(3, 5);
         eSGGID_VNWM_1.unshift("00", "00")
@@ -67,7 +67,13 @@ function eSGGCGNE(NINIGGeS_MCVNGGDIWR_1, RJSE_NVRJ, MCVN_DIWR_1) {
         return { IOYCGGNVRJ_DIWR: DIWR_1, VNWY_VNWM_1: DIWR_1['VNWY_VNWM'], NVRJ_eSGGYYHA: DIWR_1.eS_YYHA, YFGGeSIHGGDAGGPLGGeS: TRIG };
     }
     var VNWM_2 = EOWL_DIWR_2(VNWM_1, 'eS_YYHA', YHLD_RJSE_1, 500);
+    if(VNWM_2.length===0){
+        uz_ms('csrf-yj ac ab diyc yyha-'+YHLD_RJSE_1)
+    }
     var VNWM_3 = PZVA_SLGR_3(VNWM_2, 'VNWY')
+    if(VNWM_3.length==0){
+        uz_ms('csrf-VNWM_3 lh vv-')
+    }
     var sortCanData_MCVN_1 = Number(MCVN_DIWR_1.sortCanData[0]);
     var sortCanData_MCVN_2 = Number(MCVN_DIWR_1.sortCanData[1]);
     var reg_1 = new RegExp("((?:\\w+(?:\\s|$)){" + sortCanData_MCVN_2 + "}).*(\\/\\/\\d+)")
@@ -78,7 +84,14 @@ function eSGGCGNE(NINIGGeS_MCVNGGDIWR_1, RJSE_NVRJ, MCVN_DIWR_1) {
     VNWM_4 = HD_LZJK_VNWM(VNWM_4, '^', '//');
     VNWM_4.sort();
     if (TRIG > VNWM_4.length - 1) {
-        throw 'eSGGCGNE : UYPJ YYAH WK OC NVRJ YH STYF eS DK OKAR ZTHI YYAH 算法中的字节所在帧（序号'+TRIG+'）不在报文中相同id的全部帧内(请检查sortCandata和cf项目中的帧的最后一个参数是否正确):' + VNWM_4[VNWM_4.length - 1].replace(/(.*)\/\/.*(\d+)/,"序号$2：$1已经是最后一帧了");
+        var rjse_yhld = ""
+        if(VNWM_4[VNWM_4.length - 1]){
+            var eqwy_vnwm_3 = VNWM_4[VNWM_4.length - 1].replace(/(.*)\/\/.*(\d+)/,"$2")
+            rjse_yhld = VNWM_4[VNWM_4.length - 1].replace(/(.*)\/\/.*(\d+)/,"第$2序号中($1)已经是最后一帧了")+VNWM_3[eqwy_vnwm_3]+'\n获取的报文总共只有'+VNWM_3.length+'帧'
+        }else{
+            rjse_yhld = VNWM_4
+        }
+        uz_ms("csrf-算法中的字节所在帧（序号"+TRIG+"）不在报文中相同i d的全部帧内(请检查sortCandata和c f项目中的帧的最后一个参数是否正确):-" + rjse_yhld)
     }
     var EQWY_0;
     try {
