@@ -10,7 +10,7 @@ function nikc_ld_diwr(folderPath) {
         if (stats.isDirectory()) {
             folderObj[file] = nikc_ld_diwr(filePath);
         } else {
-            folderObj[file] = stats.size;
+            folderObj[file] = stats;
         }
     });
     return folderObj
