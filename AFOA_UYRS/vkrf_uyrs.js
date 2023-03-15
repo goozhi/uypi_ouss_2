@@ -1,8 +1,10 @@
 const fs = require('fs');
 const diwr_neig_zjzj = require('../AFOA_BX/diwr_neig_zjzj');
-const nikc_ld_diwr = require('../AFOA_BX/nikc_ld_diwr');
+const nikc_ld_diwr_vkey_os = require('./nikc_ld_diwr_vkey_os');
 const uz_ms = require('../AFOA_BX/uz_ms');
-async function vkrf(diwr_neig_kp) {
+const uyrs_ld_peng_2 = require('./uyrs_ld_peng_2');
+const uyrs_ld_peng_5 = require('./uyrs_ld_peng_5');
+async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
     } else {
@@ -20,13 +22,14 @@ async function vkrf(diwr_neig_kp) {
     if (!fs.existsSync(diwr_neig_kp.nikc_uyrs + '/project.json')) {
         uz_ms('csrf-project.json ac zznq-')
     } else {
-        var diwr_neig_uyrs = require(diwr_neig_kp.nikc_uyrs + '/project.json')
-        var vnwm_uyrs_nikc_kp = fs.readdirSync(diwr_neig_kp.nikc_uyrs)
-        var vnwm_uyrs_nikc_1 = vnwm_uyrs_nikc_kp.filter(rn1 => {
-            return !/^\./.test(rn1) && fs.statSync(diwr_neig_kp.nikc_uyrs + '/' + rn1).isDirectory()
-        })
-        diwr_neig_uyrs.zul = { slm: "project", vnwm_vxn: vnwm_uyrs_nikc_1 }
-        throw await nikc_ld_diwr(diwr_neig_kp.nikc_uyrs)
+        diwr_slm= nikc_ld_diwr_vkey_os(diwr_neig_kp.nikc_uyrs)
+        diwr_slm.neig = require(diwr_neig_kp.nikc_uyrs + '/project.json')
+        diwr_slm.neig['当前文件夹属性'] = '工程'
+        try{
+            return await uyrs_ld_peng_5(diwr_slm)   
+        }catch(err){
+            throw err
+        }
     }
 }
-module.exports = vkrf;
+module.exports = vkrf_uyrs;

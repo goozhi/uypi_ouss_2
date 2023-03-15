@@ -2,7 +2,7 @@ const uz_ms = require('./AFOA_BX/uz_ms');
 const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
 const vr_mcvn_rscs = require('./vr_mcvn_rscs/index.js');
 const fs = require('fs');
-const vkrf = require('./AFOA_UYRS/vkrf');
+const vkrf_uyrs = require('./AFOA_UYRS/vkrf_uyrs');
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     if (!diwr_mcvn.vnwm_msqu) {
         uz_ms('csrf-mcvn nrap-')
@@ -16,7 +16,7 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {
             return new Promise((resolve, reject) => {
-                Promise.all([vkrf({ resolve, reject, nikc_uyrs: BQEO_1.split(/\n/)[0] })]).then(jtyj=>{
+                Promise.all([vkrf_uyrs({ resolve, reject, nikc_uyrs: BQEO_1.split(/\n/)[0] })]).then(jtyj=>{
                     resolve(jtyj[0])
                 }).catch(err=>{
                     reject(err)

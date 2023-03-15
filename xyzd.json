@@ -1,18 +1,676 @@
 {
-    "VR_AFOA_WU": "LJEY",
-    "VR_AFOA_MCVN": "YY",
-    "VR_AFOA_BQEO": "\r\n",
-    "VN_VR_AFOA_TRIG_VKIH": 0,
-    "RJSE_VR_AFOA_TRIG_VKIH": "VR_CXZV_AFOA_TRIG_VKIH_0_1",
-    "VNWM_VR_CXZV_AFOA_TRIG_VKIH": null
-},
-{
-    "VR_AFOA_WU": "LJEY",
-    "VR_AFOA_MCVN": "HHH",
-    "VR_AFOA_BQEO": "\r\n+LJEY_VKIH_0[YY](LJEY_MCVN_0)\n\r\n\nLJEY_JTCO_FR_0\r\n",
-    "VN_VR_AFOA_TRIG_VKIH": 1,
-    "RJSE_VR_AFOA_TRIG_VKIH": "VR_CXZV_AFOA_TRIG_VKIH_1_1",
-    "VNWM_VR_CXZV_AFOA_TRIG_VKIH": [
-        "VR_CXZV_AFOA_TRIG_VKIH_0_1"
-    ]
+    "品牌标识": "BYDNER",
+    "neig": {
+        "当前文件夹属性": "工程"
+    },
+    "diwr_vxn": {
+        "diwr_vxn": {
+            "元": {
+                "diwr_vxn": {
+                    "元PLUS EV": {
+                        "diwr_vxn": {
+                            "(比亚迪)低压电池管理系统(LBMS_BYD)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        131
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "",
+                                        "请求ID": "ec40"
+                                    },
+                                    "作者": "田思旋"
+                                }
+                            },
+                            "(比亚迪)后车身域控制器A_B1(AB1_BCM)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        143
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "E5C0",
+                                        "请求ID": "E4C0"
+                                    }
+                                }
+                            },
+                            "(比亚迪)后车身域控制器B_B2(BB2_BCM)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {
+                                            "EPB系统(电子驻车)系统数据流": {
+                                                "diwr_vxn": {},
+                                                "neig": {
+                                                    "当前文件夹属性": "数据流"
+                                                },
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "EPB系统(电子驻车)系统数据流.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "背门系统": {
+                                                "diwr_vxn": {},
+                                                "neig": {
+                                                    "当前文件夹属性": "数据流"
+                                                },
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                32
+                                                            ]
+                                                        },
+                                                        "zkrs": "背门系统data.vr"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "neig": {
+                                            "默认子文件夹属性": "数据流",
+                                            "当前文件夹属性": "菜单名",
+                                            "当前协议": {
+                                                "应答ID": "E300",
+                                                "请求ID": "E200"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "(比亚迪）DC-DC总成(DC.DC)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        86
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f360",
+                                        "请求ID": "f260"
+                                    }
+                                }
+                            },
+                            "(比亚迪）DC-DC总成（DC_DC)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        86
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f360",
+                                        "请求ID": "f260"
+                                    }
+                                }
+                            },
+                            "(龙润)助力转向_CEPS(CEPS.LR)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        49
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f160",
+                                        "请求ID": "f060"
+                                    }
+                                }
+                            },
+                            "（天合）助力转向_CEPS(CEPS_TRW)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f160",
+                                        "请求ID": "f060"
+                                    }
+                                }
+                            },
+                            "（比亚迪)后车身域控制器A_B2(AB2_BCM)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {
+                                            "EPB系统(电子驻车)系统数据流": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "EPB系统(电子驻车)系统数据流.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "背门系统": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                37
+                                                            ]
+                                                        },
+                                                        "zkrs": "背门系统data.vr"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "neig": {
+                                    "默认子文件夹属性": "数据流",
+                                    "当前文件夹属性": "菜单名",
+                                    "当前协议": {
+                                        "应答ID": "E5C0",
+                                        "请求ID": "E4C0"
+                                    }
+                                }
+                            },
+                            "（比亚迪)空调压缩机(ACC)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        165
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f760",
+                                        "请求ID": "f660"
+                                    }
+                                }
+                            },
+                            "（比亚迪）前驱动电机控制器(FMCU)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "fd60",
+                                        "请求ID": "fc60"
+                                    }
+                                }
+                            },
+                            "（比亚迪）安全系统(BSC)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {
+                                            "复位及报警里程记录数据流": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "复位及报警里程记录数据流.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "数据流": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                49
+                                                            ]
+                                                        },
+                                                        "zkrs": "数据流 copy.vr"
+                                                    },
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                49
+                                                            ]
+                                                        },
+                                                        "zkrs": "数据流.vr"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "neig": {
+                                    "默认子文件夹属性": "数据流",
+                                    "当前文件夹属性": "菜单名",
+                                    "当前协议": {
+                                        "应答ID": "f140",
+                                        "请求ID": "f040"
+                                    }
+                                }
+                            },
+                            "（比亚迪）电池执行与采样单元(BASU)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {
+                                            "均衡信息(400km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "均衡信息(500km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                72
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "数据流": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                104
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "模组信息(400km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                131
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "模组信息(500km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "采样信息(400km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                10
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            },
+                                            "采样信息(500km)": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                184
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "neig": {
+                                    "默认子文件夹属性": "数据流",
+                                    "当前文件夹属性": "菜单名",
+                                    "当前协议": {
+                                        "应答ID": "fde0",
+                                        "请求ID": "fce0"
+                                    }
+                                }
+                            },
+                            "（比亚迪）电池执行与采样单元（BASU）": {
+                                "diwr_vxn": {
+                                    "数据流": {
+                                        "diwr_vxn": {
+                                            "数据流": {
+                                                "diwr_vxn": {},
+                                                "vnwm_vnwy": [
+                                                    {
+                                                        "bqeo": {
+                                                            "type": "Buffer",
+                                                            "data": [
+                                                                52
+                                                            ]
+                                                        },
+                                                        "zkrs": "data.vr"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "neig": {
+                                            "Ĭ�����ļ�������": "������"
+                                        }
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "fde0",
+                                        "请求ID": "fce0"
+                                    }
+                                }
+                            },
+                            "（维宁尔）从盲区监测(BSD)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "fb80",
+                                        "请求ID": "fa80"
+                                    }
+                                }
+                            },
+                            "（维宁尔）前置毫米波雷达(FMRR)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "fe40",
+                                        "请求ID": ""
+                                    },
+                                    "作者": "田思旋"
+                                }
+                            },
+                            "（维宁尔）盲区监测(BSD)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "fb80",
+                                        "请求ID": "fa80"
+                                    }
+                                }
+                            },
+                            "（豫北助力转向_CEPS(CEPS_YB)": {
+                                "diwr_vxn": {
+                                    "读数据流": {
+                                        "diwr_vxn": {},
+                                        "vnwm_vnwy": [
+                                            {
+                                                "bqeo": {
+                                                    "type": "Buffer",
+                                                    "data": [
+                                                        10
+                                                    ]
+                                                },
+                                                "zkrs": "data.vr"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "neig": {
+                                    "当前协议": {
+                                        "应答ID": "f160",
+                                        "请求ID": "f060"
+                                    }
+                                }
+                            }
+                        },
+                        "neig": {
+                            "当前文件夹属性": "菜单名",
+                            "默认协议": [
+                                {
+                                    "协议类型": "CANBUS11",
+                                    "波特率": "引脚": [
+                                        14
+                                    ],
+                                    "in": "02 10 01",
+                                    "link": "02 3e 80"
+                                },
+                                {
+                                    "协议类型": "CANBUS11",
+                                    "波特率": "引脚": [
+                                        11
+                                    ],
+                                    "in": "02 10 01",
+                                    "link": "02 3e 80"
+                                }
+                            ],
+                            "默认子文件夹属性": "电子控制单元",
+                            "默认数据流文件夹": "数据流",
+                            "默认版本信息文件夹": "版本信息",
+                            "默认读码文件夹": "读.*码",
+                            "默认清码文件夹": "清.*码",
+                            "默认作者": "李",
+                            "默认数据": [
+                                {
+                                    "文件夹属性": "清码",
+                                    "数据": "{04 14 ff ff ff}"
+                                },
+                                {
+                                    "文件夹属性": "读码",
+                                    "数据": "{03 19 02 09}"
+                                },
+                                {
+                                    "文件夹属性": "版本信息",
+                                    "数据": {
+                                        "引用": "默认版本信息"
+                                    }
+                                }
+                            ],
+                            "电子控制单元默认含有": [
+                                {
+                                    "文件夹属性": "版本信息",
+                                    "菜单名称": "版本信息"
+                                },
+                                {
+                                    "文件夹属性": "读码",
+                                    "菜单名称": "读故障码"
+                                },
+                                {
+                                    "文件夹属性": "清码",
+                                    "菜单名称": "清故障码"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "neig": {
+                    "默认作者": "陈润",
+                    "声明全局数据": {
+                        "数据名": "默认版本信息",
+                        "数据属性": "版本信息",
+                        "引入文件": "默认版本信息.vr"
+                    }
+                },
+                "vnwm_vnwy": [
+                    {
+                        "bqeo": {
+                            "type": "Buffer",
+                            "data": [
+                                57
+                            ]
+                        },
+                        "zkrs": "默认版本信息.vr"
+                    }
+                ]
+            }
+        }
+    }
 }
