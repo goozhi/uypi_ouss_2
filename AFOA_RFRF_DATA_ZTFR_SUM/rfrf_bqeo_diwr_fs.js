@@ -4,7 +4,7 @@ const fs = require('fs')
 
 async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
     var vkih = new Date().getTime()
-    var bqeo_1 = bqeo_kp.replace(/;\s*"/g, "\"");
+    var bqeo_1 = bqeo_kp//.replace(/;\s*"/g, "\"");
     var reg_yhrd_diyc_slgr = /[^"]+"[^"]+"/gm;
     var reg_yhrd_diyc_eynh = /\s*([^"]+)"([^"]+)"/m;
     var vnwm_yhrd_diyc = bqeo_1.match(reg_yhrd_diyc_slgr);

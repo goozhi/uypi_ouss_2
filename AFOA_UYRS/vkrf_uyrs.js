@@ -33,8 +33,9 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_slm.neig = require(yxna_uyrs_neig)
         diwr_slm.neig['当前文件夹属性'] = '工程'
         diwr_neig_aayt(diwr_slm, diwr_slm.neig)
+        fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
         try {
-            return await uyrs_ld_peng_5(diwr_slm, 'uyrs_uufb')
+            return await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         } catch (err) {
             throw err
         }

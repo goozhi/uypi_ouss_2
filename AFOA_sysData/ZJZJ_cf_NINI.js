@@ -9,9 +9,12 @@ function ZJZJ_cf_NINI(VNWM_cf_NINI) {
         var NINI = RN1;
         var reg_MCVN = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
         var reg_mcvn_2 = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\[[^\]\[]+\]\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\s*([^,]*);.*/i;
+        var reg_mcvn_3 = /\*[^"]*"([^"]*?)"\s*,\s*([^,]*)\s*,\s*(cf)\s*,\s*([^,]*)\s*,\s*([^,]*)\s*,\[[^,]+,\s*[^,]+\]\s*([^,]*);.*/i;
         if (!reg_MCVN.test(RN1)) {
             if (reg_mcvn_2.test(RN1)) {
                 reg_MCVN = reg_mcvn_2
+            } else if (reg_mcvn_3.test(RN1)) {
+                reg_MCVN = reg_mcvn_3
             } else {
                 return "\n[c f SDRH BRTZ MSOX]" + RN1;
             }

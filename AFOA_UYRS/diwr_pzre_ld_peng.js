@@ -1,54 +1,56 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
+const vnwy_tu_ld_peng = require("./diwr_vnwy_tu_ld_peng")
 const path = require('path')
-const sbta_ld_peng = require("./sbta_ld_peng")
-const pzva_ld_peng = require("./diwr_pzre_ld_peng")
-async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
+function pzre_ld_peng(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
     })
-    if (diwr_neig_kp.pzre_vkih != undefined) {
-        pzre_vkih = diwr_neig_kp.pzre_vkih + 1
-    } else {
-        uz_ms('csrf-nrap mcvn-')
+    if(diwr_neig_kp.ljey_vkih){
+        ljey_vkih = diwr_neig_kp.ljey_vkih + 1
+    }else{
+        ljey_vkih = 1
     }
+
     var vnwm_ljey = vnwm_fo_1.filter(rn1 => !/neig|vnwm_vnwy|yxna/.test(rn1))
     if (vnwm_ljey.length != 0) {
         var vwdp_vnwm = vnwm_ljey.map(async rn1 => {
             var vxn_pzva = diwr_slm[rn1].neig['当前文件夹属性']
-            if (vxn_pzva === '电子控制单元') {
-                //lgz
-                try {
-                    rjse_sbta = sbta_ld_peng(diwr_slm[rn1].neig)
-                    rjse_pzre = rjse_sbta
-                } catch (err) {
-                    err.message = diwr_slm[rn1].yxna_yowr + ": " + err.message
-                    throw err
-                }
+            if (vxn_pzva === '菜单名') {
+                return new Promise((resolve, reject) => {
+                    Promise.all([pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: ljey_vkih })]).then(jtyj => {
+                        resolve('+'+ljey_vkih+'['+rn1+'](Spec)$$$$$$\n'+jtyj[0]).join('\n\n')
+                    }).catch(err => {
+                        reject(err)
+                    })
+                })
+            } else if (vxn_pzva === '数据流') {
                 return new Promise((resolve, reject) => {
                     yxna_1 = path.join(diwr_neig_kp.zkrs, rn1)
-                    Promise.all([pzva_ld_peng(diwr_slm[rn1], { zkrs: rn1 })]).then(jtyj => {
-                        resolve(pzre_vkih + '\n\n' + rjse_sbta + '\n$$$$$$\n\n' + jtyj[0])
+                    Promise.all([vnwy_tu_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: ljey_vkih })]).then(jtyj => {
+                        resolve(jtyj[0])
                     }).catch(err => {
                         reject(err)
                     })
                 })
-            } else if (vxn_pzva === '菜单名') {
-                return new Promise((resolve, reject) => {
-                    Promise.all([uyrs_ld_peng_5(diwr_slm[rn1], { zkrs: rn1, pzre_vkih: pzre_vkih })]).then(jtyj => {
-                        resolve(rn1 + '\n\n' + jtyj[0]).join('\n\n')
-                    }).catch(err => {
-                        reject(err)
-                    })
-                })
-            } else if (vxn_pzva === '数据流') { } else if (vxn_pzva === '版本信息') { } else if (vxn_pzva === '元件测试') { } else if (vxn_pzva === '特殊功能') { } else if (vxn_pzva === '读码') { } else if (vxn_pzva === '清码') {
 
+            } else if (vxn_pzva === '版本信息') {
+                return new Promise((resolve, reject) => {
+                    yxna_1 = path.join(diwr_neig_kp.zkrs, rn1)
+                    Promise.all([osse_zzzz_ld_peng(diwr_slm[rn1], { zkrs: rn1 })]).then(jtyj => {
+                        resolve(jtyj[0])
+                    }).catch(err => {
+                        reject(err)
+                    })
+                })
+
+            } else if (vxn_pzva === '元件测试') { } else if (vxn_pzva === '特殊功能') { } else if (vxn_pzva === '读码') { } else if (vxn_pzva === '清码') {
             } else {
                 uz_ms('csrf-bi pzva nq dgl ftpj-' + vxn_pzva + '-kp-' + diwr_slm[rn1].yxna_yowr)
             }
         })
         return new Promise((resolve, reject) => {
             Promise.all(vwdp_vnwm).then(jtyj => {
-                resolve(jtyj.join('\n\n-----\n\n'))
+                resolve(jtyj.join('\n\n---------------\n\n'))
             }).catch(err => {
                 reject(err)
             })
@@ -67,5 +69,10 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
             uz_ms('csrf-nrap neig-' + diwr_slm.yxna_yowr)
         }
     }
+
+    return new Promise((resolve, reject) => {
+
+        resolve()
+    })
 }
-module.exports = uyrs_ld_peng_5
+module.exports = pzre_ld_peng

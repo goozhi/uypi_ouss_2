@@ -44,7 +44,7 @@ function VR_TSJQ_BRTZ_FS_ZV_UYPI_RFRF_BRTZ_FS(DIWR_AFOA) {
         fs.writeFileSync(YXNA_1.replace(/(\.\w+)$/, "_fix_$1"), encoding.convert(rjse_jtyp_1, VKVY, 'utf8'))
     }
     if (rjse_jtyp_1.length > 60000) {
-        return CE_EBWU_LD_YHRJ("rjqt nw ar , rt nq bi yxna yh zjhq ") + path.dirname(YXNA_1)
+        return "已完成修复, 生成的文件请在" + path.dirname(YXNA_1)+ "中查看"
     } else {
         return rjse_jtyp_1
     }
