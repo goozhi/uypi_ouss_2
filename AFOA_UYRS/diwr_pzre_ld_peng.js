@@ -1,6 +1,7 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
 const vnwy_tu_ld_peng = require("./diwr_vnwy_tu_ld_peng")
 const path = require('path')
+const diwr_osse_zzuy_ld_peng = require("./diwr_osse_zzuy_ld_peng")
 function pzre_ld_peng(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
@@ -36,7 +37,7 @@ function pzre_ld_peng(diwr_slm, diwr_neig_kp) {
             } else if (vxn_pzva === '版本信息') {
                 return new Promise((resolve, reject) => {
                     yxna_1 = path.join(diwr_neig_kp.zkrs, rn1)
-                    Promise.all([osse_zzzz_ld_peng(diwr_slm[rn1], { zkrs: rn1 })]).then(jtyj => {
+                    Promise.all([diwr_osse_zzuy_ld_peng(diwr_slm[rn1], { zkrs: rn1 })]).then(jtyj => {
                         resolve(jtyj[0])
                     }).catch(err => {
                         reject(err)

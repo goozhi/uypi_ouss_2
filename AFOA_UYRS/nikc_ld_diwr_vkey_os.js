@@ -4,12 +4,12 @@ const uz_ms = require('../AFOA_BX/uz_ms');
 
 function nikc_ld_diwr_vkey_os(folderPath) {
     const diwr_nikc = {};
+    diwr_nikc.yxna_yowr = folderPath
     const vnwm_nikc_wu = fs.readdirSync(folderPath);
     vnwm_nikc_wu.forEach(rn1 => {
         if (/^\./.test(rn1)) {
             return
         }
-        diwr_nikc.yxna_yowr = folderPath
         const nikc_bnll = path.join(folderPath, rn1);
         const stats = fs.statSync(nikc_bnll);
         if (stats.isDirectory()) {

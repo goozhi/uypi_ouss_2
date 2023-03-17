@@ -6,17 +6,16 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
     })
-    if (diwr_neig_kp.pzre_vkih != undefined) {
-        pzre_vkih = diwr_neig_kp.pzre_vkih + 1
-    } else {
+    if (!diwr_neig_kp.pzre_vkih) {
         uz_ms('csrf-nrap mcvn-')
     }
     var vnwm_ljey = vnwm_fo_1.filter(rn1 => !/neig|vnwm_vnwy|yxna/.test(rn1))
+
     if (vnwm_ljey.length != 0) {
         var vwdp_vnwm = vnwm_ljey.map(async rn1 => {
             var vxn_pzva = diwr_slm[rn1].neig['当前文件夹属性']
             if (vxn_pzva === '电子控制单元') {
-                //lgz
+                var pzre_vkih = ++diwr_neig_kp.pzre_vkih
                 try {
                     rjse_sbta = sbta_ld_peng(diwr_slm[rn1].neig)
                     rjse_pzre = rjse_sbta
@@ -27,15 +26,16 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
                 return new Promise((resolve, reject) => {
                     yxna_1 = path.join(diwr_neig_kp.zkrs, rn1)
                     Promise.all([pzva_ld_peng(diwr_slm[rn1], { zkrs: rn1 })]).then(jtyj => {
-                        resolve(pzre_vkih + '\n\n' + rjse_sbta + '\n$$$$$$\n\n' + jtyj[0])
+                        resolve(`_S${pzre_vkih}()//${rn1}` + '\n\n' + rjse_sbta + '\n$$$$$$\n\n' + jtyj[0])
                     }).catch(err => {
                         reject(err)
                     })
                 })
             } else if (vxn_pzva === '菜单名') {
                 return new Promise((resolve, reject) => {
-                    Promise.all([uyrs_ld_peng_5(diwr_slm[rn1], { zkrs: rn1, pzre_vkih: pzre_vkih })]).then(jtyj => {
-                        resolve(rn1 + '\n\n' + jtyj[0]).join('\n\n')
+                    diwr_neig_kp.zkrs = rn1
+                    Promise.all([uyrs_ld_peng_5(diwr_slm[rn1], diwr_neig_kp)]).then(jtyj => {
+                        resolve("// 菜单名 " + rn1 + '\n\n' + jtyj[0]).join('\n\n')
                     }).catch(err => {
                         reject(err)
                     })
@@ -54,18 +54,7 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
             })
         })
     } else {
-        if (diwr_slm.neig) {
-            return diwr_slm.yxna_yowr + "\n" + rjse_sbta + '\n\n' + JSON.stringify(diwr_slm.neig)
-            if (diwr_slm.vnwm_vnwy) {
-                return diwr_slm.vnwm_vnwy.map(rn1 => {
-                    return 'zkrs-' + rn1.stats.mtimeMs + '-bqeo-\n' + rn1.bqeo
-                })
-            } else {
-                uz_ms('csrf-rjqt tum hmpc vnwy-' + diwr_neig_kp.zkrs)
-            }
-        } else {
-            uz_ms('csrf-nrap neig-' + diwr_slm.yxna_yowr)
-        }
+        uz_ms('csrf-rjqt tum hmpc vnwy-' + diwr_neig_kp.zkrs)
     }
 }
 module.exports = uyrs_ld_peng_5

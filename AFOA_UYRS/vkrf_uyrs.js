@@ -35,7 +35,7 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_neig_aayt(diwr_slm, diwr_slm.neig)
         fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
         try {
-            return await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
+            return "@SYS\n"+await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         } catch (err) {
             throw err
         }
