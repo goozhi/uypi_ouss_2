@@ -14,13 +14,6 @@ function VR_EBWU_BRTZ_FS_ZV_33(RJSE_KP){
     }else{
         BMLC = ""
     }
-    var reg_Peng_ZSAS_MCVN=/('.*')(\w+)(\s*(?:;|))$/;
-    var DIWR_Peng_ZSAS_MCVN=RJSE_1.match(reg_Peng_ZSAS_MCVN);
-    var RJSE_PENG_ZSAS_MCVN=""
-    if(DIWR_Peng_ZSAS_MCVN!=null){
-        RJSE_PENG_ZSAS_MCVN=DIWR_Peng_ZSAS_MCVN[2]
-        RJSE_1=RJSE_1.replace(reg_Peng_ZSAS_MCVN,"$1$3");
-    }
     RJSE_1=RJSE_1.replace(/(?:;|\uff1b)\s*$/,"")
     var DIWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)(\w+)(?:\s*(?:\uff0c|,)\s*|\s*)([^,\uff0c ]*)(?:\s*(?:\uff0c|,)\s*|\s*)(.*)/i)
     if (DIWR_MCVN == null) {
@@ -56,9 +49,6 @@ function VR_EBWU_BRTZ_FS_ZV_33(RJSE_KP){
         RJSE_YHLD=RJSE_YHLD.replace(reg_YHLD,sheng_YHLD)
     }
     var VNWM_3f_MCVN_ZV_VNWM=RJSE_YHLD.split(/'\s*,\s*'|(?:\s*,|)\s*\|\|\|+\s*(?:,\s*|)|(?:,|\uff0c|)\s+(?!\u917e)(?:,|\uff0c|)/);
-    if(RJSE_PENG_ZSAS_MCVN!=""){
-        VNWM_3f_MCVN_ZV_VNWM.push(RJSE_PENG_ZSAS_MCVN)
-    }
     var RJSE_3f_MCVN_ZV_VNWM=BRTZ_FS_3f("998\n"+VNWM_3f_MCVN_ZV_VNWM.join("\n").replace(/\u568f/g," ").replace(/\u917e|\u2018|\u2019|'/g,"")+"\n999");
     return LLAO+",3f,"+ZZZZ_KLVQ+","+RJSE_3f_MCVN_ZV_VNWM.replace(/([^;])\s*$/,"$1;")+BMLC
 }

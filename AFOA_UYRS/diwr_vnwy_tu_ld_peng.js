@@ -13,7 +13,16 @@ async function diwr_vnwy_tu_ld_peng(diwr_slm, diwr_neig_kp) {
         uz_ms('csrf-vnwy tu vnwy lh vv-' + diwr_slm.yxna_yowr)
     }
     var rj_vr = diwr_slm.vnwm_vnwy.map(rn1=>rn1.bqeo).join('\n')
-    var rj_peng = await vr_ld_peng({ bqeo: rj_vr, uxux: 'vnwy_tu' })
+    var rj_peng 
+    try{
+        rj_peng=await vr_ld_peng({ bqeo: rj_vr, uxux: 'vnwy_tu' })
+    }catch(err){
+        if(err.message){
+            err.message=diwr_slm.yxna_yowr+"\n"+err.message
+        }else{
+        }
+        throw err
+    }
     var RJSE_MSOX = await ZJZJ_TSJQ_Str(rj_peng)
     if (/\S/i.test(RJSE_MSOX)) {
         uz_ms(diwr_slm.yxna_yowr+'\n'+RJSE_MSOX);
