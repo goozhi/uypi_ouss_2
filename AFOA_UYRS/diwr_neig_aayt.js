@@ -7,7 +7,7 @@ function diwr_neig_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
         if (diwr_slm.neig) {
             if (diwr_slm.neig['声明全局数据']) {
                 if (!diwr_slm.neig['声明全局数据'].map) {
-                    uz_ms('csrf-nomr vnwy aoao ji diwr vnwm-' + JSON.stringify(diwr_slm.neig['声明全局数据']))
+                    uz_ms('csrf-nomr vnwy aoao ji diwr vnwm-' + JSON.stringify(diwr_slm.neig['声明全局数据'])+'-kp-'+diwr_slm.yxna_yowr)
                 }
                 diwr_slm.neig['声明全局数据'].forEach(rn1 => {
                     rn1.nikc = diwr_slm.yxna_yowr
@@ -116,7 +116,7 @@ function diwr_neig_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
                 if (diwr_slm.neig['当前文件夹属性']) {
 
                 } else {
-                    uz_ms('csrf-nrap rjqt tum pzva-' + diwr_slm.yxna_yowr)
+                    uz_ms('csrf-config nrap rjqt tum pzva-' + diwr_slm.yxna_yowr)
                 }
             }
 
@@ -143,7 +143,7 @@ function diwr_neig_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
                 }
             })
             if (!diwr_slm.neig['当前文件夹属性']) {
-                uz_ms('csrf-nrap rjqt tum pzva-' + diwr_slm.yxna_yowr)
+                uz_ms('csrf-config nrap rjqt tum pzva-' + diwr_slm.yxna_yowr)
             }
         }
     }

@@ -25,7 +25,7 @@ function ZJZJ_TSJQ_ReadDtc(ZJZJ_BQEO_KP) {
     var reg_MCVN = /[^;\n]*=[^;\n]*=[^;\n]*;/;
     var DIWR_YHLD = RJSE_1.match(reg_MCVN);
     if (DIWR_YHLD == null) {
-        RJSE_MSOX += "\n<SOPJ YJAB ReadDtc MCVN>\n" + ZJZJ_BQEO_KP + "\n</SOPJ YJAB ReadDtc MCVN>";
+        RJSE_MSOX += "\n<SOPJ YJ AB ReadDtc MCVN>\n" + ZJZJ_BQEO_KP + "\n</SOPJ YJ AB ReadDtc MCVN>";
         return RJSE_MSOX;
     }
     var VNWM_MCVN = DIWR_YHLD[0].split(/\s*,\s*/);

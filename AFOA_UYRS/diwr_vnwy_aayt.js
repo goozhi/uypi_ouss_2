@@ -20,7 +20,7 @@ function diwr_vnwy_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
             })
             vnwm_hmpc_dk_pzva.forEach(rn1 => {
                 if (!rn1['文件夹名称']) {
-                    uz_ms('csrf-aoao tszn rjqt tum wugy-' + JSON.stringify(rn1))
+                    uz_ms('csrf-aoao tszn rjqt tum wugy-' + JSON.stringify(rn1) + rn1.nikc)
                 }
                 if (!diwr_bnll_ahdb_nomr_vnwy[rn1['引用']]) {
                     uz_ms('csrf-wydb dk vnwy wu ac zznq-' + rn1['引用'] + rn1.nikc)

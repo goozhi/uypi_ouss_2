@@ -36,14 +36,14 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
-        var rj_jtyj
+        var rj_sys_jtyj
         try {
-            rj_jtyj =  "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
+            rj_sys_jtyj =  "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         } catch (err) {
             throw err
         }
         var yxna_sys = path.join(diwr_slm.yxna_yowr,"sysData.txt")
-        fs.writeFileSync(yxna_sys, rj_jtyj)
+        fs.writeFileSync(yxna_sys, rj_sys_jtyj)
         return '已写入'+yxna_sys
     }
 }
