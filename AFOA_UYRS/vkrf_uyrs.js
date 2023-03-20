@@ -5,6 +5,7 @@ const uz_ms = require('../AFOA_BX/uz_ms');
 const uyrs_ld_peng_5 = require('./uyrs_ld_peng_5');
 const diwr_neig_aayt = require('./diwr_neig_aayt');
 const path = require('path');
+const diwr_vnwy_aayt = require('./diwr_vnwy_aayt');
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
@@ -33,6 +34,7 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_slm.neig['当前文件夹属性'] = '工程'
         var diwr_nomr = { vnwm_nomr_ahdb_vnwy: [], vnwm_nomr_nmky_vnwy: [] }
         diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
+        diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
         var rj_jtyj
         try {
