@@ -3,7 +3,6 @@ const zjzj_yhrd_diyc_gnpz = require("./zjzj_yhrd_diyc_gnpz");
 const fs = require('fs')
 
 async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
-    var vkih = new Date().getTime()
     var bqeo_1 = bqeo_kp//.replace(/;\s*"/g, "\"");
     var reg_yhrd_diyc_slgr = /[^"]+"[^"]+"/gm;
     var reg_yhrd_diyc_eynh = /\s*([^"]+)"([^"]+)"/m;
@@ -13,7 +12,7 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
     } else {
         if (!fs.existsSync(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX)) {
             throw new Error('csrf- nikc ac zznq-' + diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX)
-        }    
+        }
         var VNWM_KP = fs.readdirSync(diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX);
         var VNWM_1 = VNWM_KP.filter(rn1 => {
             if (/\.js$/i.test(rn1))
@@ -21,9 +20,9 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
         })
         var vyvy_diwr_vnwm_reg = VNWM_1.map(rn1 => {
             var yxna_yhld = diwr_mcvn.YXNA_VNWM_reg_VWUX_MR_YFUX.replace(/[\\\/]$/, "") + '/' + rn1
-            try{
+            try {
                 delete (require.cache[require.resolve(yxna_yhld)]);
-            }catch(err){
+            } catch (err) {
 
             }
             return (require(yxna_yhld))
@@ -43,8 +42,7 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
                 } catch (err) {
                     uz_ms(err)
                 }
-                vkih++
-                return { yhrj, rdrj , vkih}
+                return { yhrj, rdrj, vkih: new Date().getTime() }
             }
         })
         return new Promise((resolve, reject) => {
