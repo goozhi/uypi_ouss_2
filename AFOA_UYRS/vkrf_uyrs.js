@@ -7,10 +7,8 @@ const diwr_neig_aayt = require('./diwr_neig_aayt');
 const path = require('path');
 const diwr_vnwy_aayt = require('./diwr_vnwy_aayt');
 const diwr_ld_peng_menu = require('./diwr_ld_peng_ljey');
-const vnwm_nikc_diwr_fs = require('../AFOA_BX/vnwm_nikc_diwr_fs');
-const convertKeysToString = require('../AFOA_BX/convertKeysToString');
-const convertObjectToString3 = require('../AFOA_BX/convertObjectToString3');
-const rr_peng_ljey = require('./rr_peng_ljey');
+const ld_vnwm_peng_ljey = require('./ld_vnwm_peng_ljey');
+const ld_rj_peng_ljey = require('./ld_rj_peng_ljey');
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
@@ -41,8 +39,10 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
-        var rjse_ljey_peng = rr_peng_ljey(JSON.parse("{"+rj_ljey_jtyj+"}"), 'menu')
-        throw rjse_ljey_peng
+        var diwr_ljey = JSON.parse("{"+rj_ljey_jtyj+"}")
+        var diwr_vnwm_ljey=[]
+        ld_vnwm_peng_ljey(diwr_ljey, diwr_vnwm_ljey)
+        var rjse_ljey_peng = "@menu\n"+ld_rj_peng_ljey(diwr_vnwm_ljey)
         if(fs.existsSync('D:\\XYZD\\project_test\\xyzd.json')){
             fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
         }
@@ -53,8 +53,10 @@ async function vkrf_uyrs(diwr_neig_kp) {
             throw err
         }
         var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
+        var yxna_menu = path.join(diwr_slm.yxna_yowr, "menuData.txt")
         fs.writeFileSync(yxna_sys, rj_sys_jtyj)
-        return '已写入' + yxna_sys
+        fs.writeFileSync(yxna_menu, rjse_ljey_peng)
+        return '已写入' + yxna_sys +'\n'+yxna_menu
     }
 }
 module.exports = vkrf_uyrs;
