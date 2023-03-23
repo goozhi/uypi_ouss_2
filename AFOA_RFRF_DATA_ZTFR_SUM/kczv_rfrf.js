@@ -14,17 +14,18 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX, vkvy_
     } catch (err) {
         uz_ms(err)
     }
+    var diwr_yhld = { YXNA_VNWM_reg_VWUX_MR_YFUX, vkih: new Date().getTime() }
     var diwr_vnwm_vdum_nini = diwr_vnwm_nini.map(async rn1 => {
-        if(/\ufffd/.test(rn1.BQEO)){
-            uz_ms('csrf-zjzo ab acun frih rt zjzj vkvy jils eopc-'+rn1.YXNA)
+        if (/\ufffd/.test(rn1.BQEO)) {
+            uz_ms('csrf-zjzo ab acun frih rt zjzj vkvy jils eopc-' + rn1.YXNA)
         }
         var diwr_vnwm_rfrf_bqeo_diwr
         try {
-            diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, { YXNA_VNWM_reg_VWUX_MR_YFUX })
+            diwr_vnwm_rfrf_bqeo_diwr = await rfrf_bqeo_diwr_fs(rn1.BQEO, diwr_yhld)
         } catch (err) {
             if (/^Error: 【|^Error: 《/.test(err.message)) {
                 err.message = '【path : ' + rn1.YXNA + '】' + '\n' + err.message
-            }else{
+            } else {
 
             }
             throw err

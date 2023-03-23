@@ -42,7 +42,7 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
                 } catch (err) {
                     uz_ms(err)
                 }
-                return { yhrj, rdrj, vkih: new Date().getTime() }
+                return { yhrj, rdrj, vkih: ++diwr_mcvn.vkih}
             }
         })
         return new Promise((resolve, reject) => {
