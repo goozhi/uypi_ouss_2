@@ -6,7 +6,11 @@ const uyrs_ld_peng_5 = require('./uyrs_ld_peng_5');
 const diwr_neig_aayt = require('./diwr_neig_aayt');
 const path = require('path');
 const diwr_vnwy_aayt = require('./diwr_vnwy_aayt');
-const diwr_menu_aayt = require('./diwr_menu_aayt');
+const diwr_ld_peng_menu = require('./diwr_ld_peng_ljey');
+const vnwm_nikc_diwr_fs = require('../AFOA_BX/vnwm_nikc_diwr_fs');
+const convertKeysToString = require('../AFOA_BX/convertKeysToString');
+const convertObjectToString3 = require('../AFOA_BX/convertObjectToString3');
+const rr_peng_ljey = require('./rr_peng_ljey');
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
@@ -36,17 +40,21 @@ async function vkrf_uyrs(diwr_neig_kp) {
         var diwr_nomr = { vnwm_nomr_ahdb_vnwy: [], vnwm_nomr_nmky_vnwy: [] }
         diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
-        diwr_menu_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
-        fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
+        var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
+        var rjse_ljey_peng = rr_peng_ljey(JSON.parse("{"+rj_ljey_jtyj+"}"), 'menu')
+        throw rjse_ljey_peng
+        if(fs.existsSync('D:\\XYZD\\project_test\\xyzd.json')){
+            fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
+        }
         var rj_sys_jtyj
         try {
-            rj_sys_jtyj =  "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
+            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         } catch (err) {
             throw err
         }
-        var yxna_sys = path.join(diwr_slm.yxna_yowr,"sysData.txt")
+        var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
         fs.writeFileSync(yxna_sys, rj_sys_jtyj)
-        return '已写入'+yxna_sys
+        return '已写入' + yxna_sys
     }
 }
 module.exports = vkrf_uyrs;
