@@ -56,6 +56,19 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
+        vr_afoa_wu: "KNDD_RJ",
+        zkrs: "克隆内容",
+        csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
+        klch: `clone=counts=10{{
+            TEXT
+        }}
+    `
+        ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["CLONE", "11"]
+    },
+    {
         vr_afoa_wu: "NEIG_EXYM_CLN",
         zkrs: "配置服务器",
         csrf: "Bi afoa kfou dbkz mr piqr neig exym cln. Dbkz ah neig `AutoCopy,AutoStartBro`, fdlz ji jcbz jkub jyqh jtyj, jcbz drbz riri cln. Dbkz aqfc jyqh config tsjq ud, ja vdum zzuy tyqh ymqi bj jd jyqh ye lil ly pc mod AE md-qi-md mcvn dk config tsjq.",
@@ -140,6 +153,20 @@ function vr_afoa_bx() {
         eowl_uxux: "object",
         vnwm_vr_afoa_lzm_wu: ["32", 'BEIQIDBC']
     },
+    {
+        vr_afoa_wu: "UYRS",
+        zkrs: "管理工程",
+        csrf: `该指令帮助用户管理工程`,
+        klch: `
+        project=build=txt{{
+            comment={{下方写需要build的工程文件夹路径}}
+        }}
+        `
+        ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["61", 'PROJ', 'PROJECT']
+    },
 
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
@@ -222,11 +249,9 @@ function vr_afoa_bx() {
         9=gb2312表示根据gb2312读取文件。
         96=9=gb2312{{
             第一行请输入：你翻译好的文件所在的目录路径，文件内每行的格式如下
-            车速;"Speed"
-            车速"Speed"
-            没有点燃;"No ignition;"
-            靠近双引号的分号将被自动去掉。所以不用担心分号问题
-    
+            速度"Speed"
+            你好"Hello"
+
             第二行请输入：指定输出目录
 
             第三行请输入：用于检查翻译内容是否符合标准的目录
