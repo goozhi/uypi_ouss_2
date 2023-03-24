@@ -2,6 +2,7 @@ const fs = require('fs');
 const diwr_neig_zjzj = require('../AFOA_BX/diwr_neig_zjzj');
 const nikc_ld_diwr_vkey_os = require('./nikc_ld_diwr_vkey_os');
 const uz_ms = require('../AFOA_BX/uz_ms');
+const encoding = require('encoding')
 const uyrs_ld_peng_5 = require('./uyrs_ld_peng_5');
 const diwr_neig_aayt = require('./diwr_neig_aayt');
 const path = require('path');
@@ -54,8 +55,8 @@ async function vkrf_uyrs(diwr_neig_kp) {
         }
         var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
         var yxna_menu = path.join(diwr_slm.yxna_yowr, "menuData.txt")
-        fs.writeFileSync(yxna_sys, rj_sys_jtyj)
-        fs.writeFileSync(yxna_menu, rjse_ljey_peng)
+        fs.writeFileSync(yxna_sys, encoding.convert(rj_sys_jtyj,'gb2312','utf8'))
+        fs.writeFileSync(yxna_menu, encoding.convert(rjse_ljey_peng,'gb2312','utf8'))
         return '已写入' + yxna_sys +'\n'+yxna_menu
     }
 }
