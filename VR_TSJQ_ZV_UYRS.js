@@ -3,30 +3,169 @@ const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
 const vr_mcvn_rscs = require('./vr_mcvn_rscs/index.js');
 const fs = require('fs');
 const vkrf_uyrs = require('./AFOA_UYRS/vkrf_uyrs');
+const path = require('path');
+const uyrs_imfb_fs = require('./AFOA_UYRS/uyrs_imfb_fs/uyrs_imfb_fs');
+const kplu_ld_diwr = require('./AFOA_BX/kplu_ld_diwr');
+const msqu_rjse_fs = require('./afoa_msqu/msqu_rjse_fs');
+const vr_mcvn_ld_rjse = require('./afoa_msqu/vr_mcvn_ld_rjse');
+const msqu_rjse_rscs = require('./afoa_msqu/msqu_rjse_rscs');
+const nikc_zzzz_uyrs_zk_neig = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_zk_neig/')
+const nikc_zzzz_uyrs_nikc = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_nikc/')
+var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
+    var diwr_zzzz_uyrs_zk_neig = kplu_ld_diwr(nikc_zzzz_uyrs_zk_neig, 'json')
+    var diwr_zzzz_uyrs_nikc = kplu_ld_diwr(nikc_zzzz_uyrs_nikc, 'json')
+    diwr_uyrs_nomr.nikc_uyrs = diwr_zzzz_uyrs_nikc.nmky
     if (!diwr_mcvn.vnwm_msqu) {
         uz_ms('csrf-mcvn nrap-')
     }
-    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO, { gkqj_ac_brtz_fs: true })
+    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO)
     var diwr_vr_mcvn = vr_mcvn_rscs(DIWR_AFOA.VR_AFOA_MCVN, {
         diwr_vnwm_mcvn_wu_oqzn: [
             { reg_lzm_wu: /^(?:build)$/i, yowr_wu: "vkrf" },
+            { reg_lzm_wu: /^(?:init)$/i, yowr_wu: "imfb" },
+            { reg_lzm_wu: /^(?:list)$/i, yowr_wu: "caum" },
+            { reg_lzm_wu: /^(?:link)$/i, yowr_wu: "ytjp_nikc" },
         ]
     })
-    if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
+    if (!diwr_vr_mcvn) {
+        uz_ms('csrf-rt vdzv v r mcvn-')
+    } else if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {
             return new Promise((resolve, reject) => {
-                Promise.all([vkrf_uyrs({ resolve, reject, nikc_uyrs: BQEO_1.split(/\n/)[0] })]).then(jtyj=>{
+                Promise.all([vkrf_uyrs({ resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs })]).then(jtyj => {
                     resolve(jtyj[0])
-                }).catch(err=>{
+                }).catch(err => {
                     reject(err)
                 })
             })
         } else {
             uz_ms('csrf-mcvn acun-' + diwr_vr_mcvn.vkrf)
         }
-    } else {
-        uz_ms('csrf-mcvn acun-')
+    } else if (diwr_vr_mcvn.hasOwnProperty('ytjp_nikc')) {
+        if (diwr_vr_mcvn.ytjp_nikc === '' || diwr_vr_mcvn.ytjp_nikc === 'add') {
+            var zkrs_1 = '请在下方输入主题，如`比亚迪元PLUS`'
+            var hint_1 = ''
+            var diwr_msqu_vr_mcvn = {}
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请在下方输入该主题对应的project目录' }] }
+            msqu_rjse_fs(diwr_msqu)
+            diwr_msqu_vr_mcvn.link = "adding"
+            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+        } else if (diwr_vr_mcvn.ytjp_nikc === 'adding') {
+            var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
+            msqu_rjse_rscs(diwr_msqu)
+            if (diwr_zzzz_uyrs_nikc[diwr_msqu.vnwm_dbkz_vdzv[0]]) {
+                uz_ms('csrf-bi wuzt cd zznq-' + diwr_msqu.vnwm_dbkz_vdzv[0])
+            } else if (!/\S/.test(diwr_msqu.vnwm_dbkz_vdzv[0])) {
+                uz_ms('csrf-zf dk zkrs vdzv lh vv-')
+            } else {
+                diwr_zzzz_uyrs_nikc[diwr_msqu.vnwm_dbkz_vdzv[0]] = diwr_msqu.vnwm_dbkz_vdzv[1]
+            }
+            rj_yhld = diwr_zzzz_uyrs_nikc[diwr_msqu.vnwm_dbkz_vdzv[0]]
+            if (fs.existsSync(rj_yhld)) {
+                diwr_uyrs_nomr.nikc_uyrs = rj_yhld
+                diwr_zzzz_uyrs_nikc.nmky = diwr_uyrs_nomr.nikc_uyrs
+                ymce(diwr_zzzz_uyrs_nikc, 'diwr_zzzz_uyrs_nikc')
+                return JSON.stringify(diwr_zzzz_uyrs_nikc[diwr_msqu.vnwm_dbkz_vdzv[0]], null, 2)
+            } else {
+                uz_ms('csrf-nikc ac zznq-' + rj_yhld)
+            }
+        } else {
+            if (diwr_zzzz_uyrs_nikc[diwr_vr_mcvn.ytjp_nikc]) {
+                diwr_zzzz_uyrs_nikc.nmky = diwr_zzzz_uyrs_nikc[diwr_vr_mcvn.ytjp_nikc]
+                diwr_uyrs_nomr.nikc_uyrs = diwr_zzzz_uyrs_nikc[diwr_vr_mcvn.ytjp_nikc]
+                ymce(diwr_zzzz_uyrs_nikc, 'diwr_zzzz_uyrs_nikc')
+                return "已连接到" + diwr_zzzz_uyrs_nikc[diwr_vr_mcvn.ytjp_nikc]
+            } else {
+                uz_ms('csrf-project ra link-' + diwr_vr_mcvn.ytjp_nikc)
+            }
+        }
+    } else if (diwr_vr_mcvn.hasOwnProperty('caum')) {
+        if (diwr_vr_mcvn.caum == 'init') {
+            return JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2)
+        } else if (diwr_vr_mcvn.caum == 'link') {
+            return JSON.stringify(diwr_zzzz_uyrs_nikc, null, 2)
+        } else {
+            uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.caum)
+        }
+    } else if (diwr_vr_mcvn.hasOwnProperty('imfb')) {
+        if (!diwr_uyrs_nomr.nikc_uyrs) {
+            uz_ms('csrf-rt gd link yenh project nikc-')
+        }
+        if (diwr_vr_mcvn.imfb === '') {
+            return uyrs_imfb_fs({ nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs, wydb: "nmky", diwr_zzzz_uyrs_zk_neig })
+        } else if (diwr_vr_mcvn.imfb === 'rm') {
+            var yxna_yhld = path.join(diwr_uyrs_nomr.nikc_uyrs, 'project.json')
+            if (fs.existsSync(yxna_yhld)) {
+                var diwr_yhld = require(yxna_yhld)
+                fs.unlinkSync(yxna_yhld)
+                return '已移除\n' + JSON.stringify(diwr_yhld, null, 2)
+            } else {
+                uz_ms('csrf-yxna ac zznq-' + yxna_yhld)
+            }
+        } else if (diwr_vr_mcvn.imfb === 'add') {
+            var zkrs_1 = '请在下方输入主题，如`比亚迪新能源`'
+            var hint_1 = ''
+            var diwr_msqu_vr_mcvn = {}
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请在下方输入project.json' }] }
+            msqu_rjse_fs(diwr_msqu)
+            diwr_msqu_vr_mcvn.init = "adding"
+            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+        } else if (diwr_vr_mcvn.imfb === 'adding') {
+            var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
+            msqu_rjse_rscs(diwr_msqu)
+            if (diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]]) {
+                uz_ms('csrf-bi wuzt cd zznq-' + diwr_msqu.vnwm_dbkz_vdzv[0])
+            } else if (!/\S/.test(diwr_msqu.vnwm_dbkz_vdzv[0])) {
+                uz_ms('csrf-zf dk zkrs vdzv lh vv-')
+            } else {
+                diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]] = JSON.parse(diwr_msqu.vnwm_dbkz_vdzv[1])
+            }
+            ymce(diwr_zzzz_uyrs_zk_neig, 'diwr_zzzz_uyrs_zk_neig')
+            return JSON.stringify(diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]], null, 2)
+        }
+        else {
+            return uyrs_imfb_fs({ nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs, wydb: diwr_vr_mcvn.imfb, diwr_zzzz_uyrs_zk_neig })
+        }
+    }
+    else {
+        uz_ms('csrf-v r mcvn acun-')
     }
 }
 module.exports = VR_TSJQ_ZV_UYRS;
+function ymce(diwr_zzzz_uyrs_zk_neig, zkrs = "") {
+    var nikc_zzzz_yhld = ''
+    if (zkrs === 'diwr_zzzz_uyrs_zk_neig') {
+        nikc_zzzz_yhld = nikc_zzzz_uyrs_zk_neig
+    } else if (zkrs === 'diwr_zzzz_uyrs_nikc') {
+        nikc_zzzz_yhld = nikc_zzzz_uyrs_nikc
+    } else {
+        uz_ms('csrf-zkrs acun-' + zkrs)
+    }
+    if (!nikc_zzzz_yhld) {
+        uz_ms('csrf-zzzz yxna msox-')
+    }
+    var VNWM_KP = fs.readdirSync(nikc_zzzz_yhld);
+    var VNWM_JSON_RJQT_WU = VNWM_KP.filter(rn1 => {
+        if (/\.JSON$/i.test(rn1))
+            return true;
+    })
+    fs.writeFileSync(path.join(nikc_zzzz_yhld, (++diwr_uyrs_nomr.vkih) + '.json'), JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2))
+    VNWM_JSON_RJQT_WU.forEach(rn1 => {
+        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, rn1 + '.bak'))
+    })
+    var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
+        if (/\.JSON\.bak$/i.test(rn1))
+            return true
+    })
+    vnwm_bmee_dk_rjqt.sort()
+    if (vnwm_bmee_dk_rjqt.length > 2) {
+        vnwm_bmee_dk_rjqt.slice(0, 1).forEach(rn1 => {
+            fs.unlink(path.join(nikc_zzzz_yhld, rn1), (err) => {
+                if (err) {
+                    throw (err)
+                }
+            })
+        })
+    }
+}

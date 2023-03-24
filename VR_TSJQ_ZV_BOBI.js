@@ -593,7 +593,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         })
         vnwm_bmee_dk_rjqt.sort()
         if (vnwm_bmee_dk_rjqt.length > 40) {
-            vnwm_bmee_dk_rjqt.slice(0, 5).forEach(rn1 => {
+            vnwm_bmee_dk_rjqt.slice(0, 1).forEach(rn1 => {
                 fs.unlink(nikc_kplu + '/' + rn1, (err) => {
                     if (err) {
                         throw (err)
