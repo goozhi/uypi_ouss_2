@@ -41,6 +41,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_RJVT_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_BS_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_BS_NIKC')
 const VR_TSJQ_ZV_VKIH_MACA = require('./VR_TSJQ_ZV_VKIH_MACA')
 const VR_TSJQ_ZV_UYRS = require('./VR_TSJQ_ZV_UYRS')
+const VR_TSJQ_ZV_KNDD_RJ = require('./VR_TSJQ_ZV_KNDD_RJ')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -60,6 +61,20 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
+        vr_afoa_wu: "KNDD_RJ",
+        zkrs: "克隆内容",
+        csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
+        klch: `clone=counts=10{{
+            TEXT
+        }}
+    `
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_KNDD_RJ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["CLONE", "11"]
+    },
+    {
         vr_afoa_wu: "NEIG_EXYM_CLN",
         zkrs: "配置服务器",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_NEIG_EXYM_CLN,
@@ -165,9 +180,9 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_ZV_UYRS,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
-        vnwm_vr_afoa_lzm_wu: ["61", 'PROJ','PROJECT']
+        vnwm_vr_afoa_lzm_wu: ["61", 'PROJ', 'PROJECT']
     },
-    
+
     {
         vr_afoa_wu: "NVMS_BQEO_AH_WPM_FS",
         zkrs: "报错内容可视化",
