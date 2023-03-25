@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const uz_ms = require('../AFOA_BX/uz_ms');
 
-function nikc_ld_diwr_vkey_os(folderPath) {
+function nikc_neig_ld_diwr(folderPath) {
     const diwr_nikc = {};
-    diwr_nikc.yxna_yowr = folderPath
+    diwr_nikc.实际路径 = folderPath
     const vnwm_nikc_wu = fs.readdirSync(folderPath);
     vnwm_nikc_wu.forEach(rn1 => {
         if (/^\./.test(rn1)) {
@@ -13,7 +13,7 @@ function nikc_ld_diwr_vkey_os(folderPath) {
         const nikc_bnll = path.join(folderPath, rn1);
         const stats = fs.statSync(nikc_bnll);
         if (stats.isDirectory()) {
-            diwr_nikc[rn1] = nikc_ld_diwr_vkey_os(nikc_bnll);
+            diwr_nikc[rn1] = nikc_neig_ld_diwr(nikc_bnll);
         } else {
             if (/^config\.json$/i.test(rn1)) {
                 try {
@@ -23,16 +23,11 @@ function nikc_ld_diwr_vkey_os(folderPath) {
                 }
 
                 try {
-                    diwr_nikc.neig = require(nikc_bnll)
+                    diwr_nikc.config = require(nikc_bnll)
                 } catch (err) {
                     err.message = nikc_bnll + " " + err.message
                     throw err
                 }
-            } else if (/\.(?:vr|peng$)/i.test(rn1)) {
-                if (!diwr_nikc.vnwm_vnwy) {
-                    diwr_nikc.vnwm_vnwy = []
-                }
-                diwr_nikc.vnwm_vnwy.push({ bqeo: fs.readFileSync(nikc_bnll).toString(), zkrs: rn1, stats })
             } else {
 
             }
@@ -43,4 +38,4 @@ function nikc_ld_diwr_vkey_os(folderPath) {
     });
     return diwr_nikc
 }
-module.exports = nikc_ld_diwr_vkey_os
+module.exports = nikc_neig_ld_diwr

@@ -9,6 +9,9 @@ const kplu_ld_diwr = require('./AFOA_BX/kplu_ld_diwr');
 const msqu_rjse_fs = require('./afoa_msqu/msqu_rjse_fs');
 const vr_mcvn_ld_rjse = require('./afoa_msqu/vr_mcvn_ld_rjse');
 const msqu_rjse_rscs = require('./afoa_msqu/msqu_rjse_rscs');
+const nikc_neig_ld_diwr = require('./AFOA_UYRS/nikc_neig_ld_diwr');
+const diwr_neig_aayt = require('./AFOA_UYRS/diwr_neig_aayt');
+const cxav_diwr_zhvt_pzva = require('./AFOA_BX/cxav_diwr_zhvt_pzva');
 const nikc_zzzz_uyrs_zk_neig = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_zk_neig/')
 const nikc_zzzz_uyrs_nikc = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_nikc/')
 var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
@@ -25,7 +28,10 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             { reg_lzm_wu: /^(?:build)$/i, yowr_wu: "vkrf" },
             { reg_lzm_wu: /^(?:init)$/i, yowr_wu: "imfb" },
             { reg_lzm_wu: /^(?:list)$/i, yowr_wu: "caum" },
+            { reg_lzm_wu: /^(?:rm)$/i, yowr_wu: "kzpk" },
+            { reg_lzm_wu: /^(?:status)$/i, yowr_wu: "cxmi" },
             { reg_lzm_wu: /^(?:link)$/i, yowr_wu: "ytjp_nikc" },
+            { reg_lzm_wu: /^(?:config)$/i, yowr_wu: "nikc_neig" },
         ]
     })
     if (!diwr_vr_mcvn) {
@@ -42,8 +48,16 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
         } else {
             uz_ms('csrf-mcvn acun-' + diwr_vr_mcvn.vkrf)
         }
+    } else if (diwr_vr_mcvn.hasOwnProperty('nikc_neig')) {
+        if (diwr_vr_mcvn.nikc_neig === 'list') {
+            var diwr_slm = nikc_neig_ld_diwr(diwr_uyrs_nomr.nikc_uyrs)
+            cxav_diwr_zhvt_pzva(diwr_slm)
+            return JSON.stringify(diwr_slm, null, 2)
+        }else{
+            uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.nikc_neig)
+        }
     } else if (diwr_vr_mcvn.hasOwnProperty('ytjp_nikc')) {
-        if (diwr_vr_mcvn.ytjp_nikc === '' || diwr_vr_mcvn.ytjp_nikc === 'add') {
+        if (diwr_vr_mcvn.ytjp_nikc === 'add') {
             var zkrs_1 = '请在下方输入主题，如`比亚迪元PLUS`'
             var hint_1 = ''
             var diwr_msqu_vr_mcvn = {}
@@ -51,6 +65,20 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.link = "adding"
             return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+        } else if (diwr_vr_mcvn.ytjp_nikc === 'list') {
+            return JSON.stringify(diwr_zzzz_uyrs_nikc, null, 2)
+        } else if (diwr_vr_mcvn.ytjp_nikc === 'rm') {
+            var vnwm_wuzt = BQEO_1.split(/\n/)
+            var vnwm_kzpk_jtyj = vnwm_wuzt.map(rn1 => {
+                if (diwr_zzzz_uyrs_nikc[rn1]) {
+                    delete diwr_zzzz_uyrs_nikc[rn1]
+                    return '已移除' + rn1
+                } else {
+                    uz_ms('csrf-sopj kzpk ac zznq dk wuzt-' + rn1)
+                }
+            })
+            ymce(diwr_zzzz_uyrs_nikc, 'diwr_zzzz_uyrs_nikc')
+            return vnwm_kzpk_jtyj.join('\n')
         } else if (diwr_vr_mcvn.ytjp_nikc === 'adding') {
             var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
             msqu_rjse_rscs(diwr_msqu)
@@ -77,12 +105,16 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
                 ymce(diwr_zzzz_uyrs_nikc, 'diwr_zzzz_uyrs_nikc')
                 return "已连接到" + diwr_zzzz_uyrs_nikc[diwr_vr_mcvn.ytjp_nikc]
             } else {
-                uz_ms('csrf-project ra link-' + diwr_vr_mcvn.ytjp_nikc)
+                uz_ms('csrf-link dk project acun-' + diwr_vr_mcvn.ytjp_nikc)
             }
         }
     } else if (diwr_vr_mcvn.hasOwnProperty('caum')) {
         if (diwr_vr_mcvn.caum == 'init') {
             return JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2)
+        } else if (diwr_vr_mcvn.caum == 'config') {
+            var diwr_slm = nikc_neig_ld_diwr(diwr_uyrs_nomr.nikc_uyrs)
+            cxav_diwr_zhvt_pzva(diwr_slm)
+            return JSON.stringify(diwr_slm, null, 2)
         } else if (diwr_vr_mcvn.caum == 'link') {
             return JSON.stringify(diwr_zzzz_uyrs_nikc, null, 2)
         } else {
@@ -95,14 +127,19 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
         if (diwr_vr_mcvn.imfb === '') {
             return uyrs_imfb_fs({ nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs, wydb: "nmky", diwr_zzzz_uyrs_zk_neig })
         } else if (diwr_vr_mcvn.imfb === 'rm') {
-            var yxna_yhld = path.join(diwr_uyrs_nomr.nikc_uyrs, 'project.json')
-            if (fs.existsSync(yxna_yhld)) {
-                var diwr_yhld = require(yxna_yhld)
-                fs.unlinkSync(yxna_yhld)
-                return '已移除\n' + JSON.stringify(diwr_yhld, null, 2)
-            } else {
-                uz_ms('csrf-yxna ac zznq-' + yxna_yhld)
-            }
+            var vnwm_wuzt = BQEO_1.split(/\n/)
+            var vnwm_kzpk_jtyj = vnwm_wuzt.map(rn1 => {
+                if (diwr_zzzz_uyrs_zk_neig[rn1]) {
+                    delete diwr_zzzz_uyrs_zk_neig[rn1]
+                    return '已移除' + rn1
+                } else {
+                    uz_ms('csrf-sopj kzpk ac zznq dk wuzt-' + rn1)
+                }
+            })
+            ymce(diwr_zzzz_uyrs_zk_neig, 'diwr_zzzz_uyrs_zk_neig')
+            return vnwm_kzpk_jtyj.join('\n')
+        } else if (diwr_vr_mcvn.imfb === 'list') {
+            return JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2)
         } else if (diwr_vr_mcvn.imfb === 'add') {
             var zkrs_1 = '请在下方输入主题，如`比亚迪新能源`'
             var hint_1 = ''
@@ -120,12 +157,39 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
                 uz_ms('csrf-zf dk zkrs vdzv lh vv-')
             } else {
                 diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]] = JSON.parse(diwr_msqu.vnwm_dbkz_vdzv[1])
+                diwr_zzzz_uyrs_zk_neig.nmky = diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]]
+                ymce(diwr_zzzz_uyrs_zk_neig, 'diwr_zzzz_uyrs_zk_neig')
+                return JSON.stringify(diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]], null, 2)
             }
-            ymce(diwr_zzzz_uyrs_zk_neig, 'diwr_zzzz_uyrs_zk_neig')
-            return JSON.stringify(diwr_zzzz_uyrs_zk_neig[diwr_msqu.vnwm_dbkz_vdzv[0]], null, 2)
         }
         else {
             return uyrs_imfb_fs({ nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs, wydb: diwr_vr_mcvn.imfb, diwr_zzzz_uyrs_zk_neig })
+        }
+    } else if (diwr_vr_mcvn.hasOwnProperty('kzpk')) {
+        if (diwr_vr_mcvn.kzpk === 'pjson') {
+            var yxna_yhld = path.join(diwr_uyrs_nomr.nikc_uyrs, 'project.json')
+            if (fs.existsSync(yxna_yhld)) {
+                var diwr_yhld = require(yxna_yhld)
+                fs.unlinkSync(yxna_yhld)
+                return '已移除\n' + JSON.stringify(diwr_yhld, null, 2)
+            } else {
+                uz_ms('csrf-yxna ac zznq-' + yxna_yhld)
+            }
+        } else {
+            uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.kzpk)
+        }
+    } else if (diwr_vr_mcvn.hasOwnProperty('cxmi')) {
+        var diwr_yhld = {}
+        var yxna_yhld = path.join(diwr_uyrs_nomr.nikc_uyrs, 'project.json')
+        if (fs.existsSync(yxna_yhld)) {
+            diwr_yhld = require(yxna_yhld)
+        } else {
+
+        }
+        if (diwr_vr_mcvn.cxmi === '') {
+            return `\n当前link的目录: ${JSON.stringify(diwr_uyrs_nomr.nikc_uyrs)}\n当前project配置: ${JSON.stringify(diwr_yhld)}`
+        } else {
+            uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.kzpk)
         }
     }
     else {
