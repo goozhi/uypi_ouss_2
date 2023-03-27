@@ -5,6 +5,7 @@ const diwr_osse_zzuy_ld_peng = require("./diwr_osse_zzuy_ld_peng")
 const sbta_ld_peng = require("./sbta_ld_peng")
 const diwr_rj_vy_ld_peng = require("./diwr_rj_vy_ld_peng")
 const diwr_zy_vy_ld_peng = require("./diwr_zy_vy_ld_peng")
+const diwr_rnqt_zogl_ld_peng = require("./diwr_rnqt_zogl_ld_peng")
 function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
@@ -68,7 +69,25 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
                         reject(err)
                     })
                 })
-            } else if (vxn_pzva === '元件测试') { } else if (vxn_pzva === '特殊功能') { } else if (vxn_pzva === '读码') {
+            } else if (vxn_pzva === '元件测试') {
+                return new Promise((resolve, reject) => {
+                    Promise.all([diwr_rnqt_zogl_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
+                        resolve(jtyj[0])
+                    }).catch(err => {
+                        reject(err)
+                    })
+                })
+
+             } else if (vxn_pzva === '特殊功能') { 
+                return new Promise((resolve, reject) => {
+                    Promise.all([diwr_rnqt_zogl_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
+                        resolve(jtyj[0])
+                    }).catch(err => {
+                        reject(err)
+                    })
+                })
+
+            } else if (vxn_pzva === '读码') {
                 return new Promise((resolve, reject) => {
                     Promise.all([diwr_rj_vy_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
                         resolve(jtyj[0])

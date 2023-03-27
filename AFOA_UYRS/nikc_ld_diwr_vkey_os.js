@@ -24,6 +24,9 @@ function nikc_ld_diwr_vkey_os(folderPath) {
 
                 try {
                     diwr_nikc.neig = require(nikc_bnll)
+                    if(/\ufffd/.test(JSON.stringify(diwr_nikc.neig))){
+                        uz_ms('csrf-aoao ji utf8 vkvy-'+nikc_bnll)
+                    }
                 } catch (err) {
                     err.message = nikc_bnll + " " + err.message
                     throw err
