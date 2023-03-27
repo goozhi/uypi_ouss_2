@@ -31,11 +31,11 @@ function nikc_ld_diwr_vkey_os(folderPath) {
                     err.message = nikc_bnll + " " + err.message
                     throw err
                 }
-            } else if (/\.(?:vr|peng$)/i.test(rn1)) {
+            } else if (/\.(?:vr|peng|md$)/i.test(rn1)) {
                 if (!diwr_nikc.vnwm_vnwy) {
                     diwr_nikc.vnwm_vnwy = []
                 }
-                diwr_nikc.vnwm_vnwy.push({ bqeo: fs.readFileSync(nikc_bnll).toString(), zkrs: rn1, stats })
+                diwr_nikc.vnwm_vnwy.push({ bqeo: fs.readFileSync(nikc_bnll).toString().replace(/\r/g,""), zkrs: rn1, stats })
             } else {
 
             }

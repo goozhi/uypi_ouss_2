@@ -56,7 +56,7 @@ async function vkrf_uyrs(diwr_neig_kp) {
         }
         var rj_sys_jtyj
         try {
-            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })+"\n__"
+            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 }) + "\n__"
         } catch (err) {
             throw err
         }
@@ -87,9 +87,9 @@ async function vkrf_uyrs(diwr_neig_kp) {
             var yxna_tips = path.join(nikc_build_db, 'TIPS.DB')
             var yxna_dtc = path.join(nikc_build_db, 'DTC.DB')
             var yxna_log = path.join(nikc_build_db, 'log.txt')
-            diwr_slm.neig.nikc_YDDL = path.join(diwr_neig_kp.nikc_YDDL,'Vehicle', diwr_slm.neig['品牌标识'])
-            if(!fs.existsSync(diwr_slm.neig.nikc_YDDL)){
-                uz_ms('csrf-nikc ac zznq-'+diwr_slm.neig.nikc_YDDL)
+            diwr_slm.neig.nikc_YDDL = path.join(diwr_neig_kp.nikc_YDDL, 'Vehicle', diwr_slm.neig['品牌标识'])
+            if (!fs.existsSync(diwr_slm.neig.nikc_YDDL)) {
+                uz_ms('csrf-nikc ac zznq-' + diwr_slm.neig.nikc_YDDL)
             }
             fs.writeFileSync(yxna_log, '')
             fs.writeFileSync(yxna_sys, encoding.convert(rj_sys_jtyj, 'gb2312', 'utf8'))
@@ -98,7 +98,7 @@ async function vkrf_uyrs(diwr_neig_kp) {
             fs.writeFileSync(yxna_dtc, encoding.convert(dtc_rj(), 'gb2312', 'utf8'))
             fs.writeFileSync(path.join(nikc_build_db, 'build.bat'), encoding.convert(bat_vkrf(diwr_slm.neig), 'gb2312', 'utf8'))
             return new Promise((resolve, reject) => {
-                exec('cd ' + nikc_build_db + '&& start ' + path.join(nikc_build_db, 'build.bat'), (err) => {
+                exec('start build.bat', { cwd: nikc_build_db }, (err) => {
                     if (err) {
                         reject(err)
                     }
