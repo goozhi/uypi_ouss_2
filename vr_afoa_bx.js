@@ -226,6 +226,10 @@ function vr_afoa_bx() {
             comment={{该指令能显示当前proj信息，包括当前link的目录}}
         }}
 
+        proj=open{{
+            comment={{该指令打开当前link的目录}}
+        }}
+
         `
         ,
         vr_afoa_rh: VR_TSJQ_ZV_UYRS,
