@@ -15,7 +15,7 @@ async function diwr_rnqt_zogl_ld_peng(diwr_slm, diwr_neig_kp) {
         if(/\.peng$/i.test(rn1.zkrs)){
             return rn1.bqeo
         }else{
-            uz_ms('csrf-ac huop dk ebwu-'+rn1.zkrs +'-kp-'+diwr_slm.yxna_yowr)
+            uz_ms('csrf-rnqt zogl ac huop bi ebwu-'+rn1.zkrs +'-kp-'+diwr_slm.yxna_yowr)
         }
     }).join('\n')
     var RJSE_MSOX = await ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(rj_peng, 'LJEY')
