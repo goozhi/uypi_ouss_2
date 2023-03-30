@@ -14,7 +14,7 @@ function ZJZJ_TSJQ_InputBox(RJSE_KP) {
         return "\n[inputBox SDRH BRTZ MSOX] " + RJSE_KP;
     } else {
         var RJSE_MCVN = DIWR_YHLD[1];
-        var VNWM_MCVN = RJSE_MCVN.split(/\s*,\s*/);
+        var VNWM_MCVN = RJSE_MCVN.replace(/range\s*=\s*\[\s*([0-9\.-]+)\s*,\s*([0-9\.-]+)\s*\]/i,"range=$1-$2").split(/\s*,\s*/);
         var UXUX = VNWM_MCVN[0];
         if (UXUX == "10") {
             if (!/,range=/.test(RJSE_MCVN)) {
