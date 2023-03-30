@@ -1,7 +1,7 @@
-const fs=require('fs');
+const fs = require('fs');
 const uz_ms = require('./uz_ms');
 function kplu_ld_vnwm(nikc_kplu, udao_wu) {
-    var reg_udao_wu = new RegExp(udao_wu.replace(/\.|^/g,"\\.")+'$','i')
+    var reg_udao_wu = new RegExp(udao_wu.replace(/\.|^/g, "\\.") + '$', 'i')
     var VNWM_KP = fs.readdirSync(nikc_kplu);
     var VNWM_1 = VNWM_KP.filter(rn1 => {
         if (reg_udao_wu.test(rn1))
@@ -16,7 +16,7 @@ function kplu_ld_vnwm(nikc_kplu, udao_wu) {
         })
     })
     if (vyvy_diwr_vnwm_kplu.length == 0) {
-        uz_ms('csrf-Bi nikc tt hmpc '+udao_wu+' rjqt-' + nikc_kplu)
+        uz_ms('csrf-Bi nikc tt hmpc tszn dk rjqt ncrl wu-' + udao_wu + '-kp-' + nikc_kplu)
     }
     var vnwm_yhld = new Array()
     return vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);

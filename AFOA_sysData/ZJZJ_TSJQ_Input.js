@@ -27,7 +27,7 @@ function ZJZJ_TSJQ_Input(RJSE_KP) {
             }
         } else if (UXUX == "0a") {
             if (!/,len=\d+/.test(RJSE_MCVN)) {
-                RJSE_MSOX += "[BI UXUX AOAO TSZN l e n MCVN]"
+                // RJSE_MSOX += "[BI UXUX AOAO TSZN l e n MCVN]"
             }
         } else {
             RJSE_MSOX += "[AOAO TSZN UXUX MCVN] " + RJSE_MCVN + " <--";
