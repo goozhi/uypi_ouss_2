@@ -10,8 +10,14 @@ function diwr_vnwy_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
     diwr_vnwm_bnll_ahdb_nomr_vnwy.forEach(rn1 => {
         diwr_bnll_ahdb_nomr_vnwy[rn1['数据名']] = rn1
     })
+    var reg_yhld
+    if (diwr_slm.neig['子文件夹不含有']) {
+        reg_yhld = new RegExp(`^(?:${diwr_slm.neig['子文件夹不含有'].map(rn1 => rn1["文件夹属性"]).join('|')})$`, 'i')
+    } else {
+        reg_yhld = /酾/
+    }
     var diwr_vnwm_bnll_nmky_efpc = diwr_nomr.vnwm_nomr_nmky_vnwy.filter(rn1 => {
-        return !/^\.\./.test(path.relative(rn1.nikc, diwr_slm.yxna_yowr))
+        return !/^\.\./.test(path.relative(rn1.nikc, diwr_slm.yxna_yowr)) && !reg_yhld.test(rn1['文件夹属性'])
     })
     if (diwr_vnwm_bnll_nmky_efpc.length) {
         if (diwr_slm.neig['当前文件夹属性'] === '电子控制单元') {
