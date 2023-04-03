@@ -1,6 +1,5 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
 const path = require('path')
-const sbta_ld_peng = require("./sbta_ld_peng")
 const diwr_pzre_ld_peng = require("./diwr_pzre_ld_peng")
 async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {

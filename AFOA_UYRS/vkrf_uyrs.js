@@ -15,7 +15,6 @@ const { exec } = require('child_process');
 const tips_rj = require('./tips_rj');
 const hd_rjqt_tum = require('../AFOA_BX/hd_rjqt_tum');
 const dtc_rj = require('./dtc_rj');
-const rjqt_tum_jkub = require('../AFOA_BX/rjqt_tum_jkub');
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
@@ -45,15 +44,15 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_slm.neig['当前文件夹属性'] = '工程'
         var diwr_nomr = { vnwm_nomr_ahdb_vnwy: [], vnwm_nomr_nmky_vnwy: [] }
         diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
+        if (fs.existsSync('D:\\XYZD\\project_test')) {
+            fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm, null, 2))
+        }
         diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         var diwr_ljey = JSON.parse("{" + rj_ljey_jtyj + "}")
         var diwr_vnwm_ljey = []
         ld_vnwm_peng_ljey(diwr_ljey, diwr_vnwm_ljey)
         var rj_menu_jtyj = "@menu\n" + ld_rj_peng_ljey(diwr_vnwm_ljey)
-        if (fs.existsSync('D:\\XYZD\\project_test\\xyzd.json')) {
-            fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm))
-        }
         var rj_sys_jtyj
         try {
             rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 }) + "\n__"

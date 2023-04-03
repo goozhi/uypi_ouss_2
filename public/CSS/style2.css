@@ -1,13 +1,25 @@
+code {
+  padding: 4px;
+  margin: 0 auto;
+  width: auto;
+  font-size: larger;
+  height: auto;
+}
+
+.attribute{
+  color: #9CDCFE;
+}
+
 .code-area {
   padding: 4px;
   margin: 0 auto;
   width: auto;
+  font-size: smaller;
   height: auto;
   min-height: 96px;
   background: #1E1E1E;
   border: 1px solid #ccc;
-  color: #fff;
-  /* white-space: nowrap; */
+  color: #f0f0f2;
   display: inline-block;
 }
 
@@ -16,9 +28,10 @@
   color: #777;
 }
 
-.form_vr{
+.form_vr {
   width: 100%;
 }
+
 .code-area-3 {
   padding: 4px;
   margin: 0 auto;
@@ -59,9 +72,6 @@
   background-color: rgba(241, 244, 80, 0.5);
 }
 
-.code-area span {
-  white-space: nowrap;
-}
 
 .keywords {
   color: #c678dd;
@@ -73,7 +83,7 @@
 }
 
 .identifier {
-  color: #61aeee;
+  color: #9CDCFE;
 }
 
 .variable {

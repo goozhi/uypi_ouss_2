@@ -10,11 +10,11 @@ const msqu_rjse_fs = require('./afoa_msqu/msqu_rjse_fs');
 const vr_mcvn_ld_rjse = require('./afoa_msqu/vr_mcvn_ld_rjse');
 const msqu_rjse_rscs = require('./afoa_msqu/msqu_rjse_rscs');
 const nikc_neig_ld_diwr = require('./AFOA_UYRS/nikc_neig_ld_diwr');
-const diwr_neig_aayt = require('./AFOA_UYRS/diwr_neig_aayt');
 const cxav_diwr_zhvt_pzva = require('./AFOA_BX/cxav_diwr_zhvt_pzva');
 const nikc_zzzz_uyrs_zk_neig = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_zk_neig/')
 const nikc_zzzz_uyrs_nikc = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_nikc/')
-const child_process = require('child_process')
+const child_process = require('child_process');
+const VR_md_RJOK_html_FS = require('./VR_md_RJOK_html_FS');
 var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     var diwr_zzzz_uyrs_zk_neig = kplu_ld_diwr(nikc_zzzz_uyrs_zk_neig, 'json')
@@ -34,10 +34,16 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             { reg_lzm_wu: /^(?:link)$/i, yowr_wu: "ytjp_nikc" },
             { reg_lzm_wu: /^(?:OPEN)$/i, yowr_wu: "uwuu" },
             { reg_lzm_wu: /^(?:config)$/i, yowr_wu: "nikc_neig" },
+            { reg_lzm_wu: /^(?:doc)$/i, yowr_wu: "rjok" },
         ]
     })
     if (!diwr_vr_mcvn) {
         uz_ms('csrf-rt vdzv v r mcvn-')
+    } else if (diwr_vr_mcvn.hasOwnProperty('rjok')) {
+        var rj_html = `<head>
+        <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
+        </head>`+VR_md_RJOK_html_FS('./public/md/uyrs_rjok.md')
+        return { aqn_voud: rj_html }
     } else if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {
             return new Promise((resolve, reject) => {
@@ -244,7 +250,7 @@ function ymce(diwr_zzzz_uyrs_zk_neig, zkrs = "") {
     })
     vnwm_bmee_dk_rjqt.sort()
     if (vnwm_bmee_dk_rjqt.length > 2) {
-        vnwm_bmee_dk_rjqt.slice(0, 1).forEach(rn1 => {
+        vnwm_bmee_dk_rjqt.slice(0, 2).forEach(rn1 => {
             fs.unlink(path.join(nikc_zzzz_yhld, rn1), (err) => {
                 if (err) {
                     throw (err)

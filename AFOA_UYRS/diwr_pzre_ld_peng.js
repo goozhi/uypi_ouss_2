@@ -6,6 +6,7 @@ const sbta_ld_peng = require("./sbta_ld_peng")
 const diwr_rjm_vyn_ld_peng = require("./diwr_rjm_vyn_ld_peng")
 const diwr_zy_vyn_ld_peng = require("./diwr_zy_vyn_ld_peng")
 const diwr_rnqt_zogl_ld_peng = require("./diwr_rnqt_zogl_ld_peng")
+const diwr_eyrh_ld_peng = require("./diwr_eyrh_ld_peng")
 function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
@@ -90,6 +91,14 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
             } else if (vxn_pzva === '读码') {
                 return new Promise((resolve, reject) => {
                     Promise.all([diwr_rjm_vyn_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
+                        resolve(jtyj[0])
+                    }).catch(err => {
+                        reject(err)
+                    })
+                })
+            } else if (vxn_pzva === '单体') {
+                return new Promise((resolve, reject) => {
+                    Promise.all([diwr_eyrh_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
                         resolve(jtyj[0])
                     }).catch(err => {
                         reject(err)

@@ -1,5 +1,5 @@
 function LJEY_EOWL_Peng_NINI(DIWR_MCVN) {
-    var FDMJ=require('./FDMJ')
+    var FDMJ=require('./AFOA_BX/FDMJ')
     var NHVN_GFVN_FS=require('./AFOA_BX/NHVN_GFVN_FS')
 
     switch (DIWR_MCVN.UXUX) {

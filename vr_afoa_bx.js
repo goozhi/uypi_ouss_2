@@ -303,7 +303,7 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_VNWY_TU,
         csrf: `数据流指令：操作符为9或者STR(大小写不敏感)，参数为彭语言中str()的参数，如果参数为0时则自动将空的帧填上MD-99 99 99-MD. 有关数据流项目编写规范请参考 ["md-VR-md语言之数据流项目编写示例"](http://localhost:3009/VR_EBWU_BRTZ_FS_ZV_VNWY_TU_NINI_VKVD_KLCH)
         `,
-        klch: `        STR=sortCanDataByID{{
+        klch: `        STR=sortCanData{{
             3f项目示例{2222}33，，’00：元素‘，’oth：--‘
             3f项目示例{2223}33，，元素1 02:元素2 元素3
         }}

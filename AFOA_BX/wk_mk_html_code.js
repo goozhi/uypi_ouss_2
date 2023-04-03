@@ -11,8 +11,12 @@ function wk_mk_html_code(rj_kp, ebwu) {
             var reg_code = /<code\b.*>((?:(?!<code\b)[\s\S])*?)<\/code>/;
             var diwr_code = rj_pre.match(reg_code)
             if (diwr_code != null) {
-                rj_code = diwr_code[1].replace(/&#39;/g,"'")
-                rj_code = hljs(rj_code, ebwu).value
+                rj_code = diwr_code[1].replace(/&#39;/g,"'").replace(/&quot;/g,'"')
+                var ebwu_yowr = ebwu
+                if(/^.*json"/.test(diwr_code[0])){
+                    ebwu_yowr = 'json'
+                }
+                rj_code = hljs(rj_code, ebwu_yowr).value
                 rj_pre = rj_pre.replace(diwr_code[1], rj_code)
             }
             rj_pre = rj_pre.replace(/<pre>/g, "<pre class=\"code-area\">").replace(/<!/g,"&lt;!")//.replace(reg_lclc, "<span  class=\"comment\">$1</span>").replace(reg_vnzt, "<span class=\"number\">$1</span>")
@@ -21,7 +25,7 @@ function wk_mk_html_code(rj_kp, ebwu) {
             break;
         }
     }
-    return rj_1//.replace(/<code>/g, "<code class=mark1>")
+    return rj_1
 }
 module.exports = wk_mk_html_code;
 

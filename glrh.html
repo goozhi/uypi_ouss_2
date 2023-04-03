@@ -1,0 +1,157 @@
+<head>
+    <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
+    </head><h1 id="工程文档">工程文档</h1>
+<h2 id="json文件">json文件</h2>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">品牌标识</span>":<span class="value"><span class="string">"BYDEV"</span></span>,
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">6</span>,
+            <span class="number">14</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>},
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>}
+]</span>,
+"<span class="attribute">默认数据流文件夹</span>": <span class="value"><span class="string">"数据流"</span></span>,
+"<span class="attribute">默认版本信息文件夹</span>": <span class="value"><span class="string">"版本信息"</span></span>,
+"<span class="attribute">默认读码文件夹</span>": <span class="value"><span class="string">"读.*码"</span></span>,
+"<span class="attribute">默认清码文件夹</span>": <span class="value"><span class="string">"清.*码"</span>
+</span>}
+</code></pre>
+<p>json文件用于描述工程以及资料。是不可或缺的配置文件。</p>
+<h3 id="专用属性">专用属性</h3>
+<h4 id="品牌标识">品牌标识</h4>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">品牌标识</span>":<span class="value"><span class="string">"BYDEV"</span>
+</span>}
+</code></pre>
+<p><strong>品牌标识</strong> 指定了该工程的加密资料在<code>云电动力</code>的<code>Vehicle</code>目录下的存放位置。该属性一般用于project.json配置。一个工程需要唯一个project.json来配置该工程的基本信息。当然，你可以直接使用初始化指令<code>proj=init</code>来新建一个初始的project.json。</p>
+<h3 id="公用属性">公用属性</h3>
+<p>公用属性可用于配置project.json或config.json。</p>
+<h4 id="默认协议">默认协议</h4>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">6</span>,
+            <span class="number">14</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>},
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>}
+]
+</span>}
+</code></pre>
+<p>该属性指定当前文件夹以及子文件夹所使用的通讯协议。子文件夹可以修改该属性，方法是，在它的目录下的config.json里指定<code>当前协议</code>，这样，程序就能将<code>当前协议</code>支配给<code>默认协议</code>的所有子对象。</p>
+<p>子文件夹也可以重新指定<code>默认协议</code>，彻底地修改当前文件夹和子文件夹的通讯协议，所使用的方法同样是在它的config.json里面直接指定<code>默认协议</code>。以下是<code>默认协议</code>示例。</p>
+<h5 id="canbus-j1939协议">CANBUS-J1939协议</h5>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS-J1939"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">自发ID</span>":<span class="value"><span class="string">"0x45c"</span>
+    </span>}
+]
+</span>}
+</code></pre>
+<h5 id="canbus11协议">CANBUS11协议</h5>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>}
+]
+</span>}
+</code></pre>
+<h5 id="canbus29协议">CANBUS29协议</h5>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS29"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span>
+    </span>}
+]
+</span>}
+</code></pre>
+<h4 id="当前协议">当前协议</h4>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">当前协议</span>":<span class="value">{
+    "<span class="attribute">请求ID</span>":<span class="value"><span class="string">"fc00"</span></span>,
+    "<span class="attribute">应答ID</span>":<span class="value"><span class="string">"fd00"</span>
+</span>}
+</span>}
+</code></pre>
+<p>若文件夹指定了<code>当前协议</code>，程序会将<code>当前协议</code>的所有子属性赋予<code>默认协议</code>的所有子对象。效果如下：</p>
+<pre class="code-area"><code class="language-json">{
+"<span class="attribute">默认协议</span>": <span class="value">[
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">6</span>,
+            <span class="number">14</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span></span>,
+        "<span class="attribute">请求ID</span>":<span class="value"><span class="string">"fc00"</span></span>,
+        "<span class="attribute">应答ID</span>":<span class="value"><span class="string">"fd00"</span>
+    </span>},
+    {
+        "<span class="attribute">协议类型</span>": <span class="value"><span class="string">"CANBUS11"</span></span>,
+        "<span class="attribute">波特率</span>": <span class="value"><span class="number">500</span></span>,
+        "<span class="attribute">引脚</span>": <span class="value">[
+            <span class="number">3</span>,
+            <span class="number">11</span>
+        ]</span>,
+        "<span class="attribute">会话模式</span>": <span class="value"><span class="string">"02 10 01"</span></span>,
+        "<span class="attribute">link</span>": <span class="value"><span class="string">"02 3e 80"</span></span>,
+        "<span class="attribute">请求ID</span>":<span class="value"><span class="string">"fc00"</span></span>,
+        "<span class="attribute">应答ID</span>":<span class="value"><span class="string">"fd00"</span>
+    </span>}
+]
+</span>}
+</code></pre>
