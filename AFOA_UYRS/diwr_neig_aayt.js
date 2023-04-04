@@ -4,6 +4,7 @@ const path = require('path')
 function diwr_neig_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
     diwr_slm.diwr_nomr = diwr_nomr
     if (diwr_slm.neig) {
+        diwr_slm.neig.yxna_yowr=diwr_slm.yxna_yowr
         if (diwr_slm.neig) {
             if (diwr_slm.neig['声明全局数据']) {
                 if (!diwr_slm.neig['声明全局数据'].map) {

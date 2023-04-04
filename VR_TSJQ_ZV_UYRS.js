@@ -15,6 +15,7 @@ const nikc_zzzz_uyrs_zk_neig = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_zk_neig
 const nikc_zzzz_uyrs_nikc = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_nikc/')
 const child_process = require('child_process');
 const VR_md_RJOK_html_FS = require('./VR_md_RJOK_html_FS');
+const eyrh_zogl = require('./AFOA_UYRS/eyrh_zogl');
 var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     var diwr_zzzz_uyrs_zk_neig = kplu_ld_diwr(nikc_zzzz_uyrs_zk_neig, 'json')
@@ -35,14 +36,27 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             { reg_lzm_wu: /^(?:OPEN)$/i, yowr_wu: "uwuu" },
             { reg_lzm_wu: /^(?:config)$/i, yowr_wu: "nikc_neig" },
             { reg_lzm_wu: /^(?:doc)$/i, yowr_wu: "rjok" },
+            { reg_lzm_wu: /^(?:cell)$/i, yowr_wu: "eyrh" },
         ]
     })
     if (!diwr_vr_mcvn) {
         uz_ms('csrf-rt vdzv v r mcvn-')
+    } else if (diwr_vr_mcvn.hasOwnProperty('eyrh')) {
+        if (diwr_vr_mcvn.eyrh === 'test') {
+            return new Promise((resolve, reject) => {
+                Promise.all([eyrh_zogl({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs })]).then(jtyj => {
+                    resolve(jtyj[0])
+                }).catch(err => {
+                    reject(err)
+                })
+            })
+        } else {
+            uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.eyrh)
+        }
     } else if (diwr_vr_mcvn.hasOwnProperty('rjok')) {
         var rj_html = `<head>
         <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
-        </head>`+VR_md_RJOK_html_FS('./public/md/uyrs_rjok.md')
+        </head>`+ VR_md_RJOK_html_FS('./public/md/uyrs_rjok.md')
         return { aqn_voud: rj_html }
     } else if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {

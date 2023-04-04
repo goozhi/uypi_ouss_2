@@ -38,7 +38,7 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
         })
         return new Promise((resolve, reject) => {
             Promise.all(vwdp_vnwm).then(jtyj => {
-                resolve(jtyj.join('\n\n-----\n\n'))
+                resolve(jtyj.join('\n\n\n\n'))
             }).catch(err => {
                 reject(err)
             })

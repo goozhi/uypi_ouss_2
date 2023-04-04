@@ -38,7 +38,7 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
                 if (diwr_slm[rn1].neig['当前协议']) {
                     return new Promise((resolve, reject) => {
                         Promise.all([diwr_pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
-                            resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](Spec)\n' + jtyj[0] + '\n$$$$$$')
+                            resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](Spec)\n' + jtyj[0] + '\n$$$')
                         }).catch(err => {
                             reject(err)
                         })
@@ -46,7 +46,7 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
                 } else {
                     return new Promise((resolve, reject) => {
                         Promise.all([diwr_pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, so_init: true, ljey_vkih: diwr_neig_kp.ljey_vkih })]).then(jtyj => {
-                            resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](Spec)\n' + jtyj[0] + '\n$$$$$$')
+                            resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](Spec)\n' + jtyj[0] + '\n$$$')
                         }).catch(err => {
                             reject(err)
                         })
@@ -120,10 +120,10 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
             Promise.all(vwdp_vnwm).then(jtyj => {
                 var rj_jtyj
                 if (!diwr_neig_kp.so_init) {
-                    rj_jtyj = diwr_slm.rjse_sbta + '\n' + '\n$$$$$$\n\n' + jtyj.join('\n\n')
+                    rj_jtyj = diwr_slm.rjse_sbta + '\n' + '\n$$$\n\n' + jtyj.join('\n\n')
                 }
                 else {
-                    rj_jtyj = '\n' + '\n$$$$$$\n\n' + jtyj.join('\n\n')
+                    rj_jtyj = '\n' + '\n$$$\n\n' + jtyj.join('\n\n')
                 }
                 resolve(rj_jtyj)
             }).catch(err => {
@@ -131,7 +131,7 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
             })
         })
     } else {
-        return diwr_slm.rjse_sbta + '\n' + '\n$$$$$$\n\n' + '// 该系统没有子菜单'
+        return diwr_slm.rjse_sbta + '\n' + '\n$$$\n\n' + '// 该系统没有子菜单'
     }
 }
 module.exports = diwr_pzre_ld_peng

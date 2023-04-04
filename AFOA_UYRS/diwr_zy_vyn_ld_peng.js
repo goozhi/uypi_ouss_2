@@ -22,6 +22,6 @@ async function diwr_zy_vy_ld_peng(diwr_slm, diwr_neig_kp) {
     if (/\S/i.test(RJSE_MSOX)) {
         uz_ms(diwr_slm.yxna_yowr+'\n'+RJSE_MSOX);
     }
-    return `+${diwr_neig_kp.ljey_vkih}[${diwr_neig_kp.zkrs}](Spec)\n${rj_peng}\n$$$$$$`
+    return `+${diwr_neig_kp.ljey_vkih}[${diwr_neig_kp.zkrs}](Spec)\n${rj_peng}\n$$$`
 }
 module.exports = diwr_zy_vy_ld_peng
