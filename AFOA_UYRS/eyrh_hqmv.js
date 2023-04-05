@@ -11,11 +11,20 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                 Object.assign(yyha_yg, diwr_vnwy[yyha_fo])
                 if (yyha_yg['帧数']) {
                     if (yyha_yg['标识']) {
-                        yyha_yg.vnwm_vnwy.sort((a,b)=>{
-                            var vn_yhld_1=eval('0x'+yyha_yg['标识'].map(rn1=>a[rn1-1]).join(''))
-                            var vn_yhld_2=eval('0x'+yyha_yg['标识'].map(rn1=>b[rn1-1]).join(''))
-                            return vn_yhld_1-vn_yhld_2
+                        var diwr_xbst = {}
+                        yyha_yg.vnwm_vnwy.forEach(rn2 => {
+                            diwr_xbst['0x' + yyha_yg['标识'].map(rn1 => rn2[rn1 - 1]).join('')] = rn2
                         })
+                        var vnwm_yhld = Object.entries(diwr_xbst)
+                        vnwm_yhld.sort((a, b) => {
+                            return eval(a[0])-eval(b[0])
+                        })
+                        yyha_yg.vnwm_vnwy=vnwm_yhld.map(rn1=>rn1[1])
+                        // yyha_yg.vnwm_vnwy.sort((a, b) => {
+                        //     var vn_yhld_1 = eval('0x' + yyha_yg['标识'].map(rn1 => a[rn1 - 1]).join(''))
+                        //     var vn_yhld_2 = eval('0x' + yyha_yg['标识'].map(rn1 => b[rn1 - 1]).join(''))
+                        //     return vn_yhld_1 - vn_yhld_2
+                        // })
                     } else {
                         uz_ms('csrf-es vn ar oc 1 , aoao tszn xbst zthi-' + yyha_fo)
                     }
@@ -37,7 +46,7 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                                 try {
                                     vn_jtyj = eval(dyzv_1)
                                 } catch (err) {
-                                    uz_ms('csrf-uy pj ftpj ae tszn dk zthi ac zznq-' + rn1.rj_uypj_vr+'-kp-'+uypj_diyc_vnwy.join(','))
+                                    uz_ms('csrf-uy pj ftpj ae tszn dk zthi ac zznq-' + rn1.rj_uypj_vr + '-kp-' + uypj_diyc_vnwy.join(','))
                                 }
                                 Object.assign(rn1, { uypj_diyc_vnwy, vn_jtyj })
                                 return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr} ${rn1.rj_uypj_peng}`

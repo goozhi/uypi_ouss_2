@@ -62,9 +62,17 @@ async function eyrh_zogl(diwr_neig_kp) {
                 } else {
                     var rj_vo_vyn = fs.readFileSync(yxna_1).toString()
                     var diwr_vnwy = vo_vyn_ld_diwr(rj_vo_vyn)
-                    var rj_nvcm = eyrh_hqmv(rn1, diwr_vnwy)
+                    var rj_nvcm
+                    try {
+                        rj_nvcm = eyrh_hqmv(rn1, diwr_vnwy)
+                    } catch (err) {
+                        if (err.message) {
+                            err.message = rn1.yxna_yowr + '\n' + err.message
+                        }
+                        throw err
+                    }
                     // throw JSON.stringify(rn1, null, 2)
-                    fs.writeFileSync(path.join(rn1.yxna_yowr , './单体测试报告.txt'), rj_nvcm)
+                    fs.writeFileSync(path.join(rn1.yxna_yowr, './单体测试报告.txt'), rj_nvcm)
                 }
             }
         })
