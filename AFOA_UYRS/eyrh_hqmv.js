@@ -9,13 +9,24 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
             var yyha_yg = rn1[1]
             if (diwr_vnwy[yyha_fo]) {
                 Object.assign(yyha_yg, diwr_vnwy[yyha_fo])
+                if (yyha_yg['帧数']) {
+                    if (yyha_yg['标识']) {
+                        yyha_yg.vnwm_vnwy.sort((a,b)=>{
+                            var vn_yhld_1=eval('0x'+yyha_yg['标识'].map(rn1=>a[rn1-1]).join(''))
+                            var vn_yhld_2=eval('0x'+yyha_yg['标识'].map(rn1=>b[rn1-1]).join(''))
+                            return vn_yhld_1-vn_yhld_2
+                        })
+                    } else {
+                        uz_ms('csrf-es vn ar oc 1 , aoao tszn xbst zthi-' + yyha_fo)
+                    }
+                }
                 var vnwm_uypj = Object.entries(yyha_yg).filter(rn1 => /^\d+$/.test(rn1[0]))
                 if (vnwm_uypj.length) {
                     return vnwm_uypj.map(rn4 => {
                         var eqwy_uypj_diyc_es = rn4[0]
                         var uypj_diyc_vnwy = yyha_yg.vnwm_vnwy[eqwy_uypj_diyc_es - 1]
                         if (uypj_diyc_vnwy) {
-                            return rn4[1].map((rn1,eqwy_2) => {
+                            return rn4[1].map((rn1, eqwy_2) => {
                                 var dyzv_1 = rn1.rj_uypj_vr.replace(/((?:d\d+)+)/ig, (match, p1) => {
                                     return '0x' + p1.replace(/d/i, "").replace(/d/ig, ' ').split(/ /).map(rn1 => {
                                         return uypj_diyc_vnwy[Number(rn1) - 1]
@@ -26,17 +37,17 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                                 try {
                                     vn_jtyj = eval(dyzv_1)
                                 } catch (err) {
-                                    uz_ms('csrf-uypj ftpj-' + rn1)
+                                    uz_ms('csrf-uy pj ftpj ae tszn dk zthi ac zznq-' + rn1.rj_uypj_vr+'-kp-'+uypj_diyc_vnwy.join(','))
                                 }
-                                Object.assign(rn1,{uypj_diyc_vnwy,vn_jtyj})
-                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2+1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr} ${rn1.rj_uypj_peng}`
+                                Object.assign(rn1, { uypj_diyc_vnwy, vn_jtyj })
+                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr} ${rn1.rj_uypj_peng}`
                             }).join('\n')
                         } else {
                             uz_ms('csrf-vnwy hmpc da ' + eqwy_uypj_diyc_es + ' es-' + yyha_fo)
                         }
 
                     }).join('\n\n')
-                    
+
                 } else {
                     uz_ms('csrf-bi yyha hmpc tsqn uypj-' + yyha_fo)
                 }

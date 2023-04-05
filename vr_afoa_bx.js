@@ -230,6 +230,13 @@ function vr_afoa_bx() {
             comment={{该指令打开当前link的目录}}
         }}
 
+        proj=doc{{
+            comment={{打开proj相关教程文档}}
+        }}
+
+        proj=cell=test{{
+            comment={{进行单体测试(模拟)}}
+        }}
         `
         ,
         vr_afoa_rh: VR_TSJQ_ZV_UYRS,

@@ -325,7 +325,7 @@ app.use(function (err, req, res, next) {
     console.log(err)
 });
 
-ymce_sjbx()
+// ymce_sjbx()
 
 app.listen(app.get('port'), function () {
     var yxna_url = 'http://localhost:' + app.get('port')
