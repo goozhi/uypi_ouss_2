@@ -53,10 +53,10 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                                     uz_ms('csrf-uy pj ftpj ae tszn dk zthi ac zznq-' + rn1.rj_uypj_vr + '-kp-' + uypj_diyc_vnwy.join(','))
                                 }
                                 Object.assign(rn1, { uypj_diyc_vnwy, vn_jtyj })
-                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr}  ${rn1.rj_uypj_vr}(${rn1.rj_uypj_peng})`
+                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}} ${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr}  ${rn1.rj_uypj_vr}(${rn1.rj_uypj_peng})`
                             }).join('\n')
                         } else {
-                            uz_ms('csrf-vnwy hmpc da ' + eqwy_uypj_diyc_es + ' es-' + yyha_fo)
+                            uz_ms('csrf-Bi yyha dk da ' + eqwy_uypj_diyc_es + ' es vnwy nq zogl rjqt yh yj ac ab-' + yyha_fo)
                         }
 
                     }).join('\n\n')

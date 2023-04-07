@@ -14,8 +14,12 @@ async function diwr_vnwy_tu_ld_peng(diwr_slm, diwr_neig_kp) {
     }
     var rj_vr = diwr_slm.vnwm_vnwy.map(rn1=>rn1.bqeo).join('\n')
     var rj_peng 
+    var vnwm_vnwy_tu_mcvn = []
+    if(diwr_slm.neig['数据流参数']){
+        vnwm_vnwy_tu_mcvn=diwr_slm.neig['数据流参数']
+    }
     try{
-        rj_peng=await vr_ld_peng({ bqeo: rj_vr, uxux: 'vnwy_tu' })
+        rj_peng=await vr_ld_peng({ bqeo: rj_vr, uxux: 'vnwy_tu' , vnwm_vnwy_tu_mcvn})
     }catch(err){
         if(err.message){
             err.message=diwr_slm.yxna_yowr+"\n"+err.message
