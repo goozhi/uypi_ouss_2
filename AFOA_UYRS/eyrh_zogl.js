@@ -54,14 +54,21 @@ async function eyrh_zogl(diwr_neig_kp) {
         var vnwm_eyrh_nikc = []
         cxav_diwr_pzva_zhvt_ab_vnwm(vnwm_eyrh_nikc, diwr_slm, '当前文件夹属性', '单体')
         vnwm_eyrh_nikc.map(rn1 => {
-            eyrh_neig_rscs(rn1)
+            try {
+                eyrh_neig_rscs(rn1)
+            } catch (err) {
+                if (err.message) {
+                    err.message = rn1.yxna_yowr + '\n' + err.message
+                }
+                throw err
+            }
             if (rn1['测试']) {
                 var yxna_1 = path.join(rn1.yxna_yowr, rn1['测试'])
                 if (!fs.existsSync(yxna_1)) {
                     uz_ms('csrf-zogl dk yxna ac zznq-' + yxna_1)
                 } else {
                     var rj_vo_vyn = fs.readFileSync(yxna_1).toString()
-                    var diwr_vnwy = vo_vyn_ld_diwr(rj_vo_vyn)
+                    var diwr_vnwy = vo_vyn_ld_diwr(rj_vo_vyn, yxna_1)
                     var rj_nvcm
                     try {
                         rj_nvcm = eyrh_hqmv(rn1, diwr_vnwy)
@@ -71,7 +78,6 @@ async function eyrh_zogl(diwr_neig_kp) {
                         }
                         throw err
                     }
-                    // throw JSON.stringify(rn1, null, 2)
                     fs.writeFileSync(path.join(rn1.yxna_yowr, './单体测试报告.txt'), rj_nvcm)
                 }
             }

@@ -1,15 +1,19 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
+const eyrh_mh_es_gwjp_zogl = require("./eyrh_mh_es_gwjp_zogl")
 
 function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
     var vnwm_diea_ae_immi = Object.entries(diwr_neig).filter(rn1 => /^(?:电压|温度)$/.test(rn1[0]))
     return vnwm_diea_ae_immi.map(rn3 => {
         var diwr_eyrh = rn3[1]
+        if(diwr_eyrh['多帧拼接']){
+            return eyrh_mh_es_gwjp_zogl(diwr_eyrh)
+        }
         return Object.entries(diwr_eyrh.uypj_slgr).map(rn1 => {
             var yyha_fo = rn1[0]
             var yyha_yg = rn1[1]
             if (diwr_vnwy[yyha_fo]) {
                 Object.assign(yyha_yg, diwr_vnwy[yyha_fo])
-                if (yyha_yg['帧数']) {
+                if (yyha_yg['帧数']&&yyha_yg['帧数']>1) {
                     if (yyha_yg['标识']) {
                         var diwr_xbst = {}
                         yyha_yg.vnwm_vnwy.forEach(rn2 => {
@@ -49,7 +53,7 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                                     uz_ms('csrf-uy pj ftpj ae tszn dk zthi ac zznq-' + rn1.rj_uypj_vr + '-kp-' + uypj_diyc_vnwy.join(','))
                                 }
                                 Object.assign(rn1, { uypj_diyc_vnwy, vn_jtyj })
-                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr} ${rn1.rj_uypj_peng}`
+                                return `${yyha_fo}:${rn1.nini_wu}--${eqwy_2 + 1}--{${rn1.uypj_diyc_vnwy}}--${rn1.vn_jtyj.toFixed(rn1.agvn_tr_vn)} ${rn1.eytr}  ${rn1.rj_uypj_vr}(${rn1.rj_uypj_peng})`
                             }).join('\n')
                         } else {
                             uz_ms('csrf-vnwy hmpc da ' + eqwy_uypj_diyc_es + ' es-' + yyha_fo)
