@@ -75,7 +75,9 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                                         diwr_yyha[rn1] = Object.fromEntries(vnwm_yhld)
                                         diwr_yyha[rn1].es_vn = vnwm_yhld.length
                                         diwr_yyha[rn1].vnwm_xbst_zthi = diwr_diea_ae_immi['多帧拼接']['标识']
-                                        sortCanData = "[sortCanData=" + diwr_yyha[rn1].vnwm_xbst_zthi[0] + diwr_yyha[rn1].vnwm_xbst_zthi.length + "]"
+                                        if(diwr_yyha[rn1].vnwm_xbst_zthi.length){
+                                            sortCanData = "[sortCanData=" + diwr_yyha[rn1].vnwm_xbst_zthi[0] + diwr_yyha[rn1].vnwm_xbst_zthi.length + "]"
+                                        }
                                         diwr_yyha[rn1].diwr_pcyc_vnwy = {}
                                         diwr_yyha[rn1].uypj_slgr = {}
                                         diwr_yyha[rn1].vnwm_non_vnwy = vnwm_yhld.map((rn4, eqwy_2) => {

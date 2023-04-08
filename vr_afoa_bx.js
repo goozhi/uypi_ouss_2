@@ -114,7 +114,7 @@ function vr_afoa_bx() {
         }}
     
     `,
-        vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUMBERS"],
+        vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUM", "NUMBERS"],
         VBYT_VKRF_Peng_EBWU: true,
         eowl_uxux: "string"
     }, {
