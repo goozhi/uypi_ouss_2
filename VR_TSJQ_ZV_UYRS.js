@@ -256,7 +256,7 @@ function ymce(diwr_zzzz_uyrs_zk_neig, zkrs = "") {
     })
     fs.writeFileSync(path.join(nikc_zzzz_yhld, (++diwr_uyrs_nomr.vkih) + '.json'), JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2))
     VNWM_JSON_RJQT_WU.forEach(rn1 => {
-        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, rn1 + '.bak'))
+        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, diwr_uyrs_nomr.vkih+'_'+rn1 + '.bak'))
     })
     var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
         if (/\.JSON\.bak$/i.test(rn1))

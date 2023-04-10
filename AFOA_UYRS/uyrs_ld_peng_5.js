@@ -1,7 +1,12 @@
 const uz_ms = require("../AFOA_BX/uz_ms")
 const path = require('path')
 const diwr_pzre_ld_peng = require("./diwr_pzre_ld_peng")
+const diwr_neig_zjzj = require("../AFOA_BX/diwr_neig_zjzj")
 async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
+    var vnwm_fo_2=[
+        'diwr_wwcf'
+    ]
+    diwr_neig_zjzj(diwr_neig_kp, vnwm_fo_2)
     var vnwm_fo_1 = Object.entries(diwr_slm).map(rn1 => {
         return rn1[0]
     })
@@ -17,7 +22,7 @@ async function uyrs_ld_peng_5(diwr_slm, diwr_neig_kp) {
                 var pzre_vkih = ++diwr_neig_kp.pzre_vkih
                 return new Promise((resolve, reject) => {
                     yxna_1 = path.join(diwr_neig_kp.zkrs, rn1)
-                    Promise.all([diwr_pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: 0})]).then(jtyj => {
+                    Promise.all([diwr_pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, ljey_vkih: 0, diwr_wwcf:diwr_neig_kp.diwr_wwcf})]).then(jtyj => {
                         resolve(`_S${pzre_vkih}()// ${rn1}\n` + jtyj[0])
                     }).catch(err => {
                         reject(err)

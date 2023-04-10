@@ -192,8 +192,7 @@ async function bx_gzbu_tsjq(diwr_neig_kp) {
             return (require(yxna_yhld))
 
         })
-        var vnwm_yhld = new Array()
-        var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
+        var DIWR_VNWM_reg_VWUX_MR_YFUX = vyvy_diwr_vnwm_reg.flat();
         if (DIWR_VNWM_reg_VWUX_MR_YFUX.length == 0) {
             uz_ms('csrf-Bi nikc tt hmpc J S rjqt-' + diwr_neig_kp.nikc_bx)
         }

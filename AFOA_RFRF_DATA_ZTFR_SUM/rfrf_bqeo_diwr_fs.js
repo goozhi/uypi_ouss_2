@@ -27,8 +27,7 @@ async function rfrf_bqeo_diwr_fs(bqeo_kp, diwr_mcvn) {
             }
             return (require(yxna_yhld))
         })
-        var vnwm_yhld = new Array()
-        var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
+        var DIWR_VNWM_reg_VWUX_MR_YFUX = vyvy_diwr_vnwm_reg.flat();
         var diwr_vnwm_yhrd_diyc = vnwm_yhrd_diyc.map(async rn1 => {
             var diwr_yhrd_diyc_eynh = rn1.match(reg_yhrd_diyc_eynh)
             if (diwr_yhrd_diyc_eynh == null) {

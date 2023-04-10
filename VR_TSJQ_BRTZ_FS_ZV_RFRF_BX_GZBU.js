@@ -61,8 +61,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_RFRF_BX_GZBU(DIWR_AFOA, diwr_neig_kp) {
                 if (vyvy_diwr_vnwm_kplu.length == 0) {
                     uz_ms('csrf-Bi nikc tt hmpc json rjqt-' + nikc_bx)
                 }
-                var vnwm_yhld = new Array()
-                diwr_vnwm_bx = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
+                diwr_vnwm_bx = vyvy_diwr_vnwm_kplu.flat();
             }
         }
     } else {

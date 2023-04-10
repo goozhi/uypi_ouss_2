@@ -22,8 +22,7 @@ async function kczv_json_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) 
     if (vyvy_diwr_vnwm_kplu.length == 0) {
         uz_ms('csrf-Bi nikc tt hmpc json rjqt-' + nikc_vdzv)
     }
-    var vnwm_yhld = new Array()
-    var diwr_vnwm_kplu_kp = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
+    var diwr_vnwm_kplu_kp = vyvy_diwr_vnwm_kplu.flat()
     if (!fs.existsSync(YXNA_VNWM_reg_VWUX_MR_YFUX)) {
         throw new Error('csrf- nikc ac zznq-' + YXNA_VNWM_reg_VWUX_MR_YFUX)
     }
@@ -42,8 +41,7 @@ async function kczv_json_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX) 
         return (require(yxna_yhld))
 
     })
-    var vnwm_yhld = new Array()
-    var DIWR_VNWM_reg_VWUX_MR_YFUX = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_reg);
+    var DIWR_VNWM_reg_VWUX_MR_YFUX = vyvy_diwr_vnwm_reg.flat()
 
     var diwr_vnwm_zjzj_zbhm = diwr_vnwm_kplu_kp.map(async rn1 => {
         try {

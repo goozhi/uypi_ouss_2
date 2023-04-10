@@ -11,15 +11,14 @@ function kplu_ld_vnwm(nikc_kplu, udao_wu) {
         var json_yxna_kp = nikc_kplu.replace(/[\\\/]$/, "") + '/' + rn1
         var diwr_vnwm_yhld = (require(json_yxna_kp))
         return diwr_vnwm_yhld.map(rn1 => {
-            rn1.json_yxna_kp = json_yxna_kp
+            // rn1.json_yxna_kp = json_yxna_kp
             return rn1
         })
     })
     if (vyvy_diwr_vnwm_kplu.length == 0) {
         uz_ms('csrf-Bi nikc tt hmpc tszn dk rjqt ncrl wu-' + udao_wu + '-kp-' + nikc_kplu)
     }
-    var vnwm_yhld = new Array()
-    return vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
+    return vyvy_diwr_vnwm_kplu.flat();
 }
 
 module.exports = kplu_ld_vnwm

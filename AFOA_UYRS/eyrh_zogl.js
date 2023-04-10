@@ -3,7 +3,6 @@ const diwr_neig_zjzj = require('../AFOA_BX/diwr_neig_zjzj');
 const nikc_ld_diwr_vkey_os = require('./nikc_ld_diwr_vkey_os');
 const uz_ms = require('../AFOA_BX/uz_ms');
 const encoding = require('encoding')
-const uyrs_ld_peng_5 = require('./uyrs_ld_peng_5');
 const diwr_neig_aayt = require('./diwr_neig_aayt');
 const path = require('path');
 const diwr_vnwy_aayt = require('./diwr_vnwy_aayt');

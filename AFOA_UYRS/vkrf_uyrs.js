@@ -15,6 +15,10 @@ const { exec } = require('child_process');
 const tips_rj = require('./tips_rj');
 const hd_rjqt_tum = require('../AFOA_BX/hd_rjqt_tum');
 const dtc_rj = require('./dtc_rj');
+const kplu_ld_diwr = require("../AFOA_BX/kplu_ld_diwr")
+var diwr_uyrs_nomr_2 = { vkih: new Date().getTime(), nikc_uyrs: require }
+const nikc_diwr_wwcf = path.join(__dirname, './zzzz_uyrs_wwcf_rjqt')
+var diwr_wwcf = kplu_ld_diwr(nikc_diwr_wwcf, 'json')
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
@@ -55,10 +59,11 @@ async function vkrf_uyrs(diwr_neig_kp) {
         var rj_menu_jtyj = "@menu\n" + ld_rj_peng_ljey(diwr_vnwm_ljey)
         var rj_sys_jtyj
         try {
-            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 }) + "\n__"
+            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1, diwr_wwcf }) + "\n__"
         } catch (err) {
             throw err
         }
+        ymce(diwr_wwcf, 'diwr_wwcf')
         if (!diwr_neig_kp.gkqj_sdno_vkrf) {
             var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
             var yxna_menu = path.join(diwr_slm.yxna_yowr, "menuData.txt")
@@ -113,3 +118,39 @@ async function vkrf_uyrs(diwr_neig_kp) {
     }
 }
 module.exports = vkrf_uyrs;
+function ymce(diwr_zzzz, zkrs = "") {
+    var nikc_zzzz_yhld = ''
+    if (zkrs === 'diwr_wwcf') {
+        nikc_zzzz_yhld = nikc_diwr_wwcf
+    } else if (zkrs === 'diwr_zzzz_uyrs_nikc') {
+        nikc_zzzz_yhld = nikc_zzzz_uyrs_nikc
+    } else {
+        uz_ms('csrf-zkrs acun-' + zkrs)
+    }
+    if (!nikc_zzzz_yhld) {
+        uz_ms('csrf-zzzz yxna msox-')
+    }
+    var VNWM_KP = fs.readdirSync(nikc_zzzz_yhld);
+    var VNWM_JSON_RJQT_WU = VNWM_KP.filter(rn1 => {
+        if (/\.JSON$/i.test(rn1))
+            return true;
+    })
+    fs.writeFileSync(path.join(nikc_zzzz_yhld, (++diwr_uyrs_nomr_2.vkih) + '.json'), JSON.stringify(diwr_zzzz, null, 2))
+    VNWM_JSON_RJQT_WU.forEach(rn1 => {
+        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, diwr_uyrs_nomr_2.vkih + '_' + rn1 + '.bak'))
+    })
+    var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
+        if (/\.JSON\.bak$/i.test(rn1))
+            return true
+    })
+    vnwm_bmee_dk_rjqt.sort()
+    if (vnwm_bmee_dk_rjqt.length > 2) {
+        vnwm_bmee_dk_rjqt.slice(0, 2).forEach(rn1 => {
+            fs.unlink(path.join(nikc_zzzz_yhld, rn1), (err) => {
+                if (err) {
+                    throw (err)
+                }
+            })
+        })
+    }
+}

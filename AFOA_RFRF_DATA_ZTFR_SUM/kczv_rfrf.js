@@ -34,7 +34,7 @@ async function kczv_rfrf(nikc_vdzv, yxna_vdum, YXNA_VNWM_reg_VWUX_MR_YFUX, vkvy_
     })
     return new Promise((resolve, reject) => {
         Promise.all(diwr_vnwm_vdum_nini).then(jtyj => {
-            let sopc_diwr = [].concat.apply([], jtyj);
+            let sopc_diwr = jtyj.flat()
             fs.writeFileSync(yxna_vdum, JSON.stringify(sopc_diwr))
             resolve(WR_TSJQ_ZV_CE_EBWU_LD_YHRJ({ WR_AFOA_BQEO: `cd vdum ab yxna md-${yxna_vdum}-md`, WR_AFOA_MCVN: '' }))
         }).catch(err => {

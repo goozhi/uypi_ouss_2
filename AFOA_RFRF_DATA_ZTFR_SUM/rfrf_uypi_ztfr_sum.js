@@ -36,8 +36,7 @@ async function rfrf_uypi_ztfr_sum(nikc_ids, nikc_rfrf_kplu, vkvy_kp) {
     if (vyvy_diwr_vnwm_kplu.length == 0) {
         uz_ms('csrf-Bi nikc tt hmpc json rjqt-' + nikc_rfrf_kplu)
     }
-    var vnwm_yhld = new Array()
-    var diwr_vnwm_kplu_kp = vnwm_yhld.concat.apply([], vyvy_diwr_vnwm_kplu);
+    var diwr_vnwm_kplu_kp = vyvy_diwr_vnwm_kplu.flat()
     var nikc_aqn_dbkz_rfrf
     var diwr_vnwm_vdum_nini = diwr_vnwm_rjqt_ids.map(async rn1 => {
         var diwr_vnwm_ids = await ids_diwr_fs(rn1.BQEO)

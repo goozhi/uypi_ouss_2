@@ -520,7 +520,7 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.caum === 'comments') {
         return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.rj_lclc), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
     } else if (diwr_vr_mcvn.caum === 'field') {
-        return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.jfrs_klbf===BQEO_1), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
+        return diwr_vnwm_eowl_tszn_pzva_nvcm({ tszn_pzva_vdum_brtz: (key, value) => { return value }, diwr_fdmj_fr: '\n\n', pzva_fdmj_fr: '\n', diwr_vnwm: diwr_vnwm_kplu_bobi.filter(rn1 => rn1.jfrs_klbf === BQEO_1), reg_pzva_slgr: /^(?:vkih|rj_wldg|rj_jfrs_kp|rj_lclc|jfrs_klbf)$/i })
     } else if (diwr_vr_mcvn.caum === 'answers') {
         return diwr_vnwm_kplu_bobi.map(rn1 => {
             if (rn1.rj_afoa) {
@@ -585,15 +585,15 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         })
         fs.writeFileSync(nikc_kplu + '/' + (new Date().getTime()) + '.json', JSON.stringify(diwr_vnwm_kplu_bobi))
         VNWM_JSON_RJQT_WU.forEach(rn1 => {
-            fs.renameSync(nikc_kplu + '/' + rn1, nikc_kplu + '/' + rn1 + '.bak')
+            fs.renameSync(nikc_kplu + '/' + rn1, nikc_kplu + '/' + new Date().getTime() + '_' + rn1 + '.bak')
         })
         var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
             if (/\.JSON\.bak$/i.test(rn1))
                 return true
         })
         vnwm_bmee_dk_rjqt.sort()
-        if (vnwm_bmee_dk_rjqt.length > 40) {
-            vnwm_bmee_dk_rjqt.slice(0, 1).forEach(rn1 => {
+        if (vnwm_bmee_dk_rjqt.length > 20) {
+            vnwm_bmee_dk_rjqt.slice(0, 2).forEach(rn1 => {
                 fs.unlink(nikc_kplu + '/' + rn1, (err) => {
                     if (err) {
                         throw (err)

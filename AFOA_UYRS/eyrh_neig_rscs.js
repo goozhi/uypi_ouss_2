@@ -75,7 +75,7 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                                         diwr_yyha[rn1] = Object.fromEntries(vnwm_yhld)
                                         diwr_yyha[rn1].es_vn = vnwm_yhld.length
                                         diwr_yyha[rn1].vnwm_xbst_zthi = diwr_diea_ae_immi['多帧拼接']['标识']
-                                        if(diwr_yyha[rn1].vnwm_xbst_zthi.length){
+                                        if (diwr_yyha[rn1].vnwm_xbst_zthi.length) {
                                             sortCanData = "[sortCanData=" + diwr_yyha[rn1].vnwm_xbst_zthi[0] + diwr_yyha[rn1].vnwm_xbst_zthi.length + "]"
                                         }
                                         diwr_yyha[rn1].diwr_pcyc_vnwy = {}
@@ -163,11 +163,13 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                             diwr_diea_ae_immi.uypj_slgr[rn1] = {}
                         }
                     })
-                } else {
-                    Object.entries(diwr_diea_ae_immi).filter(rn1 => /^0x/.test(rn1[0])).forEach(rn1 => {
-                        diwr_diea_ae_immi.uypj_slgr[rn1[0]] = rn1[1]
-                    })
                 }
+                Object.entries(diwr_diea_ae_immi).filter(rn1 => /^0x/.test(rn1[0])).forEach(rn1 => {
+                    diwr_diea_ae_immi.uypj_slgr[rn1[0]] = rn1[1]
+                })
+                var vnwm_yhld = Object.entries(diwr_diea_ae_immi.uypj_slgr)
+                vnwm_yhld.sort((a, b) => Number(a[0]) - Number(b[0]))
+                diwr_diea_ae_immi.uypj_slgr=Object.fromEntries(vnwm_yhld)
                 return Object.entries(diwr_diea_ae_immi.uypj_slgr).map(rn1 => {
                     var vn_1 = Number(rn1[0])
                     if (isNaN(vn_1)) {
