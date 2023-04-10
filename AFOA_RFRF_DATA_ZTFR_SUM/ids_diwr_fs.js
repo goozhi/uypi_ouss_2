@@ -2,7 +2,7 @@ const uz_ms = require("../AFOA_BX/uz_ms");
 
 async function ids_diwr_fs(rj_kp) {
     if (/\ufffd/.test(rj_kp)) {
-        uz_ms('csrf-umvo acun frih, rt zjzj rjqt vkvy jils eopc-' + rj_kp.slice(0, 1000))
+        uz_ms('csrf-umdy acun frih \ufffd, rt zjzj rjqt vkvy jils eopc-' + rj_kp.match(/.*\ufffd.*/)[0])
     }
     var rj_1 = rj_kp.replace(/\/\/.*/g,"")
     var reg_brtz_1 = /Str2ID\(\w+\)[\s\S]*?(?=Str2ID|$)/g;
