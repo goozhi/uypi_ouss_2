@@ -17,7 +17,11 @@ const hd_rjqt_tum = require('../AFOA_BX/hd_rjqt_tum');
 const dtc_rj = require('./dtc_rj');
 const kplu_ld_diwr = require("../AFOA_BX/kplu_ld_diwr")
 var diwr_uyrs_nomr_2 = { vkih: new Date().getTime(), nikc_uyrs: require }
-const nikc_diwr_wwcf = path.join(__dirname, './zzzz_uyrs_wwcf_rjqt')
+const nikc_diwr_wwcf = "D:/assistant/cache"
+if (!fs.existsSync(nikc_diwr_wwcf)) {
+    fs.mkdirSync(nikc_diwr_wwcf, { recursive: true })
+    fs.writeFileSync(path.join(nikc_diwr_wwcf, 'init.json'), '{}')
+}
 var diwr_wwcf = kplu_ld_diwr(nikc_diwr_wwcf, 'json')
 async function vkrf_uyrs(diwr_neig_kp) {
     if (!diwr_neig_kp) {
