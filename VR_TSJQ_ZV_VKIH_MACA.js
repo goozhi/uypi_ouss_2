@@ -16,27 +16,27 @@ function VR_TSJQ_ZV_VKIH_MACA(DIWR_AFOA) {
     VNWM_MCVN_1.forEach(RNSF => {
         switch (true) {
             case /\b(?:VNAW|counts)\b/i.test(RNSF):
-                IOWR_VNAW_1 = RNSF.match(/\d+/)
-                if (IOWR_VNAW_1 == null) {
+                DIWR_VNAW_1 = RNSF.match(/\d+/)
+                if (DIWR_VNAW_1 == null) {
                     throw new Error(("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN))
                 } else {
-                    VNAW_1 = IOWR_VNAW_1[0]
+                    VNAW_1 = DIWR_VNAW_1[0]
                 }
                 break;
             case /\b(?:DPHP|steps)\b/i.test(RNSF):
-                IOWR_DPHP_1 = RNSF.match(/=([\w\.-]+)/)
-                if (IOWR_DPHP_1 == null) {
+                DIWR_DPHP_1 = RNSF.match(/=([\w\.-]+)/)
+                if (DIWR_DPHP_1 == null) {
                     throw new Error(("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN))
                 } else {
-                    DPHP_1 = Number(IOWR_DPHP_1[1])
+                    DPHP_1 = Number(DIWR_DPHP_1[1])
                 }
                 break;
             case /\b(?:TYUB)\b/i.test(RNSF):
-                IOWR_TYUB_1 = RNSF.match(/\d+/)
-                if (IOWR_TYUB_1 == null) {
+                DIWR_TYUB_1 = RNSF.match(/\d+/)
+                if (DIWR_TYUB_1 == null) {
                     throw new Error(("[MCVN FTPJ]" + RNSF + "<--" + DIWR_AFOA.VR_AFOA_MCVN))
                 } else {
-                    TYUB_1 = Number(IOWR_TYUB_1[0])
+                    TYUB_1 = Number(DIWR_TYUB_1[0])
                 }
                 break;
             default:

@@ -64,26 +64,26 @@ async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
             var reg_mcvn_eynh = /(\d+)=(\w+)/;
             var zthi_vkih
             var diyc_yg
-            var iowr_vnwm_zthi_mcvn_1 = []
+            var diwr_vnwm_zthi_mcvn_1 = []
             var vnwm_mcvn_1 = RNSF.match(reg_mcvn_vnwm)
             if (vnwm_mcvn_1 != null) {
                 vnwm_mcvn_1.forEach(rnsf_2 => {
-                    var iowr_mcvn = rnsf_2.match(reg_mcvn_eynh)
-                    if (iowr_mcvn == null) {
+                    var diwr_mcvn = rnsf_2.match(reg_mcvn_eynh)
+                    if (diwr_mcvn == null) {
                         throw new Error("[MCVN FTPJ]" + rnsf_2 + "<--" + RJSE_ZTHI_SLGR)
                     }
-                    zthi_vkih = Number(iowr_mcvn[1])
-                    diyc_yg = Number(iowr_mcvn[2])
+                    zthi_vkih = Number(diwr_mcvn[1])
+                    diyc_yg = Number(diwr_mcvn[2])
                     if (isNaN(diyc_yg)) {
-                        throw new Error("[MCVN JI N a N]" + iowr_mcvn[2] + "<--" + rnsf_2)
+                        throw new Error("[MCVN JI N a N]" + diwr_mcvn[2] + "<--" + rnsf_2)
                     } else {
                     }
-                    iowr_vnwm_zthi_mcvn_1.push({ zthi_vkih, diyc_yg })
+                    diwr_vnwm_zthi_mcvn_1.push({ zthi_vkih, diyc_yg })
                 });
             } else {
                 throw new Error("[MCVN FTPJ]" + RNSF + "<--" + RJSE_ZTHI_SLGR)
             }
-            return iowr_vnwm_zthi_mcvn_1
+            return diwr_vnwm_zthi_mcvn_1
         })
     }
     RJSE_1 = RJSE_1.replace(/^((?!\*").)*/, "");

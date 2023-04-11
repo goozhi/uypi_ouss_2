@@ -22,9 +22,9 @@ function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP, TYUB_FR) {
     var RJSE_2 = RJSE_1;
     var VNWM_VDUM_1=[RJSE_1]
     for (var EQWY_1 = 0; EQWY_1 < TSZN_VNAW - 1; EQWY_1++) {
-        IOWR_1 = HQMV(RJSE_2, DPHP ,TYUB_FR)
-        RJSE_2=IOWR_1.RJSE_10_TYUB;
-        VNWM_VDUM_1.push(IOWR_1.RJSE_ZV_TSZN_TYUB);
+        DIWR_1 = HQMV(RJSE_2, DPHP ,TYUB_FR)
+        RJSE_2=DIWR_1.RJSE_10_TYUB;
+        VNWM_VDUM_1.push(DIWR_1.RJSE_ZV_TSZN_TYUB);
     }
     function HQMV(RJSE_1, DPHP, TYUB_FR) {
         if (DPHP == null) {

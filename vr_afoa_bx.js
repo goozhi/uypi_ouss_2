@@ -42,6 +42,7 @@ const VR_TSJQ_BRTZ_FS_ZV_BS_NIKC = require('./VR_TSJQ_BRTZ_FS_ZV_BS_NIKC')
 const VR_TSJQ_ZV_VKIH_MACA = require('./VR_TSJQ_ZV_VKIH_MACA')
 const VR_TSJQ_ZV_UYRS = require('./VR_TSJQ_ZV_UYRS')
 const VR_TSJQ_ZV_KNDD_RJ = require('./VR_TSJQ_ZV_KNDD_RJ')
+const VR_TSJQ_ZV_md_ld_html = require('./VR_TSJQ_ZV_md_ld_html')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -115,7 +116,27 @@ function vr_afoa_bx() {
     
     `,
         vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUM", "NUMBERS"],
-        VBYT_VKRF_Peng_EBWU: true,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "md_ld_html",
+        zkrs: "md转html",
+        vr_afoa_rh: VR_TSJQ_ZV_md_ld_html,
+        csrf: `该指令帮助用户将md文档转为html
+        `,
+        klch: `
+        html={{
+            # This is a theme
+        }}
+        html=file=utf8{{
+            D:/to/Your/Md/Path.md
+        }}
+        html=dir{{
+            D:/to/Your/Md/item/Path/
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["42", "HTML"],
+        VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",

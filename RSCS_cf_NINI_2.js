@@ -40,7 +40,7 @@ function RSCS_cf_NINI_2(NINI_DIWR_1,diwr_vyvy_vnwm_zthi,VNWM_OKWK_ZTHI_SYZN_YG_S
             throw new Error('MCVN UXUX MSOX, AOAO JI object:'+UXUX_YHLD)
         }
     }
-    var iowr_vnwm_es = diwr_vyvy_vnwm_zthi.map(RNSF_1 => {
+    var diwr_vnwm_es = diwr_vyvy_vnwm_zthi.map(RNSF_1 => {
         var IMFB_VNWM_1 = ['00', '00', '00', '00', '00', '00', '00', '00'];
         RNSF_1.forEach(rnsf_2 => {
             if(new RegExp("d"+rnsf_2.zthi_vkih+"(?!\\d)","i").test(NINI_UYPJ)){
@@ -49,7 +49,7 @@ function RSCS_cf_NINI_2(NINI_DIWR_1,diwr_vyvy_vnwm_zthi,VNWM_OKWK_ZTHI_SYZN_YG_S
         });
         return {vnwm_ey_es_vnwy:IMFB_VNWM_1,zthi_wmgr:RNSF_1};
     })
-    var NINI_yg_VNWM_1 = iowr_vnwm_es.map((RNSF_1, EQWY_1) => {
+    var NINI_yg_VNWM_1 = diwr_vnwm_es.map((RNSF_1, EQWY_1) => {
         var yg = RSCS_UYPJ_cf(NINI_UYPJ, RNSF_1.vnwm_ey_es_vnwy);
         return { vnwm_ey_es_vnwy:RNSF_1.vnwm_ey_es_vnwy,zthi_wmgr: RNSF_1.zthi_wmgr, uytz_diyc_yg: yg }
     })

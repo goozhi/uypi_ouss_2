@@ -81,7 +81,7 @@ async function eyrh_zogl(diwr_neig_kp) {
                 }
             }
         })
-        return "测试完成，请在对应单体文件夹查看报告"
+        return "测试完成，请在"+diwr_neig_kp.nikc_uyrs+"中的单体文件夹查看报告"
     }
 }
 module.exports = eyrh_zogl;
