@@ -104,8 +104,27 @@ function vr_afoa_bx() {
         }}
     
     `,
-        vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUMBERS"],
-        VBYT_VKRF_Peng_EBWU: true,
+        vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUM", "NUMBERS"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "md_ld_html",
+        zkrs: "md转html",
+        csrf: `该指令帮助用户将md文档转为html
+        `,
+        klch: `
+        html={{
+            # This is a theme
+        }}
+        html=file=utf8{{
+            D:/to/Your/Md/Path.md
+        }}
+        html=dir{{
+            D:/to/Your/Md/item/Path/
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["42", "HTML"],
+        VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
         vr_afoa_wu: "FIGB_EYRH_FDCS",
@@ -158,8 +177,70 @@ function vr_afoa_bx() {
         zkrs: "管理工程",
         csrf: `该指令帮助用户管理工程`,
         klch: `
-        project=build=txt{{
-            comment={{下方写需要build的工程文件夹路径}}
+        proj=link=add{{
+            comment={{该指令引导你添加一个新的工程(project)路径，添加后，其他所有指令将默认使用该路径}}
+        }}
+
+        proj=link=比亚迪项目{{
+            comment={{该指令会把当前链接切换到指定的工程(project)路径，切换后，其他所有指令将默认使用该路径}}
+        }}
+
+        proj=link=rm{{
+            comment={{该指令会移除已记录的project目录，不删除实际文件夹，想移除多个目标请用换行符隔开}}
+            比亚迪新能源
+        }}
+
+        proj=init{{
+            comment={{该指令会使用默认的project配置写入当前link的目录，也就是初始化}}
+        }}
+
+        proj=init=add{{
+            comment={{该指令引导你添加一个新的初始化project配置，添加后，下次init所使用的默认project配置就是它}}
+        }}
+
+        proj=init=比亚迪新能源{{
+            comment={{该指令会使用指定的project配置写入当前link的目录}}
+        }}
+
+        proj=init=rm{{
+            comment={{该指令会移除已记录的project初始化配置，不删除实际文件，想移除多个目标请用换行符隔开}}
+            比亚迪新能源
+        }}
+
+        proj=build=txt{{
+            comment={{该指令把当前link的工程转为sysData和menuData}}
+        }}
+
+        proj=rm=pjson{{
+            comment={{该指令会移除当前link的工程的project.json}}
+        }}
+
+        proj=list=init{{
+            comment={{该指令会列出所有可用于init的project配置，等效于init=list}}
+        }}
+
+        proj=list=link{{
+            comment={{该指令会列出所有可直接link的工程，等效于link=list}}
+        }}
+
+        proj=list=config{{
+            comment={{该指令能列出project目录内所有的config对象。等效于config=list}}
+        }}
+        
+        proj=status{{
+            comment={{该指令能显示当前proj信息，包括当前link的目录}}
+        }}
+
+        proj=open{{
+            comment={{该指令打开当前link的目录}}
+        }}
+
+        proj=doc{{
+            comment={{打开proj相关教程文档}}
+        }}
+
+        proj=cell=test{{
+            comment={{进行单体测试(模拟)}}
         }}
         `
         ,
