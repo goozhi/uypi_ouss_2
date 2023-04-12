@@ -66,7 +66,11 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
                 } else {
                     return new Promise((resolve, reject) => {
                         Promise.all([diwr_pzre_ld_peng(diwr_slm[rn1], { zkrs: rn1, so_init: true, ljey_vkih: diwr_neig_kp.ljey_vkih, diwr_wwcf:diwr_neig_kp.diwr_wwcf })]).then(jtyj => {
-                            resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](Spec)\n' + jtyj[0] + '\n$$$')
+                            if(/\S/.test(jtyj[0])){
+                                resolve('+' + (diwr_neig_kp.ljey_vkih) + '[' + rn1 + '](+)$$$\n' + jtyj[0])
+                            }else{
+                                reject(new Error('子菜单为空'))
+                            }
                         }).catch(err => {
                             reject(err)
                         })
