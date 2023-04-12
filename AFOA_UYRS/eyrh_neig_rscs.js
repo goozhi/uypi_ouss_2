@@ -103,7 +103,7 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                                             return Array.from({ length: Math.ceil(vnwm_pcyc_zthi.length / vnwm_mcnv_zthi.length) }, (_, i) =>
                                                 vnwm_pcyc_zthi.slice(i * vnwm_mcnv_zthi.length, i * vnwm_mcnv_zthi.length + vnwm_mcnv_zthi.length)
                                             ).filter(rn5 => {
-                                                return !(rn5.length < vnwm_mcnv_zthi.length || /^0+$/.test(rn5.map(rn1 => rn1[1]).join('')))
+                                                return !(rn5.length < vnwm_mcnv_zthi.length || /^(?:0+|f+)$/i.test(rn5.map(rn1 => rn1[1]).join('')))
                                             }).map((rn5, eqwy_3) => {
                                                 if (gkqj_zfgm) {
                                                     rn5.reverse()
