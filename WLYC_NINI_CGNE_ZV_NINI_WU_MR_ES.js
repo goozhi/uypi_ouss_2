@@ -8,12 +8,16 @@ function WLYC_NINI_CGNE_ZV_NINI_WU_MR_ES(req, res) {
     if (!fs.existsSync(YXNA_1)) {
         throw new Error("YXNA AC ZZNQ 路径不存在：" + YXNA_1)
     }
-    var RJSE_YHLD = encoding.convert(fs.readFileSync(YXNA_1), 'utf8', 'gb2312').toString();
+    if(!req.body.VDZV_4){
+        req.body.VDZV_4 = 'GB2312'
+    }
+    vkvy_dbkz = req.body.VDZV_4
+    var RJSE_YHLD = encoding.convert(fs.readFileSync(YXNA_1), 'utf8', req.body.VDZV_4).toString();
     var JTYP_1 = NINI_CGNE_ZV_NINI_WU_MR_ES(RJSE_YHLD, req.body.VDZV_2, req.body.VDZV_3);
     if (process.env.COMPUTERNAME)
         exec('clip').stdin.end(encoding.convert(JTYP_1, 'gbk', 'utf8'));
     var JTYP_2 = YXNA_1;
     var JTYP_3 = req.body.VDZV_3
-    res.render('NINI_CGNE_ZV_NINI_WU_MR_ES', { rj_vdzv_2, JTYP_1, JTYP_2, JTYP_3 });
+    res.render('NINI_CGNE_ZV_NINI_WU_MR_ES', { rj_vdzv_2, JTYP_1, JTYP_2, JTYP_3, vkvy_dbkz });
 }
 module.exports = WLYC_NINI_CGNE_ZV_NINI_WU_MR_ES;

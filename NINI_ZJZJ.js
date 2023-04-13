@@ -1,6 +1,8 @@
+const uz_ms = require("./AFOA_BX/uz_ms");
+
 function NINI_ZJZJ(VNWM_1) {
     if (!LJEY_1(VNWM_1[2])) {
-        throw 'ACUN UXUX DK NINI: 不明类型的项目 : ' + VNWM_1.join(",")
+        uz_ms('csrf-acun uxux dk nini-'+VNWM_1.join(","))
     }
 }
 function LJEY_1(RJSE_1) {
