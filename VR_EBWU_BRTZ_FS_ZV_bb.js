@@ -1,4 +1,5 @@
 function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
+    var xbst_bb_ae_1f = 'bb'
     var UXUX_YHLD = typeof (RJSE_KP);
     if (UXUX_YHLD != "string") {
         throw new Error("MCVN UXUX MSOX , AOAO JI string:" + UXUX_YHLD)
@@ -47,13 +48,19 @@ function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
         if (/^(?:d|)\d+(?:-(?:d|)\d+|)$/.test(RNSF)) {
             var RJSE_YHLD=RNSF.replace(/(^|-)(?:(?!d).{0})(\d+)/ig, "$1d$2")+RJSE_REYE_XBST;
             return RJSE_YHLD
-        } else if (/^\d+(?:h|a)$/i.test(RNSF)) {
+        } else if (/^\d+[hawqbgs]$/i.test(RNSF)) {
+            if(/^\d+[wqbgs]$/i.test(RNSF)){
+                xbst_bb_ae_1f = '1f'
+            }
             return ("d" + RNSF).toLowerCase();
         } else if (/.\+$/.test(RNSF)) {
             return "\"" + RNSF.replace(/\+$/, "") + "\""
         } else if (/^\+$/.test(RNSF)) {
             return "\"" + RNSF.replace(/\+$/, " ") + "\""
-        } else if (/^\d+-\d+(?:h|a)$/i.test(RNSF)) {
+        } else if (/^\d+-\d+[hawqbgs]$/i.test(RNSF)) {
+            if(/^\d+[wqbgs]$/i.test(RNSF)){
+                xbst_bb_ae_1f = '1f'
+            }
             return RNSF.replace(/(\d+)/g, "d$1")
         } else if (/^(?:d|)\d+(?:-(?:d|)\d+|)d$/i.test(RNSF)) {
             return RNSF.replace(/^(?:(?!d).{0})(\d+)/ig, "d$1").replace(/d$/i, "")
@@ -64,6 +71,6 @@ function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
             return "\"" + RNSF + "\""
         }
     })
-    return LLAO + ",bb," + VNWM_ZYKL_MCVN.join(",")+";"+BMLC
+    return LLAO + ","+xbst_bb_ae_1f+"," + VNWM_ZYKL_MCVN.join(",")+";"+BMLC
 }
 module.exports = VR_EBWU_BRTZ_FS_ZV_bb

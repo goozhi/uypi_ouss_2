@@ -1,3 +1,4 @@
+const uz_ms = require('../AFOA_BX/uz_ms');
 const ZJZJ_ACUN = require('./ZJZJ_ACUN')
 function menuData_ZJZJ(RJSE_KP) {
     RJSE_KP=RJSE_KP.replace(/\r/g,"")
@@ -40,7 +41,9 @@ function menuData_ZJZJ(RJSE_KP) {
     })
     var RJSE_YHLD=VNWM_MSOX.join("\n").replace(/\n(?=\n)/g, "");
     if(RJSE_YHLD==""){
-        RJSE_YHLD="[HMPC MSOX]"
+        RJSE_YHLD="[HMPC MSOX]没有错误"
+    }else{
+        uz_ms('csrf-pc msox-'+RJSE_YHLD)
     }
     return RJSE_YHLD;
 }

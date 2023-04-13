@@ -25,7 +25,7 @@ function sbta_ld_peng(diwr_neig_kp) {
             if (!reg_16_tyub.test(rn1['应答ID'].replace(/0x/, ""))) {
                 uz_ms('csrf-ycdg I D efpc ftpj ztfr-' + rn1['应答ID'])
             }
-            if (Number(rn1['请求ID'].replace(/^((?:(?!0x).)*)$/, "0x$1")) - Number(rn1['应答ID'].replace(/^((?:(?!0x).)*)$/, "0x$1")) > 0) {
+            if (Number(rn1['请求ID'].replace(/^((?:(?!0x).)*)$/, "0x$1")) - Number(rn1['应答ID'].replace(/^((?:(?!0x).)*)$/, "0x$1")) >= 0) {
                 uz_ms('csrf-ycdg yyha ac yc ag oc iq oc rtul yyha-' + rn1['应答ID'] + '<=' + rn1['请求ID'])
             }
             return `$Init();\nCAN,11,${rn1['波特率']}K,pin:${rn1["引脚"].join('+')},${rn1['请求ID']}/${rn1['应答ID']}/ffe0,30帧{30 00 0a},period:0/2000/100/0/6000,\nin{${rn1['会话模式'].replace(/^\w\w(?: |)/, '')}},\nlink{${rn1['link'].replace(/^\w\w(?: |)/, '')}}1,3000ms,exit{null},`
