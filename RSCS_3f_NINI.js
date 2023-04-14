@@ -19,21 +19,21 @@ function RSCS_3f_NINI(NINI_DIWR_1) {
             try {
                 jtyj_yg = eval("0x" + DIWR_YHLD[1])
             } catch (err) {
-                if(!/oth/i.test(DIWR_YHLD[1])){
+                if (!/oth/i.test(DIWR_YHLD[1])) {
                     throw new Error('csrf-jtyj yg ft pj-' + DIWR_YHLD[1])
-                }else{
-                    jtyj_yg=DIWR_YHLD[1]
+                } else {
+                    jtyj_yg = DIWR_YHLD[1]
                 }
             }
             var vnwm_DIYC_KLVQ = TR_JYUY_ZFM_AA(NINI_UYPJ_1, jtyj_yg, "d\\d+", 16)
             var DIYC_KLVQ_ZV_YENH
-            if(vnwm_DIYC_KLVQ==null){
+            if (vnwm_DIYC_KLVQ == null) {
 
             }
-            else if(vnwm_DIYC_KLVQ.length>1){
-                DIYC_KLVQ_ZV_YENH=vnwm_DIYC_KLVQ[0]+" ..."
-            }else{
-                DIYC_KLVQ_ZV_YENH=vnwm_DIYC_KLVQ[0]
+            else if (vnwm_DIYC_KLVQ.length > 2) {
+                DIYC_KLVQ_ZV_YENH = vnwm_DIYC_KLVQ.slice(0, 2).join(',') + " ..."
+            } else {
+                DIYC_KLVQ_ZV_YENH = vnwm_DIYC_KLVQ.join(',')
 
             }
             return { KLVQ_MCVN: DIWR_YHLD[1], BQEO: DIWR_YHLD[2], DIYC_KLVQ_ZV_YENH }
