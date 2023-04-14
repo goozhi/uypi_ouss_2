@@ -280,14 +280,39 @@ function vr_afoa_bx() {
     {
         vr_afoa_wu: "HD_LZJK",
         zkrs: "删重复行",
-        csrf: `HD FG LZJK DK QH. BI AFOA AH NO FYWY LG XBST MR DS XBST FL FL HD FG XBST TYCC DK LZJK BQEO. BI TSJQ LBM uu uw ce dk lplp, fywy kr nh lplp dk zhkl vdzv mcvn om ahno nq vdum lplp nwvt fg lzjk dk jtyj lw. Fg lzjk qh dk jtyj dk nwvt ac nq md-VR-md lplp.
-        `,
-        klch: `del={{}}
-    `
+        csrf: `删重复行,保留唯一一行`,
+        klch: `
+        uni={{
+            123
+            123
+            1234
+        }}
+        uni=file{{
+            comment={{使用参数file将根据utf8编码读取指定文件内容，并返回经过删除重复操作后的文本。}}
+            D:/test/test.txt
+        }}
+        uni=file=gb2312{{
+            comment={{参数file="gb2312"将根据gb2312编码读取指定文件内容(默认utf8)，并返回经过删除重复操作后的文本。}}
+            D:/test/test.txt
+        }}
+        uni=head=标识1,tail=标识2{{
+            comment={{使用参数head和tail将启用正则表达式模式删除head和tail之间重复的内容所在的整行。其中head和tail的值是正则表达式}}
+            标识1 1 标识2
+            标识1 2 标识2
+            标识1 1 标识2
+        }}
+        uni=head=标识1,tail=标识2,file=gb2312{{
+            comment={{使用参数head和tail将启用正则表达式模式删除head和tail之间重复的内容所在的整行。其中head和tail的值是正则表达式}}
+            标识1 1 标识2
+            标识1 2 标识2
+            标识1 1 标识2
+        }}
+        
+        `        
         ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
-        vnwm_vr_afoa_lzm_wu: ["DEL", "76"]
+        vnwm_vr_afoa_lzm_wu: ["UNI", "76"]
     },
 
     {
