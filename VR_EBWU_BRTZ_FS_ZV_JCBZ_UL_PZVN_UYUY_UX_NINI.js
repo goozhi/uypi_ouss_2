@@ -13,7 +13,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var AWZN_KLVQ_VN_1
     var AWZN_KLVQ_VN_2
     if (UXUX_YHLD != "string") {
-        throw new Error("MCVN UXUX MSOX , AOAO JI string:" + UXUX_YHLD)
+        throw new Error("[MCVN UXUX MSOX , AOAO JI string]<--" + UXUX_YHLD)
     }
     var RJSE_1 = RJSE_KP.replace(/\/\/.*/, "")
     var NINI_UXUX_2;
@@ -32,7 +32,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     }
     var DIWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)([^\w\s])(?:\s*(?:，|,)\s*|\s*)(.*)/i)
     if (DIWR_MCVN == null) {
-        throw new Error("SOPJ CGNE NINI MCVN:" + RJSE_KP)
+        throw new Error("[SOPJ CGNE NINI MCVN]<--" + RJSE_KP)
     }
     var LLAO = DIWR_MCVN[1]
     var reg_ES=/\{(.*)\}/
@@ -45,12 +45,12 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
 
     var NINI_UXUX = DIWR_MCVN[2].replace(/【/, "[")
     if (!/^\[$/.test(NINI_UXUX)) {
-        throw new Error("NINI UXUX ACUN : " + NINI_UXUX + "<--" + RJSE_KP)
+        throw new Error("[NINI UXUX ACUN ]<--" + NINI_UXUX + "<--" + RJSE_KP)
     }
     var RJSE_MCVN = DIWR_MCVN[3].replace(/【/g, "[").replace(/】/g, "]");
     var DIWR_YHLD = RJSE_MCVN.replace(/(?:\s+|\s*;\s*|\s*；\s*)$/, "").match(/([^\[\]]*)\](.*)/)
     if (DIWR_YHLD == null) {
-        throw new Error("MCVN BRTZ MSOX:" + RJSE_MCVN + "<--" + RJSE_KP)
+        throw new Error("[MCVN BRTZ MSOX]<--" + RJSE_MCVN + "<--" + RJSE_KP)
     }
     var UYUY_MCVN = DIWR_YHLD[1];
     var RJSE_NOKZ_MR_EYTR;
@@ -187,7 +187,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
                     EYTR = VNWM_MCVN.slice(1, 9).join(" ")
                     PZVN = 1;
                 } else {
-                    throw new Error("PZVN BRTZ MSOX : " + PZVN + "<--" + RJSE_KP)
+                    throw new Error("[PZVN BRTZ MSOX ]<--" + PZVN + "<--" + RJSE_KP)
                 }
             }
             if (isNaN(PZVN)) {

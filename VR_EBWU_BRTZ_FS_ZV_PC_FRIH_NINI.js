@@ -4,7 +4,7 @@ const QOJK_AGVN_NODO = require("./AFOA_BX/QOJK_AGVN_NODO");
 function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     var UXUX_YHLD = typeof (RJSE_KP);
     if (UXUX_YHLD != "string") {
-        throw new Error("MCVN UXUX MSOX , AOAO JI string:" + UXUX_YHLD)
+        throw new Error("csrf-MCVN UXUX MSOX , AOAO JI strin-" + UXUX_YHLD)
     }
     var RJSE_1 = RJSE_KP
     var BMLC = RJSE_1.match(/\/\/.*/)
@@ -22,7 +22,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     }
     var DIWR_MCVN = RJSE_1.match(/(.*\})\s*(?:,\s*|)([^\w\s])(?:\s*(?:，|,)\s*|\s*)(.*)/i)
     if (DIWR_MCVN == null) {
-        throw new Error("SOPJ CGNE NINI MCVN:" + RJSE_KP)
+        throw new Error("csrf-SOPJ CGNE NINI MCV-" + RJSE_KP)
     }
     var RJSE_NINI_LLAO = DIWR_MCVN[1]
     var reg_ES = /\{(.*)\}/
@@ -34,7 +34,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     }
     var NINI_UXUX = DIWR_MCVN[2]
     if (!/^=$/.test(NINI_UXUX)) {
-        throw new Error("NINI UXUX ACUN : " + NINI_UXUX + "<--" + RJSE_KP)
+        throw new Error("csrf-NINI UXUX ACUN-" + NINI_UXUX + "<--" + RJSE_KP)
     }
     var RJSE_MCVN = DIWR_MCVN[3]
     var VNWM_MCVN = RJSE_MCVN.replace(/(?:\s+|\s*;\s*|\s*；\s*)$/, "").split(/\s*(?:,|，)\s*|\s+/)
@@ -43,7 +43,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     if (PZVN == undefined) {
         PZVN = 1
     } else if (PZVN == "") {
-        throw new Error("csrf-PZVN ac oan lh vv-" + RJSE_KP)
+        throw new Error("csrf-PZVN ac oan lh vv-" + PZVN + "-kp-" + RJSE_KP)
     }
     var NOKZ;
     var EYTR;
@@ -65,19 +65,19 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     }
     var VN_YHLD;
     var AGVN_TRVN = 0
+    var vnwm_1 = PZVN.toString().match(/\.\d+/g)
+    if (vnwm_1) {
+        vnwm_1.sort((a, b) => b.length - a.length)
+        AGVN_TRVN = vnwm_1[0].length - 1
+    }
     try {
-        var vnwm_1 = PZVN.match(/\.\d+/g)
-        if (vnwm_1) {
-            vnwm_1.sort((a, b) => b.length - a.length)
-            AGVN_TRVN = vnwm_1[0].length - 1
-        }
         VN_YHLD = eval(PZVN)
     } catch (err) {
         if (/^[^\d]+$|[e-z]|[\u4E00-\u9FA5]/i.test(PZVN)) {
             EYTR = PZVN
             VN_YHLD = 1;
         } else {
-            throw new Error("PZVN BRTZ MSOX : " + PZVN + "<--" + RJSE_KP)
+            throw new Error("csrf-PZVN BRTZ MSOX-" + PZVN + "-kp-" + RJSE_KP)
         }
     }
     PZVN = QOJK_AGVN_NODO(VN_YHLD)
@@ -99,7 +99,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     try {
         VN_YHLD = eval(NOKZ)
     } catch (err) {
-        throw new Error("NOKZ BRTZ MSOX : " + NOKZ + "<--" + RJSE_KP)
+        throw new Error("csrf-NOKZ BRTZ MSOX-" + NOKZ + "<--" + RJSE_KP)
     }
     NOKZ = VN_YHLD;
     var reg_XBST_1 = /^\d+(?:-\d+|)$/
