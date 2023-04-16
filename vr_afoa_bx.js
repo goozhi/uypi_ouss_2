@@ -43,6 +43,7 @@ const VR_TSJQ_ZV_VKIH_MACA = require('./VR_TSJQ_ZV_VKIH_MACA')
 const VR_TSJQ_ZV_UYRS = require('./VR_TSJQ_ZV_UYRS')
 const VR_TSJQ_ZV_KNDD_RJ = require('./VR_TSJQ_ZV_KNDD_RJ')
 const VR_TSJQ_ZV_md_ld_html = require('./VR_TSJQ_ZV_md_ld_html')
+const VR_TSJQ_BRTZ_FS_ZV_RFLD_QH = require('./VR_TSJQ_BRTZ_FS_ZV_RFLD_QH')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -327,7 +328,7 @@ function vr_afoa_bx() {
             标识1 1 标识2
         }}
         
-        `        
+        `
         ,
         vr_afoa_rh: VR_TSJQ_ZV_HD_LZJK,
         VBYT_VKRF_Peng_EBWU: false,
@@ -367,6 +368,22 @@ function vr_afoa_bx() {
     `,
         vnwm_vr_afoa_lzm_wu: ["9", "STR"],
         VBYT_VKRF_Peng_EBWU: true,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "RFLD_QH",
+        zkrs: "翻转行顺序",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_RFLD_QH,
+        csrf: `该指令帮助用户翻转多行文本中行的顺序。`,
+        klch: `
+        rvs={{
+            No. 1
+            No. 2
+            No. 3
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["43", "RVS", "RVRS"],
+        VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
     {
