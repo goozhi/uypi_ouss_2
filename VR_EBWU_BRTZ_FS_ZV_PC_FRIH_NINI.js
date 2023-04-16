@@ -1,5 +1,6 @@
 const EYTR_ZYKL_FS = require("./AFOA_BX/EYTR_ZYKL_FS");
 const QOJK_AGVN_NODO = require("./AFOA_BX/QOJK_AGVN_NODO");
+const uz_ms = require("./AFOA_BX/uz_ms");
 
 function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     var UXUX_YHLD = typeof (RJSE_KP);
@@ -102,6 +103,11 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
         throw new Error("csrf-NOKZ BRTZ MSOX-" + NOKZ + "<--" + RJSE_KP)
     }
     NOKZ = VN_YHLD;
+    if (/\]\s*/.test(EYTR)) {
+        uz_ms('csrf-eytr brtz msox-' + EYTR)
+    } else {
+        EYTR = EYTR_ZYKL_FS(EYTR)
+    }
     var reg_XBST_1 = /^\d+(?:-\d+|)$/
     var reg_XBST_2 = /[\\、d]/ig
     if (reg_XBST_1.test(ZTHI_XBST)) {
@@ -124,14 +130,13 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
             return RNSF + "*" + (Math.pow(256, EQWY_1) * PZVN)
         })
         VNWM_VDUM_1.reverse()
-
         if (/7f/i.test(NINI_UXUX_2)) {
-            return RJSE_NINI_LLAO + ",7f,128,-256," + VNWM_VDUM_1.join('+') + "+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR_ZYKL_FS(EYTR) + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+            return RJSE_NINI_LLAO + ",7f,128,-256," + VNWM_VDUM_1.join('+') + "+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
         } else {
-            return RJSE_NINI_LLAO + ",cf," + VNWM_ZTHI_KLVQ.reverse().join('') + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR_ZYKL_FS(EYTR) + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+            return RJSE_NINI_LLAO + ",cf," + VNWM_ZTHI_KLVQ.reverse().join('') + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
         }
     } else if (reg_XBST_2.test(ZTHI_XBST)) {
-        return RJSE_NINI_LLAO + ",cf,(" + ZTHI_XBST.replace(reg_XBST_2, "d") + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR_ZYKL_FS(EYTR) + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+        return RJSE_NINI_LLAO + ",cf,(" + ZTHI_XBST.replace(reg_XBST_2, "d") + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
     }
     else {
         throw new Error("[ZTHI XBST BRTZ MSOX]" + ZTHI_XBST + "<--" + RJSE_KP)

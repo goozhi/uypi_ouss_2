@@ -1,5 +1,7 @@
 const EOWL_ZTHI_YG_ZV_PC_FRIH = require('./AFOA_BX/EOWL_ZTHI_YG_ZV_PC_FRIH');
+const EYTR_ZYKL_FS = require('./AFOA_BX/EYTR_ZYKL_FS');
 const UL_NOKZ = require('./AFOA_BX/UL_NOKZ');
+const uz_ms = require('./AFOA_BX/uz_ms');
 
 function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var UL_PZVN_ZV_PC_FRIH = require('./UL_PZVN_ZV_PC_FRIH')
@@ -35,12 +37,12 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         throw new Error("[SOPJ CGNE NINI MCVN]<--" + RJSE_KP)
     }
     var LLAO = DIWR_MCVN[1]
-    var reg_ES=/\{(.*)\}/
-    var DIWR_ES=LLAO.match(reg_ES);
-    if(DIWR_ES==null){
-        throw new Error("[NRAP ES MCVN]"+LLAO+"<--"+RJSE_KP)
-    }else{
-        LLAO=LLAO.replace(reg_ES,"{"+DIWR_ES[1].replace(/(\w\w)(?=\w)/g,"$1 ")+"}")
+    var reg_ES = /\{(.*)\}/
+    var DIWR_ES = LLAO.match(reg_ES);
+    if (DIWR_ES == null) {
+        throw new Error("[NRAP ES MCVN]" + LLAO + "<--" + RJSE_KP)
+    } else {
+        LLAO = LLAO.replace(reg_ES, "{" + DIWR_ES[1].replace(/(\w\w)(?=\w)/g, "$1 ") + "}")
     }
 
     var NINI_UXUX = DIWR_MCVN[2].replace(/【/, "[")
@@ -206,6 +208,11 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
             AGVN_TRVN = 2
             PZVN = QOJK_AGVN_NODO(PZVN);
         }
+    }
+    if (/\]\s*$/.test(EYTR)) {
+        uz_ms('csrf-eytr brtz msox-' + EYTR)
+    } else {
+        EYTR = EYTR_ZYKL_FS(EYTR)
     }
     if (/7f/i.test(NINI_UXUX_2)) {
         VNWM_ZTHI_KLVQ.reverse();

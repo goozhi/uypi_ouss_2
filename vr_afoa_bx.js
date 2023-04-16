@@ -125,11 +125,11 @@ function vr_afoa_bx() {
         csrf: `该指令帮助用户将md文档转为html
         `,
         klch: `
-        html={{
-            # This is a theme
-        }}
         html=file=utf8{{
             D:/to/Your/Md/Path.md
+        }}
+        html={{
+            # This is a theme
         }}
         html=dir{{
             D:/to/Your/Md/item/Path/
