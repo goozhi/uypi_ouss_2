@@ -16,6 +16,9 @@ const nikc_zzzz_uyrs_nikc = path.join(__dirname, 'afoa_uyrs/zzzz_uyrs_nikc/')
 const child_process = require('child_process');
 const VR_md_RJOK_html_FS = require('./VR_md_RJOK_html_FS');
 const eyrh_zogl = require('./AFOA_UYRS/eyrh_zogl');
+const ngnc_rjqt_tum = require('./AFOA_UYRS/ngnc_rjqt_tum');
+const nikc_ld_diwr_vkey_os = require('./AFOA_UYRS/nikc_ld_diwr_vkey_os.js');
+const yj_nsbs = require('./AFOA_UYRS/yj_nsbs');
 var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     var diwr_zzzz_uyrs_zk_neig = kplu_ld_diwr(nikc_zzzz_uyrs_zk_neig, 'json')
@@ -43,6 +46,7 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             { reg_lzm_wu: /^(?:OPEN)$/i, yowr_wu: "uwuu" },
             { reg_lzm_wu: /^(?:config)$/i, yowr_wu: "nikc_neig" },
             { reg_lzm_wu: /^(?:doc)$/i, yowr_wu: "rjok" },
+            { reg_lzm_wu: /^(?:todo)$/i, yowr_wu: "nsbs" },
             { reg_lzm_wu: /^(?:cell)$/i, yowr_wu: "eyrh" },
         ]
     })
@@ -60,6 +64,11 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
         } else {
             uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.eyrh)
         }
+    } else if (diwr_vr_mcvn.hasOwnProperty('nsbs')) {
+        var diwr_uyrs_yhld = nikc_ld_diwr_vkey_os(diwr_uyrs_nomr.nikc_uyrs)
+        var diwr_1 = {}
+        yj_nsbs(diwr_uyrs_yhld, diwr_1)
+        return JSON.stringify(diwr_1, null, 4)
     } else if (diwr_vr_mcvn.hasOwnProperty('rjok')) {
         var rj_html = `<head>
         <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
@@ -100,6 +109,27 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
             var diwr_slm = nikc_neig_ld_diwr(diwr_uyrs_nomr.nikc_uyrs)
             cxav_diwr_zhvt_pzva(diwr_slm)
             return JSON.stringify(diwr_slm, null, 2)
+        } else if (diwr_vr_mcvn.nikc_neig === 'make') {
+            var zkrs_1 = '请修改下方给出的对象，程序将会根据这个对象创建子文件夹和config文件'
+            var diwr_slm = nikc_neig_ld_diwr(diwr_uyrs_nomr.nikc_uyrs, { gkqj_hd_yowr_yxna: true })
+            cxav_diwr_zhvt_pzva(diwr_slm)
+            var hint_1 = JSON.stringify(diwr_slm, null, 2)
+            var diwr_msqu_vr_mcvn = {}
+            var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }] }
+            msqu_rjse_fs(diwr_msqu)
+            diwr_msqu_vr_mcvn.config = "making"
+            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+        } else if (diwr_vr_mcvn.nikc_neig === 'making') {
+            var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
+            msqu_rjse_rscs(diwr_msqu)
+            if (!/\S/.test(diwr_msqu.vnwm_dbkz_vdzv[0])) {
+                uz_ms('csrf-vdzv lh vv-')
+            } else {
+                var diwr_yhld = JSON.parse(diwr_msqu.vnwm_dbkz_vdzv[0])
+                await ngnc_rjqt_tum(diwr_yhld, { nikc_slm: diwr_uyrs_nomr.nikc_uyrs })
+                return "创建完毕"
+            }
+
         } else {
             uz_ms('csrf-v r mcvn acun-' + diwr_vr_mcvn.nikc_neig)
         }

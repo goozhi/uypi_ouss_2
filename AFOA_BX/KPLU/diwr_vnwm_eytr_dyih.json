@@ -27,6 +27,8 @@
     { "DYIH": "mi", "EYTR": "m" },
     { "DYIH": "m/S2", "EYTR": "米/平方秒" },
     { "DYIH": "degs", "EYTR": "deg/s" },
+    { "DYIH": "dumeis", "EYTR": "deg/s" },
+    { "DYIH": "dumeimiao", "EYTR": "deg/s" },
     { "DYIH": "ms2", "EYTR": "米/平方秒" },
     { "DYIH": "mss", "EYTR": "米/平方秒" },
     { "DYIH": "mpss", "EYTR": "米/平方秒" },

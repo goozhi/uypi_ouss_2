@@ -248,6 +248,10 @@ function vr_afoa_bx() {
             comment={{该指令能显示当前proj信息，包括当前link的目录}}
         }}
 
+        proj=todo{{
+            comment={{该指令显示菜单布局中还未做的菜单}}
+        }}
+        
         proj=open{{
             comment={{该指令打开当前link的目录}}
         }}
@@ -258,6 +262,13 @@ function vr_afoa_bx() {
 
         proj=cell=test{{
             comment={{进行单体测试(模拟)}}
+        }}
+
+        proj=config=list{{
+            comment={{该指令能列出project目录内所有的config对象。等效于list=config}}
+        }}
+        proj=config=make{{
+            comment={{运行此命令会进入config创建模式，引导用户利用对象统一、批量创建子文件夹并创建相应的config文件}}
         }}
         `
         ,
