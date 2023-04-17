@@ -58,15 +58,16 @@ async function vkrf_uyrs(diwr_neig_kp) {
         diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
         var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         var diwr_ljey = JSON.parse("{" + rj_ljey_jtyj + "}")
-        var diwr_vnwm_ljey = []
-        ld_vnwm_peng_ljey(diwr_ljey, diwr_vnwm_ljey)
-        var rj_menu_jtyj = "@menu\n" + ld_rj_peng_ljey(diwr_vnwm_ljey)
         var rj_sys_jtyj
+        var diwr_ljey_2 = {}
         try {
-            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1, diwr_wwcf }) + "\n__"
+            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, pzre_vkih: -1, diwr_wwcf }) + "\n__"
         } catch (err) {
             throw err
         }
+        var diwr_vnwm_ljey = []
+        ld_vnwm_peng_ljey(diwr_ljey, diwr_vnwm_ljey)
+        var rj_menu_jtyj = "@menu\n" + ld_rj_peng_ljey(diwr_vnwm_ljey, diwr_ljey_2)
         ymce(diwr_wwcf, 'diwr_wwcf')
         if (!diwr_neig_kp.gkqj_sdno_vkrf) {
             var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
