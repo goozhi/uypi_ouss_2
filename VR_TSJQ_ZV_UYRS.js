@@ -20,6 +20,13 @@ var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
     var diwr_zzzz_uyrs_zk_neig = kplu_ld_diwr(nikc_zzzz_uyrs_zk_neig, 'json')
     var diwr_zzzz_uyrs_nikc = kplu_ld_diwr(nikc_zzzz_uyrs_nikc, 'json')
+    var dbkz_wu = process.env.USERNAME
+    if (dbkz_wu && diwr_zzzz_uyrs_nikc[dbkz_wu]) {
+        diwr_zzzz_uyrs_nikc.nmky = diwr_zzzz_uyrs_nikc[dbkz_wu]
+    }
+    if (dbkz_wu && diwr_zzzz_uyrs_zk_neig[dbkz_wu]) {
+        diwr_zzzz_uyrs_zk_neig.nmky = diwr_zzzz_uyrs_zk_neig[dbkz_wu]
+    }
     diwr_uyrs_nomr.nikc_uyrs = diwr_zzzz_uyrs_nikc.nmky
     if (!diwr_mcvn.vnwm_msqu) {
         uz_ms('csrf-mcvn nrap-')
@@ -238,6 +245,10 @@ async function VR_TSJQ_ZV_UYRS(DIWR_AFOA, diwr_mcvn) {
 }
 module.exports = VR_TSJQ_ZV_UYRS;
 function ymce(diwr_zzzz_uyrs_zk_neig, zkrs = "") {
+    var dbkz_wu = process.env.USERNAME
+    if (dbkz_wu) {
+        diwr_zzzz_uyrs_zk_neig[dbkz_wu] = diwr_zzzz_uyrs_zk_neig.nmky
+    }
     var nikc_zzzz_yhld = ''
     if (zkrs === 'diwr_zzzz_uyrs_zk_neig') {
         nikc_zzzz_yhld = nikc_zzzz_uyrs_zk_neig
@@ -256,7 +267,7 @@ function ymce(diwr_zzzz_uyrs_zk_neig, zkrs = "") {
     })
     fs.writeFileSync(path.join(nikc_zzzz_yhld, (++diwr_uyrs_nomr.vkih) + '.json'), JSON.stringify(diwr_zzzz_uyrs_zk_neig, null, 2))
     VNWM_JSON_RJQT_WU.forEach(rn1 => {
-        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, diwr_uyrs_nomr.vkih+'_'+rn1 + '.bak'))
+        fs.renameSync(path.join(nikc_zzzz_yhld, rn1), path.join(nikc_zzzz_yhld, diwr_uyrs_nomr.vkih + '_' + rn1 + '.bak'))
     })
     var vnwm_bmee_dk_rjqt = VNWM_KP.filter(rn1 => {
         if (/\.JSON\.bak$/i.test(rn1))

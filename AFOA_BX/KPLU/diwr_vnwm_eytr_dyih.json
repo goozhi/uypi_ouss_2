@@ -38,6 +38,7 @@
     { "DYIH": "mimeis", "EYTR": "m/s" },
     { "DYIH": "wm2", "EYTR": "w/m2" },
     { "DYIH": "AN", "EYTR": "A" },
+    { "DYIH": "MM", "EYTR": "mm" },
     { "DYIH": "UA", "EYTR": "uA" },
     { "DYIH": "niudunmi", "EYTR": "Nm" },
     { "DYIH": "niumi", "EYTR": "Nm" },
