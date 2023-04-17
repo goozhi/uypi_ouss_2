@@ -11,7 +11,7 @@ function yj_nsbs(diwr_nixb = {}, diwr_vdum = {}) {
                         return true
                     }
                 })
-                diwr_vdum[fo1] = vnwm_nsbs
+                diwr_vdum[diwr_nixb.yxna_yowr] = vnwm_nsbs
             } else {
                 yj_nsbs(diwr_nixb[fo1], diwr_vdum)
             }

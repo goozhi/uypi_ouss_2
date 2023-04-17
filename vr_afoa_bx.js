@@ -44,6 +44,7 @@ const VR_TSJQ_ZV_UYRS = require('./VR_TSJQ_ZV_UYRS')
 const VR_TSJQ_ZV_KNDD_RJ = require('./VR_TSJQ_ZV_KNDD_RJ')
 const VR_TSJQ_ZV_md_ld_html = require('./VR_TSJQ_ZV_md_ld_html')
 const VR_TSJQ_BRTZ_FS_ZV_RFLD_QH = require('./VR_TSJQ_BRTZ_FS_ZV_RFLD_QH')
+const VR_TSJQ_ZV_UWUU_OUSS_NIKC = require('./VR_TSJQ_ZV_UWUU_OUSS_NIKC')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -291,6 +292,20 @@ function vr_afoa_bx() {
         vnwm_vr_afoa_lzm_wu: ["20", "VIEW"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object"
+    },
+    {
+        vr_afoa_wu: "UWUU_OUSS_NIKC",
+        zkrs: "报错内容可视化",
+        vr_afoa_rh: VR_TSJQ_ZV_UWUU_OUSS_NIKC,
+        csrf: "该指令帮助用户打开助手所在目录",
+        klch: `
+        comment={{
+            运行下方命令，将会打开助手目录
+            open={{}}
+    }}`,
+        vnwm_vr_afoa_lzm_wu: ["24", "OPEN"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
     },
 
     {
