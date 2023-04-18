@@ -58,10 +58,10 @@ function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
         } else if (/^\+$/.test(RNSF)) {
             return "\"" + RNSF.replace(/\+$/, " ") + "\""
         } else if (/^\d+-\d+[hawqbgs]$/i.test(RNSF)) {
-            if(/^\d+[wqbgs]$/i.test(RNSF)){
+            if(/\d+[wqbgs]/i.test(RNSF)){
                 xbst_bb_ae_1f = '1f'
             }
-            return RNSF.replace(/(\d+)/g, "d$1")
+            return RNSF.replace(/(\d+)/g, "d$1").toLowerCase()
         } else if (/^(?:d|)\d+(?:-(?:d|)\d+|)d$/i.test(RNSF)) {
             return RNSF.replace(/^(?:(?!d).{0})(\d+)/ig, "d$1").replace(/d$/i, "")
         } else if (/^(?:".*"|d\d+(?:-d\d+|)(?:h|a|))$/i.test(RNSF)) {
