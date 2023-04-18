@@ -9,6 +9,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
     var NINI_SIIH_DIAX = require('./NINI_SIIH_DIAX')
     var VR_EBWU_BRTZ_FS_ZV_bb = require('./VR_EBWU_BRTZ_FS_ZV_bb')
     var VR_EBWU_BRTZ_FS_ZV_33 = require('./VR_EBWU_BRTZ_FS_ZV_33')
+    var VR_EBWU_BRTZ_FS_ZV_V = require('./VR_EBWU_BRTZ_FS_ZV_V')
     var VR_EBWU_BRTZ_FS_ZV_gg = require('./VR_EBWU_BRTZ_FS_ZV_gg')
     var VR_EBWU_BRTZ_FS_ZV_10 = require('./VR_EBWU_BRTZ_FS_ZV_10')
     var VR_EBWU_BRTZ_FS_ZV_09 = require('./VR_EBWU_BRTZ_FS_ZV_09')
@@ -52,6 +53,8 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
                     return VR_EBWU_BRTZ_FS_ZV_qq(RNSF)
                 case /^(?:88|bb)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_bb(RNSF)
+                case /^(?:V)$/i.test(NINI_UXUX):
+                    return VR_EBWU_BRTZ_FS_ZV_V(RNSF)
                 case /^(?:=)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RNSF)
                 case /^(?:\[|【)$/i.test(NINI_UXUX):
