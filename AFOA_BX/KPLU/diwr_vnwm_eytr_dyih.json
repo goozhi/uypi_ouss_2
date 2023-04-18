@@ -16,6 +16,7 @@
     { "DYIH": "hz", "EYTR": "Hz" },
     { "DYIH": "PER", "EYTR": "%" },
     { "DYIH": "PEC", "EYTR": "%" },
+    { "DYIH": "bai", "EYTR": "%" },
     { "DYIH": "qianmi", "EYTR": "km" },
     { "DYIH": "千米", "EYTR": "km" },
     { "DYIH": "KM", "EYTR": "km" },

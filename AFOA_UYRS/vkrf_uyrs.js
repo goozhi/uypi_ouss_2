@@ -59,9 +59,9 @@ async function vkrf_uyrs(diwr_neig_kp) {
         var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
         var diwr_ljey = JSON.parse("{" + rj_ljey_jtyj + "}")
         var rj_sys_jtyj
-        var diwr_ljey_2 = {}
+        var diwr_ljey_2 = { bnll_vkih: -1 }
         try {
-            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, pzre_vkih: -1, diwr_wwcf }) + "\n__"
+            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"
         } catch (err) {
             throw err
         }
