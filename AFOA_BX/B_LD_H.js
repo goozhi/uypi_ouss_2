@@ -1,13 +1,13 @@
-var B_LD_H = function (RJSE_3) {//B_LD_H
-    RJSE_3 = RJSE_3.replace(/\s/g, "");
+var B_LD_H = function (rj_vy_tyub) {//B_LD_H
+    rj_vy_tyub = rj_vy_tyub.replace(/\s/g, "");
     var RJSE_2 = "";
     var VNWM_1 = new Array();
-    var VN_1 = (4 - RJSE_3.length % 4) & 3;
+    var VN_1 = (4 - rj_vy_tyub.length % 4) & 3;
     while (VN_1--) {
-        RJSE_3 = "0" + RJSE_3;
+        rj_vy_tyub = "0" + rj_vy_tyub;
     }
-    for (var EQWY_1 = 0; EQWY_1 < RJSE_3.length; EQWY_1 += 4) {
-        var RJSE_4 = RJSE_3.slice(EQWY_1, EQWY_1 + 4);
+    for (var EQWY_1 = 0; EQWY_1 < rj_vy_tyub.length; EQWY_1 += 4) {
+        var RJSE_4 = rj_vy_tyub.slice(EQWY_1, EQWY_1 + 4);
         VNWM_1.push(RJSE_4);
     }
     for (var EQWY_1 = 0; EQWY_1 < VNWM_1.length; EQWY_1++) {

@@ -45,6 +45,7 @@ const VR_TSJQ_ZV_KNDD_RJ = require('./VR_TSJQ_ZV_KNDD_RJ')
 const VR_TSJQ_ZV_md_ld_html = require('./VR_TSJQ_ZV_md_ld_html')
 const VR_TSJQ_BRTZ_FS_ZV_RFLD_QH = require('./VR_TSJQ_BRTZ_FS_ZV_RFLD_QH')
 const VR_TSJQ_ZV_UWUU_OUSS_NIKC = require('./VR_TSJQ_ZV_UWUU_OUSS_NIKC')
+const VR_TSJQ_BRTZ_FS_ZV_UYUY = require('./VR_TSJQ_BRTZ_FS_ZV_UYUY')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -250,7 +251,7 @@ function vr_afoa_bx() {
         }}
 
         proj=todo{{
-            comment={{该指令显示菜单布局中还未做的菜单}}
+            comment={{该指令显示菜单布局中还未做的菜单，也可以用proj=undo}}
         }}
         
         proj=open{{
@@ -293,6 +294,33 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object"
     },
+    {
+        vr_afoa_wu: "UYUY",
+        zkrs: "计算",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_UYUY,
+        csrf: "该指令帮助用户计算算式，可批量计算。",
+        klch: `CC={{
+            0x1f+3
+            0x1f
+            11+3
+            017
+            comment={{若进行一般运算，可直接输入算式}}
+        }}
+    
+        cc=out=16{{
+            0x13
+            14
+            comment={{可使用out参数让结果按指定进制输出，可以输出2、8、10、16进制}}
+        }}
+        cc=in=2{{
+            comment={{可使用in参数让程序按指定进制读取算式，可以指定2进制，16进制和8进制请直接使用前缀'0x'、'0'直接表示。}}
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["23", "CALC", "CC"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+
     {
         vr_afoa_wu: "UWUU_OUSS_NIKC",
         zkrs: "报错内容可视化",
