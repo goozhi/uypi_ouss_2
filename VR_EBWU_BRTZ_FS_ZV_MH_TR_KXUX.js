@@ -53,7 +53,7 @@ function VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX(RJSE_KP) {
     return vnwm_yhld.slice(1, 100).map((rn1, eqwy_1) => {
 
         if (/:|：/.test(rn1)) {
-            var diwr_yhld = rn1.match(/(.*?):|：(.*)/)
+            var diwr_yhld = rn1.match(/(.*?)(?::|：)(.*)/)
             rn1 = diwr_yhld[2]
             var rj_yhld = Number("0x" + diwr_yhld[1]).toString(2)
             vn_1 = rj_yhld.length - 1 - rj_yhld.search(/10*$/)
