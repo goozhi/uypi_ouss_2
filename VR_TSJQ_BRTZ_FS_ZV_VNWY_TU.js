@@ -1,4 +1,5 @@
 const VR_EBWU_BRTZ_FS_ZV_22 = require('./VR_EBWU_BRTZ_FS_ZV_22')
+const VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX = require('./VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX')
 const VR_EBWU_BRTZ_FS_ZV_qq = require('./VR_EBWU_BRTZ_FS_ZV_qq')
 
 async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
@@ -55,6 +56,8 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
                     return VR_EBWU_BRTZ_FS_ZV_bb(RNSF)
                 case /^(?:V)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_V(RNSF)
+                case /^(?:M)$/i.test(NINI_UXUX):
+                    return VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX(RNSF)
                 case /^(?:=)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RNSF)
                 case /^(?:\[|【)$/i.test(NINI_UXUX):
