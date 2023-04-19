@@ -10,19 +10,17 @@ async function TR_JYUY_ZFM_AA(UYTZ_KP, JTYP, RJSE_reg_EYNH_ZTHI_XBST, TYUB_VDUM)
     }
     var VNWM_1 = UYTZ_KP.match(new RegExp(RJSE_reg_EYNH_ZTHI_XBST, "g"))
     var VN_1;
-    var VBYT_1 = false;
     var VNWM_VN = []
     if (VNWM_1 == null) {
         throw new Error("[UYTZ MCVN NRAP ZTHI XBST]" + UYTZ_KP + "<--")
     } else {
         VN_1 = Math.pow(256, VNWM_1.length)
     }
-    var vwdp_1 = new Array(VN_1).fill(1).slice(0, 1000).map(async (rn1, i1) => {
+    var vwdp_1 = new Array(VN_1).fill(1).map(async (rn1, i1) => {
         var UYTZ = UYTZ_KP.replace(new RegExp("(" + RJSE_reg_EYNH_ZTHI_XBST + ")+", "i"), i1);
         try {
             if (eval(UYTZ) == Number(JTYP)) {
                 return i1
-                VBYT_1 = true
             } else {
                 return false
             }
@@ -36,7 +34,7 @@ async function TR_JYUY_ZFM_AA(UYTZ_KP, JTYP, RJSE_reg_EYNH_ZTHI_XBST, TYUB_VDUM)
             if (VNWM_VN.length == 0) {
                 resolve(null)
             }
-            var VYVY_VNWM_1 = VNZT_YTNC_FS(VNWM_VN.slice(0, 100))
+            var VYVY_VNWM_1 = VNZT_YTNC_FS(VNWM_VN)
             var VYVY_VNWM_2 = VYVY_VNWM_1.map(RNSF => {
                 return TYUB_XBST + RNSF[0].toString(TYUB_VDUM) + "-" + TYUB_XBST + RNSF[RNSF.length - 1].toString(TYUB_VDUM)
             })
