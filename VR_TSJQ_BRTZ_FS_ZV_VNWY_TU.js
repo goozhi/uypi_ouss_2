@@ -62,6 +62,8 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
                     return VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RNSF)
                 case /^(?:\[|【)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RNSF)
+                case /^(?:\d+)$/i.test(NINI_UXUX):
+                    return VR_EBWU_BRTZ_FS_ZV_33(RNSF.replace(/(\}\s*(?:,\s*|))((?:\w+|[^\s\w]))/,"$133 $2"))
             }
         }
 
