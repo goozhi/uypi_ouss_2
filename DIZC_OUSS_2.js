@@ -6,7 +6,7 @@ async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     var NINI_SIIH_DIAX = require('./NINI_SIIH_DIAX')
     var RJSE_KP = RJSE_1;
     var VNWM_OKWK_ZTHI_SYZN_YG_SLGR
-    var diwr_vyvy_vnwm_zthi_slgr=null
+    var diwr_vyvy_vnwm_zthi_slgr = null
     RJSE_1 = (await VR_EBWU_AFOA_BRTZ_FS(RJSE_1)).rj_jtyj
     var RJSE_YHLD;
     var VNWM_YHLD_2 = RJSE_1.split('\n')
@@ -20,7 +20,7 @@ async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     }
     var RJSE_MSOX = (await ZJZJ_TSJQ_Str(RJSE_YHLD))
     if (RJSE_MSOX != "") {
-        throw new Error (RJSE_MSOX)
+        throw new Error(RJSE_MSOX)
     }
     RJSE_1 = RJSE_1.replace(/\r/g, "").replace(/(?:\n|^)[^\S\n]*\/\/.*/g, "").replace(/\n(?=\n)/g, "")
     if (YE_aU_QHVN == null) {
@@ -88,14 +88,21 @@ async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     }
     RJSE_1 = RJSE_1.replace(/^((?!\*").)*/, "");
 
-    var RJSE_YHLD_2 = NINI_HQTB_2(RJSE_1, diwr_vyvy_vnwm_zthi_slgr, VNWM_OKWK_ZTHI_SYZN_YG_SLGR);
-    var RJSE_YHLD = NINI_SIIH_DIAX(RJSE_YHLD_2);
-    var VNWM_YHLD = RJSE_YHLD.split(/\n/);
-    var VN_1 = Math.floor(VNWM_YHLD.length / YE_aU_QHVN);
-    for (var EQWY_1 = 0; EQWY_1 < VN_1; EQWY_1++) {
-        VNWM_YHLD.splice(YE_aU_QHVN * (EQWY_1 + 1) + EQWY_1, 0, "");
-    }
-    return VNWM_YHLD.join("\n");
+    var RJSE_YHLD_2
+    return new Promise((resolve, reject) => {
+        Promise.all([NINI_HQTB_2(RJSE_1, diwr_vyvy_vnwm_zthi_slgr, VNWM_OKWK_ZTHI_SYZN_YG_SLGR)]).then(jtyj => {
+            RJSE_YHLD_2 = jtyj[0]
+            var RJSE_YHLD = NINI_SIIH_DIAX(RJSE_YHLD_2);
+            var VNWM_YHLD = RJSE_YHLD.split(/\n/);
+            var VN_1 = Math.floor(VNWM_YHLD.length / YE_aU_QHVN);
+            for (var EQWY_1 = 0; EQWY_1 < VN_1; EQWY_1++) {
+                VNWM_YHLD.splice(YE_aU_QHVN * (EQWY_1 + 1) + EQWY_1, 0, "");
+            }
+            resolve(VNWM_YHLD.join("\n"))
+        }).catch(err => {
+            reject(err)
+        })
+    })
 
 }
 module.exports = DIZC_OUSS_2;

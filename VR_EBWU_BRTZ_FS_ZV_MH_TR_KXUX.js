@@ -63,7 +63,7 @@ function VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX(RJSE_KP) {
         ZZZZ_KLVQ = `${KLVQ_2}>>${vn_1}&0x1`
         var VNWM_3f_MCVN_ZV_VNWM = Array(vnwm_yhld[0], rn1)
         var RJSE_3f_MCVN_ZV_VNWM = BRTZ_FS_3f("998\n" + VNWM_3f_MCVN_ZV_VNWM.join("\n").replace(/\u568f/g, " ").replace(/\u917e|\u2018|\u2019|'/g, "") + "\n999");
-        return LLAO.replace(/{/, "_" + eqwy_1 + "{") + ",3f," + ZZZZ_KLVQ + "," + RJSE_3f_MCVN_ZV_VNWM.replace(/([^;])\s*$/, "$1;") + BMLC
+        return LLAO.replace(/(\s*{)/, "_" + eqwy_1 + "$1") + ",3f," + ZZZZ_KLVQ + "," + RJSE_3f_MCVN_ZV_VNWM.replace(/([^;])\s*$/, "$1;") + BMLC
     }).join('\n')
 }
 module.exports = VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX;

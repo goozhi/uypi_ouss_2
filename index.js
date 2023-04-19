@@ -10,7 +10,6 @@ var WLYC_RJQT_GRBJ = require('./WLYC_RJQT_GRBJ');
 var WLYC_RJQT_FDMJ = require('./WLYC_RJQT_FDMJ');
 var WLYC_VR_EBWU_ATRS = require('./WLYC_VR_EBWU_ATRS')
 var WLYC_EYRHGGHQTB = require('./WLYC_EYRHGGHQTB');
-var WLYC_DIZCGGOUSS = require('./WLYC_DIZCGGOUSS');
 var WLYC_ZSGGTRGGYJGGEYRH = require('./WLYC_ZSGGTRGGYJGGEYRH');
 var WLYC_EOSRGGJUZCGGTZGGYJEYRH = require('./WLYC_EOSRGGJUZCGGTZGGYJEYRH');
 var WLYC_EYRH_NINI_HQMV_YENH_YYHA = require('./WLYC_EYRH_NINI_HQMV_YENH_YYHA');
@@ -63,9 +62,6 @@ app.get('/HD_LZJK_FYWYGGXBST', function (req, res) {
 });
 app.get('/TYUB_LDRG', function (req, res) {
     res.render('TYUB_LDRG');
-});
-app.get('/DIZCGGOUSS', function (req, res) {
-    res.render('DIZCGGOUSS', { KLCH: "*\"示例\",{22 00 22},cf,d4,.0,;" });
 });
 app.get('/QH_MAGM', function (req, res) {
     res.render('QH_MAGM');
@@ -296,9 +292,6 @@ app.post('/SLRH_JYUY', function (req, res) {
 });
 app.post('/SIIHGGUXGGRJSEGGBRTZGGFS', function (req, res) {
     WLYC_SIIHGGUXGGRJSEGGBRTZGGFS(req, res);
-});
-app.post('/DIZCGGOUSS', function (req, res) {
-    WLYC_DIZCGGOUSS(req, res);
 });
 app.use(function (req, res, next) {
     var req_RJSE_1;

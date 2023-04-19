@@ -10,7 +10,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
     if (UXUX_YHLD != "object") {
         uz_ms("csrf-MCVN UXUX MSOX , AOAO JI object:-" + UXUX_YHLD)
     }
-    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO).replace(/^\/\/.*/gm,"该项目已被注释掉{999998}33 4 请忽略该项目")
+    var BQEO_1 = vr_afoa_bqeo_rscs(DIWR_AFOA.VR_AFOA_BQEO).replace(/^\/\/.*/gm, "该项目已被注释掉{999998}33 4 请忽略该项目")
     var diwr_vr_mcvn = vr_mcvn_rscs(DIWR_AFOA.VR_AFOA_MCVN, {
         diwr_vnwm_mcvn_wu_oqzn: [{ reg_lzm_wu: /^(?:9|max)$/i, yowr_wu: "okwk_zthi" }
             , { reg_lzm_wu: /^(?:32|asc)$/i, yowr_wu: "asc" }, { reg_lzm_wu: /^(?:help)$/i, yowr_wu: "help" }]
@@ -49,13 +49,13 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
                 }
                 return diwr_msqu_zkrs.ce_zkrs(diwr_mcvn)
             } else {
-                if(diwr_mcvn.vnwm_msqu.length===0){
+                if (diwr_mcvn.vnwm_msqu.length === 0) {
                     uz_ms('csrf-mcvn nrap-')
                 }
                 var zkrs_wdbu_jtyj = await diwr_msqu_zkrs.wdbu_zkrs(diwr_mcvn)
                 if (zkrs_wdbu_jtyj) {
                     return zkrs_wdbu_jtyj
-                }else{
+                } else {
                     BQEO_1 = diwr_mcvn.diwr_msqu_zzzz.vr_okpy_bqeo
                 }
             }
@@ -79,6 +79,12 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
         }
 
     }
-    return await DIZC_OUSS_2(BQEO_1, 999, RJSE_ZTHI_SLGR)
+    return new Promise((resolve, reject) => {
+        Promise.all([DIZC_OUSS_2(BQEO_1, 999, RJSE_ZTHI_SLGR)]).then(jtyj_1 => {
+            resolve(jtyj_1[0])
+        }).catch(err => {
+            reject(err)
+        })
+    })
 }
 module.exports = VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2;
