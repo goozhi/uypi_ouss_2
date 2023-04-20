@@ -156,7 +156,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
                 }
             }
         } else {
-            return RJSE_NINI_LLAO + ",cf,(" + + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+            return RJSE_NINI_LLAO + ",cf,(" + ZTHI_XBST + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
         }
     }
     else {
