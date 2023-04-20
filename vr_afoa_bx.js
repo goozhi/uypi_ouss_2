@@ -71,6 +71,10 @@ function vr_afoa_bx() {
         klch: `clone=counts=10{{
             TEXT
         }}
+        clone=counts=3,again=4{{
+            TEXT
+        }}
+        
     `
         ,
         vr_afoa_rh: VR_TSJQ_ZV_KNDD_RJ,
@@ -120,6 +124,11 @@ function vr_afoa_bx() {
         nums=counts=10{{
             4
             comment={{如果steps=1，则不需要声明steps=1}}
+        }}
+
+        nums=clone=4,counts=4{{
+            1
+            comment={{如果指定clone参数，则程序会先按照clone指定的次数重复追加用户输入的内容，然后再进行编号给定。}}
         }}
     
     `,

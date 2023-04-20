@@ -1,5 +1,5 @@
 
-function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR) {
+function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR, VN_KNDD=1) {
     if (DPHP == null) {
         throw new Error("CSRF-MCVN NRAP-")
     }
@@ -19,6 +19,7 @@ function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR) {
         VNZT_XBST = "0x"
     }
     var RJSE_1 = RJSE_KP;
+    RJSE_1 = Array(VN_KNDD).fill(RJSE_KP).join('\n')
     var RJSE_2 = RJSE_1;
     var VNWM_VDUM_1 = [RJSE_1]
     for (var EQWY_1 = 0; EQWY_1 < TSZN_VNAW - 1; EQWY_1++) {
