@@ -1,5 +1,5 @@
 const VR_EBWU_BRTZ_FS_ZV_22 = require('./VR_EBWU_BRTZ_FS_ZV_22')
-const VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX = require('./VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX')
+const VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2 = require('./VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2')
 const VR_EBWU_BRTZ_FS_ZV_qq = require('./VR_EBWU_BRTZ_FS_ZV_qq')
 
 async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
@@ -48,7 +48,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
                     return VR_EBWU_BRTZ_FS_ZV_09(RNSF)
                 case /^(?:10|D)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_10(RNSF)
-                case /^(?:22\d+|21\d+)$/i.test(NINI_UXUX):
+                case /^(?:22\d+)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_22(RNSF)
                 case /^(?:qq\d+)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_qq(RNSF)
@@ -57,12 +57,12 @@ async function VR_TSJQ_BRTZ_FS_ZV_VNWY_TU(DIWR_AFOA) {
                 case /^(?:V)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_V(RNSF)
                 case /^(?:M)$/i.test(NINI_UXUX):
-                    return VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX(RNSF)
+                    return VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2(RNSF)
                 case /^(?:=)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RNSF)
                 case /^(?:\[|【)$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RNSF)
-                case /^(?:\d+)$/i.test(NINI_UXUX):
+                case /^(?:(?!21|22|22\d+|33|16|10|09|88)\d)+$/i.test(NINI_UXUX):
                     return VR_EBWU_BRTZ_FS_ZV_33(RNSF.replace(/(\}\s*(?:,\s*|))((?:\w+|[^\s\w]))/,"$133 $2"))
             }
         }
