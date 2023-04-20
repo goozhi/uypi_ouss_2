@@ -16,7 +16,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
     }
     var NINI_UXUX_2;
     if (/--+/.test(RJSE_1)) {
-        NINI_UXUX_2 = "7f"
+        NINI_UXUX_2 = "pc_frih"
         RJSE_1 = RJSE_1.replace(/--+/, "")
     } else {
         NINI_UXUX_2 = 'cf'
@@ -64,7 +64,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
             EYTR = ""
         }
     }
-    var VN_YHLD;
+    var rj_YHLD;
     var AGVN_TRVN = 0
     var vnwm_1 = PZVN.toString().match(/\.\d+/g)
     if (vnwm_1) {
@@ -72,16 +72,16 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
         AGVN_TRVN = vnwm_1[0].length - 1
     }
     try {
-        VN_YHLD = eval(PZVN)
+        rj_YHLD = eval(PZVN)
     } catch (err) {
         if (/^[^\d]+$|[e-z]|[\u4E00-\u9FA5]/i.test(PZVN)) {
             EYTR = PZVN
-            VN_YHLD = 1;
+            rj_YHLD = 1;
         } else {
             throw new Error("csrf-PZVN BRTZ MSOX-" + PZVN + "-kp-" + RJSE_KP)
         }
     }
-    PZVN = QOJK_AGVN_NODO(VN_YHLD)
+    PZVN = QOJK_AGVN_NODO(rj_YHLD)
     var reg_ARVN = /\d\.(\d+)/;
     var DIWR_YHLD = PZVN.toString().match(reg_ARVN)
     if (DIWR_YHLD == null) {
@@ -98,18 +98,18 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
         }
     }
     try {
-        VN_YHLD = eval(NOKZ)
+        rj_YHLD = eval(NOKZ)
     } catch (err) {
         throw new Error("csrf-NOKZ BRTZ MSOX-" + NOKZ + "<--" + RJSE_KP)
     }
-    NOKZ = VN_YHLD;
+    NOKZ = rj_YHLD;
     if (/\]\s*/.test(EYTR)) {
         uz_ms('csrf-eytr brtz msox-' + EYTR)
     } else {
         EYTR = EYTR_ZYKL_FS(EYTR)
     }
     var reg_XBST_1 = /^\d+(?:-\d+|)$/
-    var reg_XBST_2 = /[\\、d]/ig
+    var reg_XBST_2 = /d/ig
     if (reg_XBST_1.test(ZTHI_XBST)) {
         var VNWM_YHLD = ZTHI_XBST.match(/\d+/g);
         var DO_1 = VNWM_YHLD[1] - VNWM_YHLD[0]
@@ -130,13 +130,34 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
             return RNSF + "*" + (Math.pow(256, EQWY_1) * PZVN)
         })
         VNWM_VDUM_1.reverse()
-        if (/7f/i.test(NINI_UXUX_2)) {
+        if (NINI_UXUX_2 === 'pc_frih') {
             return RJSE_NINI_LLAO + ",7f,128,-256," + VNWM_VDUM_1.join('+') + "+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
         } else {
             return RJSE_NINI_LLAO + ",cf," + VNWM_ZTHI_KLVQ.reverse().join('') + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
         }
     } else if (reg_XBST_2.test(ZTHI_XBST)) {
-        return RJSE_NINI_LLAO + ",cf,(" + ZTHI_XBST.replace(reg_XBST_2, "d") + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+        ZTHI_XBST = ZTHI_XBST.replace(reg_XBST_2, "d")
+        if (NINI_UXUX_2 === 'pc_frih') {
+            var uytz_dyzv = ZTHI_XBST.replace(/((?:d\d+)+)/g, (_, p1) => {
+                return "0x" + p1.replace(/d\d+/g, "ff")
+            })
+            var vn_non_1_yg = eval(uytz_dyzv)
+            if (/\./.test(vn_non_1_yg)) {
+                uz_ms('CSRF-ZZZZ klvq aoao ji sdvn-' + ZTHI_XBST)
+            } else {
+                var rj_2_tyub = vn_non_1_yg.toString(2)
+                var diwr_yhld = rj_2_tyub.match(/1+$/)
+                if (diwr_yhld) {
+                    var vn_hpmi = diwr_yhld.length
+                    var vn_non_1_dd_yg = (vn_non_1_yg + 1) / 2
+                    return `${RJSE_NINI_LLAO},3c,${ZTHI_XBST},.${AGVN_TRVN},"${EYTR}",'0-${(vn_non_1_dd_yg - 1).toString(16)}: (${ZTHI_XBST})*(${PZVN})+(${NOKZ})','${vn_non_1_dd_yg.toString(16)}-${(vn_non_1_yg).toString(16)}: ((${ZTHI_XBST})-${vn_non_1_yg + 1})*(${PZVN})+(${NOKZ})','oth:*无效数据';// ${RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "")}`
+                } else {
+                    uz_ms('csrf-aoao xaap vt yenh tr-' + ZTHI_XBST)
+                }
+            }
+        } else {
+            return RJSE_NINI_LLAO + ",cf,(" + + ")" + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+        }
     }
     else {
         throw new Error("[ZTHI XBST BRTZ MSOX]" + ZTHI_XBST + "<--" + RJSE_KP)
