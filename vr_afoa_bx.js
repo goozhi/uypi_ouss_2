@@ -46,6 +46,7 @@ const VR_TSJQ_ZV_md_ld_html = require('./VR_TSJQ_ZV_md_ld_html')
 const VR_TSJQ_BRTZ_FS_ZV_RFLD_QH = require('./VR_TSJQ_BRTZ_FS_ZV_RFLD_QH')
 const VR_TSJQ_ZV_UWUU_OUSS_NIKC = require('./VR_TSJQ_ZV_UWUU_OUSS_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_UYUY = require('./VR_TSJQ_BRTZ_FS_ZV_UYUY')
+const VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -107,6 +108,15 @@ function vr_afoa_bx() {
         csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
         klch: `lclc={{This is a comment.}}`,
         vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "COMMENT", "CMMT"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "UYRS_GZBU",
+        zkrs: "工程管理",
+        vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU,
+        csrf: "该指令帮助用户管理工程",
+        klch: `prj=build=txt{{}}`,
+        vnwm_vr_afoa_lzm_wu: ["63", "PRJ"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {

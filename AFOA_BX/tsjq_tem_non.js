@@ -62,6 +62,10 @@ function vr_afoa_bx() {
         klch: `clone=counts=10{{
             TEXT
         }}
+        clone=counts=3,again=4{{
+            TEXT
+        }}
+        
     `
         ,
         VBYT_VKRF_Peng_EBWU: false,
@@ -102,6 +106,16 @@ function vr_afoa_bx() {
         nums=counts=10, steps=3{{
             7-9
         }}
+
+        nums=counts=10{{
+            4
+            comment={{如果steps=1，则不需要声明steps=1}}
+        }}
+
+        nums=clone=4,counts=4{{
+            1
+            comment={{如果指定clone参数，则程序会先按照clone指定的次数重复追加用户输入的内容，然后再进行编号给定。}}
+        }}
     
     `,
         vnwm_vr_afoa_lzm_wu: ["6", "NUMS", "NUM", "NUMBERS"],
@@ -113,11 +127,11 @@ function vr_afoa_bx() {
         csrf: `该指令帮助用户将md文档转为html
         `,
         klch: `
-        html={{
-            # This is a theme
-        }}
         html=file=utf8{{
             D:/to/Your/Md/Path.md
+        }}
+        html={{
+            # This is a theme
         }}
         html=dir{{
             D:/to/Your/Md/item/Path/
@@ -231,6 +245,10 @@ function vr_afoa_bx() {
             comment={{该指令能显示当前proj信息，包括当前link的目录}}
         }}
 
+        proj=todo{{
+            comment={{该指令显示菜单布局中还未做的菜单，也可以用proj=undo}}
+        }}
+        
         proj=open{{
             comment={{该指令打开当前link的目录}}
         }}
@@ -241,6 +259,13 @@ function vr_afoa_bx() {
 
         proj=cell=test{{
             comment={{进行单体测试(模拟)}}
+        }}
+
+        proj=config=list{{
+            comment={{该指令能列出project目录内所有的config对象。等效于list=config}}
+        }}
+        proj=config=make{{
+            comment={{运行此命令会进入config创建模式，引导用户利用对象统一、批量创建子文件夹并创建相应的config文件}}
         }}
         `
         ,
@@ -261,6 +286,45 @@ function vr_afoa_bx() {
         vnwm_vr_afoa_lzm_wu: ["20", "VIEW"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object"
+    },
+    {
+        vr_afoa_wu: "UYUY",
+        zkrs: "计算",
+        csrf: "该指令帮助用户计算算式，可批量计算。",
+        klch: `CC={{
+            0x1f+3
+            0x1f
+            11+3
+            017
+            comment={{若进行一般运算，可直接输入算式}}
+        }}
+    
+        cc=out=16{{
+            0x13
+            14
+            comment={{可使用out参数让结果按指定进制输出，可以输出2、8、10、16进制}}
+        }}
+        cc=in=2{{
+            comment={{可使用in参数让程序按指定进制读取算式，可以指定2进制，16进制和8进制请直接使用前缀'0x'、'0'直接表示。}}
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["23", "CALC", "CC"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    },
+
+    {
+        vr_afoa_wu: "UWUU_OUSS_NIKC",
+        zkrs: "打开工作助手",
+        csrf: "该指令帮助用户打开助手所在目录",
+        klch: `
+        comment={{·
+            运行下方命令，将会打开助手目录
+            open={{}}
+    ·}}`,
+        vnwm_vr_afoa_lzm_wu: ["24", "OPEN"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
     },
 
     {
@@ -308,7 +372,7 @@ function vr_afoa_bx() {
             标识1 1 标识2
         }}
         
-        `        
+        `
         ,
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "object",
@@ -345,6 +409,21 @@ function vr_afoa_bx() {
     `,
         vnwm_vr_afoa_lzm_wu: ["9", "STR"],
         VBYT_VKRF_Peng_EBWU: true,
+        eowl_uxux: "string"
+    },
+    {
+        vr_afoa_wu: "RFLD_QH",
+        zkrs: "翻转行顺序",
+        csrf: `该指令帮助用户翻转多行文本中行的顺序。`,
+        klch: `
+        rvs={{
+            No. 1
+            No. 2
+            No. 3
+        }}
+    `,
+        vnwm_vr_afoa_lzm_wu: ["43", "RVS", "RVRS"],
+        VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     },
     {
