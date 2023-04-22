@@ -1,0 +1,94 @@
+{
+    "元": {
+        "元plusEV": {
+            "(北京有感)无线充电模块(WCT_BJYG)": {
+                "coms": [
+                    {
+                        "type": "CANBUS",
+                        "pin": [
+                            6,
+                            14
+                        ],
+                        "bps": 500,
+                        "dialog": [
+                            16,
+                            1
+                        ],
+                        "link": [
+                            62,
+                            128
+                        ],
+                        "res": 64768,
+                        "req": 64512
+                    }
+                ],
+                "sub": {
+                    "版本信息": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\版本信息1.v",
+                        "type": "info"
+                    },
+                    "读故障码": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\读码1.peng",
+                        "type": "func"
+                    },
+                    "清故障码": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\清码1.peng",
+                        "type": "func"
+                    },
+                    "读数据流": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\(北京有感)无线充电模块(WCT_BJYG)\\stream.v",
+                        "type": "strm"
+                    }
+                },
+                "type": "unit"
+            },
+            "(比亚迪)左车身域控制器A_L2(L2_BCM)": {
+                "coms": [
+                    {
+                        "type": "CANBUS",
+                        "pin": [
+                            6,
+                            14
+                        ],
+                        "bps": 500,
+                        "dialog": [
+                            16,
+                            1
+                        ],
+                        "link": [
+                            62,
+                            128
+                        ],
+                        "res": 64768,
+                        "req": 64512
+                    }
+                ],
+                "sub": {
+                    "版本信息": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\版本信息1.v",
+                        "type": "info"
+                    },
+                    "读故障码": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\读码1.peng",
+                        "type": "func"
+                    },
+                    "清故障码": {
+                        "path": "D:\\project\\newtrying\\元\\元plusEV\\清码1.peng",
+                        "type": "func"
+                    },
+                    "读数据流": {
+                        "供电系统": {
+                            "path": "D:\\project\\newtrying\\元\\元plusEV\\(比亚迪)左车身域控制器A_L2(L2_BCM)\\供电系统.v",
+                            "type": "strm"
+                        },
+                        "供电系统2": {
+                            "path": "D:\\project\\newtrying\\元\\元plusEV\\(比亚迪)左车身域控制器A_L2(L2_BCM)\\供电系统2.v",
+                            "type": "strm"
+                        }
+                    }
+                },
+                "type": "unit"
+            }
+        }
+    }
+}

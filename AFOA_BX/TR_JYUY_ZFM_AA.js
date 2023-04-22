@@ -30,7 +30,7 @@ async function TR_JYUY_ZFM_AA(UYTZ_KP, JTYP, RJSE_reg_EYNH_ZTHI_XBST, TYUB_VDUM)
     })
     return new Promise((resolve, reject) => {
         Promise.all(vwdp_1).then(jtyj => {
-            VNWM_VN = jtyj.filter(rn1 => rn1)
+            VNWM_VN = jtyj.filter(rn1 => rn1 || rn1 === 0)
             if (VNWM_VN.length == 0) {
                 resolve(null)
             }

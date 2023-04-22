@@ -18,6 +18,8 @@ const dtc_rj = require('./dtc_rj');
 const kplu_ld_diwr = require("../AFOA_BX/kplu_ld_diwr");
 const hd_hquj_mrzz = require('../AFOA_BX/hd_hquj_mrzz');
 const deleteModuleFromCache = require('../AFOA_BX/deleteModuleFromCache');
+const diwr_ld_peng_menu_2 = require('./diwr_ld_peng_menu_2');
+const diwr_ld_peng_3 = require('./diwr_ld_peng_3');
 var diwr_uyrs_nomr_2 = { vkih: new Date().getTime(), nikc_uyrs: require }
 const nikc_diwr_wwcf = "D:/assistant/cache"
 if (!fs.existsSync(nikc_diwr_wwcf)) {
@@ -36,6 +38,10 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         ]
         diwr_neig_zjzj(diwr_neig_kp, vnwm_fo_1)
     }
+    if (!fs.existsSync(diwr_neig_kp.nikc_uyrs)) {
+        uz_ms('csrf-nikc ac zznq-' + diwr_neig_kp.nikc_uyrs)
+    }
+
     var yxna_proj = path.join(diwr_neig_kp.nikc_uyrs, "project.json")
     var neig_proj
     try {
@@ -53,7 +59,12 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         err.message = diwr_neig_kp.nikc_uyrs + " " + err.message
         throw err
     }
-    var yxna_zk_qwse = path.join(diwr_neig_kp.nikc_uyrs, neig_proj['require'])
+    var yxna_zk_qwse
+    if (neig_proj['require']) {
+        yxna_zk_qwse = path.join(diwr_neig_kp.nikc_uyrs, neig_proj['require'])
+    } else {
+        uz_ms('csrf-project.json aoao tszn require pzva-' + diwr_neig_kp.nikc_uyrs)
+    }
     deleteModuleFromCache(yxna_zk_qwse)
     try {
         var atvn_zk_qwse = require(yxna_zk_qwse)
@@ -61,33 +72,12 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         err.message = diwr_neig_kp.nikc_uyrs + " " + err.message
         throw err
     }
-
-    throw JSON.stringify(atvn_zk_qwse(), null, 4)
-    if (!fs.existsSync(diwr_neig_kp.nikc_uyrs)) {
-        uz_ms('csrf-nikc ac zznq-' + diwr_neig_kp.nikc_uyrs)
-    }
-    var yxna_uyrs_neig = path.join(diwr_neig_kp.nikc_uyrs, 'project.json')
-    if (!fs.existsSync(yxna_uyrs_neig)) {
-        uz_ms('csrf-project.json ac zznq-')
-    } else {
-        diwr_slm = nikc_ld_diwr_vkey_os(diwr_neig_kp.nikc_uyrs)
-        try {
-            delete (require.cache[require.resolve(yxna_uyrs_neig)]);
-        } catch (err) {
-
-        }
-        diwr_slm.neig = require(yxna_uyrs_neig)
-        diwr_slm.neig['当前文件夹属性'] = '工程'
-        var diwr_nomr = { vnwm_nomr_ahdb_vnwy: [], vnwm_nomr_nmky_vnwy: [] }
-        diwr_neig_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
-        if (fs.existsSync('D:\\XYZD\\project_test')) {
-            fs.writeFileSync('D:\\XYZD\\project_test\\xyzd.json', JSON.stringify(diwr_slm, null, 2))
-        }
-        diwr_vnwy_aayt(diwr_slm, diwr_slm.neig, diwr_slm.neig['品牌标识'], diwr_nomr)
-        var rj_ljey_jtyj = await diwr_ld_peng_menu(diwr_slm, { zkrs: 'uyrs_uufb', pzre_vkih: -1 })
-        var diwr_ljey = JSON.parse("{" + rj_ljey_jtyj + "}")
-        var rj_sys_jtyj
-        var diwr_ljey_2 = { bnll_vkih: -1 }
+    var diwr_uyrs = atvn_zk_qwse()
+    var vnwm_ljey = []
+    var vnwm_pzre = []
+    var nikc_bnll = diwr_neig_kp.nikc_uyrs
+    await diwr_ld_peng_3({ zkrs: '',diwr_uyrs_nomr: diwr_uyrs_nomr_2, nikc_uyrs: diwr_neig_kp.nikc_uyrs, nikc_bnll, diwr_uyrs, vnwm_ljey, vnwm_pzre })
+    {
         try {
             rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"
         } catch (err) {
