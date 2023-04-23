@@ -73,10 +73,19 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         throw err
     }
     var diwr_uyrs = atvn_zk_qwse()
+    diwr_neig_zjzj(diwr_uyrs, ['cfg', 'sub'])
+    diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'projpath'])
     var vnwm_ljey = []
     var vnwm_pzre = []
-    var nikc_bnll = diwr_neig_kp.nikc_uyrs
-    await diwr_ld_peng_3({ zkrs: '',diwr_uyrs_nomr: diwr_uyrs_nomr_2, nikc_uyrs: diwr_neig_kp.nikc_uyrs, nikc_bnll, diwr_uyrs, vnwm_ljey, vnwm_pzre })
+    var diwr_neig_2 = Object.assign({}, diwr_neig_kp, {
+        nikc_uyrs: diwr_uyrs.cfg.projpath,
+        zkrs: "menu",
+        diwr_uyrs_nomr: diwr_uyrs_nomr_2,
+        vnwm_ljey,
+        vnwm_pzre,
+        static: diwr_uyrs.cfg.static
+    })
+    await diwr_ld_peng_3(diwr_neig_2)
     {
         try {
             rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"

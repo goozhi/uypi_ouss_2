@@ -118,7 +118,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
             var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.config = "making"
-            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+            return { rj_msqu: 'prj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         } else if (diwr_vr_mcvn.nikc_neig === 'making') {
             var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
             msqu_rjse_rscs(diwr_msqu)
@@ -141,7 +141,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
             var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请在下方输入该主题对应的project目录' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.link = "adding"
-            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+            return { rj_msqu: 'prj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         } else if (diwr_vr_mcvn.ytjp_nikc === 'list') {
             return JSON.stringify(diwr_zzzz_uyrs_nikc, null, 2)
         } else if (diwr_vr_mcvn.ytjp_nikc === 'rm') {
@@ -224,7 +224,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
             var diwr_msqu = { uxux: 'vdzv', diwr_vnwm_zkrs: [{ zkrs: zkrs_1, hint: hint_1 }, { zkrs: '请在下方输入project.json' }] }
             msqu_rjse_fs(diwr_msqu)
             diwr_msqu_vr_mcvn.init = "adding"
-            return { rj_msqu: 'proj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
+            return { rj_msqu: 'prj=' + vr_mcvn_ld_rjse(diwr_msqu_vr_mcvn) + '{{·\n' + diwr_msqu.msqu_rjse + "\n·}}" }
         } else if (diwr_vr_mcvn.imfb === 'adding') {
             var diwr_msqu = { uxux: 'vdzv', rscs_bqeo: BQEO_1 }
             msqu_rjse_rscs(diwr_msqu)
