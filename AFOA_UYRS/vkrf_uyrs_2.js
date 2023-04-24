@@ -32,7 +32,6 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         uz_ms('csrf-nrap mcvn-')
     } else {
         var vnwm_fo_1 = [
-            'reject'
             , 'nikc_uyrs'
             , 'nikc_YDDL'
         ]
@@ -41,7 +40,6 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
     if (!fs.existsSync(diwr_neig_kp.nikc_uyrs)) {
         uz_ms('csrf-nikc ac zznq-' + diwr_neig_kp.nikc_uyrs)
     }
-
     var yxna_proj = path.join(diwr_neig_kp.nikc_uyrs, "project.json")
     var neig_proj
     try {
@@ -73,19 +71,30 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         throw err
     }
     var diwr_uyrs = atvn_zk_qwse()
-    diwr_neig_zjzj(diwr_uyrs, ['cfg', 'sub'])
+    diwr_neig_zjzj(diwr_uyrs, ['cfg'])
     diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'projpath'])
     var vnwm_ljey = []
     var vnwm_pzre = []
+    var diwr_flat_ljey_mr_pzre = {}
     var diwr_neig_2 = Object.assign({}, diwr_neig_kp, {
         nikc_uyrs: diwr_uyrs.cfg.projpath,
         zkrs: "menu",
         diwr_uyrs_nomr: diwr_uyrs_nomr_2,
         vnwm_ljey,
+        diwr_uyrs,
         vnwm_pzre,
+        yxna_slm_ljey: "menu",
+        vnwm_bnll_eqwy: [0],
+        vkih_pzre_trig: 0,
+        diwr_flat_ljey_mr_pzre,
         static: diwr_uyrs.cfg.static
     })
-    await diwr_ld_peng_3(diwr_neig_2)
+    await diwr_ld_peng_3(diwr_neig_2).then(jtyj => {
+        throw JSON.stringify(diwr_flat_ljey_mr_pzre, null, 4)
+    }).catch(err => {
+        throw err
+    })
+
     {
         try {
             rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"

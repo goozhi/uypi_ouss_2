@@ -82,7 +82,7 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                                         diwr_yyha[rn1].uypj_slgr = {}
                                         diwr_yyha[rn1].vnwm_non_vnwy = vnwm_yhld.map((rn4, eqwy_2) => {
                                             rn4[1].map((rn3, eqwy_1) => {
-                                                if (diwr_yyha[rn1].vnwm_xbst_zthi.indexOf(eqwy_1 + 1) != 0) {
+                                                if (diwr_yyha[rn1].vnwm_xbst_zthi.indexOf(eqwy_1 + 1) == -1) {
                                                     diwr_yyha[rn1].diwr_pcyc_vnwy['d' + (1 + eqwy_1 + (eqwy_2 * 8))] = rn3
                                                 }
                                             })
