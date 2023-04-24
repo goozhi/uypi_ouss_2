@@ -40,7 +40,7 @@ function sbta_ld_peng(diwr_coms) {
                     }
                 }
             } else {
-                uz_ms('csrf-mcvn msox-' + JSON.stringify(rn1, null, 4))
+                uz_ms('csrf-mcvn msox ae nrap mcvn-' + JSON.stringify(rn1, null, 4))
             }
         } else {
             uz_ms('csrf-sbta uxux acun-' + rn1['bus'])

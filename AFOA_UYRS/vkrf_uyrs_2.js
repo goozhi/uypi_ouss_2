@@ -83,18 +83,27 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         vnwm_ljey,
         diwr_uyrs,
         vnwm_pzre,
-        yxna_slm_ljey: "menu",
+        yxna_bnll_ljey: "menu",
         vnwm_bnll_eqwy: [0],
         vkih_pzre_trig: 0,
         diwr_flat_ljey_mr_pzre,
         static: diwr_uyrs.cfg.static
     })
-    await diwr_ld_peng_3(diwr_neig_2).then(jtyj => {
-        throw JSON.stringify(diwr_flat_ljey_mr_pzre, null, 4)
-    }).catch(err => {
-        throw err
+    await diwr_ld_peng_3(diwr_neig_2).catch(err => { throw err })
+    var vwdp_3 = Object.entries(diwr_flat_ljey_mr_pzre).sort((a, b) => db_vnwm_magm_vnwm(a.vnwm_bnll_eqwy, b.vnwm_bnll_eqwy)).map(async (rn1, eqwy_1) => {
+        var zkrs = rn1[0]
+        var rj_sbta = rn1[1].diwr_pzre_bq_ljey.cfg.rj_sbta
+        var rj_pzre_bq_ljey = Object.entries(rn1[1].diwr_pzre_bq_ljey).sort((a, b) => db_vnwm_magm_vnwm(a.vnwm_bnll_eqwy, b.vnwm_bnll_eqwy)).slice(1, 1000).map(rn2 => {
+            var zkrs_2 = rn2[0]
+            var vn_ljey_vkih = 1
+            var xbst_1 = 'Spec'
+            lgz
+            return `+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
+        })
+        return `_S${eqwy_1}()// ${rn1[1].pzre_wu}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
     })
-
+    var j1 = await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n') }).catch(err => { throw err })
+    throw j1
     {
         try {
             rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"
@@ -194,4 +203,24 @@ function ymce(diwr_zzzz, zkrs = "") {
             })
         })
     }
+}
+
+function db_vnwm_magm_vnwm(a = [], b = []) {
+    var c
+    if (a.vnwm_bnll_eqwy.length < b.vnwm_bnll_eqwy.length) {
+    } else {
+        c = a
+        a = b
+        b = c
+    }
+    for (var i1 = 0; i1 < a.length; i1++) {
+        if (a[i1] - b[i1] != 0) {
+            if (a[i1] - b[i1] < 0) {
+                return -1
+            } else {
+                return 1
+            }
+        }
+    }
+    uz_ms('csrf-magm msox-')
 }

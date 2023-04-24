@@ -10,11 +10,10 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
         'diwr_flat_ljey_mr_pzre',
         'zkrs',
         'diwr_uyrs_nomr',
-        'yxna_slm_ljey',
+        'yxna_bnll_ljey',
         'vnwm_bnll_eqwy',
     ]
     diwr_neig_zjzj(diwr_neig_kp, vnwm_fo_1)
-    var yxna_slm_ljey = diwr_neig_kp.yxna_slm_ljey
     var cfg = diwr_neig_kp.diwr_uyrs.cfg
     if (!cfg) {
         cfg = {}
@@ -24,32 +23,24 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
         var vnwm_bnll_eqwy = [...diwr_neig_kp.vnwm_bnll_eqwy, eqwy_1]
         var diwr_pzre_bq_ljey = {}
         var zkrs = rn1[0]
-        if (rn1[1].unit) {
-            var path_unit_js = path.join(diwr_neig_kp.static, 'unit', rn1[1].unit)
-            var diwr_pzre = require(path_unit_js)
+        var yxna_bnll_ljey = path.join(diwr_neig_kp.yxna_bnll_ljey, zkrs)
+        if (zkrs === 'cfg') {
+        } else if (rn1[1].coms) {
+            if (!rn1[1].cfg && zkrs != 'cfg') {
+                rn1[1].cfg = {}
+            }
+            rn1[1].cfg = Object.assign({}, cfg, rn1[1].cfg)
+            var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_bnll_ljey, diwr_uyrs: rn1[1], diwr_pzre_bq_ljey, zkrs })
+            await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
+            // diwr_pzre_bq_ljey.sort((a, b) => a.vkih_magm - b.vkih_magm)
+            diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_bnll_ljey] = { diwr_pzre_bq_ljey, vnwm_bnll_eqwy, yxna_bnll_ljey, pzre_wu: zkrs, wm_wu: diwr_neig_kp.zkrs }
+        } else if (typeof (rn1[1]) === 'object') {
             if (!rn1[1].cfg) {
                 rn1[1].cfg = {}
             }
             rn1[1].cfg = Object.assign({}, cfg, rn1[1].cfg)
-            Object.assign(rn1[1], diwr_pzre)
-            yxna_slm_ljey = path.join(yxna_slm_ljey, zkrs)
-            var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_slm_ljey, diwr_uyrs: rn1[1], diwr_pzre_bq_ljey, zkrs })
-            await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
-            // diwr_pzre_bq_ljey.sort((a, b) => a.vkih_magm - b.vkih_magm)
-            if (!diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_slm_ljey]) {
-                diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_slm_ljey] = {}
-            }
-            diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_slm_ljey][zkrs] = { diwr_pzre_bq_ljey, yxna_slm_ljey, pzre_wu: zkrs, wm_wu: diwr_neig_kp.zkrs }
-        } else if (typeof (rn1[1]) === 'object') {
-            if (zkrs != 'cfg') {
-                if (!rn1[1].cfg) {
-                    rn1[1].cfg = {}
-                }
-                rn1[1].cfg = Object.assign({}, cfg, rn1[1].cfg)
-                yxna_slm_ljey = path.join(yxna_slm_ljey, zkrs)
-                var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, diwr_uyrs: rn1[1], zkrs, yxna_slm_ljey })
-                await diwr_ld_peng_3(diwr_neig_yhld).catch(err => { throw err })
-            }
+            var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, diwr_uyrs: rn1[1], zkrs, yxna_bnll_ljey })
+            await diwr_ld_peng_3(diwr_neig_yhld).catch(err => { throw err })
         } else {
 
         }
@@ -58,22 +49,21 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
 }
 module.exports = diwr_ld_peng_3
 
-async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_slm_ljey: "", static: "", diwr_pzre_bq_ljey: {}, zkrs: "" }) {
-    var yxna_slm_ljey = diwr_neig_kp.yxna_slm_ljey
+async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: "", static: "", diwr_pzre_bq_ljey: {}, zkrs: "" }) {
 
     var vwdp_2 = Object.entries(diwr_neig_kp.diwr_uyrs).map(async (rn2, eqwy_1) => {
         var vnwm_bnll_eqwy = [...diwr_neig_kp.vnwm_bnll_eqwy, eqwy_1]
         var zkrs = rn2[0]
+        var yxna_bnll_ljey = path.join(diwr_neig_kp.yxna_bnll_ljey, zkrs)
         if (zkrs === 'coms' && diwr_neig_kp.diwr_uyrs.cfg && diwr_neig_kp.diwr_uyrs.cfg.coms) {
             var coms = diwr_neig_kp.diwr_uyrs.cfg.coms.map(rn1 => {
-                var path_coms_js = path.join(diwr_neig_kp.static, 'coms', rn1)
-                return rn2[1].map(rn4 => Object.assign({}, require(path_coms_js), rn4))
+                return rn2[1].map(rn4 => Object.assign({}, rn1, rn4))
             }).flat()
             var rj_sbta = sbta_ld_peng_2(coms)
-            if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey]) {
-                diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey] = {}
+            if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey]) {
+                diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey] = {}
             }
-            diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey][zkrs] = ({ vkih_magm: eqwy_1, rj_sbta })
+            diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
         } else if (rn2[1].type) {
             var path_use = path.join(diwr_neig_kp.static, rn2[1].type, rn2[1].use)
             var rj_data = fs.readFileSync(path_use).toString()
@@ -97,10 +87,9 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_slm_ljey: "",
                     } else {
                         uz_ms('csrf-udao wu acun-' + rn2[1].use)
                     }
-                    if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey]) {
-                        diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey] = {}
+                    if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey]) {
+                        diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey] = {}
                     }
-                    diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey][zkrs] = ({ vnwm_bnll_eqwy, vkih_magm: eqwy_1, rj_data })
                     break;
                 case "info":
                 case "strm":
@@ -134,16 +123,13 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_slm_ljey: "",
                     } else {
                         uz_ms('csrf-udao wu acun-' + rn2[1].use)
                     }
-                    if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey]) {
-                        diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey] = {}
-                    }
-                    diwr_neig_kp.diwr_pzre_bq_ljey[yxna_slm_ljey][zkrs] = ({ vkih_magm: eqwy_1, rj_data })
                     break;
                 default:
                     uz_ms('csrf-type acun-' + rn2[1].type)
             }
+            diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey] = ({ vnwm_bnll_eqwy, vkih_magm: eqwy_1, rj_data })
         } else if (typeof (rn2[1]) === 'object') {
-            var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, zkrs, diwr_uyrs: rn2[1] })
+            var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_bnll_ljey, zkrs, diwr_uyrs: rn2[1] })
             await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
         } else {
 
