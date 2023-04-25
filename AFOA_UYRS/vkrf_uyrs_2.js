@@ -10,7 +10,7 @@ const diwr_vnwy_aayt = require('./diwr_vnwy_aayt');
 const diwr_ld_peng_menu = require('./diwr_ld_peng_ljey');
 const ld_vnwm_peng_ljey = require('./ld_vnwm_peng_ljey');
 const ld_rj_peng_ljey = require('./ld_rj_peng_ljey');
-const bat_vkrf = require('./bat_vkrf');
+const bat_vkrf_2 = require('./bat_vkrf_2');
 const { exec } = require('child_process');
 const tips_rj = require('./tips_rj');
 const hd_rjqt_tum = require('../AFOA_BX/hd_rjqt_tum');
@@ -72,7 +72,8 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
     }
     var diwr_uyrs = atvn_zk_qwse()
     diwr_neig_zjzj(diwr_uyrs, ['cfg'])
-    diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'projpath'])
+    diwr_uyrs.cfg.vehicle = neig_proj.vehicle
+    diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'vehicle', 'projpath'])
     var vnwm_ljey = []
     var vnwm_pzre = []
     var diwr_flat_ljey_mr_pzre = {}
@@ -90,81 +91,133 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         static: diwr_uyrs.cfg.static
     })
     await diwr_ld_peng_3(diwr_neig_2).catch(err => { throw err })
-    var vwdp_3 = Object.entries(diwr_flat_ljey_mr_pzre).sort((a, b) => db_vnwm_magm_vnwm(a.vnwm_bnll_eqwy, b.vnwm_bnll_eqwy)).map(async (rn1, eqwy_1) => {
+    var diwr_zk_ljey = {}
+    var vwdp_3 = Object.entries(diwr_flat_ljey_mr_pzre).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
+        try { return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy) } catch (err) { throw JSON.stringify(b[1].vnwm_bnll_eqwy, null, 4) }
+    }).map(async (rn1, eqwy_1) => {
         var zkrs = rn1[0]
         var rj_sbta = rn1[1].diwr_pzre_bq_ljey.cfg.rj_sbta
-        var rj_pzre_bq_ljey = Object.entries(rn1[1].diwr_pzre_bq_ljey).sort((a, b) => db_vnwm_magm_vnwm(a.vnwm_bnll_eqwy, b.vnwm_bnll_eqwy)).slice(1, 1000).map(rn2 => {
+        var yxna_slm = path.dirname(zkrs)
+        if (!diwr_zk_ljey[yxna_slm]) {
+            bs_ljey(diwr_zk_ljey, yxna_slm)
+        } else {
+        }
+        diwr_zk_ljey[yxna_slm][zkrs] = eqwy_1
+        var diwr_ybkc_pzre_bq_ljey = {}
+        var rj_pzre_bq_ljey = Object.entries(rn1[1].diwr_pzre_bq_ljey).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
+            try {
+                return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy)
+            } catch (err) {
+                throw JSON.stringify(a, null, 4)
+            }
+        }).map(rn2 => {
             var zkrs_2 = rn2[0]
-            var vn_ljey_vkih = 1
+            var vn_ljey_vkih
             var xbst_1 = 'Spec'
-            lgz
-            return `+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
-        })
+            var rj_ljey_1 = ''
+            var vnwm_part = path.relative(zkrs, zkrs_2).split(/\\/)
+            if (vnwm_part.length > 1) {
+                rj_ljey_1 = vnwm_part.slice(0, vnwm_part.length - 1).map((rn5, eqwy_2) => {
+                    var rj_ybkc = `${eqwy_2}${rn5}`
+                    if (diwr_ybkc_pzre_bq_ljey[rj_ybkc]) {
+                        return false
+                    } else {
+                        diwr_ybkc_pzre_bq_ljey[rj_ybkc] = true
+                        return `+${eqwy_2 + 1}[${rn5}](+)$$$`
+                    }
+                }).filter(Boolean).join('\n')
+            }
+            vn_ljey_vkih = vnwm_part.length
+            return `${rj_ljey_1}\n+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
+        }).join('\n')
         return `_S${eqwy_1}()// ${rn1[1].pzre_wu}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
     })
-    var j1 = await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n') }).catch(err => { throw err })
-    throw j1
-    {
-        try {
-            rj_sys_jtyj = "@SYS\n\n" + await uyrs_ld_peng_5(diwr_slm, { zkrs: 'uyrs_uufb', diwr_ljey: diwr_ljey_2, diwr_wwcf }) + "\n__"
-        } catch (err) {
-            throw err
-        }
-        var diwr_vnwm_ljey = []
-        ld_vnwm_peng_ljey(diwr_ljey, diwr_vnwm_ljey)
-        var rj_menu_jtyj = "@menu\n" + ld_rj_peng_ljey(diwr_vnwm_ljey, diwr_ljey_2)
-        ymce(diwr_wwcf, 'diwr_wwcf')
-        if (!diwr_neig_kp.gkqj_sdno_vkrf) {
-            var yxna_sys = path.join(diwr_slm.yxna_yowr, "sysData.txt")
-            var yxna_menu = path.join(diwr_slm.yxna_yowr, "menuData.txt")
-            fs.writeFileSync(yxna_sys, encoding.convert(rj_sys_jtyj, 'gb2312', 'utf8'))
-            fs.writeFileSync(yxna_menu, encoding.convert(rj_menu_jtyj, 'gb2312', 'utf8'))
-            return '已写入' + yxna_sys + '\n' + yxna_menu
+    var rj_sys = "@SYS\n\n" + await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n') }).catch(err => { throw err }) + "\n__"
+    Object.entries(diwr_zk_ljey).map(rn7 => {
+        var zkrs_7 = rn7[0]
+        var yxna_slm = path.dirname(zkrs_7)
+        if (yxna_slm != '.') {
+            diwr_zk_ljey[yxna_slm][zkrs_7] = rn7[1]
+            diwr_zk_ljey[yxna_slm][zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
         } else {
-            if (!diwr_slm.neig['品牌标识']) {
-                uz_ms('csrf-nrap 品牌标识, 请确保在project.json里已声明‘品牌标识’属性，如"品牌标识":"BYDEV"-')
-            }
-            var nikc_build = path.join(diwr_slm.yxna_yowr, '..', 'build')
-            var nikc_build_db = path.join(nikc_build, diwr_slm.neig['品牌标识'], 'db')
-            try {
-                hd_rjqt_tum(nikc_build_db)
-            } catch (err) {
-
-            }
-            try {
-                fs.mkdirSync(nikc_build_db, { recursive: true })
-            } catch (err) {
-
-            }
-            var yxna_sys = path.join(nikc_build_db, 'DIAG.DB')
-            var yxna_menu = path.join(nikc_build_db, 'MENU.DB')
-            var yxna_tips = path.join(nikc_build_db, 'TIPS.DB')
-            var yxna_dtc = path.join(nikc_build_db, 'DTC.DB')
-            var yxna_log = path.join(nikc_build_db, 'log.txt')
-            diwr_slm.neig.nikc_YDDL = path.join(diwr_neig_kp.nikc_YDDL, 'Vehicle', diwr_slm.neig['品牌标识'])
-            if (!fs.existsSync(diwr_slm.neig.nikc_YDDL)) {
-                uz_ms('csrf-nikc ac zznq-' + diwr_slm.neig.nikc_YDDL)
-            }
-            fs.writeFileSync(yxna_log, '')
-            fs.writeFileSync(yxna_sys, encoding.convert(rj_sys_jtyj, 'gb2312', 'utf8'))
-            fs.writeFileSync(yxna_menu, encoding.convert(rj_menu_jtyj, 'gb2312', 'utf8'))
-            fs.writeFileSync(yxna_tips, encoding.convert(tips_rj(), 'gb2312', 'utf8'))
-            fs.writeFileSync(yxna_dtc, encoding.convert(dtc_rj(), 'gb2312', 'utf8'))
-            fs.writeFileSync(path.join(nikc_build_db, 'build.bat'), encoding.convert(bat_vkrf(diwr_slm.neig), 'gb2312', 'utf8'))
-            return new Promise((resolve, reject) => {
-                exec('start build.bat', { cwd: nikc_build_db }, (err) => {
-                    if (err) {
-                        reject(err)
-                    }
-                    var rj_yhld = encoding.convert(fs.readFileSync(yxna_log), 'utf8', 'gb2312').toString()
-                    if (/\S/.test(rj_yhld)) {
-                        reject(`本次编译未完全成功，原因如下\n${rj_yhld}`);
-                    } else {
-                        resolve(`已写入${diwr_slm.neig.nikc_YDDL}`)
-                    }
-                })
-            })
+            diwr_zk_ljey[zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
         }
+    })
+    var rj_menu = Object.entries(diwr_zk_ljey).map(rn8 => {
+        var zkrs_8 = rn8[0]
+        if (typeof (rn8[1]) === 'object') {
+            var rj_bcxf = Object.entries(rn8[1]).map(rn9 => {
+                var zkrs_9 = rn9[0]
+                if (zkrs_9 === 'vkih_zk_ljey') {
+                    return false
+                }
+                if (typeof (rn9[1]) === 'number') {
+                    vkih_se_bcxf = rn9[1]
+                } else {
+                    vkih_se_bcxf = "sub_" + rn9[1].vkih_zk_ljey
+                }
+                return `*"${path.basename(zkrs_9)}",${vkih_se_bcxf};`
+            }).filter(Boolean).join('\n')
+            return `_sub_${rn8[1].vkih_zk_ljey}()[请选择测试项]\n${rj_bcxf}\n***`
+        } else {
+            return ''
+        }
+    }).filter(Boolean).join('\n')
+
+    rj_menu = "@menu\n" + rj_menu.replace("sub_" + diwr_zk_ljey['menu'].vkih_zk_ljey, "menu").replace(/(^[\s\S]*\n)(_menu\b[\s\S]*?\*\*\*)/, "$2\n$1")
+    if (!diwr_neig_kp.gkqj_sdno_vkrf) {
+        var yxna_sys = path.join(diwr_neig_2.nikc_uyrs, "sysData.txt")
+        var yxna_menu = path.join(diwr_neig_2.nikc_uyrs, "menuData.txt")
+        fs.writeFileSync(yxna_sys, encoding.convert(rj_sys, 'gb2312', 'utf8'))
+        fs.writeFileSync(yxna_menu, encoding.convert(rj_menu, 'gb2312', 'utf8'))
+        return '已写入' + yxna_sys + '\n' + yxna_menu
+    } else {
+        var nikc_build = path.join(diwr_neig_2.nikc_uyrs, '..', 'build')
+        if (!diwr_uyrs.cfg.vehicle) {
+            uz_ms('csrf-nrap vehicle pzva-' + yxna_zk_qwse)
+        }
+        var nikc_build_db = path.join(nikc_build, diwr_uyrs.cfg.vehicle, 'db')
+        try {
+            hd_rjqt_tum(nikc_build_db)
+        } catch (err) {
+
+        }
+        try {
+            fs.mkdirSync(nikc_build_db, { recursive: true })
+        } catch (err) {
+
+        }
+        var yxna_sys = path.join(nikc_build_db, 'DIAG.DB')
+        var yxna_menu = path.join(nikc_build_db, 'MENU.DB')
+        var yxna_tips = path.join(nikc_build_db, 'TIPS.DB')
+        var yxna_dtc = path.join(nikc_build_db, 'DTC.DB')
+        var yxna_log = path.join(nikc_build_db, 'log.txt')
+        if (!diwr_uyrs.cfg.vehicle) {
+            uz_ms('csrf-nrap vehicle pzva-' + yxna_zk_qwse)
+        }
+        diwr_neig_kp.nikc_YDDL = path.join(diwr_neig_kp.nikc_YDDL, 'Vehicle', diwr_uyrs.cfg.vehicle)
+        if (!fs.existsSync(diwr_neig_kp.nikc_YDDL)) {
+            uz_ms('csrf-nikc ac zznq-' + diwr_neig_kp.nikc_YDDL)
+        }
+        fs.writeFileSync(yxna_log, '')
+        fs.writeFileSync(yxna_sys, encoding.convert(rj_sys, 'gb2312', 'utf8'))
+        fs.writeFileSync(yxna_menu, encoding.convert(rj_menu, 'gb2312', 'utf8'))
+        fs.writeFileSync(yxna_tips, encoding.convert(tips_rj(), 'gb2312', 'utf8'))
+        fs.writeFileSync(yxna_dtc, encoding.convert(dtc_rj(), 'gb2312', 'utf8'))
+        fs.writeFileSync(path.join(nikc_build_db, 'build.bat'), encoding.convert(bat_vkrf_2({ nikc_YDDL: diwr_neig_kp.nikc_YDDL, vehicle: diwr_uyrs.cfg.vehicle }), 'gb2312', 'utf8'))
+        return new Promise((resolve, reject) => {
+            exec('start build.bat', { cwd: nikc_build_db }, (err) => {
+                if (err) {
+                    reject(err)
+                }
+                var rj_yhld = encoding.convert(fs.readFileSync(yxna_log), 'utf8', 'gb2312').toString()
+                if (/\S/.test(rj_yhld)) {
+                    reject(`本次编译未完全成功，原因如下\n${rj_yhld}`);
+                } else {
+                    resolve(`已写入${diwr_neig_kp.nikc_YDDL}`)
+                }
+            })
+        })
     }
 }
 module.exports = vkrf_uyrs_2;
@@ -206,13 +259,6 @@ function ymce(diwr_zzzz, zkrs = "") {
 }
 
 function db_vnwm_magm_vnwm(a = [], b = []) {
-    var c
-    if (a.vnwm_bnll_eqwy.length < b.vnwm_bnll_eqwy.length) {
-    } else {
-        c = a
-        a = b
-        b = c
-    }
     for (var i1 = 0; i1 < a.length; i1++) {
         if (a[i1] - b[i1] != 0) {
             if (a[i1] - b[i1] < 0) {
@@ -222,5 +268,13 @@ function db_vnwm_magm_vnwm(a = [], b = []) {
             }
         }
     }
-    uz_ms('csrf-magm msox-')
+    uz_ms('csrf-msox-' + JSON.stringify([...a, ': ', ...b]))
+}
+
+function bs_ljey(diwr_zk_ljey = {}, yxna_slm = "") {
+    diwr_zk_ljey[yxna_slm] = {}
+    var yxna_slm = path.dirname(yxna_slm)
+    if (!diwr_zk_ljey[yxna_slm] && yxna_slm != ".") {
+        bs_ljey(diwr_zk_ljey, yxna_slm)
+    }
 }

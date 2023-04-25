@@ -4,6 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const sbta_ld_peng_2 = require("./sbta_ld_peng_2")
 const vr_ld_peng = require("./vr_ld_peng")
+const ZJZJ_TSJQ_Str = require("../AFOA_sysData/ZJZJ_TSJQ_Str")
+const ZJZJ_TSJQ_Ecu = require("../AFOA_sysData/ZJZJ_TSJQ_Ecu")
+const ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ = require("../AFOA_sysData/ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ")
 async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diwr_uyrs: {}, diwr_flat_ljey_mr_pzre: {}, }) {
     var vnwm_fo_1 = [
         'diwr_uyrs',
@@ -60,13 +63,11 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                 return rn2[1].map(rn4 => Object.assign({}, rn1, rn4))
             }).flat()
             var rj_sbta = sbta_ld_peng_2(coms)
-            if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey]) {
-                diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey] = {}
-            }
+
             diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
         } else if (rn2[1].type) {
             var path_use = path.join(diwr_neig_kp.static, rn2[1].type, rn2[1].use)
-            var rj_data = fs.readFileSync(path_use).toString()
+            var rj_data = fs.readFileSync(path_use).toString().replace(/\r/g,"")
             if (/\ufffd/.test(rj_data)) {
                 uz_ms('csrf-umdy \ufffd frih, rt zjzj vkvy jils eopc-' + path_use)
             } else {
@@ -89,6 +90,10 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                     }
                     if (!diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey]) {
                         diwr_neig_kp.diwr_pzre_bq_ljey[yxna_bnll_ljey] = {}
+                    }
+                    var RJSE_MSOX = await ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ(rj_data, 'LJEY')
+                    if (/\S/i.test(RJSE_MSOX)) {
+                        uz_ms(path_use + '\n' + RJSE_MSOX);
                     }
                     break;
                 case "info":
@@ -122,6 +127,14 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                         }
                     } else {
                         uz_ms('csrf-udao wu acun-' + rn2[1].use)
+                    }
+                    if (rn2[1].type === 'info') {
+                        var RJSE_MSOX = await ZJZJ_TSJQ_Ecu(rj_data)
+                    } else {
+                        var RJSE_MSOX = await ZJZJ_TSJQ_Str(rj_data)
+                    }
+                    if (/\S/i.test(RJSE_MSOX)) {
+                        uz_ms(path_use + '\n' + RJSE_MSOX);
                     }
                     break;
                 default:

@@ -78,7 +78,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
         if (diwr_vr_mcvn.vkrf === 'txt') {
             return new Promise((resolve, reject) => {
                 vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
-                    resolve(jtyj[0])
+                    resolve(jtyj)
                 }).catch(err => {
                     reject(err)
                 })
@@ -86,7 +86,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
         } else if (diwr_vr_mcvn.vkrf === '') {
             return new Promise((resolve, reject) => {
                 vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', gkqj_sdno_vkrf: true, resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
-                    resolve(jtyj[0])
+                    resolve(jtyj)
                 }).catch(err => {
                     reject(err)
                 })
