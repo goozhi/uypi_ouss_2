@@ -47,6 +47,7 @@ const VR_TSJQ_BRTZ_FS_ZV_RFLD_QH = require('./VR_TSJQ_BRTZ_FS_ZV_RFLD_QH')
 const VR_TSJQ_ZV_UWUU_OUSS_NIKC = require('./VR_TSJQ_ZV_UWUU_OUSS_NIKC')
 const VR_TSJQ_BRTZ_FS_ZV_UYUY = require('./VR_TSJQ_BRTZ_FS_ZV_UYUY')
 const VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU = require('./VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU')
+const VR_TSJQ_ZV_CSV_RJVT = require('./VR_TSJQ_ZV_CSV_RJVT')
 function vr_afoa_bx() {
     this.diwr_vnwm_tsjq = [{
         vr_afoa_wu: "LJEY",
@@ -82,6 +83,21 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["CLONE", "11"]
+    }, {
+        vr_afoa_wu: "CSV_RJVT",
+        zkrs: "CSV转普通格式",
+        csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
+        klch: `
+        CSV=file=gb2312{{
+            your/csv/path
+        }}
+        
+    `
+        ,
+        vr_afoa_rh: VR_TSJQ_ZV_CSV_RJVT,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["CSV", "53"]
     },
     {
         vr_afoa_wu: "NEIG_EXYM_CLN",
