@@ -17,7 +17,11 @@
     var gkqj_pc_mcvn_pc_siih
     var gkqj_znzo_mcvn_bqeo
     document.onkeydown = function (event) {
-        if (event.altKey) {
+        if (event.altKey && event.keyCode == 80) {
+            document.getElementById('id_vdzv_1').focus()
+            event.preventDefault();
+            return
+        } else if (event.altKey) {
             event.preventDefault();
         }
         else if (event.key === "Tab") {
@@ -44,7 +48,6 @@
             document.getElementById('btn1').click()
             return
         } else if (event.altKey && event.keyCode == 80) {
-            document.getElementById('id_vdzv_1').focus()
             return
         }
 
@@ -207,7 +210,7 @@
         var eqwy_siih = ubqt.value.search(/\S\s*\}\}\s*$/)
         if (eqwy_siih != -1) {
             if (/\n·\}\}\s*$/.test(ubqt.value)) {
-                ubqt.setSelectionRange(eqwy_siih-1, eqwy_siih-1)
+                ubqt.setSelectionRange(eqwy_siih - 1, eqwy_siih - 1)
             } else {
                 ubqt.setSelectionRange(eqwy_siih + 1, eqwy_siih + 1)
             }
