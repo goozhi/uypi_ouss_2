@@ -13,13 +13,22 @@ function sbta_ld_peng(diwr_coms) {
                 'link',
             ]
             diwr_neig_zjzj(rn1, vnwm_fo_2)
-            if (rn1['req']) {
+            if (rn1['req'] || rn1['res']) {
+                if (rn1['rela']) {
+                    if (rn1.res && !rn1.req) {
+                        rn1.req = rn1.res + rn1.rela
+                    } else if (rn1.req && !rn1.res) {
+                        rn1.res = rn1.req + rn1.rela
+                    } else {
+
+                    }
+                }
                 if (rn1['req'] - rn1['res'] >= 0) {
                     uz_ms('csrf-ycdg yyha ac yc ag oc iq oc rtul yyha-' + rn1['res'] + '<=' + rn1['req'])
                 }
                 var ftl_vyn = 'ffe0'
                 var yyha_trvn = 11
-                if (rn1['req'] <= 0x7ff<<5) {
+                if (rn1['req'] <= 0x7ff << 5) {
 
                 } else {
                     ftl_vyn = 'FFFFFFF8'

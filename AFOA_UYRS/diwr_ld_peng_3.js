@@ -80,8 +80,8 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                     } else if (/\.(?:peng)$/i.test(rn2[1].use)) {
                         if (rn2[1].codeid) {
                             rj_data = rj_data.replace(/id\s*=\s*\w+/i, `id=${rn2[1].codeid}`)
-                        } else if (rn2[1].codeframe) {
-                            rj_data = rj_data.replace(/\{.*?\}/, `{${rn2[1].codeframe.replace(/(\w{2})(?=\w)/g, "$1 ")}}`)
+                        } else if (rn2[1].codefrm) {
+                            rj_data = rj_data.replace(/\{.*?\}/, `{${rn2[1].codefrm.replace(/(\w{2})(?=\w)/g, "$1 ")}}`)
                         } else {
                             rj_data
                         }
@@ -99,11 +99,11 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                 case "info":
                 case "strm":
                     var vnwm_vnwy_tu_mcvn
-                    if (rn2[1].para) {
-                        if (typeof (rn2[1].para) != 'object') {
-                            uz_ms('csrf-para aoao ji vnwm-' + rn2[1].para)
+                    if (rn2[1].params) {
+                        if (typeof (rn2[1].params) != 'object') {
+                            uz_ms('csrf-params aoao ji vnwm-' + rn2[1].params)
                         } else {
-                            vnwm_vnwy_tu_mcvn = rn2[1].para
+                            vnwm_vnwy_tu_mcvn = rn2[1].params
                         }
                     } else {
                         vnwm_vnwy_tu_mcvn = []

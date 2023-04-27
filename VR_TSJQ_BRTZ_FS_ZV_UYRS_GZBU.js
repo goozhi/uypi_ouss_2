@@ -73,7 +73,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.hasOwnProperty('rjok')) {
         var rj_html = `<head>
         <link rel="stylesheet" href="/css/style2.css" onload="console.log('CSS 文件已加载')">
-        </head>`+ VR_md_RJOK_html_FS('./public/md/uyrs_rjok.md')
+        </head>`+ VR_md_RJOK_html_FS('./public/md/uyrs_rjok_2.md')
         return { aqn_voud: rj_html }
     } else if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {

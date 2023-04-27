@@ -47,7 +47,7 @@ function VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2(RJSE_KP) {
     if (reg_mcvn_2.test(ZZZZ_KLVQ)) {
         var diwr_yhld = ZZZZ_KLVQ.match(reg_mcvn_2)
         var vn_2 = (Number(diwr_yhld[2]) - Number(diwr_yhld[1]))
-        var vn_1 = Number(diwr_yhld[1])-1
+        var vn_1 = Number(diwr_yhld[1]) - 1
         vnwm_klvq_zthi = Array.from({ length: vn_2 + 1 }, (rn1) => {
             return ++vn_1
         })
@@ -62,13 +62,13 @@ function VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2(RJSE_KP) {
     }).flat()
 
     var KLVQ_2 = ZZZZ_KLVQ
-    var RJSE_YHLD = DIWR_MCVN[4].replace(/\s+$/, "").replace(/\\( )/g, "$1\u917e");
+    var RJSE_YHLD = DIWR_MCVN[4].replace(/\s+$/, "");
     var reg_YHLD = /'([^,|\uff0c]*?)( )([^,|\uff0c]*?)'/g;
     var sheng_YHLD = "'$1\u568f$3'";
     while (reg_YHLD.test(RJSE_YHLD)) {
         RJSE_YHLD = RJSE_YHLD.replace(reg_YHLD, sheng_YHLD)
     }
-    var vnwm_yhld = RJSE_YHLD.split(/'\s*,\s*'|(?:\s*,|)\s*\|\|\|+\s*(?:,\s*|)|(?:,|\uff0c|)\s+(?!\u917e)(?:,|\uff0c|)/);
+    var vnwm_yhld = RJSE_YHLD.split(/'\s*,\s*'|(?:\s*,|)\s*\|\|\|+\s*(?:,\s*|)|(?:,|\uff0c|)(?<!\\)\s+(?:,|\uff0c|)/).map(rn1 => rn1.replace(/\\/g, ""));
     var vn_1 = 0
     var rj_neg = vnwm_yhld[0]
     return vnwm_yhld.slice(1, 100).map((rn1, eqwy_1) => {
@@ -81,9 +81,9 @@ function VR_EBWU_BRTZ_FS_ZV_MH_TR_KXUX_2(RJSE_KP) {
             vn_1++
         }
         if (!vnwm_klvq_2[vn_1 - 1]) {
-            uz_ms('csrf-msox dk mcvn-' + (vn_1 - 1))
+            uz_ms('csrf-jvum dk mcvn-' + (vn_1) + ": " + rn1)
         }
-        ZZZZ_KLVQ = "d"+vnwm_klvq_2[vn_1 - 1].zthi
+        ZZZZ_KLVQ = "d" + vnwm_klvq_2[vn_1 - 1].zthi
         kxux_yg = vnwm_klvq_2[vn_1 - 1].kxux_yg
 
         return LLAO.replace(/(\s*{)/, "_" + eqwy_1 + "$1") + ",21," + ZZZZ_KLVQ + "," + kxux_yg + "," + rn1 + "|" + rj_neg + ";" + BMLC
