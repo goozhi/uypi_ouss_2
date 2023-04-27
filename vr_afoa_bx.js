@@ -705,6 +705,12 @@ function vr_afoa_bx() {
             DG  {}
             , ,{}
         }}
+        77=mid{{
+            ffff{}
+            ff{}
+            fff{}
+            f{}
+        }}
     `,
         vnwm_vr_afoa_lzm_wu: ["77", "ALIGN"],
         VBYT_VKRF_Peng_EBWU: false,

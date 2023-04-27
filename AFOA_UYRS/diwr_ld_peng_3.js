@@ -67,7 +67,11 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
             diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
         } else if (rn2[1].type) {
             var path_use = path.join(diwr_neig_kp.static, rn2[1].type, rn2[1].use)
-            var rj_data = fs.readFileSync(path_use).toString().replace(/\r/g,"")
+            var stats = fs.statSync(path_use)
+            if (!fs.existsSync(path_use) || stats.isDirectory()) {
+                uz_ms('csrf-yxna ac zznq aeqr acji yenh rjqt-' + path_use + "-kp-" + JSON.stringify(rn2[1]))
+            }
+            var rj_data = fs.readFileSync(path_use).toString().replace(/\r/g, "")
             if (/\ufffd/.test(rj_data)) {
                 uz_ms('csrf-umdy \ufffd frih, rt zjzj vkvy jils eopc-' + path_use)
             } else {
