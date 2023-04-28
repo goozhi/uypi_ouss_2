@@ -39,11 +39,16 @@ function diwr_pzre_ld_peng(diwr_slm, diwr_neig_kp) {
         var vnwm_yhld = ['版本信息', '读码', '清码']
         var vnwm_yhld_2 = []
         var vnwm_yhld_3 = []
+        var vn_ybkc = 0
         for (var i1 = 0; i1 < vnwm_ljey.length; i1++) {
             var vkih = vnwm_yhld.indexOf(diwr_slm[vnwm_ljey[i1]].neig['当前文件夹属性'])
             if (vkih != -1) {
                 var rj_yhld = vnwm_ljey[i1]
-                vnwm_yhld_2[vkih] = rj_yhld
+                if (vnwm_yhld_2[vkih]) {
+                    vn_ybkc++
+                } else {
+                }
+                vnwm_yhld_2[vkih + vn_ybkc] = rj_yhld
             } else {
                 vnwm_yhld_3.push(vnwm_ljey[i1])
             }
