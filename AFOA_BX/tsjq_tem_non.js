@@ -71,6 +71,20 @@ function vr_afoa_bx() {
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string",
         vnwm_vr_afoa_lzm_wu: ["CLONE", "11"]
+    }, {
+        vr_afoa_wu: "CSV_RJVT",
+        zkrs: "CSV转普通格式",
+        csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
+        klch: `
+        CSV=file=gb2312{{
+            your/csv/path
+        }}
+        
+    `
+        ,
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string",
+        vnwm_vr_afoa_lzm_wu: ["CSV", "53"]
     },
     {
         vr_afoa_wu: "NEIG_EXYM_CLN",
@@ -94,6 +108,14 @@ function vr_afoa_bx() {
         csrf: "Bi afoa kfou dbkz nq V R tsjq yh lclc, sono kf fj eowl hpmi lh 0 dk ztfr sum.",
         klch: `lclc={{This is a comment.}}`,
         vnwm_vr_afoa_lzm_wu: ["5", "LCLC", "COMMENT", "CMMT"],
+        VBYT_VKRF_Peng_EBWU: false,
+        eowl_uxux: "string"
+    }, {
+        vr_afoa_wu: "UYRS_GZBU",
+        zkrs: "工程管理",
+        csrf: "该指令帮助用户管理工程",
+        klch: `prj=build=txt{{}}`,
+        vnwm_vr_afoa_lzm_wu: ["63", "PRJ"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
     }, {
@@ -642,6 +664,12 @@ function vr_afoa_bx() {
             DG  {}
             , ,{}
         }}
+        77=mid{{
+            ffff{}
+            ff{}
+            fff{}
+            f{}
+        }}
     `,
         vnwm_vr_afoa_lzm_wu: ["77", "ALIGN"],
         VBYT_VKRF_Peng_EBWU: false,
@@ -710,7 +738,8 @@ function vr_afoa_bx() {
         zkrs: "调用对比助手",
         csrf: `调用对比助手 : 操作符为99。
         `,
-        klch: `        99={{
+        klch: `
+        99={{
             *"变道盲区按键次数",   {22 b0 01},cf,d4*16777216+d5*65536+d6*256+d7,.0,次;
             *"车道偏离按键次数",   {22 b0 01},cf,d8*16777216+d9*65536+d10*256+d11,.0,次;
         }}
