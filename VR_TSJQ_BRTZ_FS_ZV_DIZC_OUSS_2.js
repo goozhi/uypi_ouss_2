@@ -80,7 +80,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_DIZC_OUSS_2(DIWR_AFOA, diwr_mcvn) {
     }
     return new Promise((resolve, reject) => {
         Promise.all([DIZC_OUSS_2(BQEO_1, 999, RJSE_ZTHI_SLGR)]).then(jtyj_1 => {
-            resolve(jtyj_1[0])
+            resolve(jtyj_1[0].replace(/\n(?=\n)/g, ""))
         }).catch(err => {
             reject(err)
         })
