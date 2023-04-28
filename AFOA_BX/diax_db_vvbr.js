@@ -1,4 +1,4 @@
-function dizc_db_vvbr(arr = [], diwr_neig_kp = { qqsc: false }) {
+function diax_db_vvbr(arr = [], diwr_neig_kp = { qqsc: false }) {
     const diwr_ybkc_ztfr_sum = {}
     const maxLen = Math.max(...arr.map(str => {
         var hpmi
@@ -23,4 +23,4 @@ function dizc_db_vvbr(arr = [], diwr_neig_kp = { qqsc: false }) {
         return spacedArr.map(rn1 => rn1[0] + rn1[1]);
     }
 }
-module.exports = dizc_db_vvbr
+module.exports = diax_db_vvbr

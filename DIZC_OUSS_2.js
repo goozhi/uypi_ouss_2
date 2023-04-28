@@ -1,3 +1,4 @@
+const VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX = require('./VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX');
 
 async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     var ZJZJ_TSJQ_Str = require('./AFOA_sysData/ZJZJ_TSJQ_Str');
@@ -92,7 +93,7 @@ async function DIZC_OUSS_2(RJSE_1, YE_aU_QHVN, RJSE_ZTHI_SLGR) {
     return new Promise((resolve, reject) => {
         Promise.all([NINI_HQTB_2(RJSE_1, diwr_vyvy_vnwm_zthi_slgr, VNWM_OKWK_ZTHI_SYZN_YG_SLGR)]).then(jtyj => {
             RJSE_YHLD_2 = jtyj[0]
-            var RJSE_YHLD = NINI_SIIH_DIAX(RJSE_YHLD_2);
+            var RJSE_YHLD = VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX({ VR_AFOA_MCVN: 'mid', VR_AFOA_BQEO: RJSE_YHLD_2 })
             var VNWM_YHLD = RJSE_YHLD.split(/\n/);
             var VN_1 = Math.floor(VNWM_YHLD.length / YE_aU_QHVN);
             for (var EQWY_1 = 0; EQWY_1 < VN_1; EQWY_1++) {

@@ -1,5 +1,4 @@
-const dizc_db_vvbr = require('./AFOA_BX/dizc_db_vvbr');
-const dizc_zv_diwr_lh_mcvn = require('./AFOA_BX/dizc_zv_diwr_lh_mcvn');
+const diax_zv_diwr_lh_mcvn = require('./AFOA_BX/diax_zv_diwr_lh_mcvn');
 const uz_ms = require('./AFOA_BX/uz_ms');
 var NINI_SIIH_DIAX = require('./NINI_SIIH_DIAX');
 const vr_afoa_bqeo_rscs = require('./vr_afoa_bqeo_rscs');
@@ -24,7 +23,7 @@ function VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX(DIWR_AFOA) {
                 }
             })
             const diwr_uni = Object.fromEntries(vnwm_2)
-            dizc_zv_diwr_lh_mcvn(diwr_uni)
+            diax_zv_diwr_lh_mcvn(diwr_uni)
             
             return vnwm_2.map(rn1 => {
                 if (!rn1[1].rj_nixb) {
