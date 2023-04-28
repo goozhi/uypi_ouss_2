@@ -131,7 +131,13 @@ function vr_afoa_bx() {
         zkrs: "工程管理",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU,
         csrf: "该指令帮助用户管理工程",
-        klch: `prj=build=txt{{}}`,
+        klch: `prj=build=txt{{
+            comment={{该指令对工程进行彭语言转换，转换后将输出到工程目录下的txt文件中}}
+        }}
+        
+        prj=build{{
+            comment={{直接编译加密到云电动力的vehicle文件夹上}}
+        }}`,
         vnwm_vr_afoa_lzm_wu: ["63", "PRJ"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
