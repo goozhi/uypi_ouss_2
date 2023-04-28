@@ -131,7 +131,24 @@ function vr_afoa_bx() {
         zkrs: "工程管理",
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU,
         csrf: "该指令帮助用户管理工程",
-        klch: `prj=build=txt{{
+        klch: `
+        prj=link=add{{
+            comment={{该指令引导你添加一个新的工程(project)路径，添加后，其他所有指令将默认使用该路径}}
+        }}
+        
+        prj=link=比亚迪项目{{
+            comment={{该指令会把当前链接切换到指定的工程(project)路径，切换后，其他所有指令将默认使用该路径}}
+        }}
+        
+        prj=init{{
+            comment={{该指令对新增的工程进行初始化，也就是建立模板}}
+        }}
+        
+        prj=init=add{{
+            comment={{该指令引导你添加一个新的初始化配置，添加后，下次init所使用的配置就是它}}
+        }}
+        
+        prj=build=txt{{
             comment={{该指令对工程进行彭语言转换，转换后将输出到工程目录下的txt文件中}}
         }}
         
