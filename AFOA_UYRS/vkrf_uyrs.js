@@ -17,7 +17,7 @@ const hd_rjqt_tum = require('../AFOA_BX/hd_rjqt_tum');
 const dtc_rj = require('./dtc_rj');
 const kplu_ld_diwr = require("../AFOA_BX/kplu_ld_diwr")
 var diwr_uyrs_nomr_2 = { vkih: new Date().getTime(), nikc_uyrs: require }
-const nikc_diwr_wwcf = path.join(__dirname.replace(/(\\|\/).*|\bsdcard\b.*/i,""),"/assistant/cache")
+const nikc_diwr_wwcf = path.join(__dirname.replace(/(?<=\bsdcard\b).*|(\\|\/).*/i, ""), "/assistant/cache")
 if (!fs.existsSync(nikc_diwr_wwcf)) {
     fs.mkdirSync(nikc_diwr_wwcf, { recursive: true })
     fs.writeFileSync(path.join(nikc_diwr_wwcf, 'init.json'), '{}')
