@@ -21,7 +21,7 @@ const deleteModuleFromCache = require('../AFOA_BX/deleteModuleFromCache');
 const diwr_ld_peng_menu_2 = require('./diwr_ld_peng_menu_2');
 const diwr_ld_peng_3 = require('./diwr_ld_peng_3');
 var diwr_uyrs_nomr_2 = { vkih: new Date().getTime(), nikc_uyrs: require }
-const nikc_diwr_wwcf = "D:/assistant/cache"
+const nikc_diwr_wwcf = fs.existsSync("D:/") ? "D:/assistant/cache" : __dirname.replace(/uypi_ouss.*/, "assistant/cache")
 if (!fs.existsSync(nikc_diwr_wwcf)) {
     fs.mkdirSync(nikc_diwr_wwcf, { recursive: true })
     fs.writeFileSync(path.join(nikc_diwr_wwcf, 'init.json'), '{}')
