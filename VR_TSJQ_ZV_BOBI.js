@@ -54,12 +54,8 @@ async function VR_TSJQ_ZV_BOBI(DIWR_AFOA, diwr_mcvn) {
         ]
     })
     if (diwr_vr_mcvn.hasOwnProperty('jfrs') || Object.keys(diwr_vr_mcvn).length == 0) {
-        var jtyj
-        try {
-            jtyj = await wdbu_jfrs({ dbkz_wu: process.env.USERNAME, rj_jfrs_kp: BQEO_1, diwr_vnwm_kplu_bobi })
-        } catch (err) {
-            throw err
-        }
+        var dbkz_wu = process.env.USERNAME ? process.env.USERNAME : "ravc"
+        var jtyj = await wdbu_jfrs({ dbkz_wu, rj_jfrs_kp: BQEO_1, diwr_vnwm_kplu_bobi }).catch(err => { throw err })
         if (jtyj.gkqj_di_mb) {
             if (jtyj.wldg_uxux === 'ztfr_sum') {
                 if (jtyj.wldg_hqtz === 'rj_msqu') {
