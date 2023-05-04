@@ -36,7 +36,7 @@ async function RSCS_3f_NINI(NINI_DIWR_1) {
 
             }
             else if (vnwm_DIYC_KLVQ.length > 2) {
-                DIYC_KLVQ_ZV_YENH = vnwm_DIYC_KLVQ.slice(0, 2).join(',') + " ..."
+                DIYC_KLVQ_ZV_YENH = vnwm_DIYC_KLVQ.slice(0, 2).join(',') + ",..."
             } else {
                 DIYC_KLVQ_ZV_YENH = vnwm_DIYC_KLVQ.join(',')
 

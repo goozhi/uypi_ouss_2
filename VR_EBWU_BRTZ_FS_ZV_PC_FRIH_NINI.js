@@ -15,7 +15,7 @@ function VR_EBWU_BRTZ_FS_ZV_PC_FRIH_NINI(RJSE_KP) {
         BMLC = ""
     }
     var NINI_UXUX_2;
-    if (/--+/.test(RJSE_1)) {
+    if (/--+/.test(RJSE_1.replace(/.*?\{/), "")) {
         NINI_UXUX_2 = "pc_frih"
         RJSE_1 = RJSE_1.replace(/--+/, "")
     } else {
