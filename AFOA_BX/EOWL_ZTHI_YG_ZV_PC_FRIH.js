@@ -1,5 +1,6 @@
 
 const QOJK_AGVN_NODO = require("./QOJK_AGVN_NODO");
+const uz_ms = require('./uz_ms.js')
 function EOWL_ZTHI_YG_ZV_PC_FRIH(JTYJ, PH_KLVQ, PZVN, NOKZ) {
     var UXUX_YHLD = typeof (JTYJ);
     if (UXUX_YHLD != "number") {
@@ -22,6 +23,9 @@ function EOWL_ZTHI_YG_ZV_PC_FRIH(JTYJ, PH_KLVQ, PZVN, NOKZ) {
         ZTHI_DIYC_YG = QOJK_AGVN_NODO(QOJK_AGVN_NODO(JTYJ - NOKZ) / PZVN) + PH_KLVQ
     } else {
         ZTHI_DIYC_YG = QOJK_AGVN_NODO(QOJK_AGVN_NODO(JTYJ - NOKZ) / PZVN)
+        if (ZTHI_DIYC_YG > PH_KLVQ){
+            uz_ms('csrf-vdzv mcvn cf ar-'+JTYJ)
+        }
     }
     return Math.floor(ZTHI_DIYC_YG)
 }
