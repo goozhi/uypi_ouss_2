@@ -129,8 +129,11 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         }
         PH_KLVQ_MCVN_1 = VNWM_ZTHI_KLVQ.reverse().join('')
         PH_KLVQ_MCVN_uytz = PH_KLVQ_MCVN_1
+        PC_FRIH_SDVN_PH_HPMI = eval("(0x" + PH_KLVQ_MCVN_1.replace(/d\d+/ig, "ff") + ")+1");
     } else if (reg_XBST_2.test(ZTHI_XBST)) {
         ZTHI_XBST = ZTHI_XBST.replace(reg_XBST_2, "d")
+        PC_FRIH_SDVN_PH_HPMI = eval("(0x" + ZTHI_XBST.replace(/d\d+/ig, "ff") + ")+1");
+        PH_KLVQ_MCVN_uytz = ZTHI_XBST
     } else {
         throw new Error("[ZTHI XBST BRTZ MSOX]" + ZTHI_XBST + "<--" + RJSE_KP)
     }
@@ -138,7 +141,6 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var PZVN;
     if (GKQJ_PC_FRIH) {
         if (reg_XBST_1.test(ZTHI_XBST)) {
-            PC_FRIH_SDVN_PH_HPMI = eval("(0x" + PH_KLVQ_MCVN_1.replace(/d\d+/ig, "ff") + ")+1");
         } else {
             PH_KLVQ_MCVN_1 = ZTHI_XBST.replace(reg_XBST_2, "d")
             PH_KLVQ_MCVN_uytz = PH_KLVQ_MCVN_1;
@@ -236,12 +238,10 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
             DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: VNWM_PCYC_KLVQ_MCVN_ZV_EOVN, BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
             DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: VNWM_PCYC_KLVQ_MCVN_ZV_YLVN, BQEO: "(" + PH_KLVQ_MCVN_1 + "-" + PC_FRIH_SDVN_PH_HPMI + ")*(" + PZVN + ")+(" + NOKZ + ")" })
         } else if (!GKQJ_PC_FRIH && GKQJ_AWZN_KLVQ) {
-            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [Math.floor(AWZN_KLVQ_VN_1), Math.floor(AWZN_KLVQ_VN_2)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
-            PH_KLVQ_MCVN_uytz = PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")"
+            DIWR_VNWM_3C_DIYC_YG_MCVN.push({ VNWM_KLVQ_MCVN: [EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_1, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ), EOWL_ZTHI_YG_ZV_PC_FRIH(AWZN_KLVQ_VN_2, PC_FRIH_SDVN_PH_HPMI, PZVN, NOKZ)], BQEO: PH_KLVQ_MCVN_1 + "*(" + PZVN + ")+(" + NOKZ + ")" })
         } else {
             throw new Error('[RAVC MSOX GKQJ_PC_FRIH GKQJ_AWZN_KLVQ LH false]')
         }
-
         return LLAO + ",3c," + PH_KLVQ_MCVN_uytz + ",." + AGVN_TRVN + ",\"" + EYTR + "\"," + DIWR_VNWM_3C_DIYC_YG_MCVN.map(rnsf => {
             return "'" + rnsf.VNWM_KLVQ_MCVN.map(rnsf_4 => {
                 return rnsf_4.toString(16)
