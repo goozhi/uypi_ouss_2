@@ -73,6 +73,11 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
     var diwr_uyrs = atvn_zk_qwse()
     diwr_neig_zjzj(diwr_uyrs, ['cfg'])
     diwr_uyrs.cfg.vehicle = neig_proj.vehicle
+    if (diwr_neig_kp.vkrf_hqtz && diwr_neig_kp.vkrf_hqtz === 'diwr') {
+        var yxna_yhld = path.join(diwr_neig_kp.nikc_uyrs, "obj.json")
+        fs.writeFileSync(yxna_yhld, JSON.stringify(diwr_uyrs, null, 4))
+        return `已写入${yxna_yhld}`
+    }
     diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'vehicle', 'projpath'])
     var vnwm_ljey = []
     var vnwm_pzre = []

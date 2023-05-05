@@ -154,7 +154,22 @@ function vr_afoa_bx() {
         
         prj=build{{
             comment={{直接编译加密到云电动力的vehicle文件夹上}}
-        }}`,
+        }}
+
+        prj=build=obj{{
+            comment={{该指令生成一个含有嵌套对象的json文件}}
+        }}
+
+        prj=open{{
+            comment={{该指令打开当前link的目录}}
+        }}
+
+        prj=doc{{
+            comment={{打开prj相关教程文档}}
+        }}
+
+        `
+        ,
         vnwm_vr_afoa_lzm_wu: ["63", "PRJ"],
         VBYT_VKRF_Peng_EBWU: false,
         eowl_uxux: "string"
