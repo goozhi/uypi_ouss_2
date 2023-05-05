@@ -3,7 +3,7 @@ const uz_ms = require("../AFOA_BX/uz_ms")
 const FDMJ = require("../AFOA_BX/FDMJ")
 const YP_VP_2 = require("../AFOA_BX/YP_VP_2")
 const reg_16_tyub = /^[0-9a-f]+$/i
-function sbta_ld_peng(diwr_coms) {
+async function sbta_ld_peng_2(diwr_coms) {
     return diwr_coms.map(rn1 => {
         if (rn1['bus'] === 'canbus') {
             var vnwm_fo_2 = [
@@ -24,7 +24,7 @@ function sbta_ld_peng(diwr_coms) {
                     }
                 }
                 if (rn1['req'] - rn1['res'] >= 0) {
-                    uz_ms('csrf-ycdg yyha ac yc ag oc iq oc rtul yyha-' + rn1['res'] + '<=' + rn1['req'])
+                    uz_ms('csrf-ycdg yyha ac yc ag oc iq oc rtul yyha-0x' + rn1['res'].toString(16) + '<=0x' + rn1['req'].toString(16))
                 }
                 var ftl_vyn = 'ffe0'
                 var yyha_trvn = 11
@@ -56,4 +56,4 @@ function sbta_ld_peng(diwr_coms) {
         }
     }).join('\n\n')
 }
-module.exports = sbta_ld_peng
+module.exports = sbta_ld_peng_2

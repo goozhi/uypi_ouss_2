@@ -62,7 +62,14 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
             var coms = diwr_neig_kp.diwr_uyrs.cfg.coms.map(rn1 => {
                 return rn2[1].map(rn4 => Object.assign({}, rn1, rn4))
             }).flat()
-            var rj_sbta = sbta_ld_peng_2(coms)
+            var rj_sbta = await sbta_ld_peng_2(coms).catch(err => {
+                if (err.message) {
+                    err.message += yxna_bnll_ljey
+                } else {
+                }
+                throw err
+
+            })
 
             diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
         } else if (rn2[1].type) {
