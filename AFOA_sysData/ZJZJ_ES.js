@@ -13,7 +13,7 @@ function ZJZJ_ES(RJSE_ES_KP) {
     } else {
         var RJSE_ZTIH = DIWR_ZTIH[1];
         var VNWM_ZTIH = RJSE_ZTIH.split(/\s/);
-        var reg_ZTIH = /^(?:[0-9]|[A-F]){2}$/i;
+        var reg_ZTIH = /^(?:[0-9]|[A-F]){1,2}$/i;
         var reg_f_VNWM = /^f\[\d+\]\[\d+\](?:\d+|)$/;
         VNWM_ZTIH.forEach(RNSF => {
             switch (true) {

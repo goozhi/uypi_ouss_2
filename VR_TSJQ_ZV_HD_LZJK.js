@@ -18,7 +18,7 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA) {
     })
     if (!diwr_vr_mcvn) {
         var reg_1 = /(?:head|tail|file)\s*(?:=|$)(?:(?!(?:head|tail|file)\s*(?:=|$)).)*/ig
-        var vnwm_yhld = DIWR_AFOA.VR_AFOA_MCVN.replace(/\s*$/,"").match(reg_1)
+        var vnwm_yhld = DIWR_AFOA.VR_AFOA_MCVN.replace(/\s*$/, "").match(reg_1)
         if (vnwm_yhld) {
             var diwr_yhld = {}
             var diwr_mcvn = {}
@@ -61,7 +61,7 @@ function VR_TSJQ_ZV_HD_LZJK(DIWR_AFOA) {
         var rj_yhld = rjqt_rjzv(BQEO_1, diwr_vr_mcvn)
         return hd_lzjk(rj_yhld)
     } else if (Object.keys(diwr_vr_mcvn).length === 0) {
-        return hd_lzjk(BQEO_1)
+        return hd_lzjk(BQEO_1).replace(/\n(?=\n)/, "")
     } else {
         uz_ms('csrf-mcvn acun-' + DIWR_AFOA.VR_AFOA_MCVN)
     }

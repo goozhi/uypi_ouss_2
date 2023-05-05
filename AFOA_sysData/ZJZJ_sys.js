@@ -11,7 +11,7 @@ async function ZJZJ_sys(RJSE_KP) {
 	if (RJSE_KP == null) {
 		throw "MCVN NRAP"
 	}
-	var reg_LG_MCVN = /(?:\n|^)_.*\(\).*/i;
+	var reg_LG_MCVN = /(?:\n|^)_/i;
 	var DIWR_YHLD = RJSE_KP.match(reg_LG_MCVN)
 	if (DIWR_YHLD == null) {
 		RJSE_MSOX += "\n<sys LG BRTZ MSOX>\n" + RJSE_KP.split(/\n/).slice(0, 3).join("\n") + "\n</sys LG BRTZ MSOX>"
