@@ -28,17 +28,21 @@ function diwr_vnwy_aayt(diwr_slm, diwr_neig_nmky, zkrs_1, diwr_nomr) {
                 if (!rn1['文件夹名称']) {
                     uz_ms('csrf-aoao tszn rjqt tum wugy-' + JSON.stringify(rn1) + rn1.nikc)
                 }
-                if (!diwr_bnll_ahdb_nomr_vnwy[rn1['引用']]) {
-                    uz_ms('csrf-wydb dk vnwy wu ac zznq-' + rn1['引用'] + rn1.nikc)
+                if (!rn1['引用']) {
+                    uz_ms('csrf-aoao tszn "wydb" pzva-' + rn1.nikc)
                 } else {
-                    diwr_slm[rn1['文件夹名称']] = Object.assign({}, {
-                        yxna_yowr: diwr_slm.yxna_yowr,
-                        neig: {
-                            "当前文件夹属性": rn1['文件夹属性'],
-                            "数据": { "引用": rn1['引用'] }
-                        },
-                        vnwm_vnwy: [{ zkrs: diwr_bnll_ahdb_nomr_vnwy[rn1['引用']].yxna, bqeo: diwr_bnll_ahdb_nomr_vnwy[rn1['引用']].bqeo }]
-                    })
+                    if (!diwr_bnll_ahdb_nomr_vnwy[rn1['引用']]) {
+                        uz_ms('csrf-wydb dk vnwy wu ac zznq-' + rn1['引用'] + rn1.nikc)
+                    } else {
+                        diwr_slm[rn1['文件夹名称']] = Object.assign({}, {
+                            yxna_yowr: diwr_slm.yxna_yowr,
+                            neig: {
+                                "当前文件夹属性": rn1['文件夹属性'],
+                                "数据": { "引用": rn1['引用'] }
+                            },
+                            vnwm_vnwy: [{ zkrs: diwr_bnll_ahdb_nomr_vnwy[rn1['引用']].yxna, bqeo: diwr_bnll_ahdb_nomr_vnwy[rn1['引用']].bqeo }]
+                        })
+                    }
                 }
             })
         }

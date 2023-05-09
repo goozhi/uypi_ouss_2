@@ -92,7 +92,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                 switch (rn2[1].type) {
                     case 'func':
                         if (/\.(?:v|vr)$/i.test(rn2[1].use)) {
-                            uz_ms('csrf-kueo afoa dk v r ebwu nq ssdvu yh, rt rvdb peng ebwu-' + rn2[1].use)
+                            uz_ms('csrf-kuoe afoa dk v r ebwu nq sdvu yh, rt rvdb peng ebwu-' + rn2[1].use)
                         } else if (/\.(?:peng)$/i.test(rn2[1].use)) {
                             if (rn2[1].codeid) {
                                 rj_data = rj_data.replace(/id\s*=\s*\w+/i, `id=${rn2[1].codeid}`)
