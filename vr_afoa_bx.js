@@ -139,7 +139,12 @@ function vr_afoa_bx() {
         prj=link=比亚迪项目{{
             comment={{该指令会把当前链接切换到指定的工程(project)路径，切换后，其他所有指令将默认使用该路径}}
         }}
-        
+
+        proj=link=rm{{
+            comment={{该指令会移除已记录的project目录，不删除实际文件夹，想移除多个目标请用换行符隔开}}
+            比亚迪新能源
+        }}
+
         prj=init{{
             comment={{该指令对新增的工程进行初始化，也就是建立模板}}
         }}
