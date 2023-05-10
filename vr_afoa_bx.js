@@ -72,11 +72,7 @@ function vr_afoa_bx() {
         csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
         klch: `clone=counts=10{{
             TEXT
-        }}
-        clone=counts=3,again=4{{
-            TEXT
-        }}
-        
+        }}        
     `
         ,
         vr_afoa_rh: VR_TSJQ_ZV_KNDD_RJ,
@@ -86,7 +82,7 @@ function vr_afoa_bx() {
     }, {
         vr_afoa_wu: "CSV_RJVT",
         zkrs: "CSV转普通格式",
-        csrf: `Bi tsjq kfou dbkz kndd rjse bqeo`,
+        csrf: `该指令能解析DEC2HEX函数为对应的16进制`,
         klch: `
         CSV=file=gb2312{{
             your/csv/path

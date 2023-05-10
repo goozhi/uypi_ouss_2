@@ -90,6 +90,16 @@ app.get('/uypi_ouss_zvow_rjok_ld_html', function (req, res) {
 app.get('/ywzb_kfou_zv_rvdb_ouss_ssvl_os_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_rvdb_ouss_ssvl_os.md");
 });
+app.get('/ywzb_kfou_zv_es_llao_zyzy', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_es_llao_zyzy.md");
+});
+app.get('/ywzb_kfou_zv_peng_tsjq', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_peng_tsjq.md");
+});
+app.get('/ywzb_kfou_zv_vdzv_ldrg', function (req, res) {
+    WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vdzv_ldrg.md");
+});
+
 app.get('/ywzb_kfou_zv_vscode_rvdb_tsfz_rjok_ld_html', function (req, res) {
     WLYC_VR_MD_RJOK_html_FS(req, res, "./public/md/ywzb_kfou_zv_vscode_rvdb_tsfz.md");
 });

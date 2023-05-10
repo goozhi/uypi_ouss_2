@@ -47,6 +47,22 @@
 
 **codefrm** 向程序指定用于请求读取故障码的帧。
 
+### send
+```js
+{
+    type:'func', use:'func_1.peng', send:{'2e f0 10':'ff 00 00 ff'}
+}
+```
+**send** 告诉程序在引入了peng文件中的内容后，需要修改send指令的参数。使用该属性能够让若干个特殊功能灵活调用同一个peng文件。
 
+### psw27
+```js
+{
+    特殊功能1:{ type: 'func', use: 'func_2.peng', psw27: { 1: 'todo' } },
+    特殊功能2:{ type: 'func', use: 'func_2.peng', psw27: { 1: 34 } }
+}
+```
+
+**psw27** 告诉程序在引入了peng文件中的内容后，需要修改psw27指令的参数，`psw27: { 1: 34 }`表示修改第一个psw27指令的参数为34，`psw27: { 1: 'todo' } }`表示第一个psw27参数未知，待处理，用于标记。
 
 ## 谢谢浏览

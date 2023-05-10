@@ -26,6 +26,7 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
         var vnwm_bnll_eqwy = [...diwr_neig_kp.vnwm_bnll_eqwy, eqwy_1]
         var diwr_pzre_bq_ljey = {}
         var zkrs = rn1[0]
+        await zjzj_ftpj_fr(zkrs).catch(err => { throw err.message += diwr_neig_kp.yxna_bnll_ljey })
         var yxna_bnll_ljey = path.join(diwr_neig_kp.yxna_bnll_ljey, zkrs)
         if (zkrs === 'cfg') {
         } else if (rn1[1].coms) {
@@ -57,6 +58,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
     var vwdp_2 = Object.entries(diwr_neig_kp.diwr_uyrs).map(async (rn2, eqwy_1) => {
         var vnwm_bnll_eqwy = [...diwr_neig_kp.vnwm_bnll_eqwy, eqwy_1]
         var zkrs = rn2[0]
+        await zjzj_ftpj_fr(zkrs).catch(err => { throw err.message += diwr_neig_kp.yxna_bnll_ljey })
         var yxna_bnll_ljey = path.join(diwr_neig_kp.yxna_bnll_ljey, zkrs)
         if (zkrs === 'coms' && diwr_neig_kp.diwr_uyrs.cfg && diwr_neig_kp.diwr_uyrs.cfg.coms) {
             var coms = diwr_neig_kp.diwr_uyrs.cfg.coms.map(rn1 => {
@@ -100,6 +102,57 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                 rj_data = rj_data.replace(/\{.*?\}/, `{${rn2[1].codefrm.replace(/(\w{2})(?=\w)/g, "$1 ")}}`)
                             } else {
                                 rj_data
+                            }
+                            if (rn2[1].send) {
+                                if (typeof (rn2[1].send) != 'object') {
+                                    uz_ms('csrf-send aoao ji object-' + rn2[1].send)
+                                } else {
+                                    Object.entries(rn2[1].send).map(rn6 => {
+                                        var zkrs_6 = rn6[0]
+                                        if (/ $/.test(zkrs_6)) {
+                                            uz_ms('csrf-pzva wu ftpj-' + zkrs_6)
+                                        } else if (!/\w\w \w\w/.test(zkrs_6)) {
+                                            uz_ms('csrf-pzva wu aoao ji es-' + zkrs_6 + '-kp-' + yxna_bnll_ljey)
+                                        } else {
+                                            const reg_es = new RegExp('(send.*\\{ *' + zkrs_6 + ').*?(?=\\})', 'i')
+                                            if (reg_es.test(rj_data)) {
+                                                rj_data = rj_data.replace(reg_es, '$1 ' + rn6[1].replace(/(\w\w)(?=\w)/g, '$1 ').replace(/^ +/, ''))
+                                            } else {
+                                                uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk send tsjq-' + zkrs_6 + '-kp-' + yxna_bnll_ljey)
+                                            }
+                                        }
+                                    })
+                                }
+                            } else if (rn2[1].psw27) {
+                                Object.entries(rn2[1].psw27).map(rn1 => {
+                                    const zkrs = rn1[0]
+                                    if (/^\d+$/.test(zkrs)) {
+                                        if (rn1[1] === 'todo') {
+
+                                        } else {
+                                            const vnwm_psw = rj_data.match(/psw27\(.*?\)/gi)
+                                            if (vnwm_psw) {
+                                                if (vnwm_psw[zkrs - 1]) {
+                                                    var vn_1 = 0
+                                                    rj_data = rj_data.replace(/psw27\(.*?\)/gi, (match) => {
+                                                        vn_1++
+                                                        if (vn_1 === Number(zkrs)) {
+                                                            return `Psw27(${rn1[1]})`
+                                                        } else {
+                                                            return match
+                                                        }
+                                                    })
+                                                } else {
+                                                    uz_ms('csrf-hmpc frgr dk psw27 tsjq-' + zkrs + "-kp-" + yxna_bnll_ljey)
+                                                }
+                                            } else {
+                                                uz_ms('csrf-hmpc zj ')
+                                            }
+                                        }
+                                    } else {
+                                        uz_ms('csrf-psw27 mcvn acun-' + rn1[1])
+                                    }
+                                })
                             }
                         } else {
                             uz_ms('csrf-udao wu acun-' + rn2[1].use)
@@ -169,4 +222,9 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
         }
     })
     await Promise.all(vwdp_2).catch(err => { throw err })//{ throw JSON.stringify(diwr_neig_kp.diwr_uyrs,null,4) })
+}
+async function zjzj_ftpj_fr(zkrs) {
+    if (/\/|\\/.test(zkrs)) {
+        uz_ms('csrf-zkrs efpc ftpj frih-' + zkrs)
+    }
 }
