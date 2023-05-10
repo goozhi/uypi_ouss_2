@@ -123,6 +123,26 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                         }
                                     })
                                 }
+                            } else if (rn2[1].frms) {
+                                if (typeof (rn2[1].frms) != 'object') {
+                                    uz_ms('csrf-frms aoao ji object-' + rn2[1].frms)
+                                } else {
+                                    Object.entries(rn2[1].frms).map(rn6 => {
+                                        var zkrs_6 = rn6[0]
+                                        if (/ $/.test(zkrs_6)) {
+                                            uz_ms('csrf-pzva wu ftpj-' + zkrs_6)
+                                        } else if (!/\w\w \w\w/.test(zkrs_6)) {
+                                            uz_ms('csrf-pzva wu aoao ji es-' + zkrs_6 + '-kp-' + yxna_bnll_ljey)
+                                        } else {
+                                            const reg_es = new RegExp('(\\{) *' + zkrs_6 + '.*?(?=\\})', 'i')
+                                            if (reg_es.test(rj_data)) {
+                                                rj_data = rj_data.replace(reg_es, '$1' + rn6[1].replace(/(\w\w)(?=\w)/g, '$1 ').replace(/^ +/, ''))
+                                            } else {
+                                                uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk es tsjq-' + zkrs_6 + '-kp-' + yxna_bnll_ljey)
+                                            }
+                                        }
+                                    })
+                                }
                             } else if (rn2[1].psw27) {
                                 Object.entries(rn2[1].psw27).map(rn1 => {
                                     const zkrs = rn1[0]
