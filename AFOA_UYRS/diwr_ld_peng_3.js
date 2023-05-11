@@ -37,7 +37,7 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
             var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_bnll_ljey, diwr_uyrs: rn1[1], diwr_pzre_bq_ljey, zkrs })
             await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
             // diwr_pzre_bq_ljey.sort((a, b) => a.vkih_magm - b.vkih_magm)
-            diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_bnll_ljey] = { diwr_pzre_bq_ljey, vnwm_bnll_eqwy, yxna_bnll_ljey, pzre_wu: zkrs, wm_wu: diwr_neig_kp.zkrs }
+            diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_bnll_ljey] = { diwr_pzre_bq_ljey, vnwm_bnll_eqwy, yxna_bnll_ljey, pzre_wu: zkrs, cfg: rn1[1].cfg, wm_wu: diwr_neig_kp.zkrs }
         } else if (typeof (rn1[1]) === 'object') {
             if (!rn1[1].cfg) {
                 rn1[1].cfg = {}

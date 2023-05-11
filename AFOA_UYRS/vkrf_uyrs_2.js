@@ -101,6 +101,20 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         try { return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy) } catch (err) { throw JSON.stringify(b[1].vnwm_bnll_eqwy, null, 4) }
     }).map(async (rn1, eqwy_1) => {
         var zkrs = rn1[0]
+        var bmlc = ', update: ' + getSimpleDate()
+        if (rn1[1].cfg) {
+            if (rn1[1].cfg.author) {
+                bmlc += ', author: ' + rn1[1].cfg.author
+            }
+            if (rn1[1].cfg.device) {
+                bmlc += ', device: ' + rn1[1].cfg.device
+            }
+            if (rn1[1].cfg.vehicle) {
+                bmlc += ', vehicle: ' + rn1[1].cfg.vehicle
+            }
+        } else {
+            uz_ms('csrf-nrap cfg pzva-' + JSON.stringify(rn1[0], null, 4))
+        }
         var rj_sbta = rn1[1].diwr_pzre_bq_ljey.cfg.rj_sbta
         var yxna_slm = path.dirname(zkrs)
         if (!diwr_zk_ljey[yxna_slm]) {
@@ -128,16 +142,16 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
                         return false
                     } else {
                         diwr_ybkc_pzre_bq_ljey[rj_ybkc] = true
-                        return `+${eqwy_2 + 1}[${rn5}](+)$$$`
+                        return `\n+${eqwy_2 + 1}[${rn5}](+)$$$`
                     }
                 }).filter(Boolean).join('\n')
             }
             vn_ljey_vkih = vnwm_part.length
             return `${rj_ljey_1}\n+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
         }).join('\n')
-        return `_S${eqwy_1}()// ${rn1[1].pzre_wu}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
+        return `_S${eqwy_1}()// ${rn1[1].pzre_wu}${bmlc}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
     })
-    var rj_sys = "@SYS\n\n" + await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n') }).catch(err => { throw err }) + "\n__"
+    var rj_sys = "@SYS\n\n" + await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n\n') }).catch(err => { throw err }) + "\n__"
     Object.entries(diwr_zk_ljey).map(rn7 => {
         var zkrs_7 = rn7[0]
         var yxna_slm = path.dirname(zkrs_7)
@@ -282,4 +296,12 @@ function bs_ljey(diwr_zk_ljey = {}, yxna_slm = "") {
     if (!diwr_zk_ljey[yxna_slm] && yxna_slm != ".") {
         bs_ljey(diwr_zk_ljey, yxna_slm)
     }
+}
+
+function getSimpleDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${year}-${month}-${day}`;
 }
