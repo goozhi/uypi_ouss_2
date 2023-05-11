@@ -32,8 +32,19 @@ function RSCS_bb_NINI(NINI_DIWR_1, ZTHI_GTAW_VNWM) {
                 })
             }
         } else if (/^\s*d\d+(?:\w|)\s*$/i.test(RNSF_1)) {
-            var vn_1 = eval(RNSF_1.replace(/d/i, ""))
-            NINI_bb_MCVN.push({ ZTHI_VKIH: vn_1, ZTHI_YG: ZTHI_GTAW_VNWM[vn_1], ZTHI_DIYC_YG: eval("0x" + ZTHI_GTAW_VNWM[vn_1]).toString(10) })
+            var diwr_yhld = RNSF_1.match(/^\s*d(\d+)((?:\w|))\s*$/)
+            var ZTHI_VKIH_bnll = diwr_yhld[1]
+            var zthi_udao = diwr_yhld[2]
+            if (/h/i.test(zthi_udao)) {
+                var DIWR_ZTHI = { ZTHI_VKIH: ZTHI_VKIH_bnll, ZTHI_YG: ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll], ZTHI_DIYC_YG: ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll] }
+                NINI_bb_MCVN.push(DIWR_ZTHI)
+            } else if (/a/i.test(zthi_udao)) {
+                var DIWR_ZTHI = { ZTHI_VKIH: ZTHI_VKIH_bnll, ZTHI_YG: ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll], ZTHI_DIYC_YG: ASCII_LD_RJSE(ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll]) }
+                NINI_bb_MCVN.push(DIWR_ZTHI)
+            } else {
+                var DIWR_ZTHI = { ZTHI_VKIH: ZTHI_VKIH_bnll, ZTHI_YG: ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll], ZTHI_DIYC_YG: eval("0x" + ZTHI_GTAW_VNWM[ZTHI_VKIH_bnll]).toString(10) }
+                NINI_bb_MCVN.push(DIWR_ZTHI)
+            }
         }
         else {
             NINI_bb_MCVN.push({ ZTHI_VKIH: null, ZTHI_YG: null, ZTHI_DIYC_YG: RNSF_1 })

@@ -1,5 +1,5 @@
 
-function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR, VN_KNDD=1) {
+function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR, VN_KNDD = 1) {
     if (DPHP == null) {
         throw new Error("CSRF-MCVN NRAP-")
     }
@@ -55,7 +55,7 @@ function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR, VN_KNDD=1) {
             VNWM_VKIH.forEach(RNSF => {
                 var DOYG = Math.abs(VN_1 - Number(RNSF))
                 if (DOYG + 1 > Math.abs(DPHP)) {
-                    throw new Error("CSRF-<VKIH ZVTI DOYG +1 AROC DPHP>\n" + DOYG + "+1>" + Math.abs(DPHP) + "\n^\n" + RJSE_KP + "\n</VKIH ZVTI DOYG +1 AROC DPHP>")
+                    throw new Error("CSRF-VKIH ZVTI DO YG AOAO ag oc DPHP-" + DOYG + ">=" + Math.abs(DPHP) + "-kp-" + RJSE_KP)
                 }
             });
         }
