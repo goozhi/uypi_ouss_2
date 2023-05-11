@@ -23,7 +23,7 @@ async function VR_EBWU_AFOA_BRTZ_FS(RJSE_1, diwr_mcvn) {
     var reg_bobi = /^\s*(?:bobi\b|波比)(?!.*=.*\{\{)|(?:bobi|波比)\s*$/i
     if (reg_bobi.test(RJSE_1)) {
         RJSE_1 = 'bobi={{' + RJSE_1.replace(reg_bobi, '') + '\n}}'
-    }else if(/^(?:(?!\{\{)[\S\s])*=(?:(?!\{\{|\}\})[\S\s])*$/.test(RJSE_1)){
+    }else if(/^(?:(?!\{)[\S\s])*=(?:(?!\{|\})[\S\s])*$/.test(RJSE_1)){
         RJSE_1+="{{}}"
     }
     var VNWM_YHLD = RJSE_KP.split(/\n[^\S\n]*---\s*\n/);
