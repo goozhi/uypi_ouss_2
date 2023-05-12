@@ -98,11 +98,12 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                         } else if (/\.(?:peng)$/i.test(rn2[1].use)) {
                             if (rn2[1].codeid) {
                                 rj_data = rj_data.replace(/id\s*=\s*\w+/i, `id=${rn2[1].codeid}`)
-                            } else if (rn2[1].codefrm) {
-                                rj_data = rj_data.replace(/\{.*?\}/, `{${rn2[1].codefrm.replace(/(\w{2})(?=\w)/g, "$1 ")}}`)
-                            } else {
-                                rj_data
                             }
+
+                            if (rn2[1].codefrm) {
+                                rj_data = rj_data.replace(/\{.*?\}/, `{${rn2[1].codefrm.replace(/(\w{2})(?=\w)/g, "$1 ")}}`)
+                            }
+
                             if (rn2[1].send) {
                                 if (typeof (rn2[1].send) != 'object') {
                                     uz_ms('csrf-send aoao ji object-' + rn2[1].send)
@@ -123,7 +124,8 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                         }
                                     })
                                 }
-                            } else if (rn2[1].action) {
+                            }
+                            if (rn2[1].action) {
                                 if (typeof (rn2[1].action) != 'object') {
                                     uz_ms('csrf-action aoao ji object-' + rn2[1].action)
                                 } else {
@@ -142,7 +144,8 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                     })
                                 }
 
-                            } else if (rn2[1].frms) {
+                            }
+                            if (rn2[1].frms) {
                                 if (typeof (rn2[1].frms) != 'object') {
                                     uz_ms('csrf-frms aoao ji object-' + rn2[1].frms)
                                 } else {
@@ -162,7 +165,8 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                         }
                                     })
                                 }
-                            } else if (rn2[1].psw27) {
+                            }
+                            if (rn2[1].psw27) {
                                 Object.entries(rn2[1].psw27).map(rn1 => {
                                     const zkrs = rn1[0]
                                     if (/^\d+$/.test(zkrs)) {
@@ -185,7 +189,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                                     uz_ms('csrf-hmpc frgr dk psw27 tsjq-' + zkrs + "-kp-" + yxna_bnll_ljey)
                                                 }
                                             } else {
-                                                uz_ms('csrf-hmpc zj ')
+                                                uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk psw27 tsjq-' + zkrs + '-kp-' + yxna_bnll_ljey)
                                             }
                                         }
                                     } else {
