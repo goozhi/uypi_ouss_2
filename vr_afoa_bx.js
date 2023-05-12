@@ -739,11 +739,12 @@ function vr_afoa_bx() {
         vr_afoa_rh: VR_TSJQ_BRTZ_FS_ZV_SIIH_DIAX,
         csrf: `大括号对齐 : 操作符为77。
         `,
-        klch: `        77={{
+        klch: `        77=left{{
             AB{}
             DG  {}
             , ,{}
         }}
+        comment={{77=mid时可以忽略不写mid}}        
         77=mid{{
             ffff{}
             ff{}

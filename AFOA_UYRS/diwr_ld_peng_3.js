@@ -125,6 +125,18 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                     })
                                 }
                             }
+                            if (rn2[1].coverbtn) {
+                                if (typeof (rn2[1].coverbtn) != 'object') {
+                                    uz_ms('csrf-coverbtn aoao ji object-' + rn2[1].coverbtn)
+                                } else {
+                                    const reg_btn = new RegExp('(\\$Button\\(\\)[\\s\\S]*?)(\\n\\s*".*(?:\\n\\s*".*)*)', 'i')
+                                    if (reg_btn.test(rj_data)) {
+                                        rj_data = rj_data.replace(reg_btn, '$1\n' + Object.entries(rn2[1].coverbtn).map(rn1 => `"${rn1[0]}"{${rn1[1]}};`).join('\n'))
+                                    } else {
+                                        uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk button tsjq-' + 'coverbtn-kp-' + yxna_bnll_ljey)
+                                    }
+                                }
+                            }
                             if (rn2[1].action) {
                                 if (typeof (rn2[1].action) != 'object') {
                                     uz_ms('csrf-action aoao ji object-' + rn2[1].action)
