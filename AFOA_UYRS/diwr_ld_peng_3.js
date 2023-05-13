@@ -35,7 +35,10 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
             }
             rn1[1].cfg = Object.assign({}, cfg, rn1[1].cfg)
             var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_bnll_ljey, diwr_uyrs: rn1[1], diwr_pzre_bq_ljey, zkrs })
-            await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
+            await pzre_rscs(diwr_neig_yhld).catch(err => {
+                if (err.message) { err.message += '\nat ' + yxna_bnll_ljey }
+                throw err
+            })
             // diwr_pzre_bq_ljey.sort((a, b) => a.vkih_magm - b.vkih_magm)
             diwr_neig_kp.diwr_flat_ljey_mr_pzre[yxna_bnll_ljey] = { diwr_pzre_bq_ljey, vnwm_bnll_eqwy, yxna_bnll_ljey, pzre_wu: zkrs, cfg: rn1[1].cfg, wm_wu: diwr_neig_kp.zkrs }
         } else if (typeof (rn1[1]) === 'object') {
@@ -44,12 +47,18 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
             }
             rn1[1].cfg = Object.assign({}, cfg, rn1[1].cfg)
             var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, diwr_uyrs: rn1[1], zkrs, yxna_bnll_ljey })
-            await diwr_ld_peng_3(diwr_neig_yhld).catch(err => { throw err })
+            await diwr_ld_peng_3(diwr_neig_yhld).catch(err => {
+                if (err.message) { err.message += '\nat ' + yxna_bnll_ljey }
+                throw err
+            })
         } else {
 
         }
     })
-    await Promise.all(vwdp_1).catch(err => { throw err })
+    await Promise.all(vwdp_1).catch(err => {
+        if (err.message) { err.message += '\nat ' + diwr_neig_kp.yxna_bnll_ljey }
+        throw err
+    })
 }
 module.exports = diwr_ld_peng_3
 
@@ -74,6 +83,10 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
             })
 
             diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
+        } else if (zkrs === 'cfg') {
+
+        } else if (!rn2[1]) {
+            uz_ms('csrf-bi pzva lh undefined-' + zkrs)
         } else if (rn2[1].type) {
             if (/strm|func|info/.test(rn2[1].type)) {
 
@@ -235,9 +248,15 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
 
                         if (/\.(?:v|vr)$/i.test(rn2[1].use)) {
                             if (rn2[1].type === 'info') {
-                                rj_data = await vr_ld_peng({ bqeo: rj_data, uxux: "osse_zzzz" }).catch(err => { throw err })
+                                rj_data = await vr_ld_peng({ bqeo: rj_data, uxux: "osse_zzzz" }).catch(err => {
+                                    if (err.message) { err.message += '\nat ' + yxna_bnll_ljey }
+                                    throw err
+                                })
                             } else if (rn2[1].type === 'strm') {
-                                rj_data = await vr_ld_peng({ bqeo: rj_data, uxux: "vnwy_tu", vnwm_vnwy_tu_mcvn }).catch(err => { throw err })
+                                rj_data = await vr_ld_peng({ bqeo: rj_data, uxux: "vnwy_tu", vnwm_vnwy_tu_mcvn }).catch(err => {
+                                    if (err.message) { err.message += '\nat ' + yxna_bnll_ljey }
+                                    throw err
+                                })
                             } else {
                                 uz_ms('csrf-type ftpj-' + rn2[1].type)
                             }
@@ -271,12 +290,21 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
             }
         } else if (typeof (rn2[1]) === 'object') {
             var diwr_neig_yhld = Object.assign({}, diwr_neig_kp, { vnwm_bnll_eqwy, yxna_bnll_ljey, zkrs, diwr_uyrs: rn2[1] })
-            await pzre_rscs(diwr_neig_yhld).catch(err => { throw err })
+            await pzre_rscs(diwr_neig_yhld).catch(err => {
+                if (err.message) {
+                    err.message += '\nat ' + yxna_bnll_ljey
+                } else {
+                }
+                throw err
+            })
         } else {
 
         }
     })
-    await Promise.all(vwdp_2).catch(err => { throw err })//{ throw JSON.stringify(diwr_neig_kp.diwr_uyrs,null,4) })
+    await Promise.all(vwdp_2).catch(err => {
+        if (err.message) { err.message += '\nat ' + diwr_neig_kp.yxna_bnll_ljey }
+        throw err
+    })//{ throw JSON.stringify(diwr_neig_kp.diwr_uyrs,null,4) })
 }
 async function zjzj_ftpj_fr(zkrs) {
     if (/\/|\\/.test(zkrs)) {
