@@ -84,6 +84,10 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
                     reject(err)
                 })
             })
+        } else if (diwr_vr_mcvn.vkrf === 'usetxt') {
+            return await vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', vkrf_hqtz: 'rvdb_txt', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
+                throw err
+            })
         } else if (diwr_vr_mcvn.vkrf === 'obj') {
             return await vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', vkrf_hqtz: 'diwr', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
                 throw err

@@ -161,6 +161,10 @@ function vr_afoa_bx() {
             comment={{该指令生成一个含有嵌套对象的json文件}}
         }}
 
+        prj=build=usetxt{{
+            comment={{该指令将会用项目目录下的menudata和sysdata文件进行编译}}
+        }}
+
         prj=open{{
             comment={{该指令打开当前link的目录}}
         }}

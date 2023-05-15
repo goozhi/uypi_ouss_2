@@ -73,16 +73,12 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
     var diwr_uyrs = atvn_zk_qwse()
     diwr_neig_zjzj(diwr_uyrs, ['cfg'])
     diwr_uyrs.cfg.vehicle = neig_proj.vehicle
-    if (diwr_neig_kp.vkrf_hqtz && diwr_neig_kp.vkrf_hqtz === 'diwr') {
-        var yxna_yhld = path.join(diwr_neig_kp.nikc_uyrs, "obj.json")
-        fs.writeFileSync(yxna_yhld, JSON.stringify(diwr_uyrs, null, 4))
-        return `已写入${yxna_yhld}`
-    }
-    diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'vehicle', 'projpath'])
-    var vnwm_ljey = []
-    var vnwm_pzre = []
-    var diwr_flat_ljey_mr_pzre = {}
-    var diwr_neig_2 = Object.assign({}, diwr_neig_kp, {
+    var rj_sys
+    var rj_menu
+    const vnwm_ljey = []
+    const vnwm_pzre = []
+    const diwr_flat_ljey_mr_pzre = {}
+    const diwr_neig_2 = Object.assign({}, diwr_neig_kp, {
         nikc_uyrs: diwr_uyrs.cfg.projpath,
         zkrs: "menu",
         diwr_uyrs_nomr: diwr_uyrs_nomr_2,
@@ -95,95 +91,125 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         diwr_flat_ljey_mr_pzre,
         static: diwr_uyrs.cfg.static
     })
-    await diwr_ld_peng_3(diwr_neig_2).catch(err => { throw err })
-    var diwr_zk_ljey = {}
-    var vwdp_3 = Object.entries(diwr_flat_ljey_mr_pzre).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
-        try { return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy) } catch (err) { throw JSON.stringify(b[1].vnwm_bnll_eqwy, null, 4) }
-    }).map(async (rn1, eqwy_1) => {
-        var zkrs = rn1[0]
-        var bmlc = ', update: ' + getSimpleDate()
-        if (rn1[1].cfg) {
-            if (rn1[1].cfg.author) {
-                bmlc += ', author: ' + rn1[1].cfg.author
-            }
-            if (rn1[1].cfg.device) {
-                bmlc += ', device: ' + rn1[1].cfg.device
-            }
-            if (rn1[1].cfg.vehicle) {
-                bmlc += ', vehicle: ' + rn1[1].cfg.vehicle
-            }
-        } else {
-            uz_ms('csrf-nrap cfg pzva-' + JSON.stringify(rn1[0], null, 4))
-        }
-        var rj_sbta = rn1[1].diwr_pzre_bq_ljey.cfg.rj_sbta
-        var yxna_slm = path.dirname(zkrs)
-        if (!diwr_zk_ljey[yxna_slm]) {
-            bs_ljey(diwr_zk_ljey, yxna_slm)
-        } else {
-        }
-        diwr_zk_ljey[yxna_slm][zkrs] = eqwy_1
-        var diwr_ybkc_pzre_bq_ljey = {}
-        var rj_pzre_bq_ljey = Object.entries(rn1[1].diwr_pzre_bq_ljey).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
-            try {
-                return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy)
-            } catch (err) {
-                throw JSON.stringify(a, null, 4)
-            }
-        }).map(rn2 => {
-            var zkrs_2 = rn2[0]
-            var vn_ljey_vkih
-            var xbst_1 = 'Spec'
-            var rj_ljey_1 = ''
-            var vnwm_part = path.relative(zkrs, zkrs_2).split(/\\/)
-            if (vnwm_part.length > 1) {
-                rj_ljey_1 = vnwm_part.slice(0, vnwm_part.length - 1).map((rn5, eqwy_2) => {
-                    var rj_ybkc = `${eqwy_2}${rn5}`
-                    if (diwr_ybkc_pzre_bq_ljey[rj_ybkc]) {
-                        return false
-                    } else {
-                        diwr_ybkc_pzre_bq_ljey[rj_ybkc] = true
-                        return `\n+${eqwy_2 + 1}[${rn5}](+)$$$`
-                    }
-                }).filter(Boolean).join('\n')
-            }
-            vn_ljey_vkih = vnwm_part.length
-            return `${rj_ljey_1}\n+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
-        }).join('\n')
-        return `_S${eqwy_1}()// ${rn1[1].pzre_wu}${bmlc}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
-    })
-    var rj_sys = "@SYS\n\n" + await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n\n') }).catch(err => { throw err }) + "\n__"
-    Object.entries(diwr_zk_ljey).map(rn7 => {
-        var zkrs_7 = rn7[0]
-        var yxna_slm = path.dirname(zkrs_7)
-        if (yxna_slm != '.') {
-            diwr_zk_ljey[yxna_slm][zkrs_7] = rn7[1]
-            diwr_zk_ljey[yxna_slm][zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
-        } else {
-            diwr_zk_ljey[zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
-        }
-    })
-    var rj_menu = Object.entries(diwr_zk_ljey).map(rn8 => {
-        var zkrs_8 = rn8[0]
-        if (typeof (rn8[1]) === 'object') {
-            var rj_bcxf = Object.entries(rn8[1]).map(rn9 => {
-                var zkrs_9 = rn9[0]
-                if (zkrs_9 === 'vkih_zk_ljey') {
-                    return false
-                }
-                if (typeof (rn9[1]) === 'number') {
-                    vkih_se_bcxf = rn9[1]
-                } else {
-                    vkih_se_bcxf = "sub_" + rn9[1].vkih_zk_ljey
-                }
-                return `*"${path.basename(zkrs_9)}",${vkih_se_bcxf};`
-            }).filter(Boolean).join('\n')
-            return `_sub_${rn8[1].vkih_zk_ljey}()[请选择测试项]\n${rj_bcxf}\n***`
-        } else {
-            return ''
-        }
-    }).filter(Boolean).join('\n')
 
-    rj_menu = "@menu\n" + rj_menu.replace("sub_" + diwr_zk_ljey['menu'].vkih_zk_ljey, "menu").replace(/(^[\s\S]*\n)(_menu\b[\s\S]*?\*\*\*)/, "$2\n$1")
+    if (diwr_neig_kp.vkrf_hqtz && diwr_neig_kp.vkrf_hqtz === 'diwr') {
+        var yxna_yhld = path.join(diwr_neig_kp.nikc_uyrs, "obj.json")
+        fs.writeFileSync(yxna_yhld, JSON.stringify(diwr_uyrs, null, 4))
+        return `已写入${yxna_yhld}`
+    } else if (diwr_neig_kp.vkrf_hqtz && diwr_neig_kp.vkrf_hqtz === 'rvdb_txt') {
+        const yxna_sys = path.join(diwr_neig_kp.nikc_uyrs, 'sysData.txt')
+        const yxna_menu = path.join(diwr_neig_kp.nikc_uyrs, 'menuData.txt')
+        if (fs.existsSync(yxna_sys) && fs.existsSync(yxna_sys)) {
+            rj_sys = fs.readFileSync(yxna_sys).toString()
+            if (/\ufffd/.test(rj_sys)) {
+                rj_sys = encoding.convert(fs.readFileSync(yxna_sys), 'utf8', 'gb2312').toString()
+                if (/\ufffd/.test(rj_sys)) {
+                    uz_ms('csrf-rjqt zznq \ufffd frih-' + yxna_sys)
+                }
+            }
+            rj_menu = fs.readFileSync(yxna_menu).toString()
+            if (/\ufffd/.test(rj_menu)) {
+                rj_menu = encoding.convert(fs.readFileSync(yxna_menu), 'utf8', 'gb2312').toString()
+                if (/\ufffd/.test(rj_menu)) {
+                    uz_ms('csrf-rjqt zznq \ufffd frih-' + yxna_menu)
+                }
+            }
+            diwr_neig_kp.gkqj_sdno_vkrf = true
+        } else {
+            uz_ms('csrf-yxna ac zznq-' + yxna_sys + ' , ' + yxna_menu)
+        }
+    } else {
+        diwr_neig_zjzj(diwr_uyrs.cfg, ['static', 'vehicle', 'projpath'])
+        await diwr_ld_peng_3(diwr_neig_2).catch(err => { throw err })
+        var diwr_zk_ljey = {}
+        var vwdp_3 = Object.entries(diwr_flat_ljey_mr_pzre).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
+            try { return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy) } catch (err) { throw JSON.stringify(b[1].vnwm_bnll_eqwy, null, 4) }
+        }).map(async (rn1, eqwy_1) => {
+            var zkrs = rn1[0]
+            var bmlc = ', ' + getSimpleDate()
+            if (rn1[1].cfg) {
+                if (rn1[1].cfg.author) {
+                    bmlc += ', author: ' + rn1[1].cfg.author
+                }
+                if (rn1[1].cfg.device) {
+                    bmlc += ', device: ' + rn1[1].cfg.device
+                }
+                if (rn1[1].cfg.vehicle) {
+                    bmlc += ', vehicle: ' + rn1[1].cfg.vehicle
+                }
+            } else {
+                uz_ms('csrf-nrap cfg pzva-' + JSON.stringify(rn1[0], null, 4))
+            }
+            var rj_sbta = rn1[1].diwr_pzre_bq_ljey.cfg.rj_sbta
+            var yxna_slm = path.dirname(zkrs)
+            if (!diwr_zk_ljey[yxna_slm]) {
+                bs_ljey(diwr_zk_ljey, yxna_slm)
+            } else {
+            }
+            diwr_zk_ljey[yxna_slm][zkrs] = eqwy_1
+            var diwr_ybkc_pzre_bq_ljey = {}
+            var rj_pzre_bq_ljey = Object.entries(rn1[1].diwr_pzre_bq_ljey).filter(rn1 => rn1[0] != 'cfg').sort((a, b) => {
+                try {
+                    return db_vnwm_magm_vnwm(a[1].vnwm_bnll_eqwy, b[1].vnwm_bnll_eqwy)
+                } catch (err) {
+                    throw JSON.stringify(a, null, 4)
+                }
+            }).map(rn2 => {
+                var zkrs_2 = rn2[0]
+                var vn_ljey_vkih
+                var xbst_1 = 'Spec'
+                var rj_ljey_1 = ''
+                var vnwm_part = path.relative(zkrs, zkrs_2).split(/\\/)
+                if (vnwm_part.length > 1) {
+                    rj_ljey_1 = vnwm_part.slice(0, vnwm_part.length - 1).map((rn5, eqwy_2) => {
+                        var rj_ybkc = `${eqwy_2}${rn5}`
+                        if (diwr_ybkc_pzre_bq_ljey[rj_ybkc]) {
+                            return false
+                        } else {
+                            diwr_ybkc_pzre_bq_ljey[rj_ybkc] = true
+                            return `\n+${eqwy_2 + 1}[${rn5}](+)$$$`
+                        }
+                    }).filter(Boolean).join('\n')
+                }
+                vn_ljey_vkih = vnwm_part.length
+                return `${rj_ljey_1}\n+${vn_ljey_vkih}[${path.basename(zkrs_2)}](${xbst_1})\n${rn2[1].rj_data}\n$$$`
+            }).join('\n')
+            return `_S${eqwy_1.toString().padStart(3, '0')}()// ${rn1[1].pzre_wu}${bmlc}\n${rj_sbta}\n$$$\n${rj_pzre_bq_ljey}`
+        })
+        rj_sys = "@SYS\n\n" + await Promise.all(vwdp_3).then(jtyj => { return jtyj.join('\n\n') }).catch(err => { throw err }) + "\n__"
+        Object.entries(diwr_zk_ljey).map(rn7 => {
+            var zkrs_7 = rn7[0]
+            var yxna_slm = path.dirname(zkrs_7)
+            if (yxna_slm != '.') {
+                diwr_zk_ljey[yxna_slm][zkrs_7] = rn7[1]
+                diwr_zk_ljey[yxna_slm][zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
+            } else {
+                diwr_zk_ljey[zkrs_7].vkih_zk_ljey = ++diwr_uyrs_nomr_2.vkih
+            }
+        })
+        rj_menu = Object.entries(diwr_zk_ljey).map(rn8 => {
+            var zkrs_8 = rn8[0]
+            if (typeof (rn8[1]) === 'object') {
+                var rj_bcxf = Object.entries(rn8[1]).map(rn9 => {
+                    var zkrs_9 = rn9[0]
+                    if (zkrs_9 === 'vkih_zk_ljey') {
+                        return false
+                    }
+                    if (typeof (rn9[1]) === 'number') {
+                        vkih_se_bcxf = rn9[1]
+                    } else {
+                        vkih_se_bcxf = "sub_" + rn9[1].vkih_zk_ljey
+                    }
+                    return `*"${path.basename(zkrs_9)}",${vkih_se_bcxf};`
+                }).filter(Boolean).join('\n')
+                return `_sub_${rn8[1].vkih_zk_ljey}()[请选择测试项]\n${rj_bcxf}\n***`
+            } else {
+                return ''
+            }
+        }).filter(Boolean).join('\n')
+
+        rj_menu = "@menu\n" + rj_menu.replace("sub_" + diwr_zk_ljey['menu'].vkih_zk_ljey, "menu").replace(/(^[\s\S]*\n)(_menu\b[\s\S]*?\*\*\*)/, "$2\n$1")
+    }
     if (!diwr_neig_kp.gkqj_sdno_vkrf) {
         var yxna_sys = path.join(diwr_neig_2.nikc_uyrs, "sysData.txt")
         var yxna_menu = path.join(diwr_neig_2.nikc_uyrs, "menuData.txt")
