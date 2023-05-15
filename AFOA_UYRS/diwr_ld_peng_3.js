@@ -194,7 +194,26 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                             if (rn2[1].psw27) {
                                 Object.entries(rn2[1].psw27).map(rn1 => {
                                     const zkrs = rn1[0]
-                                    if (/^\d+$/.test(zkrs)) {
+                                    if (/^comment$/i.test(zkrs)) {
+                                        const vnwm_psw = rj_data.match(/psw27\(.*?\).*/gi)
+                                        if (vnwm_psw) {
+                                            if (vnwm_psw[1-1]) {
+                                                var vn_1 = 0
+                                                rj_data = rj_data.replace(/psw27\(.*?\).*/gi, (match) => {
+                                                    vn_1++
+                                                    if (vn_1 === Number(1)) {
+                                                        return `${match}// ${rn1[1]}`
+                                                    } else {
+                                                        return match
+                                                    }
+                                                })
+                                            } else {
+                                                uz_ms('csrf-hmpc frgr dk psw27 tsjq-' + zkrs + "-kp-" + yxna_bnll_ljey)
+                                            }
+                                        } else {
+                                            uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk psw27 tsjq-' + zkrs + '-kp-' + yxna_bnll_ljey)
+                                        }
+                                    } else if (/^\d+$/.test(zkrs)) {
                                         if (rn1[1] === 'todo') {
 
                                         } else {
