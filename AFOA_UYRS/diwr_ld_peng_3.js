@@ -211,7 +211,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                                 uz_ms('csrf-hmpc frgr dk psw27 tsjq-' + zkrs + "-kp-" + yxna_bnll_ljey)
                                             }
                                         } else {
-                                            uz_ms('csrf-nq rjqt yh zj ac ab frgr fcul dk psw27 tsjq-' + zkrs + '-kp-' + yxna_bnll_ljey)
+                                            uz_ms('csrf-nq use dk rjqt yh zj ac ab frgr fcul dk psw27 tsjq, rt zjzj psw27 tsjq jils zznq-' +  yxna_bnll_ljey)
                                         }
                                     } else if (/^\d+$/.test(zkrs)) {
                                         if (rn1[1] === 'todo') {
