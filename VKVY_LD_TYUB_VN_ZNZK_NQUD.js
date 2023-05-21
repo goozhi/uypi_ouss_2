@@ -1,6 +1,6 @@
 
 function VKVY_LD_TYUB_VN_ZNZK_NQUD(RJSE1) {
-	RJSE1=RJSE1.replace(/\r/g,"")
+	RJSE1 = RJSE1.replace(/\r/g, "")
 	var shuzu1 = RJSE1.split("\n");
 	var jinzhi_16_5_3 = "(?:(?:\\d|[a-f]|[A-F]){5}|(?:\\d|[a-f]|[A-F]){3})";
 
@@ -12,13 +12,13 @@ function VKVY_LD_TYUB_VN_ZNZK_NQUD(RJSE1) {
 		RJSE3 = RJSE2.match(regex_bianma1);
 		if (RJSE3 == null) {//
 			continue;
-		}//
+		}
 		RJSE3 = RJSE3[0];
 		var suoyin2 = RJSE2.search(RJSE3);
 		RJSE2 = RJSE2.slice(suoyin2, RJSE2.length);
 		RJSE4 = RJSE3.replace("u", "U").replace("c", "C");
 		RJSE2 = RJSE2.replace(RJSE3, zhuanDizhi(RJSE3) + " [" + RJSE4 + "]");
-		if (shuzu1[Number(suoyin1) + 1].length > 2 && !regex_bianma1.test(shuzu1[Number(suoyin1) + 1])) {
+		if (!/^[\d\s]+$/.test(shuzu1[Number(suoyin1) + 1]) && shuzu1[Number(suoyin1) + 1].length > 2 && !regex_bianma1.test(shuzu1[Number(suoyin1) + 1])) {
 			shuzu3.push(RJSE2 + shuzu1[Number(suoyin1) + 1] + ";");
 		}
 	}//
@@ -31,4 +31,4 @@ function zhuanDizhi(bianma1) {//zhuanDizhi
 	RJSE1 = VKVY_LD_TYUB_VN(RJSE1);
 	return RJSE1 + RJSE2;
 }//zhuanDizhi
-module.exports=VKVY_LD_TYUB_VN_ZNZK_NQUD;
+module.exports = VKVY_LD_TYUB_VN_ZNZK_NQUD;
