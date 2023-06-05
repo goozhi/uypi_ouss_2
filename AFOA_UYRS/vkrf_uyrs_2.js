@@ -240,6 +240,7 @@ async function vkrf_uyrs_2(diwr_neig_kp) {
         if (!diwr_uyrs.cfg.vehicle) {
             uz_ms('csrf-nrap vehicle pzva-' + yxna_zk_qwse)
         }
+        diwr_neig_kp.nikc_YDDL = neig_proj.exePath || diwr_neig_kp.nikc_YDDL
         diwr_neig_kp.nikc_YDDL = path.join(diwr_neig_kp.nikc_YDDL, 'Vehicle', diwr_uyrs.cfg.vehicle)
         if (!fs.existsSync(diwr_neig_kp.nikc_YDDL)) {
             uz_ms('csrf-nikc ac zznq-' + diwr_neig_kp.nikc_YDDL)

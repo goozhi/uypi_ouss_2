@@ -19,6 +19,7 @@ const eyrh_zogl = require('./AFOA_UYRS/eyrh_zogl');
 const ngnc_rjqt_tum = require('./AFOA_UYRS/ngnc_rjqt_tum');
 const nikc_ld_diwr_vkey_os = require('./AFOA_UYRS/nikc_ld_diwr_vkey_os.js');
 const yj_nsbs = require('./AFOA_UYRS/yj_nsbs');
+const nikc_YDDL = 'D:/DIAGBYZ4/NER/YDHY/YDDL';
 const nikc_ld_diwr_zv_rjvt_rjqt_bqeo = require('./AFOA_BX/nikc_ld_diwr_zv_rjvt_rjqt_bqeo');
 var diwr_uyrs_nomr = { vkih: new Date().getTime(), nikc_uyrs: require }
 async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
@@ -56,7 +57,7 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.hasOwnProperty('eyrh')) {
         if (diwr_vr_mcvn.eyrh === 'test') {
             return new Promise((resolve, reject) => {
-                Promise.all([eyrh_zogl({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs })]).then(jtyj => {
+                Promise.all([eyrh_zogl({ nikc_YDDL, resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs })]).then(jtyj => {
                     resolve(jtyj[0])
                 }).catch(err => {
                     reject(err)
@@ -78,23 +79,23 @@ async function VR_TSJQ_BRTZ_FS_ZV_UYRS_GZBU(DIWR_AFOA, diwr_mcvn) {
     } else if (diwr_vr_mcvn.hasOwnProperty('vkrf')) {
         if (diwr_vr_mcvn.vkrf === 'txt') {
             return new Promise((resolve, reject) => {
-                vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
+                vkrf_uyrs_2({ nikc_YDDL, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
                     resolve(jtyj)
                 }).catch(err => {
                     reject(err)
                 })
             })
         } else if (diwr_vr_mcvn.vkrf === 'usetxt') {
-            return await vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', vkrf_hqtz: 'rvdb_txt', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
+            return await vkrf_uyrs_2({ nikc_YDDL, vkrf_hqtz: 'rvdb_txt', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
                 throw err
             })
         } else if (diwr_vr_mcvn.vkrf === 'obj') {
-            return await vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', vkrf_hqtz: 'diwr', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
+            return await vkrf_uyrs_2({ nikc_YDDL, vkrf_hqtz: 'diwr', nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).catch(err => {
                 throw err
             })
         } else if (diwr_vr_mcvn.vkrf === '') {
             return new Promise((resolve, reject) => {
-                vkrf_uyrs_2({ nikc_YDDL: 'D:/DIAGBYZ4/NER/YDHY/YDDL', gkqj_sdno_vkrf: true, resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
+                vkrf_uyrs_2({ nikc_YDDL, gkqj_sdno_vkrf: true, resolve, reject, nikc_uyrs: diwr_uyrs_nomr.nikc_uyrs }).then(jtyj => {
                     resolve(jtyj)
                 }).catch(err => {
                     reject(err)
