@@ -4,6 +4,9 @@ const UL_NOKZ = require('./AFOA_BX/UL_NOKZ');
 const uz_ms = require('./AFOA_BX/uz_ms');
 
 function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
+    const regOth = /\both(?::|：)([^\]\s]*)/
+    const objMatch = RJSE_KP.match(regOth)
+    const othVal = objMatch ? objMatch[1] : '无效数据'
     var UL_PZVN_ZV_PC_FRIH = require('./UL_PZVN_ZV_PC_FRIH')
     var QOJK_AGVN_NODO = require('./AFOA_BX/QOJK_AGVN_NODO')
     var UXUX_YHLD = typeof (RJSE_KP);
@@ -18,6 +21,9 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
         throw new Error("[MCVN UXUX MSOX , AOAO JI string]<--" + UXUX_YHLD)
     }
     var RJSE_1 = RJSE_KP.replace(/\/\/.*/, "")
+    if (objMatch) {
+        RJSE_1 = RJSE_1.replace(regOth, "")
+    }
     var NINI_UXUX_2;
     var PC_FRIH_SDVN_PH_HPMI;
     var DIWR_CQPI_FR
@@ -246,7 +252,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
             return "'" + rnsf.VNWM_KLVQ_MCVN.map(rnsf_4 => {
                 return rnsf_4.toString(16)
             }).join('-') + ":" + rnsf.BQEO + "'"
-        }).join(',') + ",'oth:*无效数据';// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
+        }).join(',') + `,'oth:*${othVal}';// ${RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "")}`;
     }
     else {
         return LLAO + ",cf," + PH_KLVQ_MCVN_uytz + "*(" + PZVN + ")+(" + NOKZ + "),." + AGVN_TRVN + "," + EYTR + ";// " + RJSE_KP.replace(/.*?\}\s*(,\s*|\uff0c\s*|)/, "");
