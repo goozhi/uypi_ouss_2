@@ -4,7 +4,7 @@ function VR_EBWU_BRTZ_FS_ZV_bb(RJSE_KP) {
     if (UXUX_YHLD != "string") {
         throw new Error("csrf-MCVN UXUX MSOX , AOAO JI string-" + UXUX_YHLD)
     }
-    var RJSE_1 = RJSE_KP;
+    var RJSE_1 = RJSE_KP.replace(/(\d+[ha]?)(\s*\.\s*)(?=\d+[ha]?\b)/ig, "$1 . ");
     var BMLC = RJSE_1.match(/\/\/.*/)
     if (BMLC !== null) {
         RJSE_1 = RJSE_1.replace(/\/\/.*/, "");
