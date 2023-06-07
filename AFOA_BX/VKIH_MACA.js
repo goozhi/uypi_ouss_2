@@ -7,10 +7,10 @@ function VKIH_MACA(RJSE_KP, TSZN_VNAW, DPHP = 1, TYUB_FR, VN_KNDD = 1) {
         throw new Error("CSRF-MCVN UXUX MSOX -" + RJSE_KP)
     }
     if (isNaN(DPHP)) {
-        throw new Error("CSRF-VNZT MCVN JI NaN-" + DPHP)
+        throw new Error("CSRF-VNZT MCVN JI N a N-" + DPHP)
     }
     if (isNaN(TSZN_VNAW)) {
-        throw new Error("CSRF-VNZT MCVN JI NaN-" + TSZN_VNAW)
+        throw new Error("CSRF-VNZT MCVN JI N a N-" + TSZN_VNAW)
     }
     if (DPHP == 0) {
     }
