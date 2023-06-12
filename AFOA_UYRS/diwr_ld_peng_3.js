@@ -99,6 +99,9 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                     uz_ms('csrf-yxna ac zznq aeqr acji yenh rjqt-' + path_use + "-kp-" + JSON.stringify(rn2[1]))
                 }
                 var rj_data = fs.readFileSync(path_use).toString().replace(/\r/g, "")
+                if (!/\S/.test(rj_data)) {
+                    uz_ms('csrf-rjqt lh vv-' + path_use)
+                }
                 if (/\ufffd/.test(rj_data)) {
                     uz_ms('csrf-umdy \ufffd frih, rt zjzj vkvy jils eopc-' + path_use)
                 } else {
@@ -197,7 +200,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                     if (/^comment$/i.test(zkrs)) {
                                         const vnwm_psw = rj_data.match(/psw27\(.*?\).*/gi)
                                         if (vnwm_psw) {
-                                            if (vnwm_psw[1-1]) {
+                                            if (vnwm_psw[1 - 1]) {
                                                 var vn_1 = 0
                                                 rj_data = rj_data.replace(/psw27\(.*?\).*/gi, (match) => {
                                                     vn_1++
@@ -211,7 +214,7 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                                                 uz_ms('csrf-hmpc frgr dk psw27 tsjq-' + zkrs + "-kp-" + yxna_bnll_ljey)
                                             }
                                         } else {
-                                            uz_ms('csrf-nq use dk rjqt yh zj ac ab frgr fcul dk psw27 tsjq, rt zjzj psw27 tsjq jils zznq-' +  yxna_bnll_ljey)
+                                            uz_ms('csrf-nq use dk rjqt yh zj ac ab frgr fcul dk psw27 tsjq, rt zjzj psw27 tsjq jils zznq-' + yxna_bnll_ljey)
                                         }
                                     } else if (/^\d+$/.test(zkrs)) {
                                         if (rn1[1] === 'todo') {
