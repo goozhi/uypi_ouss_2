@@ -5,6 +5,7 @@ const eowl_uypj = require("./eowl_uypj")
 const vo_vyn_ld_diwr = require("./vo_vyn_ld_diwr")
 const path = require('path')
 const fs = require('fs')
+const eyrh_hqmv = require("./eyrh_hqmv")
 var agvn_tr_vn
 var nini_wu
 var eytr
@@ -13,6 +14,15 @@ var sortCanData = ''
 function eyrh_neig_rscs_2(diwr_neig_kp) {
     const diwr_neig_cell = diwr_neig_kp.cellView
     var vnwm_diea_ae_immi = Object.entries(diwr_neig_cell).filter(rn1 => /^(?:电压|温度)$/.test(rn1[0]))
+    if (!diwr_neig_cell['测试']) {
+        uz_ms('csrf-aoao pc 测试 pzva-' + JSON.stringify(diwr_neig_kp, null, 2))
+    }
+    const yxna_frms = path.join(diwr_neig_kp.cfg.static, 'frms', diwr_neig_cell['测试'])
+    if (!fs.existsSync(yxna_frms)) {
+        uz_ms('csrf-zogl dk yxna ac zznq-' + yxna_frms)
+    }
+    const rj_vo_vyn = fs.readFileSync(yxna_frms).toString()
+    const diwr_vnwy = vo_vyn_ld_diwr(rj_vo_vyn, yxna_frms)
     if (vnwm_diea_ae_immi.length) {
         var rj_jtyj = vnwm_diea_ae_immi.map(rn3 => {
             if (/电压$/.test(rn3[0])) {
@@ -51,14 +61,10 @@ function eyrh_neig_rscs_2(diwr_neig_kp) {
             }
             if (diwr_diea_ae_immi['多帧拼接']) {
                 if (diwr_diea_ae_immi['ID']) {
-                    var diwr_vnwy
                     if (diwr_neig_cell['测试']) {
-                        var yxna_1 = path.join(diwr_neig_kp.cfg.static, 'frms', diwr_neig_cell['测试'])
-                        if (!fs.existsSync(yxna_1)) {
-                            uz_ms('csrf-zogl dk yxna ac zznq-' + yxna_1)
+                        if (!fs.existsSync(yxna_frms)) {
+                            uz_ms('csrf-zogl dk yxna ac zznq-' + yxna_frms)
                         } else {
-                            var rj_vo_vyn = fs.readFileSync(yxna_1).toString()
-                            diwr_vnwy = vo_vyn_ld_diwr(rj_vo_vyn, yxna_1)
                             if (diwr_diea_ae_immi['多帧拼接']['标识']) {
                                 diwr_diea_ae_immi['多帧拼接']['标识'].sort()
                                 var diwr_yyha = {}
@@ -116,8 +122,8 @@ function eyrh_neig_rscs_2(diwr_neig_kp) {
                                                 })
                                                 var vn_yhld = -1
                                                 var dyzv_1 = diwr_yyha[rn1].mcnv_uypj[0].replace(/((?:d\d+)+)/ig, (_, p1) => {
-                                                    vn_yhld++
-                                                    return '0x' + p1.replace(/d\d+/ig, () => {
+                                                    return '0x' + p1.replace(/d\d+/ig, (_) => {
+                                                        vn_yhld++
                                                         return rn5[vn_yhld][1]
                                                     })
                                                 })
@@ -212,6 +218,8 @@ function eyrh_neig_rscs_2(diwr_neig_kp) {
 
 
         }).join('\n\n')
+        const rj_nvcm = eyrh_hqmv(diwr_neig_cell, diwr_vnwy)
+        fs.writeFileSync(yxna_frms + '.test.txt', rj_nvcm)
         return rj_jtyj
     } else {
         uz_ms('csrf-nrap fiea ae immi pzva-')

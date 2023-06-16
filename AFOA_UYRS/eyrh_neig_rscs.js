@@ -115,8 +115,8 @@ function eyrh_neig_rscs(diwr_neig = {}) {
                                                 })
                                                 var vn_yhld = -1
                                                 var dyzv_1 = diwr_yyha[rn1].mcnv_uypj[0].replace(/((?:d\d+)+)/ig, (_, p1) => {
-                                                    vn_yhld++
                                                     return '0x' + p1.replace(/d\d+/ig, () => {
+                                                        vn_yhld++
                                                         return rn5[vn_yhld][1]
                                                     })
                                                 })
