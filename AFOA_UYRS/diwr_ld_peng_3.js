@@ -7,6 +7,9 @@ const vr_ld_peng = require("./vr_ld_peng")
 const ZJZJ_TSJQ_Str = require("../AFOA_sysData/ZJZJ_TSJQ_Str")
 const ZJZJ_TSJQ_Ecu = require("../AFOA_sysData/ZJZJ_TSJQ_Ecu")
 const ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ = require("../AFOA_sysData/ZJZJ_TSJQ_ZV_DW_CXAV_TSJQ")
+const vo_vyn_ld_diwr = require("./vo_vyn_ld_diwr")
+const eyrh_neig_rscs = require("./eyrh_neig_rscs")
+const eyrh_neig_rscs_2 = require("./eyrh_neig_rscs_2")
 async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diwr_uyrs: {}, diwr_flat_ljey_mr_pzre: {}, }) {
     var vnwm_fo_1 = [
         'diwr_uyrs',
@@ -84,7 +87,9 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
 
             diwr_neig_kp.diwr_pzre_bq_ljey.cfg = (Object.assign({}, diwr_neig_kp.diwr_uyrs.cfg, { coms }, { rj_sbta }))
         } else if (zkrs === 'cfg') {
-
+        } else if (zkrs === 'cellView') {
+            const rj_cell_data = eyrh_neig_rscs_2(diwr_neig_kp.diwr_uyrs)
+            diwr_neig_kp.diwr_pzre_bq_ljey[path.join(yxna_bnll_ljey, "..", "电池包数据解析")] = ({ vnwm_bnll_eqwy, vkih_magm: eqwy_1, rj_data: `$Str(ByCheckBmsGroup);\n${rj_cell_data}\n***` })
         } else if (!rn2[1]) {
             uz_ms('csrf-bi pzva lh undefined-' + zkrs)
         } else if (rn2[1].type) {
@@ -332,4 +337,24 @@ async function zjzj_ftpj_fr(zkrs) {
     if (/\/|\\/.test(zkrs)) {
         uz_ms('csrf-zkrs efpc ftpj frih-' + zkrs)
     }
+}
+
+function bytesToObject(bytes = ["0d", "99"]) {
+    return { bytes: bytes, bits: bytes.map(ele_3 => Number("0x" + ele_3).toString('2').padStart(8, '0')).join('') }
+}
+
+function getValidFrames(diwr_vnwy = { onefrm: ['aa', 'bb'] }, frmTags = {}, option = { reverse: false }) {
+    return Object.entries(diwr_vnwy).filter(([vnwy_xbst, vnwy_dsc]) => {
+        if (frmTags.bytes) {
+            return frmTags.bytes.every(([byte_name, byte_value]) => {
+                if (vnwy_dsc.bytes[byte_name] && byte_value === Number("0x" + vnwy_dsc.bytes[byte_name])) {
+                    return false ^ option.reverse
+                } else {
+                    return true ^ option.reverse
+                }
+            })
+        } else {
+            uz_ms(`csrf-efpc acun dk pzva-${frmTags}`)
+        }
+    })
 }

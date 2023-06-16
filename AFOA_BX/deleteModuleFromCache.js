@@ -1,6 +1,11 @@
 function deleteModuleFromCache(moduleName) {
   // 删除指定模块
-  var module = require.resolve(moduleName);
+  var module
+  try {
+    module = require.resolve(moduleName);
+  } catch (err) {
+
+  }
   if (require.cache[module]) {
     require.cache[module].children.forEach(function (child) {
       deleteModuleFromCache(child.id);
