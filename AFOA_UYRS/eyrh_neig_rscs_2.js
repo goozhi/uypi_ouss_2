@@ -33,7 +33,7 @@ function eyrh_neig_rscs_2(diwr_neig_kp) {
                 eytr = '℃'
                 nini_wu = 'cellt'
             }
-            var diwr_diea_ae_immi = rn3[1]
+            const diwr_diea_ae_immi = rn3[1]
             diwr_diea_ae_immi.vnwy_tu_mcvn = {}
             diwr_diea_ae_immi.uypj_slgr = {}
             if (!diwr_diea_ae_immi['参考']) {
@@ -199,7 +199,8 @@ function eyrh_neig_rscs_2(diwr_neig_kp) {
                     } else {
                         rj_es_mcvn = `{01 00 02 ${FDMJ(YP_VP_2(vn_1.toString(16), 8), 2, ' ')} 1f ff ff ff ${YP_VP_2(es_vn.toString(16), 2)}}`
                     }
-                    return Array(es_vn).fill(Object.assign({}, rn1[1])).map((rn2, eqwy_1) => {
+
+                    return Array(es_vn).fill(rn1[1]).map((rn2, eqwy_1) => {
                         if (rn2[eqwy_1 + 1]) {
                         } else {
                             rn2[eqwy_1 + 1] = [...diwr_diea_ae_immi.mcnv_uypj]

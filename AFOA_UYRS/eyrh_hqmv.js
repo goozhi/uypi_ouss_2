@@ -62,7 +62,7 @@ function eyrh_hqmv(diwr_neig = {}, diwr_vnwy = {}) {
                     }).join('\n\n')
 
                 } else {
-                    uz_ms('csrf-bi yyha hmpc tsqn uypj-' + yyha_fo)
+                    uz_ms('csrf-bi yyha hmpc tszn uypj-' + yyha_fo)
                 }
             } else {
                 uz_ms('csrf-sopj nq vnwy yh yj ab bi yyha-' + yyha_fo)
