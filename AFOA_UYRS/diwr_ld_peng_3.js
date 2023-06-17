@@ -67,7 +67,7 @@ async function diwr_ld_peng_3(diwr_neig_kp = { zkrs: "menu", diwr_uyrs_nomr, diw
 module.exports = diwr_ld_peng_3
 
 async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: "", static: "", diwr_pzre_bq_ljey: {}, zkrs: "" }) {
-
+    const diwr_ybkc_yxna = {}
     var vwdp_2 = Object.entries(diwr_neig_kp.diwr_uyrs).map(async (rn2, eqwy_1) => {
         var vnwm_bnll_eqwy = [...diwr_neig_kp.vnwm_bnll_eqwy, eqwy_1]
         var zkrs = rn2[0]
@@ -100,6 +100,11 @@ async function pzre_rscs(diwr_neig_kp = { vnwm_bnll_eqwy: [], yxna_bnll_ljey: ""
                     uz_ms('csrf-use pzva ac zznq-' + diwr_neig_kp.yxna_bnll_ljey)
                 }
                 var path_use = path.join(diwr_neig_kp.static, rn2[1].type, rn2[1].use)
+                if (diwr_ybkc_yxna[path_use]) {
+                    uz_ms('csrf-bi yxna cd dw rvdb cf-' + path_use)
+                } else {
+                    diwr_ybkc_yxna[path_use] = true
+                }
                 var stats = fs.statSync(path_use)
                 if (!fs.existsSync(path_use) || stats.isDirectory()) {
                     uz_ms('csrf-yxna ac zznq aeqr acji yenh rjqt-' + path_use + "-kp-" + JSON.stringify(rn2[1]))

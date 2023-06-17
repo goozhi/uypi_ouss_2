@@ -65,7 +65,7 @@ function VR_EBWU_BRTZ_FS_ZV_JCBZ_UL_PZVN_UYUY_UX_NINI(RJSE_KP) {
     var reg_PCYC_KLVQ_MCVN = /\[\s*((?:\+|-|)\d+(?:\.\d+|))\s*-\s*((?:\+|-|)\d+(?:\.\d+|))(.*)\]/;
     var DIWR_PCYC_KLVQ_MCVN = DIWR_YHLD[2].match(reg_PCYC_KLVQ_MCVN)
     if (DIWR_PCYC_KLVQ_MCVN != null) {
-        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN, "")
+        RJSE_NOKZ_MR_EYTR = DIWR_YHLD[2].replace(reg_PCYC_KLVQ_MCVN, " ")
         AWZN_KLVQ_VN_1 = Number(DIWR_PCYC_KLVQ_MCVN[1])
         AWZN_KLVQ_VN_2 = Number(DIWR_PCYC_KLVQ_MCVN[2])
         NINI_UXUX_2 = "3c"
