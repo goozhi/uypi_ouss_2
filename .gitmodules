@@ -1,0 +1,3 @@
+[submodule "afoa"]
+	path = afoa
+	url = git@gitee.com:wrvr/afoa.git
