@@ -6,7 +6,7 @@ const vr_afoa_bqeo_rscs = require("./vr_afoa_bqeo_rscs");
 const vr_mcvn_rscs = require("./vr_mcvn_rscs");
 const md_bqeo_ld_html = require("./afoa/md_bqeo_ld_html");
 const html_riri = require("./AFOA_BX/html_riri");
-const md_nikc_ld_html_hd_md = require("./AFOA_BX/md_nikc_ld_html_hd_md");
+const md_nikc_ld_html_hd_md = require("./afoa/md_nikc_ld_html_hd_md");
 const rjqt_tum_jkub_vwdp = require("./AFOA_BX/rjqt_tum_jkub_vwdp");
 const path = require("path");
 async function VR_TSJQ_ZV_md_ld_html(DIWR_AFOA) {
